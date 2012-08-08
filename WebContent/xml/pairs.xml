@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pairs>
+	<pair>
+		<symbol>PPP2R5D </symbol>
+		<principle accession="NM_006245.2" species="Homo sapiens"/>
+		<comparison accession="NM_009358.3" species="Mus musculus"/>
+		<description>Conserved G-quadruplexes in 5' UTR, 3'UTR, and CDS. Gene is involved in cell division.</description>
+		
+	</pair>
+	
+	<pair>
+		<symbol>ACADM </symbol>
+		<principle accession="187960097" species="Homo sapiens"/>
+		<comparison accession="160961496" species="Pan troglodytes"/>
+		<description>Conserved G-quadruplexes near translation start site. Defects in this gene can lead to infantile death.</description>
+		
+	</pair>
+	
+	<pair>
+		<symbol>SNCA</symbol>
+		<principle accession="NM_000345.3" species="Homo sapiens"/>
+		<comparison accession="NM_001042451.1" species="Mus musculus"/>
+		<description>Conserved G-quadruplexes in CDS. Gene involved in Parkinson's disease and dementia.</description>
+		
+	</pair>
+	
+	<pair>
+		<symbol>ADAM10</symbol>
+		<principle accession="NM_001110.2" species="Homo sapiens"/>
+		<comparison accession="NM_007399.3" species="Mus musculus"/>
+		<description>G-quadruplexes in the 5’UTR known to inhibit translation.</description>
+		<ref link="http://www.jbc.org/content/early/2011/11/07/jbc.M111.296921.abstract?ct=ct">Lammich et. al., 2011. J. Biol. Chem.</ref>
+	</pair>
+	
+	<pair>
+		<symbol>YY1  </symbol>
+		<principle accession="NM_003403.3" species="Homo sapiens"/>
+		<comparison accession="NM_001031210.1" species="Gallus gallus"/>
+		<description>Regulatory G-quadruplexes in 5’UTR. Gene involved in tumorigenesis</description>
+		<ref link="http://nar.oxfordjournals.org/content/early/2011/10/12/nar.gkr849.abstract?ct=ct">Huang et. al., 2011. Nucl. Acids Res.</ref>
+	</pair>
+	
+	<pair>
+		<symbol>NRAS</symbol>
+		<principle accession="NM_002524.4" species="Homo sapiens"/>
+		<comparison accession="NM_001097989.1" species="Bos taurus"/>
+		<description>Conserved G-quadruplexes in 5’- and 3’ UTRs of an oncogene</description>
+		<ref link="http://www.nature.com/nchembio/journal/v3/n4/full/nchembio864.html">Kumari et. al., 2007. Nat. Chem Biol</ref>
+	</pair>
+	
+	<pair>
+		<symbol>MYCN</symbol>
+		<principle accession="NM_005378.4" species="Homo sapiens"/>
+		<comparison accession="NM_001013096.1" species="Rattus norvegicus"/>
+		<description>Conserved G-quadruplexes in the 5’-, 3-UTRs and CDS. Oncogene involved in neuroblastomas.</description>
+		
+	</pair>
+	
+	<pair>
+		<symbol>ABR / RHOGAP1A</symbol>
+		<principle accession="NM_021962.2" species="Homo sapiens"/>
+		<comparison accession="NM_001103385.2" species="Drosophila melanogaster"/>
+		<description>Conserved G-quadruplex in 3'UTR. Gene involved in morphogenesis.</description>
+	</pair>
+	
+	<pair>
+		<symbol>ZNF219</symbol>
+		<principle accession="NM_001101672.1" species="Homo sapiens"/>
+		<comparison accession="NM_001007681.1" species="Rattus norvegicus"/>
+		<description>Nucleolin binding sites (G-quadruplexes) in UTRs and CDS. Regulatory G-quadruplexes in 5’UTR of a transcription factor gene.</description>
+		<ref link="http://nar.oxfordjournals.org/content/early/2011/07/06/nar.gkr488.abstract?ct=ct">Abdelmohsen et. al., 2011. Nucl. Acids Res.</ref>
+	</pair>
+	
+	<pair>
+		<symbol>TERC</symbol>
+		<principle accession="NR_001566.1" species="Homo sapiens"/>
+		<comparison accession="NR_033816.1" species="Macaca mulatta"/>
+		<description>Highly conserved and stable regulatory G-quadruplex in the 5’region of telomerase RNA component.</description>
+		<ref link="http://nar.oxfordjournals.org/content/39/21/9390.full">Lattmann et. al., 2011. Nucl. Acids Res.</ref>
+	</pair>
+	
+	<!-- 
+	<pair>
+		<symbol>Zic1</symbol>
+		<principle accession="NM_003412.3" species="Homo sapiens"/>
+		<comparison accession="NM_009573.3" species="Mus musculus"/>
+		<description>MUST BE REMOVED</description>
+	</pair>
+	 -->
+</pairs>

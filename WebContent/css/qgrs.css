@@ -1,0 +1,434 @@
+
+body {
+	width:100%;
+	font-family: "Verdana", Verdana, Arial, sans-serif; 
+	margin:0;
+	padding:0px;
+	height:100%;
+	background-color:#F0F0F0;
+}
+html { padding:0;margin:0;}
+
+
+
+#heading {
+	height:30px;
+	color:white;
+	margin:0px;
+	padding-left:0;
+	padding-right:0;
+}
+
+#heading p {
+	vertical-align:middle;
+}
+
+#heading-logo {
+	float:left;
+	margin:3px;
+}
+
+.container {
+	margin:0.5em;
+	padding-left:0.5em;
+	padding-right:0.5em;
+}
+
+.insert {
+	background-color:#FDF6D1;
+	border-style:solid;
+	border-width:1px;
+	border-color:  #F9E577;
+	float:right;
+	font-size: 10pt;
+	width:22em;
+}
+.messageInsert {
+	background-color:white;
+	border-style:solid;
+	border-width:3px;
+	border-color:  #FFE4B2;
+	width:85%;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:2em;
+	margin-bottom:1em;
+	padding:3em;
+	padding-top:0;
+}
+
+
+.topContainer {
+	font-size: 10pt;
+	background-color:white;
+	border-style:solid;
+	border-width:1px;
+	border-color:  #C0C0C0;
+	padding-bottom:1.5em;
+}
+
+.outputContainer{
+	border-style:solid;
+	border-width:1px;
+	border-color:  #C0C0C0;
+	font-size: 8pt;
+	background-color:#2B3856;
+	color:white;
+}
+
+
+
+
+.outputContainer table th, .outputContainer table td {
+	border: 0px solid black;
+	text-align:center;
+}
+td.partition {
+	border-right-color:	#2B3856;
+	border-right-style: solid;
+	border-right-width: 3px;
+}
+
+.highlight {
+  background-color: #FFE4B2/*#6D7B8D*/;
+ }
+  .alert {
+  	font-size:8pt;
+ 	width:90%;
+ 	text-align:center;
+ 	margin-left:auto;
+ 	margin-right:auto;
+ 	background-color: white;
+ 	padding:0.5em;
+ 	border: solid thin red;
+ }
+ .warning {
+ 	width:50%;
+ 	margin-left:auto;
+ 	margin-right:auto;
+ 	background-color: #FFE4B2;
+ 	padding:0.5em;
+ 	border: solid thin #FFCC80;
+ 	position:absolute;
+ 	top:0;
+ 	left:400px;
+ 	margin-top:0;
+ }
+
+.table {
+	font-size:8pt;
+	width:100%;
+	border-collapse:collapse;
+	border: 0px solid black;
+}
+.matchSection {
+	white-space:pre;
+	padding:0px;
+	margin:0px;
+	
+}
+.sequenceSection {
+	font-family: monospace;
+	font-size:8pt;
+	background-color:white;
+	margin:0px;
+}
+.sequenceContainer table {
+	border-collapse:collapse;
+	margin:0;
+} 
+.sequenceContainer {
+	padding-top:0.5em;
+}
+.noGapIndex{
+	font-family: "Verdana", Verdana, Arial, sans-serif; 
+	color:blue;
+	font-size:8pt;
+}
+
+#infoDetails {
+	background-color:#2B3856; 
+	margin:1em; 
+	padding:3px; 
+	display:none;
+}
+
+#infoTable {
+	width:100%;
+	font-size:8pt;
+	border-collapse:collapse;
+}
+#geneDetailsTable {
+	width:100%;
+	font-size:12pt;
+	border-collapse:collapse;
+}
+#geneDetailsTable td {
+	padding:1em;
+}
+#infoTable thead th {
+	color:white;
+	background-color:	#2B3856;
+}
+
+#statsTable {
+	width:100%;
+	font-size:14pt;
+	border-collapse:collapse;
+}
+#statsTable td {
+	padding:1em;
+	padding-left:3em;
+}
+
+#clearAll {
+	font-size:smaller;
+	margin-left:1em;
+}
+
+
+tbody tr.odd {
+	background-color:white;
+}
+#infoTable tbody tr.even {
+	background-color:#EEEEEE;
+}
+#statsTable tbody tr.even {
+	background-color:#EEEEEE;
+}
+#geneDetailsTable tbody tr.even {
+	background-color:#EEEEEE;
+}
+
+.pairTable tbody tr.even td {
+	border-top:solid thin #F0D1B2;
+	border-bottom:solid thin #F0D1B2;
+	background-color:#FFF6E6;
+}
+
+
+.pairTable tbody tr.even {
+	
+}
+.pairTable tbody tr td.selectedRow {
+	background-color:#FFCC80;
+}
+
+#browseBar {
+	border:solid thin #F0D1B2;
+	background-color:	#2B3856;
+}
+
+.filterCriteriaSubPanel {
+	float:left;
+	margin:0.5em;
+	padding:0em;
+	
+	background-color:#FFF6E6;
+	border:solid thin #F0D1B2;
+}
+.filterCriteriaSubPanel table {
+	width:100%;
+	
+}
+.filterCriteriaSubPanel table tr td {
+	padding-left:0.5em;
+	padding-right:0.5em;
+	font-size:x-small;
+	padding-top:0.3em;
+	padding-bottom:0.3em;
+}
+.filterCriteriaSubPanel table tr th {
+	padding-left:0.5em;
+	padding-right:0.5em;
+	font-size:x-small;
+	padding-top:0.3em;
+	padding-bottom:0.3em;
+}
+.filterCriteriaSubPanel label
+{
+	font-size:x-small;
+}
+caption {
+	background-color:#F0D1B2;
+	margin:0px;
+	
+}
+
+#checkCriteria {
+	padding-top:0.2em; color:orange;
+}
+.filterCriteriaSubPanel input, .filterCriteriaSubPanel select 
+{
+	font-size:x-small; 
+	display:inline;
+}
+.subcontainer {
+	margin:0.5em;
+	padding-left:0.5em;
+	padding-right:0.5em;
+	border-top:solid thin #F0D1B2;
+	border-bottom:solid thin #F0D1B2;
+	background-color:#FFF6E6;
+	font-size:x-small;
+}
+
+#geneDetailsTable {
+	border-color:	#404C67;
+	border-style: solid;
+	border-width: 6px;
+}
+.pairTable * * td.partition, .pairTable * * th.partition{
+	border-right-color:	#404C67;
+	border-right-style: solid;
+	border-right-width: 6px;
+	padding-left:0.5em;
+}
+
+td.partition, th.partition{
+	border-right-color:	#404C67;
+	border-right-style: solid;
+	border-right-width: 6px;
+	padding-left:0.5em;
+}
+
+
+.idCol {padding-left:1em;width:100px}
+.geneCol {padding-left:1em;width:200px}
+.tetradsCol {padding-left:1em;width:75px}
+.positionCol {padding-left:1em;width:100px}
+.regionCol {padding-left:1em;width:150px}
+.gScoreCol {padding-left:1em;width:150px}
+.hScoreCol {padding-left:1em;}
+
+
+.pairTable thead th { text-align:left;background-color:#404C67;color:white;padding-bottom:0.5em}
+#pairTableHeader, .pairTable { font-size:8pt;margin:0}
+#infoTable * tr .col1 { width:20%; }
+#infoTable * tr .col2 { width:40%; }
+#infoTable * tr .col3 { width:40%; }
+
+
+.outputContainer table thead, .outputContainer table tbody {
+	font-size:8pt;
+	
+}
+.outputContainer table thead {
+	color:white;
+}
+.outputContainer table tr.odd {
+	background-color:white;
+}
+.outputContainer table tr.even {
+	background-color:#EEEEEE;
+}
+form {
+	margin:0;padding:0;
+}
+
+label { margin-right:2em;}
+
+
+.topContainer p { margin-bottom:5px;margin-top:5px;padding-bottom:0px;padding-top:0px}
+
+#pagination {
+	width:100%;
+	font-size:8pt;
+	font-weight:normal;
+}
+
+.filterContainer {
+	font-size: 8pt;
+	background-color:#FDF6D1;
+	border-style:solid;
+	border-width:1px;
+	border-color:  #F9E577;
+}
+
+.homologyMapContainer{
+	background-color:#EBEBFF;
+	border-style:solid;
+	border-width:1px;
+	border-color:  #C2C2FF;
+}
+
+.container h1 {
+	font-size:12pt;
+	margin-top:3px;
+	margin-bottom:5px;	
+}
+
+.insert h1 {
+	font-size:12pt;
+	margin-top:1em;
+}
+
+.container h1 a {
+	text-decoration:  none;
+	color:black;
+	margin-top:1em;
+}
+
+/* Utility Styles */
+.shadow {
+	-moz-box-shadow: 1px 3px 4px #383838;
+	-webkit-box-shadow: 1px 3px 4px #383838;
+	box-shadow: 1px 3px 4px #383838;
+	behavior: url(../css/pie/PIE.htc);
+}
+
+.rounded-corners {
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    behavior: url(../css/pie/PIE.htc);
+}
+
+.rounded-top {
+	  -moz-border-top-radius: 5px;
+    -webkit-border-top-radius: 5px;
+    -khtml-border-top-radius: 5px;
+    border-top-radius: 5px;
+    border-radius: 5px 5px 0px 0px; 
+    behavior: url(../css/pie/PIE.htc);
+}
+.rounded-bottom {
+	  -moz-border-bottom-radius: 5px;
+    -webkit-border-bottom-radius: 5px;
+    -khtml-border-bottom-radius: 5px;
+    border-radius: 0px 0px 5px 5px; 
+    behavior: url(../css/pie/PIE.htc);
+}
+
+
+
+.selectedBase {
+	font-weight:bold;
+	background-color: #FFCC80;/*#FFFF66;*/
+	color:#754719;
+}
+
+.tetrad {
+	text-decoration:underline;
+	color:black;
+}
+
+.pager {
+	color:orange;
+ 	
+	
+}
+
+/*
+.scroll-pane { overflow: auto; }
+.scroll-content { width: 44400px; float: left; }
+.scroll-content-item { width:215px; float: left; margin: 0px; margin-bottom:10px; }
+* html .scroll-content-item { display: inline; } 
+.scroll-bar-wrap { clear: left; padding: 0 4px 0 2px; margin: 0px 50px 0px 50px; }  
+.scroll-bar-wrap .ui-slider { background: none; border:0; height: 1em; margin: 0 auto;  }
+.scroll-bar-wrap .ui-handle-helper-parent { position: relative; width: 100%; height: 100%; margin: 0 auto; }
+.scroll-bar-wrap .ui-slider-handle { top:.2em; height: .5em; width:300px;}
+.scroll-bar-wrap .ui-slider-handle .ui-icon { margin: -8px auto 0; position: relative; top: 50%; }
+*/
+	

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<glossary>
+	<entry>
+		<key>G-quadruplex</key>
+		<name>G-quadruplex</name>
+		<full>A three dimensional structure consisting of tetrads of G's connected by Hoogsteen bonds. Each tetrad is formed by taking one G from each G-tract. The size of the G-tract determines the number of tetrads found in the quadruplex.</full>
+		<brief>A three dimensional structure consisting of tetrads of G's connected by Hoogsteen bonds.</brief>
+	</entry>
+	
+	<entry>
+		<key>QGRS</key>
+		<name>QGRS</name>
+		<full>GRS that have the potential to form G-quadruplex. The pattern for a QGRS is four tracts of G's connected by arbitrary bases between each tract.</full>
+		<brief>G-Rich Sequence that has the potential to form a G-quadruplex.</brief>
+	</entry>
+	<entry>
+		<key>GRS</key>
+		<name>GRS</name>
+		<full>General term for a G-Rich Sequence.</full>
+		<brief>General term for a G-Rich Sequence.</brief>
+	</entry>
+	<entry>
+		<key>G-Tract</key>
+		<name>G-Tract</name>
+		<full>The set of G's that form a tetrad, the foundation for the G-quadruplex structure. There are four such tracts in a quadruplex. Each tract will be of the same size in a particular quadruplex, and in any case must contain at least two G's.</full>
+		<brief>The set of G's that form a tetrad, the foundation for the G-quadruplex structure.</brief>
+	</entry>
+	<entry>
+		<key>G-Tetrad</key>
+		<name>G-Tetrad</name>
+		<full>Square co-planar arrays of four guanine bases each within the G-quadruplex. Stabilized by Hoogsteen hydrogen bonding between the guanine bases. The G-quadruplex structure is composed of stacked G-tetrads. </full>
+		<brief>Square co-planar arrays of four guanine bases each within the G-quadruplex.</brief>
+	</entry>
+	<entry>
+		<key>GapLoop</key>
+		<name>Gap or Loop</name>
+		<full>The part of a QGRS that lies between two G-tracts. For example, in the QGRS, (GG)GTA(GG)C(GG)TGA(GG), the four G-tracts are in parentheses, so the three gaps are GTA, C, TGA. Note: up to one gap may be of length zero.</full>
+		<brief>The part of a QGRS that lies between two G-groups.</brief>
+	</entry>
+	<entry>
+		<key>G-Score</key>
+		<name>G-Score</name>
+		<full>Each QGRS is assigned a score based on a system which rewards an arrangement of 'G's that is likely to form a stable unimolecular quadruplex. For calculation of G-scores, the size and distribution of the gaps in the predicted QGRS is taken into consideration. Also, the larger the size of the G-tracts, the higher the score. The computed G-scores are dependent on the user selected maximum QGRS length. The highest possible G-score, using the default maximum QGRS length of 45, and other restrictions, is 180.</full>
+		<brief>Evaluates the likelihood of a QGRS to form a stable G-quadruplex structure.</brief>
+	</entry>
+	<entry>
+		<key>Non-overlapping-QGRS</key>
+		<name>Non-overlapping QGRS </name>
+		<full>Two sequences are said to be non-overlapping if their positions in the nucleotide sequence do not overlap. </full>
+		<brief>Two sequences are said to be non-overlapping if their positions in the nucleotide sequence do not overlap. </brief>
+	</entry>
+	<entry>
+		<key>OverlappingQGRS</key>
+		<name>Overlapping QGRS</name>
+		<full>Two QGRS are said to overlap if their positions in the nucleotide sequence overlap. </full>
+		<brief>Two QGRS are said to overlap if their positions in the nucleotide sequence overlap. </brief>
+	</entry>
+	<entry>
+		<key>HomologyScore</key>
+		<name>Homology Score</name>
+		<full>The Homology Score evaluates a pair of QGRS on two aligned homologous nucleotide sequences for their evolutionary conservation. The scoring assigns the following weightages: 65% for QGRS overlap on the aligned sequences, 20% to tetrad similarity, 10% for loop length similarity, and 5% for the total length similarity between QGRS pairs. Homology score ranges between 0 and 1, where 1 indicates a very high level of evolutionary conservation</full>
+		<brief>Evaluates a pair of QGRS on two aligned orthologous nucleotide sequences  for their evolutionary conservation. </brief>
+	</entry>
+	<entry>
+		<key>Principle-mRNA</key>
+		<name>Principal mRNA</name>
+		<full>The nucleotide sequence which is identified by the user as primary. </full>
+		<brief>The nucleotide sequence which is identified by the user as primary. </brief>
+	</entry>
+	<entry>
+		<key>Comparison-mRNA</key>
+		<name>Comparison mRNA</name>
+		<full>The nucleotide sequence which will be aligned and compared to the primary mRNA sequence. </full>
+		<brief>The nucleotide sequence which will be aligned and compared to the primary mRNA sequence. </brief>
+	</entry>
+	<entry>
+		<key>Semi-GlobalAlignment</key>
+		<name>Semi-Global Alignment</name>
+		<full>A global pairwise sequence alignment (such as by the method of Needleman and Wunsch) which, however, does not penalize the terminal gaps. This method is useful for a meaningful comparison of homoogous mRNA sequences which have significantly different lengths of UTRs (Untranslated Regions). </full>
+		<brief>A pairwise sequence alignment that does not penalize the terminal gaps.</brief>
+	</entry>
+	
+	<entry>
+		<key>CDS</key>
+		<name>CDS</name>
+		<full>Region of the mRNA which codes for a protein.</full>
+		<brief>Region of the mRNA which codes for a protein.</brief>
+	</entry>
+	
+	<entry>
+		<key>5UTR</key>
+		<name>5' UTR</name>
+		<full>Untranslated Region of the mRNA upstream of the CDS. </full>
+		<brief>Untranslated Region of the mRNA upstream of the CDS. </brief>
+	</entry>
+	
+	<entry>
+		<key>3UTR</key>
+		<name>3' UTR</name>
+		<full>Untranslated Region of the mRNA downstream of the CDS.  </full>
+		<brief>Untranslated Region of the mRNA downstream of the CDS.  </brief>
+	</entry>
+	
+	<entry>
+		<key>mrnaId</key>
+		<name>mRNA ID</name>
+		<full>The number corresponding to the accession number of a specific mRNA on the National Center for Biotechnology Information (NCBI) Database.</full>
+		<brief>The number corresponding to the accession number of a specific mRNA on the National Center for Biotechnology Information (NCBI) Database.</brief>
+	</entry>
+	
+	<entry>
+		<key>geneSymbol</key>
+		<name>Gene Symbol</name>
+		<full>A unique abbreviation of a gene name formally assigned by the HUGO Gene Nomenclature Committee.</full>
+		<brief>A unique abbreviation of a gene name formally assigned by the HUGO Gene Nomenclature Committee.</brief>
+	</entry>
+	
+	<entry>
+		<key>sequenceSimilarity</key>
+		<name>Sequence Similarity</name>
+		<full>A percentage value computed for a pair of aligned mRNA sequence homologs that assesses the similarity of the nucleotide sequence.</full>
+		<brief>A percentage value computed for a pair of aligned mRNA sequence homologs that assesses the similarity of the nucleotide sequence.</brief>
+	</entry>
+	
+	<entry>
+		<key>qgrsId</key>
+		<name>QGRS ID</name>
+		<full>A unique number corresponding to a specific QGRS in the QGRS-H Database. It is derived by association with the mRNA ID of the nucleotide sequence on which the specific QGRS is located.</full>
+		<brief>A unique number corresponding to a specific QGRS in the QGRS-H Database. It is derived by association with the mRNA ID of the nucleotide sequence on which the specific QGRS is located.</brief>
+	</entry>
+	
+	<entry>
+		<key>ntPosition</key>
+		<name>Nt position</name>
+		<full>Refers to the nucleotide location of the QGRS in its parent mRNA sequence.</full>
+		<brief>Refers to the nucleotide location of the QGRS in its parent mRNA sequence.</brief>
+	</entry>
+	
+</glossary>
