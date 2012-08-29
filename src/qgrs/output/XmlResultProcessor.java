@@ -199,7 +199,7 @@ public class XmlResultProcessor extends ResultProcessor {
 				finalMatches.add(qs);
 			}
 		}
-		
+		System.out.println("Start-based overlap of homology condensed result set from " + matches.size() + " to " + finalMatches.size());
 		return finalMatches;
 	}
 	

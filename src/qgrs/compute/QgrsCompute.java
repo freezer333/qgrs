@@ -42,6 +42,10 @@ public class QgrsCompute{
 			this.identifyQgrs(pair.getComparison(), SeqTag.Comparison);
 			this.doAlignment(pair);
 			this.computeGappedIndexes(pair);
+			pair.getPrinciple().groupQuadruplexesIntoFamilies();
+			pair.getPrinciple().filterQuadruplexesForBestFamilyRepresentatives();
+			pair.getComparison().groupQuadruplexesIntoFamilies();
+			pair.getComparison().filterQuadruplexesForBestFamilyRepresentatives();
 			this.computeHomologyScores(pair);
 			
 			// QGRS Structures can't be cached until after all the computations are complete,
@@ -112,7 +116,6 @@ public class QgrsCompute{
 			cachedQgrs = this.cache.getQuadruplexes(seq);
 		}
 		if ( cachedQgrs == null || cachedQgrs.size() < 1) {
-			
 			this.gIdentifier.findGQuadruplexes(seq);
 		}
 		else {

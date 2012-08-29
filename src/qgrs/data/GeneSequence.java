@@ -34,6 +34,7 @@ public class GeneSequence implements Serializable{
 	private int sequenceLength; 
 	
 	private List<GQuadruplex> gQuads;
+	private List<GQuadFamily> quadruplexFamilies;
 	
 	
 	
@@ -179,6 +180,7 @@ public class GeneSequence implements Serializable{
 		this.buildBases(sequence);
 		
 		this.gQuads = new LinkedList<GQuadruplex>();
+		this.quadruplexFamilies = new LinkedList<GQuadFamily>();
 		this.richSequence = rs;
 		if ( rs == null ) {
 			this.directInput = true;
@@ -255,8 +257,39 @@ public class GeneSequence implements Serializable{
 		return bases.get(deadBase.getIndexWithoutGaps());
 	}
 
+	public void groupQuadruplexesIntoFamilies() {
+		for ( GQuadruplex q : this.gQuads ) {
+			boolean newFamily = true;
+			for ( GQuadFamily family : this.quadruplexFamilies ) {
+				if ( family.addIfBelongsIn(q)) {
+					newFamily = false;
+				}
+			}
+			if ( newFamily ) {
+				this.quadruplexFamilies.add(new GQuadFamily(q));
+			}
+		}
+		System.out.println(gQuads.size() + " G-Quadruplexes grouped into " + this.quadruplexFamilies.size() + " families");
+	}
+	public void filterQuadruplexesForBestFamilyRepresentatives() {
+		this.gQuads = new LinkedList<GQuadruplex>();
+		for ( GQuadFamily family : this.getQuadruplexFamilies() ) {
+			gQuads.add(family.getBest());
+		}
+	}
 	
+	public int getIndexOfGQuadruplex(GQuadruplex q) {
+		if ( this.gQuads.contains(q)) {
+			return this.gQuads.indexOf(q);
+		}
+		throw new RuntimeException("Quadruplex does not exist in this sequence");
+	}
 	
+	public List<GQuadFamily> getQuadruplexFamilies() {
+		return quadruplexFamilies;
+	}
+
+
 	public Range getCdsRange() {
 		return cds;
 	}

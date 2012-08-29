@@ -96,6 +96,8 @@ public class GQuadruplex implements Serializable{
 	}
 	
 	
+	
+	
 	public boolean in5UTR() {
 		return this.getRegion().contains("5'");
 	}

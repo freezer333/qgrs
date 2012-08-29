@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import qgrs.compute.CPortGQuadruplexIdentifier;
+import qgrs.compute.FamilyHomologyScorer;
 import qgrs.compute.GeneSequencePair;
 import qgrs.compute.GeneralAligner;
 import qgrs.compute.QgrsCompute;
@@ -136,7 +137,7 @@ public class AlignmentJob extends Job{
 	}
 	
 	void configureQgrsIdentification(QgrsCompute qAligner) {
-		StandardHomologyScorer bga = new StandardHomologyScorer(this);
+		FamilyHomologyScorer bga = new FamilyHomologyScorer(this);
 		bga.setCancelFlag(this.cancelFlag);
 		qAligner.setgAligner(bga);
 	}
