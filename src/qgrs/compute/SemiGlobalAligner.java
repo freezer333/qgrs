@@ -45,7 +45,7 @@ public class SemiGlobalAligner implements GeneralAligner{
 	}
 	public static final int A=0, G=1, C=2, T=3;
     
-	public static final int gapOpen=10,gapExtend=1;
+	public static final int gapOpen=50,gapExtend=1;
     
 								// A    G   C   T
 //original matrix
@@ -178,38 +178,52 @@ public class SemiGlobalAligner implements GeneralAligner{
 				this.statusHolder.setStatus(JobStage.Alignment_Calc, n / (float)(shorter*longer), null);
 				n++;
 
-				// START - TEMPORARY CHANGES TO TEST CODE!!! 
+				// CHANGES TO TEST CODE!!! 
 				//	int e = Math.max(matrixS.get(x, y-1) -gapOpen,matrixE.get(x, y-1)-gapExtend);
 				//	int f = Math.max(matrixS.get(x-1, y)-gapOpen,matrixF.get(x-1, y)-gapExtend);     
 
 				int e, f;
 
+				//no gap penalties in first column or row
 				if (x == shorter && y == longer){
 					e = matrixS.get(x, y-1);
 					f = matrixS.get(x-1, y);
 				}
 				else {
+					//no gap penalties in last column
 					if ( x == shorter){
 						e = matrixS.get(x, y-1);
-						// f = matrixS.get(x-1, y) -gapExtend;
-						f = Math.max(matrixS.get(x-1, y)-gapOpen,matrixF.get(x-1, y)-gapExtend);   
+
+						//without Gotoh
+						//f = matrixS.get(x-1, y) -gapExtend;
+						
+						//with Gotoh
+						f = Math.max(matrixS.get(x-1, y)-gapOpen - gapExtend,matrixF.get(x-1, y)-gapExtend);   
 					}
 					else {
+						//no gap penalties in last row
 						if ( y == longer){
-							// e = matrixS.get(x, y-1) - gapExtend;
-							e = Math.max(matrixS.get(x, y-1) -gapOpen,matrixE.get(x, y-1)-gapExtend);
+							//without Gotoh
+							//e = matrixS.get(x, y-1) - gapExtend;
+							
+							//with Gotoh
+							e = Math.max(matrixS.get(x, y-1) -gapOpen - gapExtend,matrixE.get(x, y-1)-gapExtend);
+							
 							f = matrixS.get(x-1, y);
 						}
 						else {
-						//	e = matrixS.get(x, y-1) -gapExtend;
-        				//	f = matrixS.get(x-1, y) -gapExtend;
-							e = Math.max(matrixS.get(x, y-1) -gapOpen,matrixE.get(x, y-1)-gapExtend);
-							f = Math.max(matrixS.get(x-1, y)-gapOpen,matrixF.get(x-1, y)-gapExtend);   
+							//without Gotoh
+							//e = matrixS.get(x, y-1) -gapExtend;
+							//f = matrixS.get(x-1, y) -gapExtend;
+						
+							//with Gotoh
+							e = Math.max(matrixS.get(x, y-1) -gapOpen - gapExtend,matrixE.get(x, y-1)-gapExtend);
+							f = Math.max(matrixS.get(x-1, y)-gapOpen - gapExtend,matrixF.get(x-1, y)-gapExtend);   
 						}
 					}
 				}
 
-				// END - TEMP CHANGES
+				// END - CHANGES
 
 				matrixE.put(x, y, e);
 				matrixF.put(x, y, f);
@@ -238,7 +252,7 @@ public class SemiGlobalAligner implements GeneralAligner{
         	this.statusHolder.setStatus(JobStage.Alignment_Apply,  (longer.length()-i) / (float)longer.length(), null);
         	int score = matrix.get(i, j);
         	int scorediag = matrix.get(i-1, j-1);
-        	if (score == scorediag + similar(longerArr[j-1], shorterArr[i-1]))
+        /*	if (score == scorediag + similar(longerArr[j-1], shorterArr[i-1]))
         	{
         		aOneA = longer.charAt(j-1) + aOneA;
         		aOneB = shorter.charAt(i-1) + aOneB;
@@ -255,7 +269,27 @@ public class SemiGlobalAligner implements GeneralAligner{
         		aOneA = "-" + aOneA;
         		aOneB = shorter.charAt(i-1) + aOneB;
         		i--;
-        	}        
+        	}    */
+        	
+        	if (score == matrixE.get(i, j))
+        	{
+        		aOneA = longer.charAt(j-1) + aOneA;
+        		aOneB = "-" + aOneB;
+        		j--;
+        	}
+        	else if(score == matrixF.get(i, j))
+        	{
+        		aOneA = "-" + aOneA;
+        		aOneB = shorter.charAt(i-1) + aOneB;
+        		i--;
+        	} 
+        	else if (score == scorediag + similar(longerArr[j-1], shorterArr[i-1]))
+        	{
+        		aOneA = longer.charAt(j-1) + aOneA;
+        		aOneB = shorter.charAt(i-1) + aOneB;
+        		i--;j--;                
+        	}
+        	
         }
         if ( this.cancelFlag.isRaised()) throw new CancelException();
         while(j > 0)
