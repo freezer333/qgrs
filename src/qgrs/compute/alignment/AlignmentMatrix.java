@@ -71,6 +71,7 @@ public class AlignmentMatrix {
 	
 	private AlignmentPath backtracePaths() {
 		AlignmentCell lastCell = m[lastColIndex][lastRowIndex];
+		AlignmentPath.nextPathId = 0;
 		AlignmentPath path = new AlignmentPath(rowSymbols, columnSymbols, lastCell, lastColIndex, lastRowIndex);
 		PriorityQueue<AlignmentPath> pq = new PriorityQueue<AlignmentPath>();
 		pq.offer(path);
@@ -78,9 +79,10 @@ public class AlignmentMatrix {
 		do {
 			path = pq.poll();
 			if ( path.isComplete() ) {
+				System.out.println("path " + path.getPathID() + " with " + path.getNumGapsOpenned() + " gap opennings completed");
 				return path;
 			}
-			System.out.println("processing cell " + path.getCurrentColumn() + "-" + path.getCurrentRow());
+			System.out.println("processing path " + path.getPathID() + " at cell " + path.getCurrentColumn() + "-" + path.getCurrentRow() + " with " + path.getNumGapsOpenned() + " gap opennings" );
 			LinkedList<AlignmentPath> newPaths = path.step(this);
 			for ( AlignmentPath newPath : newPaths) {
 				pq.add(newPath);
@@ -100,7 +102,7 @@ public class AlignmentMatrix {
 	}
 	
 	public void printDebug(AlignmentPath result) {
-		int cellLength = 12;
+		int cellLength = 5;
 		System.out.print(padLeft(" ", cellLength) + " |");
 		for ( int col = 0; col <= lastColIndex; col++ ) {
 			String p;
@@ -114,7 +116,7 @@ public class AlignmentMatrix {
 		}
 		System.out.println();
 		for ( int col = 0; col <= lastColIndex + 1; col++ ) {
-			System.out.print("---------------");
+			System.out.print("--------");
 		}
 		System.out.println();
 		for ( int row = 0; row <= lastRowIndex; row++ ) {
@@ -127,12 +129,12 @@ public class AlignmentMatrix {
 			}
 			System.out.print(padLeft(p, cellLength) + " |");
 			for ( int col = 0; col <= lastColIndex; col++ ) {
-				p = String.valueOf(m[col][row]);
+				p = String.valueOf(m[col][row].getScore());//String.valueOf(m[col][row]);
 				System.out.print(padLeft(p, cellLength) + " |");
 			}
 			System.out.println();
 			for ( int col = 0; col <= lastColIndex+1; col++ ) {
-				System.out.print("---------------");
+				System.out.print("--------");
 			}
 			System.out.println();
 		}

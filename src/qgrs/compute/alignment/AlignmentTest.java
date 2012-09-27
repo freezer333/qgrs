@@ -15,8 +15,8 @@ public class AlignmentTest {
 		// Aligner has gap opening penalty = -5 and gap extension = -1
 		SequenceAligner aligner = new SequenceAligner() ;
 		
-		GeneSequence a = GeneSequence.buildFromDirectInput("ATCGTGAC");
-		GeneSequence b = GeneSequence.buildFromDirectInput("TTCGGAG");
+		GeneSequence a = GeneSequence.buildFromDirectInput("ATCGTGACATCGTGACACACTTTGGCGG");
+		GeneSequence b = GeneSequence.buildFromDirectInput("TTCGGAGAGCTTTGCCAAATTCGGAG");
 		
 		aligner.align(new GeneSequencePair(a, b), null);
 	}
