@@ -1,5 +1,8 @@
 package qgrs.compute.alignment;
 
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+
 import qgrs.data.Base;
 import qgrs.data.BaseSymbol;
 import qgrs.data.GeneSequence;
@@ -39,7 +42,9 @@ public class AlignmentMatrix {
 	
 	public AlignmentPath computeBestAlignment() {
 		buildForward();
-		return backtracePaths();
+		AlignmentPath path = backtracePaths();
+		printDebug(path);
+		return path;
 	}
 	
 	private void buildForward() {
@@ -61,11 +66,26 @@ public class AlignmentMatrix {
 				m[col][row] = new AlignmentCell(buildParam(col, row));
 			}
 		}
-		printDebug();
+		
 	}
 	
 	private AlignmentPath backtracePaths() {
-		return null;
+		AlignmentCell lastCell = m[lastColIndex][lastRowIndex];
+		AlignmentPath path = new AlignmentPath(rowSymbols, columnSymbols, lastCell, lastColIndex, lastRowIndex);
+		PriorityQueue<AlignmentPath> pq = new PriorityQueue<AlignmentPath>();
+		pq.offer(path);
+		
+		do {
+			path = pq.poll();
+			if ( path.isComplete() ) {
+				return path;
+			}
+			System.out.println("processing cell " + path.getCurrentColumn() + "-" + path.getCurrentRow());
+			LinkedList<AlignmentPath> newPaths = path.step(this);
+			for ( AlignmentPath newPath : newPaths) {
+				pq.add(newPath);
+			}
+		} while (true) ;
 	}
 	
 	
@@ -79,8 +99,9 @@ public class AlignmentMatrix {
 	    return String.format("%1$" + n + "s", s);  
 	}
 	
-	public void printDebug() {
-		System.out.print(padLeft(" ", 5) + " |");
+	public void printDebug(AlignmentPath result) {
+		int cellLength = 12;
+		System.out.print(padLeft(" ", cellLength) + " |");
 		for ( int col = 0; col <= lastColIndex; col++ ) {
 			String p;
 			if ( col == 0 ) {
@@ -89,11 +110,11 @@ public class AlignmentMatrix {
 			else {
 				p = columnSymbols[col-1].toString();
 			}
-			System.out.print(padLeft(p, 5) + " |");
+			System.out.print(padLeft(p, cellLength) + " |");
 		}
 		System.out.println();
 		for ( int col = 0; col <= lastColIndex + 1; col++ ) {
-			System.out.print("-------");
+			System.out.print("---------------");
 		}
 		System.out.println();
 		for ( int row = 0; row <= lastRowIndex; row++ ) {
@@ -104,18 +125,20 @@ public class AlignmentMatrix {
 			else {
 				p = rowSymbols[row-1].toString();
 			}
-			System.out.print(padLeft(p, 5) + " |");
+			System.out.print(padLeft(p, cellLength) + " |");
 			for ( int col = 0; col <= lastColIndex; col++ ) {
-				p = String.valueOf(m[col][row].getScore());
-				System.out.print(padLeft(p, 5) + " |");
+				p = String.valueOf(m[col][row]);
+				System.out.print(padLeft(p, cellLength) + " |");
 			}
 			System.out.println();
 			for ( int col = 0; col <= lastColIndex+1; col++ ) {
-				System.out.print("-------");
+				System.out.print("---------------");
 			}
 			System.out.println();
 		}
 		System.out.println("Alignment Score -> " + m[lastColIndex][lastRowIndex].getScore());
+		System.out.println("Sequence A:  " + result.getSeq1());
+		System.out.println("Sequence B:  " + result.getSeq2());
 	}
 	
 	

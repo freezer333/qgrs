@@ -1,6 +1,5 @@
 package qgrs.compute.alignment;
 
-import java.util.Collection;
 import java.util.LinkedList;
 
 
@@ -23,16 +22,22 @@ class AlignmentCell {
 		this.topScore = value;
 	}
 	public AlignmentCell(int left, int top, int diag) {
-		this.diagonalScore = left;
-		this.leftScore = top;
-		this.topScore = diag;
+		this.diagonalScore = diag;
+		this.leftScore = left;
+		this.topScore = top;
 	}
+	
+	
 	public AlignmentCell(CellComputeParameter params) {
 		this.diagonalScore = diagonal(params);
 		this.leftScore = left(params);
 		this.topScore = top(params);
 	}
 	
+	@Override 
+	public String toString() {
+		return leftScore + "/" + this.diagonalScore + "/" + topScore + "=" + this.getScore();
+	}
 	public int getScore() {
 		return Math.max(Math.max(topScore, leftScore), diagonalScore);
 	}
