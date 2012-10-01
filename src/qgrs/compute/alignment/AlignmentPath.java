@@ -81,7 +81,6 @@ public class AlignmentPath implements Comparable{
 	@Override
 	public AlignmentPath clone() {
 		AlignmentPath p = new AlignmentPath(this.rowSeq, this.colSeq, score, currentColumn, currentRow, lastMove, this.numGapsOpenned, seq1.toString(), seq2.toString());
-	//	System.out.println("path " + this.getPathID() + " spawned path " + p.getPathID());
 		return p;
 	}
 	
@@ -99,7 +98,6 @@ public class AlignmentPath implements Comparable{
 		}
 		else {
 			// tie, expand/clone paths and process each with the corresponding sources.
-			//System.out.println("path " + this.getPathID() + " encountered " + sources.size() + "-way tie at col/row " + currentColumn + "/" + currentRow);
 			retval = this.expand(sources);
 			
 			for (int i = 0; i < sources.size(); i++ ) {
@@ -153,7 +151,6 @@ public class AlignmentPath implements Comparable{
 		if ( source != AlignmentCell.ScoreSource.DIAGONAL ) {
 			if ( lastMove != null && !source.equals(this.lastMove) ) {
 				this.numGapsOpenned++;
-				//System.out.println("path " + this.getPathID() + " openned gap, now has " + this.numGapsOpenned);
 			}
 		}
 		

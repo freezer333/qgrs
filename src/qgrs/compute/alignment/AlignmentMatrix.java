@@ -49,9 +49,7 @@ public class AlignmentMatrix {
 		if ( statusHolder != null ) statusHolder.setStatus(JobStage.Alignment_Calc, 0, "Building alignment matrix");
 		buildForward();
 		if ( statusHolder != null ) statusHolder.setStatus(JobStage.Alignment_Calc, 0.75, "Computing best alignment");
-		
 		AlignmentPath path = backtracePaths();
-		//printDebug(path);
 		return path;
 	}
 	
@@ -80,6 +78,7 @@ public class AlignmentMatrix {
 	private AlignmentPath computeNextPath(PriorityQueue<AlignmentPath> pq, LinkedList<AlignmentPath> newPaths, AlignmentPath last, int currentGaps) {
 		AlignmentPath continuedPath = null;
 		if ( newPaths.size() == 1 ) {
+			// only one result - just keep using it if it hasn't openned a gap.
 			if ( last == null && newPaths.get(0).getNumGapsOpenned() == currentGaps) {
 				continuedPath = newPaths.get(0);
 			}
