@@ -126,8 +126,8 @@ public class GeneSequencePair {
 					}
 				}
 			}
-
-			this.setSimilarityPercentage(matches / (last-first+1));
+			float smallest = Math.min(this.principle.getSequenceLength(), this.comparison.getSequenceLength());
+			this.setSimilarityPercentage(matches / smallest);
 		}
 		return this.alignmentRecord.getSimilarityPercentage();
 	}

@@ -473,7 +473,7 @@
 				
 				<div class="container" style="padding:0px">
 					<div class="ui-widget-header ui-corner-top" style="padding:0.25em">
-					<span style="float:right; margin-left:2em" data-help-key="help_sequenceViewer" class="context_help ui-icon ui-icon-info"/><span style="font-size:10pt;float:right"><b>Sequence Similarity</b>:   <xsl:value-of select="format-number(/qgrs/alignmentResults/pairResult/@alignmentPercent, '#.0%')"/></span>
+					<span style="float:right; margin-left:2em" data-help-key="help_sequenceViewer" class="context_help ui-icon ui-icon-info"/><span style="font-size:10pt;float:right"><b>Sequence Similarity</b>:   <xsl:value-of select="format-number(/qgrs/alignmentResults/pairResult/@alignmentPercent, '0.0%')"/></span>
 					Sequence View <span style="margin-left:2em;font-size:10pt; font-weight:normal">Principal mRNA <a target ="_blank" href="{/qgrs/alignmentResults/pairResult/principle/mrna/info/ncbiLink}"><xsl:value-of select="/qgrs/alignmentResults/pairResult/principle/mrna/info/@accessionNumber"/></a> x Comparison mRNA <a target ="_blank" href="{/qgrs/alignmentResults/pairResult/comparison/mrna/info/ncbiLink}"><xsl:value-of select="/qgrs/alignmentResults/pairResult/comparison/mrna/info/@accessionNumber"/></a></span>
 					</div>
 					<div class="ui-widget-content ui-corner-bottom" style="padding:0em">
