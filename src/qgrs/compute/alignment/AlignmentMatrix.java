@@ -6,6 +6,9 @@ import java.util.PriorityQueue;
 import qgrs.data.Base;
 import qgrs.data.BaseSymbol;
 import qgrs.data.GeneSequence;
+import qgrs.job.CancelFlag;
+import qgrs.job.JobStage;
+import qgrs.job.StatusHolder;
 import framework.diagnostic.MemoryReporter;
 
 public class AlignmentMatrix {
@@ -16,6 +19,8 @@ public class AlignmentMatrix {
 	private final AlignmentProperties props;
 	private final BaseSymbol [] columnSymbols;
 	private final BaseSymbol [] rowSymbols;
+	private static final int maxPaths = 500;
+	
 	
 	public AlignmentMatrix (GeneSequence gene1, GeneSequence gene2, AlignmentProperties alignmentProperites) throws Exception {
 		createMatrix(gene1.getSequenceLength()+1, gene2.getSequenceLength()+1);
@@ -40,10 +45,13 @@ public class AlignmentMatrix {
 	}
 	
 	
-	public AlignmentPath computeBestAlignment() {
+	public AlignmentPath computeBestAlignment(StatusHolder statusHolder, CancelFlag flag) {
+		if ( statusHolder != null ) statusHolder.setStatus(JobStage.Alignment_Calc, 0, "Building alignment matrix");
 		buildForward();
+		if ( statusHolder != null ) statusHolder.setStatus(JobStage.Alignment_Calc, 0.75, "Computing best alignment");
+		
 		AlignmentPath path = backtracePaths();
-		printDebug(path);
+		//printDebug(path);
 		return path;
 	}
 	
@@ -66,27 +74,72 @@ public class AlignmentMatrix {
 				m[col][row] = new AlignmentCell(buildParam(col, row));
 			}
 		}
-		
 	}
 	
+	
+	private AlignmentPath computeNextPath(PriorityQueue<AlignmentPath> pq, LinkedList<AlignmentPath> newPaths, AlignmentPath last, int currentGaps) {
+		AlignmentPath continuedPath = null;
+		if ( newPaths.size() == 1 ) {
+			if ( last == null && newPaths.get(0).getNumGapsOpenned() == currentGaps) {
+				continuedPath = newPaths.get(0);
+			}
+			else {
+				pq.add(newPaths.get(0));
+			}
+		}
+		else {
+			// two or three paths tied
+			if ( pq.size() >= maxPaths ) {
+				// pick a winner, can't evaluate all possible paths.
+				AlignmentPath furthest = null;
+				for ( AlignmentPath newPath : newPaths) {
+					if  ( furthest == null || newPath.distance() < furthest.distance() ) {
+						furthest = newPath;
+					}
+					else if ( furthest.distance() == newPath.distance() ) {
+						if ( furthest.getNumGapsOpenned() > newPath.getNumGapsOpenned()) {
+							furthest = newPath;
+						}
+					}
+				}
+				pq.add(furthest);
+			}
+			else {
+				// add them all
+				for ( AlignmentPath newPath : newPaths) {
+					if ( last == null && newPath.getNumGapsOpenned() == currentGaps) {
+						continuedPath = newPath;
+					}
+					else {
+						pq.add(newPath);
+					}
+				}
+			}
+		}
+		return continuedPath;
+	}
 	private AlignmentPath backtracePaths() {
 		AlignmentCell lastCell = m[lastColIndex][lastRowIndex];
 		AlignmentPath.nextPathId = 0;
 		AlignmentPath path = new AlignmentPath(rowSymbols, columnSymbols, lastCell, lastColIndex, lastRowIndex);
 		PriorityQueue<AlignmentPath> pq = new PriorityQueue<AlignmentPath>();
 		pq.offer(path);
-		
+		AlignmentPath continuedPath = null;
 		do {
-			path = pq.poll();
+			if ( continuedPath == null) {
+				path = pq.poll();
+			}
+			else {
+				path = continuedPath;
+			}
+			
 			if ( path.isComplete() ) {
-				System.out.println("path " + path.getPathID() + " with " + path.getNumGapsOpenned() + " gap opennings completed");
+				System.out.println("path " + path.getPathID() + " with " + path.getNumGapsOpenned() + " gap opennings completed.  Evaluated " + pq.size() + " possible paths");
 				return path;
 			}
-			System.out.println("processing path " + path.getPathID() + " at cell " + path.getCurrentColumn() + "-" + path.getCurrentRow() + " with " + path.getNumGapsOpenned() + " gap opennings" );
+			int currentGaps = path.getNumGapsOpenned();
 			LinkedList<AlignmentPath> newPaths = path.step(this);
-			for ( AlignmentPath newPath : newPaths) {
-				pq.add(newPath);
-			}
+			continuedPath = this.computeNextPath(pq, newPaths, continuedPath, currentGaps);
 		} while (true) ;
 	}
 	

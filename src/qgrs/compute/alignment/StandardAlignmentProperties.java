@@ -6,12 +6,12 @@ public class StandardAlignmentProperties implements AlignmentProperties {
 
 	@Override
 	public int getGapExtensionPenalty() {
-		return -1;
+		return -4;
 	}
 
 	@Override
 	public int getGapOpenningPenalty() {
-		return -5;
+		return -50;
 	}
 
 	@Override

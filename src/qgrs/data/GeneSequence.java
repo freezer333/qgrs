@@ -341,7 +341,15 @@ public class GeneSequence implements Serializable{
 	}
 	
 	
-	
+	public void setGaps(String gapped) {
+		for ( int i = 0; i < gapped.length(); i++ ) {
+			if (gapped.charAt(i) == '-') {
+				Base base=new Base();
+				base.setSymbol(BaseSymbol.Gap);
+				this.getBases().add(i, base);
+			}
+		}
+	}
 
 	//Inserts indels in the appropriate places so that a sequence with no gaps(before any 
 	//alignment) matches an alignedSequence

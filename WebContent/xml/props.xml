@@ -2,8 +2,8 @@
 <props>
 	<AlertMessage>
 	</AlertMessage>
-	<db>jdbc:h2:file:C:/qgrs-test/qgrsdb</db>
-	<!-- <db>jdbc:h2:file:/Users/sfrees/dev/qgrs/WebContent/database/qgrsdb</db> -->
+	<!-- <db>jdbc:h2:file:C:/qgrs-test/qgrsdb</db>-->
+	<db>jdbc:h2:file:/Users/sfrees/dev/qgrsdb</db> 
 	<!-- <db>jdbc:h2:file:/var/lib/tomcat5/webapps/db/qgrs2/qgrsdb</db> -->
 	
 	<db_drop>false</db_drop>

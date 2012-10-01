@@ -17,12 +17,19 @@ public class AlignmentPath implements Comparable{
 	int nextRowSymbol;
 	int nextColSymbol;
 	int pathID;
+	public final double gapOpenTolerance;
 	public static int nextPathId = 0; 
+	
+	private static final double gapOpenPercentTolerance = 0.01;
 	
 	boolean isComplete() {
 		return currentColumn == 0 && currentRow == 0;
 	}
 	
+	
+	public int distance() {
+		return this.currentColumn + this.currentRow;
+	}
 	
 	public int getPathID() {
 		return pathID;
@@ -47,6 +54,8 @@ public class AlignmentPath implements Comparable{
 		this.nextColSymbol = this.colSeq.length-1;
 		this.nextRowSymbol = this.rowSeq.length-1;
 		pathID = nextPathId++;
+		this.gapOpenTolerance = Math.min(colSeq.length, rowSeq.length)*gapOpenPercentTolerance;
+		System.out.println("Using gap openning tolerance of " + this.gapOpenTolerance);
 	}
 	private AlignmentPath (BaseSymbol [] rowSeq, BaseSymbol [] colSeq, 
 			int score, int col, int row, AlignmentCell.ScoreSource lastMove, int numGapOpenings, String seq1, String seq2){
@@ -65,14 +74,14 @@ public class AlignmentPath implements Comparable{
 		this.nextColSymbol = this.colSeq.length-1;
 		this.nextRowSymbol = this.rowSeq.length-1;
 		this.numGapsOpenned = numGapOpenings;
-		
+		this.gapOpenTolerance = Math.min(colSeq.length, rowSeq.length)*gapOpenPercentTolerance;
 		pathID = nextPathId++;
 	}
 	
 	@Override
 	public AlignmentPath clone() {
 		AlignmentPath p = new AlignmentPath(this.rowSeq, this.colSeq, score, currentColumn, currentRow, lastMove, this.numGapsOpenned, seq1.toString(), seq2.toString());
-		System.out.println("path " + this.getPathID() + " spawned path " + p.getPathID());
+	//	System.out.println("path " + this.getPathID() + " spawned path " + p.getPathID());
 		return p;
 	}
 	
@@ -90,8 +99,9 @@ public class AlignmentPath implements Comparable{
 		}
 		else {
 			// tie, expand/clone paths and process each with the corresponding sources.
-			System.out.println("path " + this.getPathID() + " encountered " + sources.size() + "-way tie at col/row " + currentColumn + "/" + currentRow);
+			//System.out.println("path " + this.getPathID() + " encountered " + sources.size() + "-way tie at col/row " + currentColumn + "/" + currentRow);
 			retval = this.expand(sources);
+			
 			for (int i = 0; i < sources.size(); i++ ) {
 				retval.get(i).process(matrix, curCell, sources.get(i));
 			}
@@ -143,7 +153,7 @@ public class AlignmentPath implements Comparable{
 		if ( source != AlignmentCell.ScoreSource.DIAGONAL ) {
 			if ( lastMove != null && !source.equals(this.lastMove) ) {
 				this.numGapsOpenned++;
-				System.out.println("path " + this.getPathID() + " openned gap, now has " + this.numGapsOpenned);
+				//System.out.println("path " + this.getPathID() + " openned gap, now has " + this.numGapsOpenned);
 			}
 		}
 		
@@ -194,8 +204,8 @@ public class AlignmentPath implements Comparable{
 			throw new RuntimeException("Comparison error for alignment path");
 		
 		int retval = this.numGapsOpenned - ((AlignmentPath) arg0).numGapsOpenned;
-		if ( retval == 0 ) {
-			return this.getPathID() - ((AlignmentPath) arg0).getPathID();
+		if ( Math.abs(retval) < gapOpenTolerance) {
+			return (this.distance()) - (((AlignmentPath) arg0).distance());
 		}
 		else return retval;
 	}
