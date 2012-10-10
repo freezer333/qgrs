@@ -50,6 +50,8 @@ public class AlignmentMatrix {
 		buildForward();
 		if ( statusHolder != null ) statusHolder.setStatus(JobStage.Alignment_Calc, 0.75, "Computing best alignment");
 		AlignmentPath path = backtracePaths();
+		
+		this.printDebug(path);
 		return path;
 	}
 	

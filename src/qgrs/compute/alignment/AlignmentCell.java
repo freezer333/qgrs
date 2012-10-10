@@ -77,6 +77,12 @@ class AlignmentCell {
 		}
 		else {
 			int openning = params.getLeft().getScore() + params.getCombinedGapPenalty();
+			if ( openning != params.getLeft().getLeftScore() ) {
+				openning += params.getCombinedGapPenalty();
+			}
+			else {
+				openning += params.getProps().getGapExtensionPenalty();
+			}
 			int extend = params.getLeft().getLeftScore() + params.getProps().getGapExtensionPenalty();
 			return Math.max(openning, extend);
 		}
@@ -86,7 +92,13 @@ class AlignmentCell {
 			return params.getTop().getScore();
 		}
 		else {
-			int openning = params.getTop().getScore() + params.getCombinedGapPenalty();
+			int openning = params.getTop().getScore();
+			if ( openning != params.getTop().getTopScore() ) {
+				openning += params.getCombinedGapPenalty();
+			}
+			else {
+				openning += params.getProps().getGapExtensionPenalty();
+			}
 			int extend = params.getTop().getTopScore() + params.getProps().getGapExtensionPenalty();
 			return Math.max(openning, extend);
 		}
