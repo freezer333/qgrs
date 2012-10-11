@@ -4,7 +4,9 @@ import jaligner.Alignment;
 import jaligner.Sequence;
 import jaligner.SmithWatermanGotoh;
 import jaligner.formats.Pair;
+import jaligner.matrix.Matrix;
 import jaligner.matrix.MatrixLoader;
+
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -52,7 +54,7 @@ public class JAlignerTest {
 			Sequence s1 = new Sequence(loadSequence1());
 			Sequence s2 = new Sequence(loadSequence2());
 	        
-	        Alignment alignment = SmithWatermanGotoh.align(s1, s2, MatrixLoader.load("BLOSUM62"), 10f, 0.5f);
+	        Alignment alignment = SmithWatermanGotoh.align(s1, s2, MatrixLoader.load("EDNAFULL"), 50f, 1f);
 	        System.out.println("Sequence1 starting at position " + alignment.getStart1());
 	        System.out.println("Sequence2 starting at position " + alignment.getStart2());
 	        

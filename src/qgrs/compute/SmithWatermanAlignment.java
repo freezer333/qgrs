@@ -31,7 +31,7 @@ public class SmithWatermanAlignment implements GeneralAligner {
 		Sequence s2 = new Sequence(pair.getComparison().getPureSequence());
 		if ( statusHolder != null ) statusHolder.setStatus(JobStage.Alignment_Calc, 0.5, "Computing alignment");
 		
-        Alignment alignment = SmithWatermanGotoh.align(s1, s2, MatrixLoader.load("BLOSUM62"), 50f, 1f);
+        Alignment alignment = SmithWatermanGotoh.align(s1, s2, MatrixLoader.load("EDNAFULL"), 50f, 1f);
         
         if ( statusHolder != null ) statusHolder.setStatus(JobStage.Alignment_Calc, 1, "Finalizing alignment");
 		

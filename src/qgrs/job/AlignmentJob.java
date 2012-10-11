@@ -7,8 +7,8 @@ import qgrs.compute.CPortGQuadruplexIdentifier;
 import qgrs.compute.FamilyHomologyScorer;
 import qgrs.compute.GeneSequencePair;
 import qgrs.compute.GeneralAligner;
+import qgrs.compute.JStacsAligner;
 import qgrs.compute.QgrsCompute;
-import qgrs.compute.SmithWatermanAlignment;
 import qgrs.data.GeneSequence;
 import qgrs.db.Cache;
 import qgrs.input.InputProvider;
@@ -121,7 +121,7 @@ public class AlignmentJob extends Job{
 	}
 	
 	void configureSemiGlobalAlignment(QgrsCompute qAligner) {
-		GeneralAligner gAligner = new SmithWatermanAlignment();//new SequenceAligner();
+		GeneralAligner gAligner = new JStacsAligner();//new SmithWatermanAlignment();//new SequenceAligner();
 		gAligner.setCancelFlag(this.cancelFlag);
 		// Configure the alignment process, choosing the appropriate algorithm for each step
 		qAligner.setAligner(gAligner);
