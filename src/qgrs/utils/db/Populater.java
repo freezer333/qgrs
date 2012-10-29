@@ -21,18 +21,6 @@ import framework.web.util.StringUtils;
 
 public class Populater {
 
-	class InputPair {
-		public String principle;
-		public String comparison;
-		public InputPair(String principle, String comparison) {
-			this.principle = principle;
-			this.comparison = comparison;
-		}
-		public void write(PrintWriter pw) {
-			pw.println(principle + "\t"+comparison);
-		}
-	}
-	
 	private final File inputFile;
 	private List<InputPair> pairs = new LinkedList<InputPair>();
 	HashSet<String> p = new HashSet<String>();
@@ -171,6 +159,8 @@ public class Populater {
 	// "47086420 x 169646278"
 	private String startoff = "22091458 x 118130386";
 	private boolean waitForStartOff = false;
+	
+	
 	public void populate() {
 		int max = 10000;
 		int count = 0;
