@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -43,9 +44,11 @@ public class SeedStage3 {
 			}
 		}
 		
-		System.out.println("\tComputing " + pairs.size() + " homologies to send to server");
+		int i = 1;
 		for ( InputPair pair : pairs) {
+			System.out.println("Stage 3 - Computing homology " + i + " of " + pairs.size() + " (" + new DecimalFormat("0.00%").format(((double)i)/pairs.size()) + ")");
 			computeAndSend(pair, conn);
+			i++;
 		}
 		System.out.println("Seeding Stage 3 Completed Successfully - " + complete + " computed, " + errors + " errors.");
 		

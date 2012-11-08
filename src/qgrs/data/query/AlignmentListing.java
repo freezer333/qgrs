@@ -76,7 +76,7 @@ public class AlignmentListing {
 	public static void fillQgrsMap(DatabaseConnection dc, QgrsQuery clause, HashMap<String, Integer> map) {
 		try {
 			String query = "SELECT geneId, COUNT(id) AS total FROM QGRS " + clause.toSql() + " GROUP BY geneId ";
-			System.out.println("QUERY DEBUG:  " + query);
+			//System.out.println("QUERY DEBUG:  " + query);
 			long start = System.nanoTime();
 			PreparedStatement s = dc.getConnection().prepareStatement(query);
 			clause.set(s);
@@ -85,7 +85,7 @@ public class AlignmentListing {
 				map.put(rs.getString("geneId"), rs.getInt("total"));
 			}
 			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 		}
 		catch (Exception e) {
 			throw new RuntimeException (e);
@@ -137,16 +137,16 @@ public class AlignmentListing {
 			PageHelper pager = new PageHelper(dbCriteria, count);
 			String query = "SELECT alignmentId, COUNT(id) AS total FROM QGRS_H " + homologyQuery.toSql() + " GROUP BY alignmentId";  
 			query += " ORDER BY alignmentId LIMIT " + dbCriteria.getPageLimit() + " OFFSET " + pager.getComputedOffset();
-			System.out.println("QUERY DEBUG:  " + query);
+			//System.out.println("QUERY DEBUG:  " + query);
 			long start = System.nanoTime();
 			s = dc.getConnection().prepareStatement(query);
 			rs = s.executeQuery();
 			while ( rs.next()) {
 				hMap.put(rs.getString("alignmentId"), rs.getInt("total"));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			System.out.println("RETURNED " + hMap.size() + " QGRH_H Alignments");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//System.out.println("RETURNED " + hMap.size() + " QGRH_H Alignments");
 		}
 		catch (Exception e) {
 			throw new RuntimeException (e);

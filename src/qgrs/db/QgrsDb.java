@@ -107,15 +107,15 @@ public class QgrsDb  extends DbTable {
 				return retval;
 			}
 			String query = "SELECT * FROM QGRS WHERE id IN(" + getCSL(qgrsIds)+ ")";
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			while ( rs.next()) {
 				retval.put(rs.getString("id"), new GQuadruplexRecord(rs));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);
@@ -126,8 +126,8 @@ public class QgrsDb  extends DbTable {
 	public List<GQuadruplexRecord> getRecords(QgrsQuery where, int limit, int offset) {
 		try {
 			String query = "SELECT * FROM QGRS " + where.toSql() + " ORDER BY id LIMIT " + limit + " OFFSET " + offset;
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			List<GQuadruplexRecord> retval = new LinkedList<GQuadruplexRecord>();
@@ -135,8 +135,8 @@ public class QgrsDb  extends DbTable {
 				
 				retval.add(new GQuadruplexRecord(rs));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);
@@ -145,13 +145,13 @@ public class QgrsDb  extends DbTable {
 	public int getRecordCount(QgrsQuery where) {
 		try {
 			String query = "SELECT COUNT(id) as total FROM QGRS " + where.toSql();
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			if ( rs.next()) {
 				return rs.getInt("total");
 			}

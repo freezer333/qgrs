@@ -77,16 +77,16 @@ public class HomologyRecordDb  extends DbTable {
 	public List<QgrsHomologyRecord> get(HomologyQuery where, int limit, int offset) {
 		try {
 			String query = "SELECT * FROM QGRS_H " + where.toSql() + " ORDER BY id LIMIT " + limit + " OFFSET " + offset;
-			System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			List<QgrsHomologyRecord> records = new LinkedList<QgrsHomologyRecord>();
 			while ( rs.next()) {
 				records.add(new QgrsHomologyRecord(rs));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return records;
 			
 		} catch ( Exception e) {
@@ -98,16 +98,16 @@ public class HomologyRecordDb  extends DbTable {
 		try {
 			
 			String query = "SELECT alignmentId, COUNT(*) as total FROM QGRS_H " + where.toSql() + " GROUP BY alignmentId";
-			System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			HashMap<String, Integer> retval = new HashMap<String, Integer> ();
 			while ( rs.next()) {
 				retval.put(rs.getString("alignmentId"), rs.getInt("total"));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);
@@ -116,12 +116,12 @@ public class HomologyRecordDb  extends DbTable {
 	public int getCount(HomologyQuery where) {
 		try {
 			String query = "SELECT COUNT(*) as total FROM QGRS_H " + where.toSql();
-			System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			if ( rs.next()) {
 				return rs.getInt("total");
 			}

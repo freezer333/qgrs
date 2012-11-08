@@ -15,7 +15,7 @@ public class DatabaseUpdate {
 	
 	public DatabaseUpdate (ResourceResolver r) {
 		params = new DatabaseConnectionParameters(AppProperties.getConnectionString(r), "sa", "sa");
-		drop = true;//AppProperties.dropTables(r);
+		drop = AppProperties.dropTables(r);
 	}
 	
 	public void update() {

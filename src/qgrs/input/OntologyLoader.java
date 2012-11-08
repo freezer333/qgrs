@@ -87,7 +87,7 @@ public class OntologyLoader {
 				System.out.println("Accession number -> " + accessionNumber + " could not be located via entrez");
 				return null;
 			}
-			System.out.println("Gene ID = " + geneId);
+			//System.out.println("Gene ID = " + geneId);
 			
 			fillOntologyData(oData, geneId);
 		}

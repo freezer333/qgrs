@@ -257,7 +257,7 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 		long s2 = 0;
 		//output method
 		double total = pair.getPrinciple().getQuadruplexFamilies().size();
-		System.out.println("QGRS Family Count:  " + pair.getPrinciple().getQuadruplexFamilies().size() + " x " + pair.getComparison().getQuadruplexFamilies().size());
+		//System.out.println("QGRS Family Count:  " + pair.getPrinciple().getQuadruplexFamilies().size() + " x " + pair.getComparison().getQuadruplexFamilies().size());
 		
 		for (GQuadFamily pFamily : pair.getPrinciple().getQuadruplexFamilies() ){
 			s1++;

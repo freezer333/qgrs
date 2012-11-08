@@ -98,15 +98,15 @@ public class AlignmentRecordDb extends DbTable  {
 		try {
 			List<AlignmentRecord> retval = new LinkedList<AlignmentRecord>();
 			String query = "SELECT * FROM GENE_A " + q.toSql();
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			while ( rs.next()) {
 				retval.add(new AlignmentRecord(rs));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);

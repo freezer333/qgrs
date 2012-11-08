@@ -158,16 +158,16 @@ public class GeneSequenceDb extends DbTable {
 				return retval;
 			}
 			String query = "SELECT geneId, COUNT(*) as total FROM QGRS "+qq.toSql() + " AND geneId IN(" + getCSL(accessionNumbers)+ ") GROUP BY geneId";
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			
 			while ( rs.next()) {
 				retval.put(rs.getString("geneId"),rs.getInt("total"));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);
@@ -177,16 +177,16 @@ public class GeneSequenceDb extends DbTable {
 		try {
 			
 			String query = "SELECT DISTINCT species FROM GENE ORDER BY species";
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			LinkedList<String> retval = new LinkedList<String>();
 			while ( rs.next()) {
 				retval.add(rs.getString("species"));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);
@@ -227,16 +227,16 @@ public class GeneSequenceDb extends DbTable {
 							side.toString()+" IN(" + getCSL(accessionNumbers)+ ") " + 
 							flipQ + " AND similarityPercentage >= " + minAlignmentScore +  
 							" GROUP BY "+ side.toString();
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			
 			while ( rs.next()) {
 				retval.put(rs.getString( side.toString()),rs.getInt("total"));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);
@@ -249,8 +249,8 @@ public class GeneSequenceDb extends DbTable {
 				return retval;
 			}
 			String query = "SELECT * FROM GENE WHERE accessionNumber IN(" + getCSL(accessionNumbers)+ ") ";
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			
@@ -261,8 +261,8 @@ public class GeneSequenceDb extends DbTable {
 						goDb.get(rs.getString(ACCESSION_NUMBER_COL)))
 						);
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);
@@ -272,8 +272,8 @@ public class GeneSequenceDb extends DbTable {
 	public List<GeneSequence> getAll(GeneQuery where, int limit, int offset) {
 		try {
 			String query = "SELECT * FROM GENE " + where.toSql() + " ORDER BY geneSymbol LIMIT " + limit + " OFFSET " + offset;
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			List<GeneSequence> retval = new LinkedList<GeneSequence>();
@@ -283,8 +283,8 @@ public class GeneSequenceDb extends DbTable {
 						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)), 
 						goDb.get(rs.getString(ACCESSION_NUMBER_COL))));
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);
@@ -293,13 +293,13 @@ public class GeneSequenceDb extends DbTable {
 	public int getCount(GeneQuery where) {
 		try {
 			String query = "SELECT COUNT(DISTINCT accessionNumber) as total FROM GENE "+ where.toSql() ;
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			if ( rs.next()) {
 				return rs.getInt("total");
 			}
@@ -312,8 +312,8 @@ public class GeneSequenceDb extends DbTable {
 	public List<GeneSequence> getAll(GeneQuery where) {
 		try {
 			String query = "SELECT * FROM GENE " + where.toSql();
-			System.out.println("QUERY DEBUG:  " + query);
-			long start = System.nanoTime();
+			//System.out.println("QUERY DEBUG:  " + query);
+			//long start = System.nanoTime();
 			PreparedStatement ps = dc.getConnection().prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			List<GeneSequence> retval = new LinkedList<GeneSequence>();
@@ -324,8 +324,8 @@ public class GeneSequenceDb extends DbTable {
 						goDb.get(rs.getString(ACCESSION_NUMBER_COL)))
 						);
 			}
-			double  elapsed = System.nanoTime() - start;
-			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
+			//double  elapsed = System.nanoTime() - start;
+			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
 			return retval;
 		} catch ( Exception e) {
 			throw new RuntimeException (e);

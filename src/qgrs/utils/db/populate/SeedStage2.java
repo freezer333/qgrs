@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 
 import org.biojava.bio.BioException;
 import org.biojava.bio.seq.db.IllegalIDException;
@@ -32,22 +33,26 @@ public class SeedStage2 {
 		// Select all genes, get species and populate.
 		String q = "SELECT COUNT(ID) FROM GENE WHERE Species=''";
 		ResultSet rs = conn.prepareStatement(q).executeQuery();
+		int total = 0;
 		while ( rs.next() ) {
-			System.out.println("\tApplying species data to " + rs.getInt(1) + " records.");
+			total = rs.getInt(1);
 			
 		}
 		q = "SELECT ID FROM GENE WHERE Species=''";
 		
 		rs = conn.prepareStatement(q).executeQuery();
+		int i = 1;
 		while ( rs.next() ) {
 			try {
+				System.out.println("Stage 2 - Geting species data for mRNA " + i + " of " + total + " (" + new DecimalFormat("0.00%").format(((double)i)/total) + ")");
+				
 				String id = rs.getString(1);
 				String species = getSpecies(id);
 				setSpecies(id, species, conn);
 				
 				// Must throttle to no abuse NCBI
 				Thread.sleep(1000);
-				
+				i++;
 			}
 			catch (Exception e) {
 				errors++;

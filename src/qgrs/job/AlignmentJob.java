@@ -71,7 +71,7 @@ public class AlignmentJob extends Job{
 		finally {
 			qAligner = null;
 			System.gc();
-			System.out.println("Job " + this.getId() + " completed or cancelled, resources reclaimed");
+			//System.out.println("Job " + this.getId() + " completed or cancelled, resources reclaimed");
 			cache.flushAndClose();
 		}
 	}

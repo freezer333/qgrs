@@ -62,7 +62,7 @@ public class QgrsCompute{
 			throw mex;
 		
 		}
-		System.out.println("Job Completed");
+		//System.out.println("Job Completed");
 		MemoryReporter.memoryReport();
 		return;
 	}
@@ -92,7 +92,7 @@ public class QgrsCompute{
 	
 	private void writeHomologyCache(GeneSequencePair pair, List<QgrsHomology> results) {
 		if ( !this.alignmentCached) {
-			System.out.println("Caching homologous quadruplex pairs");
+			//System.out.println("Caching homologous quadruplex pairs");
 			this.cache.putHomologyResults(pair.getAlignmentRecord(), results, pair.getPrinciple(), pair.getComparison());
 		}
 	}
@@ -141,7 +141,7 @@ public class QgrsCompute{
 		
 		MemoryReporter.memoryReport();
 		this.aligner.align(pair, this.statusHolder);
-		System.out.println("Alignment Complete");
+		//System.out.println("Alignment Complete");
 		MemoryReporter.memoryReport();
 		pair.setAlignmentBuildKey(BuildKey.Alignment);
 		pair.setDateAligned(new Date());

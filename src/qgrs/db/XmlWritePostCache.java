@@ -45,7 +45,7 @@ public class XmlWritePostCache extends XmlWriteCache {
 			FileOutputStream fos = new FileOutputStream(f);
 			GZipper zip = new GZipper();
 			byte [] zipped = zip.deflate(rawXmlContent);
-			System.out.println("Compressed " + new DecimalFormat("0.00").format(rawXmlContent.length()/(1024.0*1024.0)) + "MB into " + new DecimalFormat("0.00").format(zipped.length/(1024.0*1024.0)) + "MB for posting");
+			//System.out.println("Compressed " + new DecimalFormat("0.00").format(rawXmlContent.length()/(1024.0*1024.0)) + "MB into " + new DecimalFormat("0.00").format(zipped.length/(1024.0*1024.0)) + "MB for posting");
 			fos.write(zipped);
 			fos.close();
 			// write it to the file.

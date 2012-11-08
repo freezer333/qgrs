@@ -299,7 +299,7 @@ public class GeneSequence implements Serializable{
 				this.quadruplexFamilies.add(new GQuadFamily(q));
 			}
 		}
-		System.out.println(gQuads.size() + " G-Quadruplexes grouped into " + this.quadruplexFamilies.size() + " families");
+		//System.out.println(gQuads.size() + " G-Quadruplexes grouped into " + this.quadruplexFamilies.size() + " families");
 	}
 	public void filterQuadruplexesForBestFamilyRepresentatives() {
 		this.gQuads = new LinkedList<GQuadruplex>();
