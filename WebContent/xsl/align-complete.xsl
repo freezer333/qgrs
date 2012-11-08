@@ -391,6 +391,49 @@
 										</xsl:for-each>
 									</td>
 								</tr>
+								
+								<tr>
+									<td class="partition" >Functions</td>
+									<td class="partition" >
+										<xsl:for-each select="/qgrs/alignmentResults/pairResult/principle/mrna/info/ontologyData/go[type='Function']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+									<td>
+										<xsl:for-each select="/qgrs/alignmentResults/pairResult/comparison/mrna/info/ontologyData/go[type='Function']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+								</tr>
+								
+								<tr>
+									<td class="partition" >Process</td>
+									<td class="partition" >
+										<xsl:for-each select="/qgrs/alignmentResults/pairResult/principle/mrna/info/ontologyData/go[type='Process']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+									<td>
+										<xsl:for-each select="/qgrs/alignmentResults/pairResult/comparison/mrna/info/ontologyData/go[type='Process']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+								</tr>
+								
+								<tr>
+									<td class="partition" >Component</td>
+									<td class="partition" >
+										<xsl:for-each select="/qgrs/alignmentResults/pairResult/principle/mrna/info/ontologyData/go[type='Component']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+									<td>
+										<xsl:for-each select="/qgrs/alignmentResults/pairResult/comparison/mrna/info/ontologyData/go[type='Component']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+								</tr>
+								
 								<tr>
 									<td class="partition col1" >QGRS Mapped</td>
 									<td class="partition col2" ><xsl:value-of select="/qgrs/alignmentResults/pairResult/principle/mrna/@numQgrs"/></td>

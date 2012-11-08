@@ -246,10 +246,10 @@ public class Populater {
 	
 	public static void main(String[] args) {
 		//Populater p = new Populater("/Users/sfrees/workspace/qgrs/input.txt");
-		Populater p = new Populater("C:\\qgrs-test\\input.txt");
-		//Populater p = new Populater("C:\\dev\\qgrs\\qgrs\\Mus musculus.txt");
-		//p.populate();
-		p.splitFiles();
+		//Populater p = new Populater("C:\\qgrs-test\\input.txt");
+		Populater p = new Populater("C:\\dev\\qgrs\\qgrs\\Mus musculus.txt");
+		p.populate();
+		//p.splitFiles();
 	}
 
 }

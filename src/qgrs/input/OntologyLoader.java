@@ -1,4 +1,4 @@
-package qgrs.utils.db;
+package qgrs.input;
 
 import java.io.Reader;
 import java.io.StringReader;
@@ -15,6 +15,9 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jdom.xpath.XPath;
+
+import qgrs.data.OntologyData;
+import qgrs.utils.XmlPrinter;
 
 public class OntologyLoader {
 
@@ -76,18 +79,23 @@ public class OntologyLoader {
 	}
 	
 	public OntologyData getOntologyData(String accessionNumber) {
+		OntologyData oData = new OntologyData();
 		try {
-			OntologyData oData = new OntologyData();
+			
 			String geneId = getGeneId(accessionNumber);
+			if ( geneId == null ) {
+				System.out.println("Accession number -> " + accessionNumber + " could not be located via entrez");
+				return null;
+			}
 			System.out.println("Gene ID = " + geneId);
 			
 			fillOntologyData(oData, geneId);
-			return oData;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			return null;
 		}
+		
+		return oData;
 	}
 	
 	private void fillOntologyData(OntologyData oData, String geneId) throws Exception {
@@ -128,7 +136,12 @@ public class OntologyLoader {
 		Element idElement = (Element) XPath.selectSingleNode(doc, geneIdXpath);
 		
 		if ( idElement == null ) {
-			return null;
+			if ( accessionNumber.contains(".")) {
+				return getGeneId(accessionNumber.subSequence(0, accessionNumber.indexOf('.')).toString());
+			}
+			else {
+				return null;
+			}
 		}
 		return idElement.getText();
 	}

@@ -81,6 +81,34 @@
 								</td>
 							</tr>
 							
+							<tr>
+									<td class="partition" >Functions</td>
+									<td>
+										<xsl:for-each select="/qgrs/mrna/info/ontologyData/go[type='Function']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+									
+								</tr>
+								
+								<tr>
+									<td class="partition" >Process</td>
+									<td>
+										<xsl:for-each select="/qgrs/mrna/info/ontologyData/go[type='Process']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+								</tr>
+								
+								<tr>
+									<td class="partition" >Component</td>
+									<td>
+										<xsl:for-each select="/qgrs/mrna/info/ontologyData/go[type='Component']">
+											<span style="margin-right:0.25em;"><xsl:value-of select="term" />;</span>
+										</xsl:for-each>
+									</td>
+								</tr>
+							
 							
 						</tbody>
 						</table>

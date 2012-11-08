@@ -6,13 +6,14 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.biojavax.bio.seq.RichSequence;
 import org.jdom.Element;
+
+import qgrs.input.OntologyLoader;
 
 
 public class GeneSequence implements Serializable{
@@ -37,7 +38,7 @@ public class GeneSequence implements Serializable{
 	private List<GQuadFamily> quadruplexFamilies;
 	
 	
-	
+	private OntologyData ontologyData;
 	
 	
 	
@@ -66,14 +67,17 @@ public class GeneSequence implements Serializable{
 				polyASitesElement.addContent(r.writeElement(new Element("range")));
 			}
 			gene.addContent(polyASitesElement);
+			gene.addContent(this.getOntologyData().getXmlElement());
 		}
 		return gene;
 	}
 	
 	
-	public static GeneSequence buildFromResultSet(ResultSet rs, List<Range> polyASites, List<Range> polyASignals) {
+	public static GeneSequence buildFromResultSet(ResultSet rs, List<Range> polyASites, List<Range> polyASignals, OntologyData ontologyData) {
 		try {
-			return new GeneSequence(rs, polyASites, polyASignals);
+			GeneSequence gs = new GeneSequence(rs, polyASites, polyASignals);
+			gs.setOntologyData(ontologyData);
+			return gs;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -168,6 +172,15 @@ public class GeneSequence implements Serializable{
 			}
 		}
 		
+		this.ontologyData = new OntologyData();
+		if ( xml.getChild("ontologyData") != null) {
+			for ( Object o : xml.getChild("ontologyData").getChildren()) {
+				if (o instanceof Element) {
+					this.ontologyData.put(OntologyRecord.buildFromElement((Element)o));
+				}
+			}
+		}
+		
 		this.cds = Range.buildFromElement(xml.getChild("cds"));
 		this.utr5 = Range.buildFromElement(xml.getChild("utr5"));			
 		this.utr3 = Range.buildFromElement(xml.getChild("utr3"));
@@ -195,6 +208,7 @@ public class GeneSequence implements Serializable{
 			this.cds = null;
 			this.utr5 = null;			
 			this.utr3 = null;
+			this.ontologyData = new OntologyData();
 		}
 		else {
 			SequenceFeatureAdapter featuresAdapter = new SequenceFeatureAdapter(rs);
@@ -212,6 +226,10 @@ public class GeneSequence implements Serializable{
 			this.cds = new Range(featuresAdapter.getCDSStart(), featuresAdapter.getCDSEnd());
 			this.utr5 = new Range(1, cds.getStart()-1);			
 			this.utr3 = new Range(cds.getEnd()+1, this.sequenceLength);
+			
+			OntologyLoader olo = new OntologyLoader();
+			this.ontologyData = olo.getOntologyData(this.accessionNumber);
+			
 		}
 		
 	}
@@ -234,6 +252,18 @@ public class GeneSequence implements Serializable{
 		
 	}
 	
+	
+	
+	public OntologyData getOntologyData() {
+		return ontologyData;
+	}
+
+
+	public void setOntologyData(OntologyData ontologyData) {
+		this.ontologyData = ontologyData;
+	}
+
+
 	private void relinkQuadruplexes() {
 		ArrayList<Base> list=  this.buildNoGapList();
 		for ( GQuadruplex gq : this.gQuads ) {
@@ -499,6 +529,9 @@ public class GeneSequence implements Serializable{
 			root.addContent(polyAsite);
 		}
 
+		if ( this.getOntologyData() != null ) {
+			root.addContent(this.getOntologyData().getXmlElement());
+		}
 		
 		
 		return root;

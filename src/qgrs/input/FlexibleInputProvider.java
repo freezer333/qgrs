@@ -115,7 +115,7 @@ public class FlexibleInputProvider implements InputProvider {
 	
 	public String preCheck(){
 		
-		String sequenceToBig = "This application currently cannot perform alignments on mRNA sequences with more than 10000 bases.  We are sorry for the inconvenience and intend to add support for longer sequences in the future";
+		/*String sequenceToBig = "This application currently cannot perform alignments on mRNA sequences with more than 10000 bases.  We are sorry for the inconvenience and intend to add support for longer sequences in the future";
 		QGRSProgramInput input = getInput();
 		if ( this.errorMessage != null ) {
 			return this.errorMessage;
@@ -125,7 +125,7 @@ public class FlexibleInputProvider implements InputProvider {
 		}
 		if ( input.getComparisons().get(0).getBases().size() > MAX_SEQ_LENGTH) {
 			return (sequenceToBig + " (Sequence 2 has " + input.getComparisons().get(0).getBases().size() + " bases)"); 
-		}
+		}*/
 		
 		return null;
 	}
@@ -145,6 +145,7 @@ public class FlexibleInputProvider implements InputProvider {
 
 			switch ( seq1Type ) {
 			case Id:
+				System.out.println("Building from rich sequence 1");
 				input.setPrinciple(this.buildGeneSequenceFromId(this.seq1Id, ncbi));
 				break;
 			case Raw:
@@ -157,6 +158,7 @@ public class FlexibleInputProvider implements InputProvider {
 
 			switch ( seq2Type ) {
 			case Id:
+				System.out.println("Building from rich sequence 2");
 				comparisons.add(this.buildGeneSequenceFromId(this.seq2Id, ncbi));
 				break;
 			case Raw:

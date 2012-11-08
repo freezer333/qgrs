@@ -43,9 +43,11 @@ public class GeneSequenceDb extends DbTable {
 	final PreparedStatement selectPolyASiteStatement;
 	final PreparedStatement selectPolyASignalStatement;
 	
+	final GoDb goDb;
+	
 	public GeneSequenceDb(DatabaseConnection dc) {
 		this.dc = dc;
-		
+		this.goDb = new GoDb(dc);
 		this.insertStatement = createInsertStatement();
 		this.insertPolyASiteStatement = createPolyASiteInsertStatement();
 		this.insertPolyASignalStatement = createPolyASignalInsertStatement();
@@ -96,13 +98,16 @@ public class GeneSequenceDb extends DbTable {
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+		goDb.delete(s.getAccessionNumber());
 		this.dc.executeUpdate(this.deletePolyASignalStatement);
 		this.dc.executeUpdate(this.deletePolyASiteStatement);
 		
 		this.insertRanges(this.insertPolyASignalStatement, s.getAccessionNumber(), s.getPolyASignals());
 		this.insertRanges(this.insertPolyASiteStatement, s.getAccessionNumber(), s.getPolyASites());
-		
+		goDb.put(s.getAccessionNumber(), s.getOntologyData());
 		this.dc.executeUpdate(ps);
+		
+		
 	}
 	
 	private void insertRanges(PreparedStatement ps, String accessionNumber, List<Range> ranges) {
@@ -119,7 +124,8 @@ public class GeneSequenceDb extends DbTable {
 			if ( rs.next()) {
 				return GeneSequence.buildFromResultSet(rs, 
 						this.getPolyASites(acsessionNumber), 
-						this.getPolyASignals(acsessionNumber));
+						this.getPolyASignals(acsessionNumber), 
+						goDb.get(acsessionNumber));
 			}
 			else {
 				return null;
@@ -135,7 +141,8 @@ public class GeneSequenceDb extends DbTable {
 			while ( rs.next()) {
 				retval.add(GeneSequence.buildFromResultSet(rs, 
 						this.getPolyASites(rs.getString(ACCESSION_NUMBER_COL)), 
-						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)))
+						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)), 
+						goDb.get(rs.getString(ACCESSION_NUMBER_COL)))
 						);
 			}
 			return retval;
@@ -250,7 +257,8 @@ public class GeneSequenceDb extends DbTable {
 			while ( rs.next()) {
 				retval.add(GeneSequence.buildFromResultSet(rs, 
 						this.getPolyASites(rs.getString(ACCESSION_NUMBER_COL)), 
-						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)))
+						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)), 
+						goDb.get(rs.getString(ACCESSION_NUMBER_COL)))
 						);
 			}
 			double  elapsed = System.nanoTime() - start;
@@ -272,8 +280,8 @@ public class GeneSequenceDb extends DbTable {
 			while ( rs.next()) {
 				retval.add(GeneSequence.buildFromResultSet(rs, 
 						this.getPolyASites(rs.getString(ACCESSION_NUMBER_COL)), 
-						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)))
-						);
+						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)), 
+						goDb.get(rs.getString(ACCESSION_NUMBER_COL))));
 			}
 			double  elapsed = System.nanoTime() - start;
 			System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
@@ -312,7 +320,8 @@ public class GeneSequenceDb extends DbTable {
 			while ( rs.next()) {
 				retval.add(GeneSequence.buildFromResultSet(rs, 
 						this.getPolyASites(rs.getString(ACCESSION_NUMBER_COL)), 
-						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)))
+						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)), 
+						goDb.get(rs.getString(ACCESSION_NUMBER_COL)))
 						);
 			}
 			double  elapsed = System.nanoTime() - start;

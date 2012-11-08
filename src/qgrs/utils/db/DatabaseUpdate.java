@@ -15,7 +15,7 @@ public class DatabaseUpdate {
 	
 	public DatabaseUpdate (ResourceResolver r) {
 		params = new DatabaseConnectionParameters(AppProperties.getConnectionString(r), "sa", "sa");
-		drop = AppProperties.dropTables(r);
+		drop = true;//AppProperties.dropTables(r);
 	}
 	
 	public void update() {
@@ -79,6 +79,7 @@ public class DatabaseUpdate {
 				dropTable(conn, "GENE_A_SEQ");
 				dropTable(conn, "QGRS");
 				dropTable(conn, "QGRS_H");
+				dropTable(conn, "GO");
 			}
 		}
 		finally {
@@ -194,6 +195,15 @@ public class DatabaseUpdate {
 					")";
 			execute(conn, q);
 			System.out.println("QGRS_H Table Created");
+			
+			
+			q = "CREATE TABLE IF NOT EXISTS GO (" +
+					"accessionNumber  varchar(255), " + 
+					"goTerm  varchar(255), " + 
+					"goType   varchar(255)" + 
+					")";
+			execute(conn, q);
+			System.out.println("GO Table Created");
 			
 			
 		}
