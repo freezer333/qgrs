@@ -9,15 +9,27 @@ import org.jdom.output.XMLOutputter;
 public class XmlWriteFileCache extends XmlWriteCache {
 
 	private final File dir;
+	private final File destination;
 	
 	public XmlWriteFileCache(File rootDir) {
 		super();
 		this.dir = rootDir;
+		this.destination = null;
+	}
+	
+	public XmlWriteFileCache(File rootDir, File dest) {
+		super();
+		this.dir = rootDir;
+		this.destination = dest;
 	}
 
 	@Override
 	void handleXmlResult(Document xmlDoc) {
-		this.writeXml(xmlDoc, new File ( this.dir + "\\" + alignmentRecord.getPrinciple() + "_x_" + alignmentRecord.getComparison() + ".xml"));
+		File f = destination == null ? 
+				new File ( this.dir + "\\" + alignmentRecord.getPrinciple() + "_x_" + alignmentRecord.getComparison() + ".xml") :
+					destination;
+				
+		this.writeXml(xmlDoc, f);
 	}
 
 	private void writeXml (Document xml, File file) {

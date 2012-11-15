@@ -34,9 +34,10 @@ public class JStacsAligner implements GeneralAligner {
 
 		String[] symbols = {"A", "C", "G", "T", "-"};
 		DiscreteAlphabet abc = new DiscreteAlphabet( true, symbols );
+		
 		Sequence seq1 = Sequence.create( new AlphabetContainer( abc ), pair.getPrinciple().getPureSequence() );
 		Sequence seq2 = Sequence.create( new AlphabetContainer( abc ), pair.getComparison().getPureSequence() );
-		Costs costs = new SimpleCosts( 0, 1.5, 1);
+		Costs costs = new SimpleCosts( -1, 1.5, 1);
 		costs = new AffineCosts( 5, costs );
 		Alignment align = new Alignment( AlignmentType.SEMI_GLOBAL, costs );
 		
@@ -44,9 +45,23 @@ public class JStacsAligner implements GeneralAligner {
 			statusHolder.setStatus(JobStage.Alignment_Calc, 0.5,
 					"Computing alignment");
 
-		PairwiseStringAlignment a = align.getAlignment( seq1, seq2 );
-		pair.getPrinciple().setGaps(a.getAlignedString(0));
-		pair.getComparison().setGaps(a.getAlignedString(1));
+		PairwiseStringAlignment a = null;
+		if ( pair.getPrinciple().getPureSequence().length() <= pair.getComparison().getPureSequence().length()) {
+			// principle first
+			a = align.getAlignment( seq1, seq2 );
+			pair.getPrinciple().setGaps(a.getAlignedString(0));
+			pair.getComparison().setGaps(a.getAlignedString(1));
+		}
+		else {
+			// comparison first
+			a = align.getAlignment( seq2, seq1 );
+			pair.getPrinciple().setGaps(a.getAlignedString(1));
+			pair.getComparison().setGaps(a.getAlignedString(0));
+		}
+		
+		
+		
+		
 		if (statusHolder != null)
 			statusHolder.setStatus(JobStage.Alignment_Calc, 1,
 					"Finalizing alignment");

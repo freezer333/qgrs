@@ -11,7 +11,6 @@ public class AlignmentPercentageTest {
 
 	
 	private final String A = "---ATCGATCTCGGGAAATCC-----";
-	
 	private final String B = "------GATCTCGGGAAATCCCC---";
 	private final String C = "------G-ATCT-CGGGAAATCCCCA---";
 	private final String D = "------GGATCTCCGGGAAAGCCCCG---";
@@ -23,11 +22,11 @@ public class AlignmentPercentageTest {
 		assertEquals("100% Alignment Match failed", pair.getSimilarityPercentage(), 1, 0.00001);
 	}
 	@Test
-	public void testPerfectMatchUnevenEnds() {
+	public void testUnevenEnds() {
 		GeneSequence seqA = GeneSequence.buildFromDirectInput(A);
 		GeneSequence seqB = GeneSequence.buildFromDirectInput(B);
 		GeneSequencePair pair = new GeneSequencePair(seqA, seqB);
-		assertEquals("100% Alignment Match with uneven ends failed", pair.getSimilarityPercentage(), 1, 0.00001);
+		assertEquals("100% Alignment Match with uneven ends failed", pair.getSimilarityPercentage(), 15.0/18.0, 0.00001);
 	}
 	@Test
 	public void testMismatch() {

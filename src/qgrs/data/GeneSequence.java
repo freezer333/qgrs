@@ -371,7 +371,17 @@ public class GeneSequence implements Serializable{
 	}
 	
 	
-	public void setGaps(String gapped) {
+	public void setGaps(String gapped_unformatted) {
+		StringBuilder b = new StringBuilder() ;
+		for ( int i = 0; i < gapped_unformatted.length(); i++) {
+			char c = gapped_unformatted.charAt(i);
+			for ( BaseSymbol s : BaseSymbol.values() ) {
+				if ( s.toString().equalsIgnoreCase(String.valueOf(c))) {
+					b.append(c);
+				}
+			}
+		}
+		String gapped = b.toString();
 		for ( int i = 0; i < gapped.length(); i++ ) {
 			if (gapped.charAt(i) == '-') {
 				Base base=new Base();

@@ -1,0 +1,1847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qgrsResultSet>
+  <alignment-record id="NM_001127328.1xNM_001110816.1" alignmentBuildKey="1.0">
+    <principle>NM_001127328.1</principle>
+    <comparison>NM_001110816.1</comparison>
+    <similarityScore>0</similarityScore>
+    <similarityPercentage>0.73049104</similarityPercentage>
+    <dateAligned>Nov 14, 2012 2:29:27 PM</dateAligned>
+  </alignment-record>
+  <principle>
+    <gene directInput="false" accessionNumber="NM_001127328.1" sequenceLength="2627" tag="principle">
+      <giNumber>187960097</giNumber>
+      <geneSymbol>ACADM</geneSymbol>
+      <ncbiLink>http://www.ncbi.nlm.nih.gov/nuccore/NM_001127328.1</ncbiLink>
+      <geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</geneName>
+      <species>Homo sapiens</species>
+      <cds start="431" end="1708" />
+      <utr5 start="1" end="430" />
+      <utr3 start="1709" end="2627" />
+      <polyASignals>
+        <range start="2416" end="2421" />
+      </polyASignals>
+      <polyASites>
+        <range start="2442" end="2442" />
+        <range start="2615" end="2615" />
+      </polyASites>
+      <ontologyData>
+        <go>
+          <term>identical protein binding</term>
+          <type>Function</type>
+        </go>
+        <go>
+          <term>acyl-CoA dehydrogenase activity</term>
+          <type>Function</type>
+        </go>
+        <go>
+          <term>fatty-acyl-CoA binding</term>
+          <type>Function</type>
+        </go>
+        <go>
+          <term>flavin adenine dinucleotide binding</term>
+          <type>Function</type>
+        </go>
+        <go>
+          <term>medium-chain-acyl-CoA dehydrogenase activity</term>
+          <type>Function</type>
+        </go>
+        <go>
+          <term>isomerase activity</term>
+          <type>Function</type>
+        </go>
+        <go>
+          <term>mitochondrion</term>
+          <type>Component</type>
+        </go>
+        <go>
+          <term>mitochondrial matrix</term>
+          <type>Component</type>
+        </go>
+        <go>
+          <term>axon</term>
+          <type>Component</type>
+        </go>
+        <go>
+          <term>mitochondrial membrane</term>
+          <type>Component</type>
+        </go>
+        <go>
+          <term>response to drug</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>glycogen biosynthetic process</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>response to glucocorticoid stimulus</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>cellular lipid metabolic process</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>liver development</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>fatty acid beta-oxidation using acyl-CoA dehydrogenase</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>cardiac muscle cell differentiation</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>post-embryonic development</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>protein homotetramerization</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>response to starvation</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>oxidation-reduction process</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>small molecule metabolic process</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>carnitine metabolic process, CoA-linked</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>fatty acid beta-oxidation</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>response to copper ion</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>medium-chain fatty acid catabolic process</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>regulation of gluconeogenesis</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>response to cold</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>medium-chain fatty acid metabolic process</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>response to nutrient</term>
+          <type>Process</type>
+        </go>
+        <go>
+          <term>carnitine biosynthetic process</term>
+          <type>Process</type>
+        </go>
+      </ontologyData>
+    </gene>
+    <alignment>CGCAAGTCCCCCCACCGTTCAGCGCAACCGGGCCCTCCCAGCCCCGCCGCCGTCCCCCTCCCCCGCCCTGGCTCTCTTTCCGCGCTGCGGTCAGCCTCGGCGTCCCACAGAGAGGGCCAGAGGTGGAAACGCAGAAAACCAAACCAGGACTATCAGAGATTGCCCGGAGAGGGGATGCGACCCCTCCCCAGGTCGCAGCGACGGCGCACGCAAGGGTCACGGAGCATGCGTTGGCTACCCGGCGCCGGGGACCGCTGCCACCCCGCCTAGCGCAGCGCCCCGTCCTTCCGCAGCCCAACCGCCTCTTCCCGCCCCGCCCCATCCCGCCCACGGGCTCCAGTGGGCGGGACCAGAGGAGTCCCGCGTTCGGGGAGTATGTCAAGGCCGTGACCCGTGTATTATTGTCCGAGTGGCCGGAACGGGAGCCAACATGGCAGCGGGGTTCGGGCGATGCTGCAGGTGTTCTTTACAGGTCCTGAGAAGTATTTCTCGTTTTCATTGGAGATCACAGCATACAAAAGCCAATCGACAACGTGAACCAGGATTAGGATTTAGTTTTGAGTTCACCGAACAGCAGAAAGAATTTCAAGCTACTGCTCGTAAATTTGCCAGAGAGGAAATCATCCCAGTGGCTGCAGAATATGATAAAACTGGTGAATATCCAGTCCCCCTAATTAGAAGAGCCTGGGAACTTGGTTTAATGAACACACACATTCCAGAGAACTGTGGAGGTCTTGGACTTGGAACTTTTGATGCTTGTTTAATTAGTGAAGAATTGGCTTATGGATGTACAGGGGTTCAGACTGCTATTGAAGGAAATTCTTTGGGGCAAATGCCTATTATTATTGCTGGAAATGATCAACAAAAGAAGAAGTATTTGGGGAGAATGACTGAGGAGCCATTGATGTGTGCTTATTGTGTAACAGAACCTGGAGCAGGCTCTGATGTAGCTGGTATAAAGACCAAAGCAGAAAAGAAAGGAGATGAGTATATTATTAATGGTCAGAAGATGTGGATAACCAACGGAGGAAAAGCTAATTGGTATTTTTTATTGGCACGTTCTGATCCAGATCCTAAAGCTCCTGCTAATAAAGCCTTTACTGGATTCATTGTGGAAGCAGATACCCCAGGAATTCAGATTGGGAGAAAGGAATTAAACATGGGCCAGCGATGTTCAGATACTAGAGGAATTGTCTTCGAAGATGTGAAAGTGCCTAAAGAAAATGTTTTAATTGGTGACGGAGCTGGTTTCAAAGTTGCAATGGGAGCTTTTGATAAAACCAGACCTGTAGTAGCTGCTGGTGCTGTTGGATTAGCACAAAGAGCTTTGGATGAAGCTACCAAGTATGCCCTGGAAAGGAAAACTTTCGGAAAGCTACTTGTAGAGCACCAAGCAATATCATTTATGCTGGCTGAAATGGCAATGAAAGTTGAACTAGCTAGAATGAGTTACCAGAGAGCAGCTTGGGAGGTTGATTCTGGTCGTCGAAATACCTATTATGCTTCTATTGCAAAGGCATTTGCTGGAGATATTGCAAATCAGTTAGCTACTGATGCTGTGCAGATACTTGGAGGCAATGGATTTAATACAGAATATCCTGTAGAAAAACTAATGAGGGATGCCAAAATCTATCAGATTTATGAAGGTACTTCACAAATTCAAAGACTTATTGTAGCCCGTGAACACATTGACAAGTACAAAAATTAAAAAAATTACTGTAGAAATATTGAATAACTAGAACACAAGCCACTGTTTCAGCTCCAGAAAAAAGAAAGGGCTTTAACGTTTTTTCCAGTGAAAACAAATCCTCTTATATTAAATCTAAGCAACTGCTTATTATAGTAGTTTATACTTTTGCTTAACTCTGTTATGTCTCTTAAGCAGGTTTGGTTTTTATTAAAATGATGTGTTTTCTTTAGTACCACTTTACTTGAATTACATTAACCTAGAAAACTACATAGGTTATTTTGATCTCTTAAGATTAATGTAGCAGAAATTTCTTGGAATTTTATTTTTGTAATGACAGAAAAGTGGGCTTAGAAAGTATTCAAGATGTTACAAAATTTACATTTAGAAAATATTGTAGTATTTGAATACTGTCAACTTGACAGTAACTTTGTAGACTTAATGGTATTATT---------------------------------------------------------------------------------------------AAAGTTCTTTTTATTGCA---------------GTTTGGAAAGCATTTGTGAAACTTTCTGTTTG--------GCACAGAAACAGTCAAAATTTTGACA---TTCATATTCTCCTATTTTACAGCTACAAGAACTTTCTTGAAAATCTTATTTAATTCTGAGCCCAT------------------------ATTTCACTTACCTTATTTAAAATAAATCAATAAAGCTTGCCTTAAATTATTTTTATATGACTGTTGGTCTCTAGGTAGCCT-------------------------TTGGTCTATTGTAC------ACAATCTCATTTCATATGTTTGCAT-----TTTGGCAAAGAACTTAATAAAA--TTGTTCAGTGCTTATTATCATATCTTTCTGTA---TTTTTTCCAGGAAATTTCATTACTTCGTGTAATAGTGTATATTTCTTGTATTTACTATGATGAAAAAAGGTCGTTTTAATTTTGAATTGAATAAAGTTACCTGTTCATTTTTTATTAGATATTTTAAAGACTTCAGAAAATATAAATATGAAATAATTTAAAAAAAAAAAAAA</alignment>
+    <quadruplexes accessionNumber="NM_001127328.1">
+      <quadruplex id="NM_001127328.1.8">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>98</tetrad1>
+        <tetrad2>113</tetrad2>
+        <tetrad3>121</tetrad3>
+        <tetrad4>124</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>16</tetrad2_normalized>
+        <tetrad3_normalized>24</tetrad3_normalized>
+        <tetrad4_normalized>27</tetrad4_normalized>
+        <loop1Length>13</loop1Length>
+        <loop2Length>6</loop2Length>
+        <loop3Length>1</loop3Length>
+        <totalLength>28</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>24</score>
+        <sequenceSlice>GGCGTCCCACAGAGAGGGCCAGAGGTGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>98 - 126</position>
+        <distanceFromPolyASignal>2318</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.12">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>146</tetrad1>
+        <tetrad2>165</tetrad2>
+        <tetrad3>170</tetrad3>
+        <tetrad4>172</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>20</tetrad2_normalized>
+        <tetrad3_normalized>25</tetrad3_normalized>
+        <tetrad4_normalized>27</tetrad4_normalized>
+        <loop1Length>17</loop1Length>
+        <loop2Length>3</loop2Length>
+        <loop3Length>0</loop3Length>
+        <totalLength>28</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>19</score>
+        <sequenceSlice>GGACTATCAGAGATTGCCCGGAGAGGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>146 - 174</position>
+        <distanceFromPolyASignal>2270</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.13">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>165</tetrad1>
+        <tetrad2>170</tetrad2>
+        <tetrad3>172</tetrad3>
+        <tetrad4>190</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>6</tetrad2_normalized>
+        <tetrad3_normalized>8</tetrad3_normalized>
+        <tetrad4_normalized>26</tetrad4_normalized>
+        <loop1Length>3</loop1Length>
+        <loop2Length>0</loop2Length>
+        <loop3Length>16</loop3Length>
+        <totalLength>27</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>20</score>
+        <sequenceSlice>GGAGAGGGGATGCGACCCCTCCCCAGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>165 - 192</position>
+        <distanceFromPolyASignal>2251</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.40">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>213</tetrad1>
+        <tetrad2>220</tetrad2>
+        <tetrad3>232</tetrad3>
+        <tetrad4>240</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>8</tetrad2_normalized>
+        <tetrad3_normalized>20</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>5</loop1Length>
+        <loop2Length>10</loop2Length>
+        <loop3Length>6</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>31</score>
+        <sequenceSlice>GGGTCACGGAGCATGCGTTGGCTACCCGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>213 - 242</position>
+        <distanceFromPolyASignal>2203</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.68">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>220</tetrad1>
+        <tetrad2>232</tetrad2>
+        <tetrad3>240</tetrad3>
+        <tetrad4>248</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>13</tetrad2_normalized>
+        <tetrad3_normalized>21</tetrad3_normalized>
+        <tetrad4_normalized>29</tetrad4_normalized>
+        <loop1Length>10</loop1Length>
+        <loop2Length>6</loop2Length>
+        <loop3Length>6</loop3Length>
+        <totalLength>30</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGAGCATGCGTTGGCTACCCGGCGCCGGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>220 - 250</position>
+        <distanceFromPolyASignal>2196</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.71">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>232</tetrad1>
+        <tetrad2>240</tetrad2>
+        <tetrad3>246</tetrad3>
+        <tetrad4>248</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>9</tetrad2_normalized>
+        <tetrad3_normalized>15</tetrad3_normalized>
+        <tetrad4_normalized>17</tetrad4_normalized>
+        <loop1Length>6</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>0</loop3Length>
+        <totalLength>18</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>30</score>
+        <sequenceSlice>GGCTACCCGGCGCCGGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>232 - 250</position>
+        <distanceFromPolyASignal>2184</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.108">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>332</tetrad1>
+        <tetrad2>341</tetrad2>
+        <tetrad3>346</tetrad3>
+        <tetrad4>354</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>10</tetrad2_normalized>
+        <tetrad3_normalized>15</tetrad3_normalized>
+        <tetrad4_normalized>23</tetrad4_normalized>
+        <loop1Length>7</loop1Length>
+        <loop2Length>3</loop2Length>
+        <loop3Length>6</loop3Length>
+        <totalLength>24</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGCTCCAGTGGGCGGGACCAGAGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>332 - 356</position>
+        <distanceFromPolyASignal>2084</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.92">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>331</tetrad1>
+        <tetrad2>341</tetrad2>
+        <tetrad3>345</tetrad3>
+        <tetrad4>368</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>11</tetrad2_normalized>
+        <tetrad3_normalized>15</tetrad3_normalized>
+        <tetrad4_normalized>38</tetrad4_normalized>
+        <loop1Length>7</loop1Length>
+        <loop2Length>1</loop2Length>
+        <loop3Length>20</loop3Length>
+        <totalLength>40</totalLength>
+        <numTetrads>3</numTetrads>
+        <score>53</score>
+        <sequenceSlice>GGGCTCCAGTGGGCGGGACCAGAGGAGTCCCGCGTTCGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>331 - 371</position>
+        <distanceFromPolyASignal>2085</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.141">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>341</tetrad1>
+        <tetrad2>346</tetrad2>
+        <tetrad3>354</tetrad3>
+        <tetrad4>368</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>6</tetrad2_normalized>
+        <tetrad3_normalized>14</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>3</loop1Length>
+        <loop2Length>6</loop2Length>
+        <loop3Length>12</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>27</score>
+        <sequenceSlice>GGGCGGGACCAGAGGAGTCCCGCGTTCGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>341 - 370</position>
+        <distanceFromPolyASignal>2075</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.192">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>354</tetrad1>
+        <tetrad2>368</tetrad2>
+        <tetrad3>370</tetrad3>
+        <tetrad4>382</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>15</tetrad2_normalized>
+        <tetrad3_normalized>17</tetrad3_normalized>
+        <tetrad4_normalized>29</tetrad4_normalized>
+        <loop1Length>12</loop1Length>
+        <loop2Length>0</loop2Length>
+        <loop3Length>10</loop3Length>
+        <totalLength>30</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>24</score>
+        <sequenceSlice>GGAGTCCCGCGTTCGGGGAGTATGTCAAGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR</region>
+        <position>354 - 384</position>
+        <distanceFromPolyASignal>2062</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.197">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>411</tetrad1>
+        <tetrad2>415</tetrad2>
+        <tetrad3>421</tetrad3>
+        <tetrad4>432</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>5</tetrad2_normalized>
+        <tetrad3_normalized>11</tetrad3_normalized>
+        <tetrad4_normalized>22</tetrad4_normalized>
+        <loop1Length>2</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>9</loop3Length>
+        <totalLength>23</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>29</score>
+        <sequenceSlice>GGCCGGAACGGGAGCCAACATGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR / CDS</region>
+        <position>411 - 434</position>
+        <distanceFromPolyASignal>2005</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.207">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>411</tetrad1>
+        <tetrad2>421</tetrad2>
+        <tetrad3>432</tetrad3>
+        <tetrad4>439</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>11</tetrad2_normalized>
+        <tetrad3_normalized>22</tetrad3_normalized>
+        <tetrad4_normalized>29</tetrad4_normalized>
+        <loop1Length>8</loop1Length>
+        <loop2Length>9</loop2Length>
+        <loop3Length>5</loop3Length>
+        <totalLength>30</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGCCGGAACGGGAGCCAACATGGCAGCGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR / CDS</region>
+        <position>411 - 441</position>
+        <distanceFromPolyASignal>2005</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.331">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>421</tetrad1>
+        <tetrad2>432</tetrad2>
+        <tetrad3>438</tetrad3>
+        <tetrad4>440</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>12</tetrad2_normalized>
+        <tetrad3_normalized>18</tetrad3_normalized>
+        <tetrad4_normalized>20</tetrad4_normalized>
+        <loop1Length>9</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>0</loop3Length>
+        <totalLength>21</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>27</score>
+        <sequenceSlice>GGAGCCAACATGGCAGCGGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR / CDS</region>
+        <position>421 - 442</position>
+        <distanceFromPolyASignal>1995</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.337">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>421</tetrad1>
+        <tetrad2>432</tetrad2>
+        <tetrad3>439</tetrad3>
+        <tetrad4>446</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>12</tetrad2_normalized>
+        <tetrad3_normalized>19</tetrad3_normalized>
+        <tetrad4_normalized>26</tetrad4_normalized>
+        <loop1Length>9</loop1Length>
+        <loop2Length>5</loop2Length>
+        <loop3Length>5</loop3Length>
+        <totalLength>27</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGAGCCAACATGGCAGCGGGGTTCGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR / CDS</region>
+        <position>421 - 448</position>
+        <distanceFromPolyASignal>1995</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.352">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>432</tetrad1>
+        <tetrad2>438</tetrad2>
+        <tetrad3>440</tetrad3>
+        <tetrad4>445</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>7</tetrad2_normalized>
+        <tetrad3_normalized>9</tetrad3_normalized>
+        <tetrad4_normalized>14</tetrad4_normalized>
+        <loop1Length>4</loop1Length>
+        <loop2Length>0</loop2Length>
+        <loop3Length>3</loop3Length>
+        <totalLength>15</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGCAGCGGGGTTCGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>432 - 447</position>
+        <distanceFromPolyASignal>1984</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.358">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>432</tetrad1>
+        <tetrad2>439</tetrad2>
+        <tetrad3>446</tetrad3>
+        <tetrad4>458</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>8</tetrad2_normalized>
+        <tetrad3_normalized>15</tetrad3_normalized>
+        <tetrad4_normalized>27</tetrad4_normalized>
+        <loop1Length>5</loop1Length>
+        <loop2Length>5</loop2Length>
+        <loop3Length>10</loop3Length>
+        <totalLength>28</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>31</score>
+        <sequenceSlice>GGCAGCGGGGTTCGGGCGATGCTGCAGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>432 - 460</position>
+        <distanceFromPolyASignal>1984</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.374">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>438</tetrad1>
+        <tetrad2>440</tetrad2>
+        <tetrad3>446</tetrad3>
+        <tetrad4>458</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>3</tetrad2_normalized>
+        <tetrad3_normalized>9</tetrad3_normalized>
+        <tetrad4_normalized>21</tetrad4_normalized>
+        <loop1Length>0</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>10</loop3Length>
+        <totalLength>22</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>26</score>
+        <sequenceSlice>GGGGTTCGGGCGATGCTGCAGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>438 - 460</position>
+        <distanceFromPolyASignal>1978</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.386">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>727</tetrad1>
+        <tetrad2>730</tetrad2>
+        <tetrad3>736</tetrad3>
+        <tetrad4>742</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>4</tetrad2_normalized>
+        <tetrad3_normalized>10</tetrad3_normalized>
+        <tetrad4_normalized>16</tetrad4_normalized>
+        <loop1Length>1</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>4</loop3Length>
+        <totalLength>17</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>33</score>
+        <sequenceSlice>GGAGGTCTTGGACTTGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>727 - 744</position>
+        <distanceFromPolyASignal>1689</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.387">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>777</tetrad1>
+        <tetrad2>784</tetrad2>
+        <tetrad3>793</tetrad3>
+        <tetrad4>795</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>8</tetrad2_normalized>
+        <tetrad3_normalized>17</tetrad3_normalized>
+        <tetrad4_normalized>19</tetrad4_normalized>
+        <loop1Length>5</loop1Length>
+        <loop2Length>7</loop2Length>
+        <loop3Length>0</loop3Length>
+        <totalLength>20</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>29</score>
+        <sequenceSlice>GGCTTATGGATGTACAGGGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>777 - 797</position>
+        <distanceFromPolyASignal>1639</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.417">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>1000</tetrad1>
+        <tetrad2>1013</tetrad2>
+        <tetrad3>1024</tetrad3>
+        <tetrad4>1027</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>14</tetrad2_normalized>
+        <tetrad3_normalized>25</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>11</loop1Length>
+        <loop2Length>9</loop2Length>
+        <loop3Length>1</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>26</score>
+        <sequenceSlice>GGTCAGAAGATGTGGATAACCAACGGAGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>1000 - 1029</position>
+        <distanceFromPolyASignal>1416</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001127328.1.421">
+        <geneAccessionNumber>NM_001127328.1</geneAccessionNumber>
+        <tetrad1>1013</tetrad1>
+        <tetrad2>1024</tetrad2>
+        <tetrad3>1027</tetrad3>
+        <tetrad4>1040</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>12</tetrad2_normalized>
+        <tetrad3_normalized>15</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>9</loop1Length>
+        <loop2Length>1</loop2Length>
+        <loop3Length>11</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>26</score>
+        <sequenceSlice>GGATAACCAACGGAGGAAAAGCTAATTGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>1013 - 1042</position>
+        <distanceFromPolyASignal>1403</distanceFromPolyASignal>
+      </quadruplex>
+    </quadruplexes>
+  </principle>
+  <comparison>
+    <gene directInput="false" accessionNumber="NM_001110816.1" sequenceLength="2327" tag="comparison">
+      <giNumber>160961496</giNumber>
+      <geneSymbol>ACADM</geneSymbol>
+      <ncbiLink>http://www.ncbi.nlm.nih.gov/nuccore/NM_001110816.1</ncbiLink>
+      <geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</geneName>
+      <species>Pan troglodytes</species>
+      <cds start="34" end="1299" />
+      <utr5 start="1" end="33" />
+      <utr3 start="1300" end="2327" />
+      <polyASignals />
+      <polyASites />
+      <ontologyData />
+    </gene>
+    <alignment>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ATTATTGTCCGAGTGGCCGGAACGGGAGCCAACATGGCAGCGGGTTTCGGGCGATGCTGCCGG------------GTCCTGAGAAGTATTTCTCGTTTTCAATGGAGATCACAGCATACAAAAGCCAATCGACAACGTGAACCAGGATTAGGATTTAGTTTTGAGTTCACCGAACAGCAGAAAGAATTTCAAGCTACTGCTCGTAAATTTGCCAGAGAGGAAATCATCCCAGTGGCTGCAGAATATGATAAAACTGGTGAATATCCAGTCCCCCTAATTAGAAGAGCCTGGGAACTTGGTTTAATGAACACACACATTCCAGAGAACTGTGGAGGTCTTGGACTTGGAACTTTTGATGCTTGTTTAATTAGTGAAGAATTGGCTTATGGATGTACAGGGGTTCAGACTGCTATTGAAGGAAATTCTTTGGGGCAAATGCCTATTATTATTGCTGGGAATGATCAACAAAAGAAGAAGTATTTGGGGAGAATGACTGAGGAGCCATTGATGTGTGCTTATTGTGTAACAGAACCTGGAGCAGGCTCTGATGTAGCTGGTATAAAGACCAAAGCAGAAAAGAAAGGAGATGAGTATATTATTAATGGTCAGAAGATGTGGATAACCAACGGAGGAAAAGCTAATTGGTATTTTTTATTGGCACGTTCTGATCCAGATCCTAAAGCTCCTGCTAATAAAGCCTTTACTGGATTCATTGTGGAAGCAGATACCCCAGGAATTCAGATTGGGAGAAAGGAATTAAACATGGGCCAGCGATGTTCAGATACTAGAGGAATTGTCTTCGAAGATGTGAAAGTGCCTAGAGAAAATGTTTTAATTGGTGACGGAGCTGGTTTCAAAGTTGCAATGGGAGCTTTTGATAAAACCAGACCTGTAGTAGCTGCTGGTGCTGTTGGATTAGCACAAAGAGCTTTGGATGAAGCTACCAAGTATGCCCTGGAAAGGAAAACTTTCGGAAAGCTACTTGTAGAGCACCAAGCAATATCATTTATGCTGGCTGAAATGGCAATGAAAGTTGAACTAGCTAGAATGAGTTACCAGAGAGCAGCTTGGGAGGTTGATTCTGGTCGTCGAAATACCTATTATGCTTCTATTGCAAAGGCATTTGCTGGAGATATTGCAAATCAGTTAGCTACTGATGCTGTGCAGATACTTGGAGGCAATGGATTTAATACAGAATATCCTGTAGAAAAACTAATGAGGGATGCCAAAATCTATCAGATTTATGAAGGTACTTCACAAATTCAAAGACTTATTGTAGCCCGTGAACACATTGACAAGTACAAAAATTAAAAAAATTACTGTAGAAATATTGAATAACTAGAACACAAGCCACTGTTTCAGCTCCAGAAAAAAGAAAGGGCTTTAACGTTTTTTCCAGTGAAAACAAATCCTCTTATATTAAATCTAAGCAACTGCTTATTATAGTAGTTTATACTTTTGCTTAACTCTGTTATGTCTCTTAAGCAGGTTTGGTTTTTATTAAAATGATGTGTTTTCTTTAGTACCACTTTACTTGAATTACATTAACCTAGAAAACTACATAGGTTATTTTGATCTCTTAAGATTAATGTAGCAGAAATTTCTTGGAATTTTATTTTTGTAATGACAGAAAAGTGGGCTTAGAAAGTATTCAAGATGTTACAAAATTTACATTTAGAAAATATTGTAGTATTTGAATACTGTCAACTTGACAGTAACTTTGTAGACTTAATGGTATTACCTCTGCCCGGCCGCCCCTACCGGGAAGTGAGGAGCCCCTCTGCCCGGCCAGCCGCCCCCGTCCGGGAGGTGAGGGGCGCTTCTGCCATGAAGACAATGGCGGTTTTGGGGAATAGAAATGGGGGAAAGGTGGGGAAAAGATTGAGAAATCGGATGGTTGCTGTGTCTGTGTAGAAAGAGGTAGACATGGGAGACTTTTCATTTTGTTCTGTACTAAGAAAAATTCTTCTGCCCTTGGGATCCTGTTGATCTGTGACCTTACCCCCAACCCTGTGCTCTCTGGAACATGTGCTGTATCCACTCAGGGTTGAATGGATTAAGGGCGGTGCAAGATGTGCTTTGTTAAACAGATGCTTGAAGGCAGCATGTTCGTTAAGAGTCATCACCACTCCTTAATCTCAAGTACCCAGGGACACAAACACTGCGGAAGGCCGCAGGGTCCTCTGCCTAGGAAAACCAGAGAACTTTGTTCACTTGTTTATCTGCTGACCTTCCCTCCACTATTGTCCTGTGACCCTGCCAAATCCCCCTCTGCGAGAAACACCCAAGAATGATCAATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA---------------------------------------------------------------------------</alignment>
+    <quadruplexes accessionNumber="NM_001110816.1">
+      <quadruplex id="NM_001110816.1.2">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>14</tetrad1>
+        <tetrad2>18</tetrad2>
+        <tetrad3>24</tetrad3>
+        <tetrad4>35</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>5</tetrad2_normalized>
+        <tetrad3_normalized>11</tetrad3_normalized>
+        <tetrad4_normalized>22</tetrad4_normalized>
+        <loop1Length>2</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>9</loop3Length>
+        <totalLength>23</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>29</score>
+        <sequenceSlice>GGCCGGAACGGGAGCCAACATGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR / CDS</region>
+        <position>14 - 37</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.12">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>14</tetrad1>
+        <tetrad2>24</tetrad2>
+        <tetrad3>35</tetrad3>
+        <tetrad4>42</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>11</tetrad2_normalized>
+        <tetrad3_normalized>22</tetrad3_normalized>
+        <tetrad4_normalized>29</tetrad4_normalized>
+        <loop1Length>8</loop1Length>
+        <loop2Length>9</loop2Length>
+        <loop3Length>5</loop3Length>
+        <totalLength>30</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGCCGGAACGGGAGCCAACATGGCAGCGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR / CDS</region>
+        <position>14 - 44</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.101">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>24</tetrad1>
+        <tetrad2>35</tetrad2>
+        <tetrad3>42</tetrad3>
+        <tetrad4>49</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>12</tetrad2_normalized>
+        <tetrad3_normalized>19</tetrad3_normalized>
+        <tetrad4_normalized>26</tetrad4_normalized>
+        <loop1Length>9</loop1Length>
+        <loop2Length>5</loop2Length>
+        <loop3Length>5</loop3Length>
+        <totalLength>27</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGAGCCAACATGGCAGCGGGTTTCGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR / CDS</region>
+        <position>24 - 51</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.97">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>23</tetrad1>
+        <tetrad2>41</tetrad2>
+        <tetrad3>48</tetrad3>
+        <tetrad4>61</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>19</tetrad2_normalized>
+        <tetrad3_normalized>26</tetrad3_normalized>
+        <tetrad4_normalized>39</tetrad4_normalized>
+        <loop1Length>15</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>10</loop3Length>
+        <totalLength>41</totalLength>
+        <numTetrads>3</numTetrads>
+        <score>61</score>
+        <sequenceSlice>GGGAGCCAACATGGCAGCGGGTTTCGGGCGATGCTGCCGGG</sequenceSlice>
+        <in5Prime>true</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>5' UTR / CDS</region>
+        <position>23 - 64</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.121">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>35</tetrad1>
+        <tetrad2>42</tetrad2>
+        <tetrad3>49</tetrad3>
+        <tetrad4>61</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>8</tetrad2_normalized>
+        <tetrad3_normalized>15</tetrad3_normalized>
+        <tetrad4_normalized>27</tetrad4_normalized>
+        <loop1Length>5</loop1Length>
+        <loop2Length>5</loop2Length>
+        <loop3Length>10</loop3Length>
+        <totalLength>28</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>31</score>
+        <sequenceSlice>GGCAGCGGGTTTCGGGCGATGCTGCCGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>35 - 63</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.128">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>318</tetrad1>
+        <tetrad2>321</tetrad2>
+        <tetrad3>327</tetrad3>
+        <tetrad4>333</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>4</tetrad2_normalized>
+        <tetrad3_normalized>10</tetrad3_normalized>
+        <tetrad4_normalized>16</tetrad4_normalized>
+        <loop1Length>1</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>4</loop3Length>
+        <totalLength>17</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>33</score>
+        <sequenceSlice>GGAGGTCTTGGACTTGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>318 - 335</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.129">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>368</tetrad1>
+        <tetrad2>375</tetrad2>
+        <tetrad3>384</tetrad3>
+        <tetrad4>386</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>8</tetrad2_normalized>
+        <tetrad3_normalized>17</tetrad3_normalized>
+        <tetrad4_normalized>19</tetrad4_normalized>
+        <loop1Length>5</loop1Length>
+        <loop2Length>7</loop2Length>
+        <loop3Length>0</loop3Length>
+        <totalLength>20</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>29</score>
+        <sequenceSlice>GGCTTATGGATGTACAGGGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>368 - 388</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.161">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>591</tetrad1>
+        <tetrad2>604</tetrad2>
+        <tetrad3>615</tetrad3>
+        <tetrad4>618</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>14</tetrad2_normalized>
+        <tetrad3_normalized>25</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>11</loop1Length>
+        <loop2Length>9</loop2Length>
+        <loop3Length>1</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>26</score>
+        <sequenceSlice>GGTCAGAAGATGTGGATAACCAACGGAGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>591 - 620</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.165">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>604</tetrad1>
+        <tetrad2>615</tetrad2>
+        <tetrad3>618</tetrad3>
+        <tetrad4>631</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>12</tetrad2_normalized>
+        <tetrad3_normalized>15</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>9</loop1Length>
+        <loop2Length>1</loop2Length>
+        <loop3Length>11</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>26</score>
+        <sequenceSlice>GGATAACCAACGGAGGAAAAGCTAATTGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>true</inCds>
+        <in3Prime>false</in3Prime>
+        <region>CDS</region>
+        <position>604 - 633</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.201">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1774</tetrad1>
+        <tetrad2>1792</tetrad2>
+        <tetrad3>1796</tetrad3>
+        <tetrad4>1801</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>19</tetrad2_normalized>
+        <tetrad3_normalized>23</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>16</loop1Length>
+        <loop2Length>2</loop2Length>
+        <loop3Length>3</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>22</score>
+        <sequenceSlice>GGCCAGCCGCCCCCGTCCGGGAGGTGAGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1774 - 1803</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.210">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1792</tetrad1>
+        <tetrad2>1796</tetrad2>
+        <tetrad3>1801</tetrad3>
+        <tetrad4>1803</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>5</tetrad2_normalized>
+        <tetrad3_normalized>10</tetrad3_normalized>
+        <tetrad4_normalized>12</tetrad4_normalized>
+        <loop1Length>2</loop1Length>
+        <loop2Length>3</loop2Length>
+        <loop3Length>0</loop3Length>
+        <totalLength>13</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>33</score>
+        <sequenceSlice>GGGAGGTGAGGGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1792 - 1805</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.309">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1801</tetrad1>
+        <tetrad2>1803</tetrad2>
+        <tetrad3>1826</tetrad3>
+        <tetrad4>1829</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>3</tetrad2_normalized>
+        <tetrad3_normalized>26</tetrad3_normalized>
+        <tetrad4_normalized>29</tetrad4_normalized>
+        <loop1Length>0</loop1Length>
+        <loop2Length>21</loop2Length>
+        <loop3Length>1</loop3Length>
+        <totalLength>30</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>15</score>
+        <sequenceSlice>GGGGCGCTTCTGCCATGAAGACAATGGCGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1801 - 1831</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.332">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1826</tetrad1>
+        <tetrad2>1829</tetrad2>
+        <tetrad3>1835</tetrad3>
+        <tetrad4>1837</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>4</tetrad2_normalized>
+        <tetrad3_normalized>10</tetrad3_normalized>
+        <tetrad4_normalized>12</tetrad4_normalized>
+        <loop1Length>1</loop1Length>
+        <loop2Length>4</loop2Length>
+        <loop3Length>0</loop3Length>
+        <totalLength>13</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGCGGTTTTGGGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1826 - 1839</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.335">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1826</tetrad1>
+        <tetrad2>1829</tetrad2>
+        <tetrad3>1837</tetrad3>
+        <tetrad4>1848</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>4</tetrad2_normalized>
+        <tetrad3_normalized>12</tetrad3_normalized>
+        <tetrad4_normalized>23</tetrad4_normalized>
+        <loop1Length>1</loop1Length>
+        <loop2Length>6</loop2Length>
+        <loop3Length>9</loop3Length>
+        <totalLength>24</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>28</score>
+        <sequenceSlice>GGCGGTTTTGGGGAATAGAAATGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1826 - 1850</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.508">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1829</tetrad1>
+        <tetrad2>1837</tetrad2>
+        <tetrad3>1848</tetrad3>
+        <tetrad4>1856</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>9</tetrad2_normalized>
+        <tetrad3_normalized>20</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>6</loop1Length>
+        <loop2Length>9</loop2Length>
+        <loop3Length>6</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>33</score>
+        <sequenceSlice>GGTTTTGGGGAATAGAAATGGGGGAAAGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1829 - 1858</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.593">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1835</tetrad1>
+        <tetrad2>1837</tetrad2>
+        <tetrad3>1848</tetrad3>
+        <tetrad4>1851</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>3</tetrad2_normalized>
+        <tetrad3_normalized>14</tetrad3_normalized>
+        <tetrad4_normalized>17</tetrad4_normalized>
+        <loop1Length>0</loop1Length>
+        <loop2Length>9</loop2Length>
+        <loop3Length>1</loop3Length>
+        <totalLength>18</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>27</score>
+        <sequenceSlice>GGGGAATAGAAATGGGGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1835 - 1853</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.715">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1837</tetrad1>
+        <tetrad2>1848</tetrad2>
+        <tetrad3>1856</tetrad3>
+        <tetrad4>1861</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>12</tetrad2_normalized>
+        <tetrad3_normalized>20</tetrad3_normalized>
+        <tetrad4_normalized>25</tetrad4_normalized>
+        <loop1Length>9</loop1Length>
+        <loop2Length>6</loop2Length>
+        <loop3Length>3</loop3Length>
+        <totalLength>26</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>30</score>
+        <sequenceSlice>GGAATAGAAATGGGGGAAAGGTGGGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1837 - 1863</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.749">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1848</tetrad1>
+        <tetrad2>1851</tetrad2>
+        <tetrad3>1856</tetrad3>
+        <tetrad4>1859</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>4</tetrad2_normalized>
+        <tetrad3_normalized>9</tetrad3_normalized>
+        <tetrad4_normalized>12</tetrad4_normalized>
+        <loop1Length>1</loop1Length>
+        <loop2Length>3</loop2Length>
+        <loop3Length>1</loop3Length>
+        <totalLength>13</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>34</score>
+        <sequenceSlice>GGGGGAAAGGTGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1848 - 1861</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.829">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1851</tetrad1>
+        <tetrad2>1856</tetrad2>
+        <tetrad3>1861</tetrad3>
+        <tetrad4>1879</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>6</tetrad2_normalized>
+        <tetrad3_normalized>11</tetrad3_normalized>
+        <tetrad4_normalized>29</tetrad4_normalized>
+        <loop1Length>3</loop1Length>
+        <loop2Length>3</loop2Length>
+        <loop3Length>16</loop3Length>
+        <totalLength>30</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>23</score>
+        <sequenceSlice>GGAAAGGTGGGGAAAAGATTGAGAAATCGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1851 - 1881</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.843">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>1856</tetrad1>
+        <tetrad2>1861</tetrad2>
+        <tetrad3>1879</tetrad3>
+        <tetrad4>1883</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>6</tetrad2_normalized>
+        <tetrad3_normalized>24</tetrad3_normalized>
+        <tetrad4_normalized>28</tetrad4_normalized>
+        <loop1Length>3</loop1Length>
+        <loop2Length>16</loop2Length>
+        <loop3Length>2</loop3Length>
+        <totalLength>29</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>22</score>
+        <sequenceSlice>GGTGGGGAAAAGATTGAGAAATCGGATGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>1856 - 1885</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.861">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>2033</tetrad1>
+        <tetrad2>2041</tetrad2>
+        <tetrad3>2048</tetrad3>
+        <tetrad4>2052</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>9</tetrad2_normalized>
+        <tetrad3_normalized>16</tetrad3_normalized>
+        <tetrad4_normalized>20</tetrad4_normalized>
+        <loop1Length>6</loop1Length>
+        <loop2Length>5</loop2Length>
+        <loop3Length>2</loop3Length>
+        <totalLength>21</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>32</score>
+        <sequenceSlice>GGTTGAATGGATTAAGGGCGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>2033 - 2054</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.870">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>2138</tetrad1>
+        <tetrad2>2153</tetrad2>
+        <tetrad3>2157</tetrad3>
+        <tetrad4>2164</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>16</tetrad2_normalized>
+        <tetrad3_normalized>20</tetrad3_normalized>
+        <tetrad4_normalized>27</tetrad4_normalized>
+        <loop1Length>13</loop1Length>
+        <loop2Length>2</loop2Length>
+        <loop3Length>5</loop3Length>
+        <totalLength>28</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>25</score>
+        <sequenceSlice>GGACACAAACACTGCGGAAGGCCGCAGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>2138 - 2166</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+      <quadruplex id="NM_001110816.1.878">
+        <geneAccessionNumber>NM_001110816.1</geneAccessionNumber>
+        <tetrad1>2153</tetrad1>
+        <tetrad2>2157</tetrad2>
+        <tetrad3>2165</tetrad3>
+        <tetrad4>2178</tetrad4>
+        <tetrad1_normalized>1</tetrad1_normalized>
+        <tetrad2_normalized>5</tetrad2_normalized>
+        <tetrad3_normalized>13</tetrad3_normalized>
+        <tetrad4_normalized>26</tetrad4_normalized>
+        <loop1Length>2</loop1Length>
+        <loop2Length>6</loop2Length>
+        <loop3Length>11</loop3Length>
+        <totalLength>27</totalLength>
+        <numTetrads>2</numTetrads>
+        <score>27</score>
+        <sequenceSlice>GGAAGGCCGCAGGGTCCTCTGCCTAGG</sequenceSlice>
+        <in5Prime>false</in5Prime>
+        <inCds>false</inCds>
+        <in3Prime>true</in3Prime>
+        <region>3' UTR</region>
+        <position>2153 - 2180</position>
+        <distanceFromPolyASignal>N/A</distanceFromPolyASignal>
+      </quadruplex>
+    </quadruplexes>
+  </comparison>
+  <homologyResults>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.197</gq1Id>
+      <gq2Id>NM_001110816.1.2</gq2Id>
+      <overallScore>1.0</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>29</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>29</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.197</gq1Id>
+      <gq2Id>NM_001110816.1.12</gq2Id>
+      <overallScore>0.9577585458755493</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>29</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.207</gq1Id>
+      <gq2Id>NM_001110816.1.2</gq2Id>
+      <overallScore>0.9577585458755493</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>29</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.207</gq1Id>
+      <gq2Id>NM_001110816.1.12</gq2Id>
+      <overallScore>1.0</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.207</gq1Id>
+      <gq2Id>NM_001110816.1.101</gq2Id>
+      <overallScore>0.8947118520736694</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.331</gq1Id>
+      <gq2Id>NM_001110816.1.2</gq2Id>
+      <overallScore>0.7561807036399841</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>27</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>29</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.331</gq1Id>
+      <gq2Id>NM_001110816.1.12</gq2Id>
+      <overallScore>0.8899999856948853</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>27</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.331</gq1Id>
+      <gq2Id>NM_001110816.1.101</gq2Id>
+      <overallScore>0.9179012179374695</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>27</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.337</gq1Id>
+      <gq2Id>NM_001110816.1.12</gq2Id>
+      <overallScore>0.8843721747398376</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.337</gq1Id>
+      <gq2Id>NM_001110816.1.101</gq2Id>
+      <overallScore>1.0</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.337</gq1Id>
+      <gq2Id>NM_001110816.1.97</gq2Id>
+      <overallScore>0.7640653252601624</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>3</c_tetrads>
+      <c_gScore>61</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.337</gq1Id>
+      <gq2Id>NM_001110816.1.121</gq2Id>
+      <overallScore>0.7812088131904602</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>true</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>31</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.352</gq1Id>
+      <gq2Id>NM_001110816.1.101</gq2Id>
+      <overallScore>0.7755902409553528</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.352</gq1Id>
+      <gq2Id>NM_001110816.1.121</gq2Id>
+      <overallScore>0.7605041861534119</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>32</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>31</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.358</gq1Id>
+      <gq2Id>NM_001110816.1.101</gq2Id>
+      <overallScore>0.7922526001930237</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>31</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>32</c_gScore>
+      <c_in5UTR>true</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.358</gq1Id>
+      <gq2Id>NM_001110816.1.121</gq2Id>
+      <overallScore>1.0</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>31</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>31</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.374</gq1Id>
+      <gq2Id>NM_001110816.1.121</gq2Id>
+      <overallScore>0.9094155430793762</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>26</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>31</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.386</gq1Id>
+      <gq2Id>NM_001110816.1.128</gq2Id>
+      <overallScore>1.0</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>33</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>33</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.387</gq1Id>
+      <gq2Id>NM_001110816.1.129</gq2Id>
+      <overallScore>1.0</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>29</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>29</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.417</gq1Id>
+      <gq2Id>NM_001110816.1.161</gq2Id>
+      <overallScore>1.0</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>26</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>26</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
+      <gq1Id>NM_001127328.1.421</gq1Id>
+      <gq2Id>NM_001110816.1.165</gq2Id>
+      <overallScore>1.0</overallScore>
+      <p_accessionNumber>NM_001127328.1</p_accessionNumber>
+      <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, transcript
+variant 3, mRNA.</p_geneName>
+      <p_geneSymbol>ACADM</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>2</p_tetrads>
+      <p_gScore>26</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>true</p_inCDS>
+      <p_in3UTR>false</p_in3UTR>
+      <c_accessionNumber>NM_001110816.1</c_accessionNumber>
+      <c_geneName>Pan troglodytes acyl-CoA dehydrogenase, C-4 to C-12 straight chain
+(ACADM), nuclear gene encoding mitochondrial protein, mRNA.</c_geneName>
+      <c_geneSymbol>ACADM</c_geneSymbol>
+      <c_species>Pan troglodytes</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>26</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>true</c_inCDS>
+      <c_in3UTR>false</c_in3UTR>
+      <alignmentScore>0.730491042137146</alignmentScore>
+    </homology>
+  </homologyResults>
+</qgrsResultSet>
+
