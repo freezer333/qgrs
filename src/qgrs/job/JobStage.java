@@ -6,7 +6,7 @@ public enum JobStage {
 	Downloading("Fetching data from NCBI", true, false), 
 	QGRS_ID("Identifying potential G-quadruplexes (QGRS) in sequences", true, false), 
 	
-	Alignment_Sync("Waiting for alignment module to become ready", true, true), 
+	Alignment_Sync("Launching semi-global alignment", true, true), 
 	Alignment_Calc("Calculating semi-global alignment matrix", false, false), 
 	Alignment_Apply("Applying semi-global alignment", false, false), 
 	QGRS_Homology("Computing QGRS Homology Scores", false, false), 
