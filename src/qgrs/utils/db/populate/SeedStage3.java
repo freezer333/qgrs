@@ -89,7 +89,7 @@ public class SeedStage3 {
 	}
 	
 	private static void runNextAlignment(AccessionNumberInputProvider inputProvider) throws Exception {
-		AlignmentJob job = new AlignmentJob(inputProvider, null, new XmlWritePostCache ( SeedUtils.servername, "qgrs", SeedUtils.serverport));
+		AlignmentJob job = new AlignmentJob(inputProvider, null, new XmlWritePostCache ( SeedUtils.servername, SeedUtils.contextpath, SeedUtils.serverport));
 		job.runJob();
 	}
 }

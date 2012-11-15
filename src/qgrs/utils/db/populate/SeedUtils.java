@@ -6,15 +6,15 @@ import java.sql.Statement;
 
 public class SeedUtils {
 
-	public static final String InputFilename = "/Users/sfrees/dev/qgrs/input_testing.txt";
-	public static final String ConnectionString = "jdbc:h2:file:/Users/sfrees/dev/seed_db";
+	public static final String InputFilename = "C:/projects/qgrs/input_testing.txt";
+	public static final String ConnectionString = "jdbc:h2:file:C:/projects/qgrs/seed_db";
 	
 	public static final String [] PrincipleSpeciesSet = {"Homo sapiens"};
 	public static final String [] ComparisonSpeciesSet = {"Mus musculus", "Bos taurus"};
 	
-	public static final String servername = "localhost";
-	public static final int serverport = 8091;
-	
+	public static final String servername = "quadruplex.ramapo.edu";//localhost";
+	public static final int serverport = 80;//8091;
+	public static final String contextpath = "qgrs2";
 	
 	
 	

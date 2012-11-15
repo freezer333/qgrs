@@ -39,8 +39,8 @@ public class EmbossAligner implements GeneralAligner {
 	private final String[][] defaultParams = {	{ "matrix", "EDNAFULL" },
 												{ "stype", "dna" },
 												{ "email", "sfrees@ramapo.edu" },
-												{ "gapopen", "10" },
-												{ "gapext", "0.5" },
+												{ "gapopen", "50" },
+												{ "gapext", "1" },
 												{ "endopen", "10" },
 												{ "endextend", "0.5" },
 												{ "format", "markx3" } };
@@ -89,7 +89,7 @@ public class EmbossAligner implements GeneralAligner {
 		HttpResponse response = httpclient.execute(post);
 	    BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 	    this.jobId = rd.readLine();
-	    System.out.println("Emboss alignment " + jobId);
+	    //System.out.println("Emboss alignment " + jobId);
 	}
 
 	/**
