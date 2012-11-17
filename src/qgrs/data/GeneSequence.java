@@ -283,8 +283,8 @@ public class GeneSequence implements Serializable{
 		}
 		return retval;
 	}
-	private Base getLiveBase(ArrayList<Base> bases, Base deadBase) {
-		return bases.get(deadBase.getIndexWithoutGaps());
+	private Base getLiveBase(ArrayList<Base> liveBases, Base deadBase) {
+		return liveBases.get(deadBase.getIndexWithoutGaps());
 	}
 
 	public void groupQuadruplexesIntoFamilies() {
@@ -519,9 +519,9 @@ public class GeneSequence implements Serializable{
 		utr5s.setText(this.getUtr5().toString());
 		root.addContent(utr5s);
 
-		Element cds = new Element("cds");
-		cds.setText(this.getCds().toString());
-		root.addContent(cds);
+		Element cdsElement = new Element("cds");
+		cdsElement.setText(this.getCds().toString());
+		root.addContent(cdsElement);
 
 		Element utr3s = new Element("utr3s");
 		utr3s.setText(this.getUtr3().toString());

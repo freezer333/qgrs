@@ -20,7 +20,6 @@ import de.jstacs.data.sequences.Sequence;
 
 public class JStacsAligner implements GeneralAligner {
 
-	StatusHolder statusHolder = null;
 	CancelFlag cancelFlag = new DefaultCancelFlag();
 
 	@Override

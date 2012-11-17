@@ -39,11 +39,7 @@ public class GQuadruplex implements Serializable{
 		
 	}
 	
-	// This should only be used to create transfer objects for inserting
-	// into the database, as sequence information is not present.
-	public GQuadruplex(Element xml) {
-		
-	}
+	
 	
 	public GQuadruplex(GQuadruplexRecord r, GeneSequence ungappedSequence){
 		try {

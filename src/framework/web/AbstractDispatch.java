@@ -78,9 +78,16 @@ public abstract class AbstractDispatch {
 		return new LinkedList<AbstractParam>();
 	}
 
+	/**
+	 * @param context  
+	 * @param controller 
+	 */
 	protected boolean redirectForAuthentication(AbstractWebContext context, AbstractController controller) {
 		return false;
 	}
+	/**
+	 * @param context  
+	 */
 	protected void applyRedirectForAuthentication(AbstractWebContext context) {
 		throw new RuntimeException ("Cannot redirect for authentication using AbstractDispatchServlet");
 	}

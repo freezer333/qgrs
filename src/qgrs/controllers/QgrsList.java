@@ -33,20 +33,6 @@ public class QgrsList extends AbstractController {
 		this.supportedUrls.add("/app/quadruplex-list");
 	}
 	
-	private String getSequence(String id) {
-		GenbankRichSequenceDB  ncbi = new GenbankRichSequenceTextDB();
-		RichSequence rs;
-		try {
-			rs = ncbi.getRichSequence(id);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-		 return rs.seqString();
-	}
-	
-	
-	
-	
 	@Override
 	public Response processRequest(AbstractWebContext context) {
 		Document pageXml = new Document();
