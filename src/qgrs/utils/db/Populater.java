@@ -87,18 +87,6 @@ public class Populater {
 			throw new InvalidPairException(principle + " x " + comparison);
 		}
 	}
-	private boolean checkSpecies_noexception(String pId, String cId, String principle, String comparison) {
-		if ( !p.contains(principle) ) {
-			pReject.add(pId);
-			return false;
-		}
-		if ( !c.contains(comparison) ) {
-			cReject.add(cId);
-			return false;
-		}
-		return true;
-	}
-	
 	private void writePair(InputPair pair, String comparisonSpecies) {
 		PrintWriter pw = this.files.get(comparisonSpecies);
 		if ( pw == null ) {

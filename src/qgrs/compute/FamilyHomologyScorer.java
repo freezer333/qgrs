@@ -211,12 +211,12 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 	}
 
 	//assigns a score from 0-1 by taking percent difference into account and the highest percentage desired to be incorporated
-	float score(float minPercent, float maxPercent, float percentDifference){
-		return Math.max(0,(1- (percentDifference)/(maxPercent - minPercent)));
+	float score(float min, float max, float percentDifference){
+		return Math.max(0,(1- (percentDifference)/(max - min)));
 	}
 
-	float overlapScore(float minPercent, float maxPercent, float percentOverlap) {
-		return Math.min(1, (percentOverlap)/(maxPercent - minPercent));
+	float overlapScore(float min, float max, float percentOverlap) {
+		return Math.min(1, (percentOverlap)/(max - min));
 	}
 	
 	void computeAndSaveHomology(GQuadFamily pFam, GQuadFamily cFam, GeneSequence principle, GeneSequence comparison) {

@@ -92,7 +92,7 @@ public class AlignmentPath implements Comparable{
 		LinkedList<AlignmentPath> retval ;
 		
 		if ( sources.size() == 1 ) {
-			this.process(matrix, curCell, sources.getFirst());
+			this.process(sources.getFirst());
 			retval = new LinkedList<AlignmentPath>();
 			retval.add(this);
 		}
@@ -101,7 +101,7 @@ public class AlignmentPath implements Comparable{
 			retval = this.expand(sources);
 			
 			for (int i = 0; i < sources.size(); i++ ) {
-				retval.get(i).process(matrix, curCell, sources.get(i));
+				retval.get(i).process(sources.get(i));
 			}
 		}
 		return retval;
@@ -128,7 +128,7 @@ public class AlignmentPath implements Comparable{
 	}
 	
 	
-	void process(AlignmentMatrix matrix, AlignmentCell curCell, AlignmentCell.ScoreSource source) {
+	void process(AlignmentCell.ScoreSource source) {
 		checkForGapOpenning(source);
 		recordRowSeqToken(source);
 		recordColSeqToken(source);

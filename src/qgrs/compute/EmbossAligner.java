@@ -60,7 +60,7 @@ public class EmbossAligner implements GeneralAligner {
 	
 	
 	@Override
-	public void align(GeneSequencePair pair, StatusHolder statusHolder)
+	public void align(GeneSequencePair pair, StatusHolder paramStatusHolder)
 			throws Exception {
 
 		startJob(pair);
@@ -69,8 +69,8 @@ public class EmbossAligner implements GeneralAligner {
 	    	applyResult(pair, result);
 		}
 		else {
-			if (statusHolder != null)
-				statusHolder.setStatus(JobStage.Alignment_Calc, 1, "Error occurred while performing alignment");
+			if (paramStatusHolder != null)
+				paramStatusHolder.setStatus(JobStage.Alignment_Calc, 1, "Error occurred while performing alignment");
 		}
 	}
 	

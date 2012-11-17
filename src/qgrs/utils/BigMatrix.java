@@ -56,7 +56,7 @@ public class BigMatrix extends Matrix {
 		}
 	}
 	
-	DirectFrame loadFrame(int r, int c) {
+	DirectFrame loadFrame(int r) {
 		for ( DirectFrame f : this.loadedFrames ) {
 			if ( f.hasRow(r)) return f;
 		}
@@ -99,14 +99,14 @@ public class BigMatrix extends Matrix {
 	@Override
 	public int get(int r, int c) {
 		tick++;
-		DirectFrame f = loadFrame(r, c);
+		DirectFrame f = loadFrame(r);
 		return f.get(r,  c, tick);
 	}
 
 	@Override
 	public void put(int r, int c, int value) {
 		tick++;
-		DirectFrame f = loadFrame(r, c);
+		DirectFrame f = loadFrame(r);
 		f.put(r, c, value, tick);
 
 	}

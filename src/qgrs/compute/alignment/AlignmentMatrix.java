@@ -45,6 +45,9 @@ public class AlignmentMatrix {
 	}
 	
 	
+	/**
+	 * @param flag  
+	 */
 	public AlignmentPath computeBestAlignment(StatusHolder statusHolder, CancelFlag flag) {
 		if ( statusHolder != null ) statusHolder.setStatus(JobStage.Alignment_Calc, 0, "Building alignment matrix");
 		buildForward();

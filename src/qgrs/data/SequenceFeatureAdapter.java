@@ -12,11 +12,11 @@ import org.biojavax.bio.seq.RichSequence;
 public class SequenceFeatureAdapter {
 
 	private static final String SOURCE = "source";
-	private static final String GENE = "gene";
 	private static final String CDS = "CDS";
+	/*private static final String GENE = "gene";
 	private static final String EXON = "exon";
 	private static final String MISC_FEATURE = "misc_feature";
-	private static final String STS = "STS";
+	private static final String STS = "STS";*/
 	private static final String POLY_A_SIGNAL = "polyA_signal";
 	private static final String POLY_A_SITE = "polyA_site";
 
