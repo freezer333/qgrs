@@ -1,0 +1,100 @@
+XM_001136258.2	Pan troglodytes	NM_079309.2	Drosophila melanogaster
+XM_001136258.2	Pan troglodytes	XM_001237770.2	Anopheles gambiae
+XM_001136258.2	Pan troglodytes	NM_063965.3	Caenorhabditis elegans
+NM_064478.3	Caenorhabditis elegans	NM_001019227.1	Schizosaccharomyces pombe
+NM_137795.2	Drosophila melanogaster	NM_064504.1	Caenorhabditis elegans
+NM_064561.3	Caenorhabditis elegans	NM_064562.3	Caenorhabditis elegans
+NM_064561.3	Caenorhabditis elegans	XM_952670.1	Neurospora crassa
+NM_064561.3	Caenorhabditis elegans	XM_364070.2	Magnaporthe oryzae
+XM_413985.3	Gallus gallus	XM_003198974.1	Danio rerio
+XM_413985.3	Gallus gallus	XM_001341420.3	Danio rerio
+XM_413985.3	Gallus gallus	NM_064656.4	Caenorhabditis elegans
+NM_064837.1	Caenorhabditis elegans	NM_065168.1	Caenorhabditis elegans
+NM_064837.1	Caenorhabditis elegans	NM_071316.1	Caenorhabditis elegans
+NM_065177.3	Caenorhabditis elegans	XM_002799672.1	Macaca mulatta
+XM_002667633.2	Danio rerio	NM_065454.3	Caenorhabditis elegans
+XM_002667633.2	Danio rerio	NM_001021957.1	Schizosaccharomyces pombe
+XM_003200999.1	Danio rerio	NM_065571.4	Caenorhabditis elegans
+XM_002728048.1	Rattus norvegicus	NM_065668.3	Caenorhabditis elegans
+XM_003586996.1	Bos taurus	XM_003200414.1	Danio rerio
+XM_003586996.1	Bos taurus	NM_142396.1	Drosophila melanogaster
+XM_003586996.1	Bos taurus	XM_310413.6	Anopheles gambiae
+XM_003586996.1	Bos taurus	NM_065771.4	Caenorhabditis elegans
+XM_542757.4	Canis lupus familiaris	XM_002707776.2	Bos taurus
+XM_542757.4	Canis lupus familiaris	XM_003085000.1	Mus musculus
+XM_542757.4	Canis lupus familiaris	XM_002728178.1	Rattus norvegicus
+XM_542757.4	Canis lupus familiaris	XM_001235143.2	Gallus gallus
+XM_542757.4	Canis lupus familiaris	XM_002665042.2	Danio rerio
+XM_542757.4	Canis lupus familiaris	NM_065777.4	Caenorhabditis elegans
+XM_542757.4	Canis lupus familiaris	XM_001094156.2	Macaca mulatta
+XM_003641930.1	Gallus gallus	NM_065807.6	Caenorhabditis elegans
+NM_066052.3	Caenorhabditis elegans	NM_075090.2	Caenorhabditis elegans
+NM_066052.3	Caenorhabditis elegans	NM_072507.3	Caenorhabditis elegans
+XM_001171387.2	Pan troglodytes	XM_619762.5	Mus musculus
+XM_001171387.2	Pan troglodytes	XM_001060708.2	Rattus norvegicus
+XM_001171387.2	Pan troglodytes	NM_066373.4	Caenorhabditis elegans
+XM_001171387.2	Pan troglodytes	XM_001093057.2	Macaca mulatta
+XM_002666683.1	Danio rerio	NM_066897.2	Caenorhabditis elegans
+NM_200224.1	Danio rerio	NM_067437.2	Caenorhabditis elegans
+NM_200224.1	Danio rerio	NM_171940.3	Caenorhabditis elegans
+XM_003403444.1	Homo sapiens	XM_003084770.1	Mus musculus
+XM_003403444.1	Homo sapiens	NM_067632.1	Caenorhabditis elegans
+XM_003201655.1	Danio rerio	NM_067659.2	Caenorhabditis elegans
+NM_067727.4	Caenorhabditis elegans	NM_001020365.1	Schizosaccharomyces pombe
+XM_678012.3	Danio rerio	NM_068862.4	Caenorhabditis elegans
+NM_069803.7	Caenorhabditis elegans	NM_078170.2	Caenorhabditis elegans
+NM_069803.7	Caenorhabditis elegans	NM_074120.2	Caenorhabditis elegans
+XM_003318205.1	Pan troglodytes	NM_070046.2	Caenorhabditis elegans
+NM_070681.2	Caenorhabditis elegans	NM_070682.2	Caenorhabditis elegans
+NM_071830.4	Caenorhabditis elegans	XM_001102522.2	Macaca mulatta
+XM_844562.1	Canis lupus familiaris	XM_002686543.1	Bos taurus
+XM_844562.1	Canis lupus familiaris	NM_071870.3	Caenorhabditis elegans
+XM_002728498.1	Rattus norvegicus	NM_071955.4	Caenorhabditis elegans
+XM_001238092.2	Anopheles gambiae	NM_072842.1	Caenorhabditis elegans
+NM_072857.1	Caenorhabditis elegans	NM_072858.2	Caenorhabditis elegans
+NM_073829.4	Caenorhabditis elegans	XM_953895.2	Neurospora crassa
+NM_073829.4	Caenorhabditis elegans	XM_002804991.1	Macaca mulatta
+XM_003198592.1	Danio rerio	NM_075601.3	Caenorhabditis elegans
+XM_003313752.1	Pan troglodytes	XM_003586064.1	Bos taurus
+XM_003313752.1	Pan troglodytes	NM_207243.2	Mus musculus
+XM_003313752.1	Pan troglodytes	XM_002729846.1	Rattus norvegicus
+XM_003313752.1	Pan troglodytes	NM_206332.1	Drosophila melanogaster
+XM_003313752.1	Pan troglodytes	NM_075891.2	Caenorhabditis elegans
+XM_003313752.1	Pan troglodytes	XM_001088655.2	Macaca mulatta
+XM_686988.5	Danio rerio	NM_076057.2	Caenorhabditis elegans
+XM_680665.5	Danio rerio	NM_168042.1	Drosophila melanogaster
+XM_680665.5	Danio rerio	XM_316578.4	Anopheles gambiae
+XM_680665.5	Danio rerio	NM_076268.1	Caenorhabditis elegans
+XM_220843.4	Rattus norvegicus	NM_076326.3	Caenorhabditis elegans
+XM_515118.3	Pan troglodytes	NM_077452.3	Caenorhabditis elegans
+NM_077864.2	Caenorhabditis elegans	XM_001093649.2	Macaca mulatta
+NM_078061.4	Caenorhabditis elegans	XM_002805285.1	Macaca mulatta
+NM_078097.3	Caenorhabditis elegans	XM_001108379.2	Macaca mulatta
+XM_003084896.1	Mus musculus	XM_234063.4	Rattus norvegicus
+XM_003084896.1	Mus musculus	NM_078299.4	Caenorhabditis elegans
+XM_002690919.2	Bos taurus	XM_421431.1	Gallus gallus
+XM_002690919.2	Bos taurus	NM_078557.5	Drosophila melanogaster
+XM_002690919.2	Bos taurus	XM_001687779.1	Anopheles gambiae
+NM_078700.2	Drosophila melanogaster	XM_001689065.1	Anopheles gambiae
+NM_078750.3	Drosophila melanogaster	XM_001114800.2	Macaca mulatta
+NM_078904.1	Drosophila melanogaster	NM_143306.2	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_079025.4	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_137159.3	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_079024.3	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_143761.3	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_137158.3	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_137157.3	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_137156.2	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_143818.2	Drosophila melanogaster
+NM_078904.1	Drosophila melanogaster	NM_136546.2	Drosophila melanogaster
+NM_079263.2	Drosophila melanogaster	XM_001688104.1	Anopheles gambiae
+NM_079268.2	Drosophila melanogaster	XM_308943.4	Anopheles gambiae
+XM_002729571.1	Rattus norvegicus	NM_079338.2	Drosophila melanogaster
+NM_079357.2	Drosophila melanogaster	XM_320172.2	Anopheles gambiae
+NM_079445.2	Drosophila melanogaster	XM_314996.3	Anopheles gambiae
+NM_207649.1	Mus musculus	NM_175578.3	Rattus norvegicus
+NM_207649.1	Mus musculus	XM_420062.3	Gallus gallus
+NM_207649.1	Mus musculus	NM_079654.2	Drosophila melanogaster
+NM_207649.1	Mus musculus	XM_557363.3	Anopheles gambiae
+NM_207649.1	Mus musculus	XM_001101974.2	Macaca mulatta
+NM_079769.2	Drosophila melanogaster	XM_313130.4	Anopheles gambiae

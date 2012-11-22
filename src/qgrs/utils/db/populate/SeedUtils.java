@@ -6,15 +6,14 @@ import java.sql.Statement;
 
 public class SeedUtils {
 
-	public static final String InputFilename = "C:/projects/qgrs/input_testing.txt";
-	public static final String ConnectionString = "jdbc:h2:file:C:/projects/qgrs/seed_db";
+	public static final String InputPairDir = "seed_data/pairs/";
 	
 	public static final String [] PrincipleSpeciesSet = {"Homo sapiens"};
-	public static final String [] ComparisonSpeciesSet = {"Mus musculus", "Bos taurus"};
+	public static final String [] ComparisonSpeciesSet = {"Mus musculus"};//, "Bos taurus"};
 	
-	public static final String servername = "quadruplex.ramapo.edu";//localhost";
-	public static final int serverport = 80;//8091;
-	public static final String contextpath = "qgrs2";
+	public static final String servername = "localhost";//"quadruplex.ramapo.edu";//
+	public static final int serverport = 8091;//80;//;
+	public static final String contextpath = "qgrs";//"qgrs2
 	
 	
 	
@@ -26,37 +25,5 @@ public class SeedUtils {
 		}
 		return false;
 	}
-	public static Connection getConnection() {
-		try {
-		 Class.forName("org.h2.Driver");
-	        Connection conn = DriverManager.
-	            getConnection(ConnectionString, "sa", "sa");
-	        return conn;
-		}
-		catch (Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
 	
-	public static void closeConnection(Connection c) {
-		try {
-			if ( c != null ) {
-				c.close() ;
-			}
-		}
-		catch (Exception e ){
-			throw new RuntimeException (e);
-		}
-	}
-	
-	public static void  execute(Connection conn, String q) {
-		try {
-			Statement stmt = conn.createStatement();
-	   		stmt.executeUpdate(q);
-			stmt.close();
-		}
-		catch (Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
 }

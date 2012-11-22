@@ -1,0 +1,100 @@
+NM_173567.4	Homo sapiens	XM_422345.3	Gallus gallus
+NM_173567.4	Homo sapiens	XM_002662423.1	Danio rerio
+NM_173567.4	Homo sapiens	XM_320560.4	Anopheles gambiae
+NM_173567.4	Homo sapiens	NM_073261.3	Caenorhabditis elegans
+NM_173567.4	Homo sapiens	NM_064867.3	Caenorhabditis elegans
+NM_173567.4	Homo sapiens	XM_001098374.2	Macaca mulatta
+NM_001080825.2	Homo sapiens	XM_528665.3	Pan troglodytes
+NM_001080825.2	Homo sapiens	XM_543384.3	Canis lupus familiaris
+NM_001080825.2	Homo sapiens	NM_001101908.1	Bos taurus
+NM_001080825.2	Homo sapiens	NM_001039723.2	Mus musculus
+NM_001080825.2	Homo sapiens	NM_001045230.2	Danio rerio
+NM_001080825.2	Homo sapiens	NM_065013.2	Caenorhabditis elegans
+XM_003435425.1	Canis lupus familiaris	XM_001477002.2	Mus musculus
+XM_003435425.1	Canis lupus familiaris	NM_001180945.1	Saccharomyces cerevisiae
+XM_003435425.1	Canis lupus familiaris	XM_454827.1	Kluyveromyces lactis
+XM_003435425.1	Canis lupus familiaris	XM_960545.1	Neurospora crassa
+XM_003435425.1	Canis lupus familiaris	NM_122016.2	Arabidopsis thaliana
+XM_003435425.1	Canis lupus familiaris	NM_001068329.1	Oryza sativa
+XM_003435425.1	Canis lupus familiaris	NM_001069564.1	Oryza sativa
+XM_003435425.1	Canis lupus familiaris	NM_210828.1	Ashbya gossypii ATCC 10895
+NM_143765.2	Drosophila melanogaster	XM_312621.3	Anopheles gambiae
+NM_143765.2	Drosophila melanogaster	NM_065625.2	Caenorhabditis elegans
+NM_152383.4	Homo sapiens	XM_003309516.1	Pan troglodytes
+NM_152383.4	Homo sapiens	XM_847629.2	Canis lupus familiaris
+NM_152383.4	Homo sapiens	NM_001192506.1	Bos taurus
+NM_152383.4	Homo sapiens	NM_153530.2	Mus musculus
+NM_152383.4	Homo sapiens	NM_001109007.1	Rattus norvegicus
+NM_152383.4	Homo sapiens	XM_422741.3	Gallus gallus
+NM_152383.4	Homo sapiens	NM_065759.2	Caenorhabditis elegans
+NM_152383.4	Homo sapiens	NM_001019939.1	Schizosaccharomyces pombe
+NM_152383.4	Homo sapiens	NM_106417.2	Arabidopsis thaliana
+NM_152383.4	Homo sapiens	NM_001054687.1	Oryza sativa
+NM_015060.1	Homo sapiens	XM_001162047.2	Pan troglodytes
+NM_015060.1	Homo sapiens	XM_539507.3	Canis lupus familiaris
+NM_015060.1	Homo sapiens	XM_002686833.2	Bos taurus
+NM_015060.1	Homo sapiens	NM_030235.1	Mus musculus
+NM_015060.1	Homo sapiens	XM_002729314.1	Rattus norvegicus
+NM_015060.1	Homo sapiens	XM_418848.3	Gallus gallus
+NM_015060.1	Homo sapiens	NM_001045565.1	Danio rerio
+NM_015060.1	Homo sapiens	NM_167377.1	Drosophila melanogaster
+NM_015060.1	Homo sapiens	XM_310874.4	Anopheles gambiae
+NM_015060.1	Homo sapiens	NM_066015.3	Caenorhabditis elegans
+NM_015060.1	Homo sapiens	XM_001082573.2	Macaca mulatta
+NM_001098537.1	Homo sapiens	XM_537782.3	Canis lupus familiaris
+NM_001098537.1	Homo sapiens	XM_003586688.1	Bos taurus
+NM_001098537.1	Homo sapiens	NM_146251.4	Mus musculus
+NM_001098537.1	Homo sapiens	NM_144738.2	Rattus norvegicus
+NM_001098537.1	Homo sapiens	NM_001130742.1	Gallus gallus
+NM_001098537.1	Homo sapiens	XM_687184.4	Danio rerio
+NM_001098537.1	Homo sapiens	NM_078520.3	Drosophila melanogaster
+NM_001098537.1	Homo sapiens	XM_310627.4	Anopheles gambiae
+NM_001098537.1	Homo sapiens	NM_066526.3	Caenorhabditis elegans
+NM_001098537.1	Homo sapiens	NM_063333.2	Caenorhabditis elegans
+NM_001098537.1	Homo sapiens	XM_001117679.2	Macaca mulatta
+XM_003640009.1	Canis lupus familiaris	NM_146952.1	Mus musculus
+XM_003640009.1	Canis lupus familiaris	NM_001000554.1	Rattus norvegicus
+XM_415303.3	Gallus gallus	NM_001038289.2	Caenorhabditis elegans
+XM_415303.3	Gallus gallus	XM_956129.2	Neurospora crassa
+NM_153377.3	Homo sapiens	XM_001167069.1	Pan troglodytes
+NM_153377.3	Homo sapiens	XM_531654.3	Canis lupus familiaris
+NM_153377.3	Homo sapiens	NM_001205591.1	Bos taurus
+NM_153377.3	Homo sapiens	NM_177152.5	Mus musculus
+NM_153377.3	Homo sapiens	XM_216905.5	Rattus norvegicus
+NM_153377.3	Homo sapiens	NM_001199555.1	Gallus gallus
+NM_153377.3	Homo sapiens	NM_001110347.1	Danio rerio
+NM_153377.3	Homo sapiens	NM_137247.2	Drosophila melanogaster
+NM_153377.3	Homo sapiens	XM_318747.4	Anopheles gambiae
+NM_153377.3	Homo sapiens	NM_067495.4	Caenorhabditis elegans
+NM_153377.3	Homo sapiens	XM_001116602.2	Macaca mulatta
+NM_194247.2	Homo sapiens	XM_543761.3	Canis lupus familiaris
+NM_194247.2	Homo sapiens	NM_001205429.1	Bos taurus
+NM_194247.2	Homo sapiens	NM_146130.3	Mus musculus
+NM_194247.2	Homo sapiens	NM_198132.3	Rattus norvegicus
+NM_194247.2	Homo sapiens	XM_003641571.1	Gallus gallus
+NM_194247.2	Homo sapiens	NM_001047480.2	Caenorhabditis elegans
+NM_194247.2	Homo sapiens	XM_956137.1	Neurospora crassa
+NM_194247.2	Homo sapiens	NM_128901.3	Arabidopsis thaliana
+NM_194247.2	Homo sapiens	NM_117507.4	Arabidopsis thaliana
+NM_194247.2	Homo sapiens	NM_001071359.1	Oryza sativa
+NM_194247.2	Homo sapiens	XM_001096533.2	Macaca mulatta
+NM_194247.2	Homo sapiens	XM_370384.2	Magnaporthe oryzae
+NM_001027721.2	Caenorhabditis elegans	NM_065096.1	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_058875.2	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_068317.1	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_060053.2	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_059699.1	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_066057.2	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_059256.1	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_059793.2	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_001028164.1	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_069657.2	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_069365.3	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_068355.1	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_068640.4	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_068374.2	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_059321.3	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_058874.2	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_068892.1	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_059357.1	Caenorhabditis elegans
+NM_001027721.2	Caenorhabditis elegans	NM_058670.5	Caenorhabditis elegans

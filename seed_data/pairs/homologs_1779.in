@@ -1,0 +1,100 @@
+NM_002868.2	Homo sapiens	XM_001096821.2	Macaca mulatta
+NM_002868.2	Homo sapiens	XM_363259.2	Magnaporthe oryzae
+XM_455078.1	Kluyveromyces lactis	XM_453088.1	Kluyveromyces lactis
+XM_455078.1	Kluyveromyces lactis	XM_454610.1	Kluyveromyces lactis
+XM_455078.1	Kluyveromyces lactis	XM_364788.2	Magnaporthe oryzae
+XM_455078.1	Kluyveromyces lactis	XM_366289.1	Magnaporthe oryzae
+NM_001077178.1	Danio rerio	XM_365363.2	Magnaporthe oryzae
+NM_198057.2	Homo sapiens	NM_001103342.1	Bos taurus
+NM_198057.2	Homo sapiens	NM_001077364.1	Mus musculus
+NM_198057.2	Homo sapiens	XM_001095802.2	Macaca mulatta
+XM_002685764.1	Bos taurus	NM_001080712.1	Mus musculus
+XM_002685764.1	Bos taurus	XM_002729550.1	Rattus norvegicus
+NM_001081449.2	Mus musculus	NM_001104645.1	Mus musculus
+NM_001081449.2	Mus musculus	NM_001104644.1	Mus musculus
+NM_001081449.2	Mus musculus	NM_001104648.1	Mus musculus
+NM_001081449.2	Mus musculus	NM_001099483.1	Rattus norvegicus
+NM_001093730.1	Homo sapiens	XM_003309438.1	Pan troglodytes
+NM_001093730.1	Homo sapiens	XM_003434272.1	Canis lupus familiaris
+NM_001093730.1	Homo sapiens	XM_002685517.1	Bos taurus
+NM_001093730.1	Homo sapiens	NM_001081658.1	Mus musculus
+NM_001093730.1	Homo sapiens	XM_426570.3	Gallus gallus
+NM_001093730.1	Homo sapiens	XM_002799029.1	Macaca mulatta
+XM_003311938.1	Pan troglodytes	XM_003431810.1	Canis lupus familiaris
+XM_003311938.1	Pan troglodytes	NM_001081961.1	Mus musculus
+XM_003311938.1	Pan troglodytes	NM_001130551.1	Rattus norvegicus
+XM_003311938.1	Pan troglodytes	XM_002805504.1	Macaca mulatta
+NM_001168682.1	Homo sapiens	XM_003318654.1	Pan troglodytes
+NM_001168682.1	Homo sapiens	XM_003639087.1	Canis lupus familiaris
+NM_001168682.1	Homo sapiens	XM_002698207.1	Bos taurus
+NM_001168682.1	Homo sapiens	NM_001081962.2	Mus musculus
+NM_001001332.2	Mus musculus	NM_001082546.1	Mus musculus
+NM_001001332.2	Mus musculus	NM_001082543.1	Mus musculus
+NM_001178501.1	Saccharomyces cerevisiae	XM_456028.1	Kluyveromyces lactis
+NM_001178501.1	Saccharomyces cerevisiae	XM_957433.1	Neurospora crassa
+NM_001178501.1	Saccharomyces cerevisiae	NM_210251.1	Ashbya gossypii ATCC 10895
+NM_001178501.1	Saccharomyces cerevisiae	XM_361694.2	Magnaporthe oryzae
+NM_001019165.1	Schizosaccharomyces pombe	NM_001023394.1	Schizosaccharomyces pombe
+NM_001019165.1	Schizosaccharomyces pombe	NM_001178509.1	Saccharomyces cerevisiae
+NM_001019165.1	Schizosaccharomyces pombe	NM_001183871.1	Saccharomyces cerevisiae
+NM_001178571.1	Saccharomyces cerevisiae	XM_455517.1	Kluyveromyces lactis
+NM_001178571.1	Saccharomyces cerevisiae	NM_208065.1	Ashbya gossypii ATCC 10895
+NM_001178576.1	Saccharomyces cerevisiae	XM_455521.1	Kluyveromyces lactis
+NM_001178576.1	Saccharomyces cerevisiae	XM_956509.1	Neurospora crassa
+NM_001178576.1	Saccharomyces cerevisiae	NM_208068.1	Ashbya gossypii ATCC 10895
+NM_001178576.1	Saccharomyces cerevisiae	XM_359898.2	Magnaporthe oryzae
+NM_001178638.1	Saccharomyces cerevisiae	XM_454798.1	Kluyveromyces lactis
+NM_001178638.1	Saccharomyces cerevisiae	NM_211665.1	Ashbya gossypii ATCC 10895
+NM_001021396.1	Schizosaccharomyces pombe	NM_001178741.1	Saccharomyces cerevisiae
+NM_001021396.1	Schizosaccharomyces pombe	NM_001178831.1	Saccharomyces cerevisiae
+NM_001021396.1	Schizosaccharomyces pombe	XM_960679.1	Neurospora crassa
+NM_001021396.1	Schizosaccharomyces pombe	NM_210165.1	Ashbya gossypii ATCC 10895
+NM_001021396.1	Schizosaccharomyces pombe	XM_001410115.1	Magnaporthe oryzae
+NM_001021459.1	Schizosaccharomyces pombe	NM_001180138.1	Saccharomyces cerevisiae
+NM_001180089.1	Saccharomyces cerevisiae	XM_456178.1	Kluyveromyces lactis
+NM_001180089.1	Saccharomyces cerevisiae	NM_210130.1	Ashbya gossypii ATCC 10895
+NM_200343.1	Danio rerio	NM_001018519.1	Schizosaccharomyces pombe
+NM_200343.1	Danio rerio	NM_001180717.1	Saccharomyces cerevisiae
+NM_200343.1	Danio rerio	XM_451097.1	Kluyveromyces lactis
+NM_200343.1	Danio rerio	NM_208016.1	Ashbya gossypii ATCC 10895
+NM_200343.1	Danio rerio	XM_363992.2	Magnaporthe oryzae
+NM_001170345.1	Mus musculus	NM_067844.2	Caenorhabditis elegans
+NM_001170345.1	Mus musculus	NM_001022538.1	Schizosaccharomyces pombe
+NM_001170345.1	Mus musculus	NM_001178827.1	Saccharomyces cerevisiae
+NM_001170345.1	Mus musculus	XM_451487.1	Kluyveromyces lactis
+NM_001170345.1	Mus musculus	XM_952860.1	Neurospora crassa
+NM_001170345.1	Mus musculus	NM_123499.4	Arabidopsis thaliana
+NM_001170345.1	Mus musculus	NM_105055.2	Arabidopsis thaliana
+NM_001170345.1	Mus musculus	NM_130166.3	Arabidopsis thaliana
+NM_001170345.1	Mus musculus	NM_001071254.1	Oryza sativa
+NM_001170345.1	Mus musculus	XM_001347578.1	Plasmodium falciparum
+NM_001170345.1	Mus musculus	NM_210170.1	Ashbya gossypii ATCC 10895
+NM_001181109.1	Saccharomyces cerevisiae	XM_451032.1	Kluyveromyces lactis
+NM_001184381.1	Saccharomyces cerevisiae	NM_001181434.1	Saccharomyces cerevisiae
+NM_001184381.1	Saccharomyces cerevisiae	NM_001184380.1	Saccharomyces cerevisiae
+NM_001184381.1	Saccharomyces cerevisiae	NM_211551.1	Ashbya gossypii ATCC 10895
+NM_001184381.1	Saccharomyces cerevisiae	XM_001414071.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001402664.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_360902.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001409679.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001415281.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001409443.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001412743.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001409171.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_362447.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001406415.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001412753.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_363810.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001406203.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001408639.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001406906.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_369917.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_369698.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001413170.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_369548.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_363413.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_369026.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_365905.2	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001405815.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_001414303.1	Magnaporthe oryzae
+NM_001184381.1	Saccharomyces cerevisiae	XM_368044.2	Magnaporthe oryzae

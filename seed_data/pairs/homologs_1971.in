@@ -1,0 +1,100 @@
+NM_198688.2	Homo sapiens	NM_198689.2	Homo sapiens
+NM_198688.2	Homo sapiens	XM_001153470.2	Pan troglodytes
+NM_198694.2	Homo sapiens	XM_001152687.2	Pan troglodytes
+NM_198699.1	Homo sapiens	XM_001153119.2	Pan troglodytes
+NM_198699.1	Homo sapiens	XM_001118286.2	Macaca mulatta
+NM_199677.1	Danio rerio	NM_213317.2	Danio rerio
+NM_199677.1	Danio rerio	NM_199705.1	Danio rerio
+NM_001162847.1	Danio rerio	NM_199838.1	Danio rerio
+NM_001162847.1	Danio rerio	XM_680521.4	Danio rerio
+NM_001110490.1	Rattus norvegicus	NM_201505.1	Danio rerio
+NM_001110490.1	Rattus norvegicus	NM_199858.2	Danio rerio
+NM_200296.1	Danio rerio	NM_213194.1	Danio rerio
+XM_001337307.2	Danio rerio	NM_200349.1	Danio rerio
+XM_001337307.2	Danio rerio	XM_001337228.3	Danio rerio
+XM_001337307.2	Danio rerio	XM_001340304.2	Danio rerio
+XM_001337307.2	Danio rerio	NM_137607.3	Drosophila melanogaster
+XM_001337307.2	Danio rerio	XM_311836.4	Anopheles gambiae
+NM_200455.1	Danio rerio	NM_205642.1	Danio rerio
+XM_003642070.1	Gallus gallus	NM_200693.1	Danio rerio
+XM_003642070.1	Gallus gallus	NM_200719.1	Danio rerio
+NM_116130.1	Arabidopsis thaliana	NM_201980.1	Arabidopsis thaliana
+NM_104356.3	Arabidopsis thaliana	NM_202068.2	Arabidopsis thaliana
+XM_452439.1	Kluyveromyces lactis	NM_208043.1	Ashbya gossypii ATCC 10895
+XM_452453.1	Kluyveromyces lactis	NM_208055.1	Ashbya gossypii ATCC 10895
+NM_208079.1	Ashbya gossypii ATCC 10895	NM_209868.1	Ashbya gossypii ATCC 10895
+NM_208079.1	Ashbya gossypii ATCC 10895	NM_208547.1	Ashbya gossypii ATCC 10895
+NM_208079.1	Ashbya gossypii ATCC 10895	NM_210669.2	Ashbya gossypii ATCC 10895
+NM_208088.1	Ashbya gossypii ATCC 10895	NM_211235.1	Ashbya gossypii ATCC 10895
+NM_208088.1	Ashbya gossypii ATCC 10895	NM_208090.1	Ashbya gossypii ATCC 10895
+NM_001047879.1	Rattus norvegicus	XM_452128.1	Kluyveromyces lactis
+NM_001047879.1	Rattus norvegicus	NM_208304.1	Ashbya gossypii ATCC 10895
+NM_208324.1	Ashbya gossypii ATCC 10895	NM_209027.1	Ashbya gossypii ATCC 10895
+NM_208324.1	Ashbya gossypii ATCC 10895	NM_209051.1	Ashbya gossypii ATCC 10895
+NM_208324.1	Ashbya gossypii ATCC 10895	NM_209028.1	Ashbya gossypii ATCC 10895
+NM_208324.1	Ashbya gossypii ATCC 10895	NM_208325.1	Ashbya gossypii ATCC 10895
+NM_208548.1	Ashbya gossypii ATCC 10895	NM_208549.1	Ashbya gossypii ATCC 10895
+NM_208548.1	Ashbya gossypii ATCC 10895	NM_208551.1	Ashbya gossypii ATCC 10895
+NM_208548.1	Ashbya gossypii ATCC 10895	NM_208550.1	Ashbya gossypii ATCC 10895
+NM_208554.1	Ashbya gossypii ATCC 10895	NM_210653.1	Ashbya gossypii ATCC 10895
+XM_454058.1	Kluyveromyces lactis	NM_208596.1	Ashbya gossypii ATCC 10895
+NM_208643.1	Ashbya gossypii ATCC 10895	NM_210663.1	Ashbya gossypii ATCC 10895
+NM_208643.1	Ashbya gossypii ATCC 10895	NM_210661.1	Ashbya gossypii ATCC 10895
+NM_208643.1	Ashbya gossypii ATCC 10895	NM_210662.1	Ashbya gossypii ATCC 10895
+XM_451254.1	Kluyveromyces lactis	XM_955920.2	Neurospora crassa
+XM_451254.1	Kluyveromyces lactis	NM_209009.1	Ashbya gossypii ATCC 10895
+NM_209052.1	Ashbya gossypii ATCC 10895	NM_210668.1	Ashbya gossypii ATCC 10895
+NM_209052.1	Ashbya gossypii ATCC 10895	NM_211339.1	Ashbya gossypii ATCC 10895
+XM_680882.4	Danio rerio	NM_209293.1	Ashbya gossypii ATCC 10895
+XM_680882.4	Danio rerio	NM_209294.1	Ashbya gossypii ATCC 10895
+XM_454008.1	Kluyveromyces lactis	NM_209727.1	Ashbya gossypii ATCC 10895
+NM_177001.3	Mus musculus	XM_002728778.1	Rattus norvegicus
+NM_177001.3	Mus musculus	NM_210040.1	Ashbya gossypii ATCC 10895
+XM_451648.1	Kluyveromyces lactis	NM_210304.1	Ashbya gossypii ATCC 10895
+NM_001018792.1	Schizosaccharomyces pombe	NM_001178723.1	Saccharomyces cerevisiae
+NM_001018792.1	Schizosaccharomyces pombe	NM_001183179.1	Saccharomyces cerevisiae
+NM_001018792.1	Schizosaccharomyces pombe	XM_454487.1	Kluyveromyces lactis
+NM_001018792.1	Schizosaccharomyces pombe	XM_451010.1	Kluyveromyces lactis
+NM_001018792.1	Schizosaccharomyces pombe	XM_954713.2	Neurospora crassa
+NM_001018792.1	Schizosaccharomyces pombe	NM_210403.1	Ashbya gossypii ATCC 10895
+NM_001018792.1	Schizosaccharomyces pombe	XM_364380.1	Magnaporthe oryzae
+XM_452379.1	Kluyveromyces lactis	NM_210439.1	Ashbya gossypii ATCC 10895
+NM_211164.1	Ashbya gossypii ATCC 10895	NM_211165.1	Ashbya gossypii ATCC 10895
+XM_455832.1	Kluyveromyces lactis	NM_211269.1	Ashbya gossypii ATCC 10895
+XM_679384.1	Danio rerio	NM_212244.1	Ashbya gossypii ATCC 10895
+XM_452262.1	Kluyveromyces lactis	NM_212384.1	Ashbya gossypii ATCC 10895
+XM_452249.1	Kluyveromyces lactis	NM_212397.1	Ashbya gossypii ATCC 10895
+XM_954279.1	Neurospora crassa	NM_212025.1	Ashbya gossypii ATCC 10895
+XM_954279.1	Neurospora crassa	XM_369145.1	Magnaporthe oryzae
+NM_204775.1	Gallus gallus	XM_418412.3	Gallus gallus
+NM_204775.1	Gallus gallus	XM_418413.2	Gallus gallus
+XM_415706.3	Gallus gallus	NM_204933.1	Gallus gallus
+XM_415706.3	Gallus gallus	XM_003643232.1	Gallus gallus
+XM_415706.3	Gallus gallus	XM_415707.3	Gallus gallus
+XM_415706.3	Gallus gallus	XM_003643589.1	Gallus gallus
+XM_415706.3	Gallus gallus	XM_423921.3	Gallus gallus
+XM_415706.3	Gallus gallus	XM_003642372.1	Gallus gallus
+XM_415706.3	Gallus gallus	XM_003643645.1	Gallus gallus
+XM_415706.3	Gallus gallus	NM_001128762.1	Danio rerio
+NM_205060.1	Gallus gallus	XM_419601.2	Gallus gallus
+NM_205795.1	Mus musculus	NM_207538.1	Mus musculus
+NM_206365.1	Drosophila melanogaster	XM_321553.2	Anopheles gambiae
+NM_213133.1	Danio rerio	NM_213223.1	Danio rerio
+NM_213226.1	Danio rerio	XM_001337432.3	Danio rerio
+XM_544122.1	Canis lupus familiaris	XM_001003873.2	Mus musculus
+NM_001195081.1	Homo sapiens	XM_003435456.1	Canis lupus familiaris
+NM_001195081.1	Homo sapiens	XM_003588209.1	Bos taurus
+NM_001195081.1	Homo sapiens	NM_001101585.1	Mus musculus
+NM_001195081.1	Homo sapiens	NM_001109415.1	Rattus norvegicus
+NM_001195081.1	Homo sapiens	XM_692189.5	Danio rerio
+XM_001473639.1	Mus musculus	NM_001109366.1	Rattus norvegicus
+XM_001075076.3	Rattus norvegicus	XM_002728751.1	Rattus norvegicus
+XM_001075076.3	Rattus norvegicus	XM_574439.3	Rattus norvegicus
+XM_001134711.2	Pan troglodytes	XM_001162302.2	Pan troglodytes
+XM_001136351.1	Pan troglodytes	XM_001175394.2	Pan troglodytes
+XM_001136351.1	Pan troglodytes	XM_001173116.2	Pan troglodytes
+XM_001138101.2	Pan troglodytes	XM_514682.3	Pan troglodytes
+XM_001138101.2	Pan troglodytes	XM_001082814.2	Macaca mulatta
+XM_001143239.1	Pan troglodytes	XM_523570.2	Pan troglodytes
+XM_001145512.2	Pan troglodytes	XM_001148202.2	Pan troglodytes
+XM_516630.3	Pan troglodytes	XM_346332.4	Rattus norvegicus

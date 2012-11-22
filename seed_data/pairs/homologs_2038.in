@@ -1,0 +1,100 @@
+NM_176120.4	Drosophila melanogaster	XM_316369.3	Anopheles gambiae
+NM_176120.4	Drosophila melanogaster	XM_002801510.1	Macaca mulatta
+XM_003307986.1	Pan troglodytes	XM_539588.4	Canis lupus familiaris
+XM_003307986.1	Pan troglodytes	NM_177671.5	Mus musculus
+XM_003307986.1	Pan troglodytes	XM_696166.5	Danio rerio
+XM_003307986.1	Pan troglodytes	XM_001112677.2	Macaca mulatta
+NM_177984.1	Danio rerio	XM_002663251.2	Danio rerio
+NM_181535.3	Homo sapiens	XM_003315447.1	Pan troglodytes
+NM_181535.3	Homo sapiens	XM_845013.2	Canis lupus familiaris
+NM_181535.3	Homo sapiens	NM_001080375.1	Bos taurus
+NM_181535.3	Homo sapiens	NM_027574.1	Mus musculus
+NM_181535.3	Homo sapiens	NM_001008760.1	Rattus norvegicus
+NM_181535.3	Homo sapiens	XM_001101035.2	Macaca mulatta
+NM_001197049.1	Canis lupus familiaris	NM_182657.1	Bos taurus
+NM_001197049.1	Canis lupus familiaris	XM_003198925.1	Danio rerio
+NM_001197049.1	Canis lupus familiaris	NM_201072.1	Danio rerio
+NM_198209.2	Danio rerio	XM_002667121.2	Danio rerio
+XM_001145086.2	Pan troglodytes	NM_198980.1	Danio rerio
+NM_199623.1	Danio rerio	NM_200400.1	Danio rerio
+NM_199709.1	Danio rerio	XM_002665778.2	Danio rerio
+NM_199709.1	Danio rerio	XM_001084824.2	Macaca mulatta
+NM_199964.1	Danio rerio	NM_200825.2	Danio rerio
+NM_200166.2	Danio rerio	XM_001923225.1	Danio rerio
+NM_200166.2	Danio rerio	NM_200684.1	Danio rerio
+NM_200166.2	Danio rerio	NM_212909.1	Danio rerio
+NM_001177456.1	Danio rerio	NM_200443.1	Danio rerio
+NM_200794.3	Danio rerio	NM_201014.1	Danio rerio
+XM_524125.3	Pan troglodytes	NM_201111.1	Danio rerio
+NM_201334.1	Danio rerio	XM_001923441.3	Danio rerio
+NM_203420.1	Danio rerio	XM_002665916.2	Danio rerio
+XM_954624.2	Neurospora crassa	NM_207822.1	Ashbya gossypii ATCC 10895
+XM_951415.1	Neurospora crassa	NM_208167.1	Ashbya gossypii ATCC 10895
+XM_951415.1	Neurospora crassa	XM_001408489.1	Magnaporthe oryzae
+XM_960498.2	Neurospora crassa	NM_208363.1	Ashbya gossypii ATCC 10895
+XM_960498.2	Neurospora crassa	XM_367745.2	Magnaporthe oryzae
+XM_455042.1	Kluyveromyces lactis	NM_208496.1	Ashbya gossypii ATCC 10895
+XM_955919.1	Neurospora crassa	NM_208666.1	Ashbya gossypii ATCC 10895
+XM_453095.1	Kluyveromyces lactis	XM_959859.2	Neurospora crassa
+XM_453095.1	Kluyveromyces lactis	NM_208783.1	Ashbya gossypii ATCC 10895
+XM_955451.2	Neurospora crassa	NM_209129.1	Ashbya gossypii ATCC 10895
+XM_955451.2	Neurospora crassa	XM_360210.2	Magnaporthe oryzae
+XM_953751.1	Neurospora crassa	NM_210626.1	Ashbya gossypii ATCC 10895
+XM_953101.2	Neurospora crassa	NM_212115.2	Ashbya gossypii ATCC 10895
+NM_203511.1	Danio rerio	XM_002660901.1	Danio rerio
+NM_001191466.1	Bos taurus	NM_204959.1	Gallus gallus
+NM_001191466.1	Bos taurus	XM_003199021.1	Danio rerio
+NM_205929.2	Drosophila melanogaster	XM_317148.4	Anopheles gambiae
+NM_206222.1	Drosophila melanogaster	XM_001237159.2	Anopheles gambiae
+NM_206288.2	Drosophila melanogaster	XM_001688775.1	Anopheles gambiae
+NM_212777.1	Danio rerio	XM_002666028.1	Danio rerio
+XM_001130065.4	Homo sapiens	XM_525206.3	Pan troglodytes
+XM_003317402.1	Pan troglodytes	XM_887100.4	Mus musculus
+XM_003317402.1	Pan troglodytes	XM_001109081.2	Macaca mulatta
+XM_001135760.1	Pan troglodytes	XM_001164381.2	Pan troglodytes
+XM_003118595.1	Homo sapiens	XM_001142778.1	Pan troglodytes
+XM_001143383.2	Pan troglodytes	XM_001920611.2	Danio rerio
+XM_001143383.2	Pan troglodytes	XM_001919171.2	Danio rerio
+XM_001143383.2	Pan troglodytes	XM_680960.5	Danio rerio
+XM_001143383.2	Pan troglodytes	XM_001920591.2	Danio rerio
+XM_001143383.2	Pan troglodytes	XM_001919185.3	Danio rerio
+XM_003118738.1	Homo sapiens	XM_001145579.2	Pan troglodytes
+XM_003118738.1	Homo sapiens	XM_001105039.1	Macaca mulatta
+XM_003118996.1	Homo sapiens	XM_001149337.1	Pan troglodytes
+XM_003118996.1	Homo sapiens	XM_002804533.1	Macaca mulatta
+NM_001004352.2	Homo sapiens	XM_001153492.2	Pan troglodytes
+XM_003403426.1	Homo sapiens	XM_003118534.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_003118536.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_003403430.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_003118535.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_003403428.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_003118560.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_003403427.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_003403425.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_003403429.1	Homo sapiens
+XM_003403426.1	Homo sapiens	XM_002805942.1	Macaca mulatta
+XM_003118958.1	Homo sapiens	XM_003307961.1	Pan troglodytes
+XM_003118958.1	Homo sapiens	XM_002730233.1	Rattus norvegicus
+XM_003118958.1	Homo sapiens	XM_001092454.2	Macaca mulatta
+XM_003118958.1	Homo sapiens	XM_001107515.2	Macaca mulatta
+XM_003119016.1	Homo sapiens	XM_001172793.2	Pan troglodytes
+XM_003118708.1	Homo sapiens	XM_001173268.2	Pan troglodytes
+XM_003119174.2	Homo sapiens	XM_508651.2	Pan troglodytes
+XM_003119174.2	Homo sapiens	XM_001087076.2	Macaca mulatta
+XM_001230467.2	Anopheles gambiae	XM_321140.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_318412.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_001237131.2	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_314667.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_320269.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_557970.3	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_001237290.2	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_319658.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_320844.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_307830.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_311533.3	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_311382.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_309327.4	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_319991.3	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_001238236.1	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_319994.3	Anopheles gambiae
+XM_001230467.2	Anopheles gambiae	XM_001238237.1	Anopheles gambiae

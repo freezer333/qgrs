@@ -1,0 +1,100 @@
+NM_006511.1	Homo sapiens	XM_001083464.2	Macaca mulatta
+NM_006542.3	Homo sapiens	XM_003308805.1	Pan troglodytes
+NM_006542.3	Homo sapiens	XM_002802125.1	Macaca mulatta
+NM_006607.2	Homo sapiens	XM_003310283.1	Pan troglodytes
+NM_006635.3	Homo sapiens	XM_003316698.1	Pan troglodytes
+NM_006635.3	Homo sapiens	XM_002801413.1	Macaca mulatta
+NM_006897.1	Homo sapiens	XM_001136621.2	Pan troglodytes
+NM_006897.1	Homo sapiens	XM_002687231.2	Bos taurus
+NM_006897.1	Homo sapiens	XM_423451.3	Gallus gallus
+NM_006897.1	Homo sapiens	NM_131528.2	Danio rerio
+NM_006897.1	Homo sapiens	XM_001108363.2	Macaca mulatta
+NM_006919.2	Homo sapiens	XM_001141918.2	Pan troglodytes
+NM_006919.2	Homo sapiens	NM_201376.1	Mus musculus
+NM_006945.4	Homo sapiens	XM_001109905.2	Macaca mulatta
+NM_006945.4	Homo sapiens	XM_001109953.2	Macaca mulatta
+NM_006945.4	Homo sapiens	XM_001109994.2	Macaca mulatta
+NM_006945.4	Homo sapiens	XM_001110045.2	Macaca mulatta
+NM_006945.4	Homo sapiens	XM_001110095.2	Macaca mulatta
+NM_006955.1	Homo sapiens	XM_002805615.1	Macaca mulatta
+NM_006969.3	Homo sapiens	XM_003316624.1	Pan troglodytes
+NM_006969.3	Homo sapiens	XM_139814.10	Mus musculus
+NM_006969.3	Homo sapiens	XM_001074805.3	Rattus norvegicus
+NM_006994.4	Homo sapiens	XM_001173236.2	Pan troglodytes
+NM_006994.4	Homo sapiens	XM_001091527.2	Macaca mulatta
+NM_007184.3	Homo sapiens	XM_001152331.2	Pan troglodytes
+NM_007184.3	Homo sapiens	XM_003639751.1	Canis lupus familiaris
+NM_007184.3	Homo sapiens	XM_002697064.1	Bos taurus
+NM_007184.3	Homo sapiens	XM_240330.5	Rattus norvegicus
+NM_007184.3	Homo sapiens	XM_414245.3	Gallus gallus
+NM_007184.3	Homo sapiens	XM_002666230.2	Danio rerio
+NM_007184.3	Homo sapiens	NM_069615.4	Caenorhabditis elegans
+NM_007184.3	Homo sapiens	XM_001085527.2	Macaca mulatta
+NM_001184367.1	Saccharomyces cerevisiae	AGOS_AMI004W_45239024	Ashbya gossypii ATCC 10895
+XM_001234990.2	Gallus gallus	NM_001178197.1	Saccharomyces cerevisiae
+XM_001234990.2	Gallus gallus	XM_451146.1	Kluyveromyces lactis
+XM_001234990.2	Gallus gallus	XM_961168.1	Plasmodium falciparum
+XM_001234990.2	Gallus gallus	NM_209856.1	Ashbya gossypii ATCC 10895
+NM_001178195.2	Saccharomyces cerevisiae	NM_001183783.1	Saccharomyces cerevisiae
+NM_001178346.2	Saccharomyces cerevisiae	NM_001184129.1	Saccharomyces cerevisiae
+NM_001178346.2	Saccharomyces cerevisiae	XM_953491.1	Neurospora crassa
+NM_001178346.2	Saccharomyces cerevisiae	XM_368318.2	Magnaporthe oryzae
+NM_001021019.1	Schizosaccharomyces pombe	NM_001178287.1	Saccharomyces cerevisiae
+NM_001021019.1	Schizosaccharomyces pombe	XM_454207.1	Kluyveromyces lactis
+NM_001021019.1	Schizosaccharomyces pombe	XM_958131.1	Neurospora crassa
+NM_001021019.1	Schizosaccharomyces pombe	NM_208450.1	Ashbya gossypii ATCC 10895
+NM_001021019.1	Schizosaccharomyces pombe	XM_370152.2	Magnaporthe oryzae
+XM_223499.3	Rattus norvegicus	NM_001021431.1	Schizosaccharomyces pombe
+XM_223499.3	Rattus norvegicus	NM_001178259.1	Saccharomyces cerevisiae
+XM_223499.3	Rattus norvegicus	XM_454423.1	Kluyveromyces lactis
+XM_223499.3	Rattus norvegicus	NM_210917.1	Ashbya gossypii ATCC 10895
+NM_001178534.1	Saccharomyces cerevisiae	NM_209956.1	Ashbya gossypii ATCC 10895
+NM_001178592.1	Saccharomyces cerevisiae	NM_105025.3	Arabidopsis thaliana
+NM_001019294.1	Schizosaccharomyces pombe	NM_001178685.1	Saccharomyces cerevisiae
+NM_001019294.1	Schizosaccharomyces pombe	XM_452246.1	Kluyveromyces lactis
+NM_001019294.1	Schizosaccharomyces pombe	XM_959643.2	Neurospora crassa
+NM_001019294.1	Schizosaccharomyces pombe	NM_212400.1	Ashbya gossypii ATCC 10895
+NM_001019294.1	Schizosaccharomyces pombe	XM_366965.1	Magnaporthe oryzae
+NM_001180277.1	Saccharomyces cerevisiae	XM_453443.1	Kluyveromyces lactis
+NM_001180277.1	Saccharomyces cerevisiae	XM_956094.2	Neurospora crassa
+NM_001180277.1	Saccharomyces cerevisiae	NM_208152.1	Ashbya gossypii ATCC 10895
+NM_001180277.1	Saccharomyces cerevisiae	XM_001117224.2	Macaca mulatta
+NM_001180277.1	Saccharomyces cerevisiae	XM_367558.1	Magnaporthe oryzae
+NM_001180682.1	Saccharomyces cerevisiae	NM_100854.4	Arabidopsis thaliana
+NM_001180716.1	Saccharomyces cerevisiae	XM_451098.1	Kluyveromyces lactis
+NM_001180716.1	Saccharomyces cerevisiae	XM_958870.1	Neurospora crassa
+NM_001180716.1	Saccharomyces cerevisiae	NM_208015.1	Ashbya gossypii ATCC 10895
+NM_001180716.1	Saccharomyces cerevisiae	XM_001404266.1	Magnaporthe oryzae
+XM_621465.5	Mus musculus	XM_216039.5	Rattus norvegicus
+XM_621465.5	Mus musculus	NM_001022889.1	Schizosaccharomyces pombe
+XM_621465.5	Mus musculus	NM_001022914.1	Schizosaccharomyces pombe
+XM_621465.5	Mus musculus	NM_001180726.1	Saccharomyces cerevisiae
+XM_621465.5	Mus musculus	NM_001178869.1	Saccharomyces cerevisiae
+XM_621465.5	Mus musculus	XM_451084.1	Kluyveromyces lactis
+XM_621465.5	Mus musculus	XM_956310.2	Neurospora crassa
+XM_621465.5	Mus musculus	NM_208029.1	Ashbya gossypii ATCC 10895
+XM_621465.5	Mus musculus	XM_001103164.2	Macaca mulatta
+XM_621465.5	Mus musculus	XM_370398.2	Magnaporthe oryzae
+XM_001060918.2	Rattus norvegicus	XM_318026.4	Anopheles gambiae
+XM_001060918.2	Rattus norvegicus	XM_001689034.1	Anopheles gambiae
+XM_001060918.2	Rattus norvegicus	NM_182153.3	Caenorhabditis elegans
+XM_001060918.2	Rattus norvegicus	NM_001020321.1	Schizosaccharomyces pombe
+XM_001060918.2	Rattus norvegicus	NM_001179068.1	Saccharomyces cerevisiae
+XM_001060918.2	Rattus norvegicus	XM_455624.1	Kluyveromyces lactis
+XM_001060918.2	Rattus norvegicus	XM_952029.2	Neurospora crassa
+XM_001060918.2	Rattus norvegicus	NM_211831.1	Ashbya gossypii ATCC 10895
+XM_001060918.2	Rattus norvegicus	XM_001113273.2	Macaca mulatta
+XM_001060918.2	Rattus norvegicus	XM_369856.1	Magnaporthe oryzae
+XM_003312972.1	Pan troglodytes	XM_576455.3	Rattus norvegicus
+XM_003312972.1	Pan troglodytes	NM_079591.4	Drosophila melanogaster
+XM_003312972.1	Pan troglodytes	XM_313760.4	Anopheles gambiae
+XM_003312972.1	Pan troglodytes	NM_068494.4	Caenorhabditis elegans
+XM_003312972.1	Pan troglodytes	NM_001021424.1	Schizosaccharomyces pombe
+XM_003312972.1	Pan troglodytes	NM_001019914.1	Schizosaccharomyces pombe
+XM_003312972.1	Pan troglodytes	NM_001181156.1	Saccharomyces cerevisiae
+XM_003312972.1	Pan troglodytes	NM_001182222.1	Saccharomyces cerevisiae
+XM_003312972.1	Pan troglodytes	XM_451812.1	Kluyveromyces lactis
+XM_003312972.1	Pan troglodytes	XM_958138.2	Neurospora crassa
+XM_003312972.1	Pan troglodytes	NM_208332.1	Ashbya gossypii ATCC 10895
+XM_003312972.1	Pan troglodytes	XM_001095559.2	Macaca mulatta
+XM_003312972.1	Pan troglodytes	XM_370160.2	Magnaporthe oryzae

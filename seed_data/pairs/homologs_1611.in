@@ -1,0 +1,100 @@
+NM_014249.2	Homo sapiens	NM_001007368.1	Danio rerio
+NM_014249.2	Homo sapiens	NM_137188.2	Drosophila melanogaster
+NM_014249.2	Homo sapiens	XM_319009.4	Anopheles gambiae
+NM_014249.2	Homo sapiens	XM_001089693.2	Macaca mulatta
+NM_016542.3	Homo sapiens	XM_003317683.1	Pan troglodytes
+NM_016542.3	Homo sapiens	XM_549261.3	Canis lupus familiaris
+NM_016542.3	Homo sapiens	NM_001163786.1	Bos taurus
+NM_016542.3	Homo sapiens	NM_133729.1	Mus musculus
+NM_016542.3	Homo sapiens	XM_229143.5	Rattus norvegicus
+NM_016542.3	Homo sapiens	NM_001031117.1	Gallus gallus
+NM_016542.3	Homo sapiens	NM_001127477.1	Danio rerio
+NM_016542.3	Homo sapiens	NM_142339.1	Drosophila melanogaster
+NM_016542.3	Homo sapiens	XM_319097.3	Anopheles gambiae
+NM_016542.3	Homo sapiens	NM_072909.1	Caenorhabditis elegans
+NM_016542.3	Homo sapiens	XM_002806398.1	Macaca mulatta
+NM_001185177.1	Homo sapiens	XM_511224.2	Pan troglodytes
+NM_001185177.1	Homo sapiens	XM_002694809.1	Bos taurus
+NM_001185177.1	Homo sapiens	NM_198672.1	Mus musculus
+NM_001185177.1	Homo sapiens	NM_144511.2	Mus musculus
+NM_001038581.1	Bos taurus	NM_025463.2	Mus musculus
+NM_001038581.1	Bos taurus	NM_001109581.2	Rattus norvegicus
+NM_001038581.1	Bos taurus	XM_002799519.1	Macaca mulatta
+XM_002699367.1	Bos taurus	NM_001177438.1	Mus musculus
+XM_002699367.1	Bos taurus	XM_001068348.2	Rattus norvegicus
+XM_002699367.1	Bos taurus	NM_119793.4	Arabidopsis thaliana
+XM_002699367.1	Bos taurus	NM_001054110.1	Oryza sativa
+XM_002699367.1	Bos taurus	NM_001054113.1	Oryza sativa
+XM_002699367.1	Bos taurus	NM_001059977.1	Oryza sativa
+NM_057804.2	Drosophila melanogaster	NM_058082.2	Drosophila melanogaster
+NM_178170.2	Homo sapiens	XM_511801.3	Pan troglodytes
+NM_178170.2	Homo sapiens	XM_548291.3	Canis lupus familiaris
+NM_178170.2	Homo sapiens	NM_001192723.1	Bos taurus
+NM_178170.2	Homo sapiens	NM_080849.3	Mus musculus
+NM_178170.2	Homo sapiens	NM_001105804.1	Rattus norvegicus
+NM_178170.2	Homo sapiens	XM_415822.3	Gallus gallus
+NM_178170.2	Homo sapiens	NM_139077.1	Danio rerio
+NM_178170.2	Homo sapiens	NM_143036.1	Drosophila melanogaster
+NM_178170.2	Homo sapiens	XM_308885.4	Anopheles gambiae
+NM_178170.2	Homo sapiens	NM_058567.2	Caenorhabditis elegans
+NM_178170.2	Homo sapiens	XM_001106986.2	Macaca mulatta
+NM_001103661.1	Drosophila melanogaster	XM_317265.4	Anopheles gambiae
+NM_001103661.1	Drosophila melanogaster	NM_073847.3	Caenorhabditis elegans
+NM_014893.4	Homo sapiens	XM_001144796.2	Pan troglodytes
+NM_014893.4	Homo sapiens	NM_001166337.1	Danio rerio
+NM_014893.4	Homo sapiens	NM_001043265.2	Drosophila melanogaster
+NM_014893.4	Homo sapiens	XM_312799.4	Anopheles gambiae
+NM_014893.4	Homo sapiens	NM_001145058.1	Macaca mulatta
+NM_014245.4	Homo sapiens	XM_001161887.2	Pan troglodytes
+NM_014245.4	Homo sapiens	XM_534291.3	Canis lupus familiaris
+NM_014245.4	Homo sapiens	NM_001075720.1	Bos taurus
+NM_014245.4	Homo sapiens	NM_011279.2	Mus musculus
+NM_014245.4	Homo sapiens	NM_001106848.1	Rattus norvegicus
+NM_014245.4	Homo sapiens	NM_001031307.1	Gallus gallus
+NM_014245.4	Homo sapiens	NM_001012498.1	Danio rerio
+NM_014245.4	Homo sapiens	NM_136847.2	Drosophila melanogaster
+NM_014245.4	Homo sapiens	XM_315566.4	Anopheles gambiae
+NM_014245.4	Homo sapiens	NM_059448.3	Caenorhabditis elegans
+NM_014245.4	Homo sapiens	XM_001112657.2	Macaca mulatta
+NM_136673.2	Drosophila melanogaster	NM_140036.1	Drosophila melanogaster
+NM_136673.2	Drosophila melanogaster	XM_309846.3	Anopheles gambiae
+NM_001104235.1	Drosophila melanogaster	XM_309586.4	Anopheles gambiae
+NM_001000.2	Homo sapiens	XM_003310685.1	Pan troglodytes
+NM_001000.2	Homo sapiens	XM_003434200.1	Canis lupus familiaris
+NM_001000.2	Homo sapiens	NM_001105455.1	Bos taurus
+NM_001000.2	Homo sapiens	NM_026055.1	Mus musculus
+NM_001000.2	Homo sapiens	XM_003085071.1	Mus musculus
+NM_001000.2	Homo sapiens	NM_012875.1	Rattus norvegicus
+NM_001000.2	Homo sapiens	XM_002730226.1	Rattus norvegicus
+NM_001000.2	Homo sapiens	NM_204272.1	Gallus gallus
+NM_001000.2	Homo sapiens	NM_001002078.2	Danio rerio
+NM_001000.2	Homo sapiens	XM_002799638.1	Macaca mulatta
+NM_001005486.1	Homo sapiens	XM_001136202.2	Pan troglodytes
+NM_001005486.1	Homo sapiens	XM_003433945.1	Canis lupus familiaris
+NM_001005486.1	Homo sapiens	XM_003586543.1	Bos taurus
+NM_001005486.1	Homo sapiens	NM_146319.2	Mus musculus
+NM_001005486.1	Homo sapiens	NM_001000091.1	Rattus norvegicus
+NM_001005486.1	Homo sapiens	XM_001086778.2	Macaca mulatta
+NM_001004124.1	Homo sapiens	XM_001155635.2	Pan troglodytes
+NM_001004124.1	Homo sapiens	XM_540682.4	Canis lupus familiaris
+NM_001004124.1	Homo sapiens	NM_001000641.1	Rattus norvegicus
+NM_146424.1	Mus musculus	NM_001000815.1	Rattus norvegicus
+XM_001141690.1	Pan troglodytes	XM_003433943.2	Canis lupus familiaris
+XM_001141690.1	Pan troglodytes	XM_002690682.1	Bos taurus
+XM_001141690.1	Pan troglodytes	NM_146363.2	Mus musculus
+XM_001141690.1	Pan troglodytes	NM_001000973.1	Rattus norvegicus
+XM_001141690.1	Pan troglodytes	XM_001090051.2	Macaca mulatta
+NM_001001667.1	Homo sapiens	XM_527933.3	Pan troglodytes
+NM_001001667.1	Homo sapiens	XM_539857.3	Canis lupus familiaris
+NM_001001667.1	Homo sapiens	XM_002707816.1	Bos taurus
+NM_001001667.1	Homo sapiens	XM_002808368.1	Macaca mulatta
+NM_001001917.2	Homo sapiens	XM_001163752.2	Pan troglodytes
+NM_001001917.2	Homo sapiens	XM_848481.2	Canis lupus familiaris
+NM_001001917.2	Homo sapiens	XM_002693180.2	Bos taurus
+NM_001001917.2	Homo sapiens	XM_001102638.2	Macaca mulatta
+NM_001001964.1	Homo sapiens	XM_525162.2	Pan troglodytes
+NM_001001964.1	Homo sapiens	XM_002689105.1	Bos taurus
+NM_001039690.3	Homo sapiens	XM_001168592.2	Pan troglodytes
+NM_001039690.3	Homo sapiens	XM_858529.2	Canis lupus familiaris
+NM_001039690.3	Homo sapiens	NM_001114969.2	Bos taurus
+NM_001039690.3	Homo sapiens	NM_145412.3	Mus musculus

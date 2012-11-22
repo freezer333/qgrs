@@ -1,0 +1,100 @@
+XM_452365.1	Kluyveromyces lactis	NM_212287.1	Ashbya gossypii ATCC 10895
+XM_452348.1	Kluyveromyces lactis	NM_212313.1	Ashbya gossypii ATCC 10895
+XM_452289.1	Kluyveromyces lactis	NM_212363.1	Ashbya gossypii ATCC 10895
+NM_212395.1	Ashbya gossypii ATCC 10895	NM_211866.1	Ashbya gossypii ATCC 10895
+XM_452831.1	Kluyveromyces lactis	NM_211378.1	Ashbya gossypii ATCC 10895
+XM_452835.1	Kluyveromyces lactis	NM_211382.1	Ashbya gossypii ATCC 10895
+XM_454201.1	Kluyveromyces lactis	NM_211404.1	Ashbya gossypii ATCC 10895
+XM_454397.1	Kluyveromyces lactis	NM_211416.1	Ashbya gossypii ATCC 10895
+XM_454895.1	Kluyveromyces lactis	NM_211437.1	Ashbya gossypii ATCC 10895
+XM_454265.1	Kluyveromyces lactis	NM_211440.1	Ashbya gossypii ATCC 10895
+XM_453626.1	Kluyveromyces lactis	XM_452937.1	Kluyveromyces lactis
+XM_453626.1	Kluyveromyces lactis	XM_455105.1	Kluyveromyces lactis
+XM_453626.1	Kluyveromyces lactis	NM_211523.1	Ashbya gossypii ATCC 10895
+NM_001180463.1	Saccharomyces cerevisiae	XM_453798.1	Kluyveromyces lactis
+NM_001180463.1	Saccharomyces cerevisiae	NM_211553.1	Ashbya gossypii ATCC 10895
+XM_456290.1	Kluyveromyces lactis	NM_211717.1	Ashbya gossypii ATCC 10895
+XM_455501.1	Kluyveromyces lactis	NM_211743.1	Ashbya gossypii ATCC 10895
+XM_455915.1	Kluyveromyces lactis	NM_211753.1	Ashbya gossypii ATCC 10895
+XM_455903.1	Kluyveromyces lactis	NM_211768.1	Ashbya gossypii ATCC 10895
+XM_455975.1	Kluyveromyces lactis	NM_211778.1	Ashbya gossypii ATCC 10895
+XM_455958.1	Kluyveromyces lactis	NM_211786.1	Ashbya gossypii ATCC 10895
+XM_455944.1	Kluyveromyces lactis	NM_211808.1	Ashbya gossypii ATCC 10895
+XM_455943.1	Kluyveromyces lactis	NM_211809.1	Ashbya gossypii ATCC 10895
+XM_455932.1	Kluyveromyces lactis	NM_211821.1	Ashbya gossypii ATCC 10895
+XM_455619.1	Kluyveromyces lactis	NM_211826.1	Ashbya gossypii ATCC 10895
+XM_455620.1	Kluyveromyces lactis	NM_211827.1	Ashbya gossypii ATCC 10895
+XM_453991.1	Kluyveromyces lactis	NM_211870.1	Ashbya gossypii ATCC 10895
+XM_455669.1	Kluyveromyces lactis	NM_211902.1	Ashbya gossypii ATCC 10895
+XM_455031.1	Kluyveromyces lactis	NM_211928.1	Ashbya gossypii ATCC 10895
+XM_453753.1	Kluyveromyces lactis	NM_211976.1	Ashbya gossypii ATCC 10895
+NM_001184470.1	Saccharomyces cerevisiae	XM_452950.1	Kluyveromyces lactis
+NM_001184470.1	Saccharomyces cerevisiae	NM_212083.1	Ashbya gossypii ATCC 10895
+XM_509682.2	Pan troglodytes	XM_534146.3	Canis lupus familiaris
+XM_509682.2	Pan troglodytes	NM_001113312.1	Bos taurus
+XM_509682.2	Pan troglodytes	NM_001033132.3	Mus musculus
+XM_509682.2	Pan troglodytes	NM_001109105.1	Rattus norvegicus
+XM_509682.2	Pan troglodytes	XM_001233079.2	Gallus gallus
+XM_509682.2	Pan troglodytes	XM_001332052.2	Danio rerio
+XM_509682.2	Pan troglodytes	XM_001085114.2	Macaca mulatta
+NM_205921.2	Drosophila melanogaster	XM_319373.3	Anopheles gambiae
+NM_206044.1	Drosophila melanogaster	XM_315517.3	Anopheles gambiae
+NM_206091.1	Drosophila melanogaster	XM_308229.4	Anopheles gambiae
+NM_001042475.2	Homo sapiens	XM_001163416.2	Pan troglodytes
+NM_001042475.2	Homo sapiens	XM_003432517.1	Canis lupus familiaris
+NM_001042475.2	Homo sapiens	XM_002690081.2	Bos taurus
+NM_001042475.2	Homo sapiens	XM_003084829.1	Mus musculus
+NM_001042475.2	Homo sapiens	XM_002728952.1	Rattus norvegicus
+NM_001042475.2	Homo sapiens	XM_003641033.1	Gallus gallus
+NM_001042475.2	Homo sapiens	XM_677936.3	Danio rerio
+NM_001042475.2	Homo sapiens	XM_002808401.1	Macaca mulatta
+NM_206923.3	Homo sapiens	XM_529235.3	Pan troglodytes
+NM_206923.3	Homo sapiens	NM_001098723.1	Mus musculus
+NM_206923.3	Homo sapiens	XM_002730239.1	Rattus norvegicus
+NM_206923.3	Homo sapiens	XM_001087143.2	Macaca mulatta
+NM_206996.2	Homo sapiens	XM_513687.3	Pan troglodytes
+NM_206996.2	Homo sapiens	XM_844522.1	Canis lupus familiaris
+NM_206996.2	Homo sapiens	NM_001206874.1	Bos taurus
+NM_206996.2	Homo sapiens	NM_028892.4	Mus musculus
+NM_206996.2	Homo sapiens	XM_416538.3	Gallus gallus
+NM_206996.2	Homo sapiens	XM_684518.4	Danio rerio
+NM_206996.2	Homo sapiens	XM_002801724.1	Macaca mulatta
+NM_207103.2	Homo sapiens	XM_001174640.2	Pan troglodytes
+NM_207103.2	Homo sapiens	XM_843945.2	Canis lupus familiaris
+NM_207103.2	Homo sapiens	XM_003587402.1	Bos taurus
+NM_207103.2	Homo sapiens	NM_001045526.2	Mus musculus
+NM_207103.2	Homo sapiens	XM_001080739.2	Rattus norvegicus
+NM_207103.2	Homo sapiens	XM_001117824.2	Macaca mulatta
+NM_207316.1	Homo sapiens	XM_003310174.1	Pan troglodytes
+NM_207316.1	Homo sapiens	XM_845186.2	Canis lupus familiaris
+NM_207316.1	Homo sapiens	XM_002684836.1	Bos taurus
+NM_207316.1	Homo sapiens	NM_001101640.1	Mus musculus
+NM_207316.1	Homo sapiens	XM_002727912.1	Rattus norvegicus
+NM_207316.1	Homo sapiens	XM_001093355.2	Macaca mulatta
+NM_207335.2	Homo sapiens	XM_001141101.2	Pan troglodytes
+NM_207335.2	Homo sapiens	XM_541739.2	Canis lupus familiaris
+NM_207335.2	Homo sapiens	NM_001192448.1	Bos taurus
+NM_207335.2	Homo sapiens	NM_001142724.1	Mus musculus
+NM_207335.2	Homo sapiens	XM_425160.2	Gallus gallus
+NM_207335.2	Homo sapiens	NM_001033917.1	Danio rerio
+NM_207335.2	Homo sapiens	XM_001098649.1	Macaca mulatta
+NM_207377.2	Homo sapiens	XM_522867.3	Pan troglodytes
+NM_207377.2	Homo sapiens	XM_848824.1	Canis lupus familiaris
+NM_207377.2	Homo sapiens	XM_002690918.1	Bos taurus
+NM_207377.2	Homo sapiens	NM_029227.1	Mus musculus
+NM_207377.2	Homo sapiens	XM_001072851.2	Rattus norvegicus
+NM_207377.2	Homo sapiens	XM_001091657.2	Macaca mulatta
+NM_001204118.1	Homo sapiens	XM_524136.3	Pan troglodytes
+NM_001204118.1	Homo sapiens	XM_848309.2	Canis lupus familiaris
+NM_001204118.1	Homo sapiens	XM_002688736.2	Bos taurus
+NM_001204118.1	Homo sapiens	XM_423779.3	Gallus gallus
+NM_001204118.1	Homo sapiens	XM_001112388.2	Macaca mulatta
+NM_207392.1	Homo sapiens	XM_512588.3	Pan troglodytes
+NM_207392.1	Homo sapiens	NM_001024642.1	Canis lupus familiaris
+NM_207392.1	Homo sapiens	XM_002695018.1	Bos taurus
+NM_207392.1	Homo sapiens	NM_001033131.3	Mus musculus
+NM_207392.1	Homo sapiens	XM_001095104.2	Macaca mulatta
+XM_001174815.2	Pan troglodytes	XM_355598.4	Mus musculus
+XM_001174815.2	Pan troglodytes	XM_001057085.2	Rattus norvegicus
+XM_001174815.2	Pan troglodytes	XM_001118858.2	Macaca mulatta
+NM_207406.3	Homo sapiens	XM_001150241.1	Pan troglodytes

@@ -1,0 +1,100 @@
+NM_020383.3	Homo sapiens	XM_421751.3	Gallus gallus
+NM_020383.3	Homo sapiens	NM_212980.1	Danio rerio
+NM_020383.3	Homo sapiens	NM_058061.3	Drosophila melanogaster
+NM_020383.3	Homo sapiens	XM_560264.3	Anopheles gambiae
+NM_020383.3	Homo sapiens	NM_059088.3	Caenorhabditis elegans
+NM_020383.3	Homo sapiens	NM_071761.4	Caenorhabditis elegans
+NM_020383.3	Homo sapiens	NM_001018448.1	Schizosaccharomyces pombe
+NM_020383.3	Homo sapiens	NM_001181849.1	Saccharomyces cerevisiae
+NM_020383.3	Homo sapiens	XM_455893.1	Kluyveromyces lactis
+NM_020383.3	Homo sapiens	XM_952143.1	Neurospora crassa
+NM_020383.3	Homo sapiens	NM_111408.6	Arabidopsis thaliana
+NM_020383.3	Homo sapiens	NM_001065684.1	Oryza sativa
+NM_020383.3	Homo sapiens	NM_211696.1	Ashbya gossypii ATCC 10895
+NM_020383.3	Homo sapiens	XM_001085192.2	Macaca mulatta
+NM_020383.3	Homo sapiens	XM_368768.1	Magnaporthe oryzae
+NM_001022424.1	Schizosaccharomyces pombe	NM_001181846.1	Saccharomyces cerevisiae
+NM_001022424.1	Schizosaccharomyces pombe	XM_455896.1	Kluyveromyces lactis
+NM_001022424.1	Schizosaccharomyces pombe	XM_952135.2	Neurospora crassa
+NM_001022424.1	Schizosaccharomyces pombe	NM_106091.3	Arabidopsis thaliana
+NM_001022424.1	Schizosaccharomyces pombe	NM_001062601.1	Oryza sativa
+NM_001022424.1	Schizosaccharomyces pombe	NM_211692.1	Ashbya gossypii ATCC 10895
+NM_001022424.1	Schizosaccharomyces pombe	XM_369944.1	Magnaporthe oryzae
+NM_015420.6	Homo sapiens	XM_519898.3	Pan troglodytes
+NM_015420.6	Homo sapiens	XM_532299.3	Canis lupus familiaris
+NM_015420.6	Homo sapiens	NM_198606.2	Mus musculus
+NM_015420.6	Homo sapiens	XM_001081959.2	Rattus norvegicus
+NM_015420.6	Homo sapiens	NM_001030948.1	Gallus gallus
+NM_015420.6	Homo sapiens	NM_200129.1	Danio rerio
+NM_015420.6	Homo sapiens	NM_140510.2	Drosophila melanogaster
+NM_015420.6	Homo sapiens	XM_318219.2	Anopheles gambiae
+NM_015420.6	Homo sapiens	NM_062380.2	Caenorhabditis elegans
+NM_015420.6	Homo sapiens	NM_001021712.1	Schizosaccharomyces pombe
+NM_015420.6	Homo sapiens	NM_001181831.1	Saccharomyces cerevisiae
+NM_015420.6	Homo sapiens	XM_455781.1	Kluyveromyces lactis
+NM_015420.6	Homo sapiens	XM_951413.2	Neurospora crassa
+NM_015420.6	Homo sapiens	NM_118987.7	Arabidopsis thaliana
+NM_015420.6	Homo sapiens	NM_001049076.2	Oryza sativa
+NM_015420.6	Homo sapiens	NM_207738.1	Ashbya gossypii ATCC 10895
+NM_015420.6	Homo sapiens	XM_002806304.1	Macaca mulatta
+NM_015420.6	Homo sapiens	XM_360667.2	Magnaporthe oryzae
+NM_017895.7	Homo sapiens	XM_001166506.2	Pan troglodytes
+NM_017895.7	Homo sapiens	XM_534451.3	Canis lupus familiaris
+NM_017895.7	Homo sapiens	NM_001080271.1	Bos taurus
+NM_017895.7	Homo sapiens	NM_153065.3	Mus musculus
+NM_017895.7	Homo sapiens	NM_001135801.1	Rattus norvegicus
+NM_017895.7	Homo sapiens	NM_001006293.1	Gallus gallus
+NM_017895.7	Homo sapiens	NM_001002869.1	Danio rerio
+NM_017895.7	Homo sapiens	NM_143713.2	Drosophila melanogaster
+NM_017895.7	Homo sapiens	XM_309566.4	Anopheles gambiae
+NM_017895.7	Homo sapiens	NM_058490.3	Caenorhabditis elegans
+NM_017895.7	Homo sapiens	NM_001018610.1	Schizosaccharomyces pombe
+NM_017895.7	Homo sapiens	NM_001181828.1	Saccharomyces cerevisiae
+NM_017895.7	Homo sapiens	XM_455788.1	Kluyveromyces lactis
+NM_017895.7	Homo sapiens	XM_001728449.1	Neurospora crassa
+NM_017895.7	Homo sapiens	NM_117764.4	Arabidopsis thaliana
+NM_017895.7	Homo sapiens	NM_001073303.1	Oryza sativa
+NM_017895.7	Homo sapiens	NM_207731.1	Ashbya gossypii ATCC 10895
+NM_017895.7	Homo sapiens	XM_001099400.2	Macaca mulatta
+NM_017895.7	Homo sapiens	XM_367814.1	Magnaporthe oryzae
+NM_001021444.1	Schizosaccharomyces pombe	NM_001181826.1	Saccharomyces cerevisiae
+NM_001021444.1	Schizosaccharomyces pombe	XM_455790.1	Kluyveromyces lactis
+NM_001021444.1	Schizosaccharomyces pombe	XM_957912.1	Neurospora crassa
+NM_001021444.1	Schizosaccharomyces pombe	NM_207729.1	Ashbya gossypii ATCC 10895
+NM_001021444.1	Schizosaccharomyces pombe	XM_364008.1	Magnaporthe oryzae
+NM_001023076.1	Schizosaccharomyces pombe	NM_001181898.1	Saccharomyces cerevisiae
+NM_016038.2	Homo sapiens	XM_519568.3	Pan troglodytes
+NM_016038.2	Homo sapiens	XM_843539.2	Canis lupus familiaris
+NM_016038.2	Homo sapiens	NM_001034439.1	Bos taurus
+NM_016038.2	Homo sapiens	NM_023248.1	Mus musculus
+NM_016038.2	Homo sapiens	NM_001008289.1	Rattus norvegicus
+NM_016038.2	Homo sapiens	NM_001006211.1	Gallus gallus
+NM_016038.2	Homo sapiens	XM_003642388.1	Gallus gallus
+NM_016038.2	Homo sapiens	NM_201121.1	Danio rerio
+NM_016038.2	Homo sapiens	NM_139800.2	Drosophila melanogaster
+NM_016038.2	Homo sapiens	XM_317609.3	Anopheles gambiae
+NM_016038.2	Homo sapiens	NM_064825.4	Caenorhabditis elegans
+NM_016038.2	Homo sapiens	NM_001019298.1	Schizosaccharomyces pombe
+NM_016038.2	Homo sapiens	NM_001181909.1	Saccharomyces cerevisiae
+NM_016038.2	Homo sapiens	XM_455778.1	Kluyveromyces lactis
+NM_016038.2	Homo sapiens	XM_951702.1	Neurospora crassa
+NM_016038.2	Homo sapiens	NM_103512.2	Arabidopsis thaliana
+NM_016038.2	Homo sapiens	NM_001067333.1	Oryza sativa
+NM_016038.2	Homo sapiens	NM_207741.1	Ashbya gossypii ATCC 10895
+NM_016038.2	Homo sapiens	XM_360288.1	Magnaporthe oryzae
+NM_001018228.1	Schizosaccharomyces pombe	NM_001181919.1	Saccharomyces cerevisiae
+NM_001018228.1	Schizosaccharomyces pombe	XM_455865.1	Kluyveromyces lactis
+NM_001018228.1	Schizosaccharomyces pombe	XM_953418.1	Neurospora crassa
+NM_001018228.1	Schizosaccharomyces pombe	NM_122181.2	Arabidopsis thaliana
+NM_001018228.1	Schizosaccharomyces pombe	NM_001053536.1	Oryza sativa
+NM_001018228.1	Schizosaccharomyces pombe	XM_001350119.1	Plasmodium falciparum
+NM_001018228.1	Schizosaccharomyces pombe	NM_211121.1	Ashbya gossypii ATCC 10895
+NM_001018228.1	Schizosaccharomyces pombe	XM_359745.1	Magnaporthe oryzae
+NM_014573.2	Homo sapiens	XM_848469.2	Canis lupus familiaris
+NM_014573.2	Homo sapiens	NM_001034403.1	Bos taurus
+NM_014573.2	Homo sapiens	NM_133706.2	Mus musculus
+NM_014573.2	Homo sapiens	NM_001008334.1	Rattus norvegicus
+NM_014573.2	Homo sapiens	XM_415916.3	Gallus gallus
+NM_014573.2	Homo sapiens	XM_692513.4	Danio rerio
+NM_014573.2	Homo sapiens	XM_001106505.2	Macaca mulatta
+NM_001181942.1	Saccharomyces cerevisiae	XM_455480.1	Kluyveromyces lactis

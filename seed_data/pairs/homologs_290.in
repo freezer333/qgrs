@@ -1,0 +1,100 @@
+CYTB_251831119	Homo sapiens	CYTB_5835665	Canis lupus familiaris
+CYTB_251831119	Homo sapiens	CYTB_60101837	Bos taurus
+CYTB_251831119	Homo sapiens	CYTB_34538610	Mus musculus
+CYTB_251831119	Homo sapiens	CYTB_110189727	Rattus norvegicus
+CYTB_251831119	Homo sapiens	CYTB_5834855	Gallus gallus
+CYTB_251831119	Homo sapiens	CYTB_8395624	Danio rerio
+CYTB_251831119	Homo sapiens	CYTB_5835245	Drosophila melanogaster
+CYTB_251831119	Homo sapiens	CYTB_5834923	Anopheles gambiae
+CYTB_251831119	Homo sapiens	CYTB_5834888	Caenorhabditis elegans
+CYTB_251831119	Homo sapiens	NM_001184362.1	Saccharomyces cerevisiae
+CYTB_251831119	Homo sapiens	NM_126762.2	Arabidopsis thaliana
+CYTB_251831119	Homo sapiens	cob_13449309	Arabidopsis thaliana
+CYTB_251831119	Homo sapiens	cob_89280714	Oryza sativa
+CYTB_251831119	Homo sapiens	AGOS_AMI008W_45239028	Ashbya gossypii ATCC 10895
+CYTB_251831119	Homo sapiens	CYTB_49146248	Macaca mulatta
+COX3_251831113	Homo sapiens	COX3_5835130	Pan troglodytes
+COX3_251831113	Homo sapiens	COX3_17737326	Canis lupus familiaris
+COX3_251831113	Homo sapiens	COX3_60101831	Bos taurus
+COX3_251831113	Homo sapiens	COX3_34538604	Mus musculus
+COX3_251831113	Homo sapiens	COX3_110189721	Rattus norvegicus
+COX3_251831113	Homo sapiens	COX3_166240019	Gallus gallus
+COX3_251831113	Homo sapiens	COX3_8395618	Danio rerio
+COX3_251831113	Homo sapiens	COX3_5835239	Drosophila melanogaster
+COX3_251831113	Homo sapiens	COX3_5834917	Anopheles gambiae
+COX3_251831113	Homo sapiens	NM_001184375.1	Saccharomyces cerevisiae
+COX3_251831113	Homo sapiens	NM_126741.2	Arabidopsis thaliana
+COX3_251831113	Homo sapiens	cox3_26556997	Arabidopsis thaliana
+COX3_251831113	Homo sapiens	cox3_89280753	Oryza sativa
+COX3_251831113	Homo sapiens	AGOS_AMI003W_45239023	Ashbya gossypii ATCC 10895
+COX3_251831113	Homo sapiens	COX3_49146242	Macaca mulatta
+COX1_251831109	Homo sapiens	COX1_5835128	Pan troglodytes
+COX1_251831109	Homo sapiens	COX1_17737324	Canis lupus familiaris
+COX1_251831109	Homo sapiens	COX1_60101827	Bos taurus
+COX1_251831109	Homo sapiens	COX1_34538600	Mus musculus
+COX1_251831109	Homo sapiens	COX1_110189717	Rattus norvegicus
+COX1_251831109	Homo sapiens	COX1_5834846	Gallus gallus
+COX1_251831109	Homo sapiens	COX1_8395614	Danio rerio
+COX1_251831109	Homo sapiens	COX1_5835235	Drosophila melanogaster
+COX1_251831109	Homo sapiens	COX1_5834913	Anopheles gambiae
+COX1_251831109	Homo sapiens	COX1_5834891	Caenorhabditis elegans
+COX1_251831109	Homo sapiens	NM_001184352.1	Saccharomyces cerevisiae
+COX1_251831109	Homo sapiens	cox1_13449404	Arabidopsis thaliana
+COX1_251831109	Homo sapiens	cox1_89280750	Oryza sativa
+COX1_251831109	Homo sapiens	AGOS_AMI002W_45239022	Ashbya gossypii ATCC 10895
+COX1_251831109	Homo sapiens	COX1_93117380	Macaca mulatta
+COX2_251831110	Homo sapiens	COX2_5835122	Pan troglodytes
+COX2_251831110	Homo sapiens	COX2_17737325	Canis lupus familiaris
+COX2_251831110	Homo sapiens	COX2_60101828	Bos taurus
+COX2_251831110	Homo sapiens	COX2_34538601	Mus musculus
+COX2_251831110	Homo sapiens	COX2_110189718	Rattus norvegicus
+COX2_251831110	Homo sapiens	COX2_5834847	Gallus gallus
+COX2_251831110	Homo sapiens	COX2_8395615	Danio rerio
+COX2_251831110	Homo sapiens	COX2_5835236	Drosophila melanogaster
+COX2_251831110	Homo sapiens	COX2_5834914	Anopheles gambiae
+COX2_251831110	Homo sapiens	COX2_5834892	Caenorhabditis elegans
+COX2_251831110	Homo sapiens	NM_001184373.1	Saccharomyces cerevisiae
+COX2_251831110	Homo sapiens	cox2_13449304	Arabidopsis thaliana
+COX2_251831110	Homo sapiens	cox2_89280706	Oryza sativa
+COX2_251831110	Homo sapiens	AGOS_AMI001W_45239021	Ashbya gossypii ATCC 10895
+COX2_251831110	Homo sapiens	COX2_49146239	Macaca mulatta
+ND3_251831114	Homo sapiens	ND3_5835131	Pan troglodytes
+ND3_251831114	Homo sapiens	ND3_17737327	Canis lupus familiaris
+ND3_251831114	Homo sapiens	ND3_88766329	Bos taurus
+ND3_251831114	Homo sapiens	ND3_34538605	Mus musculus
+ND3_251831114	Homo sapiens	ND3_110189722	Rattus norvegicus
+ND3_251831114	Homo sapiens	ND3_5834851	Gallus gallus
+ND3_251831114	Homo sapiens	ND3_8395619	Danio rerio
+ND3_251831114	Homo sapiens	ND3_5835240	Drosophila melanogaster
+ND3_251831114	Homo sapiens	ND3_5834918	Anopheles gambiae
+ND3_251831114	Homo sapiens	ND3_49146243	Macaca mulatta
+ND2_251831108	Homo sapiens	ND2_5835126	Pan troglodytes
+ND2_251831108	Homo sapiens	ND2_17737323	Canis lupus familiaris
+ND2_251831108	Homo sapiens	ND2_60101826	Bos taurus
+ND2_251831108	Homo sapiens	ND2_34538599	Mus musculus
+ND2_251831108	Homo sapiens	ND2_110189716	Rattus norvegicus
+ND2_251831108	Homo sapiens	ND2_5834845	Gallus gallus
+ND2_251831108	Homo sapiens	ND2_8395613	Danio rerio
+ND2_251831108	Homo sapiens	ND2_5835234	Drosophila melanogaster
+ND2_251831108	Homo sapiens	ND2_5834912	Anopheles gambiae
+ND2_251831108	Homo sapiens	ndhB_94421437	Arabidopsis thaliana
+ND2_251831108	Homo sapiens	ndhB_2_94421438	Arabidopsis thaliana
+ND2_251831108	Homo sapiens	NM_147274.1	Arabidopsis thaliana
+ND2_251831108	Homo sapiens	ND2_49146238	Macaca mulatta
+ATP8_34538602	Mus musculus	ATP8_110189719	Rattus norvegicus
+ND4L_251831115	Homo sapiens	ND4L_5835124	Pan troglodytes
+ND4L_251831115	Homo sapiens	ND4L_5835661	Canis lupus familiaris
+ND4L_251831115	Homo sapiens	ND4L_60101833	Bos taurus
+ND4L_251831115	Homo sapiens	ND4L_34538606	Mus musculus
+ND4L_251831115	Homo sapiens	ND4L_110189723	Rattus norvegicus
+ND4L_251831115	Homo sapiens	ND4L_49146244	Macaca mulatta
+ND6_251831118	Homo sapiens	ND6_5835133	Pan troglodytes
+ND6_251831118	Homo sapiens	ND6_17737329	Canis lupus familiaris
+ND6_251831118	Homo sapiens	ND6_60101836	Bos taurus
+ND6_251831118	Homo sapiens	ND6_34538609	Mus musculus
+ND6_251831118	Homo sapiens	ND6_110189726	Rattus norvegicus
+ND6_251831118	Homo sapiens	ND6_5834856	Gallus gallus
+ND6_251831118	Homo sapiens	ND6_8395623	Danio rerio
+ND6_251831118	Homo sapiens	ND6_49146247	Macaca mulatta
+ND6_5835244	Drosophila melanogaster	ND6_5834922	Anopheles gambiae
+NM_006887.4	Homo sapiens	XM_515435.3	Pan troglodytes

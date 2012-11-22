@@ -1,0 +1,100 @@
+NM_001036647.2	Arabidopsis thaliana	NM_124948.3	Arabidopsis thaliana
+NM_001036647.2	Arabidopsis thaliana	NM_001057139.1	Oryza sativa
+NM_001036658.2	Arabidopsis thaliana	NM_119188.1	Arabidopsis thaliana
+NM_001036658.2	Arabidopsis thaliana	NM_001069759.1	Oryza sativa
+NM_001036712.1	Arabidopsis thaliana	NM_001055482.2	Oryza sativa
+NM_001036746.1	Arabidopsis thaliana	NM_111794.3	Arabidopsis thaliana
+NM_001036770.1	Arabidopsis thaliana	NM_125615.2	Arabidopsis thaliana
+NM_001036843.1	Arabidopsis thaliana	NM_202947.1	Arabidopsis thaliana
+NM_001036859.3	Arabidopsis thaliana	NM_001075077.2	Oryza sativa
+NM_001169368.1	Drosophila melanogaster	XM_319738.2	Anopheles gambiae
+NM_001169368.1	Drosophila melanogaster	NM_001036892.1	Arabidopsis thaliana
+NM_001169368.1	Drosophila melanogaster	NM_001060668.1	Oryza sativa
+XM_557098.2	Anopheles gambiae	XM_001237812.1	Anopheles gambiae
+XM_557098.2	Anopheles gambiae	XM_316460.4	Anopheles gambiae
+XM_557098.2	Anopheles gambiae	XM_316461.3	Anopheles gambiae
+XM_557098.2	Anopheles gambiae	NM_001036898.1	Arabidopsis thaliana
+NM_001022609.1	Schizosaccharomyces pombe	NM_001183842.1	Saccharomyces cerevisiae
+NM_001022609.1	Schizosaccharomyces pombe	XM_453599.1	Kluyveromyces lactis
+NM_001022609.1	Schizosaccharomyces pombe	XM_960609.2	Neurospora crassa
+NM_001022609.1	Schizosaccharomyces pombe	NM_001036951.2	Arabidopsis thaliana
+NM_001022609.1	Schizosaccharomyces pombe	NM_001048332.1	Oryza sativa
+NM_001022609.1	Schizosaccharomyces pombe	NM_209615.1	Ashbya gossypii ATCC 10895
+NM_001022609.1	Schizosaccharomyces pombe	XM_001415073.1	Magnaporthe oryzae
+NM_001036978.1	Arabidopsis thaliana	NM_001186980.1	Oryza sativa
+NM_001037162.1	Homo sapiens	NM_001171952.1	Macaca mulatta
+NM_001037228.1	Homo sapiens	XM_003309130.1	Pan troglodytes
+NM_001199692.1	Homo sapiens	XM_003318909.1	Pan troglodytes
+NM_001199692.1	Homo sapiens	XM_003639553.1	Canis lupus familiaris
+NM_001199692.1	Homo sapiens	NM_001205664.1	Bos taurus
+NM_001199692.1	Homo sapiens	NM_009207.3	Mus musculus
+NM_001199692.1	Homo sapiens	NM_017048.1	Rattus norvegicus
+NM_001199692.1	Homo sapiens	NM_204963.1	Gallus gallus
+NM_001199692.1	Homo sapiens	NM_001037237.1	Danio rerio
+NM_001199692.1	Homo sapiens	NM_001114440.1	Danio rerio
+NM_001199692.1	Homo sapiens	NM_206312.1	Drosophila melanogaster
+NM_001199692.1	Homo sapiens	XM_001688737.1	Anopheles gambiae
+NM_001199692.1	Homo sapiens	XM_308789.4	Anopheles gambiae
+NM_001199692.1	Homo sapiens	NM_001125118.1	Arabidopsis thaliana
+NM_001199692.1	Homo sapiens	XM_001103478.2	Macaca mulatta
+NM_001037311.1	Pan troglodytes	XM_001116470.2	Macaca mulatta
+NM_001037330.1	Homo sapiens	XM_003315578.1	Pan troglodytes
+XM_003435626.2	Canis lupus familiaris	NM_001077087.1	Bos taurus
+XM_003435626.2	Canis lupus familiaris	NM_009052.2	Mus musculus
+XM_003435626.2	Canis lupus familiaris	NM_001037365.1	Rattus norvegicus
+XM_003435626.2	Canis lupus familiaris	XM_001083571.2	Macaca mulatta
+NM_001037407.1	Danio rerio	XM_001346269.2	Danio rerio
+NM_001037407.1	Danio rerio	XM_003201004.1	Danio rerio
+NM_001037407.1	Danio rerio	XM_003201005.1	Danio rerio
+NM_001037407.1	Danio rerio	XM_001346311.3	Danio rerio
+NM_001037407.1	Danio rerio	XM_001922482.3	Danio rerio
+NM_001037407.1	Danio rerio	NM_001114487.1	Danio rerio
+NM_001037407.1	Danio rerio	XM_003201006.1	Danio rerio
+NM_001037498.1	Homo sapiens	NM_001129761.1	Pan troglodytes
+NM_001037498.1	Homo sapiens	XM_003431743.1	Canis lupus familiaris
+NM_001037567.1	Danio rerio	XM_003201445.1	Danio rerio
+NM_001037767.1	Rattus norvegicus	XM_001082363.2	Macaca mulatta
+XM_521214.3	Pan troglodytes	NM_030181.3	Mus musculus
+XM_521214.3	Pan troglodytes	NM_001037784.1	Rattus norvegicus
+NM_001037813.2	Homo sapiens	XM_001146572.2	Pan troglodytes
+NM_001037813.2	Homo sapiens	XM_001102371.2	Macaca mulatta
+NM_001038050.1	Bos taurus	NM_194067.2	Mus musculus
+NM_001038050.1	Bos taurus	NM_203410.1	Rattus norvegicus
+NM_001038122.1	Bos taurus	NM_030135.2	Mus musculus
+NM_001038122.1	Bos taurus	NM_147137.2	Rattus norvegicus
+NM_019556.1	Homo sapiens	XM_521273.2	Pan troglodytes
+NM_019556.1	Homo sapiens	XM_538179.3	Canis lupus familiaris
+NM_019556.1	Homo sapiens	NM_001038137.1	Bos taurus
+NM_019556.1	Homo sapiens	NM_027409.4	Mus musculus
+NM_019556.1	Homo sapiens	XM_001066482.2	Rattus norvegicus
+NM_019556.1	Homo sapiens	XM_001099266.1	Macaca mulatta
+NM_001038192.1	Bos taurus	XM_002699797.1	Bos taurus
+NM_001038192.1	Bos taurus	XM_002805261.1	Macaca mulatta
+NM_001038777.1	Drosophila melanogaster	NM_164380.1	Drosophila melanogaster
+NM_001038777.1	Drosophila melanogaster	NM_165285.1	Drosophila melanogaster
+NM_001038815.1	Drosophila melanogaster	XM_318843.3	Anopheles gambiae
+NM_001632.3	Homo sapiens	XM_001146156.2	Pan troglodytes
+NM_001632.3	Homo sapiens	XM_534605.4	Canis lupus familiaris
+NM_001632.3	Homo sapiens	XM_002685601.1	Bos taurus
+NM_001632.3	Homo sapiens	NM_001103322.1	Bos taurus
+NM_001632.3	Homo sapiens	XM_002685602.1	Bos taurus
+NM_001632.3	Homo sapiens	NM_173987.1	Bos taurus
+NM_001632.3	Homo sapiens	NM_007433.3	Mus musculus
+NM_001632.3	Homo sapiens	XM_002730058.1	Rattus norvegicus
+NM_001632.3	Homo sapiens	XM_003641761.1	Gallus gallus
+NM_001632.3	Homo sapiens	NM_001038951.1	Drosophila melanogaster
+NM_001632.3	Homo sapiens	XM_321411.3	Anopheles gambiae
+XM_001337635.1	Danio rerio	NM_001038954.2	Drosophila melanogaster
+XM_001337635.1	Danio rerio	XM_312025.3	Anopheles gambiae
+NM_001039066.1	Danio rerio	NM_001039639.2	Danio rerio
+NM_001039066.1	Danio rerio	NM_001056281.1	Oryza sativa
+NM_001039115.1	Mus musculus	XM_214482.5	Rattus norvegicus
+XM_426250.3	Gallus gallus	NM_001039135.2	Danio rerio
+NM_001039231.3	Mus musculus	NM_001134998.1	Rattus norvegicus
+NM_001039296.1	Gallus gallus	XM_681391.3	Danio rerio
+NM_001039296.1	Gallus gallus	NM_136209.2	Drosophila melanogaster
+NM_001039296.1	Gallus gallus	XM_319037.3	Anopheles gambiae
+NM_001039296.1	Gallus gallus	NM_001022383.1	Schizosaccharomyces pombe
+NM_001039296.1	Gallus gallus	XM_957395.1	Neurospora crassa
+NM_001039296.1	Gallus gallus	NM_211824.1	Ashbya gossypii ATCC 10895
+NM_001039296.1	Gallus gallus	XM_367523.1	Magnaporthe oryzae
