@@ -1,8 +1,5 @@
 package qgrs.utils.db.populate;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 
 public class SeedUtils {
 
@@ -12,7 +9,7 @@ public class SeedUtils {
 	public static final String [] ComparisonSpeciesSet = {"Mus musculus"};//, "Bos taurus"};
 	
 	public static final String servername = "localhost";//"quadruplex.ramapo.edu";//
-	public static final int serverport = 8091;//80;//;
+	public static final int serverport = 8080;//80;//;
 	public static final String contextpath = "qgrs";//"qgrs2
 	
 	
