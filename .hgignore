@@ -3,3 +3,6 @@ syntax: glob
 .classpath
 /database*
 *.settings*
+seed_db.trace.db
+seed_db.h2.db
+*.settings*
