@@ -206,6 +206,8 @@ public class DatabaseUpdate {
 			System.out.println("GO Table Created");
 			
 			
+			
+			
 		}
 		finally {
 			if ( conn != null ) {

@@ -13,7 +13,7 @@ public class DbIndex {
 	DatabaseConnectionParameters params ;
 	
 	public DbIndex () {
-		params = new DatabaseConnectionParameters("jdbc:h2:file:C:/qgrs-test/qgrsdb", "sa", "sa");
+		params = new DatabaseConnectionParameters("jdbc:h2:file:C:/projects/qgrs_db/qgrsdb", "sa", "sa");
 		
 	}
 	void execute(Connection conn, String q) {
@@ -65,8 +65,13 @@ public class DbIndex {
 	
 	void makeIndex_Set1(Connection conn) {
 		
+		System.out.println("Creating GENE_ID_QGRS index...");
+		String q = "CREATE INDEX IF NOT EXISTS GENE_ID_QGRS ON QGRS (geneId)";
+		execute(conn, q);
+		System.out.println("Index GENE_ID_QGRS complete");
+		
 		System.out.println("Creating GENE_SPECIES index...");
-		String q = "CREATE INDEX IF NOT EXISTS GENE_SPECIES ON GENE (species)";
+		q = "CREATE INDEX IF NOT EXISTS GENE_SPECIES ON GENE (species)";
 		execute(conn, q);
 		System.out.println("Index GENE_SPECIES complete");
 		

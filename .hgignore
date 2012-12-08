@@ -6,3 +6,5 @@ syntax: glob
 seed_db.trace.db
 seed_db.h2.db
 *.settings*
+database/qgrsdb.h2.db
+database/qgrsdb.lock.db
