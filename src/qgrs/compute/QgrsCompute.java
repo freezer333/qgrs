@@ -17,7 +17,7 @@ import framework.diagnostic.MemoryReporter;
 public class QgrsCompute{
 
 	private GeneralAligner aligner;
-	private QgrsIdentifier gIdentifier;
+	private IQgrsIdentifier gIdentifier;
 	private QgrsHomologyScorer gAligner;
 	private InputType inputType;
 	private final StatusHolder statusHolder;
@@ -176,10 +176,10 @@ public class QgrsCompute{
 	public void setAligner(GeneralAligner aligner) {
 		this.aligner = aligner;
 	}
-	public QgrsIdentifier getgIdentifier() {
+	public IQgrsIdentifier getgIdentifier() {
 		return gIdentifier;
 	}
-	public void setgIdentifier(QgrsIdentifier gIdentifier) {
+	public void setgIdentifier(IQgrsIdentifier gIdentifier) {
 		this.gIdentifier = gIdentifier;
 	}
 	public QgrsHomologyScorer getgAligner() {

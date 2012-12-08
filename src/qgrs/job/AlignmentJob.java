@@ -3,7 +3,7 @@ package qgrs.job;
 import java.util.LinkedList;
 import java.util.List;
 
-import qgrs.compute.CPortGQuadruplexIdentifier;
+import qgrs.compute.QgrsIdentifier;
 import qgrs.compute.EmbossAligner;
 import qgrs.compute.FamilyHomologyScorer;
 import qgrs.compute.GeneSequencePair;
@@ -129,7 +129,7 @@ public class AlignmentJob extends Job{
 		// Configure the alignment process, choosing the appropriate algorithm for each step
 		qAligner.setAligner(gAligner);
 		try {
-			CPortGQuadruplexIdentifier cgi = new CPortGQuadruplexIdentifier(3,false);
+			QgrsIdentifier cgi = new QgrsIdentifier(3,false);
 			cgi.setCancelFlag(this.cancelFlag);
 			qAligner.setgIdentifier(cgi);
 		} catch (Exception e1) {
