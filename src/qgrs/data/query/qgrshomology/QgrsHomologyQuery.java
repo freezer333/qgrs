@@ -33,8 +33,16 @@ public class QgrsHomologyQuery extends WhereClause implements PageableQuery {
 			"SELECT GQ1ID, GQ2ID, P_GENESYMBOL, C_GENESYMBOL, P_SPECIES, C_SPECIES, " +
 			"QGRS1.SEQUENCESLICE as qgrs1seq , QGRS2.SEQUENCESLICE AS qgrs2Seq, " +
 			"P_TETRADS , C_TETRADS, P_GSCORE , C_GSCORE , " +
-			"QGRS1.TETRAD1 as qgrs1Location , QGRS2.TETRAD1 as qgrs2Location, " +
+			"p_in5UTR, p_inCDS, p_in3UTR, c_in5UTR, c_inCDS, c_in3UTR, " +
+			"QGRS1.TETRAD1 as qgrs1Position , QGRS2.TETRAD1 as qgrs2Position, " +
+			"QGRS1.TETRAD1 as qgrs1Tetrad1, QGRS1.TETRAD2 as qgrs1Tetrad2, " + 
+			"QGRS1.TETRAD3 as qgrs1Tetrad3, QGRS1.TETRAD4 as qgrs1Tetrad4, " +
+			"QGRS2.TETRAD1 as qgrs2Tetrad1, QGRS2.TETRAD2 as qgrs2Tetrad2, " + 
+			"QGRS2.TETRAD3 as qgrs2Tetrad3, QGRS2.TETRAD4 as qgrs2Tetrad4, " +
 			"OVERALLSCORE ";
+	
+
+	
 	
 	private final String selectionForCount = "SELECT COUNT(QGRS_H.ID) ";
 	private final String fromClause = "FROM QGRS_H JOIN QGRS AS QGRS1 ON QGRS1.ID = GQ1ID JOIN QGRS AS QGRS2 ON QGRS2.ID = GQ2ID "; 

@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 
 import org.jdom.Element;
 
+import framework.web.util.StringUtils;
+
 
 public class GQuadruplex implements Serializable{
 	public final static int MINIMUM_SCORE = 13;
@@ -197,6 +199,30 @@ public class GQuadruplex implements Serializable{
 
 	public Base getLoop3Start() {
 		return sequence.getBases().get(tetrad3Start.getIndexWithGaps() + numTetrads);
+	}
+	
+	public static String getRegionString(boolean in5Prime, boolean inCds, boolean in3Prime) {
+		String r = "";
+		if ( in5Prime ) {
+			r+= " 5'UTR";
+		}
+		if ( inCds ) {
+			if ( StringUtils.isDefined(r)) {
+				r+= "/CDS";
+			}
+			else {
+				r+= "CDS";
+			}
+		}
+		if ( in3Prime ) {
+			if ( StringUtils.isDefined(r)) {
+				r+= "/3'UTR";
+			}
+			else {
+				r+= "3'UTR";
+			}
+		}
+		return r;
 	}
 
 	public String getRegion(){

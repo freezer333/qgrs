@@ -6,6 +6,8 @@ import java.text.DecimalFormat;
 
 import org.jdom.Element;
 
+import qgrs.data.GQuadruplex;
+
 public class QgrsHomologyQueryResult {
 	
 	private class Single {
@@ -55,7 +57,7 @@ public class QgrsHomologyQueryResult {
 		comparison.geneSymbol = rs.getString("C_GENESYMBOL");
 		
 		principal.geneSpecies = rs.getString("P_SPECIES");
-		comparison.geneSymbol = rs.getString("C_SPECIES");
+		comparison.geneSpecies = rs.getString("C_SPECIES");
 		
 		principal.qgrsId = rs.getString("GQ1ID");
 		comparison.qgrsId = rs.getString("GQ2ID");
@@ -70,8 +72,28 @@ public class QgrsHomologyQueryResult {
 		comparison.qgrsTetrads = String.valueOf(rs.getInt("C_TETRADS"));
 		
 		// region needs to be set as the combo of the three regions
+		principal.qgrsRegion = GQuadruplex.getRegionString(
+				rs.getBoolean("p_in5UTR"), rs.getBoolean("p_inCDS"), rs.getBoolean("p_in3UTR"));
 		
+		comparison.qgrsRegion = GQuadruplex.getRegionString(
+				rs.getBoolean("c_in5UTR"), rs.getBoolean("c_inCDS"), rs.getBoolean("c_in3UTR"));
+			
 		// position is the start (in result set) through the sequence length
+		int start = rs.getInt("qgrs1Position");
+		principal.qgrsPosition = (String.valueOf(start) + " - " + String.valueOf(start + principal.qgrsSequence.length()));
+		
+		start = rs.getInt("qgrs2Position");
+		comparison.qgrsPosition = (String.valueOf(start) + " - " + String.valueOf(start + comparison.qgrsSequence.length()));
+		
+		principal.tetrad1 = rs.getInt("qgrs1Tetrad1");
+		principal.tetrad2 = rs.getInt("qgrs1Tetrad2");
+		principal.tetrad3 = rs.getInt("qgrs1Tetrad3");
+		principal.tetrad4 = rs.getInt("qgrs1Tetrad4");
+		
+		comparison.tetrad1 = rs.getInt("qgrs2Tetrad1");
+		comparison.tetrad2 = rs.getInt("qgrs2Tetrad2");
+		comparison.tetrad3 = rs.getInt("qgrs2Tetrad3");
+		comparison.tetrad4 = rs.getInt("qgrs2Tetrad4");
 		
 		score = formatter.format(rs.getDouble("OVERALLSCORE"));
 	}

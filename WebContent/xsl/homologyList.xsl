@@ -47,7 +47,6 @@
 					<th>Tetrads</th>
 					<th>G-Scores</th>
 					<th>QGRS Homology <br/>Score</th>
-					
 				</thead>
 				<tbody>
 				<xsl:for-each select="qgrs/pairs/pair">
@@ -58,25 +57,25 @@
 						<td><xsl:value-of select="$prin/qgrsId"/><br/><xsl:value-of select="$comp/qgrsId"/></td>
 						<td>
 							<xsl:value-of select="$prin/geneSymbol"/>: <i> <xsl:value-of select="$prin/geneSpecies"/></i>
-							<br/>*
+							<br/>
 							<xsl:value-of select="$comp/geneSymbol"/>: <i> <xsl:value-of select="$comp/geneSpecies"/></i>
 						</td>
 						<td>
 							<span 	class="qgrsSlice" 
-									data-t1="{principle/quadruplex/tetrad1_normalized}" 
-									data-t2="{principle/quadruplex/tetrad2_normalized}" 
-									data-t3="{principle/quadruplex/tetrad3_normalized}" 
-									data-t4="{principle/quadruplex/tetrad4_normalized}" 
-									data-nt="{principle/quadruplex/numTetrads}">
+									data-t1="{$prin/tetrad1_normalized}" 
+									data-t2="{$prin/tetrad2_normalized}" 
+									data-t3="{$prin/tetrad3_normalized}" 
+									data-t4="{$prin/tetrad4_normalized}" 
+									data-nt="{$prin/qgrsTetrads}">
 										<xsl:value-of select="$prin/qgrsSequence"/>
 									</span>
 							<br/>
 							<span 	class="qgrsSlice" 
-									data-t1="{comparison/quadruplex/tetrad1_normalized}" 
-									data-t2="{comparison/quadruplex/tetrad2_normalized}" 
-									data-t3="{comparison/quadruplex/tetrad3_normalized}" 
-									data-t4="{comparison/quadruplex/tetrad4_normalized}" 
-									data-nt="{comparison/quadruplex/numTetrads}">
+									data-t1="{$comp/tetrad1_normalized}" 
+									data-t2="{$comp/tetrad2_normalized}" 
+									data-t3="{$comp/tetrad3_normalized}" 
+									data-t4="{$comp/tetrad4_normalized}" 
+									data-nt="{$comp/qgrsTetrads}">
 										<xsl:value-of select="$comp/qgrsSequence"/>
 									</span>
 							
