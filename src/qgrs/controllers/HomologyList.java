@@ -14,6 +14,9 @@ import qgrs.data.query.AlignmentQuery;
 import qgrs.data.query.GeneQuery;
 import qgrs.data.query.HomologyQuery;
 import qgrs.data.query.QgrsQuery;
+import qgrs.data.query.qgrshomology.QgrsHomologyQuery;
+import qgrs.data.query.qgrshomology.QgrsHomologyQueryExecution;
+import qgrs.data.query.qgrshomology.QgrsHomologyQueryResult;
 import qgrs.db.GeneSequenceDb;
 import qgrs.db.HomologyRecordDb;
 import qgrs.db.QgrsDb;
@@ -24,6 +27,7 @@ import qgrs.view.XslViews;
 import framework.web.AbstractController;
 import framework.web.AbstractWebContext;
 import framework.web.ModelView;
+import framework.web.response.ErrorResponse;
 import framework.web.response.PageResponse;
 import framework.web.response.Response;
 
@@ -48,7 +52,16 @@ public class HomologyList extends AbstractController {
 		    
 		    DbCriteria dbCriteria = new DbCriteria(qContext);
 		    
-		    /* Build Query Object */
+		    QgrsHomologyQuery query = new QgrsHomologyQuery();
+		    QgrsHomologyQueryExecution execution = new QgrsHomologyQueryExecution();
+		    execution.execute(qContext.getDbConnection(), query, dbCriteria);
+		    Element pairs = new Element("pairs");
+		    for ( QgrsHomologyQueryResult result: execution.getResults() ) {
+		    	pairs.addContent(result.getXmlElement());
+		    }
+		    /*
+		    
+		   
 		    GeneQuery principleGeneQuery = dbCriteria.buildPrincipleGeneQuery();
 			GeneQuery comparisonGeneQuery = dbCriteria.buildComparisonGeneQuery();
 			
@@ -86,12 +99,17 @@ public class HomologyList extends AbstractController {
 		    	e.addContent(c);
 		    	root.addContent(e);
 		    }
-		    	    
+		    	    */
+		    root.addContent(pairs);
 		    root.addContent(dbCriteria.getXmlElement());
 		    root.addContent(qContext.getSpeciesDropdownElement());
 		    pageXml.addContent(root);
 		    return new PageResponse(new ModelView(XslViews.HomologyList, pageXml));
 		} 
+		catch (Exception e) {
+			e.printStackTrace();
+			return new ErrorResponse(XslViews.Error, context.getResourceResolver(), "Query failed");
+		}
 		finally {
 			seqDb.close();
 			qgrsDb.close();

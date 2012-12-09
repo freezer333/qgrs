@@ -13,7 +13,7 @@ public class DbIndex {
 	DatabaseConnectionParameters params ;
 	
 	public DbIndex () {
-		params = new DatabaseConnectionParameters("jdbc:h2:file:C:/projects/qgrs_db/qgrsdb", "sa", "sa");
+		params = new DatabaseConnectionParameters("jdbc:h2:file:C:/projects/qgrs/database/qgrsdb", "sa", "sa");
 		
 	}
 	void execute(Connection conn, String q) {

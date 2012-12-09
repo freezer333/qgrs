@@ -15,6 +15,14 @@ public abstract class WhereClause {
 		return "'" + v + "'";
 	}
 	
+	protected String stringConstraint(String column, String constraint) {
+		if ( StringUtils.isDefined(constraint)) {
+			return column + " = " + p(constraint);
+		}
+		else return "";
+	}
+
+
 	protected String in(Collection<String> terms) {
 		int count = 0;
 		StringBuilder b = new StringBuilder();

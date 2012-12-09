@@ -15,13 +15,11 @@ public class BasicPartitionStats extends AbstractDbTask {
 	public void print(String where, String label) {
 		
 		DecimalFormat format = new DecimalFormat("0.0%");
-		int countConserved = executeCount("SELECT COUNT(DISTINCT id) FROM HC_QGRS_J " + where);
-		int count99Conserved = executeCount("SELECT COUNT(DISTINCT id) FROM HC99_QGRS_J " + where);
+		int countConserved = executeCount("SELECT COUNT(DISTINCT id) FROM HUMAN_QGRS_CONSERVED " + where);
 		int countTotal = executeCount( "SELECT COUNT(DISTINCT id) FROM HUMAN_QGRS " + where);
 		double percentConserved = ((double) countConserved )/countTotal;
-		double percent99Conserved = ((double) count99Conserved )/countTotal;
 		
-		System.out.println(padRight(label, 25) + ":  " + format.format(percentConserved) + "\t" + format.format(percent99Conserved) + "\t" + countConserved + "\t" + count99Conserved + "\t" + countTotal);
+		System.out.println(padRight(label, 25) + ":  " + format.format(percentConserved) + "\t" +  countConserved + "\t" +  countTotal);
 
 		
 	}
@@ -57,58 +55,7 @@ public class BasicPartitionStats extends AbstractDbTask {
 		print("WHERE in3Prime = 'true' AND numTetrads >= '4'", "3 UTR / 4+ Tetrads");
 		System.out.println("--------------------------------------------------------------------------------------------------------------");
 		
-		/*countConserved = executeCount("SELECT COUNT(DISTINCT id) FROM HC_QGRS_J WHERE in5Prime = 'true'");
-		count99Conserved = executeCount("SELECT COUNT(DISTINCT id) FROM HC99_QGRS_J WHERE in5Prime = 'true'");
-		countTotal = executeCount( "SELECT COUNT(DISTINCT id) FROM HUMAN_QGRS WHERE in5Prime = 'true'");
-		percentConserved = ((double) countConserved )/countTotal;
-		percent99Conserved = ((double) count99Conserved )/countTotal;
-		System.out.println("% Conserved (5'):             " + format.format(percentConserved) + "\t" + format.format(percent99Conserved) + "\t" + countConserved + "\t" + count99Conserved + "\t" + countTotal);
-
-		countConserved = executeCount("SELECT COUNT(DISTINCT id) FROM HC_QGRS_J WHERE inCds = 'true'");
-		count99Conserved = executeCount("SELECT COUNT(DISTINCT id) FROM HC99_QGRS_J WHERE inCds = 'true'");
-		countTotal = executeCount( "SELECT COUNT(DISTINCT  id) FROM HUMAN_QGRS WHERE inCds = 'true'");
-		percentConserved = ((double) countConserved )/countTotal;
-		percent99Conserved = ((double) count99Conserved )/countTotal;
-		System.out.println("% Conserved (CDS):            " + format.format(percentConserved) + "\t" + format.format(percent99Conserved) + "\t" + countConserved + "\t" + count99Conserved + "\t" + countTotal);
-
-		countConserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC_QGRS_J WHERE in3Prime = 'true'");
-		count99Conserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC99_QGRS_J WHERE in3Prime = 'true'");
-		countTotal = executeCount( "SELECT COUNT(DISTINCT  id) FROM HUMAN_QGRS WHERE in3Prime = 'true'");
-		percentConserved = ((double) countConserved )/countTotal;
-		percent99Conserved = ((double) count99Conserved )/countTotal;
-		System.out.println("% Conserved (3'):             " + format.format(percentConserved) + "\t" + format.format(percent99Conserved) + "\t" + countConserved + "\t" + count99Conserved + "\t" + countTotal);
-		
-		
-		
-		countConserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC_QGRS_J WHERE numTetrads = '2'");
-		count99Conserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC99_QGRS_J WHERE numTetrads = '2'");
-		countTotal = executeCount( "SELECT COUNT(DISTINCT  id) FROM HUMAN_QGRS WHERE numTetrads = '2'");
-		percentConserved = ((double) countConserved )/countTotal;
-		percent99Conserved = ((double) count99Conserved )/countTotal;
-		System.out.println("% Conserved (2 Tetrads):      " + format.format(percentConserved) + "\t" + format.format(percent99Conserved) + "\t" + countConserved + "\t" + count99Conserved + "\t" + countTotal);
-
-		countConserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC_QGRS_J WHERE numTetrads = '3'");
-		count99Conserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC99_QGRS_J WHERE numTetrads = '3'");
-		countTotal = executeCount( "SELECT COUNT(DISTINCT  id) FROM HUMAN_QGRS WHERE numTetrads = '3'");
-		percentConserved = ((double) countConserved )/countTotal;
-		percent99Conserved = ((double) count99Conserved )/countTotal;
-		System.out.println("% Conserved (3 Tetrads):      " + format.format(percentConserved) + "\t" + format.format(percent99Conserved) + "\t" + countConserved + "\t" + count99Conserved + "\t" + countTotal);
-
-		countConserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC_QGRS_J WHERE numTetrads = '4'");
-		count99Conserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC99_QGRS_J WHERE numTetrads = '4'");
-		countTotal = executeCount( "SELECT COUNT(DISTINCT  id) FROM HUMAN_QGRS WHERE numTetrads = '4'");
-		percentConserved = ((double) countConserved )/countTotal;
-		percent99Conserved = ((double) count99Conserved )/countTotal;
-		System.out.println("% Conserved (4 Tetrads):      " + format.format(percentConserved) + "\t" + format.format(percent99Conserved) + "\t" + countConserved + "\t" + count99Conserved + "\t" + countTotal);
-
-		countConserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC_QGRS_J WHERE numTetrads >= '5'");
-		count99Conserved = executeCount("SELECT COUNT(DISTINCT  id) FROM HC99_QGRS_J WHERE numTetrads >= '5'");
-		countTotal = executeCount( "SELECT COUNT(DISTINCT  id) FROM HUMAN_QGRS WHERE numTetrads >= '5'");
-		percentConserved = ((double) countConserved )/countTotal;
-		percent99Conserved = ((double) count99Conserved )/countTotal;
-		System.out.println("% Conserved (5+ Tetrads):     " + format.format(percentConserved) + "\t" + format.format(percent99Conserved) + "\t" + countConserved + "\t" + count99Conserved + "\t" + countTotal);
-
-		*/
+	
 		
 		closeConnection();
 	}

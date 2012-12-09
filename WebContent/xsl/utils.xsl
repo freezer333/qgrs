@@ -70,7 +70,7 @@
 					$('#dbRegion15UTRC').is(":checked") ? $('#dbRegion15UTR').val("on") : $('#dbRegion15UTR').val("false");							
 				});
 				
-				$("#dbRegion23UTRC").change( function() {
+				<!-- $("#dbRegion23UTRC").change( function() {
 					$('#dbRegion23UTRC').is(":checked") ? $('#dbRegion23UTR').val("on") : $('#dbRegion23UTR').val("false");							
 				});
 				$("#dbRegion2CDSC").change( function() {
@@ -78,7 +78,7 @@
 				});
 				$("#dbRegion25UTRC").change( function() {
 					$('#dbRegion25UTRC').is(":checked") ? $('#dbRegion25UTR').val("on") : $('#dbRegion25UTR').val("false");							
-				});
+				}); -->
 				
 				$("#browse-qgrs-p").click(  function() {
 					$("#dbFilterSide").val("principle");
@@ -86,12 +86,12 @@
 					$("#dbPageNumber").val(1);
 					$("#navigationFilterForm").submit();
 				});
-				$("#browse-qgrs-c").click(  function() {
+				<!-- $("#browse-qgrs-c").click(  function() {
 					$("#dbFilterSide").val("comparison");
 					$("#navigationFilterForm").attr("action", "quadruplex-list");
 					$("#dbPageNumber").val(1);
 					$("#navigationFilterForm").submit();
-				});
+				}); -->
 				
 				$("#browse-qgrs-h").click(  function() {
 					$("#navigationFilterForm").attr("action", "homology-list");
@@ -111,35 +111,35 @@
 					$("#navigationFilterForm").submit();
 				});
 				
-				$("#browse-gene-c").click(  function() {
+				<!-- $("#browse-gene-c").click(  function() {
 					$("#dbFilterSide").val("comparison");
 					$("#navigationFilterForm").attr("action", "gene-list");
 					$("#dbPageNumber").val(1);
 					$("#navigationFilterForm").submit();
 				});
-				
+				 -->
 				$("#clearAll").click( function()  {
 					$("#dbGeneId1").val("");
-					$("#dbGeneId2").val("");
+					<!-- $("#dbGeneId2").val(""); -->
 					$("#dbGeneSymbol1").val("");
-					$("#dbGeneSymbol2").val("");
+					<!-- $("#dbGeneSymbol2").val(""); -->
 					$("#dbQgrsId1").val("");
-					$("#dbQgrsId2").val("");
+					<!-- $("#dbQgrsId2").val(""); -->
 					$("#dbSpecies1").val("Homo sapiens");
 					$("#dbSpecies2").val("");
 					$("#dbTetrads1Slider").slider( "value" , 2 );
 					$("#dbTetrads1Value").text(2);
 					$("#dbMinTetrads1").val(2);
-					$("#dbTetrads2Slider").slider( "value" , 2 );
+					<!-- $("#dbTetrads2Slider").slider( "value" , 2 );
 					$("#dbTetrads2Value").text(2);
-					$("#dbMinTetrads2").val(2);
+					$("#dbMinTetrads2").val(2); -->
 
 					$("#dbGScore1Slider").slider( "value" , 35 );
 					$("#dbGScore1Value").text(35);
 					$("#dbGScore1").val(35);
-					$("#dbGScore2Slider").slider( "value" , 35 );
+					<!-- $("#dbGScore2Slider").slider( "value" , 35 );
 					$("#dbGScore2Value").text(35);
-					$("#dbGScore2").val(35);
+					$("#dbGScore2").val(35); -->
 					
 					$("#dbOverallSimilaritySlider").slider( "value" , .9 );
 					$("#dbOverallSimilarityValue").text("90%");
@@ -152,20 +152,20 @@
 					$("#dbRegion15UTRC").attr("checked","checked").button( "refresh" );
 					$("#dbRegion15UTR").val("on");
 					
-					$("#dbRegion25UTRC").attr("checked","checked").button( "refresh" );
-					$("#dbRegion25UTR").val("on");
+					<!-- $("#dbRegion25UTRC").attr("checked","checked").button( "refresh" );
+					$("#dbRegion25UTR").val("on"); -->
 					
 					$("#dbRegion13UTRC").attr("checked","checked").button( "refresh" );
 					$("#dbRegion13UTR").val("on");
 					
-					$("#dbRegion23UTRC").attr("checked","checked").button( "refresh" );
-					$("#dbRegion23UTR").val("on");
+					<!-- $("#dbRegion23UTRC").attr("checked","checked").button( "refresh" );
+					$("#dbRegion23UTR").val("on"); -->
 					
 					$("#dbRegion1CDSC").attr("checked","checked").button( "refresh" );
 					$("#dbRegion1CDS").val("on");
 					
-					$("#dbRegion2CDSC").attr("checked","checked").button( "refresh" );
-					$("#dbRegion2CDS").val("on");
+					<!-- $("#dbRegion2CDSC").attr("checked","checked").button( "refresh" );
+					$("#dbRegion2CDS").val("on"); -->
 					
 				});
 				$(".clearButton").click ( function() {
@@ -227,14 +227,6 @@
 				<div class="filterCriteriaSubPanel ui-corner-all" >
 				<table style="width:100%">
 					<caption style="width:100%">mRNA Criteria</caption>
-					<thead>
-						<tr>
-							<th>&#160;</th>
-							<th>Principal</th>
-							<th>Comparison</th>
-						</tr>
-					</thead>
-						
 					<tbody>
 					<tr>
 						<td>
@@ -244,10 +236,7 @@
 							<img class="clearButton" style="display:none" data-for="dbGeneId1" src="{$imagePath}clear.png"/>
 							<input type="text" id="dbGeneId1" name="dbGeneId1" value="{qgrs/dbCriteria/dbGeneId1}"/>
 						</td>
-						<td>
-							<img class="clearButton" style="display:none" data-for="dbGeneId2" src="{$imagePath}clear.png"/>	
-							<input type="text" id="dbGeneId2" name="dbGeneId2" value="{qgrs/dbCriteria/dbGeneId2}"/>
-						</td>
+						
 					</tr>
 					<tr>
 						<td>
@@ -257,27 +246,17 @@
 							<img class="clearButton" style="display:none" data-for="dbGeneSymbol1" src="{$imagePath}clear.png"/>
 							<input type="text" id="dbGeneSymbol1" name="dbGeneSymbol1" value="{qgrs/dbCriteria/dbGeneSymbol1}"/>
 						</td>
-						<td>
-							<img class="clearButton" style="display:none" data-for="dbGeneSymbol2" src="{$imagePath}clear.png"/>
-							<input type="text" id="dbGeneSymbol2" name="dbGeneSymbol2" value="{qgrs/dbCriteria/dbGeneSymbol2}"/>
-						</td>
+						
 					</tr>
 					<tr>
 						<td>
 							<label>Organism:</label>
 						</td>
 						<td>
-							<!-- <img class="clearButton" data-for="dbSpecies1" src="{$imagePath}clear.png"/>
-							<input title="(ex. Homo sapiens)" type="text" id="dbSpecies1" name="dbSpecies1" value="{qgrs/dbCriteria/dbSpecies1}"/> 
-							 -->
 							<select id="dbSpecies1" name="dbSpecies1" >
 								<option value="Homo sapiens">Homo sapiens</option>
 							</select>
-						</td>
-						<td>
-							<!--<img class="clearButton" data-for="dbSpecies2" src="{$imagePath}clear.png"/>
-							<input title="(ex. Pan troglodytes; Bos taurus)" type="text" id="dbSpecies2" name="dbSpecies2" value="{qgrs/dbCriteria/dbSpecies2}"/>
-							  -->
+							<span style="margin-left:0.25em;margin-right:0.25em">x</span>
 							<select id="dbSpecies2" name="dbSpecies2" >
 							<xsl:for-each select="qgrs/speciesList/species">
 								<xsl:choose>
@@ -291,12 +270,13 @@
 							</xsl:for-each>
 							</select>
 						</td>
+						
 					</tr>
 					<tr>
 						<td>
 							<label for="dbMinAlignmentScore">Min. Sequence<br/>Similarity: </label>
 						</td>
-						<td colspan="2">
+						<td>
 							<span id="dbMinAlignmentScoreValue" style="float:right"><xsl:value-of select="qgrs/dbCriteria/dbMinAlignmentScore"/>%</span>
 							<input type="hidden" id="dbMinAlignmentScore" name="dbMinAlignmentScore" value="{qgrs/dbCriteria/dbMinAlignmentScore}"/>
 							<div style="margin-right:4em;">
@@ -312,14 +292,7 @@
 			<div class="filterCriteriaSubPanel ui-corner-all">
 					<table style="width:100%">
 					<caption style="width:100%">QGRS Criteria</caption>
-					<thead>
-						<tr>
-							<th>&#160;</th>
-							<th>Principal</th>
-							<th>Comparison</th>
-						</tr>
-					</thead>
-						
+					
 					<tbody>
 					<tr>
 						<td>
@@ -329,10 +302,7 @@
 							<img class="clearButton" style="display:none" data-for="dbQgrsId1" src="{$imagePath}clear.png"/>
 							<input style="width:100%" type="text" id="dbQgrsId1" name="dbQgrsId1" value="{qgrs/dbCriteria/dbQgrsId1}"/>
 						</td>
-						<td>
-							<img class="clearButton" style="display:none" data-for="dbQgrsId2" src="{$imagePath}clear.png"/>
-							<input style="width:100%" type="text" id="dbQgrsId2" name="dbQgrsId2" value="{qgrs/dbCriteria/dbQgrsId2}"/>
-						</td>
+						
 					</tr>
 					
 					<tr>
@@ -346,13 +316,7 @@
 								<div id="dbTetrads1Slider" class="sliderContainer"/>
 							</div>
 						</td>
-						<td>
-							<span id="dbTetrads2Value" style="float:right"><xsl:value-of select="qgrs/dbCriteria/dbMinTetrads2"/></span>
-							<input type="hidden" id="dbMinTetrads2" name="dbMinTetrads2" value="{qgrs/dbCriteria/dbMinTetrads2}"/>
-							<div style="margin-right:2em" >
-								<div id="dbTetrads2Slider" class="sliderContainer"/>
-							</div>
-						</td>
+						
 					</tr>
 					<tr>
 						<td>
@@ -365,13 +329,7 @@
 								<div id="dbGScore1Slider" class="sliderContainer"/>
 							</div>
 						</td>
-						<td>
-							<span id="dbGScore2Value" style="float:right"><xsl:value-of select="qgrs/dbCriteria/dbGScore2"/></span>
-							<input type="hidden" id="dbGScore2" name="dbGScore2" value="{qgrs/dbCriteria/dbGScore2}"/>
-							<div style="margin-right:2em" >
-								<div id="dbGScore2Slider" class="sliderContainer"/>
-							</div>
-						</td>
+						
 					</tr>
 					<tr>
 						<td>
@@ -416,82 +374,12 @@
 								
 							</div>
 						</td>
-						<td>
-							<input type="hidden" id="dbRegion23UTR" name="dbRegion23UTR" class="dbCheckboxBacking" value="{qgrs/dbCriteria/dbRegion23UTR}"/>
-							<input type="hidden" id="dbRegion2CDS" name="dbRegion2CDS" class="dbCheckboxBacking"  value="{qgrs/dbCriteria/dbRegion2CDS}"/>
-							<input type="hidden" id="dbRegion25UTR" name="dbRegion25UTR" class="dbCheckboxBacking"  value="{qgrs/dbCriteria/dbRegion25UTR}"/>
-							
-							
-							<div class="regionButtonSet">
-								<xsl:element name="input">
-									<xsl:attribute name="type">checkbox</xsl:attribute>
-									<xsl:attribute name="id">dbRegion25UTRC</xsl:attribute>
-									<xsl:attribute name="name">dbRegion25UTRC</xsl:attribute>
-									<xsl:if test="qgrs/dbCriteria/dbRegion25UTR = 'on'">
-										<xsl:attribute name="checked">checked</xsl:attribute> 
-									</xsl:if>
-								</xsl:element>
-								<label for="dbRegion25UTRC">5' UTR</label>
-								
-								<xsl:element name="input">
-									<xsl:attribute name="type">checkbox</xsl:attribute>
-									<xsl:attribute name="id">dbRegion2CDSC</xsl:attribute>
-									<xsl:attribute name="name">dbRegion2CDSC</xsl:attribute>
-									<xsl:if test="qgrs/dbCriteria/dbRegion2CDS = 'on'">
-										<xsl:attribute name="checked">checked</xsl:attribute> 
-									</xsl:if>
-								</xsl:element>
-								<label for="dbRegion2CDSC">CDS</label>
-								
-								<xsl:element name="input">
-									<xsl:attribute name="type">checkbox</xsl:attribute>
-									<xsl:attribute name="id">dbRegion23UTRC</xsl:attribute>
-									<xsl:attribute name="name">dbRegion23UTRC</xsl:attribute>
-									<xsl:if test="qgrs/dbCriteria/dbRegion23UTR = 'on'">
-										<xsl:attribute name="checked">checked</xsl:attribute> 
-									</xsl:if>
-								</xsl:element>
-								<label for="dbRegion23UTRC">3' UTR</label>
-								
-							</div>
 						
-						</td>
-				</tr>
-				<!-- 
-				<tr>
-					<td>&#160;</td>
-					<td colspan="2" style="padding-top:1em;text-align:center;font-weight:bold">Homology Criteria</td>
 				</tr>
 				
 				<tr>
-					<td>&#160;</td>
-					<td>
-						<label for="dbOverlapSimilarity">Min. Overlap Score: <span id="dbOverlapSimilarityValue"><xsl:value-of select="qgrs/dbCriteria/dbOverlapSimilarity"/></span></label>
-						<input type="hidden" id="dbOverlapSimilarity" name="dbOverlapSimilarity" value="{qgrs/dbCriteria/dbOverlapSimilarity}"/>
-						<div id="dbOverlapSimilaritySlider" class="sliderContainer"/>
-					</td>
-					<td>
-						<label for="dbTetradSimilarity">Min. Tetrad Score: <span id="dbTetradSimilarityValue"><xsl:value-of select="qgrs/dbCriteria/dbTetradSimilarity"/></span></label>
-						<input type="hidden" id="dbTetradSimilarity" name="dbTetradSimilarity" value="{qgrs/dbCriteria/dbTetradSimilarity}"/>
-						<div id="dbTetradSimilaritySlider" class="sliderContainer"/>
-					</td>
-				</tr>
-				<tr>
-					<td>&#160;</td>
-					<td>
-						<label for="dbLoopSimilarity">Min. Loop Score: <span id="dbLoopSimilarityValue"><xsl:value-of select="qgrs/dbCriteria/dbLoopSimilarity"/></span></label>
-						<input type="hidden" id="dbLoopSimilarity" name="dbLoopSimilarity" value="{qgrs/dbCriteria/dbLoopSimilarity}"/>
-						<div id="dbLoopSimilaritySlider" class="sliderContainer"/>
-					</td>
-					<td>
-						<label for="dbTotalLengthSimilarity">Min. Length Score: <span id="dbTotalLengthSimilarityValue"><xsl:value-of select="qgrs/dbCriteria/dbTotalLengthSimilarity"/></span></label>
-						<input type="hidden" id="dbTotalLengthSimilarity" name="dbTotalLengthSimilarity" value="{qgrs/dbCriteria/dbTotalLengthSimilarity}"/>
-						<div id="dbTotalLengthSimilaritySlider" class="sliderContainer"/>
-					</td>
-				</tr>-->
-				<tr>
 					<td><label>Min. Homology<br/> Threshold:</label></td>
-					<td colspan="2">
+					<td>
 						<input type="hidden" id="dbOverallSimilarity" name="dbOverallSimilarity" value="{qgrs/dbCriteria/dbOverallSimilarity}"/>
 						<span style="float:right" id="dbOverallSimilarityValue"><xsl:value-of select="format-number(qgrs/dbCriteria/dbOverallSimilarity, '#.00')"/></span>
 						<div style="margin-right:4em;" >
@@ -528,17 +416,8 @@
 				
 			</xsl:element>	
 			<label for="browse-gene-p">mRNA (Principal)</label>
-			<xsl:element name="input">
-				<xsl:attribute name="type">radio</xsl:attribute>
-				<xsl:attribute name="name">browse</xsl:attribute>
-				<xsl:attribute name="id">browse-gene-c</xsl:attribute>
-				<xsl:attribute name="value">browse-gene-c</xsl:attribute>
-				<xsl:if test="$browse = 'browse-gene-c'">
-					<xsl:attribute name="checked">checked</xsl:attribute> 
-				</xsl:if>
-				
-			</xsl:element>	
-			<label for="browse-gene-c">mRNA (Comparison)</label>
+			
+			
 							
 			<xsl:element name="input">
 				<xsl:attribute name="type">radio</xsl:attribute>
@@ -561,16 +440,7 @@
 				</xsl:if>
 			</xsl:element>
 			<label for="browse-qgrs-p">QGRS (Principal)</label>
-			<xsl:element name="input">
-				<xsl:attribute name="type">radio</xsl:attribute>
-				<xsl:attribute name="name">browse</xsl:attribute>
-				<xsl:attribute name="id">browse-qgrs-c</xsl:attribute>
-				<xsl:attribute name="value">browse-qgrs-c</xsl:attribute>
-				<xsl:if test="$browse = 'browse-qgrs-c'">
-					<xsl:attribute name="checked">checked</xsl:attribute> 
-				</xsl:if>
-			</xsl:element>
-			<label for="browse-qgrs-c">QGRS (Comparison)</label>
+			
 			
 			
 			<xsl:element name="input">

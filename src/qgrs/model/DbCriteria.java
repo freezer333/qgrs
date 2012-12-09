@@ -40,7 +40,7 @@ public class DbCriteria extends HashMap<QParam, String> {
 		return new GeneQuery(this.get(QParam.Db_GeneId1), this.get(QParam.Db_Species1), this.get(QParam.Db_GeneSymbol1));
 	}
 	public GeneQuery buildComparisonGeneQuery() {
-		return new GeneQuery(this.get(QParam.Db_GeneId2), this.get(QParam.Db_Species2), this.get(QParam.Db_GeneSymbol2));
+		return new GeneQuery("", this.get(QParam.Db_Species2), "");
 	}
 	public QgrsQuery buildQgrsQueryForSingleQgrs() {
 		if ( "comparison".equalsIgnoreCase(this.get(QParam.Db_FilterSide))) {
@@ -69,15 +69,17 @@ public class DbCriteria extends HashMap<QParam, String> {
 	}
 	
 	public QgrsQuery buildComparisonQgrsClause(){
-		return new QgrsQuery(this.get(QParam.Db_QgrsId2), 
+		// There will no longer be a relevant QGRS clause for the comparison
+		
+		return new QgrsQuery(/*this.get(QParam.Db_QgrsId2), 
 				Integer.parseInt(this.get(QParam.Db_MinTetrads2)),
 				Integer.parseInt(this.get(QParam.Db_GScore2)), 
 				readBoolean(this.get(QParam.Db_Region25UTR)), 
 				readBoolean(this.get(QParam.Db_Region2CDS)),
-				readBoolean(this.get(QParam.Db_Region23UTR)));
+				readBoolean(this.get(QParam.Db_Region23UTR))*/);
 	}
 	
-	private Boolean readBoolean(String onoff) {
+	public Boolean readBoolean(String onoff) {
 		return "on".equalsIgnoreCase(onoff);
 		
 	}
@@ -143,41 +145,6 @@ public class DbCriteria extends HashMap<QParam, String> {
 		qgrs1.setText(retval);
 		root.addContent(qgrs1);
 		
-		
-		Element qgrs2 = new Element("qgrs2");
-	    retval = "";
-		retval += "Comparison QGRS:  ";
-		if ( StringUtils.isDefined(this.get(QParam.Db_QgrsId2))) {
-			retval += ("{id=" + this.get(QParam.Db_QgrsId2) + "}");
-		}
-		retval += (" Tetrads >= " + this.get(QParam.Db_MinTetrads2) + " | GScore >= " + this.get(QParam.Db_GScore2));
-		retval += " | region =";
-		count = 0;
-		if ( "on".equalsIgnoreCase(this.get(QParam.Db_Region23UTR)) ) {
-			retval += " 3'UTR"; count++;
-		}
-		if ( "on".equalsIgnoreCase(this.get(QParam.Db_Region2CDS)) ) {
-			if ( count > 0 ) retval += " or "; retval += " CDS"; count++;
-		}
-		if ( "on".equalsIgnoreCase(this.get(QParam.Db_Region25UTR) )) {
-			if ( count > 0 ) retval += " or "; retval += " 5'UTR"; count++;
-		}
-		if ( count == 0 ) {
-			retval += " none selected";
-		}
-		if ( StringUtils.isDefined(this.get(QParam.Db_GeneId2))) {
-			retval += (" [Gene Id:  " + this.get(QParam.Db_GeneId2) +"]");
-		}
-		if ( StringUtils.isDefined(this.get(QParam.Db_Species2))) {
-			retval += (" [Species:  " + this.get(QParam.Db_Species2) +"]");
-		}
-		if ( StringUtils.isDefined(this.get(QParam.Db_Ontology2))) {
-			retval += (" [Ontology Terms:  " + this.get(QParam.Db_Ontology2) +"]");
-		}
-		
-		
-		qgrs2.setText(retval);
-		root.addContent(qgrs2);
 		
 		Element qgrsHomology = new Element("qgrsHomology");
 	    retval = "";
