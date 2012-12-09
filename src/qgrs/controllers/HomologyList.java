@@ -42,10 +42,7 @@ public class HomologyList extends AbstractController {
 	public Response processRequest(AbstractWebContext context) {
 		
 		QgrsWebContext qContext = (QgrsWebContext)context;
-		HomologyRecordDb hDb = new HomologyRecordDb(qContext.getDbConnection());
-		QgrsDb qgrsDb = new QgrsDb(qContext.getDbConnection());
-		GeneSequenceDb seqDb = new GeneSequenceDb(qContext.getDbConnection());
-	    
+		   
 		try {
 			Document pageXml = new Document();
 		    Element root = new Element("qgrs");
@@ -59,47 +56,7 @@ public class HomologyList extends AbstractController {
 		    for ( QgrsHomologyQueryResult result: execution.getResults() ) {
 		    	pairs.addContent(result.getXmlElement());
 		    }
-		    /*
-		    
 		   
-		    GeneQuery principleGeneQuery = dbCriteria.buildPrincipleGeneQuery();
-			GeneQuery comparisonGeneQuery = dbCriteria.buildComparisonGeneQuery();
-			
-			QgrsQuery principleQgrsQuery = dbCriteria.buildPrincipleQgrsClause();
-			QgrsQuery comparisonQgrsQuery = dbCriteria.buildComparisonQgrsClause();
-			
-			principleQgrsQuery.setGeneClause(principleGeneQuery);
-			comparisonQgrsQuery.setGeneClause(comparisonGeneQuery);
-			
-			AlignmentQuery alignmentQuery = new AlignmentQuery(Float.parseFloat(dbCriteria.get(QParam.Db_MinAlignmentScore)), 
-					principleGeneQuery, comparisonGeneQuery);
-		    
-			HomologyQuery homologyQuery = dbCriteria.buildQgrsHomologyQuery();
-			homologyQuery.setPrincipleQgrsQuery(principleQgrsQuery);
-			homologyQuery.setComparisonQgrsQuery(comparisonQgrsQuery);
-			homologyQuery.setAlignmentQuery(alignmentQuery);
-			
-			
-			
-			int count =  hDb.getCount(homologyQuery);
-			PageHelper pager = new PageHelper(dbCriteria, count);
-		    List<QgrsHomologyRecord> results = hDb.get(homologyQuery, dbCriteria.getPageLimit(), pager.getComputedOffset());
-		    Map<String, GQuadruplexRecord> quadMap = new ResultHelper().buildQuadruplexList(results, qgrsDb);
-		    HashMap<String, GeneSequence> geneMap = new ResultHelper().buildGeneMapFromQuadruplexes(quadMap.values(), seqDb);
-			
-		    for ( QgrsHomologyRecord qhr : results ) {
-		    	Element e = qhr.getXmlElement();
-		    	Element p = new Element("principle");
-		    	Element c = new Element("comparison");
-		    	p.addContent(quadMap.get(qhr.getGq1Id()).getXmlElement());
-		    	c.addContent(quadMap.get(qhr.getGq2Id()).getXmlElement());
-		    	p.addContent(geneMap.get(quadMap.get(qhr.getGq1Id()).getGeneAccessionNumber()).getXmlElement());
-		    	c.addContent(geneMap.get(quadMap.get(qhr.getGq2Id()).getGeneAccessionNumber()).getXmlElement());
-		    	e.addContent(p);
-		    	e.addContent(c);
-		    	root.addContent(e);
-		    }
-		    	    */
 		    root.addContent(pairs);
 		    root.addContent(dbCriteria.getXmlElement());
 		    root.addContent(qContext.getSpeciesDropdownElement());
@@ -108,14 +65,9 @@ public class HomologyList extends AbstractController {
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
-			return new ErrorResponse(XslViews.Error, context.getResourceResolver(), "Query failed");
+			return new ErrorResponse(XslViews.Error, context.getResourceResolver(), "Query failed - " + e.getMessage());
 		}
-		finally {
-			seqDb.close();
-			qgrsDb.close();
-		    hDb.close();
-
-		}
+		
 	}
 
 }

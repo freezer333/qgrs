@@ -7,47 +7,12 @@ import java.text.DecimalFormat;
 import org.jdom.Element;
 
 import qgrs.data.GQuadruplex;
+import qgrs.data.query.SingleQgrsResult;
 
 public class QgrsHomologyQueryResult {
 	
-	private class Single {
-		String geneSymbol;
-		String geneSpecies;
-		String qgrsId;
-		String qgrsSequence;
-		String qgrsRegion;
-		String qgrsPosition;
-		String qgrsTetrads;
-		String qgrsGScore;
-		
-		int tetrad1;
-		int tetrad2;
-		int tetrad3;
-		int tetrad4;
-		
-		Element getXmlElement() {
-			Element root = new Element("qgrs");
-			root.addContent(new Element("geneSymbol").setText(geneSymbol));
-			root.addContent(new Element("geneSpecies").setText(geneSpecies));
-			root.addContent(new Element("qgrsId").setText(qgrsId));
-			root.addContent(new Element("qgrsSequence").setText(qgrsSequence));
-			root.addContent(new Element("qgrsRegion").setText(qgrsRegion));
-			root.addContent(new Element("qgrsPosition").setText(qgrsPosition));
-			root.addContent(new Element("qgrsTetrads").setText(qgrsTetrads));
-			root.addContent(new Element("qgrsGScore").setText(qgrsGScore));
-			
-			root.addContent(new Element("tetrad1_normalized").setText(String.valueOf(tetrad1-tetrad1+1)));
-			root.addContent(new Element("tetrad2_normalized").setText(String.valueOf(this.tetrad2-tetrad1+1)));
-			root.addContent(new Element("tetrad3_normalized").setText(String.valueOf(this.tetrad3-tetrad1+1)));
-			root.addContent(new Element("tetrad4_normalized").setText(String.valueOf(this.tetrad4-tetrad1+1)));
-
-			
-			return root;
-		}
-	}
-	
-	private Single principal = new Single();
-	private Single comparison = new Single();
+	private SingleQgrsResult principal = new SingleQgrsResult();
+	private SingleQgrsResult comparison = new SingleQgrsResult();
 	private String score;
 	static final DecimalFormat formatter = new DecimalFormat("0.00");
 	

@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 import qgrs.data.GQuadruplex;
 import qgrs.data.query.PageableQuery;
+import qgrs.data.query.QueryUtils;
 import qgrs.data.query.WhereClause;
 import qgrs.input.QParam;
 import qgrs.model.DbCriteria;
@@ -62,7 +63,9 @@ public class QgrsHomologyQuery extends WhereClause implements PageableQuery {
 		return "P_GSCORE >= " + p(qgrsMinGScore);
 	}
 	
-	private String region() {
+	
+	
+	public static String buildRegionConstraint(boolean in5Prime, boolean inCds, boolean in3Prime) {
 		if ( !in5Prime && !inCds && !in3Prime ) {
 			return "FALSE";
 		}
@@ -91,14 +94,12 @@ public class QgrsHomologyQuery extends WhereClause implements PageableQuery {
 	}
 	
 	
-	
-	
 				
 	private String buildWhereClause() {
 		LinkedList<String> criteria = new LinkedList<String>();
 		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetrad());
 		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScore());
-		criteria.add(this.region());
+		criteria.add(buildRegionConstraint(in5Prime, inCds, in3Prime));
 		criteria.add(this.stringConstraint("GQ1ID", this.qgrsId));
 		criteria.add(this.stringConstraint("P_ACCESSIONNUMBER ", this.principleGeneId));
 		criteria.add(this.stringConstraint("P_GENESYMBOL", this.principleGeneSymbol));
@@ -164,6 +165,7 @@ public class QgrsHomologyQuery extends WhereClause implements PageableQuery {
 		this.pageOffset = computedOffset;
 		
 	}
+	
 	
 	
 	
