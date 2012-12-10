@@ -5,12 +5,14 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import qgrs.db.AppProperties;
+
 import framework.db.DatabaseConnectionParameters;
 
 public abstract class AbstractDbTask {
 
 	Connection conn;
-	DatabaseConnectionParameters params = new DatabaseConnectionParameters("jdbc:h2:file:C:/projects/qgrs/database/qgrsdb", "sa", "sa");
+	DatabaseConnectionParameters params = new DatabaseConnectionParameters(AppProperties.getConnectionStringFromPropsxml(), "sa", "sa");
 	protected boolean printSql = false;
 	
 	public AbstractDbTask () {

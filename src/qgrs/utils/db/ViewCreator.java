@@ -6,14 +6,13 @@ import java.sql.Statement;
 
 import qgrs.db.AppProperties;
 import framework.db.DatabaseConnectionParameters;
-import framework.web.ResourceResolver;
 
 public class ViewCreator {
 
 	DatabaseConnectionParameters params ;
 	
 	public ViewCreator () {
-		params = new DatabaseConnectionParameters("jdbc:h2:file:C:/projects/qgrs/database/qgrsdb", "sa", "sa");
+		params = new DatabaseConnectionParameters(AppProperties.getConnectionStringFromPropsxml(), "sa", "sa");
 	}
 	
 	Connection getConnection() {

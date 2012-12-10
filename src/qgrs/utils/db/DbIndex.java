@@ -6,14 +6,13 @@ import java.sql.Statement;
 
 import qgrs.db.AppProperties;
 import framework.db.DatabaseConnectionParameters;
-import framework.web.ResourceResolver;
 
 public class DbIndex {
 
 	DatabaseConnectionParameters params ;
 	
 	public DbIndex () {
-		params = new DatabaseConnectionParameters("jdbc:h2:file:/Users/sfrees/dev/qgrsdb/qgrsdb", "sa", "sa");
+		params = new DatabaseConnectionParameters(AppProperties.getConnectionStringFromPropsxml(), "sa", "sa");
 		
 	}
 	void execute(Connection conn, String q) {

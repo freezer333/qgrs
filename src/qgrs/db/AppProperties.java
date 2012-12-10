@@ -1,5 +1,7 @@
 	package qgrs.db;
 
+import java.io.File;
+
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -10,12 +12,10 @@ import framework.web.util.StringUtils;
 
 public class AppProperties {
 
-	
-	public static String getConnectionString(ResourceResolver r) {
+	public static String getConnectionString(File propsXml) {
 		try {
 			SAXBuilder sb = new SAXBuilder();
-		
-			Document propsDoc = sb.build(r.getResourceFile(ResourceType.xml, "props.xml"));
+			Document propsDoc = sb.build(propsXml);
 			Element propsRoot = propsDoc.getRootElement();
 			Element dbElement = propsRoot.getChild("db");
 			if ( dbElement != null ) {
@@ -28,6 +28,14 @@ public class AppProperties {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public static String getConnectionStringFromPropsxml() {
+		File f = new File ( System.getProperty("user.dir") + "/WebContent/xml/props.xml");
+		return getConnectionString(f);
+	}
+	public static String getConnectionString(ResourceResolver r) {
+		return getConnectionString(r.getResourceFile(ResourceType.xml, "props.xml"));
 	}
 	
 	public static boolean dropTables(ResourceResolver r) {
