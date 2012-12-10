@@ -17,6 +17,7 @@ public class DbIndex {
 	}
 	void execute(Connection conn, String q) {
 		try {
+			System.out.println(q);
 			Statement stmt = conn.createStatement();
 	   		stmt.executeUpdate(q);
 			stmt.close();
@@ -64,67 +65,54 @@ public class DbIndex {
 	
 	void makeIndex_Set1(Connection conn) {
 		
-		System.out.println("Creating GENE_ID_QGRS index...");
 		String q = "CREATE INDEX IF NOT EXISTS GENE_ID_QGRS ON QGRS (geneId)";
 		execute(conn, q);
-		System.out.println("Index GENE_ID_QGRS complete");
 		
-		System.out.println("Creating GENE_SPECIES index...");
 		q = "CREATE INDEX IF NOT EXISTS GENE_SPECIES ON GENE (species)";
 		execute(conn, q);
-		System.out.println("Index GENE_SPECIES complete");
 		
-		System.out.println("Creating GENE_ACCESSION_NUMBER index...");
 		q = "CREATE INDEX IF NOT EXISTS GENE_SPECIES ON GENE (accessionNumber)";
 		execute(conn, q);
-		System.out.println("Index GENE_ACCESSION_NUMBER complete");
 		
-		System.out.println("Creating QGRS_GENEID index...");
 		q = "CREATE INDEX IF NOT EXISTS QGRS_GENEID ON QGRS (geneId)";
 		execute(conn, q);
-		System.out.println("Index QGRS_GENEID complete");
 		
-		System.out.println("Creating QGRS_ID index...");
 		q = "CREATE INDEX IF NOT EXISTS QGRS_ID ON QGRS (id)";
 		execute(conn, q);
-		System.out.println("Index QGRS_ID complete");
 		
-		System.out.println("Creating QGRS_GSCORE index...");
 		q = "CREATE INDEX IF NOT EXISTS QGRS_GSCORE ON QGRS (gScore)";
 		execute(conn, q);
-		System.out.println("Index QGRS_GSCORE complete");
 		
-		System.out.println("Creating GENE_A_PRINCIPAL index...");
 		q = "CREATE INDEX IF NOT EXISTS GENE_A_PRINCIPAL ON GENE_A (principle)";
 		execute(conn, q);
-		System.out.println("Index GENE_A_PRINCIPAL complete");
 		
-		System.out.println("Creating GENE_A_SIMPERCENT index...");
+		q = "CREATE INDEX IF NOT EXISTS GENE_A_COMPARISON ON GENE_A (comparison)";
+		execute(conn, q);
+		
 		q = "CREATE INDEX IF NOT EXISTS GENE_A_SIMPERCENT ON GENE_A (similarityPercentage)";
 		execute(conn, q);
-		System.out.println("Index GENE_A_SIMPERCENT complete");
 		
 		
-		
-		System.out.println("Creating QGRS_H_OSCORE index...");
 		q = "CREATE INDEX IF NOT EXISTS QGRS_H_OSCORE ON QGRS_H (overallScore)";
 		execute(conn, q);
-		System.out.println("Index QGRS_H_OSCORE complete");
 		
-		System.out.println("Creating QGRS_H_ALIGNMENTID index...");
 		q = "CREATE INDEX IF NOT EXISTS QGRS_H_ALIGNMENTID ON QGRS_H (alignmentId)";
 		execute(conn, q);
-		System.out.println("Index QGRS_H_ALIGNMENTID complete");
 		
-		System.out.println("Creating QGRS_H_GQ1 index...");
 		q = "CREATE INDEX IF NOT EXISTS QGRS_H_GQ1 ON QGRS_H (gq1Id)";
 		execute(conn, q);
-		System.out.println("Index QGRS_H_GQ1 complete");
 		
-		System.out.println("Creating QGRS_H_GQ2 index...");
 		q = "CREATE INDEX IF NOT EXISTS QGRS_H_GQ2 ON QGRS_H (gq1Id)";
 		execute(conn, q);
-		System.out.println("Index QGRS_H_GQ2 complete");
+		
+		q = "CREATE INDEX IF NOT EXISTS QGRS_H_ALIGNMENTSCORE ON QGRS_H (ALIGNMENTSCORE)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS QGRS_H_PACCESSIONNUMBER ON QGRS_H (P_ACCESSIONNUMBER)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS QGRS_H_CACCESSIONNUMBER ON QGRS_H (C_ACCESSIONNUMBER)";
+		execute(conn, q);
 	}
 	
 	/**
