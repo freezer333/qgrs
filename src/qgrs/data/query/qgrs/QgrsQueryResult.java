@@ -9,7 +9,7 @@ import qgrs.data.query.SingleQgrsResult;
 
 public class QgrsQueryResult {
 
-	SingleQgrsResult data;
+	SingleQgrsResult data = new SingleQgrsResult();
 	
 	
 	

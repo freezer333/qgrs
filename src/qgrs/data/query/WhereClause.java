@@ -58,6 +58,15 @@ public abstract class WhereClause {
 			return "";
 		}
 	}
+	protected String continuedWhere(Collection<String> criteria) {
+		String a = and(criteria);
+		if ( StringUtils.isDefined(a)) {
+			return " AND " + a; 
+		}
+		else {
+			return "";
+		}
+	}
 	
 	public String toSql(WhereClause other) {
 		return or(this, other);

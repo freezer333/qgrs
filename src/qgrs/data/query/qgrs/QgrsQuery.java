@@ -66,7 +66,7 @@ public class QgrsQuery  extends WhereClause implements PageableQuery {
 		if ( this.qgrsMinHomologyScore > 0.3 ) {
 			criteria.add(this.qgrsHomology());
 		}
-		String w = where(criteria);
+		String w = continuedWhere(criteria);
 		return this.selectClauseResults.replace("#", w);
 		
 	}
@@ -79,15 +79,7 @@ public class QgrsQuery  extends WhereClause implements PageableQuery {
 		criteria.add(this.stringConstraint("GENE.ACCESSIONNUMBER ", this.principleGeneId));
 		criteria.add(this.stringConstraint("GENE.GENESYMBOL", this.principleGeneSymbol));
 		criteria.add(this.stringConstraint("GENE.SPECIES", this.principleGeneSpecies));
-		
-		if ( this.minimumGeneAlignmentPercentage > 0.001 ) {
-			criteria.add(this.alignment());
-		}
-		if ( this.qgrsMinHomologyScore > 0.3 ) {
-			criteria.add(this.qgrsHomology());
-		}
 		return  where(criteria);
-		
 	}
 	
 	@Override
