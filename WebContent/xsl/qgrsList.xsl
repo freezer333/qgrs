@@ -51,40 +51,39 @@
 				<table class="pairTable" style="width:100%" cellspacing="0" >
 				<thead>
 					<tr>
-					<th>QGRS ID</th>
-					<th>Gene</th>
-					<th>Organism</th>
-					<th>Sequence</th>
-					<th>Region</th>
-					<th>nt. Position</th>
-					<th># Tetrads</th>
-					<th>G-Score</th>
-					
-					
+						<th>QGRS ID</th>
+						<th>Gene</th>
+						<th>Organism</th>
+						<th>Sequence</th>
+						<th>Region</th>
+						<th>nt. Position</th>
+						<th># Tetrads</th>
+						<th>G-Score</th>
+						<th># QGRS H</th>
 					</tr>
 				</thead>
 				<tbody>
-				<xsl:for-each select="qgrs/quadruplex">
+				<xsl:for-each select="qgrs/results/qgrs">
 					<tr>
-						<td><xsl:value-of select="@id"/></td>
-						<td><xsl:value-of select="gene/geneSymbol"/></td>
-						<td><i><xsl:value-of select="gene/species"/></i></td>
+						<td><xsl:value-of select="qgrsId"/></td>
+						<td><xsl:value-of select="geneSymbol"/></td>
+						<td><i><xsl:value-of select="species"/></i></td>
 						<td>
 							<span 	class="qgrsSlice" 
 									data-t1="{tetrad1_normalized}" 
 									data-t2="{tetrad2_normalized}" 
 									data-t3="{tetrad3_normalized}" 
 									data-t4="{tetrad4_normalized}" 
-									data-nt="{numTetrads}">
-										<xsl:value-of select="sequenceSlice"/>
+									data-nt="{qgrsTetrads}">
+										<xsl:value-of select="qgrsSequence"/>
 									</span>
 							
 						</td>
-						<td><xsl:value-of select="region"/></td>
-						<td><xsl:value-of select="position"/></td>
-						<td><xsl:value-of select="numTetrads"/></td>
-						<td><xsl:value-of select="score"/></td>
-						
+						<td><xsl:value-of select="qgrsRegion"/></td>
+						<td><xsl:value-of select="qgrsPosition"/></td>
+						<td><xsl:value-of select="qgrsTetrads"/></td>
+						<td><xsl:value-of select="qgrsGScore"/></td>
+						<td><xsl:value-of select="hCount"/></td>
 						
 					</tr>
 				</xsl:for-each>
