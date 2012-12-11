@@ -113,6 +113,18 @@ public class DbIndex {
 		
 		q = "CREATE INDEX IF NOT EXISTS QGRS_H_CACCESSIONNUMBER ON QGRS_H (C_ACCESSIONNUMBER)";
 		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS QGRS_H_PSPECIES ON QGRS_H (P_SPECIES)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS QGRS_H_CSPECIES ON QGRS_H (C_SPECIES)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS QGRS_H_P_GSCORE ON QGRS_H (P_GSCORE)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS QGRS_H_PTETRADS ON QGRS_H (P_TETRADS)";
+		execute(conn, q);
 	}
 	
 	/**

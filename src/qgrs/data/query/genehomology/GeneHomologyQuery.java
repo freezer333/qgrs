@@ -46,13 +46,13 @@ implements PageableQuery {
 	 */
 	
 	private final String selectClauseResults = 
-			"select GENE_A.PRINCIPLE, C_Accessionnumber , P_GENESYMBOL, C_GENESYMBOL, P_SPECIES, C_SPECIES, ALIGNMENTSCORE, " +  
-			"(SELECT COUNT(DISTINCT QGRS.ID) FROM QGRS WHERE GENEID=P_ACCESSIONNUMBER #) as pQgrsCount,  " +
+			"select alignmentId, P_AccessionNumber, C_Accessionnumber , P_GENESYMBOL, C_GENESYMBOL, P_SPECIES, C_SPECIES, ALIGNMENTSCORE, " +  
+			"(SELECT COUNT(DISTINCT QGRS.ID) FROM QGRS WHERE GENEID=P_ACCESSIONNUMBER #) as P_QgrsCount,  " +
 			"COUNT (DISTINCT QGRS_H.GQ1ID) as HCOUNT ";
 
-	private final String fromClause = " FROM GENE_A LEFT JOIN QGRS_H  ON QGRS_H.P_ACCESSIONNUMBER=GENE_A.PRINCIPLE ";
+	private final String fromClause = " FROM QGRS_H ";
 	private final String orderClause = " ORDER BY P_ACCESSIONNUMBER ";
-	private final String groupClause = " GROUP BY P_ACCESSIONNUMBER, C_AccessionNumber, GENE_A.PRINCIPLE ";
+	private final String groupClause = " GROUP BY P_ACCESSIONNUMBER, C_AccessionNumber ";
 	
 	
 	private String alignment() {
@@ -83,7 +83,7 @@ implements PageableQuery {
 		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScore());
 		criteria.add(QueryUtils.buildRegionConstraint(in5Prime, inCds, in3Prime, QueryUtils.qgrs_h_regions_cols));
 		criteria.add(this.stringConstraint("GQ1ID", this.qgrsId));
-		criteria.add(this.stringConstraint("PRINCIPLE ", this.principleGeneId));
+		criteria.add(this.stringConstraint("P_AccessionNUmber ", this.principleGeneId));
 		criteria.add(this.stringConstraint("P_GENESYMBOL", this.principleGeneSymbol));
 		criteria.add(this.stringConstraint("P_SPECIES", this.principleGeneSpecies));
 		criteria.add(this.stringConstraint("C_SPECIES", this.comparsionGeneSpecies));

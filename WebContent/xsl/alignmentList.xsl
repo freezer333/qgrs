@@ -49,19 +49,7 @@
 							}
 						
 						);
-						$(".qgrs-c-link").click( 
 						
-							function(e) {
-								$("#dbGeneId2").val($(this).attr("data-comparison"));
-								$("#browse-qgrs-c").click();
-								$("#dbFilterSide").val("comparison");
-								$("#navigationFilterForm").attr("action", "quadruplex-list");
-								$("#navigationFilterForm").submit();
-								var aBetterEventObject = jQuery.Event(e);
-    							aBetterEventObject.preventDefault()
-							}
-						
-						);
 						
 					});
 				</script>
@@ -98,36 +86,37 @@
 						</tr>
 						</thead>
 						<tbody>
-						<xsl:for-each select="qgrs/alignment_listing">
+						<xsl:for-each select="qgrs/results/pair">
+							<xsl:variable name="prin" select="gene[@side='principle']"/>
+							<xsl:variable name="comp" select="gene[@side='comparison']"/>
+							
 							<tr>
 								<td>
-									<a href="geneDetails?id={principleId}"><xsl:value-of select="principleId"/></a>
+									<a href="geneDetails?id={$prin/geneId}"><xsl:value-of select="$prin/geneId"/></a>
 									<br/>
-									<a href="geneDetails?id={comparisonId}"><xsl:value-of select="comparisonId"/></a>
+									<a href="geneDetails?id={$comp/geneId}"><xsl:value-of select="$comp/geneId"/></a>
 								</td>
 								<td>
-									<xsl:value-of select="principleGeneName"/>
+									<xsl:value-of select="$prin/geneSymbol"/>
 									<br/>
-									<xsl:value-of select="comparisonGeneName"/>
+									<xsl:value-of select="$comp/geneSymbol"/>
 								</td>
 								
-								<!-- <td><a href="align-detail?alignmentId={alignmentId}">
-									<xsl:value-of select="geneLabel"/></a></td> -->
-								<td><i><xsl:value-of select="principleSpeciesName"/> <br/> <xsl:value-of select="comparisonSpeciesName"/></i></td>
-								<td><xsl:value-of select="similarityPercentage"/></td>
+								
+								<td><i><xsl:value-of select="$prin/geneSpecies"/> 
+										<br/> <xsl:value-of select="$comp/geneSpecies"/></i></td>
+								<td><xsl:value-of select="alignmentScore"/></td>
 								
 								<td>
-								<a href="quadruplex-list?geneId={principleId}" class="qgrs-p-link" data-principle="{principleId}">
-								<xsl:value-of select="principleQgrsCount"/></a> 
-								/ 
-								<a href="quadruplex-list?geneId={comparisonId}" class="qgrs-c-link" data-comparison="{comparisonId}">
-								<xsl:value-of select="comparisonQgrsCount"/></a>
+								<a href="quadruplex-list?geneId={$prin/geneId}" class="qgrs-p-link" data-principle="{$prin/geneId}">
+								<xsl:value-of select="$prin/qgrsCount"/></a> 
+								
 								</td>
 								
 								
-								<td><a href="homology-list?alignmentId={alignmentId}"  class="qgrs-h-link" data-alignmentId="{alignmentId}" data-principle="{principleId}" data-comparison="{comparisonId}"><xsl:value-of select="homologyCount"/></a></td>
+								<td><a href="homology-list?alignmentId={id}"  class="qgrs-h-link" data-alignmentId="{id}" data-principle="{$prin/geneId}" data-comparison="{$comp/geneId}"><xsl:value-of select="$prin/qgrsHCount"/></a></td>
 								
-								<td><a href="align-start?seq1Option=seq1IdOption&amp;seq2Option=seq2IdOption&amp;seq1={principleId}&amp;seq2={comparisonId}">Detailed Analysis</a></td>
+								<td><a href="align-start?seq1Option=seq1IdOption&amp;seq2Option=seq2IdOption&amp;seq1={$prin/geneId}&amp;seq2={$comp/geneId}">Detailed Analysis</a></td>
 							</tr>
 						</xsl:for-each>
 						</tbody>
