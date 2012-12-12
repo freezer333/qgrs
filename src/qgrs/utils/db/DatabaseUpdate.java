@@ -19,7 +19,20 @@ public class DatabaseUpdate {
 	}
 	
 	public void update() {
-		this.createGenesTable();
+		Connection conn = getConnection();
+		try {
+			this.createGenesTable(conn);
+			DbIndex.makeIndexes(conn);
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+		finally {
+			if ( conn != null ) {
+				closeConnection(conn);
+			}
+		}
+		
 	}
 	
 	Connection getConnection() {
@@ -57,41 +70,9 @@ public class DatabaseUpdate {
 		}
 	}
 	
-	void dropTable(Connection conn, String table) {
-		try {
-			System.out.println("DROPPING "+table+" Table");
-			String q = "DROP TABLE "+table;
-			execute(conn, q);
-		}
-		catch (Exception e) {
-			System.out.println(table + " does not exist");
-		}
-	}
-	public void dropTables() {
-		Connection conn = null;
-		try {
-			conn = getConnection();
-			if ( this.drop ) {
-				dropTable(conn, "GENE");
-				dropTable(conn, "POLY_A_SITE");
-				dropTable(conn, "POLY_A_SIGNAL");
-				dropTable(conn, "GENE_A");
-				dropTable(conn, "GENE_A_SEQ");
-				dropTable(conn, "QGRS");
-				dropTable(conn, "QGRS_H");
-				dropTable(conn, "GO");
-			}
-		}
-		finally {
-			if ( conn != null ) {
-				closeConnection(conn);
-			}
-		}
-	}
-	void createGenesTable() {
-		Connection conn = null;
-		try {
-			conn = getConnection();
+	
+	
+	void createGenesTable(Connection conn) {
 			String q = "CREATE TABLE IF NOT EXISTS GENE (accessionNumber char(50), " +
 					"sequenceLength int, " +
 					"giNumber varchar(255), " +
@@ -208,12 +189,8 @@ public class DatabaseUpdate {
 			
 			
 			
-		}
-		finally {
-			if ( conn != null ) {
-				closeConnection(conn);
-			}
-		}
+	
+		
 	}
 	
 	

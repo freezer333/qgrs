@@ -24,7 +24,6 @@ public class DispatchServlet extends HttpServlet {
 		super.init();
 		dispatch = new Dispatcher(this);
 		DatabaseUpdate du = new DatabaseUpdate(new ResourceResolver(this.getServletContext()));
-		du.dropTables();
 		du.update();
 	}
 

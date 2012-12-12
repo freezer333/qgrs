@@ -15,7 +15,7 @@ public class DbIndex {
 		params = new DatabaseConnectionParameters(AppProperties.getConnectionStringFromPropsxml(), "sa", "sa");
 		
 	}
-	void execute(Connection conn, String q) {
+	static void  execute(Connection conn, String q) {
 		try {
 			System.out.println(q);
 			Statement stmt = conn.createStatement();
@@ -54,7 +54,7 @@ public class DbIndex {
 		Connection conn = null;
 		try {
 			conn = getConnection();
-			makeIndex_Set1(conn);
+			makeIndexes(conn);
 		}
 		finally {
 			if ( conn != null ) {
@@ -63,7 +63,7 @@ public class DbIndex {
 		}	
 	}
 	
-	void makeIndex_Set1(Connection conn) {
+	public static void makeIndexes(Connection conn) {
 		
 		String q = "CREATE INDEX IF NOT EXISTS GENE_ID_QGRS ON QGRS (geneId)";
 		execute(conn, q);
