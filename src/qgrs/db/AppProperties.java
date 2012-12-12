@@ -29,10 +29,31 @@ public class AppProperties {
 		}
 		return null;
 	}
+	public static String getSeedCacheConnectionString(File propsXml) {
+		try {
+			SAXBuilder sb = new SAXBuilder();
+			Document propsDoc = sb.build(propsXml);
+			Element propsRoot = propsDoc.getRootElement();
+			Element dbElement = propsRoot.getChild("db_seedcache");
+			if ( dbElement != null ) {
+				if ( StringUtils.isDefined(dbElement.getText())) {
+					return dbElement.getText();
+				}
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	public static String getConnectionStringFromPropsxml() {
 		File f = new File ( System.getProperty("user.dir") + "/WebContent/xml/props.xml");
 		return getConnectionString(f);
+	}
+	public static String getSeedCacheConnectionStringFromPropsxml() {
+		File f = new File ( System.getProperty("user.dir") + "/WebContent/xml/props.xml");
+		return getSeedCacheConnectionString(f);
 	}
 	public static String getConnectionString(ResourceResolver r) {
 		return getConnectionString(r.getResourceFile(ResourceType.xml, "props.xml"));

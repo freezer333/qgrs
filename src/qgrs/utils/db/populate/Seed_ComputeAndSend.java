@@ -6,20 +6,46 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.List;
 
+import qgrs.db.AppProperties;
+import qgrs.db.Cache;
+import qgrs.db.DatabaseConnection;
+import qgrs.db.LocalGeneCache;
 import qgrs.db.XmlWritePostCache;
 import qgrs.input.AccessionNumberInputProvider;
 import qgrs.job.AlignmentJob;
 import qgrs.utils.db.InputPair;
+import framework.db.DatabaseConnectionParameters;
 
 public class Seed_ComputeAndSend {
 	
 	static int complete = 0;
 	static int errors = 0;
+	static Cache geneCache;
+	static DatabaseConnection connection;
 	
+	static {
+		DatabaseConnectionParameters params  = new DatabaseConnectionParameters(AppProperties.getSeedCacheConnectionStringFromPropsxml(), "sa", "sa");
+		connection = new DatabaseConnection(params);
+		geneCache = new LocalGeneCache(connection);
+	}
+	
+	static Connection getConnection(DatabaseConnectionParameters params) {
+		try {
+		 Class.forName("org.h2.Driver");
+	        Connection conn = DriverManager.
+	            getConnection(params.getConnectionString(), params.getUsername(), params.getPassword());
+	        return conn;
+		}
+		catch (Exception e) {
+			throw new RuntimeException (e);
+		}
+	}
 	
 	public static void processBatch(File inputFile)  {
 		List<InputPair> initialPairs = new LinkedList<InputPair>();
@@ -96,7 +122,7 @@ public class Seed_ComputeAndSend {
 	
 	public static void computeAndSend(InputPair pair) {
 		try {
-			runNextAlignment(new AccessionNumberInputProvider(pair.principle, pair.comparison));
+			runNextAlignment(new AccessionNumberInputProvider(pair.principle, pair.comparison, geneCache));
 			complete++;
 			Thread.sleep(2000);
 		}
@@ -108,7 +134,14 @@ public class Seed_ComputeAndSend {
 	}
 	
 	private static void runNextAlignment(AccessionNumberInputProvider inputProvider) throws Exception {
-		AlignmentJob job = new AlignmentJob(inputProvider, null, new XmlWritePostCache ( SeedUtils.servername, SeedUtils.contextpath, SeedUtils.serverport));
+		AlignmentJob job = new AlignmentJob(
+				inputProvider, 
+				null, 
+				new XmlWritePostCache ( 
+						SeedUtils.servername, 
+						SeedUtils.contextpath, 
+						SeedUtils.serverport, 
+						geneCache));
 		job.runJob();
 	}
 }

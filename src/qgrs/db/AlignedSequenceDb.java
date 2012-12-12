@@ -17,12 +17,14 @@ private static String TABLE = "GENE_A_SEQ";
 	DatabaseConnection dc;
 	final PreparedStatement insertStatement;
 	final PreparedStatement selectStatement;
+	final PreparedStatement selectSingleStatement;
 	
 	
 	public AlignedSequenceDb(DatabaseConnection dc) {
 		this.dc = dc;
 		this.insertStatement = createInsertStatement();
 		this.selectStatement = createSelectStatement();
+		this.selectSingleStatement = createSelectSingleStatement();
 	}
 	
 	public void close() {
@@ -68,6 +70,21 @@ private static String TABLE = "GENE_A_SEQ";
 			throw new RuntimeException (e);
 		}
 	}
+	public String getPureSequence(String accessionNumber) {
+		try {
+			this.selectStatement.setString(1, accessionNumber);
+			ResultSet rs = this.selectStatement.executeQuery();
+			if ( rs.next()) {
+				String s = readClob(rs.getCharacterStream("sequence"));
+				return s.replaceAll("-", "");
+			}
+			else {
+				return null;
+			}
+		} catch ( Exception e) {
+			throw new RuntimeException (e);
+		}
+	}
 	
 	
 	public boolean has(String alignmentId, String accessionNumber) {
@@ -103,10 +120,26 @@ private static String TABLE = "GENE_A_SEQ";
 		return buildSelectStatement(builder);
 	}
 	
+	private PreparedStatement createSelectSingleStatement() {
+		StatementBuilder builder = new StatementBuilder(TABLE);
+		return buildSelectSingleStatement(builder);
+	}
+	
+	
 	
 	private PreparedStatement buildSelectStatement(StatementBuilder builder) {
 		QueryConstraints qc = new QueryConstraints();
 		qc.add(new QueryConstraint("id", ""));
+		qc.add(new QueryConstraint("accessionNumber", ""));
+		try {
+			return dc.getConnection().prepareStatement(builder.buildSelectStatement(qc));
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	private PreparedStatement buildSelectSingleStatement(StatementBuilder builder) {
+		QueryConstraints qc = new QueryConstraints();
 		qc.add(new QueryConstraint("accessionNumber", ""));
 		try {
 			return dc.getConnection().prepareStatement(builder.buildSelectStatement(qc));
