@@ -1,23 +1,18 @@
 package qgrs.controllers;
 
-import java.util.List;
-import java.util.Map;
-
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.GeneSequence;
-import qgrs.data.query.GeneQuery;
-import qgrs.db.GeneSequenceDb;
-import qgrs.db.GeneSequenceDb.HomologSide;
-import qgrs.db.HomologyRecordDb;
-import qgrs.input.QParam;
+import qgrs.data.query.gene.GeneQuery;
+import qgrs.data.query.gene.GeneQueryExecution;
+import qgrs.data.query.gene.GeneQueryResult;
 import qgrs.model.DbCriteria;
 import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;
 import framework.web.AbstractController;
 import framework.web.AbstractWebContext;
 import framework.web.ModelView;
+import framework.web.response.ErrorResponse;
 import framework.web.response.PageResponse;
 import framework.web.response.Response;
 
@@ -34,6 +29,28 @@ public class GeneList extends AbstractController {
 	    Element root = new Element("qgrs");
 	    QgrsWebContext qContext = (QgrsWebContext)context;
 	    DbCriteria dbCriteria = new DbCriteria(qContext);
+	    
+	    try {
+		    GeneQuery query = new GeneQuery();
+		    GeneQueryExecution execution = new GeneQueryExecution();
+		    execution.execute(qContext.getDbConnection(), query, dbCriteria);
+		    Element results = new Element("results");
+		    for ( GeneQueryResult result: execution.getResults() ) {
+		    	results.addContent(result.getXmlElement());
+		    }
+		   
+		    root.addContent(results);
+		    
+		}
+	    catch (Exception e) {
+	    	e.printStackTrace();
+			return new ErrorResponse(XslViews.Error, context.getResourceResolver(), "Query failed - " + e.getMessage());
+	    }
+	    root.addContent(dbCriteria.getXmlElement());
+	    root.addContent(qContext.getSpeciesDropdownElement());
+	    pageXml.addContent(root);
+	    return new PageResponse(new ModelView(XslViews.GeneList, pageXml));
+	    /*
 	    
 	    GeneQuery geneQuery = dbCriteria.buildGeneQueryForSingleSideView();
 	    GeneSequenceDb geneDb = new GeneSequenceDb (qContext.getDbConnection());
@@ -54,6 +71,7 @@ public class GeneList extends AbstractController {
 	    	e.addContent(new Element("mrnaHomologueCount").setText(String.valueOf(homologCount)));
 	    	root.addContent(e);
 	    }
+	   
 	    root.addContent(dbCriteria.getXmlElement());
 	    root.addContent(qContext.getSpeciesDropdownElement());
 	    pageXml.addContent(root);
@@ -62,6 +80,7 @@ public class GeneList extends AbstractController {
 	    	hDb.close();
 	    	geneDb.close();
 	    }
+	     */
 	}
 
 }

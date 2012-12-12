@@ -51,8 +51,9 @@ implements PageableQuery {
 			"COUNT (DISTINCT QGRS_H.GQ1ID) as HCOUNT ";
 
 	private final String fromClause = " FROM QGRS_H ";
-	private final String orderClause = " ORDER BY P_ACCESSIONNUMBER ";
+	private final String orderClause = " ORDER BY P_GENESYMBOL ";
 	private final String groupClause = " GROUP BY P_ACCESSIONNUMBER, C_AccessionNumber ";
+	
 	
 	
 	private String alignment() {

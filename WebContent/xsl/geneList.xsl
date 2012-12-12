@@ -35,6 +35,19 @@
 							}
 						);
 						
+						$(".qgrs-h-link").click( 
+						
+							function(e) {
+								$("#dbGeneId1").val($(this).attr("data-accession"));
+								$("#browse-qgrs-h").click();
+								$("#navigationFilterForm").attr("action", "homology-list");
+								$("#navigationFilterForm").submit();
+								var aBetterEventObject = jQuery.Event(e);
+    							aBetterEventObject.preventDefault()
+							}
+						
+						);
+						
 						$(".mrnah-count-link").click( 
 							function(e) {
 								var side = $("#dbFilterSide").val();
@@ -86,18 +99,20 @@
 					<th>mRNA ID</th>
 					<th>Gene</th>
 					<th>Organism</th>
-					<th title="QGRS found within this gene (matching criteria above)">QGRS Count</th>
+					<th title="QGRS found within this gene (matching criteria above)">#QGRS</th>
+					<th title="QGRS found within this gene (matching criteria above) which are conserved across at least 1 species (in your criteria)"># Conserved QGRS</th>
 					<th title="Number of mRNA Homologs that contain Homologous QGRS pairs (matching criteria above) with this gene">mRNA Homologs</th>
 				</thead>
 				
 				<tbody>
-				<xsl:for-each select="qgrs/gene">
+				<xsl:for-each select="qgrs/results/gene">
 					<tr>
-						<td><a href="geneDetails?id={@accessionNumber}"><xsl:value-of select="@accessionNumber"/></a></td>
+						<td><a href="geneDetails?id={geneId}"><xsl:value-of select="geneId"/></a></td>
 						<td><xsl:value-of select="geneSymbol"/></td>
-						<td><i><xsl:value-of select="species"/></i></td>
-						<td><a href="javascript:void(0)" class="qgrs-count-link" data-accession="{@accessionNumber}"><xsl:value-of select="qgrsCount"/></a></td>
-						<td><a href="javascript:void(0)" class="mrnah-count-link" data-accession="{@accessionNumber}"><xsl:value-of select="mrnaHomologueCount"/></a></td>
+						<td><i><xsl:value-of select="geneSpecies"/></i></td>
+						<td><a href="javascript:void(0)" class="qgrs-count-link" data-accession="{geneId}"><xsl:value-of select="qgrsCount"/></a></td>
+						<td><a href="javascript:void(0)" class="qgrs-h-link" data-accession="{geneId}"><xsl:value-of select="qgrsHCount"/></a></td>
+						<td><a href="javascript:void(0)" class="mrnah-count-link" data-accession="{geneId}"><xsl:value-of select="geneHCount"/></a></td>
 					</tr>
 				</xsl:for-each>
 				</tbody>

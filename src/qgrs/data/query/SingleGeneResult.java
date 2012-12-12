@@ -27,7 +27,7 @@ public class SingleGeneResult {
 		root.addContent(new Element("geneSpecies").setText(this.geneSpecies));
 		root.addContent(new Element("qgrsCount").setText(String.valueOf(qgrsCount)));
 		root.addContent(new Element("qgrsHCount").setText(String.valueOf(qgrsHCount)));
-		root.addContent(new Element("geneHcount").setText(String.valueOf(geneHcount)));
+		root.addContent(new Element("geneHCount").setText(String.valueOf(geneHcount)));
 		if ( StringUtils.isDefined(this.side)) {
 			root.setAttribute("side", this.side);
 		}
