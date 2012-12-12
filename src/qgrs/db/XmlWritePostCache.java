@@ -64,38 +64,7 @@ public class XmlWritePostCache extends XmlWriteCache {
 			
 			f.delete();
 			
-			/*
-			HttpURLConnection    urlConn;
-		    DataOutputStream    printout;
-		    DataInputStream     input;
-		    System.out.println("Posting to " + serverUrl);
-		    urlConn = (HttpURLConnection) serverUrl.openConnection();
-		    urlConn.setDoInput (true);
-		    urlConn.setDoOutput (true);
-		    urlConn.setUseCaches (false);
-		    urlConn.setRequestMethod("POST");
-		    urlConn.setRequestProperty("Content-Type", 
-		           "application/x-www-form-urlencoded");
-		    
-		   
-		    GZipper zip = new GZipper();
-		    String zippedXmlContent = zip.deflate(rawXmlContent);
-		    String httpSafeZippedXmlContent = URLEncoder.encode(zippedXmlContent, "UTF-8");
-			int len = httpSafeZippedXmlContent.length();
-		    String length = new DecimalFormat("##.##").format(len/1024.0/1024.0);
-		    
-		    urlConn.setRequestProperty("Content-Length", "" + Integer.toString(len));
-		    printout = new DataOutputStream (urlConn.getOutputStream ());
-		    System.out.println("posting " + length + " MB");
-		    String content = "xml=" + httpSafeZippedXmlContent;
-		    printout.writeBytes (content);
-		    printout.flush ();
-		    printout.close ();
-		   
-		    input = new DataInputStream (urlConn.getInputStream ());
-		    
-		    input.close ();
-		    */
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -73,10 +73,10 @@ group by gene.accessionnumber
 	}
 	
 	private String tetrad() {
-		return "P_TETRADS >= " + p(qgrsMinTetrads);
+		return "P_TETRADS >= " + p(qgrsMinTetrads) + " AND C_TETRADS >= " + p(qgrsMinTetrads);
 	}
 	private String gScore() {
-		return "P_GSCORE >= " + p(qgrsMinGScore);
+		return "P_GSCORE >= " + p(qgrsMinGScore)+ " AND C_GSCORE >= " + p(qgrsMinGScore);
 	}
 	
 	private String tetradQgrs() {
