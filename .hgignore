@@ -9,3 +9,7 @@ seed_db.h2.db
 database/qgrsdb.h2.db
 database/qgrsdb.lock.db
 database/qgrsdb.trace.db
+.DS_Store
+props.xml
+.project
+.jsdtscope
