@@ -7,6 +7,7 @@ import org.biojavax.bio.db.ncbi.GenbankRichSequenceDB;
 import org.biojavax.bio.seq.RichSequence;
 
 import qgrs.data.GeneSequence;
+import qgrs.db.Cache;
 import qgrs.db.GenbankRichSequenceTextDB;
 import framework.web.AbstractWebContext;
 import framework.web.util.StringUtils;
@@ -23,10 +24,12 @@ public class FlexibleInputProvider implements InputProvider {
 	String seq2Chars;
 	String errorMessage;
 	
+	int ncbiCount = 0;
 	
 	final int MAX_SEQ_LENGTH = 10025;
+	private final Cache geneCache;
 	
-	public FlexibleInputProvider (AbstractWebContext context) {
+	public FlexibleInputProvider (AbstractWebContext context, Cache geneCache) {
 		seq1Type = this.getSeq1InputType(context);
 		seq2Type = this.getSeq2InputType(context);
 		seq1Id = context.getString(QParam.Sequence1);
@@ -34,6 +37,7 @@ public class FlexibleInputProvider implements InputProvider {
 		seq2Id = context.getString(QParam.Sequence2);
 		seq2Chars = context.getString(QParam.Sequence2Chars);
 		errorMessage = null;
+		this.geneCache = geneCache;
 	}
 
 	InputType getSeq1InputType(AbstractWebContext context) {
@@ -51,10 +55,13 @@ public class FlexibleInputProvider implements InputProvider {
 
 
 	private GeneSequence buildGeneSequenceFromId(String id, GenbankRichSequenceDB ncbi) throws Exception{
-		GeneSequence s = null;
+		GeneSequence s = this.geneCache.get(id);
+		if ( s != null ) return s;
+		
 		try {
 			RichSequence rs = ncbi.getRichSequence(id);
 			String sequence =rs.seqString();
+			this.ncbiCount++;
 			s = GeneSequence.buildFromRichSequence(sequence, rs);
 		} catch (Exception e) {
 			if ( !StringUtils.isDefined(id)) {
@@ -178,6 +185,11 @@ public class FlexibleInputProvider implements InputProvider {
 			this.errorMessage = e.getMessage();
 		}
 		return input;
+	}
+
+	@Override
+	public int getNumNcbiCalls() {
+		return ncbiCount;
 	}
 
 }

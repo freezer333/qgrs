@@ -23,6 +23,9 @@ public class AlignmentJob extends Job{
 	private final Cache cache;
 	QGRSProgramInput input;
 	volatile CancelFlag cancelFlag = new CancelFlag();
+	
+	private int ncbiCallCount = 0;
+	private int embossCallCount = 0;
 
 	public AlignmentJob(InputProvider inputProvider, ResultProcessor resultProcessor, Cache cache) {
 		this.inputProvider = inputProvider;
@@ -34,7 +37,9 @@ public class AlignmentJob extends Job{
 		this.cancelFlag.raise();
 	}
 	
-	
+	public int getRequiredThrottle() {
+		return Math.max(ncbiCallCount, embossCallCount) * 1000;
+	}
 
 	@Override
 	public void runJob() throws Exception {	
@@ -42,6 +47,8 @@ public class AlignmentJob extends Job{
 		try {
 			this.setStatus(JobStage.Downloading, -1, null);
 			input = inputProvider.getInput();
+			this.ncbiCallCount = inputProvider.getNumNcbiCalls();
+			
 			this.checkInput();
 			this.cacheInput();
 			
@@ -56,6 +63,10 @@ public class AlignmentJob extends Job{
 			List<GeneSequencePair> pairs = this.buildPairs();
 			if ( !this.computePairs(qAligner, pairs) ) {
 				throw new RuntimeException("The pairs could not be computed");
+			}
+			
+			if ( !qAligner.isAlignmentCached() ) {
+				this.embossCallCount++;
 			}
 			
 			if ( this.resultProcessor != null ) {

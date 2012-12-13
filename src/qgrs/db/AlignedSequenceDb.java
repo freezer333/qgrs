@@ -72,8 +72,8 @@ private static String TABLE = "GENE_A_SEQ";
 	}
 	public String getPureSequence(String accessionNumber) {
 		try {
-			this.selectStatement.setString(1, accessionNumber);
-			ResultSet rs = this.selectStatement.executeQuery();
+			this.selectSingleStatement.setString(1, accessionNumber);
+			ResultSet rs = this.selectSingleStatement.executeQuery();
 			if ( rs.next()) {
 				String s = readClob(rs.getCharacterStream("sequence"));
 				return s.replaceAll("-", "");

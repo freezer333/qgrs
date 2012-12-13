@@ -122,9 +122,9 @@ public class Seed_ComputeAndSend {
 	
 	public static void computeAndSend(InputPair pair) {
 		try {
-			runNextAlignment(new AccessionNumberInputProvider(pair.principle, pair.comparison, geneCache));
+			int throttle = runNextAlignment(new AccessionNumberInputProvider(pair.principle, pair.comparison, geneCache));
 			complete++;
-			Thread.sleep(2000);
+			Thread.sleep(throttle);
 		}
 		catch (Throwable t) {
 			System.out.println("Error:  " + pair.principle + " x " + pair.comparison) ;
@@ -133,7 +133,7 @@ public class Seed_ComputeAndSend {
 		} 
 	}
 	
-	private static void runNextAlignment(AccessionNumberInputProvider inputProvider) throws Exception {
+	private static int runNextAlignment(AccessionNumberInputProvider inputProvider) throws Exception {
 		AlignmentJob job = new AlignmentJob(
 				inputProvider, 
 				null, 
@@ -143,5 +143,7 @@ public class Seed_ComputeAndSend {
 						SeedUtils.serverport, 
 						geneCache));
 		job.runJob();
+		return job.getRequiredThrottle();
+		
 	}
 }

@@ -24,6 +24,8 @@ public class AccessionNumberInputProvider implements InputProvider {
 		this.acsession2 = acs2;
 		this.geneCache = readCache;
 	}
+	
+	
 	@Override
 	public QGRSProgramInput getInput() {
 	
@@ -63,11 +65,11 @@ public class AccessionNumberInputProvider implements InputProvider {
 		
 		return input;
 	}
+	
+	@Override
 	public int getNumNcbiCalls() {
 		return numNcbiCalls;
 	}
-	public void setNumNcbiCalls(int numNcbiCalls) {
-		this.numNcbiCalls = numNcbiCalls;
-	}
+	
 
 }

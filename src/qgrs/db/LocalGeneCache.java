@@ -1,8 +1,8 @@
 package qgrs.db;
 
-import framework.web.util.StringUtils;
 import qgrs.data.AlignmentRecord;
 import qgrs.data.GeneSequence;
+import framework.web.util.StringUtils;
 
 
 public class LocalGeneCache extends NullCache {
@@ -28,8 +28,8 @@ public class LocalGeneCache extends NullCache {
 		}
 		gene.buildBases(sequence);
 		
-		// Now collect any available GO terms.
-		
+		db.close();
+		seqDb.close();
 		return gene;
 	}
 
