@@ -1,3 +1,4 @@
+
 package qgrs.input;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -86,6 +87,12 @@ public class ConsoleInputProvider implements InputProvider {
 		input.setComparisons(comparisons);
 
 		return input;
+	}
+
+	@Override
+	public int getNumNcbiCalls() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

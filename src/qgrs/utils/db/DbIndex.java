@@ -125,6 +125,15 @@ public class DbIndex {
 		
 		q = "CREATE INDEX IF NOT EXISTS QGRS_H_PTETRADS ON QGRS_H (P_TETRADS)";
 		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GO_ACCESSIONNUMBER ON GO (ACCESSIONNUMBER)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GO_GOTERM ON GO (GOTERM)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GO_GOTYPE ON GO (GOTYPE)";
+		execute(conn, q);
 	}
 	
 	/**

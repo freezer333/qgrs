@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<props>
+	<AlertMessage>
+	</AlertMessage>
+	
+	<db_seedcache>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb_seed</db_seedcache> 
+	
+	 <db>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb_test</db> 
+ 	<!-- <db>jdbc:h2:file:/Users/sfrees/dev/qgrsdb</db> -->
+	<!-- <db>jdbc:h2:file:/var/lib/tomcat6/webapps/db/qgrsdb</db> -->
+	
+	<db_drop>false</db_drop>
+</props>

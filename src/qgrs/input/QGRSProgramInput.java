@@ -1,5 +1,6 @@
 package qgrs.input;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import qgrs.data.GeneSequence;
@@ -23,6 +24,10 @@ public class QGRSProgramInput {
 	}
 	public void setComparisons(List<GeneSequence> comparisons) {
 		this.comparisons = comparisons;
+	}
+	public void setComparison(GeneSequence comparison) {
+		this.comparisons = new LinkedList<GeneSequence> ();
+		this.comparisons.add(comparison);
 	}
 	public void setInputType(InputType inputType) {
 		this.inputType = inputType;

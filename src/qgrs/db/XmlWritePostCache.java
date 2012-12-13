@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.util.List;
 
 import org.apache.http.HttpVersion;
 import org.apache.http.client.HttpClient;
@@ -18,14 +19,24 @@ import org.jdom.Document;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
+import qgrs.data.AlignmentRecord;
+import qgrs.data.GQuadruplex;
+import qgrs.data.GeneSequence;
+import qgrs.data.QgrsHomologyRecord;
+
 import framework.io.GZipper;
 
 public class XmlWritePostCache extends XmlWriteCache {
 
 	public final URL serverUrl;
+	private final Cache readCache;
 	
 	public XmlWritePostCache(String serverUrl, String contextPath, int port) {
+		this(serverUrl, contextPath, port, new NullCache());
+	}
+	public XmlWritePostCache(String serverUrl, String contextPath, int port, Cache readCache) {
 		super();
+		this.readCache =readCache;
 		try {
 			this.serverUrl = new URL( "http", serverUrl, port, "/" + contextPath + "/app/populate");
 		}
@@ -34,6 +45,32 @@ public class XmlWritePostCache extends XmlWriteCache {
 		}
 	}
 	
+	
+	@Override
+	public List<QgrsHomologyRecord> getHomologyRecords(AlignmentRecord record) {
+		return this.readCache.getHomologyRecords(record);
+	}
+
+	@Override
+	public AlignmentRecord getAlignmentRecord(GeneSequence principle,
+			GeneSequence comparison, String alignmentBuildKey) {
+		return this.readCache.getAlignmentRecord(principle, comparison, alignmentBuildKey);
+	}
+
+	
+
+	@Override
+	public String getAlignedSequence(AlignmentRecord alignmentRecord,
+			GeneSequence sequence) {
+		return this.readCache.getAlignedSequence(alignmentRecord, sequence);
+	}
+
+	
+
+	@Override
+	public List<GQuadruplex> getQuadruplexes(GeneSequence s) {
+		return this.readCache.getQuadruplexes(s);
+	}
 	
 	
 	@Override
@@ -64,38 +101,7 @@ public class XmlWritePostCache extends XmlWriteCache {
 			
 			f.delete();
 			
-			/*
-			HttpURLConnection    urlConn;
-		    DataOutputStream    printout;
-		    DataInputStream     input;
-		    System.out.println("Posting to " + serverUrl);
-		    urlConn = (HttpURLConnection) serverUrl.openConnection();
-		    urlConn.setDoInput (true);
-		    urlConn.setDoOutput (true);
-		    urlConn.setUseCaches (false);
-		    urlConn.setRequestMethod("POST");
-		    urlConn.setRequestProperty("Content-Type", 
-		           "application/x-www-form-urlencoded");
-		    
-		   
-		    GZipper zip = new GZipper();
-		    String zippedXmlContent = zip.deflate(rawXmlContent);
-		    String httpSafeZippedXmlContent = URLEncoder.encode(zippedXmlContent, "UTF-8");
-			int len = httpSafeZippedXmlContent.length();
-		    String length = new DecimalFormat("##.##").format(len/1024.0/1024.0);
-		    
-		    urlConn.setRequestProperty("Content-Length", "" + Integer.toString(len));
-		    printout = new DataOutputStream (urlConn.getOutputStream ());
-		    System.out.println("posting " + length + " MB");
-		    String content = "xml=" + httpSafeZippedXmlContent;
-		    printout.writeBytes (content);
-		    printout.flush ();
-		    printout.close ();
-		   
-		    input = new DataInputStream (urlConn.getInputStream ());
-		    
-		    input.close ();
-		    */
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

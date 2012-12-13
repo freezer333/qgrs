@@ -35,7 +35,8 @@ public class GeneSequence implements Serializable{
 	private int sequenceLength; 
 	
 	private List<GQuadruplex> gQuads;
-	private List<GQuadFamily> quadruplexFamilies;
+	private List<GQuadFamily> quadruplexFamilies = new LinkedList<GQuadFamily>();
+	
 	
 	
 	private OntologyData ontologyData;
@@ -193,7 +194,6 @@ public class GeneSequence implements Serializable{
 		this.buildBases(sequence);
 		
 		this.gQuads = new LinkedList<GQuadruplex>();
-		this.quadruplexFamilies = new LinkedList<GQuadFamily>();
 		this.richSequence = rs;
 		if ( rs == null ) {
 			this.directInput = true;

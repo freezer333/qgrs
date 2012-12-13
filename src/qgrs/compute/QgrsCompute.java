@@ -9,6 +9,7 @@ import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.InputType;
 import qgrs.data.QgrsHomology;
+import qgrs.data.QgrsHomologyRecord;
 import qgrs.db.Cache;
 import qgrs.job.JobStage;
 import qgrs.job.StatusHolder;
@@ -69,8 +70,16 @@ public class QgrsCompute{
 	
 	void computeHomologyScores(GeneSequencePair pair) throws Exception {
 		this.statusHolder.setStatus(JobStage.QGRS_Homology, -1, null);
+		
+		
+		List<QgrsHomologyRecord> records = null;
 		if ( this.alignmentCached ) {
-			this.gAligner = new CachedHomologyScorer(pair, this.cache.getHomologyRecords(pair.getAlignmentRecord()));
+			records = this.cache.getHomologyRecords(pair.getAlignmentRecord());
+		}
+		
+		
+		if (records != null ) {
+			this.gAligner = new CachedHomologyScorer(pair, records);
 			this.homologyResultsCached = true;
 		}
 		else {
@@ -91,10 +100,9 @@ public class QgrsCompute{
 	
 	
 	private void writeHomologyCache(GeneSequencePair pair, List<QgrsHomology> results) {
-		if ( !this.alignmentCached) {
-			//System.out.println("Caching homologous quadruplex pairs");
-			this.cache.putHomologyResults(pair.getAlignmentRecord(), results, pair.getPrinciple(), pair.getComparison());
-		}
+		// note we don't care if it was originally cached or not, always rewrite in case we are dealing with a hybrid cache with
+		// different read/write sub-caches.
+		this.cache.putHomologyResults(pair.getAlignmentRecord(), results, pair.getPrinciple(), pair.getComparison());
 	}
 	
 	
@@ -128,13 +136,19 @@ public class QgrsCompute{
 	
 	
 	
+	void cachePair(GeneSequencePair pair) {
+		cache.put(pair.getAlignmentRecord());
+		cache.put(pair.getAlignmentRecord(), pair.getPrinciple());
+		cache.put(pair.getAlignmentRecord(), pair.getComparison());
+	}
 	void doAlignment(GeneSequencePair pair) throws Exception {
 		this.statusHolder.setStatus(JobStage.Alignment_Sync, -1, null);
 		
 		if ( this.cachedAlignment(pair)) {
 			if ( this.processCachedAlignment(pair)) {
 				this.alignmentCached = true;
-				System.out.println("Using Cached Alignment");
+				// write to cache in any case, as some caches are hybrids (reading from a different sub-cache than writing to)
+				cachePair(pair);
 				return;
 			}
 		}
@@ -145,9 +159,7 @@ public class QgrsCompute{
 		MemoryReporter.memoryReport();
 		pair.setAlignmentBuildKey(BuildKey.Alignment);
 		pair.setDateAligned(new Date());
-		cache.put(pair.getAlignmentRecord());
-		cache.put(pair.getAlignmentRecord(), pair.getPrinciple());
-		cache.put(pair.getAlignmentRecord(), pair.getComparison());
+		cachePair(pair);
 	}
 	
 	private boolean processCachedAlignment(GeneSequencePair pair) {
