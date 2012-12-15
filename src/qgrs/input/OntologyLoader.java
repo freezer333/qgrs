@@ -81,17 +81,14 @@ public class OntologyLoader {
 	public OntologyData getOntologyData(String accessionNumber) {
 		OntologyData oData = new OntologyData();
 		try {
-			
 			String geneId = getGeneId(accessionNumber);
 			if ( geneId == null ) {
 				System.out.println("Accession number -> " + accessionNumber + " could not be located via entrez");
 				return null;
 			}
-			//System.out.println("Gene ID = " + geneId);
-			
 			fillOntologyData(oData, geneId);
 		}
-		catch (Exception e) {
+		catch (Throwable e) {
 			e.printStackTrace();
 		}
 		
@@ -155,7 +152,12 @@ public class OntologyLoader {
 	}
 	
 	public void shutdown(){
-		if ( httpclient != null ) httpclient.getConnectionManager().shutdown();
+		try {
+			if ( httpclient != null ) httpclient.getConnectionManager().shutdown();
+		}
+		catch (Throwable t) {
+			t.printStackTrace();
+		}
 	}
 	
 	

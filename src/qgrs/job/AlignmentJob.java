@@ -133,9 +133,6 @@ public class AlignmentJob extends Job{
 	
 	void configureSemiGlobalAlignment(QgrsCompute qAligner) {
 		GeneralAligner gAligner = new EmbossAligner();
-									// JStacsAligner();
-									//new SmithWatermanAlignment();
-									//new SequenceAligner();
 		gAligner.setCancelFlag(this.cancelFlag);
 		// Configure the alignment process, choosing the appropriate algorithm for each step
 		qAligner.setAligner(gAligner);

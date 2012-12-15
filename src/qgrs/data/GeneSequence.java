@@ -229,7 +229,7 @@ public class GeneSequence implements Serializable{
 			
 			OntologyLoader olo = new OntologyLoader();
 			this.ontologyData = olo.getOntologyData(this.accessionNumber);
-			
+			olo.shutdown();
 		}
 		
 	}

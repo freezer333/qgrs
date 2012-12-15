@@ -49,7 +49,7 @@ public class EmbossAligner implements GeneralAligner {
 	HttpClient httpclient;
 	private String jobId;
 
-	public EmbossAligner() {
+	public EmbossAligner()  {
 		httpclient = new DefaultHttpClient();
 		nameValuePairs = new ArrayList<NameValuePair>(defaultParams.length+2);
 		for (String[] p : this.defaultParams) {
@@ -89,7 +89,6 @@ public class EmbossAligner implements GeneralAligner {
 		HttpResponse response = httpclient.execute(post);
 	    BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 	    this.jobId = rd.readLine();
-	    //System.out.println("Emboss alignment " + jobId);
 	}
 
 	/**
@@ -120,11 +119,15 @@ public class EmbossAligner implements GeneralAligner {
 		String pollUrl = POLL_URL + jobId;
 		HttpGet get = new HttpGet(pollUrl);
 		String status = "";
+		int times =0;
+		
 		do {
+			Thread.sleep(times * 250);
+			times++;
 			HttpResponse response = httpclient.execute(get);
 			BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 			status = rd.readLine();
-		} while ( status.equalsIgnoreCase("RUNNING")) ;
+		} while ( times < 100 && status.equalsIgnoreCase("RUNNING")) ;
 		
 		return "FINISHED".equalsIgnoreCase(status);
 	}
