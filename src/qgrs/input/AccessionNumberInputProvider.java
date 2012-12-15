@@ -31,7 +31,7 @@ public class AccessionNumberInputProvider implements InputProvider {
 	
 		GeneSequence principle = geneCache.get(this.acsession1);
 		GeneSequence comparison = geneCache.get(this.acsession2);
-		
+		System.out.println("gene cache (" + (principle!= null) + "|" + (comparison!=null) + ")");
 		QGRSProgramInput input = new QGRSProgramInput();
 		
 		if ( principle == null || comparison == null ){

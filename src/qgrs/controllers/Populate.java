@@ -23,6 +23,7 @@ import qgrs.data.GeneSequence;
 import qgrs.data.QgrsHomologyRecord;
 import qgrs.db.AlignedSequenceDb;
 import qgrs.db.AlignmentRecordDb;
+import qgrs.db.DbMinimumValues;
 import qgrs.db.GeneSequenceDb;
 import qgrs.db.HomologyRecordDb;
 import qgrs.db.QgrsDb;
@@ -42,12 +43,13 @@ public class Populate extends AbstractController {
 		this.supportedUrls.add("/app/populate");
 	}
 
+	final DbMinimumValues dbMinValue = new DbMinimumValues();
 	
 	private boolean accept(GQuadruplexRecord record) {
-		return record.getScore() > 35;
+		return dbMinValue.acceptableGScore(record.getScore());
 	}
 	private boolean accept(QgrsHomologyRecord record){
-		return record.getOverallScore() > 0.9;	
+		return dbMinValue.acceptableQgrsHomology(record.getOverallScore());	
 	}
 	
 	

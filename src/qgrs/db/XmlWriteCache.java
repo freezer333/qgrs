@@ -1,6 +1,6 @@
 package qgrs.db;
 
-import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.jdom.Document;
@@ -48,6 +48,13 @@ public abstract class XmlWriteCache implements Cache {
 		root.addContent(comparison);
 		root.addContent(this.homologyElement);
 		xmlDoc.addContent(root);
+		/*XMLOutputter out = new XMLOutputter(Format.getPrettyFormat());
+		try {
+			out.output(xmlDoc, System.out);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
 		this.handleXmlResult(xmlDoc);
 	}
 
