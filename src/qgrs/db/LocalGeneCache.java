@@ -33,6 +33,24 @@ public class LocalGeneCache extends NullCache {
 		return gene;
 	}
 
+	@Override
+	public void put(GeneSequence sequence) {
+		GeneSequenceDb db = new GeneSequenceDb(connection);
+		db.put(sequence);
+		db.close();
+	}
+	@Override
+	public void put(AlignmentRecord alignmentRecord) {
+		AlignmentRecordDb db = new AlignmentRecordDb(connection);
+		db.put(alignmentRecord);
+		db.close();
+	}
+	@Override
+	public void put(AlignmentRecord alignmentRecord, GeneSequence sequence) {
+		AlignedSequenceDb db = new AlignedSequenceDb(connection);
+		db.put(alignmentRecord.getId(), sequence.getAccessionNumber(), sequence.getAlignedSequence());
+		db.close();
+	}
 	
 	@Override
 	public AlignmentRecord getAlignmentRecord(GeneSequence principle,
@@ -57,7 +75,12 @@ public class LocalGeneCache extends NullCache {
 	@Override
 	public void flushAndClose() {
 		// TODO Auto-generated method stub
-
+		try {
+			this.connection.close();
+		}
+		catch ( Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	
