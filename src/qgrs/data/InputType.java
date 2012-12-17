@@ -1,7 +1,5 @@
 package qgrs.data;
-/*
- * The type of user input for our program
- */
+
 
 import java.io.Serializable;
 
