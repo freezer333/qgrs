@@ -33,7 +33,7 @@ public abstract class AbstractDispatch {
 		
 	}
 
-
+	/* MERGE COMMENT */
 	protected abstract DatabaseConnectionParameters getDbParams();
 	protected abstract String getControllerPackage();
 	protected abstract String getErrorView() ;
