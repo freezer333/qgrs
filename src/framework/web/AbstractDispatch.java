@@ -18,7 +18,7 @@ import framework.web.response.ErrorResponse;
 import framework.web.response.Response;
 import framework.web.util.ClassFinder;
 
-/* Testing HG */
+/* Testing HG INTENTIONAL MERGE PROBLEM*/
 
 public abstract class AbstractDispatch {
 	protected List<AbstractController> controllers;
@@ -33,7 +33,7 @@ public abstract class AbstractDispatch {
 		
 	}
 
-
+	/* MERGE COMMENT */
 	protected abstract DatabaseConnectionParameters getDbParams();
 	protected abstract String getControllerPackage();
 	protected abstract String getErrorView() ;
