@@ -3,7 +3,6 @@ package qgrs.db;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -13,12 +12,10 @@ import java.util.Map;
 import qgrs.data.GeneSequence;
 import qgrs.data.Range;
 import qgrs.data.query.GeneQuery;
-import qgrs.data.query.HomologyQuery;
 import qgrs.data.query.QgrsQuery;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;
-import framework.web.util.StringUtils;
 
 public class GeneSequenceDb extends DbTable {
 

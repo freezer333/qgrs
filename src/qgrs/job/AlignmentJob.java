@@ -3,12 +3,12 @@ package qgrs.job;
 import java.util.LinkedList;
 import java.util.List;
 
-import qgrs.compute.QgrsIdentifier;
 import qgrs.compute.EmbossAligner;
 import qgrs.compute.FamilyHomologyScorer;
 import qgrs.compute.GeneSequencePair;
 import qgrs.compute.GeneralAligner;
 import qgrs.compute.QgrsCompute;
+import qgrs.compute.QgrsIdentifier;
 import qgrs.data.GeneSequence;
 import qgrs.db.Cache;
 import qgrs.input.InputProvider;

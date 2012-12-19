@@ -3,12 +3,9 @@ package qgrs.db;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.jdom.Element;
 
 import qgrs.data.QgrsHomologyRecord;
 import qgrs.data.query.HomologyQuery;

@@ -3,7 +3,6 @@ package qgrs.db;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
-import java.text.DecimalFormat;
 import java.util.List;
 
 import org.apache.http.HttpVersion;
@@ -23,7 +22,6 @@ import qgrs.data.AlignmentRecord;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.QgrsHomologyRecord;
-
 import framework.io.GZipper;
 
 public class XmlWritePostCache extends XmlWriteCache {

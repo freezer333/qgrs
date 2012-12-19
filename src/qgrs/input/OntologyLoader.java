@@ -17,7 +17,6 @@ import org.jdom.input.SAXBuilder;
 import org.jdom.xpath.XPath;
 
 import qgrs.data.OntologyData;
-import qgrs.utils.XmlPrinter;
 
 public class OntologyLoader {
 

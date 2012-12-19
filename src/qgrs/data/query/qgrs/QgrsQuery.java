@@ -6,7 +6,6 @@ import java.util.LinkedList;
 
 import qgrs.data.GQuadruplex;
 import qgrs.data.query.PageableQuery;
-import qgrs.data.query.QueryUtils;
 import qgrs.data.query.WhereClause;
 import qgrs.input.QParam;
 import qgrs.model.DbCriteria;

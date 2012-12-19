@@ -1,18 +1,8 @@
 package qgrs.controllers;
 
-import java.util.List;
-import java.util.Map;
-
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.GeneSequence;
-import qgrs.data.query.GeneQuery;
-import qgrs.db.GeneSequenceDb;
-import qgrs.db.GeneSequenceDb.HomologSide;
-import qgrs.input.QParam;
-import qgrs.model.DbCriteria;
-import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;
 import framework.web.AbstractController;
 import framework.web.AbstractWebContext;

@@ -1,17 +1,13 @@
 package qgrs.compute;
 
 import java.sql.ResultSet;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import org.jdom.Element;
 
 import qgrs.data.AlignmentRecord;
 import qgrs.data.BaseSymbol;
 import qgrs.data.GeneSequence;
-import qgrs.data.Range;
 
 /*
  * Represents a pair consisting of THE principle and one of the comparisons. Could make a pair

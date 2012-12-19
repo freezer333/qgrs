@@ -50,37 +50,6 @@ public class GeneList extends AbstractController {
 	    root.addContent(qContext.getSpeciesDropdownElement());
 	    pageXml.addContent(root);
 	    return new PageResponse(new ModelView(XslViews.GeneList, pageXml));
-	    /*
-	    
-	    GeneQuery geneQuery = dbCriteria.buildGeneQueryForSingleSideView();
-	    GeneSequenceDb geneDb = new GeneSequenceDb (qContext.getDbConnection());
-	    HomologyRecordDb hDb = new HomologyRecordDb(qContext.getDbConnection());
-	    try {
-	    int count = geneDb.getCount(geneQuery);
-	    PageHelper pager = new PageHelper(dbCriteria, count);
-	    
-	    List<GeneSequence> sequences = geneDb.getAll(geneQuery, dbCriteria.getPageLimit(), pager.getComputedOffset());
-	    HomologSide side = "comparison".equalsIgnoreCase(dbCriteria.get(QParam.Db_FilterSide)) ? HomologSide.comparison : HomologSide.principle;
-		Map<String, Integer> qgrsCountMap = new ResultHelper().buildQgrsCountMap(sequences, geneDb, dbCriteria.buildQgrsQueryForSingleQgrs());
-	    Map<String, Integer> homologCountMap = new ResultHelper().buildHomologCountMap(sequences, hDb, side, dbCriteria);
-	    for ( GeneSequence s : sequences) {
-	    	Element e = s.getXmlElement();
-	    	int qgrsCount = qgrsCountMap.containsKey(s.getAccessionNumber()) ? qgrsCountMap.get(s.getAccessionNumber()) : 0;
-	    	int homologCount = homologCountMap.containsKey(s.getAccessionNumber()) ? homologCountMap.get(s.getAccessionNumber()) : 0;
-	    	e.addContent(new Element("qgrsCount").setText(String.valueOf(qgrsCount)));
-	    	e.addContent(new Element("mrnaHomologueCount").setText(String.valueOf(homologCount)));
-	    	root.addContent(e);
-	    }
-	   
-	    root.addContent(dbCriteria.getXmlElement());
-	    root.addContent(qContext.getSpeciesDropdownElement());
-	    pageXml.addContent(root);
-	    return new PageResponse(new ModelView(XslViews.GeneList, pageXml));
-	    } finally {
-	    	hDb.close();
-	    	geneDb.close();
-	    }
-	     */
 	}
 
 }

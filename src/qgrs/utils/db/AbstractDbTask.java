@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import qgrs.db.AppProperties;
-
 import framework.db.DatabaseConnectionParameters;
 
 public abstract class AbstractDbTask {

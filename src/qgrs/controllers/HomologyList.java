@@ -1,26 +1,11 @@
 package qgrs.controllers;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.GQuadruplexRecord;
-import qgrs.data.GeneSequence;
-import qgrs.data.QgrsHomologyRecord;
-import qgrs.data.query.AlignmentQuery;
-import qgrs.data.query.GeneQuery;
-import qgrs.data.query.HomologyQuery;
-import qgrs.data.query.QgrsQuery;
 import qgrs.data.query.qgrshomology.QgrsHomologyQuery;
 import qgrs.data.query.qgrshomology.QgrsHomologyQueryExecution;
 import qgrs.data.query.qgrshomology.QgrsHomologyQueryResult;
-import qgrs.db.GeneSequenceDb;
-import qgrs.db.HomologyRecordDb;
-import qgrs.db.QgrsDb;
-import qgrs.input.QParam;
 import qgrs.model.DbCriteria;
 import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;

@@ -1,7 +1,6 @@
 package framework.db;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class StatementBuilder extends LinkedList<String> {
 	

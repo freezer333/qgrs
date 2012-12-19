@@ -12,7 +12,6 @@ import org.junit.runners.Parameterized.Parameters;
 import qgrs.db.XmlWriteFileCache;
 import qgrs.input.AccessionNumberInputProvider;
 import qgrs.job.AlignmentJob;
-import qgrs.utils.db.populate.SeedUtils;
 
 @RunWith(Parameterized.class)
 public class FullComputationTest {

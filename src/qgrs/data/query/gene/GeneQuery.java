@@ -14,18 +14,6 @@ import qgrs.model.DbCriteria;
 public class GeneQuery extends WhereClause implements PageableQuery {
 
 
-	
-/*
-select gene.accessionnumber , gene.species, gene.genesymbol, count (distinct qgrs_h.gq1id) as qgrsHCount, 
-
-(select COUNT(distinct QGRS.ID) from qgrs where geneId = accessionNumber) as qgrsCount , 
-count ( distinct qgrs_h.c_accessionNumber) as geneHCount
-
-
-FROM gene left join qgrs_h on gene.accessionnumber = qgrs_h.p_accessionNumber
-group by gene.accessionnumber
-*/
-
 	private final String selectClauseCount = 
 			"select count(gene.accessionnumber) ";
 

@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 
 import org.jdom.Element;
 
-import qgrs.compute.BuildKey;
-
 public class QgrsHomologyRecord {
 	private int id;
 	private String alignmentId;

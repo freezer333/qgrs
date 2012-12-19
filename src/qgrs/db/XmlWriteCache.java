@@ -1,12 +1,9 @@
 package qgrs.db;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.output.Format;
-import org.jdom.output.XMLOutputter;
 
 import qgrs.data.AlignmentRecord;
 import qgrs.data.GQuadruplex;

@@ -3,12 +3,10 @@ package qgrs.db;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import qgrs.compute.BuildKey;
 import qgrs.data.GQuadruplex;

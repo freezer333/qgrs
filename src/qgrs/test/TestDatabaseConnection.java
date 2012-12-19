@@ -1,7 +1,7 @@
 package qgrs.test;
 
-import framework.db.DatabaseConnectionParameters;
 import qgrs.db.DatabaseConnection;
+import framework.db.DatabaseConnectionParameters;
 
 public class TestDatabaseConnection extends DatabaseConnection {
 

@@ -1,7 +1,5 @@
 package framework.web.response;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.codehaus.jackson.map.ObjectMapper;
 
 import framework.web.AbstractWebContext;

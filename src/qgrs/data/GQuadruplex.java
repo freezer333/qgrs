@@ -4,9 +4,6 @@ package qgrs.data;
  */
 
 import java.io.Serializable;
-import java.sql.ResultSet;
-
-import org.jdom.Element;
 
 import framework.web.util.StringUtils;
 

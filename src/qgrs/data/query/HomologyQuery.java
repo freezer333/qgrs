@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import qgrs.data.GQuadruplex;
-
 import framework.web.util.StringUtils;
 
 public class HomologyQuery extends WhereClause {

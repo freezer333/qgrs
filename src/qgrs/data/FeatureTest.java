@@ -1,8 +1,8 @@
 package qgrs.data;
 
 
-import org.biojavax.bio.db.ncbi.GenbankRichSequenceDB;
 import org.biojavax.bio.BioEntry;
+import org.biojavax.bio.db.ncbi.GenbankRichSequenceDB;
 
 import qgrs.db.GenbankRichSequenceTextDB;
 

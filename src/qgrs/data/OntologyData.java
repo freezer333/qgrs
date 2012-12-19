@@ -3,10 +3,7 @@ package qgrs.data;
 import java.util.Collection;
 import java.util.HashSet;
 
-import org.jdom.Document;
 import org.jdom.Element;
-
-import qgrs.utils.XmlPrinter;
 
 public class OntologyData {
 	public final Collection<String> functionList = new HashSet<String>();

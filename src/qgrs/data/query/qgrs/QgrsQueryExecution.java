@@ -1,13 +1,11 @@
 package qgrs.data.query.qgrs;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 
 import qgrs.data.query.PageableQuery;
 import qgrs.data.query.PagedQueryExecution;
-import qgrs.data.query.SingleQgrsResult;
 import qgrs.db.DatabaseConnection;
 import qgrs.model.DbCriteria;
 
