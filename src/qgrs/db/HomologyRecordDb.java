@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import qgrs.db.records.QgrsHomologyRecord;
+import qgrs.data.records.QgrsHomologyRecord;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;

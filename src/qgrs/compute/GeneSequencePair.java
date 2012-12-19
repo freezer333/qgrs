@@ -7,7 +7,7 @@ import org.jdom.Element;
 
 import qgrs.data.BaseSymbol;
 import qgrs.data.GeneSequence;
-import qgrs.db.records.AlignmentRecord;
+import qgrs.data.records.AlignmentRecord;
 
 /*
  * Represents a pair consisting of THE principle and one of the comparisons. Could make a pair

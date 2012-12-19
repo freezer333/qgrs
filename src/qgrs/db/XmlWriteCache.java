@@ -8,8 +8,8 @@ import org.jdom.Element;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.QgrsHomology;
-import qgrs.db.records.AlignmentRecord;
-import qgrs.db.records.QgrsHomologyRecord;
+import qgrs.data.records.AlignmentRecord;
+import qgrs.data.records.QgrsHomologyRecord;
 
 public abstract class XmlWriteCache implements Cache {
 

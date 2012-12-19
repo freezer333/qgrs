@@ -11,7 +11,7 @@ import java.util.List;
 import qgrs.compute.BuildKey;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
-import qgrs.db.records.GQuadruplexRecord;
+import qgrs.data.records.GQuadruplexRecord;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;

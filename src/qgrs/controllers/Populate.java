@@ -18,15 +18,15 @@ import org.jdom.input.SAXBuilder;
 
 import qgrs.compute.BuildKey;
 import qgrs.data.GeneSequence;
+import qgrs.data.records.AlignmentRecord;
+import qgrs.data.records.GQuadruplexRecord;
+import qgrs.data.records.QgrsHomologyRecord;
 import qgrs.db.AlignedSequenceDb;
 import qgrs.db.AlignmentRecordDb;
 import qgrs.db.DbMinimumValues;
 import qgrs.db.GeneSequenceDb;
 import qgrs.db.HomologyRecordDb;
 import qgrs.db.QgrsDb;
-import qgrs.db.records.AlignmentRecord;
-import qgrs.db.records.GQuadruplexRecord;
-import qgrs.db.records.QgrsHomologyRecord;
 import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;
 import framework.io.GZipper;

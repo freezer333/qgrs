@@ -20,8 +20,8 @@ import org.jdom.output.XMLOutputter;
 
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
-import qgrs.db.records.AlignmentRecord;
-import qgrs.db.records.QgrsHomologyRecord;
+import qgrs.data.records.AlignmentRecord;
+import qgrs.data.records.QgrsHomologyRecord;
 import framework.io.GZipper;
 
 public class XmlWritePostCache extends XmlWriteCache {

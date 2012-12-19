@@ -1,7 +1,7 @@
 package qgrs.db;
 
 import qgrs.data.GeneSequence;
-import qgrs.db.records.AlignmentRecord;
+import qgrs.data.records.AlignmentRecord;
 import framework.web.util.StringUtils;
 
 

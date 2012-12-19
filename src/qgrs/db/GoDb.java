@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import qgrs.data.GoType;
 import qgrs.data.OntologyData;
-import qgrs.db.records.OntologyRecord;
+import qgrs.data.records.OntologyRecord;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;

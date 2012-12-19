@@ -7,7 +7,7 @@ import java.util.List;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.QgrsHomology;
-import qgrs.db.records.QgrsHomologyRecord;
+import qgrs.data.records.QgrsHomologyRecord;
 import qgrs.job.CancelFlag;
 
 public class CachedHomologyScorer implements QgrsHomologyScorer {

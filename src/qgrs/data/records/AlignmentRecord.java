@@ -1,4 +1,4 @@
-package qgrs.db.records;
+package qgrs.data.records;
 
 import java.sql.ResultSet;
 import java.text.ParseException;

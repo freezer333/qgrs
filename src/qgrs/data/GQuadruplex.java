@@ -5,7 +5,7 @@ package qgrs.data;
 
 import java.io.Serializable;
 
-import qgrs.db.records.GQuadruplexRecord;
+import qgrs.data.records.GQuadruplexRecord;
 
 import framework.web.util.StringUtils;
 

@@ -5,8 +5,8 @@ import java.text.NumberFormat;
 
 import org.jdom.Element;
 
-import qgrs.db.records.AlignmentRecord;
-import qgrs.db.records.QgrsHomologyRecord;
+import qgrs.data.records.AlignmentRecord;
+import qgrs.data.records.QgrsHomologyRecord;
 
 
 public class QgrsHomology {

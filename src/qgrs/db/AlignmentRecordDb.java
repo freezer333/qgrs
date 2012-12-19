@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import qgrs.data.GeneSequence;
-import qgrs.db.records.AlignmentRecord;
+import qgrs.data.records.AlignmentRecord;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;
