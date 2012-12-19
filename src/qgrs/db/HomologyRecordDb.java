@@ -37,7 +37,7 @@ public class HomologyRecordDb  extends DbTable {
 		try {
 			ResultSet rs = dc.getConnection().createStatement().executeQuery(q);
 			while ( rs.next() ) {
-				retval.add(rs.getString(0));
+				retval.add(rs.getString(1));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

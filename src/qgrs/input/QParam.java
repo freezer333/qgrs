@@ -56,7 +56,7 @@ public enum QParam implements AbstractParam {
 	Db_QGRSNum1("dbQGRSNum1", "1"),
 	Db_Ontology2("dbOntology2"),
 	Db_QGRSNum2("dbQGRSNum2", "1"),
-	Db_MinAlignmentScore("dbMinAlignmentScore", "60"),
+	Db_MinAlignmentScore("dbMinAlignmentScore", "0"),
 	Db_PageNumber("dbPageNumber", "1"),
 	Db_TotalResults("dbTotalResults", "1"),
 	Db_TotalPages("dbTotalPages", "1")

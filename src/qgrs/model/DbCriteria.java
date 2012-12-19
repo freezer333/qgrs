@@ -15,10 +15,6 @@ public class DbCriteria extends HashMap<QParam, String> {
 		return 50;
 	}
 	
-	
-	
-	
-	
 	public Boolean readBoolean(String onoff) {
 		return "on".equalsIgnoreCase(onoff);
 		
