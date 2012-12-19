@@ -1,4 +1,4 @@
-package qgrs.utils.db.populate;
+package qgrs.db.seed;
 
 
 public class SeedUtils {

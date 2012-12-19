@@ -1,4 +1,4 @@
-package qgrs.utils.db.populate;
+package qgrs.db.seed;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
