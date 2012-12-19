@@ -3,14 +3,14 @@ package qgrs.compute;
 import java.util.Date;
 import java.util.List;
 
-import qgrs.data.AlignmentRecord;
 import qgrs.data.Base;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.InputType;
 import qgrs.data.QgrsHomology;
-import qgrs.data.QgrsHomologyRecord;
 import qgrs.db.Cache;
+import qgrs.db.records.AlignmentRecord;
+import qgrs.db.records.QgrsHomologyRecord;
 import qgrs.job.JobStage;
 import qgrs.job.StatusHolder;
 import framework.diagnostic.MemoryReporter;

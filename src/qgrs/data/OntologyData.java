@@ -5,6 +5,8 @@ import java.util.HashSet;
 
 import org.jdom.Element;
 
+import qgrs.db.records.OntologyRecord;
+
 public class OntologyData {
 	public final Collection<String> functionList = new HashSet<String>();
 	public final Collection<String> processList = new HashSet<String>();

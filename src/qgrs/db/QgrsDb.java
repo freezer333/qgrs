@@ -10,8 +10,8 @@ import java.util.List;
 
 import qgrs.compute.BuildKey;
 import qgrs.data.GQuadruplex;
-import qgrs.data.GQuadruplexRecord;
 import qgrs.data.GeneSequence;
+import qgrs.db.records.GQuadruplexRecord;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;

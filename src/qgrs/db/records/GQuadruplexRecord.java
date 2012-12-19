@@ -1,8 +1,10 @@
-package qgrs.data;
+package qgrs.db.records;
 
 import java.sql.ResultSet;
 
 import org.jdom.Element;
+
+import qgrs.data.GeneSequence;
 
 public class GQuadruplexRecord {
 	private String id;

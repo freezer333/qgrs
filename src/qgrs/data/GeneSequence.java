@@ -13,6 +13,7 @@ import java.util.List;
 import org.biojavax.bio.seq.RichSequence;
 import org.jdom.Element;
 
+import qgrs.db.records.OntologyRecord;
 import qgrs.input.OntologyLoader;
 
 

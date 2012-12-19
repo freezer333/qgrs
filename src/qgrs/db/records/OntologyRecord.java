@@ -1,6 +1,8 @@
-package qgrs.data;
+package qgrs.db.records;
 
 import org.jdom.Element;
+
+import qgrs.data.GoType;
 
 
 public class OntologyRecord {

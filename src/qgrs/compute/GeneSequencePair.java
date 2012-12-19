@@ -5,9 +5,9 @@ import java.util.Date;
 
 import org.jdom.Element;
 
-import qgrs.data.AlignmentRecord;
 import qgrs.data.BaseSymbol;
 import qgrs.data.GeneSequence;
+import qgrs.db.records.AlignmentRecord;
 
 /*
  * Represents a pair consisting of THE principle and one of the comparisons. Could make a pair

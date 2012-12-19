@@ -2,11 +2,11 @@ package qgrs.db;
 
 import java.util.List;
 
-import qgrs.data.AlignmentRecord;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.QgrsHomology;
-import qgrs.data.QgrsHomologyRecord;
+import qgrs.db.records.AlignmentRecord;
+import qgrs.db.records.QgrsHomologyRecord;
 
 public class NullCache implements Cache {
 

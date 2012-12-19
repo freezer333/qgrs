@@ -3,9 +3,9 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.AlignmentRecord;
 import qgrs.db.AlignedSequenceDb;
 import qgrs.db.AlignmentRecordDb;
+import qgrs.db.records.AlignmentRecord;
 import qgrs.input.QParam;
 import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;
