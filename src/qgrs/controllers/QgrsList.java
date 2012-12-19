@@ -3,9 +3,9 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.query.qgrs.QgrsQuery;
-import qgrs.data.query.qgrs.QgrsQueryExecution;
-import qgrs.data.query.qgrs.QgrsQueryResult;
+import qgrs.db.query.qgrs.QgrsQuery;
+import qgrs.db.query.qgrs.QgrsQueryExecution;
+import qgrs.db.query.qgrs.QgrsQueryResult;
 import qgrs.model.DbCriteria;
 import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;

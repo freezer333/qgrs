@@ -3,9 +3,9 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.query.qgrshomology.QgrsHomologyQuery;
-import qgrs.data.query.qgrshomology.QgrsHomologyQueryExecution;
-import qgrs.data.query.qgrshomology.QgrsHomologyQueryResult;
+import qgrs.db.query.qgrshomology.QgrsHomologyQuery;
+import qgrs.db.query.qgrshomology.QgrsHomologyQueryExecution;
+import qgrs.db.query.qgrshomology.QgrsHomologyQueryResult;
 import qgrs.model.DbCriteria;
 import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;

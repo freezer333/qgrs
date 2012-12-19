@@ -3,9 +3,9 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.query.genehomology.GeneHomologyQuery;
-import qgrs.data.query.genehomology.GeneHomologyQueryExecution;
-import qgrs.data.query.genehomology.GeneHomologyQueryResult;
+import qgrs.db.query.genehomology.GeneHomologyQuery;
+import qgrs.db.query.genehomology.GeneHomologyQueryExecution;
+import qgrs.db.query.genehomology.GeneHomologyQueryResult;
 import qgrs.model.DbCriteria;
 import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;

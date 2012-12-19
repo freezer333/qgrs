@@ -3,9 +3,9 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.query.gene.GeneQuery;
-import qgrs.data.query.gene.GeneQueryExecution;
-import qgrs.data.query.gene.GeneQueryResult;
+import qgrs.db.query.gene.GeneQuery;
+import qgrs.db.query.gene.GeneQueryExecution;
+import qgrs.db.query.gene.GeneQueryResult;
 import qgrs.model.DbCriteria;
 import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;
