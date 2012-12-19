@@ -3,12 +3,11 @@ package qgrs.db;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
 import qgrs.data.QgrsHomologyRecord;
-import qgrs.data.query.HomologyQuery;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;
@@ -25,6 +24,26 @@ public class HomologyRecordDb  extends DbTable {
 		
 		this.insertStatement = createInsertStatement();
 		this.selectByAlignmentIdStatement = createSelectByAlignmentIdStatement();
+	}
+	@Override
+	public int getCount() {
+		return this.getCount(TABLE, dc.getConnection());
+	}
+	
+	
+	public Collection<String> getComparisonSpecies() {
+		LinkedList<String> retval = new LinkedList<String>();
+		String q = "select distinct c_species from qgrs_h";
+		try {
+			ResultSet rs = dc.getConnection().createStatement().executeQuery(q);
+			while ( rs.next() ) {
+				retval.add(rs.getString(0));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return retval;
 	}
 	
 	public void close() {
@@ -57,6 +76,8 @@ public class HomologyRecordDb  extends DbTable {
 	
 	
 	
+	
+	
 	public List<QgrsHomologyRecord> get(String alignmentId) {
 		try {
 			this.selectByAlignmentIdStatement.setString(1, alignmentId);
@@ -71,63 +92,8 @@ public class HomologyRecordDb  extends DbTable {
 		}
 	}
 	
-	public List<QgrsHomologyRecord> get(HomologyQuery where, int limit, int offset) {
-		try {
-			String query = "SELECT * FROM QGRS_H " + where.toSql() + " ORDER BY id LIMIT " + limit + " OFFSET " + offset;
-			//System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			List<QgrsHomologyRecord> records = new LinkedList<QgrsHomologyRecord>();
-			while ( rs.next()) {
-				records.add(new QgrsHomologyRecord(rs));
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return records;
-			
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
 	
-	public HashMap<String, Integer> getCountByAlignmentId(HomologyQuery where) {
-		try {
-			
-			String query = "SELECT alignmentId, COUNT(*) as total FROM QGRS_H " + where.toSql() + " GROUP BY alignmentId";
-			//System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			HashMap<String, Integer> retval = new HashMap<String, Integer> ();
-			while ( rs.next()) {
-				retval.put(rs.getString("alignmentId"), rs.getInt("total"));
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return retval;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
-	public int getCount(HomologyQuery where) {
-		try {
-			String query = "SELECT COUNT(*) as total FROM QGRS_H " + where.toSql();
-			//System.out.println("Optomization Candidate:\nQUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			if ( rs.next()) {
-				return rs.getInt("total");
-			}
-			
-			return 0;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
+	
 	
 	public boolean has(String alignmentId) {
 		return get(alignmentId).size() > 0;

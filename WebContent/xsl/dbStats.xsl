@@ -44,12 +44,12 @@
 							<tr>
 								<td style="width:40%;vertical-align:top;text-align:right"># of QGRS Instances Found</td>
 								<td><xsl:value-of select="format-number(/qgrs/stats/numQgrs, '###,###,###,###')"/></td>
-								<td>(G-Score >= 35)</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td style="width:40%;vertical-align:top;text-align:right" ># of Homologous QGRS Pairs Computed</td>
 								<td><xsl:value-of select="format-number(/qgrs/stats/numQgrsH, '###,###,###,###')"/></td>
-								<td>(QGRS-H Homology Score >= 0.95)</td>
+								<td></td>
 							</tr>
 							
 							

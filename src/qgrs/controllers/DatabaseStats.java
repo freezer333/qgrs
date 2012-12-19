@@ -3,9 +3,6 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.query.GeneQuery;
-import qgrs.data.query.HomologyQuery;
-import qgrs.data.query.QgrsQuery;
 import qgrs.db.AlignmentRecordDb;
 import qgrs.db.GeneSequenceDb;
 import qgrs.db.HomologyRecordDb;
@@ -25,22 +22,28 @@ public class DatabaseStats extends AbstractController {
 		this.supportedUrls.add("/app/dbStats");
 	}
 
+	
+	
 	@Override
 	public Response processRequest(AbstractWebContext context) {
 		Document pageXml = new Document();
 	    Element root = new Element("qgrs");
 	    QgrsWebContext qContext = (QgrsWebContext)context;
 	    
+	    
 	    AlignmentRecordDb alignmentdb = new AlignmentRecordDb (qContext.getDbConnection());
 	    HomologyRecordDb hDb = new HomologyRecordDb(qContext.getDbConnection());
 		QgrsDb qgrsDb = new QgrsDb(qContext.getDbConnection());
 		GeneSequenceDb seqDb = new GeneSequenceDb(qContext.getDbConnection());
+		
+		
+		
 	   
 		Element stat = new Element("stats");
-		stat.addContent(new Element("numGene").setText(String.valueOf(seqDb.getCount(new GeneQuery()))));
+		stat.addContent(new Element("numGene").setText(String.valueOf(seqDb.getCount())));
 		stat.addContent(new Element("numGeneH").setText(String.valueOf(alignmentdb.getCount())));
-		stat.addContent(new Element("numQgrs").setText(String.valueOf(qgrsDb.getRecordCount(new QgrsQuery().setMinScore(17)))));
-		stat.addContent(new Element("numQgrsH").setText(String.valueOf(hDb.getCount(new HomologyQuery().setOverallScore(0.95)))));
+		stat.addContent(new Element("numQgrs").setText(String.valueOf(qgrsDb.getCount())));
+		stat.addContent(new Element("numQgrsH").setText(String.valueOf(hDb.getCount())));
 		root.addContent(stat);
 	    pageXml.addContent(root);
 	    

@@ -12,7 +12,6 @@ import qgrs.compute.BuildKey;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GQuadruplexRecord;
 import qgrs.data.GeneSequence;
-import qgrs.data.query.QgrsQuery;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;
@@ -31,6 +30,12 @@ public class QgrsDb  extends DbTable {
 		this.insertStatement = createInsertStatement();
 		this.selectByGeneStatement = createSelectByGeneStatement();
 		this.selectByIdStatement = createSelectByIdStatement();
+	}
+	
+	
+	@Override
+	public int getCount() {
+		return this.getCount(TABLE, dc.getConnection());
 	}
 	
 	public void close() {
@@ -121,44 +126,7 @@ public class QgrsDb  extends DbTable {
 	}
 	
 	
-	public List<GQuadruplexRecord> getRecords(QgrsQuery where, int limit, int offset) {
-		try {
-			String query = "SELECT * FROM QGRS " + where.toSql() + " ORDER BY id LIMIT " + limit + " OFFSET " + offset;
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			List<GQuadruplexRecord> retval = new LinkedList<GQuadruplexRecord>();
-			while ( rs.next()) {
-				
-				retval.add(new GQuadruplexRecord(rs));
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return retval;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
-	public int getRecordCount(QgrsQuery where) {
-		try {
-			String query = "SELECT COUNT(id) as total FROM QGRS " + where.toSql();
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			if ( rs.next()) {
-				return rs.getInt("total");
-			}
-			
-			return 0;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
+	
 	public List<GQuadruplex> getAll(GeneSequence s, String buildKey) {
 		try {
 			this.selectByGeneStatement.setString(1, s.getAccessionNumber());

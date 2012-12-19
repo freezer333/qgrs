@@ -5,9 +5,6 @@ import java.util.HashMap;
 
 import org.jdom.Element;
 
-import qgrs.data.query.GeneQuery;
-import qgrs.data.query.HomologyQuery;
-import qgrs.data.query.QgrsQuery;
 import qgrs.input.QParam;
 import framework.web.util.StringUtils;
 
@@ -20,64 +17,7 @@ public class DbCriteria extends HashMap<QParam, String> {
 	
 	
 	
-	public GeneQuery buildGeneQueryForSingleSideView() {
-		if ( "comparison".equalsIgnoreCase(this.get(QParam.Db_FilterSide))) {
-			return buildComparisonGeneQuery();
-	    }
-	    else {
-	    	return buildPrincipleGeneQuery();
-	    }
-	}
-	public GeneQuery buildGeneQueryForSingleSideFlipView() {
-		if ( "comparison".equalsIgnoreCase(this.get(QParam.Db_FilterSide))) {
-			return buildPrincipleGeneQuery();
-	    }
-	    else {
-	    	return buildComparisonGeneQuery();
-	    }
-	}
-	public GeneQuery buildPrincipleGeneQuery() {
-		return new GeneQuery(this.get(QParam.Db_GeneId1), this.get(QParam.Db_Species1), this.get(QParam.Db_GeneSymbol1));
-	}
-	public GeneQuery buildComparisonGeneQuery() {
-		return new GeneQuery("", this.get(QParam.Db_Species2), "");
-	}
-	public QgrsQuery buildQgrsQueryForSingleQgrs() {
-		if ( "comparison".equalsIgnoreCase(this.get(QParam.Db_FilterSide))) {
-			return buildComparisonQgrsClause();
-	    }
-	    else {
-	    	return buildPrincipleQgrsClause();
-	    }
-	}
 	
-	public HomologyQuery buildQgrsHomologyQuery() {
-		return new HomologyQuery(Float.parseFloat(this.get(QParam.Db_OverlapSimilarity)), 
-				Float.parseFloat(this.get(QParam.Db_TetradSimilarity)), 
-				Float.parseFloat(this.get(QParam.Db_LoopSimilarity)), 
-				Float.parseFloat(this.get(QParam.Db_TotalLengthSimilarity)), 
-				Float.parseFloat(this.get(QParam.Db_OverallSimilarity))); 
-					
-	}
-	public QgrsQuery buildPrincipleQgrsClause(){
-		return new QgrsQuery(this.get(QParam.Db_QgrsId1), 
-				Integer.parseInt(this.get(QParam.Db_MinTetrads1)),
-				Integer.parseInt(this.get(QParam.Db_GScore1)), 
-				readBoolean(this.get(QParam.Db_Region15UTR)), 
-				readBoolean(this.get(QParam.Db_Region1CDS)),
-				readBoolean(this.get(QParam.Db_Region13UTR)));
-	}
-	
-	public QgrsQuery buildComparisonQgrsClause(){
-		// There will no longer be a relevant QGRS clause for the comparison
-		
-		return new QgrsQuery(/*this.get(QParam.Db_QgrsId2), 
-				Integer.parseInt(this.get(QParam.Db_MinTetrads2)),
-				Integer.parseInt(this.get(QParam.Db_GScore2)), 
-				readBoolean(this.get(QParam.Db_Region25UTR)), 
-				readBoolean(this.get(QParam.Db_Region2CDS)),
-				readBoolean(this.get(QParam.Db_Region23UTR))*/);
-	}
 	
 	public Boolean readBoolean(String onoff) {
 		return "on".equalsIgnoreCase(onoff);

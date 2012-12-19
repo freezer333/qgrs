@@ -10,7 +10,6 @@ import java.util.List;
 
 import qgrs.data.AlignmentRecord;
 import qgrs.data.GeneSequence;
-import qgrs.data.query.AlignmentQuery;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;
@@ -49,6 +48,11 @@ public class AlignmentRecordDb extends DbTable  {
 	}
 	
 	
+	
+	
+	
+	
+
 	public void put(AlignmentRecord ar) {
 		PreparedStatement ps = null;
 		if (has(ar.getPrinciple(), ar.getComparison(), ar.getAlignmentBuildKey())) {
@@ -94,24 +98,7 @@ public class AlignmentRecordDb extends DbTable  {
 			throw new RuntimeException (e);
 		}
 	}
-	public List<AlignmentRecord> get(AlignmentQuery q) {
-		try {
-			List<AlignmentRecord> retval = new LinkedList<AlignmentRecord>();
-			String query = "SELECT * FROM GENE_A " + q.toSql();
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			while ( rs.next()) {
-				retval.add(new AlignmentRecord(rs));
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return retval;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
+	
 	public AlignmentRecord get(GeneSequence principle, GeneSequence comparison, String alignmentBuildKey) {
 		try {
 			this.selectWithBuildKeyStatement.setString(1, principle.getAccessionNumber());
@@ -140,6 +127,8 @@ public class AlignmentRecordDb extends DbTable  {
 			throw new RuntimeException (e);
 		}
 	}
+	
+	
 	public int getCount() {
 		try {
 			Statement st = this.dc.getConnection().createStatement();

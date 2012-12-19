@@ -170,5 +170,10 @@ private static String TABLE = "GENE_A_SEQ";
 			throw new RuntimeException(e);
 		}
 	}
+
+	@Override
+	public int getCount() {
+		return this.getCount(TABLE, dc.getConnection());
+	}
 	
 }

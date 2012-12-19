@@ -4,15 +4,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import qgrs.data.GeneSequence;
 import qgrs.data.Range;
-import qgrs.data.query.GeneQuery;
-import qgrs.data.query.QgrsQuery;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;
@@ -55,6 +51,12 @@ public class GeneSequenceDb extends DbTable {
 		this.selectPolyASignalStatement = createPolyASignalSelectStatement();
 		this.deletePolyASignalStatement = createPolyASignalDeleteStatement();
 		this.deletePolyASiteStatement = createPolyASiteDeleteStatement();
+	}
+	
+	
+	@Override
+	public int getCount() {
+		return this.getCount(GENE_TABLE, dc.getConnection());
 	}
 	
 	public void close() {
@@ -148,97 +150,11 @@ public class GeneSequenceDb extends DbTable {
 		}
 	}
 	
-	public Map<String, Integer> getQgrsCountsInGenes(Collection<String> accessionNumbers, QgrsQuery qq) {
-		try {
-			HashMap<String, Integer> retval = new HashMap<String, Integer>();
-			if ( accessionNumbers == null || accessionNumbers.size()  < 1 ) {
-				return retval;
-			}
-			String query = "SELECT geneId, COUNT(*) as total FROM QGRS "+qq.toSql() + " AND geneId IN(" + getCSL(accessionNumbers)+ ") GROUP BY geneId";
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			
-			while ( rs.next()) {
-				retval.put(rs.getString("geneId"),rs.getInt("total"));
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return retval;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
-	public Collection<String> getAllSpecies() {
-		try {
-			
-			String query = "SELECT DISTINCT species FROM GENE ORDER BY species";
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			LinkedList<String> retval = new LinkedList<String>();
-			while ( rs.next()) {
-				retval.add(rs.getString("species"));
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return retval;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
-	public enum HomologSide { 
-		principle  {
-			@Override
-			HomologSide flip() {
-				return comparison;
-			}
-		}, comparison {
-			@Override
-			HomologSide flip() {
-				return principle;
-			}
-		};
-		abstract HomologSide flip () ;
-	}
 	
-	public Map<String, Integer> getHomologCountsForGenes(Collection<String> accessionNumbers, 
-			HomologSide side, GeneQuery gQuery, double minAlignmentScore) {
-		try {
-			HashMap<String, Integer> retval = new HashMap<String, Integer>();
-			if ( accessionNumbers == null || accessionNumbers.size()  < 1 ) {
-				return retval;
-			}
-			
-			String flipQ = "";
-			if ( gQuery.hasCriteria()) {
-				//and !side IN (SELECT accession from GENE where q);
-				flipQ = " AND " + side.flip().toString() + " IN( SELECT accessionNumber FROM GENE " + gQuery.toSql() + ") ";
-			}
-			
-			
-			
-			String query = "SELECT " + side.toString()+", COUNT(*) as total FROM GENE_A WHERE " +
-							side.toString()+" IN(" + getCSL(accessionNumbers)+ ") " + 
-							flipQ + " AND similarityPercentage >= " + minAlignmentScore +  
-							" GROUP BY "+ side.toString();
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			
-			while ( rs.next()) {
-				retval.put(rs.getString( side.toString()),rs.getInt("total"));
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return retval;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
+	
+	
+	
+	
 	public List<GeneSequence> getIn(Collection<String> accessionNumbers) {
 		try {
 			List<GeneSequence> retval = new LinkedList<GeneSequence>();
@@ -266,68 +182,9 @@ public class GeneSequenceDb extends DbTable {
 		}
 	}
 	
-	public List<GeneSequence> getAll(GeneQuery where, int limit, int offset) {
-		try {
-			String query = "SELECT * FROM GENE " + where.toSql() + " ORDER BY geneSymbol LIMIT " + limit + " OFFSET " + offset;
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			List<GeneSequence> retval = new LinkedList<GeneSequence>();
-			while ( rs.next()) {
-				retval.add(GeneSequence.buildFromResultSet(rs, 
-						this.getPolyASites(rs.getString(ACCESSION_NUMBER_COL)), 
-						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)), 
-						goDb.get(rs.getString(ACCESSION_NUMBER_COL))));
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return retval;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
-	public int getCount(GeneQuery where) {
-		try {
-			String query = "SELECT COUNT(DISTINCT accessionNumber) as total FROM GENE "+ where.toSql() ;
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			if ( rs.next()) {
-				return rs.getInt("total");
-			}
-			
-			return 0;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
-	public List<GeneSequence> getAll(GeneQuery where) {
-		try {
-			String query = "SELECT * FROM GENE " + where.toSql();
-			//System.out.println("QUERY DEBUG:  " + query);
-			//long start = System.nanoTime();
-			PreparedStatement ps = dc.getConnection().prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			List<GeneSequence> retval = new LinkedList<GeneSequence>();
-			while ( rs.next()) {
-				retval.add(GeneSequence.buildFromResultSet(rs, 
-						this.getPolyASites(rs.getString(ACCESSION_NUMBER_COL)), 
-						this.getPolyASignals(rs.getString(ACCESSION_NUMBER_COL)), 
-						goDb.get(rs.getString(ACCESSION_NUMBER_COL)))
-						);
-			}
-			//double  elapsed = System.nanoTime() - start;
-			//System.out.println("QUERY TIME:  " + new DecimalFormat("0.000").format(elapsed /1000000000) + " sec");
-			return retval;
-		} catch ( Exception e) {
-			throw new RuntimeException (e);
-		}
-	}
+	
+	
+	
 	
 	private List<Range> getPolyASites(String acsessionNumber) {
 		return getPolys(this.selectPolyASiteStatement, acsessionNumber);

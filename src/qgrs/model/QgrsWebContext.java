@@ -11,7 +11,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import qgrs.db.DatabaseConnection;
-import qgrs.db.GeneSequenceDb;
+import qgrs.db.HomologyRecordDb;
 import framework.web.AbstractDispatch;
 import framework.web.AbstractWebContext;
 
@@ -31,16 +31,16 @@ public class QgrsWebContext extends AbstractWebContext {
 	public Element getSpeciesDropdownElement() {
 		Element speciesList = new Element("speciesList");
 		speciesList.addContent(new Element("species").setAttribute("value", "").setAttribute("display", "Any"));//empty element for the blank entry
-		GeneSequenceDb geneDb = new GeneSequenceDb (this.getDbConnection());
+		HomologyRecordDb db = new HomologyRecordDb (this.getDbConnection());
 		try {
-			Collection <String> allSpecies = geneDb.getAllSpecies();
+			Collection <String> allSpecies = db.getComparisonSpecies();
 			for ( String s : allSpecies) {
 				speciesList.addContent(new Element("species").setAttribute("value", s).setAttribute("display", s));
 			}
 			return speciesList;
 		}
 		finally {
-			geneDb.close();
+			db.close();
 		}
 		
 	}
