@@ -1,11 +1,11 @@
-package qgrs.data.query.genehomology;
+package qgrs.db.query.genehomology;
 
 import java.sql.ResultSet;
 import java.text.DecimalFormat;
 
 import org.jdom.Element;
 
-import qgrs.data.query.SingleGeneResult;
+import qgrs.db.query.SingleGeneResult;
 
 public class GeneHomologyQueryResult {
 

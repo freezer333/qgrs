@@ -1,13 +1,13 @@
-package qgrs.data.query.qgrshomology;
+package qgrs.db.query.qgrshomology;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
 import qgrs.data.GQuadruplex;
-import qgrs.data.query.PageableQuery;
-import qgrs.data.query.QueryUtils;
-import qgrs.data.query.WhereClause;
+import qgrs.db.query.PageableQuery;
+import qgrs.db.query.QueryUtils;
+import qgrs.db.query.WhereClause;
 import qgrs.input.QParam;
 import qgrs.model.DbCriteria;
 

@@ -1,18 +1,18 @@
-package qgrs.data.query.genehomology;
+package qgrs.db.query.gene;
 
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import qgrs.data.query.PageableQuery;
-import qgrs.data.query.PagedQueryExecution;
 import qgrs.db.DatabaseConnection;
+import qgrs.db.query.PageableQuery;
+import qgrs.db.query.PagedQueryExecution;
 import qgrs.model.DbCriteria;
 
-public class GeneHomologyQueryExecution extends PagedQueryExecution {
-	Collection<GeneHomologyQueryResult> results = new LinkedList<GeneHomologyQueryResult>();
+public class GeneQueryExecution extends PagedQueryExecution {
+	Collection<GeneQueryResult> results = new LinkedList<GeneQueryResult>();
 	
-	public Collection<GeneHomologyQueryResult> getResults() {
+	public Collection<GeneQueryResult> getResults() {
 		return results;
 	}
 
@@ -23,7 +23,7 @@ public class GeneHomologyQueryExecution extends PagedQueryExecution {
 		if ( count == 0 ) return;
 		
 		while ( this.resultSet.next() ) {
-			results.add(new GeneHomologyQueryResult(this.resultSet));
+			results.add(new GeneQueryResult(this.resultSet));
 		}
 		
 		System.out.println("Result Set has " + results.size() + " records (paged)");

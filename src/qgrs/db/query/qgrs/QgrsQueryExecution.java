@@ -1,12 +1,12 @@
-package qgrs.data.query.qgrs;
+package qgrs.db.query.qgrs;
 
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import qgrs.data.query.PageableQuery;
-import qgrs.data.query.PagedQueryExecution;
 import qgrs.db.DatabaseConnection;
+import qgrs.db.query.PageableQuery;
+import qgrs.db.query.PagedQueryExecution;
 import qgrs.model.DbCriteria;
 
 public class QgrsQueryExecution extends PagedQueryExecution {

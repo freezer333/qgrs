@@ -1,4 +1,4 @@
-package qgrs.data.query;
+package qgrs.db.query;
 
 import qgrs.model.DbCriteria;
 

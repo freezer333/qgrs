@@ -1,12 +1,12 @@
-package qgrs.data.query.qgrshomology;
+package qgrs.db.query.qgrshomology;
 
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import qgrs.data.query.PageableQuery;
-import qgrs.data.query.PagedQueryExecution;
 import qgrs.db.DatabaseConnection;
+import qgrs.db.query.PageableQuery;
+import qgrs.db.query.PagedQueryExecution;
 import qgrs.model.DbCriteria;
 
 public class QgrsHomologyQueryExecution extends PagedQueryExecution {

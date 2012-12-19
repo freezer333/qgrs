@@ -1,11 +1,11 @@
-package qgrs.data.query.qgrs;
+package qgrs.db.query.qgrs;
 
 import java.sql.ResultSet;
 
 import org.jdom.Element;
 
 import qgrs.data.GQuadruplex;
-import qgrs.data.query.SingleQgrsResult;
+import qgrs.db.query.SingleQgrsResult;
 
 public class QgrsQueryResult {
 

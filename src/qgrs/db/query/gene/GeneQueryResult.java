@@ -1,10 +1,10 @@
-package qgrs.data.query.gene;
+package qgrs.db.query.gene;
 
 import java.sql.ResultSet;
 
 import org.jdom.Element;
 
-import qgrs.data.query.SingleGeneResult;
+import qgrs.db.query.SingleGeneResult;
 
 public class GeneQueryResult {
 	private SingleGeneResult result = new SingleGeneResult();

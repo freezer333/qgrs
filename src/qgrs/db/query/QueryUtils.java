@@ -1,4 +1,4 @@
-package qgrs.data.query;
+package qgrs.db.query;
 
 public class QueryUtils {
 

@@ -1,55 +1,58 @@
-package qgrs.data.query.gene;
+package qgrs.db.query.genehomology;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
 import qgrs.data.GQuadruplex;
-import qgrs.data.query.PageableQuery;
-import qgrs.data.query.QueryUtils;
-import qgrs.data.query.WhereClause;
+import qgrs.db.query.PageableQuery;
+import qgrs.db.query.QueryUtils;
+import qgrs.db.query.WhereClause;
 import qgrs.input.QParam;
 import qgrs.model.DbCriteria;
 
-public class GeneQuery extends WhereClause implements PageableQuery {
-
-
-	private final String selectClauseCount = 
-			"select count(gene.accessionnumber) ";
-
-	// Note, the # is used to tranform the select's correlated subquery.
-	private final String selectClauseResults = 
-			"select gene.accessionnumber , gene.species, gene.genesymbol, count (distinct CONSERVED.gq1id) as qgrsHCount," +
-			"(select COUNT(distinct QGRS.ID) from qgrs where geneId = accessionNumber #) as qgrsCount ,  " +
-			"count ( distinct CONSERVED.c_accessionNumber) as geneHCount ";
-	
-	// Note, the # is used to transform the subquery's constraints
-	private final String fromClause = " FROM gene left join " +
-									  " (select * from QGRS_H #) as CONSERVED" +
-									  " on gene.accessionnumber =CONSERVED.p_accessionNumber ";
-	
-	private final String fromCountClause = " FROM gene ";
-	
-	private final String groupClause = " GROUP BY gene.accessionnumber ";
-	private final String orderClause = " ORDER BY GENE.GENESYMBOL ";
-	
-	
+public class GeneHomologyQuery extends WhereClause 
+implements PageableQuery {
 	private String principleGeneId;
 	private String principleGeneSymbol;
 	private String principleGeneSpecies;
-	private float minimumGeneAlignmentPercentage;
-	private float qgrsMinHomologyScore;
 	private String comparsionGeneSpecies;
+	private float minimumGeneAlignmentPercentage;
 	
 	private String qgrsId;
 	private int qgrsMinGScore;
 	private int qgrsMinTetrads;
+	private float qgrsMinHomologyScore;
 	private boolean in5Prime;
 	private boolean inCds;
 	private boolean in3Prime;
 	
 	private int pageLimit;
 	private int pageOffset;
+	
+	/**
+	 * This is still wrong.  
+	 * 
+	 * 	If query is based on QGRS_H, it needs to be left joined with gene-a to include the alignments for which no qgrs
+	 * appear.  The problem is that gene-a doesn't have species and symbol, so those dangling tuples never are included in result set.
+	 * 
+	 * One solution is to add species and symbol to gene-a.  This seems to make sense
+	 * 
+	 * Another solution is to try the 3-way join on mysql, which would make the query hit gene_a directly and use 
+	 * qgrs and qgrs-h only for correlated queries.  This doesn't include grouping.
+	 * 
+	 * 
+	 * Lean towards option 1 though - there are some really nice things about H2 (portability).
+	 */
+	
+	private final String selectClauseResults = 
+			"select alignmentId, P_AccessionNumber, C_Accessionnumber , P_GENESYMBOL, C_GENESYMBOL, P_SPECIES, C_SPECIES, ALIGNMENTSCORE, " +  
+			"(SELECT COUNT(DISTINCT QGRS.ID) FROM QGRS WHERE GENEID=P_ACCESSIONNUMBER #) as P_QgrsCount,  " +
+			"COUNT (DISTINCT QGRS_H.GQ1ID) as HCOUNT ";
+
+	private final String fromClause = " FROM QGRS_H ";
+	private final String orderClause = " ORDER BY P_GENESYMBOL ";
+	private final String groupClause = " GROUP BY P_ACCESSIONNUMBER, C_AccessionNumber ";
 	
 	
 	
@@ -75,25 +78,13 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 	}
 	
 	
-	// selects qgrs constraints on QGRS
-	// continued where.
-	private String buildQgrsWhereClause() {
-		LinkedList<String> criteria = new LinkedList<String>();
-		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetradQgrs());
-		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScoreQgrs());
-		criteria.add(QueryUtils.buildRegionConstraint(this.in5Prime, this.inCds, this.in3Prime, QueryUtils.qgrs_regions_cols));
-		
-		return continuedWhere(criteria);
-	}
-	
-	// selects qgrs, qgrsH, and c_gene constrainst on QGRSH
-	private String buildQgrsHWhereClause() {
+	private String buildWhereClause() {
 		LinkedList<String> criteria = new LinkedList<String>();
 		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetrad());
 		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScore());
 		criteria.add(QueryUtils.buildRegionConstraint(in5Prime, inCds, in3Prime, QueryUtils.qgrs_h_regions_cols));
 		criteria.add(this.stringConstraint("GQ1ID", this.qgrsId));
-		criteria.add(this.stringConstraint("P_AccessionNumber ", this.principleGeneId));
+		criteria.add(this.stringConstraint("P_AccessionNUmber ", this.principleGeneId));
 		criteria.add(this.stringConstraint("P_GENESYMBOL", this.principleGeneSymbol));
 		criteria.add(this.stringConstraint("P_SPECIES", this.principleGeneSpecies));
 		criteria.add(this.stringConstraint("C_SPECIES", this.comparsionGeneSpecies));
@@ -107,19 +98,12 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 		return  where(criteria);
 	}
 	
-	// selects on gene
-	private String buildWhereClause() {
-		LinkedList<String> criteria = new LinkedList<String>();
-		criteria.add(this.stringConstraint("GENE.ACCESSIONNUMBER ", this.principleGeneId));
-		criteria.add(this.stringConstraint("GENE.GENESYMBOL", this.principleGeneSymbol));
-		criteria.add(this.stringConstraint("GENE.SPECIES", this.principleGeneSpecies));
-		return  where(criteria);
-	}
+	
 	
 	
 	@Override
 	public String toCountSql() {
-		return this.selectClauseCount + this.fromCountClause + this.buildWhereClause();
+		return "SELECT COUNT(*) FROM (" + this.toSql() + ")";
 	}
 
 	@Override
@@ -152,17 +136,26 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 		this.pageLimit = pageLimit;
 		this.pageOffset = computedOffset;
 	}
-
+	
+	
+	
+	private String transformSelect() {
+		LinkedList<String> criteria = new LinkedList<String>();
+		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetradQgrs());
+		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScoreQgrs());
+		criteria.add(QueryUtils.buildRegionConstraint(this.in5Prime, this.inCds, this.in3Prime, QueryUtils.qgrs_regions_cols));
+		
+		String w = continuedWhere(criteria);
+		return this.selectClauseResults.replace("#", w);
+		
+	}
 	@Override
 	public String toSql() {
-		String select = this.selectClauseResults.replace("#", this.buildQgrsWhereClause());
-		String from = fromClause.replace("#", this.buildQgrsHWhereClause());
-		String q = 	select + 
-				from + 
+		String q = 	transformSelect() + 
+				fromClause + 
 				this.buildWhereClause() + this.groupClause + this.orderClause ;
 		return q;
 	}
-
 	@Override
 	public void set(PreparedStatement ps) throws SQLException {
 		// TODO Auto-generated method stub

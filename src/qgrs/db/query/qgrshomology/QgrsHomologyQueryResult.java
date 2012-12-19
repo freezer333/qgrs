@@ -1,4 +1,4 @@
-package qgrs.data.query.qgrshomology;
+package qgrs.db.query.qgrshomology;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 import org.jdom.Element;
 
 import qgrs.data.GQuadruplex;
-import qgrs.data.query.SingleQgrsResult;
+import qgrs.db.query.SingleQgrsResult;
 
 public class QgrsHomologyQueryResult {
 	

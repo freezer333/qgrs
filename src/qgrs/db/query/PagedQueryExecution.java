@@ -1,4 +1,4 @@
-package qgrs.data.query;
+package qgrs.db.query;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
