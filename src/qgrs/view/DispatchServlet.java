@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import qgrs.utils.db.DatabaseUpdate;
+import qgrs.db.tasks.DatabaseUpdate;
 import framework.web.ResourceResolver;
 
 public class DispatchServlet extends HttpServlet {

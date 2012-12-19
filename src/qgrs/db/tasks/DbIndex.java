@@ -1,4 +1,4 @@
-package qgrs.utils.db;
+package qgrs.db.tasks;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

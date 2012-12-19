@@ -17,9 +17,9 @@ import qgrs.db.Cache;
 import qgrs.db.DatabaseConnection;
 import qgrs.db.LocalGeneCache;
 import qgrs.db.XmlWritePostCache;
+import qgrs.db.tasks.InputPair;
 import qgrs.input.AccessionNumberInputProvider;
 import qgrs.job.AlignmentJob;
-import qgrs.utils.db.InputPair;
 import framework.db.DatabaseConnectionParameters;
 
 public class Seed_ComputeAndSend {

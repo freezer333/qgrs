@@ -1,7 +1,7 @@
 /**
  * 
  */
-package qgrs.utils.db;
+package qgrs.db.tasks;
 
 import java.io.PrintWriter;
 
