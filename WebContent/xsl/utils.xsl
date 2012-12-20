@@ -415,7 +415,7 @@
 				</xsl:if>
 				
 			</xsl:element>	
-			<label for="browse-gene-p">mRNA (Principal)</label>
+			<label for="browse-gene-p">mRNA (Human)</label>
 			
 			
 							
@@ -439,7 +439,7 @@
 					<xsl:attribute name="checked">checked</xsl:attribute> 
 				</xsl:if>
 			</xsl:element>
-			<label for="browse-qgrs-p">QGRS (Principal)</label>
+			<label for="browse-qgrs-p">QGRS (Human)</label>
 			
 			
 			

@@ -204,7 +204,7 @@
 		 QGRS by clicking on the "Detailed Analysis" link".
 		</p>
 		
-		<h2>QGRS (Principle)/QGRS (Comparison)</h2>
+		<h2>QGRS (Principal)/QGRS (Comparison)</h2>
 		<img src="{$imagePath}qgrs-listing.png" style="width:90%;"/>
 		<p>
 		These tables display important characteristics of computed QGRS in the 

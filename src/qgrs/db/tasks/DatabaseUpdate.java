@@ -22,6 +22,7 @@ public class DatabaseUpdate {
 		Connection conn = getConnection();
 		try {
 			this.createGenesTable(conn);
+			new AddKeys().execute();
 			DbIndex.makeIndexes(conn);
 		}
 		catch (Exception e){

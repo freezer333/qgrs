@@ -36,6 +36,7 @@ public abstract class AbstractDbTask {
 			throw new RuntimeException (e);
 		}
 	}
+	
 	protected void executeUpdate( String q) {
 		try {
 			if ( printSql ) System.out.println(q);

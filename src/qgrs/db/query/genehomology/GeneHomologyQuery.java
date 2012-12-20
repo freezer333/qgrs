@@ -30,34 +30,27 @@ implements PageableQuery {
 	private int pageLimit;
 	private int pageOffset;
 	
-	/**
-	 * This is still wrong.  
-	 * 
-	 * 	If query is based on QGRS_H, it needs to be left joined with gene-a to include the alignments for which no qgrs
-	 * appear.  The problem is that gene-a doesn't have species and symbol, so those dangling tuples never are included in result set.
-	 * 
-	 * One solution is to add species and symbol to gene-a.  This seems to make sense
-	 * 
-	 * Another solution is to try the 3-way join on mysql, which would make the query hit gene_a directly and use 
-	 * qgrs and qgrs-h only for correlated queries.  This doesn't include grouping.
-	 * 
-	 * 
-	 * Lean towards option 1 though - there are some really nice things about H2 (portability).
-	 */
 	
+	/*
+	 * 	SELECT PRINCIPLE, COMPARISON , PSPECIES , CSPECIES , PSYMBOL, CSYMBOL , SIMILARITYPERCENTAGE, 
+		(SELECT COUNT(DISTINCT QGRS.ID) FROM QGRS WHERE GENEID=PRINCIPLE) as P_QgrsCount, 
+		(SELECT COUNT(DISTINCT QGRS_H.ID) FROM QGRS_H WHERE P_ACCESSIONNUMBER=PRINCIPLE) as P_QgrsHCount
+		FROM GENE_AQ
+		WHERE  (SELECT COUNT(DISTINCT QGRS_H.ID) FROM QGRS_H WHERE P_ACCESSIONNUMBER=PRINCIPLE)= 2
+	 */
 	private final String selectClauseResults = 
-			"select alignmentId, P_AccessionNumber, C_Accessionnumber , P_GENESYMBOL, C_GENESYMBOL, P_SPECIES, C_SPECIES, ALIGNMENTSCORE, " +  
-			"(SELECT COUNT(DISTINCT QGRS.ID) FROM QGRS WHERE GENEID=P_ACCESSIONNUMBER #) as P_QgrsCount,  " +
-			"COUNT (DISTINCT QGRS_H.GQ1ID) as HCOUNT ";
+			"SELECT ID, PRINCIPLE, COMPARISON, PSPECIES, " +
+			"CSPECIES, PSYMBOL, CSYMBOL as C_GENESYMBOL , SIMILARITYPERCENTAGE, "+
+			"(SELECT COUNT(DISTINCT QGRS.ID) FROM QGRS WHERE GENEID=PRINCIPLE #) as P_QgrsCount,  " +
+			"(SELECT COUNT(DISTINCT QGRS_H.ID) FROM QGRS_H WHERE P_ACCESSIONNUMBER=PRINCIPLE @) as HCOUNT  ";
 
-	private final String fromClause = " FROM QGRS_H ";
-	private final String orderClause = " ORDER BY P_GENESYMBOL ";
-	private final String groupClause = " GROUP BY P_ACCESSIONNUMBER, C_AccessionNumber ";
+	private final String fromClause = " FROM GENE_AQ ";
+	private final String orderClause = " ORDER BY PSYMBOL ";
 	
 	
 	
 	private String alignment() {
-		return "ALIGNMENTSCORE >= " + p(minimumGeneAlignmentPercentage/100);
+		return "SIMILARITYPERCENTAGE >= " + p(minimumGeneAlignmentPercentage/100);
 	}
 	private String qgrsHomology() {
 		return "OVERALLSCORE >= " + p(qgrsMinHomologyScore);
@@ -80,20 +73,14 @@ implements PageableQuery {
 	
 	private String buildWhereClause() {
 		LinkedList<String> criteria = new LinkedList<String>();
-		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetrad());
-		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScore());
-		criteria.add(QueryUtils.buildRegionConstraint(in5Prime, inCds, in3Prime, QueryUtils.qgrs_h_regions_cols));
-		criteria.add(this.stringConstraint("GQ1ID", this.qgrsId));
-		criteria.add(this.stringConstraint("P_AccessionNUmber ", this.principleGeneId));
-		criteria.add(this.stringConstraint("P_GENESYMBOL", this.principleGeneSymbol));
-		criteria.add(this.stringConstraint("P_SPECIES", this.principleGeneSpecies));
-		criteria.add(this.stringConstraint("C_SPECIES", this.comparsionGeneSpecies));
+		
+		criteria.add(this.stringConstraint("PRINCIPLE ", this.principleGeneId));
+		criteria.add(this.stringConstraint("PSYMBOL", this.principleGeneSymbol));
+		criteria.add(this.stringConstraint("PSPECIES", this.principleGeneSpecies));
+		criteria.add(this.stringConstraint("CSPECIES", this.comparsionGeneSpecies));
 		
 		if ( this.minimumGeneAlignmentPercentage > 0.001 ) {
 			criteria.add(this.alignment());
-		}
-		if ( this.qgrsMinHomologyScore > 0.3 ) {
-			criteria.add(this.qgrsHomology());
 		}
 		return  where(criteria);
 	}
@@ -140,20 +127,33 @@ implements PageableQuery {
 	
 	
 	private String transformSelect() {
+		// create the QGRS where
 		LinkedList<String> criteria = new LinkedList<String>();
 		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetradQgrs());
 		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScoreQgrs());
 		criteria.add(QueryUtils.buildRegionConstraint(this.in5Prime, this.inCds, this.in3Prime, QueryUtils.qgrs_regions_cols));
 		
 		String w = continuedWhere(criteria);
-		return this.selectClauseResults.replace("#", w);
+		String retval =  this.selectClauseResults.replace("#", w);
+		
+		// create the QGRS_H where
+		criteria = new LinkedList<String>();
+		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetrad());
+		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScore());
+		criteria.add(QueryUtils.buildRegionConstraint(in5Prime, inCds, in3Prime, QueryUtils.qgrs_h_regions_cols));
+		criteria.add(this.stringConstraint("GQ1ID", this.qgrsId));
+		criteria.add(this.stringConstraint("C_SPECIES", this.comparsionGeneSpecies));
+		if ( this.qgrsMinHomologyScore > 0.3 ) {
+			criteria.add(this.qgrsHomology());
+		}
+		return retval.replace("@", continuedWhere(criteria));
 		
 	}
 	@Override
 	public String toSql() {
 		String q = 	transformSelect() + 
 				fromClause + 
-				this.buildWhereClause() + this.groupClause + this.orderClause ;
+				this.buildWhereClause() + this.orderClause ;
 		return q;
 	}
 	@Override
