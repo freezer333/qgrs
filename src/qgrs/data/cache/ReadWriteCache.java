@@ -1,4 +1,4 @@
-package qgrs.db;
+package qgrs.data.cache;
 
 import java.util.List;
 
@@ -9,6 +9,12 @@ import qgrs.data.QgrsHomology;
 import qgrs.data.records.AlignmentRecord;
 import qgrs.data.records.GQuadruplexRecord;
 import qgrs.data.records.QgrsHomologyRecord;
+import qgrs.db.AlignedSequenceDb;
+import qgrs.db.AlignmentRecordDb;
+import qgrs.db.DatabaseConnection;
+import qgrs.db.GeneSequenceDb;
+import qgrs.db.HomologyRecordDb;
+import qgrs.db.QgrsDb;
 
 public class ReadWriteCache implements Cache {
 
@@ -69,7 +75,7 @@ public class ReadWriteCache implements Cache {
 	
 	public List<GQuadruplex> getQuadruplexes(GeneSequence s) {
 		QgrsDb db = new QgrsDb(connection);
-		List<GQuadruplex> retval = db.getAll(s, BuildKey.QgrsIdentify);
+		List<GQuadruplex> retval = db.getAll(s);
 		db.close();
 		return retval;
 	}

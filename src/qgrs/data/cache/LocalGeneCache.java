@@ -1,7 +1,11 @@
-package qgrs.db;
+package qgrs.data.cache;
 
 import qgrs.data.GeneSequence;
 import qgrs.data.records.AlignmentRecord;
+import qgrs.db.AlignedSequenceDb;
+import qgrs.db.AlignmentRecordDb;
+import qgrs.db.DatabaseConnection;
+import qgrs.db.GeneSequenceDb;
 import framework.web.util.StringUtils;
 
 

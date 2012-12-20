@@ -1,4 +1,4 @@
-package qgrs.db;
+package qgrs.input;
 import java.net.MalformedURLException;
 import java.net.URL;
 

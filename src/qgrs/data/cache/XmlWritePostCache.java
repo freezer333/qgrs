@@ -1,4 +1,4 @@
-package qgrs.db;
+package qgrs.data.cache;
 
 import java.io.File;
 import java.io.FileOutputStream;
