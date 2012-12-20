@@ -103,8 +103,8 @@ public class GeneSequenceDb extends DbTable {
 		
 		this.insertRanges(this.insertPolyASignalStatement, s.getAccessionNumber(), s.getPolyASignals());
 		this.insertRanges(this.insertPolyASiteStatement, s.getAccessionNumber(), s.getPolyASites());
-		goDb.put(s.getAccessionNumber(), s.getOntologyData());
 		this.dc.executeUpdate(ps);
+		goDb.put(s.getAccessionNumber(), s.getOntologyData());
 		
 		
 	}

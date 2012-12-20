@@ -4,9 +4,8 @@ import org.biojavax.bio.db.ncbi.GenbankRichSequenceDB;
 import org.biojavax.bio.seq.RichSequence;
 
 import qgrs.data.GeneSequence;
-import qgrs.db.Cache;
-import qgrs.db.GenbankRichSequenceTextDB;
-import qgrs.db.NullCache;
+import qgrs.data.cache.Cache;
+import qgrs.data.cache.NullCache;
 
 public class AccessionNumberInputProvider implements InputProvider {
 	

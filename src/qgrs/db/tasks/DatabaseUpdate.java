@@ -13,8 +13,11 @@ public class DatabaseUpdate {
 	DatabaseConnectionParameters params ;
 	boolean drop = true;
 	
+	AddKeys ak;
+	
 	public DatabaseUpdate (ResourceResolver r) {
 		params = new DatabaseConnectionParameters(AppProperties.getConnectionString(r), "sa", "sa");
+		ak = new AddKeys(r);
 		drop = AppProperties.dropTables(r);
 	}
 	
@@ -22,7 +25,7 @@ public class DatabaseUpdate {
 		Connection conn = getConnection();
 		try {
 			this.createGenesTable(conn);
-			new AddKeys().execute();
+			ak.execute();
 			DbIndex.makeIndexes(conn);
 		}
 		catch (Exception e){

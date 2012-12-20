@@ -3,9 +3,9 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.db.Cache;
+import qgrs.data.cache.Cache;
+import qgrs.data.cache.LocalGeneCache;
 import qgrs.db.DatabaseConnection;
-import qgrs.db.LocalGeneCache;
 import qgrs.input.FlexibleInputProvider;
 import qgrs.input.QParam;
 import qgrs.input.ResultViewParams;

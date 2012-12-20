@@ -3,7 +3,7 @@ package qgrs.db.seed;
 
 public class SeedUtils {
 
-	public static final String InputPairDir = "seed_data/pairs_test/";
+	public static final String InputPairDir = "seed_data/pairs/";
 	
 	public static final String [] PrincipleSpeciesSet = {"Homo sapiens"};
 	public static final String [] ComparisonSpeciesSet = {"Drosophila melanogaster"};//, "Bos taurus"};

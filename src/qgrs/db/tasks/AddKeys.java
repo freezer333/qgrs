@@ -4,8 +4,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import qgrs.db.AppProperties;
+import framework.db.DatabaseConnectionParameters;
+import framework.web.ResourceResolver;
+
 public class AddKeys extends AbstractDbTask {
 
+	public AddKeys() {
+		super();
+	}
+	public AddKeys (ResourceResolver r) {
+		super(new DatabaseConnectionParameters(AppProperties.getConnectionString(r), "sa", "sa"));
+		
+	}
 	private boolean keyExists(String table) throws SQLException {
 		String q = "SELECT * " +
 				"FROM INFORMATION_SCHEMA.CONSTRAINTS " +

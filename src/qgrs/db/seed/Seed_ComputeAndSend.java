@@ -12,11 +12,11 @@ import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.List;
 
+import qgrs.data.cache.Cache;
+import qgrs.data.cache.LocalGeneCache;
+import qgrs.data.cache.XmlWritePostCache;
 import qgrs.db.AppProperties;
-import qgrs.db.Cache;
 import qgrs.db.DatabaseConnection;
-import qgrs.db.LocalGeneCache;
-import qgrs.db.XmlWritePostCache;
 import qgrs.db.tasks.InputPair;
 import qgrs.input.AccessionNumberInputProvider;
 import qgrs.job.AlignmentJob;

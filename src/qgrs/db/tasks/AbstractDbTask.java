@@ -11,10 +11,15 @@ import framework.db.DatabaseConnectionParameters;
 public abstract class AbstractDbTask {
 
 	Connection conn;
-	DatabaseConnectionParameters params = new DatabaseConnectionParameters(AppProperties.getConnectionStringFromPropsxml(), "sa", "sa");
+	DatabaseConnectionParameters params;
 	protected boolean printSql = false;
 	
 	public AbstractDbTask () {
+		params = new DatabaseConnectionParameters(AppProperties.getConnectionStringFromPropsxml(), "sa", "sa");
+		conn = getConnection();
+	}
+	public AbstractDbTask (DatabaseConnectionParameters params) {
+		this.params = params;
 		conn = getConnection();
 	}
 	public abstract void report();

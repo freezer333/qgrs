@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -127,15 +128,28 @@ public class QgrsDb  extends DbTable {
 	
 	
 	
-	public List<GQuadruplex> getAll(GeneSequence s, String buildKey) {
+	public List<GQuadruplex> getAll(GeneSequence s) {
 		try {
 			this.selectByGeneStatement.setString(1, s.getAccessionNumber());
-			this.selectByGeneStatement.setString(2, buildKey);
 			ResultSet rs = this.selectByGeneStatement.executeQuery();
 			List<GQuadruplex> retval = new LinkedList<GQuadruplex>();
 			while ( rs.next()) {
 				GQuadruplexRecord r = new GQuadruplexRecord (rs);
 				retval.add(new GQuadruplex(r, s));
+			}
+			return retval;
+		} catch ( Exception e) {
+			throw new RuntimeException (e);
+		}
+	}
+	public HashSet<String> getAllIds(GeneSequence s) {
+		try {
+			this.selectByGeneStatement.setString(1, s.getAccessionNumber());
+			ResultSet rs = this.selectByGeneStatement.executeQuery();
+			HashSet<String> retval = new HashSet<String>();
+			while ( rs.next()) {
+				GQuadruplexRecord r = new GQuadruplexRecord (rs);
+				retval.add(r.getId());
 			}
 			return retval;
 		} catch ( Exception e) {
@@ -168,7 +182,6 @@ public class QgrsDb  extends DbTable {
 	private PreparedStatement buildSelectByGeneStatement(StatementBuilder builder) {
 		QueryConstraints qc = new QueryConstraints();
 		qc.add(new QueryConstraint("geneId", ""));
-		qc.add(new QueryConstraint("buildKey", ""));
 		try {
 			return dc.getConnection().prepareStatement(builder.buildSelectStatement(qc));
 		} catch (SQLException e) {

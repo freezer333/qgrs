@@ -3,7 +3,9 @@ package qgrs.controllers;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
+import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -96,14 +98,10 @@ public class Populate extends AbstractController {
 			
 			Element ar = doc.getRootElement().getChild("alignment-record");
 			record = new AlignmentRecord(ar);
-			//System.out.println("Populating record:  " + record.getId());
-			
-			
 					
 			Element principleElement = doc.getRootElement().getChild("principle");
 			Element pGene = principleElement.getChild("gene");
 			principle = GeneSequence.buildFromXml(pGene);
-			//System.out.println("  Loaded " + principle.getAccessionNumber());
 			principleAlignedSequence = principleElement.getChild("alignment").getText();
 			
 			principleQgrs = new HashMap<String, GQuadruplexRecord>();
@@ -113,13 +111,11 @@ public class Populate extends AbstractController {
 					principleQgrs.put(r.getId(), r);
 				}
 			}
-			//System.out.println("  Loaded " + principleQgrs.size() + " quadruplexes");
 			
 			
 			Element comparisonElement = doc.getRootElement().getChild("comparison");
 			Element cGene = comparisonElement.getChild("gene");
 			comparison = GeneSequence.buildFromXml(cGene);
-			//System.out.println("  Loaded " + comparison.getAccessionNumber());
 			comparisonAlignedSequence = comparisonElement.getChild("alignment").getText();
 			
 			comparisonQgrs = new HashMap<String, GQuadruplexRecord>();
@@ -129,7 +125,6 @@ public class Populate extends AbstractController {
 					comparisonQgrs.put(r.getId(), r);
 				}
 			}
-			//System.out.println("  Loaded " + comparisonQgrs.size() + " quadruplexes");
 			
 			
 			homologyRecords = new LinkedList<QgrsHomologyRecord>();
@@ -141,9 +136,6 @@ public class Populate extends AbstractController {
 					homologyRecords.add(r);
 				}
 			}
-			//System.out.println("--Loaded " + homologyRecords.size() + " homology records");
-			
-			
 			
 			AlignmentRecordDb arDb = new AlignmentRecordDb (qContext.getDbConnection());
 		    AlignedSequenceDb asDb = new AlignedSequenceDb(qContext.getDbConnection());
@@ -151,37 +143,50 @@ public class Populate extends AbstractController {
 		    QgrsDb qgrsDb = new QgrsDb(qContext.getDbConnection());
 		    HomologyRecordDb hDb = new HomologyRecordDb(qContext.getDbConnection());
 		    
-		    if ( !arDb.has(record.getPrinciple(), record.getComparison())) {
-		    	 
-			    geneDb.put(principle);
-			    geneDb.put(comparison);
-			    
-			    arDb.put(record);
-			    asDb.put(record.getId(), principle.getAccessionNumber(), principleAlignedSequence);
-			    asDb.put(record.getId(), comparison.getAccessionNumber(), comparisonAlignedSequence);
-			    if (!qgrsDb.has(principle, BuildKey.QgrsIdentify) ) {
+		    HashSet<String> qgrsIds;
+		    
+			qContext.getDbConnection().getConnection().setAutoCommit(false);
+			try {
+			    if ( !arDb.has(record.getPrinciple(), record.getComparison())) {
+			    	 
+				    geneDb.put(principle);
+				    geneDb.put(comparison);
+				    
+				    arDb.put(record);
+				    asDb.put(record.getId(), principle.getAccessionNumber(), principleAlignedSequence);
+				    asDb.put(record.getId(), comparison.getAccessionNumber(), comparisonAlignedSequence);
+				    qgrsIds = qgrsDb.getAllIds(principle);
 				    for ( GQuadruplexRecord qr : principleQgrs.values()) {
-				    	qgrsDb.put(qr);
-				    }
-			    }
-			    //else {
-			    //	System.out.println("QGRS for " + principle.getAccessionNumber() + " already in database");
-			    //}
-			    if (!qgrsDb.has(comparison, BuildKey.QgrsIdentify) ) {
+				    	if ( !qgrsIds.contains(qr.getId())){
+				    		qgrsDb.put(qr);
+				    	}
+					}
+				    qgrsIds = qgrsDb.getAllIds(comparison);
 				    for ( GQuadruplexRecord qr : comparisonQgrs.values()) {
-				    	qgrsDb.put(qr);
-				    }
+				    	if ( !qgrsIds.contains(qr.getId())){
+				    		qgrsDb.put(qr);
+				    	}
+					}
+				    
+				    for ( QgrsHomologyRecord hr : homologyRecords) {
+						hDb.put(hr);
+					}
 			    }
-			    //else {
-			    //	System.out.println("QGRS for " + comparison.getAccessionNumber() + " already in database");
-			    //}
-				for ( QgrsHomologyRecord hr : homologyRecords) {
-					hDb.put(hr);
-				}
-			    //System.out.println("Persisted " + record.getId() + " to database");
-		    }
+			    qContext.getDbConnection().getConnection().commit();
+			}
+			catch (SQLException sqlEx) {
+				sqlEx.printStackTrace();
+				qContext.getDbConnection().getConnection().rollback();
+			}
+			finally {
+				qContext.getDbConnection().getConnection().setAutoCommit(true);
+				arDb.close();
+				asDb.close();
+				geneDb.close();
+				qgrsDb.close();
+				hDb.close();
+			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -7,8 +7,7 @@ import org.biojavax.bio.db.ncbi.GenbankRichSequenceDB;
 import org.biojavax.bio.seq.RichSequence;
 
 import qgrs.data.GeneSequence;
-import qgrs.db.Cache;
-import qgrs.db.GenbankRichSequenceTextDB;
+import qgrs.data.cache.Cache;
 import framework.web.AbstractWebContext;
 import framework.web.util.StringUtils;
 

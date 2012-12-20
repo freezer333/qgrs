@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import qgrs.db.XmlWriteFileCache;
+import qgrs.data.cache.XmlWriteFileCache;
 import qgrs.input.AccessionNumberInputProvider;
 import qgrs.job.AlignmentJob;
 

@@ -6,8 +6,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import qgrs.data.GeneSequence;
-import qgrs.db.GenbankRichSequenceTextDB;
 import qgrs.db.GeneSequenceDb;
+import qgrs.input.GenbankRichSequenceTextDB;
 
 public class GeneSequenceDbTest {
 	GeneSequence buildGeneSequence() {

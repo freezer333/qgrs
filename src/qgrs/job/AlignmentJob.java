@@ -10,7 +10,7 @@ import qgrs.compute.GeneralAligner;
 import qgrs.compute.QgrsCompute;
 import qgrs.compute.QgrsIdentifier;
 import qgrs.data.GeneSequence;
-import qgrs.db.Cache;
+import qgrs.data.cache.Cache;
 import qgrs.input.InputProvider;
 import qgrs.input.QGRSProgramInput;
 import qgrs.output.ResultProcessor;

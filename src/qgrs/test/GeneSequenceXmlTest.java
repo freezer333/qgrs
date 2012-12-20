@@ -6,7 +6,7 @@ import org.jdom.Element;
 import org.junit.Test;
 
 import qgrs.data.GeneSequence;
-import qgrs.db.GenbankRichSequenceTextDB;
+import qgrs.input.GenbankRichSequenceTextDB;
 
 public class GeneSequenceXmlTest {
 
