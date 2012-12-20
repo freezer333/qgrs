@@ -149,6 +149,10 @@
 					$("#dbMinAlignmentScoreValue").text("60%");
 					$("#dbMinAlignmentScore").val(60);
 					
+					$("#dbMinNumConservedSlider").slider( "value" , 0 );
+					$("#dbMinNumConservedValue").text("0");
+					$("#dbMinNumConserved").val(0);
+					
 					$("#dbRegion15UTRC").attr("checked","checked").button( "refresh" );
 					$("#dbRegion15UTR").val("on");
 					
@@ -285,6 +289,16 @@
 						</td>
 						
 					</tr>
+					<tr>
+					<td><label>Min QGRSH:</label></td>
+					<td>
+						<input type="hidden" id="dbMinNumConserved" name="dbMinNumConserved" value="{qgrs/dbCriteria/dbMinNumConserved}"/>
+						<span style="float:right" id="dbMinNumConservedValue"><xsl:value-of select="qgrs/dbCriteria/dbMinNumConserved"/></span>
+						<div style="margin-right:4em;" >
+							<div id="dbMinNumConservedSlider" class="sliderContainer"/>
+						</div>
+					</td>
+				</tr>
 					</tbody>
 				</table>
 				</div>

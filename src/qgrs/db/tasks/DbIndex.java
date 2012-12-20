@@ -132,7 +132,28 @@ public class DbIndex {
 		q = "CREATE INDEX IF NOT EXISTS GO_GOTERM ON GO (GOTERM)";
 		execute(conn, q);
 		
-		q = "CREATE INDEX IF NOT EXISTS GO_GOTYPE ON GO (GOTYPE)";
+		q = "CREATE INDEX IF NOT EXISTS GO_GOTYPE ON GO  (GOTYPE)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_principle ON GENE_AQ (principle)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_comparison ON GENE_AQ (comparison)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_pSpecies ON GENE_AQ (pSpecies)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_cSpeciesE ON GENE_AQ (cSpecies)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_pSymbol ON GENE_AQ (pSymbol)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_cSymbol ON GENE_AQ (cSymbol)";
+		execute(conn, q);
+		
+		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_similarityPercentage ON GENE_AQ (similarityPercentage)";
 		execute(conn, q);
 	}
 	

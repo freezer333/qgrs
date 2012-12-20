@@ -21,7 +21,19 @@
 				
 				
 				<script language="javascript">
-					
+					$(document).ready(function() {
+						$(".qgrs-h-link").click( 
+							function(e) {
+								$("#dbQgrsId1").val($(this).attr("data-qgrsId"));
+								$("#browse-qgrs-h").click();
+								$("#navigationFilterForm").attr("action", "homology-list");
+								$("#navigationFilterForm").submit();
+								var aBetterEventObject = jQuery.Event(e);
+    							aBetterEventObject.preventDefault()
+							}
+						
+						);
+					});
 					
 					
 				</script>
@@ -83,7 +95,7 @@
 						<td><xsl:value-of select="qgrsPosition"/></td>
 						<td><xsl:value-of select="qgrsTetrads"/></td>
 						<td><xsl:value-of select="qgrsGScore"/></td>
-						<td><xsl:value-of select="hCount"/></td>
+						<td><a href="homology-list" class="qgrs-h-link" data-qgrsId="{qgrsId}"><xsl:value-of select="hCount"/></a></td>
 						
 					</tr>
 				</xsl:for-each>

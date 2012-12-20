@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
+import framework.web.util.StringUtils;
+
 import qgrs.data.GQuadruplex;
 import qgrs.db.query.PageableQuery;
 import qgrs.db.query.QueryUtils;
@@ -19,9 +21,10 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 
 	// Note, the # is used to tranform the select's correlated subquery.
 	private final String selectClauseResults = 
-			"select gene.accessionnumber , gene.species, gene.genesymbol, count (distinct CONSERVED.gq1id) as qgrsHCount," +
+			"select gene.accessionnumber , gene.species, gene.genesymbol, " +
+			"count (CONSERVED.gq1id) as qgrsHCount," +
 			"(select COUNT(distinct QGRS.ID) from qgrs where geneId = accessionNumber #) as qgrsCount ,  " +
-			"count ( distinct CONSERVED.c_accessionNumber) as geneHCount ";
+			"(select COUNT(distinct COMPARISON) from gene_aq where PRINCIPLE = accessionNumber @)  as geneHCount ";
 	
 	// Note, the # is used to transform the subquery's constraints
 	private final String fromClause = " FROM gene left join " +
@@ -30,7 +33,7 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 	
 	private final String fromCountClause = " FROM gene ";
 	
-	private final String groupClause = " GROUP BY gene.accessionnumber ";
+	private final String groupClause = " GROUP BY gene.accessionnumber having count (distinct CONSERVED.gq1id) >= '$'";
 	private final String orderClause = " ORDER BY GENE.GENESYMBOL ";
 	
 	
@@ -40,6 +43,9 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 	private float minimumGeneAlignmentPercentage;
 	private float qgrsMinHomologyScore;
 	private String comparsionGeneSpecies;
+	
+	private int minNumConserved;
+	
 	
 	private String qgrsId;
 	private int qgrsMinGScore;
@@ -86,8 +92,18 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 		return continuedWhere(criteria);
 	}
 	
+	private String buildComparisonGeneWhereClause() {
+		LinkedList<String> criteria = new LinkedList<String>();
+		criteria.add(this.stringConstraint("C_SPECIES", this.comparsionGeneSpecies));
+		return continuedWhere(criteria);
+	}
+	
 	// selects qgrs, qgrsH, and c_gene constrainst on QGRSH
 	private String buildQgrsHWhereClause() {
+		LinkedList<String> criteria = buildQgrsHCriteria();
+		return  where(criteria);
+	}
+	private LinkedList<String> buildQgrsHCriteria() {
 		LinkedList<String> criteria = new LinkedList<String>();
 		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetrad());
 		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScore());
@@ -104,7 +120,7 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 		if ( this.qgrsMinHomologyScore > 0.3 ) {
 			criteria.add(this.qgrsHomology());
 		}
-		return  where(criteria);
+		return criteria;
 	}
 	
 	// selects on gene
@@ -113,13 +129,16 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 		criteria.add(this.stringConstraint("GENE.ACCESSIONNUMBER ", this.principleGeneId));
 		criteria.add(this.stringConstraint("GENE.GENESYMBOL", this.principleGeneSymbol));
 		criteria.add(this.stringConstraint("GENE.SPECIES", this.principleGeneSpecies));
-		return  where(criteria);
+		
+		String where =  where(criteria); 
+		
+		return  where;
 	}
 	
 	
 	@Override
 	public String toCountSql() {
-		return this.selectClauseCount + this.fromCountClause + this.buildWhereClause();
+		return "SELECT COUNT(*) FROM (" + this.toSql() + ")";
 	}
 
 	@Override
@@ -136,6 +155,7 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 		this.in5Prime = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region15UTR));
 		this.inCds = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region1CDS));
 		this.in3Prime = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region13UTR));
+		this.minNumConserved = Integer.parseInt(dbCriteria.get(QParam.Db_MinNumConserved));
 		
 		
 		this.minimumGeneAlignmentPercentage = Float.parseFloat(dbCriteria.get(QParam.Db_MinAlignmentScore));
@@ -156,10 +176,11 @@ public class GeneQuery extends WhereClause implements PageableQuery {
 	@Override
 	public String toSql() {
 		String select = this.selectClauseResults.replace("#", this.buildQgrsWhereClause());
+		select = select.replace("@", this.buildComparisonGeneWhereClause());
 		String from = fromClause.replace("#", this.buildQgrsHWhereClause());
 		String q = 	select + 
 				from + 
-				this.buildWhereClause() + this.groupClause + this.orderClause ;
+				this.buildWhereClause() + this.groupClause.replace("$", String.valueOf(this.minNumConserved)) + this.orderClause ;
 		return q;
 	}
 

@@ -171,6 +171,18 @@ function applyStyles() {
 		}
 		});
 	
+	var dbMinNumConservedVal = $("#dbMinNumConserved").val();
+	$("#dbMinNumConservedSlider").slider({
+		value:dbMinNumConservedVal,
+		min: 0,
+		max: 10,
+		step:1,
+		slide: function( event, ui ) {
+			$( "#dbMinNumConserved" ).val( ui.value );
+			$( "#dbMinNumConservedValue").html(ui.value);
+		}
+		});
+	
 	var dbOverallSimilarity = $("#dbOverallSimilarity").val();
 	$("#dbOverallSimilaritySlider").slider({
 		value:dbOverallSimilarity,

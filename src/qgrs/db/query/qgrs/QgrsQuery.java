@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
+import framework.web.util.StringUtils;
+
 import qgrs.data.GQuadruplex;
 import qgrs.db.query.PageableQuery;
 import qgrs.db.query.WhereClause;
@@ -31,6 +33,9 @@ public class QgrsQuery  extends WhereClause implements PageableQuery {
 	private float qgrsMinHomologyScore;
 	private String comparsionGeneSpecies;
 	
+	private int minNumConserved;
+	
+	
 	private String qgrsId;
 	private int qgrsMinGScore;
 	private int qgrsMinTetrads;
@@ -56,6 +61,12 @@ public class QgrsQuery  extends WhereClause implements PageableQuery {
 	
 	// returns the altered select withthe # expanded to include criterial for QGRS-H
 	private String transformSelect() {
+		LinkedList<String> criteria = buildQgrsHCriteria();
+		String w = continuedWhere(criteria);
+		return this.selectClauseResults.replace("#", w);
+		
+	}
+	private LinkedList<String> buildQgrsHCriteria() {
 		LinkedList<String> criteria = new LinkedList<String>();
 		criteria.add(this.stringConstraint("C_SPECIES", this.comparsionGeneSpecies));
 		
@@ -65,9 +76,7 @@ public class QgrsQuery  extends WhereClause implements PageableQuery {
 		if ( this.qgrsMinHomologyScore > 0.3 ) {
 			criteria.add(this.qgrsHomology());
 		}
-		String w = continuedWhere(criteria);
-		return this.selectClauseResults.replace("#", w);
-		
+		return criteria;
 	}
 	private String buildWhereClause() {
 		LinkedList<String> criteria = new LinkedList<String>();
@@ -78,7 +87,22 @@ public class QgrsQuery  extends WhereClause implements PageableQuery {
 		criteria.add(this.stringConstraint("GENE.ACCESSIONNUMBER ", this.principleGeneId));
 		criteria.add(this.stringConstraint("GENE.GENESYMBOL", this.principleGeneSymbol));
 		criteria.add(this.stringConstraint("GENE.SPECIES", this.principleGeneSpecies));
-		return  where(criteria);
+		
+		String where =  where(criteria);
+		
+		if ( this.minNumConserved > 0 ) {
+			criteria = buildQgrsHCriteria();
+			String qgrsHWhere = "(SELECT COUNT(DISTINCT GQ2ID) FROM QGRS_H WHERE GQ1ID=QGRS.ID # GROUP BY GQ1ID) >= '" + this.minNumConserved + "'";
+			qgrsHWhere = qgrsHWhere.replace("#", continuedWhere(criteria));
+			if ( StringUtils.isDefined(where)) {
+				where += (" AND " +  qgrsHWhere);
+			}
+			else {
+				where = "WHERE " + qgrsHWhere;
+			}
+		}
+		return where;
+		
 	}
 	
 	@Override
@@ -109,6 +133,8 @@ public class QgrsQuery  extends WhereClause implements PageableQuery {
 		this.in5Prime = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region15UTR));
 		this.inCds = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region1CDS));
 		this.in3Prime = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region13UTR));
+		
+		this.minNumConserved = Integer.parseInt(dbCriteria.get(QParam.Db_MinNumConserved));
 		
 		
 		this.minimumGeneAlignmentPercentage = Float.parseFloat(dbCriteria.get(QParam.Db_MinAlignmentScore));

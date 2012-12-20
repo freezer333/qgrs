@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
+import framework.web.util.StringUtils;
+
 import qgrs.data.GQuadruplex;
 import qgrs.db.query.PageableQuery;
 import qgrs.db.query.QueryUtils;
@@ -26,6 +28,8 @@ implements PageableQuery {
 	private boolean in5Prime;
 	private boolean inCds;
 	private boolean in3Prime;
+	
+	private int minNumConserved;
 	
 	private int pageLimit;
 	private int pageOffset;
@@ -82,7 +86,20 @@ implements PageableQuery {
 		if ( this.minimumGeneAlignmentPercentage > 0.001 ) {
 			criteria.add(this.alignment());
 		}
-		return  where(criteria);
+		String where =  where(criteria);
+		
+		if ( this.minNumConserved > 0 ) {
+			criteria = buildQgrsHCriteria();
+			String qgrsHWhere = "(SELECT COUNT(DISTINCT QGRS_H.ID) FROM QGRS_H WHERE P_ACCESSIONNUMBER=PRINCIPLE @) >= '" + this.minNumConserved + "'";
+			qgrsHWhere = qgrsHWhere.replace("@", continuedWhere(criteria));
+			if ( StringUtils.isDefined(where)) {
+				where += (" AND " +  qgrsHWhere);
+			}
+			else {
+				where = "WHERE " + qgrsHWhere;
+			}
+		}
+		return where;
 	}
 	
 	
@@ -107,7 +124,7 @@ implements PageableQuery {
 		this.in5Prime = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region15UTR));
 		this.inCds = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region1CDS));
 		this.in3Prime = dbCriteria.readBoolean(dbCriteria.get(QParam.Db_Region13UTR));
-		
+		this.minNumConserved = Integer.parseInt(dbCriteria.get(QParam.Db_MinNumConserved));
 		
 		this.minimumGeneAlignmentPercentage = Float.parseFloat(dbCriteria.get(QParam.Db_MinAlignmentScore));
 		this.qgrsMinHomologyScore = Float.parseFloat(dbCriteria.get(QParam.Db_OverallSimilarity)) ;
@@ -137,6 +154,13 @@ implements PageableQuery {
 		String retval =  this.selectClauseResults.replace("#", w);
 		
 		// create the QGRS_H where
+		criteria = buildQgrsHCriteria();
+		return retval.replace("@", continuedWhere(criteria));
+		
+		
+	}
+	private LinkedList<String> buildQgrsHCriteria() {
+		LinkedList<String> criteria;
 		criteria = new LinkedList<String>();
 		if ( qgrsMinTetrads > GQuadruplex.MINIMUM_TETRAD ) criteria.add(this.tetrad());
 		if ( qgrsMinGScore > GQuadruplex.MINIMUM_SCORE ) criteria.add(this.gScore());
@@ -146,8 +170,7 @@ implements PageableQuery {
 		if ( this.qgrsMinHomologyScore > 0.3 ) {
 			criteria.add(this.qgrsHomology());
 		}
-		return retval.replace("@", continuedWhere(criteria));
-		
+		return criteria;
 	}
 	@Override
 	public String toSql() {

@@ -59,7 +59,9 @@ public enum QParam implements AbstractParam {
 	Db_MinAlignmentScore("dbMinAlignmentScore", "0"),
 	Db_PageNumber("dbPageNumber", "1"),
 	Db_TotalResults("dbTotalResults", "1"),
-	Db_TotalPages("dbTotalPages", "1")
+	Db_TotalPages("dbTotalPages", "1"), 
+	
+	Db_MinNumConserved("dbMinNumConserved", "0")
 	;
 	
 	private String name;

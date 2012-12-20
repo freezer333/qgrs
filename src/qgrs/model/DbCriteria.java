@@ -25,7 +25,6 @@ public class DbCriteria extends HashMap<QParam, String> {
 		for ( QParam param : QParam.values() ) {
 			if ( param.toString().startsWith("Db_")) {
 				String value = context.getString(param);
-				//System.out.println("Debug Db Criteria In:  " + param.getName() + " -> " + value);
 				this.put(param, value == null ? param.getDefaultValue() : value);
 			}
 		}
@@ -37,7 +36,6 @@ public class DbCriteria extends HashMap<QParam, String> {
 	public Element getXmlElement() {
 		Element root = new Element("dbCriteria");
 		for ( QParam param : this.keySet() ) {
-			//System.out.println("Debug Db Criteria Out:  " + param.getName() + " -> " + this.get(param));
 			root.addContent(new Element(param.getName()).setText(this.get(param)));
 		}
 		root.addContent(this.getSummaryElement());
