@@ -88,10 +88,9 @@ public class QgrsDb  extends DbTable {
 		}
 	}
 	
-	public List<GQuadruplexRecord> getAllRecords(GeneSequence s, String buildKey) {
+	public List<GQuadruplexRecord> getAllRecords(GeneSequence s) {
 		try {
 			this.selectByGeneStatement.setString(1, s.getAccessionNumber());
-			this.selectByGeneStatement.setString(2, buildKey);
 			ResultSet rs = this.selectByGeneStatement.executeQuery();
 			List<GQuadruplexRecord> retval = new LinkedList<GQuadruplexRecord>();
 			while ( rs.next()) {
