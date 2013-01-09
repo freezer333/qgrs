@@ -27,13 +27,13 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 	 */
 	@Override
 	public PartitionResult call() throws Exception {
-		QgrsPartitionResult result = new QgrsPartitionResult();
+		QgrsPartitionResult result = new QgrsPartitionResult(this.parition.label);
 		
 		DatabaseConnection conn = new DatabaseConnection(getConnection());
 		GeneSequenceDb geneDb = new GeneSequenceDb(conn);
 		QgrsDb qgrsDb = new QgrsDb(conn);
 		
-		List<GeneSequence> genes = geneDb.getIn(this.genes.ids);
+		List<GeneSequence> genes = geneDb.getIn(this.parition.ids);
 		
 		for ( GeneSequence seq : genes ) {
 			int qgrsCount = 0;
@@ -50,6 +50,7 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 					if (qgrs.isIn3Prime() ) qgrs3PrimeCount++;
 				}
 			}
+			result.incrementSamples();
 			result.all.addValue(qgrsCount);
 			result._5Prime.addValue(qgrs5PrimeCount);
 			result.cds.addValue(qgrsCdsCount);

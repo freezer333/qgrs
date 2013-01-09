@@ -1,23 +1,23 @@
 package qgrs.compute.stat.qgrs;
 
-import qgrs.compute.stat.Engine;
+import qgrs.compute.stat.Runner;
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.PartitionAnalyzer;
-import qgrs.compute.stat.PartitionResultStatementBuilder;
+import qgrs.compute.stat.PartitionResultRecorder;
 
-public abstract class QgrsEngine extends Engine {
+public abstract class QgrsRunner extends Runner {
 
 	final QgrsCriteria qgrsCriteria = this.buildQgrsCriteria();
 	
-	public QgrsEngine() {
+	public QgrsRunner() {
 		super();
 	}
 
 	protected abstract QgrsCriteria buildQgrsCriteria();
 
 	@Override
-	protected PartitionResultStatementBuilder buildStatementBuilder() {
-		return new QgrsPartitionResultStatementBuilder();
+	protected PartitionResultRecorder buildStatementBuilder() {
+		return new QgrsPartitionResultRecorder(this.getTableName());
 	}
 
 	@Override

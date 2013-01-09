@@ -11,10 +11,10 @@ import framework.db.DatabaseConnectionParameters;
 
 public abstract class PartitionAnalyzer implements Callable<PartitionResult>{
 
-	final protected GenePartition genes;
+	final protected GenePartition parition;
 	
 	public PartitionAnalyzer(GenePartition parition) {
-		this.genes = parition;
+		this.parition = parition;
 	}
 	
 	protected Connection getConnection(){

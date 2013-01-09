@@ -9,25 +9,34 @@ import java.util.HashSet;
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.GenePartitioner;
 
-public class ExampleGenePartitioner implements GenePartitioner {
+public class HumanAllPartitioner implements GenePartitioner {
 
 	/**
-	 * This isn't a very useful partitioner, it simple returns 5 
-	 * sets of the first 250 (50 in each set) genes.  It is
-	 * meant for demonstration purposes - its doubtful meaningful
-	 * statistics will be produced :)
+	 * This doesn't really partition anything, it simply returns
+	 * one single partition containing all human genes in the database.
 	 * 
-	 * Note, this doesn't even select out for a species...
+	 * Use this with care, since there is no parallelism, this will be 
+	 * very long running.
 	 */
 	
 	
 	@Override
 	public HashSet<GenePartition> partition(Connection c) {
-		HashSet<GenePartition> partitons = new HashSet<GenePartition>();
-		for (int i = 0; i < 250; i+= 50 ) {
-			partitons.add(getPartition(c, i));
+		HashSet<GenePartition> partitions = new HashSet<GenePartition>();
+		String q = "SELECT accessionNumber FROM GENE WHERE SPECIES = 'Homo sapiens'";
+		GenePartition p = new GenePartition("Human Genes");
+		try {
+			Statement stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery(q);
+			while ( rs.next() ) {
+				p.ids.add(rs.getString("accessionNumber"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return partitons;
+		partitions.add(p);
+		return partitions;
 	}
 	
 	

@@ -2,7 +2,7 @@ package qgrs.compute.stat;
 
 import java.util.HashSet;
 
-public class GenePartition {
+public final class GenePartition {
 	
 	public final String label;
 	public final HashSet<String> ids;
