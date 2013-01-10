@@ -6,6 +6,7 @@ import java.util.List;
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.PartitionAnalyzer;
 import qgrs.compute.stat.PartitionResult;
+import qgrs.compute.stat.StatusReporter;
 import qgrs.data.GeneSequence;
 import qgrs.data.records.GQuadruplexRecord;
 import qgrs.db.DatabaseConnection;
@@ -16,8 +17,8 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 
 	final QgrsCriteria qgrsCriteria;
 	
-	public QgrsAnalyzer(GenePartition parition, QgrsCriteria qgrsCriteria) {
-		super(parition);
+	public QgrsAnalyzer(GenePartition parition, QgrsCriteria qgrsCriteria, StatusReporter reporter) {
+		super(parition,reporter);
 		this.qgrsCriteria = qgrsCriteria;
 	}
 
@@ -56,7 +57,7 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 			result.cds.addValue(qgrsCdsCount);
 			result._3Prime.addValue(qgrs3PrimeCount);
 		}
-		
+		this.statusReporter.recordPartitionComplete();
 		return result;
 	}
 	

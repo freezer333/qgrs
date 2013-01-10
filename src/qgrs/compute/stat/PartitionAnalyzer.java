@@ -12,9 +12,11 @@ import framework.db.DatabaseConnectionParameters;
 public abstract class PartitionAnalyzer implements Callable<PartitionResult>{
 
 	final protected GenePartition parition;
+	final protected StatusReporter statusReporter;
 	
-	public PartitionAnalyzer(GenePartition parition) {
+	public PartitionAnalyzer(GenePartition parition, StatusReporter reporter) {
 		this.parition = parition;
+		this.statusReporter = reporter;
 	}
 	
 	protected Connection getConnection(){

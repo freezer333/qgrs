@@ -1,9 +1,10 @@
 package qgrs.compute.stat.qgrs;
 
-import qgrs.compute.stat.Runner;
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.PartitionAnalyzer;
 import qgrs.compute.stat.PartitionResultRecorder;
+import qgrs.compute.stat.Runner;
+import qgrs.compute.stat.StatusReporter;
 
 public abstract class QgrsRunner extends Runner {
 
@@ -21,8 +22,8 @@ public abstract class QgrsRunner extends Runner {
 	}
 
 	@Override
-	protected PartitionAnalyzer createProcessor(GenePartition partition) {
-		return new QgrsAnalyzer(partition, qgrsCriteria);
+	protected PartitionAnalyzer createProcessor(GenePartition partition, StatusReporter reporter) {
+		return new QgrsAnalyzer(partition, qgrsCriteria, reporter);
 	}
 	
 }
