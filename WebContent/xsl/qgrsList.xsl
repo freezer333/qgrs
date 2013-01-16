@@ -79,7 +79,7 @@
 					<tr>
 						<td><xsl:value-of select="qgrsId"/></td>
 						<td><xsl:value-of select="geneSymbol"/></td>
-						<td><i><xsl:value-of select="species"/></i></td>
+						<td><i><xsl:value-of select="geneSpecies"/></i></td>
 						<td>
 							<span 	class="qgrsSlice" 
 									data-t1="{tetrad1_normalized}" 
