@@ -4,13 +4,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+import qgrs.data.GeneSequence;
+import qgrs.data.records.GQuadruplexRecord;
+import qgrs.data.records.QgrsHomologyProfile;
 import qgrs.data.records.QgrsHomologyRecord;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
 import framework.db.StatementBuilder;
+import framework.web.util.StringUtils;
 
 public class HomologyRecordDb  extends DbTable {
 	private static String TABLE = "QGRS_H";
@@ -18,12 +23,14 @@ public class HomologyRecordDb  extends DbTable {
 	DatabaseConnection dc;
 	final PreparedStatement insertStatement;
 	final PreparedStatement selectByAlignmentIdStatement;
+	final PreparedStatement qgrsHomologyProfileStatement;
 	
 	public HomologyRecordDb(DatabaseConnection dc) {
 		this.dc = dc;
 		
 		this.insertStatement = createInsertStatement();
 		this.selectByAlignmentIdStatement = createSelectByAlignmentIdStatement();
+		this.qgrsHomologyProfileStatement = createQgrsHomologyStatement();
 	}
 	@Override
 	public int getCount() {
@@ -75,6 +82,41 @@ public class HomologyRecordDb  extends DbTable {
 	}
 	
 	
+	public Collection<QgrsHomologyProfile> getQgrsHomologyProfiles(GeneSequence seq) {
+		HashMap<String, QgrsHomologyProfile> profiles = new HashMap<String, QgrsHomologyProfile>();
+		try {
+			this.qgrsHomologyProfileStatement.setString(1, seq.getAccessionNumber());
+			ResultSet rs = this.qgrsHomologyProfileStatement.executeQuery();
+			while ( rs.next() ) {
+				GQuadruplexRecord principle = new GQuadruplexRecord(rs, "QGRS.");
+				QgrsHomologyProfile profile = profiles.get(principle.getId());
+				if ( profile == null ) {
+					profile = new QgrsHomologyProfile(principle);
+					profiles.put(principle.getId(), profile);
+				}
+				if ( StringUtils.isDefined(rs.getString("QGRS_H.ID"))) {
+					QgrsHomologyRecord h = new QgrsHomologyRecord(rs, "QGRS_H.");
+					profile.getHomologs().add(h);
+				}
+			}
+		} catch (Exception e ){
+			e.printStackTrace();
+		}
+		return profiles.values();
+	}
+	
+	
+	
+	PreparedStatement createQgrsHomologyStatement()  {
+		try {
+			String q = "SELECT * FROM QGRS LEFT JOIN QGRS_H ON QGRS.ID = QGRS_H.GQ1ID WHERE QGRS.GENEID = ?";
+			PreparedStatement ps = this.dc.getConnection().prepareStatement(q);
+			return ps;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	
 	

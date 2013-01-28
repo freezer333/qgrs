@@ -68,40 +68,42 @@ public class QgrsHomologyRecord {
 		this.alignmentScore = Double.parseDouble(xml.getChildText("alignmentScore"));
 		
 	}
-	
-	public QgrsHomologyRecord(ResultSet rs) {
+	public QgrsHomologyRecord(ResultSet rs, String prefix)  {
 		try {
-			this.id = rs.getInt("id");
-			this.alignmentId = rs.getString("alignmentId");
-			this.gq1Id = rs.getString("gq1Id");
-			this.gq2Id = rs.getString("gq2Id");
-			this.overallScore = rs.getDouble("overallScore");
+			this.id = rs.getInt(prefix + "id");
+			this.alignmentId = rs.getString(prefix + "alignmentId");
+			this.gq1Id = rs.getString(prefix + "gq1Id");
+			this.gq2Id = rs.getString(prefix + "gq2Id");
+			this.overallScore = rs.getDouble(prefix + "overallScore");
 			
 			
-			this.p_accessionNumber = rs.getString("p_accessionNumber");
-			this.p_geneName =rs.getString("p_geneName");
-			this.p_geneSymbol = rs.getString("p_geneSymbol"); 
-			this.p_species = rs.getString("p_species");
-			this.p_tetrads = rs.getInt("p_tetrads"); 
-			this.p_gScore = rs.getInt("p_gScore"); 
-			this.p_in5UTR = rs.getBoolean("p_in5UTR");
-			this.p_inCDS = rs.getBoolean("p_inCDS");
-			this.p_in3UTR = rs.getBoolean("p_in3UTR");
-			this.c_accessionNumber = rs.getString("c_accessionNumber"); 
-			this.c_geneName = rs.getString("c_geneName");
-			this.c_geneSymbol = rs.getString("c_geneSymbol"); 
-			this.c_species = rs.getString("c_species");
-			this.c_tetrads = rs.getInt("c_tetrads"); 
-			this.c_gScore = rs.getInt("c_gScore"); 
-			this.c_in5UTR = rs.getBoolean("c_in5UTR");
-			this.c_inCDS = rs.getBoolean("c_inCDS");
-			this.c_in3UTR = rs.getBoolean("c_in3UTR");
-			this.alignmentScore = rs.getDouble("alignmentScore");
+			this.p_accessionNumber = rs.getString(prefix + "p_accessionNumber");
+			this.p_geneName =rs.getString(prefix + "p_geneName");
+			this.p_geneSymbol = rs.getString(prefix + "p_geneSymbol"); 
+			this.p_species = rs.getString(prefix + "p_species");
+			this.p_tetrads = rs.getInt(prefix + "p_tetrads"); 
+			this.p_gScore = rs.getInt(prefix + "p_gScore"); 
+			this.p_in5UTR = rs.getBoolean(prefix + "p_in5UTR");
+			this.p_inCDS = rs.getBoolean(prefix + "p_inCDS");
+			this.p_in3UTR = rs.getBoolean(prefix + "p_in3UTR");
+			this.c_accessionNumber = rs.getString(prefix + "c_accessionNumber"); 
+			this.c_geneName = rs.getString(prefix + "c_geneName");
+			this.c_geneSymbol = rs.getString(prefix + "c_geneSymbol"); 
+			this.c_species = rs.getString(prefix + "c_species");
+			this.c_tetrads = rs.getInt(prefix + "c_tetrads"); 
+			this.c_gScore = rs.getInt(prefix + "c_gScore"); 
+			this.c_in5UTR = rs.getBoolean(prefix + "c_in5UTR");
+			this.c_inCDS = rs.getBoolean(prefix + "c_inCDS");
+			this.c_in3UTR = rs.getBoolean(prefix + "c_in3UTR");
+			this.alignmentScore = rs.getDouble(prefix + "alignmentScore");
 			
 		}
 		catch (Exception e) {
 			throw new RuntimeException (e);
 		}
+	}
+	public QgrsHomologyRecord(ResultSet rs) {
+		this(rs, "");
 	}
 	
 	public Element getXmlElement() {

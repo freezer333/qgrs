@@ -4,7 +4,7 @@
 	</AlertMessage>
 	
 	<db_seedcache>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb_seed</db_seedcache> 
-	 <db>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb</db> 
+	 <db>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb;MULTI_THREADED=1</db> 
  	<!-- <db>jdbc:h2:file:/Users/sfrees/dev/qgrsdb</db> -->
 	<!-- <db>jdbc:h2:file:/var/lib/tomcat6/webapps/db/qgrsdb</db> -->
 	

@@ -13,7 +13,7 @@ public class SpeciesRunner extends QgrsRunner {
 	
 	@Override
 	protected QgrsCriteria buildQgrsCriteria() {
-		return new SimpleQgrsCriteria(17, 2);
+		return new SimpleQgrsCriteria(17, 2, 0, new QgrsHomologyCriteria());
 	}
 
 	@Override

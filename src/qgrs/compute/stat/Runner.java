@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -13,7 +14,7 @@ import java.util.concurrent.Future;
 import qgrs.db.AppProperties;
 import framework.db.DatabaseConnectionParameters;
 
-public abstract class Runner {
+public abstract class Runner implements Callable<Object>{
 
 	final int THREAD_POOL_SIZE = 20;
 	
@@ -25,11 +26,18 @@ public abstract class Runner {
 		this.partitioner = buildPartitioner();
 		this.resultRecorder = buildStatementBuilder();
 	}
+	
+	@Override
+	public Object call() throws Exception {
+		execute();
+		return null;
+	}
+	
 
 	public void execute() throws Exception {
 		System.out.println("Connecting to database...");
 		Connection c = getConnection();
-		
+		System.out.println("Executing " + this.getDescription());
 		System.out.print("Creating partitions...");
 		HashSet<GenePartition> partitions = partitioner.partition(c);
 		StatusReporter r= new StatusReporter(partitions.size());
