@@ -82,7 +82,7 @@ public abstract class Runner implements Callable<Object>{
 	protected abstract GenePartitioner buildPartitioner();
 	protected abstract PartitionResultRecorder buildStatementBuilder();
 	protected abstract PartitionAnalyzer createProcessor(GenePartition partition, StatusReporter reporter);
-	protected abstract String getDescription();
+	public  abstract String getDescription();
 	
 	public String getTableName() {
 		return getDescription().replace(" ", "_").toUpperCase();

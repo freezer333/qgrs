@@ -21,4 +21,5 @@ public class XslViews {
 	public static final String Error = "error.xsl";
 	public static final String Start = "start.xsl";
 	public static final String DbHome = "dbHome.xsl";
+	public static final String StatsHome = "stats-home.xsl";
 }

@@ -22,7 +22,7 @@ public class FunctionRunner extends QgrsRunner {
 	}
 
 	@Override
-	protected String getDescription() {
+	public String getDescription() {
 		return "Analysis By Gene Function";
 	}
 

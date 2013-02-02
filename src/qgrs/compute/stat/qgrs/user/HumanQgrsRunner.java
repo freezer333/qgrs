@@ -11,7 +11,7 @@ public class HumanQgrsRunner extends QgrsRunner {
 	 */
 	
 	@Override
-	protected String getDescription() {
+	public String getDescription() {
 		return "STATS Human QGRS";
 	}
 	

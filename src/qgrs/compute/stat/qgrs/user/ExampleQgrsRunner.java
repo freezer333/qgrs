@@ -17,7 +17,7 @@ public class ExampleQgrsRunner extends QgrsRunner {
 	 */
 	
 	@Override
-	protected String getDescription() {
+	public String getDescription() {
 		return "Example Runner";
 	}
 	

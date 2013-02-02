@@ -11,7 +11,7 @@ public class QgrsRunnerTest1 extends QgrsRunner {
 	 */
 	
 	@Override
-	protected String getDescription() {
+	public String getDescription() {
 		return "Test 1";
 	}
 	

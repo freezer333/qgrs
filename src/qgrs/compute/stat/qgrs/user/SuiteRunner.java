@@ -9,7 +9,12 @@ import qgrs.compute.stat.qgrs.QgrsRunner;
 
 public class SuiteRunner {
 
-	static List<QgrsRunner> runners = Arrays.asList(new HumanQgrsRunner(), new HumanQgrsHRunner(),  new HumanQgrsH95Runner());;
+	public final static List<QgrsRunner> runners = Arrays.asList(
+			new HumanQgrsRunner(), 
+			new HumanQgrsHRunner(),  
+			new HumanQgrsH95Runner(), 
+			new SpeciesRunner()
+			);
 	
 	public static void main(String[] args) throws Exception {
 		

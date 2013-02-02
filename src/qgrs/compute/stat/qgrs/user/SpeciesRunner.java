@@ -22,7 +22,7 @@ public class SpeciesRunner extends QgrsRunner {
 	}
 
 	@Override
-	protected String getDescription() {
+	public String getDescription() {
 		return "Analysis By Species";
 	}
 
