@@ -1,7 +1,7 @@
 package qgrs.compute.stat.qgrs.user;
 
 import qgrs.compute.stat.qgrs.QgrsCriteria;
-import qgrs.data.records.GQuadruplexRecord;
+import qgrs.data.records.QgrsHomologyProfile;
 
 
 /**
@@ -26,8 +26,8 @@ public class QgrsCriteriaTest1 implements QgrsCriteria {
 	}
 
 	@Override
-	public boolean accept(GQuadruplexRecord record) {
-		return record.getScore() >= this.minGScore && record.getNumTetrads() >= this.minTetrads;
+	public boolean accept(QgrsHomologyProfile record) {
+		return record.principle.getScore() >= this.minGScore && record.principle.getNumTetrads() >= this.minTetrads;
 	}
 
 }
