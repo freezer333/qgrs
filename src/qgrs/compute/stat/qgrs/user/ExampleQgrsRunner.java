@@ -23,12 +23,12 @@ public class ExampleQgrsRunner extends QgrsRunner {
 	
 	@Override
 	protected QgrsCriteria buildQgrsCriteria() {
-		return new SimpleQgrsCriteria(17, 2);
+		return new SimpleQgrsCriteria(17, 2, 1, new QgrsHomologyCriteria());
 	}
 
 	@Override
 	protected GenePartitioner buildPartitioner() {
-		return new ExampleGenePartitioner();
+		return new HumanAllPartitioner();
 	}
 	
 	

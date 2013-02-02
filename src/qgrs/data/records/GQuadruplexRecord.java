@@ -235,24 +235,27 @@ public class GQuadruplexRecord {
 		
 	}
 	public GQuadruplexRecord(ResultSet rs){
+		this(rs, "");
+	}
+	public GQuadruplexRecord(ResultSet rs, String prefix){
 		try {
-			this.id = rs.getString("id");
-			this.tetrad1 = rs.getInt("tetrad1");
-			this.tetrad2 = rs.getInt("tetrad2");
-			this.tetrad3 = rs.getInt("tetrad3");
-			this.tetrad4 = rs.getInt("tetrad4");
-			this.loop1Length = rs.getInt("loop1Length");
-			this.loop2Length = rs.getInt("loop2Length");
-			this.loop3Length = rs.getInt("loop3Length");
-			this.totalLength = rs.getInt("totalLength");
-			this.score = rs.getInt("gScore");
-			this.numTetrads = rs.getInt("numTetrads");
-			this.sequenceSlice = rs.getString("sequenceSlice");
-			this.geneAccessionNumber = rs.getString("geneId");
-			this.in5Prime = rs.getBoolean("in5Prime");
-			this.inCds = rs.getBoolean("inCds");
-			this.in3Prime = rs.getBoolean("in3Prime");
-			this.distanceFromPolyASignal = rs.getInt("distanceFromPolyASignal");
+			this.id = rs.getString(prefix + "id");
+			this.tetrad1 = rs.getInt(prefix + "tetrad1");
+			this.tetrad2 = rs.getInt(prefix + "tetrad2");
+			this.tetrad3 = rs.getInt(prefix + "tetrad3");
+			this.tetrad4 = rs.getInt(prefix + "tetrad4");
+			this.loop1Length = rs.getInt(prefix + "loop1Length");
+			this.loop2Length = rs.getInt(prefix + "loop2Length");
+			this.loop3Length = rs.getInt(prefix + "loop3Length");
+			this.totalLength = rs.getInt(prefix + "totalLength");
+			this.score = rs.getInt(prefix + "gScore");
+			this.numTetrads = rs.getInt(prefix + "numTetrads");
+			this.sequenceSlice = rs.getString(prefix + "sequenceSlice");
+			this.geneAccessionNumber = rs.getString(prefix + "geneId");
+			this.in5Prime = rs.getBoolean(prefix + "in5Prime");
+			this.inCds = rs.getBoolean(prefix + "inCds");
+			this.in3Prime = rs.getBoolean(prefix + "in3Prime");
+			this.distanceFromPolyASignal = rs.getInt(prefix + "distanceFromPolyASignal");
 			this.applyAssertion();
 		}
 		catch ( Exception e) {

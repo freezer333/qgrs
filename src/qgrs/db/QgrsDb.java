@@ -103,6 +103,8 @@ public class QgrsDb  extends DbTable {
 		}
 	}
 	
+	
+	
 	public HashMap<String, GQuadruplexRecord> getIn(Collection<String> qgrsIds) {
 		try {
 			HashMap<String, GQuadruplexRecord> retval = new HashMap<String, GQuadruplexRecord>();

@@ -1,11 +1,11 @@
 package qgrs.compute.stat.qgrs;
 
-import qgrs.data.records.GQuadruplexRecord;
+import qgrs.data.records.QgrsHomologyProfile;
 
 public interface QgrsCriteria {
 
 	
-	boolean accept(GQuadruplexRecord record);
+	boolean accept(QgrsHomologyProfile record);
 	
 	
 }

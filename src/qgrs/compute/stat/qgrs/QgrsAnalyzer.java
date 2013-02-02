@@ -1,6 +1,7 @@
 package qgrs.compute.stat.qgrs;
 
 
+import java.util.Collection;
 import java.util.List;
 
 import qgrs.compute.stat.GenePartition;
@@ -8,10 +9,10 @@ import qgrs.compute.stat.PartitionAnalyzer;
 import qgrs.compute.stat.PartitionResult;
 import qgrs.compute.stat.StatusReporter;
 import qgrs.data.GeneSequence;
-import qgrs.data.records.GQuadruplexRecord;
+import qgrs.data.records.QgrsHomologyProfile;
 import qgrs.db.DatabaseConnection;
 import qgrs.db.GeneSequenceDb;
-import qgrs.db.QgrsDb;
+import qgrs.db.HomologyRecordDb;
 
 public class QgrsAnalyzer extends PartitionAnalyzer{
 
@@ -32,7 +33,7 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 		
 		DatabaseConnection conn = new DatabaseConnection(getConnection());
 		GeneSequenceDb geneDb = new GeneSequenceDb(conn);
-		QgrsDb qgrsDb = new QgrsDb(conn);
+		HomologyRecordDb qgrsDb = new HomologyRecordDb(conn);
 		
 		List<GeneSequence> genes = geneDb.getIn(this.parition.ids);
 		
@@ -42,13 +43,13 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 			int qgrsCdsCount = 0;
 			int qgrs3PrimeCount = 0 ;
 			
-			List<GQuadruplexRecord> qgrsList = qgrsDb.getAllRecords(seq);
-			for ( GQuadruplexRecord qgrs : qgrsList) {
+			Collection<QgrsHomologyProfile> qgrsList = qgrsDb.getQgrsHomologyProfiles(seq);
+			for ( QgrsHomologyProfile qgrs : qgrsList) {
 				if ( this.qgrsCriteria.accept(qgrs) ) {
 					qgrsCount++;
-					if ( qgrs.isIn5Prime() ) qgrs5PrimeCount++;
-					if ( qgrs.isInCds() ) qgrsCdsCount++;
-					if (qgrs.isIn3Prime() ) qgrs3PrimeCount++;
+					if ( qgrs.principle.isIn5Prime() ) qgrs5PrimeCount++;
+					if ( qgrs.principle.isInCds() ) qgrsCdsCount++;
+					if (qgrs.principle.isIn3Prime() ) qgrs3PrimeCount++;
 				}
 			}
 			result.incrementSamples();
