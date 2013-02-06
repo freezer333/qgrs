@@ -10,6 +10,7 @@ public class QgrsPartitionResult extends PartitionResult {
 	public final QgrsRegionStats _3Prime = new QgrsRegionStats();
 	public final QgrsRegionStats _5Prime = new QgrsRegionStats();
 	public final QgrsRegionStats cds = new QgrsRegionStats();
+	public final QgrsRegionStats CDS80 = new QgrsRegionStats();
 	
 	
 	public QgrsPartitionResult(String partitionLabel) {
@@ -39,6 +40,10 @@ public class QgrsPartitionResult extends PartitionResult {
 			ps.setDouble(c++, this._3Prime.getSum());
 			ps.setDouble(c++, this._3Prime.getMean());
 			ps.setDouble(c++, this._3Prime.getMedian());
+			
+			ps.setDouble(c++, this.CDS80.getSum());
+			ps.setDouble(c++, this.CDS80.getMean());
+			ps.setDouble(c++, this.CDS80.getMedian());
 			
 			ps.addBatch();
 		}

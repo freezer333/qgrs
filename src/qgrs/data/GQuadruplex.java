@@ -69,6 +69,9 @@ public class GQuadruplex implements Serializable{
 		gq.setTetrad2(this.getTetrad2Start().getIndexWithoutGaps());
 		gq.setTetrad3(this.getTetrad3Start().getIndexWithoutGaps());
 		gq.setTetrad4(this.getTetrad4Start().getIndexWithoutGaps());
+		//We added this for CDS80 & improvements
+		gq.setGQEnd(this.getEnd().getIndexWithoutGaps());
+		//
 		gq.setLoop1Length(this.getLoop1Length());
 		gq.setLoop2Length(this.getLoop2Length());
 		gq.setLoop3Length(this.getLoop3Length());

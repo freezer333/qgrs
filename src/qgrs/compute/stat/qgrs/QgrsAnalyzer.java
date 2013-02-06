@@ -13,6 +13,7 @@ import qgrs.data.records.QgrsHomologyProfile;
 import qgrs.db.DatabaseConnection;
 import qgrs.db.GeneSequenceDb;
 import qgrs.db.HomologyRecordDb;
+import qgrs.data.GQuadruplex;
 
 public class QgrsAnalyzer extends PartitionAnalyzer{
 
@@ -42,6 +43,11 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 			int qgrs5PrimeCount = 0;
 			int qgrsCdsCount = 0;
 			int qgrs3PrimeCount = 0 ;
+			int cdsStart = seq.getCds().getStart();
+			int cdsEnd = seq.getCds().getEnd();
+			int qgrsStart;
+			int qgrsEnd;
+			int qgrsCDS80Count = 0;
 			
 			Collection<QgrsHomologyProfile> qgrsList = qgrsDb.getQgrsHomologyProfiles(seq);
 			for ( QgrsHomologyProfile qgrs : qgrsList) {
@@ -49,7 +55,8 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 					qgrsCount++;
 					if ( qgrs.principle.isIn5Prime() ) qgrs5PrimeCount++;
 					if ( qgrs.principle.isInCds() ) qgrsCdsCount++;
-					if (qgrs.principle.isIn3Prime() ) qgrs3PrimeCount++;
+					if ( qgrs.principle.isIn3Prime() ) qgrs3PrimeCount++;
+					if ( (cdsStart - qgrs.principle.getGQEnd()) <= 80  && (cdsStart - qgrs.principle.getGQEnd()) > 0) qgrsCDS80Count++;
 				}
 			}
 			result.incrementSamples();
@@ -57,6 +64,7 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 			result._5Prime.addValue(qgrs5PrimeCount);
 			result.cds.addValue(qgrsCdsCount);
 			result._3Prime.addValue(qgrs3PrimeCount);
+			result.CDS80.addValue(qgrsCDS80Count);
 		}
 		this.statusReporter.recordPartitionComplete();
 		return result;

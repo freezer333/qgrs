@@ -24,6 +24,7 @@ public class GQuadruplexRecord {
 	private boolean in3Prime;
 	private String sequenceSlice;
 	private String geneAccessionNumber;
+	private int GQEnd;
 	
 	
 	public int getDistanceFromPolyASignal() {
@@ -261,6 +262,12 @@ public class GQuadruplexRecord {
 		catch ( Exception e) {
 			throw new RuntimeException(e);
 		}
+	}
+	public void setGQEnd(int gQEnd) {
+		GQEnd = gQEnd;
+	}
+	public int getGQEnd() {
+		return GQEnd;
 	}
 	
 }

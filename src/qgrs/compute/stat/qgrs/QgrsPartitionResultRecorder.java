@@ -19,8 +19,9 @@ public class QgrsPartitionResultRecorder extends
 						"qgrsTotalAll, qgrsMeanAll, qgrsMedianAll, " +
 						"qgrsTotal5Prime, qgrsMean5Prime, qgrsMedian5Prime, " +
 						"qgrsTotalCds, qgrsMeanCds, qgrsMedianCds, " +
-						"qgrsTotal3Prime, qgrsMean3Prime, qgrsMedian3Prime) " + 
-						"VALUES (?, ?, ?, ?, ? , ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+						"qgrsTotal3Prime, qgrsMean3Prime, qgrsMedian3Prime, " + 
+						"qgrsTotalCDS80, qgrsMeanCDS80, qgrsMedianCDS80) " + 
+						"VALUES (?, ?, ?, ?, ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		return conn.prepareStatement(iSql);
 	}
 
@@ -42,7 +43,10 @@ public class QgrsPartitionResultRecorder extends
 				"qgrsMedianCds  double, " + 
 				"qgrsTotal3Prime double, " +
 				"qgrsMean3Prime  double, " + 
-				"qgrsMedian3Prime  double" +
+				"qgrsMedian3Prime  double," +
+				"qgrsTotalCDS80 double, " +
+				"qgrsMeanCDS80  double, " + 
+				"qgrsMedianCDS80  double" +
 				")";
 		
 		Statement stmt = null;
