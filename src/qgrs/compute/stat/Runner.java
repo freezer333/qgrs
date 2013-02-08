@@ -3,6 +3,8 @@ package qgrs.compute.stat;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -20,11 +22,13 @@ public abstract class Runner implements Callable<Object>{
 	
 	final GenePartitioner partitioner;
 	final PartitionResultRecorder resultRecorder;
+	protected final boolean active;
 	
-	public Runner() {
+	public Runner(boolean active) {
 		super();
 		this.partitioner = buildPartitioner();
 		this.resultRecorder = buildStatementBuilder();
+		this.active = active;
 	}
 	
 	@Override
@@ -33,10 +37,12 @@ public abstract class Runner implements Callable<Object>{
 		return null;
 	}
 	
+	
 
 	public void execute() throws Exception {
 		System.out.println("Connecting to database...");
 		Connection c = getConnection();
+		prepareTable(c);
 		System.out.println("Executing " + this.getDescription());
 		System.out.print("Creating partitions...");
 		HashSet<GenePartition> partitions = partitioner.partition(c);
@@ -82,13 +88,59 @@ public abstract class Runner implements Callable<Object>{
 	protected abstract GenePartitioner buildPartitioner();
 	protected abstract PartitionResultRecorder buildStatementBuilder();
 	protected abstract PartitionAnalyzer createProcessor(GenePartition partition, StatusReporter reporter);
-	public  abstract String getDescription();
+	public abstract String getDescription();
+	public abstract String getId();
 	
-	public String getTableName() {
-		return getDescription().replace(" ", "_").toUpperCase();
+	
+	public boolean isActive() {
+		return this.active;
 	}
 	
 	
+	public String getTableName() {
+		return getId().replace(" ", "_").toUpperCase();
+	}
+	
+	
+	private void prepareTable(Connection c) {
+		createTableIfNotExists(c);
+		cleanTablesById(c);
+		insert(c);
+	}
+	
+	
+	private void createTableIfNotExists(Connection c) {
+		String sql = "create table if not exists analysis (" + 
+					 "id varchar(255) not null primary key, " +
+					 "description varchar(max), " +
+					 "active boolean not null default false, " + 
+					 "date date not null)";
+		
+		Statement stmt = null;
+		try {
+			stmt = c.createStatement();
+			stmt.executeUpdate(sql);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			if ( stmt != null )
+				try {
+					stmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+		
+	}
+	private void cleanTablesById(Connection c) {
+		// delete this ID out of the analysis table.  Cascading deletes will take care of the rest.
+	}
+	private void insert(Connection c) {
+		// insert this ID into the analysis table.  
+	}
 	
 	
 }

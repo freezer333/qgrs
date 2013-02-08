@@ -11,6 +11,10 @@ public class FunctionRunner extends QgrsRunner {
 	 * genes by species.
 	 */
 	
+	public FunctionRunner() {
+		super(true);
+	}
+	
 	@Override
 	protected QgrsCriteria buildQgrsCriteria() {
 		return new SimpleQgrsCriteria(17, 2, 0, new QgrsHomologyCriteria());
@@ -24,6 +28,10 @@ public class FunctionRunner extends QgrsRunner {
 	@Override
 	public String getDescription() {
 		return "Analysis By Gene Function";
+	}
+	
+	public String getId() {
+		return "Function";
 	}
 
 	public static void main(String [] args) throws Exception {

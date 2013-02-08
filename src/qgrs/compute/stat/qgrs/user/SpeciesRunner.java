@@ -6,10 +6,16 @@ import qgrs.compute.stat.qgrs.QgrsRunner;
 
 public class SpeciesRunner extends QgrsRunner {
 
+	
+	
 	/**
 	 * This runner executes an analysis paritioning
 	 * genes by species.
 	 */
+	
+	public SpeciesRunner() {
+		super(true);
+	}
 	
 	@Override
 	protected QgrsCriteria buildQgrsCriteria() {
@@ -19,6 +25,11 @@ public class SpeciesRunner extends QgrsRunner {
 	@Override
 	protected GenePartitioner buildPartitioner() {
 		return new SpeciesGenePartitioner();
+	}
+	
+	@Override
+	public String getId() {
+		return "Species";
 	}
 
 	@Override

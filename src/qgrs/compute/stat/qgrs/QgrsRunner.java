@@ -10,8 +10,8 @@ public abstract class QgrsRunner extends Runner {
 
 	final QgrsCriteria qgrsCriteria = this.buildQgrsCriteria();
 	
-	public QgrsRunner() {
-		super();
+	public QgrsRunner(boolean active) {
+		super(active);
 	}
 
 	protected abstract QgrsCriteria buildQgrsCriteria();

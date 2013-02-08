@@ -10,9 +10,18 @@ public class QgrsRunnerTest1 extends QgrsRunner {
 	 * Camille & Matt's first test; 4 tetrads
 	 */
 	
+	public QgrsRunnerTest1() {
+		super(false);
+	}
+	
 	@Override
 	public String getDescription() {
 		return "Test 1";
+	}
+	
+	@Override 
+	public String getId() {
+		return "Test1";
 	}
 	
 	@Override

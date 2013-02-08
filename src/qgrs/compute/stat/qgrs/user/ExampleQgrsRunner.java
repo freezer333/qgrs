@@ -16,9 +16,18 @@ public class ExampleQgrsRunner extends QgrsRunner {
 	 * -------------------------------------------------------------------------------
 	 */
 	
+	public ExampleQgrsRunner() {
+		super(false);
+	}
+	
 	@Override
 	public String getDescription() {
 		return "Example Runner";
+	}
+	
+	@Override
+	public String getId() {
+		return "Example";
 	}
 	
 	@Override

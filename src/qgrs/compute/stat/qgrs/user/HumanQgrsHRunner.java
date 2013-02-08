@@ -10,6 +10,15 @@ public class HumanQgrsHRunner extends QgrsRunner {
 	 * Reports aggregate statistics about QGRS - irrespective of homology
 	 */
 	
+	public HumanQgrsHRunner() {
+		super(true);
+	}
+	
+	@Override 
+	public String getId() {
+		return "Human_Conserved";
+	}
+	
 	@Override
 	public String getDescription() {
 		return "STATS Human Conserved QGRS";

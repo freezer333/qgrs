@@ -10,9 +10,18 @@ public class HumanQgrsH95Runner extends QgrsRunner {
 	 * Reports aggregate statistics about QGRS - with at least on QGRSH with 0.95+ score
 	 */
 	
+	public HumanQgrsH95Runner () {
+		super(true);
+	}
+	
 	@Override
 	public String getDescription() {
 		return "STATS Human Conserved QGRS 95";
+	}
+	
+	@Override
+	public String getId() {
+		return "Human_ConsevedAt95";
 	}
 	
 	@Override

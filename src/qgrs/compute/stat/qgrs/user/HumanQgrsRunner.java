@@ -10,6 +10,15 @@ public class HumanQgrsRunner extends QgrsRunner {
 	 * Reports aggregate statistics about QGRS with at least one homolog (no matter what the score is)
 	 */
 	
+	public HumanQgrsRunner() {
+		super(true);
+	}
+	
+	@Override
+	public String getId() {
+		return "Human_All";
+	}
+	
 	@Override
 	public String getDescription() {
 		return "STATS Human QGRS";
