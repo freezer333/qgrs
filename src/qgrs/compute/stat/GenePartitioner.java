@@ -3,8 +3,13 @@ package qgrs.compute.stat;
 import java.sql.Connection;
 import java.util.HashSet;
 
-public interface GenePartitioner {
+public abstract class GenePartitioner {
 
+	protected final Analysis runner;
 	
-	HashSet<GenePartition> partition(Connection c);
+	public GenePartitioner(Analysis runner){
+		this.runner = runner;
+	}
+	
+	public abstract HashSet<GenePartition> partition(Connection c);
 }

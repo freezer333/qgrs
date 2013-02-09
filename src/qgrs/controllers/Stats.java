@@ -3,7 +3,7 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.compute.stat.Runner;
+import qgrs.compute.stat.Analysis;
 import qgrs.compute.stat.qgrs.user.SuiteRunner;
 import qgrs.model.DbCriteria;
 import qgrs.model.QgrsWebContext;
@@ -29,7 +29,7 @@ public class Stats extends AbstractController {
 	    DbCriteria dbCriteria = new DbCriteria(qContext);
 	    
 	    try {
-		    for (Runner r : SuiteRunner.runners ) {
+		    for (Analysis r : SuiteRunner.runners ) {
 		    	Element re = new Element("runner");
 		    	re.addContent(new Element("tableName").setText(r.getTableName()));
 		    	re.addContent(new Element("description").setText(r.getDescription()));

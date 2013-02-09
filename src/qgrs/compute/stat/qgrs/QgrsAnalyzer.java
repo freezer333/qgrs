@@ -30,7 +30,7 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 	 */
 	@Override
 	public PartitionResult call() throws Exception {
-		QgrsPartitionResult result = new QgrsPartitionResult(this.parition.label);
+		QgrsPartitionResult result = new QgrsPartitionResult(this.parition.partitionId);
 		
 		DatabaseConnection conn = new DatabaseConnection(getConnection());
 		GeneSequenceDb geneDb = new GeneSequenceDb(conn);

@@ -10,8 +10,14 @@ import java.util.LinkedList;
 
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.GenePartitioner;
+import qgrs.compute.stat.Analysis;
 
-public class FunctionGenePartitioner implements GenePartitioner {
+public class FunctionGenePartitioner extends GenePartitioner {
+
+	public FunctionGenePartitioner(Analysis runner) {
+		super(runner);
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * Note that this is somewhat limited, it doesn't consider species.
@@ -58,7 +64,7 @@ public class FunctionGenePartitioner implements GenePartitioner {
 		
 		// note that the ontology terms is escaped, since many ontology terms have ' in them.
 		String q = "SELECT accessionNumber FROM GO WHERE GOTERM='" + ontologyTerm.replace("'", "''") + "'";
-		GenePartition p = new GenePartition(ontologyTerm);
+		GenePartition p = new GenePartition(this.runner, ontologyTerm);
 		try {
 			Statement stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery(q);

@@ -37,7 +37,7 @@ public class ExampleQgrsRunner extends QgrsRunner {
 
 	@Override
 	protected GenePartitioner buildPartitioner() {
-		return new ExampleGenePartitioner();
+		return new ExampleGenePartitioner(this);
 	}
 	
 	

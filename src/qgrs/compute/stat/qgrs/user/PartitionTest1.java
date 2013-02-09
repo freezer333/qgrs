@@ -8,8 +8,15 @@ import java.util.HashSet;
 
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.GenePartitioner;
+import qgrs.compute.stat.Analysis;
 
-public class PartitionTest1 implements GenePartitioner {
+public class PartitionTest1 extends GenePartitioner {
+
+	public PartitionTest1(Analysis runner) {
+		super(runner);
+		// TODO Auto-generated constructor stub
+	}
+
 
 	/**
 	 * Camille & Matt's First Partition Test
@@ -31,7 +38,7 @@ public class PartitionTest1 implements GenePartitioner {
 	
 	private GenePartition getPartition(Connection c, int offset) {
 		String q = "SELECT accessionNumber FROM GENE LIMIT 20 OFFSET " + offset;
-		GenePartition p = new GenePartition("Genes " + offset + "-" + (offset+20));
+		GenePartition p = new GenePartition(runner, "Genes " + offset + "-" + (offset+20));
 		try {
 			Statement stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery(q);

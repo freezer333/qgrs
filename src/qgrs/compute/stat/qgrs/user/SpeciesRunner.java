@@ -24,7 +24,7 @@ public class SpeciesRunner extends QgrsRunner {
 
 	@Override
 	protected GenePartitioner buildPartitioner() {
-		return new SpeciesGenePartitioner();
+		return new SpeciesGenePartitioner(this);
 	}
 	
 	@Override

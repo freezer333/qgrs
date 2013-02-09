@@ -3,10 +3,10 @@ package qgrs.compute.stat.qgrs;
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.PartitionAnalyzer;
 import qgrs.compute.stat.PartitionResultRecorder;
-import qgrs.compute.stat.Runner;
+import qgrs.compute.stat.Analysis;
 import qgrs.compute.stat.StatusReporter;
 
-public abstract class QgrsRunner extends Runner {
+public abstract class QgrsRunner extends Analysis {
 
 	final QgrsCriteria qgrsCriteria = this.buildQgrsCriteria();
 	

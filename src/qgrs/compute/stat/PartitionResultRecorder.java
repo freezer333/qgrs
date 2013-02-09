@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import qgrs.db.ReservedTableNames;
-
 public abstract class PartitionResultRecorder {
 
 	public abstract PreparedStatement buildPreparedStatementForBatch(Connection conn) throws Exception;
@@ -16,11 +14,7 @@ public abstract class PartitionResultRecorder {
 	
 	
 	public PartitionResultRecorder(String tableName) {
-		for ( ReservedTableNames table : ReservedTableNames.values() ) {
-			if ( table.toString().equalsIgnoreCase(tableName)) {
-				throw new RuntimeException ("Cannot create PartitionResultRecorder with target table of " + tableName + " - the table name is reserved!");
-			}
-		}
+		
 		this.tableName = tableName;
 	}
 	

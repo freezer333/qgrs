@@ -16,7 +16,7 @@ import java.util.concurrent.Future;
 import qgrs.db.AppProperties;
 import framework.db.DatabaseConnectionParameters;
 
-public abstract class Runner implements Callable<Object>{
+public abstract class Analysis implements Callable<Object>{
 
 	final int THREAD_POOL_SIZE = 20;
 	
@@ -24,7 +24,7 @@ public abstract class Runner implements Callable<Object>{
 	final PartitionResultRecorder resultRecorder;
 	protected final boolean active;
 	
-	public Runner(boolean active) {
+	public Analysis(boolean active) {
 		super();
 		this.partitioner = buildPartitioner();
 		this.resultRecorder = buildStatementBuilder();
@@ -42,14 +42,16 @@ public abstract class Runner implements Callable<Object>{
 	public void execute() throws Exception {
 		System.out.println("Connecting to database...");
 		Connection c = getConnection();
-		prepareTable(c);
+		prepareTables(c);
 		System.out.println("Executing " + this.getDescription());
 		System.out.print("Creating partitions...");
 		HashSet<GenePartition> partitions = partitioner.partition(c);
 		StatusReporter r= new StatusReporter(partitions.size());
 		System.out.println(" " + partitions.size() + " created");
+		
 		Collection<PartitionAnalyzer> processors = new HashSet<PartitionAnalyzer>();
 		for ( GenePartition partition: partitions) {
+			recordPartitionEntry(c, partition);
 			processors.add(createProcessor(partition, r));
 		}
 		
@@ -102,10 +104,50 @@ public abstract class Runner implements Callable<Object>{
 	}
 	
 	
-	private void prepareTable(Connection c) {
+	
+	
+	private void prepareTables(Connection c) {
 		createTableIfNotExists(c);
+		createPartitionTableIfNotExists(c);
 		cleanTablesById(c);
 		insert(c);
+	}
+	
+	private void recordPartitionEntry(Connection c, GenePartition partition) {
+		createPartitionTableIfNotExists(c);
+		insert(c, partition);
+	}
+	
+	private void createPartitionTableIfNotExists(Connection c) {
+		String sql = "create table if not exists partition (" + 
+					 "analysisId varchar(255) not null , " +
+					 "partitionId varchar(255) not null , " +
+					 "description varchar(max), " +
+					 "numSamples int, " + 
+					 "primary key (analysisId, partitionId), " +
+					 "foreign key (analysisId) references analysis(id) on delete cascade)";
+		try {
+			PreparedStatement ps = c.prepareStatement(sql);
+			executeUpdateAndClose(ps);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void insert(Connection c, GenePartition partition) {
+		String sql = "insert into partition (analysisId, partitionId, description, numSamples) values (?, ?, ?, ?)";
+		try {
+			PreparedStatement ps = c.prepareStatement(sql);
+			ps.setString(1, this.getId());
+			ps.setString(2, partition.getPartitionId());
+			ps.setString(3, partition.getDescription());
+			ps.setInt(4, partition.getGeneIds().size());
+			executeUpdateAndClose(ps);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void executeUpdateAndClose(PreparedStatement ps) {

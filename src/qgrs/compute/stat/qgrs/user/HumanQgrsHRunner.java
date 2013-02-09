@@ -31,7 +31,7 @@ public class HumanQgrsHRunner extends QgrsRunner {
 
 	@Override
 	protected GenePartitioner buildPartitioner() {
-		return new HumanAllPartitioner();
+		return new HumanAllPartitioner(this);
 	}
 	
 	

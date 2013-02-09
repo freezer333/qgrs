@@ -8,8 +8,15 @@ import java.util.HashSet;
 
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.GenePartitioner;
+import qgrs.compute.stat.Analysis;
 
-public class HumanAllPartitioner implements GenePartitioner {
+public class HumanAllPartitioner extends GenePartitioner {
+
+	public HumanAllPartitioner(Analysis runner) {
+		super(runner);
+		// TODO Auto-generated constructor stub
+	}
+
 
 	/**
 	 * This doesn't really partition anything, it simply returns
@@ -24,7 +31,7 @@ public class HumanAllPartitioner implements GenePartitioner {
 	public HashSet<GenePartition> partition(Connection c) {
 		HashSet<GenePartition> partitions = new HashSet<GenePartition>();
 		String q = "SELECT accessionNumber FROM GENE WHERE SPECIES = 'Homo sapiens'";
-		GenePartition p = new GenePartition("Human Genes");
+		GenePartition p = new GenePartition(runner, "Human Genes");
 		try {
 			Statement stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery(q);
@@ -42,7 +49,7 @@ public class HumanAllPartitioner implements GenePartitioner {
 	
 	private GenePartition getPartition(Connection c, int offset) {
 		String q = "SELECT accessionNumber FROM GENE LIMIT 50 OFFSET " + offset;
-		GenePartition p = new GenePartition("Genes " + offset + "-" + (offset+50));
+		GenePartition p = new GenePartition(runner, "Genes " + offset + "-" + (offset+50));
 		try {
 			Statement stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery(q);

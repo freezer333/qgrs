@@ -10,8 +10,14 @@ import java.util.LinkedList;
 
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.GenePartitioner;
+import qgrs.compute.stat.Analysis;
 
-public class SpeciesGenePartitioner implements GenePartitioner {
+public class SpeciesGenePartitioner extends GenePartitioner {
+
+	public SpeciesGenePartitioner(Analysis runner) {
+		super(runner);
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * This paritions the gene set by species
@@ -32,8 +38,7 @@ public class SpeciesGenePartitioner implements GenePartitioner {
 	
 	Collection<String> getSpecies(Connection c) {
 		Collection<String> list = new LinkedList<String>();
-		System.out.println("WARNING:  Species partitioner in debug mode (limit is set to 100 genes / species");
-		String q = "SELECT DISTINCT species FROM GENE LIMIT 100";
+		String q = "SELECT DISTINCT species FROM GENE";
 		try {
 			Statement stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery(q);
@@ -49,8 +54,9 @@ public class SpeciesGenePartitioner implements GenePartitioner {
 	}
 	
 	private GenePartition getPartition(Connection c, String species) {
-		String q = "SELECT accessionNumber FROM GENE where species='" + species + "'";
-		GenePartition p = new GenePartition(species);
+		System.out.println("WARNING:  Species partitioner in debug mode (limit is set to 10 genes / species)");
+		String q = "SELECT accessionNumber FROM GENE where species='" + species + "'  LIMIT 10";
+		GenePartition p = new GenePartition(runner, species);
 		try {
 			Statement stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery(q);

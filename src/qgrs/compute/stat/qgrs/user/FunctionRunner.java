@@ -22,7 +22,7 @@ public class FunctionRunner extends QgrsRunner {
 
 	@Override
 	protected GenePartitioner buildPartitioner() {
-		return new FunctionGenePartitioner();
+		return new FunctionGenePartitioner(this);
 	}
 
 	@Override
