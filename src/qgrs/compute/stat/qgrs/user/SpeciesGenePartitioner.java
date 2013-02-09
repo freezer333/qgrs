@@ -32,7 +32,8 @@ public class SpeciesGenePartitioner implements GenePartitioner {
 	
 	Collection<String> getSpecies(Connection c) {
 		Collection<String> list = new LinkedList<String>();
-		String q = "SELECT DISTINCT species FROM GENE";
+		System.out.println("WARNING:  Species partitioner in debug mode (limit is set to 100 genes / species");
+		String q = "SELECT DISTINCT species FROM GENE LIMIT 100";
 		try {
 			Statement stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery(q);

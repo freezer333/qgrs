@@ -1,10 +1,10 @@
 package qgrs.compute.stat;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -108,38 +108,63 @@ public abstract class Runner implements Callable<Object>{
 		insert(c);
 	}
 	
-	
+	private void executeUpdateAndClose(PreparedStatement ps) {
+		try {
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (ps != null)
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+	}
 	private void createTableIfNotExists(Connection c) {
 		String sql = "create table if not exists analysis (" + 
 					 "id varchar(255) not null primary key, " +
 					 "description varchar(max), " +
 					 "active boolean not null default false, " + 
 					 "date date not null)";
-		
-		Statement stmt = null;
 		try {
-			stmt = c.createStatement();
-			stmt.executeUpdate(sql);
+			PreparedStatement ps = c.prepareStatement(sql);
+			executeUpdateAndClose(ps);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		finally {
-			if ( stmt != null )
-				try {
-					stmt.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		}
-		
 	}
+	
 	private void cleanTablesById(Connection c) {
 		// delete this ID out of the analysis table.  Cascading deletes will take care of the rest.
+		String sql = "delete from analysis where id = ?";
+		try {
+			PreparedStatement ps = c.prepareStatement(sql);
+			ps.setString(1, this.getId());
+			executeUpdateAndClose(ps);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
+	
 	private void insert(Connection c) {
-		// insert this ID into the analysis table.  
+		// insert this ID into the analysis table. 
+		String sql = "insert into analysis (id, description, active, date) values (?, ?, ?, ?)";
+		try {
+			PreparedStatement ps = c.prepareStatement(sql);
+			ps.setString(1, this.getId());
+			ps.setString(2, this.getDescription());
+			ps.setBoolean(3, this.isActive());
+			ps.setDate(4, new Date(new java.util.Date().getTime()));
+			executeUpdateAndClose(ps);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
