@@ -1,25 +1,21 @@
 package qgrs.compute.stat.qgrs.user;
 
 import qgrs.compute.stat.GenePartitioner;
-import qgrs.compute.stat.qgrs.QgrsCriteria;
 import qgrs.compute.stat.qgrs.QgrsRunner;
+import qgrs.compute.stat.qgrs.location.sets.QgrsLocationSet;
+import qgrs.compute.stat.qgrs.location.sets.QgrsRegionLocationSet;
+import qgrs.compute.stat.qgrs.series.DefaultQgrsSeriesSet;
+import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 
 public class SpeciesRunner extends QgrsRunner {
-
-	
-	
-	/**
-	 * This runner executes an analysis paritioning
-	 * genes by species.
-	 */
 	
 	public SpeciesRunner() {
 		super(true);
 	}
 	
 	@Override
-	protected QgrsCriteria buildQgrsCriteria() {
-		return new SimpleQgrsCriteria(17, 2, 0, new QgrsHomologyCriteria());
+	protected QgrsSeriesSet buildSeriesSet() {
+		return new DefaultQgrsSeriesSet();
 	}
 
 	@Override
@@ -35,6 +31,11 @@ public class SpeciesRunner extends QgrsRunner {
 	@Override
 	public String getDescription() {
 		return "Analysis By Species";
+	}
+	
+	@Override
+	protected QgrsLocationSet buildQgrsLocationSet() {
+		return new QgrsRegionLocationSet();
 	}
 
 	public static void main(String [] args) throws Exception {

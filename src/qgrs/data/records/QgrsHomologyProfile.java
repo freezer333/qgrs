@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 
-import qgrs.compute.stat.qgrs.user.QgrsHomologyCriteria;
+import qgrs.compute.stat.qgrs.series.QgrsHomologyCriteria;
 
 public class QgrsHomologyProfile {
 

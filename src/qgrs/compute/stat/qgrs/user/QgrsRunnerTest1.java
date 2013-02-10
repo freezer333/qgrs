@@ -1,8 +1,11 @@
 package qgrs.compute.stat.qgrs.user;
 
 import qgrs.compute.stat.GenePartitioner;
-import qgrs.compute.stat.qgrs.QgrsCriteria;
 import qgrs.compute.stat.qgrs.QgrsRunner;
+import qgrs.compute.stat.qgrs.location.sets.QgrsLocationSet;
+import qgrs.compute.stat.qgrs.location.sets.QgrsRegionLocationSet;
+import qgrs.compute.stat.qgrs.series.DefaultQgrsSeriesSet;
+import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 
 public class QgrsRunnerTest1 extends QgrsRunner {
 
@@ -25,8 +28,8 @@ public class QgrsRunnerTest1 extends QgrsRunner {
 	}
 	
 	@Override
-	protected QgrsCriteria buildQgrsCriteria() {
-		return new QgrsCriteriaTest1(17, 4);
+	protected QgrsSeriesSet buildSeriesSet() {
+		return new DefaultQgrsSeriesSet();
 	}
 
 	@Override
@@ -34,7 +37,10 @@ public class QgrsRunnerTest1 extends QgrsRunner {
 		return new PartitionTest1(this);
 	}
 	
-	
+	@Override
+	protected QgrsLocationSet buildQgrsLocationSet() {
+		return new QgrsRegionLocationSet();
+	}
 	
 	public static void main(String [] args) throws Exception {
 		System.out.println("Running test");

@@ -1,8 +1,11 @@
 package qgrs.compute.stat.qgrs.user;
 
 import qgrs.compute.stat.GenePartitioner;
-import qgrs.compute.stat.qgrs.QgrsCriteria;
 import qgrs.compute.stat.qgrs.QgrsRunner;
+import qgrs.compute.stat.qgrs.location.sets.QgrsAnyLocationSet;
+import qgrs.compute.stat.qgrs.location.sets.QgrsLocationSet;
+import qgrs.compute.stat.qgrs.series.DefaultQgrsSeriesSet;
+import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 
 public class ExampleQgrsRunner extends QgrsRunner {
 
@@ -31,8 +34,8 @@ public class ExampleQgrsRunner extends QgrsRunner {
 	}
 	
 	@Override
-	protected QgrsCriteria buildQgrsCriteria() {
-		return new SimpleQgrsCriteria(17, 2, 1, new QgrsHomologyCriteria());
+	protected QgrsSeriesSet buildSeriesSet() {
+		return new DefaultQgrsSeriesSet();
 	}
 
 	@Override
@@ -40,6 +43,10 @@ public class ExampleQgrsRunner extends QgrsRunner {
 		return new ExampleGenePartitioner(this);
 	}
 	
+	@Override
+	protected QgrsLocationSet buildQgrsLocationSet() {
+		return new QgrsAnyLocationSet();
+	}
 	
 	
 	public static void main(String [] args) throws Exception {
@@ -49,6 +56,10 @@ public class ExampleQgrsRunner extends QgrsRunner {
 		System.out.println("Analysis is complete");
 		System.exit(0);
 	}
+
+	
+
+	
 
 	
 

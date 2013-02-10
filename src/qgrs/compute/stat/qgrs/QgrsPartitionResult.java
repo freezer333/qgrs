@@ -2,54 +2,50 @@ package qgrs.compute.stat.qgrs;
 
 import java.sql.PreparedStatement;
 
+import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.PartitionResult;
+import qgrs.compute.stat.qgrs.location.QgrsLocationAccumulator;
+import qgrs.compute.stat.qgrs.series.QgrsCriteriaSeries;
+import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 
 public class QgrsPartitionResult extends PartitionResult {
 	
-	public final QgrsRegionStats all = new QgrsRegionStats();
-	public final QgrsRegionStats _3Prime = new QgrsRegionStats();
-	public final QgrsRegionStats _5Prime = new QgrsRegionStats();
-	public final QgrsRegionStats cds = new QgrsRegionStats();
-	public final QgrsRegionStats CDS80 = new QgrsRegionStats();
+	final QgrsSeriesSet seriesSet;
 	
-	
-	public QgrsPartitionResult(String partitionLabel) {
-		super(partitionLabel);
+	public QgrsPartitionResult(GenePartition partition, QgrsSeriesSet seriesSet) {
+		super(partition);
+		this.seriesSet = seriesSet;
 	}
 	
 	
+
 	@Override
 	public void addBatch(PreparedStatement ps) {
-		int c = 1;
-		try {
-			ps.setString(c++, this.partitionLabel);
-			ps.setInt(c++, this.getNumSamples());
-			
-			ps.setDouble(c++, this.all.getSum());
-			ps.setDouble(c++, this.all.getMean());
-			ps.setDouble(c++, this.all.getMedian());
-			
-			ps.setDouble(c++, this._5Prime.getSum());
-			ps.setDouble(c++, this._5Prime.getMean());
-			ps.setDouble(c++, this._5Prime.getMedian());
-			
-			ps.setDouble(c++, this.cds.getSum());
-			ps.setDouble(c++, this.cds.getMean());
-			ps.setDouble(c++, this.cds.getMedian());
-			
-			ps.setDouble(c++, this._3Prime.getSum());
-			ps.setDouble(c++, this._3Prime.getMean());
-			ps.setDouble(c++, this._3Prime.getMedian());
-			
-			ps.setDouble(c++, this.CDS80.getSum());
-			ps.setDouble(c++, this.CDS80.getMean());
-			ps.setDouble(c++, this.CDS80.getMedian());
-			
-			ps.addBatch();
+		
+		String a = this.partition.getAnalysisId();
+		String p = this.partition.partitionId;
+		
+		for ( QgrsCriteriaSeries q : this.seriesSet ) {
+			int s = q.getOrder();
+			for ( QgrsLocationAccumulator loc : q.getLocations() ) {
+				try {
+					ps.setString(1, a);
+					ps.setString(2, p);
+					ps.setInt(3, s);
+					ps.setInt(4, loc.getOrder());
+					ps.setString(5, loc.getLabel());
+					ps.setInt(6, (int)loc.results.getSum());
+					ps.setDouble(7,  loc.results.getMean());
+					ps.setDouble(8,  loc.results.getMedian());
+					ps.addBatch();
+				}
+				catch (Exception e) {
+					throw new RuntimeException (e);
+				}
+			}
 		}
-		catch ( Exception e) {
-			e.printStackTrace();
-		}
+		
+		
 	}
 
 	

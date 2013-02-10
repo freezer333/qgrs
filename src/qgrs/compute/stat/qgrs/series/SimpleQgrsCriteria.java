@@ -1,6 +1,5 @@
-package qgrs.compute.stat.qgrs.user;
+package qgrs.compute.stat.qgrs.series;
 
-import qgrs.compute.stat.qgrs.QgrsCriteria;
 import qgrs.data.records.GQuadruplexRecord;
 import qgrs.data.records.QgrsHomologyProfile;
 
@@ -9,7 +8,7 @@ import qgrs.data.records.QgrsHomologyProfile;
  * Provides minimal filtering for qgrs by min g-score and min tetrads
  * 
  */
-public class SimpleQgrsCriteria implements QgrsCriteria {
+public class SimpleQgrsCriteria extends QgrsCriteriaSeries {
 
 	private final int minGScore;
 	private final int minTetrads;
@@ -22,7 +21,8 @@ public class SimpleQgrsCriteria implements QgrsCriteria {
 	private final int minHomologs;
 	private QgrsHomologyCriteria homologyCriteria = new QgrsHomologyCriteria();
 
-	public SimpleQgrsCriteria() {
+	public SimpleQgrsCriteria(int order) {
+		super(order, buildLabel(17, 2, 0, null));
 		this.minGScore = 17;
 		this.minTetrads = 2;
 		this.minHomologs = 0;  // defaults to not requiring any homologs
@@ -30,14 +30,24 @@ public class SimpleQgrsCriteria implements QgrsCriteria {
 	}
 
 
-	public SimpleQgrsCriteria(int minGScore, int minTetrads, int minHomolgs, QgrsHomologyCriteria homologyCriteria) {
-		super();
+	public SimpleQgrsCriteria(int order, int minGScore, int minTetrads, int minHomolgs, QgrsHomologyCriteria homologyCriteria) {
+		super(order, buildLabel(minGScore, minTetrads, minHomolgs, homologyCriteria));
 		this.minGScore = minGScore;
 		this.minTetrads = minTetrads;
 		this.minHomologs = minHomolgs;
 		this.homologyCriteria = homologyCriteria;
 	}
 	
+	
+	static String buildLabel(int minGScore, int minTetrads, int minHomologs, QgrsHomologyCriteria homologyCriteria) {
+		String retval = "Min G-Score:  " + minGScore;
+		retval += ", Min Tetrads:  " + minTetrads;
+		if ( homologyCriteria != null ) {
+			retval += ", Min Homolog:  " + minHomologs;
+			retval += (", " +  homologyCriteria.buildLabel() );
+		}
+		return retval;
+	}
 	
 
 	@Override

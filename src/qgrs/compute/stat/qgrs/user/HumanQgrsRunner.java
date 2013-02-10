@@ -1,8 +1,11 @@
 package qgrs.compute.stat.qgrs.user;
 
 import qgrs.compute.stat.GenePartitioner;
-import qgrs.compute.stat.qgrs.QgrsCriteria;
 import qgrs.compute.stat.qgrs.QgrsRunner;
+import qgrs.compute.stat.qgrs.location.sets.QgrsLocationSet;
+import qgrs.compute.stat.qgrs.location.sets.QgrsRegionLocationSet;
+import qgrs.compute.stat.qgrs.series.DefaultQgrsSeriesSet;
+import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 
 public class HumanQgrsRunner extends QgrsRunner {
 
@@ -25,8 +28,8 @@ public class HumanQgrsRunner extends QgrsRunner {
 	}
 	
 	@Override
-	protected QgrsCriteria buildQgrsCriteria() {
-		return new SimpleQgrsCriteria(17, 2, 0, new QgrsHomologyCriteria(0));
+	protected QgrsSeriesSet buildSeriesSet() {
+		return new DefaultQgrsSeriesSet();
 	}
 
 	@Override
@@ -34,7 +37,10 @@ public class HumanQgrsRunner extends QgrsRunner {
 		return new HumanAllPartitioner(this);
 	}
 	
-	
+	@Override
+	protected QgrsLocationSet buildQgrsLocationSet() {
+		return new QgrsRegionLocationSet();
+	}
 	
 	public static void main(String [] args) throws Exception {
 		HumanQgrsRunner e = new HumanQgrsRunner();

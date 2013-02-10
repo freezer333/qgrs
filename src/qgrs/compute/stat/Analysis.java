@@ -21,13 +21,11 @@ public abstract class Analysis implements Callable<Object>{
 	final int THREAD_POOL_SIZE = 20;
 	
 	final GenePartitioner partitioner;
-	final PartitionResultRecorder resultRecorder;
 	protected final boolean active;
 	
 	public Analysis(boolean active) {
 		super();
 		this.partitioner = buildPartitioner();
-		this.resultRecorder = buildStatementBuilder();
 		this.active = active;
 	}
 	
@@ -42,10 +40,18 @@ public abstract class Analysis implements Callable<Object>{
 	public void execute() throws Exception {
 		System.out.println("Connecting to database...");
 		Connection c = getConnection();
-		prepareTables(c);
+		
+		System.out.println("Initializing database tables...");
+		prepareCustomTables(c);
+		cleanCustomTablesById(c);
+		
+		prepareCoreTables(c);
+		
+		
 		System.out.println("Executing " + this.getDescription());
 		System.out.print("Creating partitions...");
 		HashSet<GenePartition> partitions = partitioner.partition(c);
+		
 		StatusReporter r= new StatusReporter(partitions.size());
 		System.out.println(" " + partitions.size() + " created");
 		
@@ -53,15 +59,14 @@ public abstract class Analysis implements Callable<Object>{
 		for ( GenePartition partition: partitions) {
 			recordPartitionEntry(c, partition);
 			processors.add(createProcessor(partition, r));
-		}
+		} 
 		
 		System.out.println("Executing analysis...");
 		ExecutorService executorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
 		List<Future<PartitionResult>> results = executorService.invokeAll(processors);
 		
 		System.out.println("\nReporting Results...");
-		resultRecorder.createResultsTable(c);
-		PreparedStatement ps = resultRecorder.buildPreparedStatementForBatch(c);
+		PreparedStatement ps = this.buildResultsStatement(c);
 		for  ( Future<PartitionResult> result : results ) {
 			result.get().addBatch(ps);
 		}
@@ -87,8 +92,8 @@ public abstract class Analysis implements Callable<Object>{
 		
 	}
 	
+	protected abstract PreparedStatement buildResultsStatement(Connection c)  throws Exception;
 	protected abstract GenePartitioner buildPartitioner();
-	protected abstract PartitionResultRecorder buildStatementBuilder();
 	protected abstract PartitionAnalyzer createProcessor(GenePartition partition, StatusReporter reporter);
 	public abstract String getDescription();
 	public abstract String getId();
@@ -104,9 +109,10 @@ public abstract class Analysis implements Callable<Object>{
 	}
 	
 	
+	protected abstract void cleanCustomTablesById(Connection c);
+	protected abstract void prepareCustomTables(Connection c);
 	
-	
-	private void prepareTables(Connection c) {
+	private void prepareCoreTables(Connection c) {
 		createTableIfNotExists(c);
 		createPartitionTableIfNotExists(c);
 		cleanTablesById(c);
@@ -150,7 +156,7 @@ public abstract class Analysis implements Callable<Object>{
 		}
 	}
 	
-	private void executeUpdateAndClose(PreparedStatement ps) {
+	protected void executeUpdateAndClose(PreparedStatement ps) {
 		try {
 			ps.executeUpdate();
 		} catch (Exception e) {
@@ -181,7 +187,8 @@ public abstract class Analysis implements Callable<Object>{
 	}
 	
 	private void cleanTablesById(Connection c) {
-		// delete this ID out of the analysis table.  Cascading deletes will take care of the rest.
+		
+		
 		String sql = "delete from analysis where id = ?";
 		try {
 			PreparedStatement ps = c.prepareStatement(sql);

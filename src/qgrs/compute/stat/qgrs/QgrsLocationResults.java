@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
-public class QgrsRegionStats extends DescriptiveStatistics {
+public class QgrsLocationResults extends DescriptiveStatistics {
 
 	public double getMedian() {
 		return getPercentile(50);

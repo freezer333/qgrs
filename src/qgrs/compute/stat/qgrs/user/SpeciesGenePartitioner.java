@@ -54,8 +54,8 @@ public class SpeciesGenePartitioner extends GenePartitioner {
 	}
 	
 	private GenePartition getPartition(Connection c, String species) {
-		System.out.println("WARNING:  Species partitioner in debug mode (limit is set to 10 genes / species)");
-		String q = "SELECT accessionNumber FROM GENE where species='" + species + "'  LIMIT 10";
+		System.out.println("WARNING:  Species partitioner in debug mode (limit is set to 300 genes / species)");
+		String q = "SELECT accessionNumber FROM GENE where species='" + species + "'  LIMIT 300";
 		GenePartition p = new GenePartition(runner, species);
 		try {
 			Statement stmt = c.createStatement();

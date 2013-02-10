@@ -11,8 +11,6 @@ public class SuiteRunner {
 
 	public final static List<QgrsRunner> runners = Arrays.asList(
 			new HumanQgrsRunner(), 
-			new HumanQgrsHRunner(),  
-			new HumanQgrsH95Runner(), 
 			new SpeciesRunner()
 			);
 	
