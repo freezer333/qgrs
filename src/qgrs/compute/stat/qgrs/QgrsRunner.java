@@ -24,18 +24,6 @@ public abstract class QgrsRunner extends Analysis {
 		
 	}
 	
-	
-	// NEED TO FIGURE OUT WHERE TO CALL THIS.  Create series table, and then insert the series. 
-	
-	// IMPORTANT:  The insertion would happen with each partition
-	
-	// NOTE:  This can turn into an interactive system:
-		// After defining a set of series, and a set of location sets, a UI can be built
-		// to allow users to pick and choose.  Perhaps even create new ones through configuration.
-	
-		// 	Partitioning can be done online by uploading a set of accession numbers for each parition, or choosing
-		// 	from an existing set.
-	
 	@Override 
 	protected void prepareCustomTables(Connection c) {
 		createSeriesTable(c);
@@ -66,7 +54,7 @@ public abstract class QgrsRunner extends Analysis {
 	@Override
 	public PreparedStatement buildResultsStatement(Connection conn) throws Exception{
 		String iSql = 	"INSERT INTO results (analysisId, partitionId, " +
-						"seriesId, id, label, " +
+						"seriesId, resultId, label, " +
 						"total, mean, " +
 						"median) " + 
 						"VALUES (?, ?, ?, ?, ? , ?, ?, ?)";
@@ -78,10 +66,9 @@ public abstract class QgrsRunner extends Analysis {
 		String sql = "create table if not exists series (" + 
 				 "analysisId varchar(255) not null, " +
 				 "partitionId varchar(255) not null, " +
-				 "id int, " +
+				 "seriesId int, " +
 				 "description varchar(MAX), " +
-				 "primary key (analysisId, partitionId, id), " +
-				 "foreign key (partitionId) references partition(partitionId), " +
+				 "primary key (analysisId, partitionId, seriesId), " +
 				 "foreign key (analysisId) references analysis(id) on delete cascade)";
 		try {
 			PreparedStatement ps = c.prepareStatement(sql);
@@ -97,14 +84,12 @@ public abstract class QgrsRunner extends Analysis {
 				 "analysisId varchar(255) not null, " +
 				 "partitionId varchar(255) not null, " +
 				 "seriesId varchar(255) not null, " +
-				 "id int not null, " +
+				 "resultId int not null, " +
 				 "label varchar(255) not null, " +
 				 "total int not null, " +
 				 "mean double not null, " +
 				 "median double not null, " +
-				 "primary key (analysisId, partitionId, seriesId, id), " +
-				 "foreign key (seriesId) references series(id), " +
-				 "foreign key (partitionId) references partition(partitionId), " +
+				 "primary key (analysisId, partitionId, seriesId, resultId), " +
 				 "foreign key (analysisId) references analysis(id) on delete cascade)";
 		try {
 			PreparedStatement ps = c.prepareStatement(sql);

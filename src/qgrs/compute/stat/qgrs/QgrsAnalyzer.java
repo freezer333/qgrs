@@ -30,9 +30,7 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 	
 	
 	
-	/**
-	 * This needs to be enhanced to take in qgrs-h, etc.
-	 */
+	
 	@Override
 	public PartitionResult call() throws Exception {
 		QgrsPartitionResult result = new QgrsPartitionResult(this.parition, this.seriesSet);
@@ -45,7 +43,6 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 		// for each series, record the partition/series record in series table
 		this.seriesSet.insert(conn.getConnection(), this.parition.analysisId, this.parition.partitionId);
 		
-		
 		for ( GeneSequence seq : genes ) {
 			Collection<QgrsHomologyProfile> qgrsList = qgrsDb.getQgrsHomologyProfiles(seq);
 			for ( QgrsCriteriaSeries series : this.seriesSet ) {
@@ -57,8 +54,6 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 				}
 				series.getLocations().finishAccumulators();
 			}
-
-			// record results in results table.
 		}
 		this.statusReporter.recordPartitionComplete();
 		

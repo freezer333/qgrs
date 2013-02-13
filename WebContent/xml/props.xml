@@ -3,11 +3,11 @@
 	<AlertMessage>
 	</AlertMessage>
 	
-	<db_seedcache>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb_seed</db_seedcache> 
-	<db>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb;CACHE_SIZE=131072;MULTI_THREADED=1</db>
+	<!-- <db_seedcache>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb_seed</db_seedcache> 
+	<db>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb;CACHE_SIZE=131072;MULTI_THREADED=1</db>-->
 	
-	<!-- <db_seedcache>jdbc:h2:file:~/projects/qgrs_db/qgrsdb_seed</db_seedcache> 
-	<db>jdbc:h2:file:~/projects/qgrs_db/qgrsdb;CACHE_SIZE=131072;MULTI_THREADED=1</db> --> 
+	<db_seedcache>jdbc:h2:file:~/projects/qgrs_db/qgrsdb_seed</db_seedcache> 
+	<db>jdbc:h2:file:~/projects/qgrs_db/qgrsdb;CACHE_SIZE=131072;MULTI_THREADED=1</db> 
 	
 	 
  	<!-- <db>jdbc:h2:file:/Users/sfrees/dev/qgrsdb</db> -->

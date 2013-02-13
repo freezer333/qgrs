@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class QgrsSeriesSet extends LinkedList<QgrsCriteriaSeries>{
 	public void insert(Connection c, String analysisId, String partitionId) {
-		String sql = "insert into series (analysisId, partitionId, id, description) values(?, ?, ?, ?)";
+		String sql = "insert into series (analysisId, partitionId, seriesId, description) values(?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = c.prepareStatement(sql);
 			for ( QgrsCriteriaSeries q : this ) {
@@ -17,10 +17,8 @@ public class QgrsSeriesSet extends LinkedList<QgrsCriteriaSeries>{
 				ps.setString(2, partitionId);
 				ps.setInt(3, q.getOrder());
 				ps.setString(4, q.getDescription());
-				ps.addBatch();
-				 
+				ps.execute();
 			}
-			ps.executeBatch();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

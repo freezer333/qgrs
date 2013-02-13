@@ -42,11 +42,18 @@ public abstract class Analysis implements Callable<Object>{
 		Connection c = getConnection();
 		
 		System.out.println("Initializing database tables...");
+		
+		// Make sure the tables exist
+		createTableIfNotExists(c);
+		createPartitionTableIfNotExists(c);
 		prepareCustomTables(c);
+		
+		// Wipe out existing data for this analysis (reverse order)
 		cleanCustomTablesById(c);
+		cleanTablesById(c);
 		
-		prepareCoreTables(c);
-		
+		// Create a record for this analysis
+		insert(c);
 		
 		System.out.println("Executing " + this.getDescription());
 		System.out.print("Creating partitions...");
@@ -112,12 +119,7 @@ public abstract class Analysis implements Callable<Object>{
 	protected abstract void cleanCustomTablesById(Connection c);
 	protected abstract void prepareCustomTables(Connection c);
 	
-	private void prepareCoreTables(Connection c) {
-		createTableIfNotExists(c);
-		createPartitionTableIfNotExists(c);
-		cleanTablesById(c);
-		insert(c);
-	}
+	
 	
 	private void recordPartitionEntry(Connection c, GenePartition partition) {
 		createPartitionTableIfNotExists(c);
