@@ -28,8 +28,18 @@ public class AnalysisRecord {
 		this.date = rs.getDate("date");
 	}
 	
-	static AnalysisRecord loadAnalysis(String analysisId, Connection c) {
-		return null;
+	public static AnalysisRecord loadAnalysis(String analysisId, Connection c) throws SQLException {
+		AnalysisRecord a  = null;
+		String sql = "SELECT * FROM ANALYSIS where id = '" + analysisId + "'";
+		Statement stmt = c.createStatement();
+		ResultSet rs =  stmt.executeQuery(sql);
+		if ( rs.next() ) {
+			a = new AnalysisRecord(rs);
+		}
+		else {
+			return null;
+		}
+		return a;
 	}
 	
 	public static Collection<AnalysisRecord> getAllAnalysis_shallow(Connection c) throws SQLException{

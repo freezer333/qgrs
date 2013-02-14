@@ -28,7 +28,7 @@ public class Stats extends AbstractController {
 	    Element root = new Element("qgrs");
 	    QgrsWebContext qContext = (QgrsWebContext)context;
 	    DbCriteria dbCriteria = new DbCriteria(qContext);
-	    SimpleDateFormat df = new SimpleDateFormat("mm/dd/yyyy:hh:mm:ss");
+	    SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
 	    try {
 		    for (AnalysisRecord r : AnalysisRecord.getAllAnalysis_shallow(qContext.getDbConnection().getConnection())) {
 		    	Element re = new Element("analysis");

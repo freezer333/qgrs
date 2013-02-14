@@ -1,8 +1,6 @@
 package qgrs.compute.stat.qgrs;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,30 +11,26 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import qgrs.compute.stat.qgrs.TableReader.RowReader;
+import qgrs.compute.stat.db.AnalysisRecord;
 
 public class WorkbookBuilder {
 
-	private final QgrsRunner runner;
+	private final AnalysisRecord analysis;
 	
-	public WorkbookBuilder (QgrsRunner runner) {
-		this.runner = runner;
+	public WorkbookBuilder (AnalysisRecord analysis) {
+		this.analysis = analysis;
 	}
 	
 	public Workbook makeWorkbook(Connection con) throws Exception {
 		Workbook wb = new XSSFWorkbook();
 		Sheet sheet = wb.createSheet("analysis");
 	    
-	    TableReader reader = new TableReader(this.runner.getTableName(), con);
-	    List<String> cols = new ArrayList<String>();
-	    cols.addAll(reader.columns.keySet());
-	    Collections.sort(cols);
-	    
+	     
 	    Row row = sheet.createRow((short)0);
 	    Cell cell = row.createCell(0);
-	    cell.setCellValue(this.runner.getDescription());
+	    cell.setCellValue(this.analysis.description);
 	    
-	    row = sheet.createRow(1);
+	   /* row = sheet.createRow(1);
 	    int i = 0;
 	    for ( String col : cols ) {
 	    	 cell = row.createCell(i++);
@@ -44,7 +38,7 @@ public class WorkbookBuilder {
 	    }
 	    int rnum = 2;
 	    
-	    String q = "select * from " + this.runner.getTableName();
+	    String q = "select * from " + this.analysis.getTableName();
 	    Statement stmt = con.createStatement();
 	    ResultSet rs = stmt.executeQuery(q);
 	    while (rs.next()) {
@@ -57,7 +51,7 @@ public class WorkbookBuilder {
 	    		cell.setCellValue(v);
 	    	}
 	    }
-	    
+	    */
 	    return wb;
 	}
 }

@@ -40,10 +40,10 @@
 				</thead>
 				
 				<tbody>
-				<xsl:for-each select="qgrs/analysys[active='true']">
+				<xsl:for-each select="qgrs/analysis[active='true']">
 					<tr>
-						<td><a href="statsexport?table={tableName}"><xsl:value-of select="description"/></a></td>
-						<td><a href="statsexport?table={tableName}"><xsl:value-of select="date"/></a></td>
+						<td><a href="statsexport?id={id}"><xsl:value-of select="description"/></a></td>
+						<td><xsl:value-of select="date"/></td>
 					</tr>
 				</xsl:for-each>
 				</tbody>
