@@ -15,12 +15,11 @@ import qgrs.compute.stat.Analysis;
 
 public class OntologyGenePartitioner extends GenePartitioner {
 
-	//needs to be fully filled in
 	String[] Transcription_Factor_Genes = {"transcription factor complex", "transcription factor binding"};
 	String[] Oncogenes = {"oncogene-induced senescence"};
 	String[] Apoptosis_Genes = {"apoptotic process", "apoptotic signaling pathway", "induction of apoptosis", "execution phase of apoptosis", "negative regulation of apoptotic process", "positive regulation of apoptotic process"};
 	String[] Epigenetics_Genes = {"DNA-methyltransferase", "methyl-CpG", "methyl-CpNpN", "DNA hypermethylation", "DNA hypomethylation"};
-	String[] Brain_Ddevelopment_Genes = {"brain segmentation", "brain morphogenesis", "central complex development", "forebrain development","hindbrain development","midbrain development"};
+	String[] Brain_Development_Genes = {"brain segmentation", "brain morphogenesis", "central complex development", "forebrain development","hindbrain development","midbrain development"};
 	
 	public OntologyGenePartitioner(Analysis runner) {
 		super(runner);
@@ -35,7 +34,7 @@ public class OntologyGenePartitioner extends GenePartitioner {
 		partitions.add(getPartition(c, Oncogenes, "Oncogenes"));
 		partitions.add(getPartition(c, Apoptosis_Genes, "Apoptosis Genes"));
 		partitions.add(getPartition(c, Epigenetics_Genes, "Epigentics Genes"));
-		partitions.add(getPartition(c, Brain_Ddevelopment_Genes, "Brain Development Genes"));
+		partitions.add(getPartition(c, Brain_Development_Genes, "Brain Development Genes"));
 		
 		return partitions;
 	}
@@ -48,9 +47,6 @@ public class OntologyGenePartitioner extends GenePartitioner {
 			}
 			q +=" GOTERM = '" + list[j] + "'";
 		}
-
-		//take this out before running full
-		q += " LIMIT 500";
 
 		GenePartition p = new GenePartition(this.runner, name);
 		try {
