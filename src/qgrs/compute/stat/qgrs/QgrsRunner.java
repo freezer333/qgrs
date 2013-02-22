@@ -13,15 +13,9 @@ import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 
 public abstract class QgrsRunner extends Analysis {
 
-	final QgrsSeriesSet seriesSet;
 	
 	public QgrsRunner(boolean active) {
 		super(active);
-		this.seriesSet = this.buildSeriesSet();
-		for ( QgrsCriteriaSeries series : this.seriesSet ) {
-			series.setLocations(this.buildQgrsLocationSet());
-		}
-		
 	}
 	
 	@Override 
@@ -107,7 +101,11 @@ public abstract class QgrsRunner extends Analysis {
 
 	@Override
 	protected PartitionAnalyzer createProcessor(GenePartition partition, StatusReporter reporter) {
-		QgrsAnalyzer analyzer = new QgrsAnalyzer(partition, seriesSet, this.buildQgrsLocationSet(), reporter);
+		QgrsSeriesSet seriesSet = this.buildSeriesSet();
+		for ( QgrsCriteriaSeries series : seriesSet ) {
+			series.setLocations(this.buildQgrsLocationSet());
+		}
+		QgrsAnalyzer analyzer = new QgrsAnalyzer(partition, seriesSet, reporter);
 		return analyzer;
 	}
 	

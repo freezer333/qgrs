@@ -8,7 +8,6 @@ import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.PartitionAnalyzer;
 import qgrs.compute.stat.PartitionResult;
 import qgrs.compute.stat.StatusReporter;
-import qgrs.compute.stat.qgrs.location.sets.QgrsLocationSet;
 import qgrs.compute.stat.qgrs.series.QgrsCriteriaSeries;
 import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 import qgrs.data.GeneSequence;
@@ -22,8 +21,7 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 	final QgrsSeriesSet seriesSet;
 
 	
-	///Todo:  turn criteria into a set (these are the series in the graphs)
-	public QgrsAnalyzer(GenePartition parition, QgrsSeriesSet seriesSet, QgrsLocationSet locations, StatusReporter reporter) {
+	public QgrsAnalyzer(GenePartition parition, QgrsSeriesSet seriesSet, StatusReporter reporter) {
 		super(parition,reporter);
 		this.seriesSet = seriesSet;
 	}
