@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 import qgrs.db.AppProperties;
 import framework.db.DatabaseConnectionParameters;
 
@@ -54,6 +55,10 @@ public abstract class Analysis implements Callable<Object>{
 		
 		// Create a record for this analysis
 		insert(c);
+		
+		QgrsSeriesSet ss = this.buildSeriesSet();
+		ss.insert(c, this.getId());
+		
 		
 		System.out.println("Executing " + this.getDescription());
 		System.out.print("Creating partitions...");
@@ -102,6 +107,7 @@ public abstract class Analysis implements Callable<Object>{
 	protected abstract PreparedStatement buildResultsStatement(Connection c)  throws Exception;
 	protected abstract GenePartitioner buildPartitioner();
 	protected abstract PartitionAnalyzer createProcessor(GenePartition partition, StatusReporter reporter);
+	protected abstract QgrsSeriesSet buildSeriesSet();
 	public abstract String getDescription();
 	public abstract String getId();
 	
@@ -209,7 +215,7 @@ public abstract class Analysis implements Callable<Object>{
 			PreparedStatement ps = c.prepareStatement(sql);
 			ps.setString(1, this.getId());
 			ps.setString(2, this.getDescription());
-			ps.setBoolean(3, this.isActive());
+			ps.setBoolean(3, true);
 			ps.setDate(4, new Date(new java.util.Date().getTime()));
 			executeUpdateAndClose(ps);
 		}

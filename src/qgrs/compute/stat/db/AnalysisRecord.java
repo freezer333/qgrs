@@ -1,7 +1,6 @@
 package qgrs.compute.stat.db;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -32,6 +31,33 @@ public class AnalysisRecord {
 		this.series = new LinkedList<SeriesRecord>();
 		this.locations = new LinkedList<LocationRecord>();
 		this.results = new HashMap<RecordKey, ResultRecord>();
+	}
+	
+	private PartitionRecord getParitionRecord(String id) {
+		for ( PartitionRecord p : this.partitions ) {
+			if ( p.partitionId.equalsIgnoreCase(id)) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
+	private SeriesRecord getSeriesRecord(int id) {
+		for ( SeriesRecord s : this.series ) {
+			if ( s.seriesId == id ) {
+				return s;
+			}
+		}
+		return null;
+	}
+	
+	private LocationRecord getLocationRecord(int id) {
+		for ( LocationRecord loc : this.locations ) {
+			if ( loc.id == id ) {
+				return loc;
+			}
+		}
+		return null;
 	}
 	
 	private void loadSeriesRecords(Connection c) throws SQLException{
@@ -66,7 +92,21 @@ public class AnalysisRecord {
 		stmt.close();
 	}
 	
-	
+	private void loadResultRecords(Connection c) throws SQLException {
+		String sql = "select * from results where analysisId = '" + this.id + "'";
+		Statement stmt = c.createStatement();
+		ResultSet rs =  stmt.executeQuery(sql);
+		while ( rs.next() ) {
+			String partitionId = rs.getString("partitionId");
+			int seriesId = rs.getInt("seriesId");
+			int locationId = rs.getInt("resultId");
+			
+			RecordKey key = new RecordKey(this.getParitionRecord(partitionId), this.getSeriesRecord(seriesId), this.getLocationRecord(locationId));
+			ResultRecord record = new ResultRecord(rs);
+			this.results.put(key, record);
+		}
+		stmt.close();
+	}
 	
 	
 	public static AnalysisRecord loadAnalysis(String analysisId, Connection c) throws SQLException {
@@ -84,6 +124,7 @@ public class AnalysisRecord {
 		a.loadSeriesRecords(c);
 		a.loadPartitionRecords(c);
 		a.loadLocationRecords(c);
+		a.loadResultRecords(c);
 		return a;
 	}
 	

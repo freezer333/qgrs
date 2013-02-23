@@ -49,13 +49,21 @@ public class SimpleQgrsCriteria extends QgrsCriteriaSeries {
 		return retval;
 	}
 	
+	
+	
+
+	@Override
+	public boolean acceptQuadruplex(int tetrads, int gScore) {
+		return 	gScore >= this.minGScore && 
+				tetrads >= this.minTetrads;
+	}
+
 
 	@Override
 	public boolean accept(QgrsHomologyProfile record) {
 		return 
-				record.principle.getScore() >= this.minGScore && 
-				record.principle.getNumTetrads() >= this.minTetrads &&
-				record.getNumHomologsSpecies(this.homologyCriteria) >= this.minHomologs;
+				this.acceptQuadruplex(record.principle.getNumTetrads(), record.principle.getScore()) && 
+				record.getNumHomologsSpecies(this, this.homologyCriteria) >= this.minHomologs;
 	}
 
 }

@@ -6,7 +6,6 @@ import java.sql.SQLException;
 public class SeriesRecord {
 
 	public final String analysisId;
-	public final String partitionId;
 	public final int seriesId;
 	public final String description;
 	
@@ -14,7 +13,6 @@ public class SeriesRecord {
 	public SeriesRecord(ResultSet rs) throws SQLException {
 		this.seriesId = rs.getInt("seriesId");
 		this.analysisId = rs.getString("analysisId");
-		this.partitionId = rs.getString("partitionId");
 		this.description = rs.getString("description");
 	}
 }

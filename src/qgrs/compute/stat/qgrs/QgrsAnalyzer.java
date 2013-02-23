@@ -38,8 +38,6 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 		
 		List<GeneSequence> genes = geneDb.getIn(this.parition.ids);
 		
-		// for each series, record the partition/series record in series table
-		this.seriesSet.insert(conn.getConnection(), this.parition.analysisId, this.parition.partitionId);
 		
 		for ( GeneSequence seq : genes ) {
 			Collection<QgrsHomologyProfile> qgrsList = qgrsDb.getQgrsHomologyProfiles(seq);

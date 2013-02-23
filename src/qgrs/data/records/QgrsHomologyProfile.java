@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 
+import qgrs.compute.stat.qgrs.series.QgrsCriteriaSeries;
 import qgrs.compute.stat.qgrs.series.QgrsHomologyCriteria;
 
 public class QgrsHomologyProfile {
@@ -23,18 +24,18 @@ public class QgrsHomologyProfile {
 		return homologs;
 	}
 	
-	public Collection<String> getHomologousSpecies(QgrsHomologyCriteria homologyCriteria) {
+	public Collection<String> getHomologousSpecies(QgrsCriteriaSeries qgrsCriteria,QgrsHomologyCriteria homologyCriteria) {
 		HashSet<String> species = new HashSet<String>();
 		for (QgrsHomologyRecord r : this.homologs ) {
-			if ( homologyCriteria.accept(r)) {
+			if ( homologyCriteria.accept(r) && qgrsCriteria.acceptQuadruplex(r.getC_tetrads(), r.getC_gScore())) {
 				species.add(r.getC_species());
 			}
 		}
 		return species;
 	}
 	
-	public int getNumHomologsSpecies(QgrsHomologyCriteria homologyCriteria) {
-		return this.getHomologousSpecies(homologyCriteria).size();
+	public int getNumHomologsSpecies(QgrsCriteriaSeries qgrsCriteria, QgrsHomologyCriteria homologyCriteria) {
+		return this.getHomologousSpecies(qgrsCriteria, homologyCriteria).size();
 	}
 	
 	

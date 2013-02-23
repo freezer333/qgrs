@@ -59,10 +59,9 @@ public abstract class QgrsRunner extends Analysis {
 	void createSeriesTable(Connection c) {
 		String sql = "create table if not exists series (" + 
 				 "analysisId varchar(255) not null, " +
-				 "partitionId varchar(255) not null, " +
 				 "seriesId int, " +
 				 "description varchar(MAX), " +
-				 "primary key (analysisId, partitionId, seriesId), " +
+				 "primary key (analysisId, seriesId), " +
 				 "foreign key (analysisId) references analysis(id) on delete cascade)";
 		try {
 			PreparedStatement ps = c.prepareStatement(sql);
@@ -94,7 +93,7 @@ public abstract class QgrsRunner extends Analysis {
 		}
 	}
 
-	protected abstract QgrsSeriesSet buildSeriesSet();
+	
 	protected abstract QgrsLocationSet buildQgrsLocationSet();
 
 	
