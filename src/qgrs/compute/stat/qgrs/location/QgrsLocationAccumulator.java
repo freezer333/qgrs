@@ -4,11 +4,11 @@ import qgrs.compute.stat.qgrs.QgrsLocationResults;
 import qgrs.data.GeneSequence;
 import qgrs.data.records.GQuadruplexRecord;
 
-public abstract class QgrsLocationAccumulator {
+public abstract class QgrsLocationAccumulator implements Comparable {
 
 	public final QgrsLocationResults results = new QgrsLocationResults();
 	private int count;
-	final private int order;
+	private int order;
 	final private String label;
 	
 	public QgrsLocationAccumulator(int order, String label) {
@@ -18,8 +18,26 @@ public abstract class QgrsLocationAccumulator {
 	}
 	
 	
+	
+
+
+	@Override
+	public int compareTo(Object o) {
+		QgrsLocationAccumulator other = (QgrsLocationAccumulator) o;
+		return new Integer(this.order).compareTo(new Integer(other.order));
+	}
+
+
+
+
+
 	public String getLabel() {
 		return label;
+	}
+
+
+	public void setOrder(int order) {
+		this.order = order;
 	}
 
 

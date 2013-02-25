@@ -1,7 +1,7 @@
 package qgrs.compute.stat.qgrs.series;
 
+import qgrs.compute.stat.qgrs.location.QgrsLocationAccumulator;
 import qgrs.compute.stat.qgrs.location.sets.QgrsLocationSet;
-import qgrs.data.records.GQuadruplexRecord;
 import qgrs.data.records.QgrsHomologyProfile;
 
 public abstract class QgrsCriteriaSeries {
@@ -16,7 +16,7 @@ public abstract class QgrsCriteriaSeries {
 	public abstract boolean accept(QgrsHomologyProfile record);
 	public abstract boolean acceptQuadruplex(int tetrads, int gScore);
 
-
+	
 
 	public QgrsCriteriaSeries(int order, String description) {
 		super();

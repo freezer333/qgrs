@@ -2,6 +2,9 @@ package qgrs.compute.stat.qgrs;
 
 import java.sql.Connection;
 import java.text.DecimalFormat;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -52,7 +55,10 @@ public class WorkbookBuilder {
 		}
 		
 		int r = 2;
-		for ( LocationRecord loc : analysis.locations ){
+		List<LocationRecord> locations = new LinkedList<LocationRecord>();
+		locations.addAll(analysis.locations);
+		Collections.sort(locations);
+		for ( LocationRecord loc : locations ){
 			c = 0;
 			row = sheet.createRow(r);
 			Cell col = row.createCell(c);
@@ -131,6 +137,8 @@ public class WorkbookBuilder {
 	    cell.setCellValue("Parition ID");
 	    cell = row.createCell(1);
 	    cell.setCellValue("Partition Description");
+	    cell = row.createCell(2);
+	    cell.setCellValue("# of Genes in Partition");
 	    
 	    for ( PartitionRecord p : analysis.partitions) {
 		    row = sheet.createRow(r++);
@@ -138,6 +146,8 @@ public class WorkbookBuilder {
 		    cell.setCellValue(p.partitionId);
 		    cell = row.createCell(1);
 		    cell.setCellValue(p.description);
+		    cell = row.createCell(2);
+		    cell.setCellValue(p.numSamples);
 	    }
 		return r;
 	}

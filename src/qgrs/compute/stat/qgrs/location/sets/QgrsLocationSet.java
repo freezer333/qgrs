@@ -9,6 +9,16 @@ import qgrs.data.records.GQuadruplexRecord;
 public class QgrsLocationSet extends LinkedList<QgrsLocationAccumulator> {
 
 	
+	public QgrsLocationSet join(QgrsLocationSet other) {
+		int next = this.size();
+		for ( QgrsLocationAccumulator loc : other){
+			loc.setOrder(next++);
+			this.add(loc);
+		}
+		return this;
+	}
+	
+	
 	public void startAccumulators() {
 		for ( QgrsLocationAccumulator loc : this ) {
 			loc.startAccumulator();

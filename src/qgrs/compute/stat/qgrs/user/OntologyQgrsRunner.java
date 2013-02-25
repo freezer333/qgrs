@@ -4,6 +4,7 @@ import qgrs.compute.stat.GenePartitioner;
 import qgrs.compute.stat.qgrs.QgrsRunner;
 import qgrs.compute.stat.qgrs.location.sets.QgrsAnyLocationSet;
 import qgrs.compute.stat.qgrs.location.sets.QgrsLocationSet;
+import qgrs.compute.stat.qgrs.location.sets.QgrsRegionLocationSet;
 import qgrs.compute.stat.qgrs.series.DefaultQgrsSeriesSet;
 import qgrs.compute.stat.qgrs.series.QgrsSeriesSet;
 
@@ -35,7 +36,7 @@ public class OntologyQgrsRunner extends QgrsRunner {
 	
 	@Override
 	protected QgrsLocationSet buildQgrsLocationSet() {
-		return new QgrsAnyLocationSet();
+		return new QgrsAnyLocationSet().join(new QgrsRegionLocationSet());
 	}
 	
 	
