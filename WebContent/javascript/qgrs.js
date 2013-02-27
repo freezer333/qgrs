@@ -104,6 +104,9 @@ function applyStyles() {
 	$('.outputContainer table tbody tr:even').addClass('even');
 	$('.outputContainer table tbody tr:odd').addClass('odd');
 	
+	$('.analysisTable tbody tr:even').addClass('even');
+	$('.analysisTable tbody tr:odd').addClass('odd');
+	
 	$('#infoTable tbody tr:even').addClass('odd');
 	$('#infoTable tbody tr:odd').addClass('even');
 	

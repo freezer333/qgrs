@@ -4,10 +4,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
+
+import org.jdom.Element;
+
+
 
 public class AnalysisRecord {
 
@@ -20,6 +25,47 @@ public class AnalysisRecord {
 	public final Collection<SeriesRecord> series; // curves
 	public final Collection<LocationRecord> locations;  // x-axis
 	public final HashMap<RecordKey, ResultRecord> results; // data points
+	
+	
+	public Element getXmlElement() {
+		
+		Element root = new Element("analysis");
+		root.addContent(new Element("id").setText(id));
+		root.addContent(new Element("description").setText(description));
+		root.addContent(new Element("description").setText(new SimpleDateFormat("MM/dd/yyyy").format(date)));
+		
+		Element ps = new Element("partitions");
+		for ( PartitionRecord p : partitions ) {
+			ps.addContent(p.getXmlElement());
+		}
+		root.addContent(ps);
+		
+		Element ss = new Element("series");
+		for ( SeriesRecord s: this.series ) {
+			ss.addContent(s.getXmlElement());
+		}
+		root.addContent(ss);
+		
+		Element ls = new Element("locations");
+		for ( LocationRecord loc : this.locations ) {
+			ls.addContent(loc.getXmlElement());
+		}
+		root.addContent(ls);
+		
+		Element rs = new Element("results");
+		for ( RecordKey key : this.results.keySet() ) {
+			Element r = new Element("result");
+			key.writeElement(r);
+			results.get(key).writeElement(r);
+			rs.addContent(r);
+		}
+		root.addContent(rs);
+		
+		return root;
+	}
+	
+	
+	
 	
 	private AnalysisRecord(ResultSet rs) throws SQLException {
 		this.id = rs.getString("id");
@@ -125,6 +171,7 @@ public class AnalysisRecord {
 		a.loadPartitionRecords(c);
 		a.loadLocationRecords(c);
 		a.loadResultRecords(c);
+		System.out.println("Loaded " + a.results.values().size() + " result records");
 		return a;
 	}
 	

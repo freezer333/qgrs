@@ -36,13 +36,15 @@
 				<table class="pairTable" style="width:100%" cellspacing="0" >
 				<thead>
 					<th>Name</th>
+					<th>Export</th>
 					<th>Last Run Date</th>
 				</thead>
 				
 				<tbody>
 				<xsl:for-each select="qgrs/analysis[active='true']">
 					<tr>
-						<td><a href="statsexport?id={id}"><xsl:value-of select="description"/></a></td>
+						<td><a href="statssummary?id={id}"><xsl:value-of select="description"/></a></td>
+						<td><a href="statsexport?id={id}">export to excel</a></td>
 						<td><xsl:value-of select="date"/></td>
 					</tr>
 				</xsl:for-each>

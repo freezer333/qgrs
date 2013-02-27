@@ -3,6 +3,8 @@ package qgrs.compute.stat.db;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.jdom.Element;
+
 public class PartitionRecord {
 
 	public final String partitionId;
@@ -15,5 +17,14 @@ public class PartitionRecord {
 		analysisId = rs.getString("analysisId");
 		description = rs.getString("description");
 		numSamples = rs.getInt("numSamples");
+	}
+	
+	
+	public Element getXmlElement() {
+		Element part = new Element("partition");
+		part.addContent(new Element("partitionId").setText(this.partitionId));
+		part.addContent(new Element("description").setText(this.description));
+		part.addContent(new Element("numSamples").setText(String.valueOf(this.numSamples)));
+		return part;
 	}
 }

@@ -1,5 +1,7 @@
 package qgrs.compute.stat.db;
 
+import org.jdom.Element;
+
 public class RecordKey {
 	
 	final String partitionId;
@@ -10,6 +12,12 @@ public class RecordKey {
 		this.partitionId = p.partitionId;
 		this.seriesId = s.seriesId;
 		this.locationId = loc.id;
+	}
+	
+	public void writeElement(Element e) {
+		e.setAttribute("partitionId", partitionId);
+		e.setAttribute("seriesId", String.valueOf(seriesId));
+		e.setAttribute("locationId", String.valueOf(locationId));
 	}
 
 	@Override

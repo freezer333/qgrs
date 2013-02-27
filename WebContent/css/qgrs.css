@@ -115,6 +115,9 @@ td.partition {
  	margin-top:0;
  }
 
+
+
+
 .table {
 	font-size:8pt;
 	width:100%;
@@ -187,6 +190,40 @@ td.partition {
 }
 
 
+.analysisPartition {
+	margin:1em;
+	background-color:white;
+	padding:1em;
+}
+.analysisTable caption {
+	text-align:left;
+	font-weight:bold;
+	margin-top:1em;
+	background-color:#2B3856;
+	color:white;
+	padding:0.5em;
+}
+
+.analysisXLabel {
+	width:200px;
+}
+
+.analysisTable{
+	background-color:white;
+	border-collapse:collapse;
+	border: solid 2px #2B3856;
+}
+
+.analysisTable th {
+	text-align:left;
+	font-size:smaller;
+	background-color:#2B3856;
+	color:white;
+
+}
+.analysisTable tbody tr.even {
+	background-color:#EEEEEE;
+}
 tbody tr.odd {
 	background-color:white;
 }
