@@ -37,6 +37,7 @@ public class QgrsPartitionResult extends PartitionResult {
 					ps.setInt(6, (int)loc.results.getSum());
 					ps.setDouble(7,  loc.results.getMean());
 					ps.setDouble(8,  loc.results.getMedian());
+					ps.setDouble(9,  loc.results.getStandardDeviation());
 					ps.addBatch();
 				}
 				catch (Exception e) {

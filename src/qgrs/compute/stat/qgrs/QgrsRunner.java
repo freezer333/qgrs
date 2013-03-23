@@ -50,8 +50,8 @@ public abstract class QgrsRunner extends Analysis {
 		String iSql = 	"INSERT INTO results (analysisId, partitionId, " +
 						"seriesId, resultId, label, " +
 						"total, mean, " +
-						"median) " + 
-						"VALUES (?, ?, ?, ?, ? , ?, ?, ?)";
+						"median, std) " + 
+						"VALUES (?, ?, ?, ?, ? , ?, ?, ?, ?)";
 		return conn.prepareStatement(iSql);
 	}
 
@@ -82,6 +82,7 @@ public abstract class QgrsRunner extends Analysis {
 				 "total int not null, " +
 				 "mean double not null, " +
 				 "median double not null, " +
+				 "std double not null, " +
 				 "primary key (analysisId, partitionId, seriesId, resultId), " +
 				 "foreign key (analysisId) references analysis(id) on delete cascade)";
 		try {

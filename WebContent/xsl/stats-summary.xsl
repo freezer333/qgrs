@@ -93,6 +93,30 @@
 							</tbody>
 						</table>
 						<table class="analysisTable">
+							<caption>Standard Deviations</caption>
+							<thead>
+								<th>-</th>
+								<xsl:for-each select="/qgrs/analysis/series/series">
+									<th><xsl:value-of select="description"/></th>
+								</xsl:for-each>
+							</thead>
+							<tbody>
+								<xsl:for-each select="/qgrs/analysis/locations/location">
+									<xsl:sort select="id"/>
+									<tr>
+										<xsl:variable name="loc"> <xsl:value-of select="id"/></xsl:variable>
+										<td class="analysisXLabel"><xsl:value-of select="label"/></td>
+										<xsl:for-each select="/qgrs/analysis/series/series">
+											<xsl:variable name="series"><xsl:value-of select="seriesId"/></xsl:variable>
+											<td>
+												<xsl:value-of select="/qgrs/analysis/results/result[@partitionId=$partition][@seriesId=$series][@locationId=$loc]/@std"/>
+											</td>
+										</xsl:for-each>
+									</tr>
+								</xsl:for-each>
+							</tbody>
+						</table>
+						<table class="analysisTable">
 							<caption>Medians</caption>
 							<thead>
 								<th>-</th>
