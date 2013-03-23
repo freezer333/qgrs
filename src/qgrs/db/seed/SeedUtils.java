@@ -6,7 +6,7 @@ public class SeedUtils {
 	public static final String InputPairDir = "seed_data/pairs/";
 	
 	public static final String [] PrincipleSpeciesSet = {"Homo sapiens"};
-	public static final String [] ComparisonSpeciesSet = {"Drosophila melanogaster"};//, "Bos taurus"};
+	public static final String [] ComparisonSpeciesSet = {"Pan troglodytes", "Canis lupus familiaris", "Danio rerio",  "Caenorhabditis elegans", "Kluyveromyces lactis"};//, "Bos taurus"};
 	
 	public static final String servername = "localhost";//"quadruplex.ramapo.edu";//
 	public static final int serverport = 8080;//80;//;

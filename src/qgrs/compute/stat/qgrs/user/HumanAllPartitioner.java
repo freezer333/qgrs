@@ -30,7 +30,7 @@ public class HumanAllPartitioner extends GenePartitioner {
 	@Override
 	public HashSet<GenePartition> partition(Connection c) {
 		HashSet<GenePartition> partitions = new HashSet<GenePartition>();
-		System.out.println("Warning - human partitioner restricted to 1000 results for testing");
+		//System.out.println("Warning - human partitioner restricted to 1000 results for testing");
 		String q = "SELECT accessionNumber FROM GENE WHERE SPECIES = 'Homo sapiens'";
 		GenePartition p = new GenePartition(runner, "Human Genes");
 		try {
