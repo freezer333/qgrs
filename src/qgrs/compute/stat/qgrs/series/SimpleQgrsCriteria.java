@@ -12,6 +12,7 @@ public class SimpleQgrsCriteria extends QgrsCriteriaSeries {
 
 	private final int minGScore;
 	private final int minTetrads;
+	private final int maxTetrads;
 	
 	/**
 	 * Filters by the number of QGRSH pairs found.  Note, this
@@ -22,19 +23,20 @@ public class SimpleQgrsCriteria extends QgrsCriteriaSeries {
 	private QgrsHomologyCriteria homologyCriteria = new QgrsHomologyCriteria();
 
 	public SimpleQgrsCriteria(int order) {
-		super(order, buildLabel(17, 2, 0, null));
-		this.minGScore = 17;
-		this.minTetrads = 2;
-		this.minHomologs = 0;  // defaults to not requiring any homologs
-		
+		this(order, 17, 2, Integer.MAX_VALUE, 0, null);
 	}
 
 
 	public SimpleQgrsCriteria(int order, int minGScore, int minTetrads, int minHomolgs, QgrsHomologyCriteria homologyCriteria) {
+		this(order, minGScore, minTetrads, Integer.MAX_VALUE, minHomolgs, homologyCriteria);
+	}
+	
+	public SimpleQgrsCriteria(int order, int minGScore, int minTetrads, int maxTetrads, int minHomolgs, QgrsHomologyCriteria homologyCriteria) {
 		super(order, buildLabel(minGScore, minTetrads, minHomolgs, homologyCriteria));
 		this.minGScore = minGScore;
 		this.minTetrads = minTetrads;
 		this.minHomologs = minHomolgs;
+		this.maxTetrads = maxTetrads;
 		this.homologyCriteria = homologyCriteria;
 	}
 	
@@ -55,7 +57,8 @@ public class SimpleQgrsCriteria extends QgrsCriteriaSeries {
 	@Override
 	public boolean acceptQuadruplex(int tetrads, int gScore) {
 		return 	gScore >= this.minGScore && 
-				tetrads >= this.minTetrads;
+				tetrads >= this.minTetrads && 
+				tetrads <= this.maxTetrads;
 	}
 
 
