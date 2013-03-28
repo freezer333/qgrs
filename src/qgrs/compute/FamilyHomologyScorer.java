@@ -28,10 +28,6 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 	final float maxPercentLoop = (float) 0.50;
 	final float maxPercentLoopavg = (float) 0.50;
 	
-	final float weightedOverlap = (float) 0.65; 
-	final float weightedTetrad = (float) 0.2; 
-	final float weightedLoop = (float) 0.1; 
-	final float weightedLength = (float) 0.05; 
 	
 	CancelFlag cancelFlag = new DefaultCancelFlag();
 	
@@ -53,47 +49,7 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 	}
 	
 	
-	class HomologyScoreResult {
-		private double avgLoopScore;
-		private double overlapScore;
-		private double tetradScore;
-		private double totalLengthScore;
-		private double overallScore;
-		public double getAvgLoopScore() {
-			return avgLoopScore;
-		}
-		public void setAvgLoopScore(double avgLoopScore) {
-			this.avgLoopScore = avgLoopScore;
-		}
-		public double getOverlapScore() {
-			return overlapScore;
-		}
-		public void setOverlapScore(double overlapScore) {
-			this.overlapScore = overlapScore;
-		}
-		public double getTetradScore() {
-			return tetradScore;
-		}
-		public void setTetradScore(double tetradScore) {
-			this.tetradScore = tetradScore;
-		}
-		public double getTotalLengthScore() {
-			return totalLengthScore;
-		}
-		public void setTotalLengthScore(double totalLengthScore) {
-			this.totalLengthScore = totalLengthScore;
-		}
-		public double getOverallScore() {
-			return overallScore;
-		}
-		public void setOverallScore(double avgScore) {
-			this.overallScore = avgScore;
-		}
-		
-	}
-	
-	// numS1 is 0 for first gquad in sequence 1, 1 for 2nd in S1 
-	HomologyScoreResult compareQuadruplexes(GQuadruplex fromS1, GQuadruplex fromS2, GeneSequence principle, GeneSequence comparison) {
+	public HomologyScoreResult compareQuadruplexes(GQuadruplex fromS1, GQuadruplex fromS2, GeneSequence principle, GeneSequence comparison) {
 		Base start1 = fromS1.getStart();
 		Base start2 = fromS2.getStart();
 		Base end1 = fromS1.getEnd();
@@ -162,8 +118,7 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 		float avgLoopDifference = (percentLoop1Difference + percentLoop2Difference + percentLoop3Difference)/3;
 		float avgLoopScore = score(minPercent, maxPercentLoopavg, avgLoopDifference);
 
-		float avgScore = (weightedOverlap * overlapScore) + (weightedTetrad * tetradScore) +
-		(weightedLoop * avgLoopScore) + (weightedLength * totalLengthScore);
+		
 		
 		
 		HomologyScoreResult result = new HomologyScoreResult();
@@ -171,7 +126,6 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 		result.setOverlapScore(overlapScore);
 		result.setTetradScore(tetradScore);
 		result.setTotalLengthScore(totalLengthScore);
-		result.setOverallScore(avgScore);
 		return result;
 		
 	

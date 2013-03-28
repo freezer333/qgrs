@@ -4,8 +4,8 @@
     <principle>NM_006245.2</principle>
     <comparison>NM_009358.3</comparison>
     <similarityScore>0</similarityScore>
-    <similarityPercentage>0.8319328</similarityPercentage>
-    <dateAligned>Nov 14, 2012 2:29:20 PM</dateAligned>
+    <similarityPercentage>0.8262185</similarityPercentage>
+    <dateAligned>Mar 28, 2013 3:10:30 PM</dateAligned>
   </alignment-record>
   <principle>
     <gene directInput="false" accessionNumber="NM_006245.2" sequenceLength="2975" tag="principle">
@@ -55,7 +55,7 @@
         </go>
       </ontologyData>
     </gene>
-    <alignment>G---------------------------------------------------------------AGACGCCGAGCGGGCCGAGTGCGGCCGAGCAAAGCCGGAGCCGGAGCGGGGCCGCAGGAGACGGGCCGGGTCCGGACGGGCCGAGATGCCCTATAAACTGAAAAAGGAGAAGGAGCCCCCCAAGGTTGCCAAATGCACAGCCAAGCCTAGCAGCTCGGGCAAGGATGGTGGAGGCGAGAACACTGAGGAGGCCCAGCCGCAGCCCCAGCCCCAGCCCCAGCCCCAAGCCCAGTCTCAGCCACCGTCATCCAACAAGCGTCCCAGCAATAGCACGCCGCCCCCCACGCAGCTCAGCAAAATCAAGTACTCAGGGGGGCCCCAGATTGTCAAGAAGGAGCGACGGCAAAGCTCCTCCCGCTTCAACCTCAGCAAGAATCGGGAGCTGCAGAAGCTTCCTGCCCTGAAAGATTCGCCAACCCAGGAGCGGGAGGAGCTGTTTATCCAGAAGCTACGCCAGTGCTGTGTCCTCTTTGACTTCGTGTCAGACCCACTCAGTGACCTCAAATTCAAGGAGGTGAAGCGGGCAGGACTCAACGAGATGGTGGAGTACATCACCCATAGCCGTGATGTTGTCACTGAGGCCATTTACCCTGAGGCTGTCACCATGTTTTCAGTGAACCTCTTCCGGACGCTGCCACCTTCATCGAATCCCACAGGGGCTGAGTTTGACCCAGAGGAAGATGAGCCCACCCTGGAAGCTGCTTGGCCACATCTCCAGCTCGTGTATGAGTTCTTCTTACGTTTCCTTGAGTCTCCTGATTTCCAGCCAAACATAGCCAAGAAGTACATCGACCAGAAGTTTGTACTTGCTCTCCTAGACCTATTTGACAGTGAGGATCCTCGAGAGCGGGACTTCCTCAAGACCATTTTGCATCGCATCTATGGCAAGTTTTTGGGGCTCCGGGCTTATATCCGTAGGCAGATCAACCACATCTTCTACAGGTTCATCTACGAGACGGAGCATCACAACGGGATTGCTGAGCTCCTGGAGATCCTGGGCAGCATCATCAATGGCTTTGCCCTGCCCCTTAAAGAAGAGCACAAGATGTTCCTCATCCGTGTCCTACTTCCCCTTCACAAGGTCAAGTCCCTGAGTGTCTACCACCCTCAGCTGGCATACTGTGTGGTACAATTCCTGGAGAAGGAGAGCAGTCTGACTGAGCCGGTAATTGTGGGACTTCTCAAGTTTTGGCCCAAGACCCACAGCCCCAAGGAGGTGATGTTCTTGAATGAGCTGGAGGAGATTCTGGACGTCATTGAACCTTCTGAGTTCAGCAAAGTGATGGAACCCCTCTTCCGCCAGCTGGCCAAGTGTGTCTCTAGCCCCCATTTCCAGGTGGCAGAGCGTGCTCTCTATTACTGGAACAATGAGTACATCATGAGCCTGATAAGTGACAATGCTGCCCGAGTCCTCCCCATCATGTTCCCTGCACTCTACAGGAACTCCAAGAGCCACTGGAACAAGACAATCCATGGACTGATCTATAATGCCCTGAAGTTGTTTATGGAAATGAATCAGAAGCTGTTTGATGACTGCACACAACAATACAAGGCAGAGAAGCAGAAGGGCCGGTTCCGAATGAAGGAAAGGGAAGAGATGTGGCAAAAAATCGAGGAGCTGGCCCGGCTTAATCCCCAGTATCCCATGTTCCGAGCCCCTCCACCACTGCCCCCTGTGTACTCGATGGAGACAGAGACCCCCACAGCTGAGGACATCCAGCTTCTGAAGAGGACTGTGGAGACTGAGGCTGTTCAGATGCTAAAAGACATCAAGAAGGAGAAAGTGCTGCTGCGGAGGAAGTCGGAGCTGCCCCAGGACGTGTACACCATCAAGGCACTGGAGGCGCACAAGCGGGCGGAAGAGTTCCTAACTGCCAGCCAGGAGGCTCTCTGACCCC-TCACGTTCC--TACCACAGGGCCACAGCCCACACAGCCCTGGGACACTGCCCTGGCCCTCCATACTCTGCTCCCTACTGGCTGTCTTGGGGGAAGGCAGCGCCTCTCTAGCTACTCAAGGGAGGGGGATGTGGGCACTTGAAGCAGGGACACCCACAGAATGGTCCCTCTTCTCCCCAAAAGGTGTTCATGCCTCCCTGTGGCTAGTACAG----GCTGAGCACTAAGATGCTTAGTGCTCAGACAACCTGGGGATGCCTGTCCCCTACCTGCTCCTCACCC-ACAGCTACCTGAGGCTGCTCTGAGAAGTACACACAGGAATACATACGCTCCTCTATTCTTCCCTTCATCCTCATTTGAACGCCAGGTATCTCCCCTCCTCTCTCTCCCCTGCAGAGGCATGTAGGGAACAGCAGGAGATTATTCTCACCAAAGTTATGTCAAGCCCCATTGGTCCCA-----GAGTAGCTGAAGGGAAGCCAACCCCCCTGCAGCACAAATAGGCCCCCCAGTCCCAGCCGTGTGCTGGCAGATAGGGTTGTATTATTTCTTCTTACCCCATGCCTGACCAAGGGAGGTCAAAAGGAGAAAAGTATAGGCTGTGGACAATAACTGATGAATATAGGGCCCAGATGGACCAAGTGGGGCCGGGGAGGGATGAATAAACACCCTACCCCGTGCCCTGTCTTTGGTGAGCAGCAGCCCTGGGGTCACAGACATGGAAGGGACCACCCTGGGGCTGACTGCTTTTC--TGTGCTGTTGGTTCCCAAAACTAGAAAGAAGGAAGCAGGGAGCGGTGCCCCAAGCATGGCTCCTGCCAACACCTATTTATTTCCTTGTTTGTGCTAT------GCTGGGCAGGCCTTCTCTTGTCCCTTATAGGTACCTTGGAGGGGCCAGGGGCTGAGGAAGGCCGGACCCAGGTTCCAGGGGCGCAGGCAGTGCGGCTTTTGGCTGTGTACATAGGGTGCTTTATTCTCCACAGAGTGATACATGCTAAGGTGGGTTGGGCTTGGACCGATGTCCCCATATGTACAGAACTGAATAAAGTGGGTCTCTGAGAAAAAAAAAAAAAAAAAAAAAAAAAA</alignment>
+    <alignment>---------------------------------------------------------------GAGACGCCGAGCGGGCCGAGTGCGGCCGAGCAAAGCCGGAGCCGGAGCGGGGCCGCAGGAGACGGGCCGGGTCCGGACGGGCCGAGATGCCCTATAAACTGAAAAAGGAGAAGGAGCCCCCCAAGGTTGCCAAATGCACAGCCAAGCCTAGCAGCTCGGGCAAGGATGGTGGAGGCGAGAACACTGAGGAGGCCCAGCCGCAGCCCCAGCCCCAGCCCCAGCCCCAAGCCCAGTCTCAGCCACCGTCATCCAACAAGCGTCCCAGCAATAGCACGCCGCCCCCCACGCAGCTCAGCAAAATCAAGTACTCAGGGGGGCCCCAGATTGTCAAGAAGGAGCGACGGCAAAGCTCCTCCCGCTTCAACCTCAGCAAGAATCGGGAGCTGCAGAAGCTTCCTGCCCTGAAAGATTCGCCAACCCAGGAGCGGGAGGAGCTGTTTATCCAGAAGCTACGCCAGTGCTGTGTCCTCTTTGACTTCGTGTCAGACCCACTCAGTGACCTCAAATTCAAGGAGGTGAAGCGGGCAGGACTCAACGAGATGGTGGAGTACATCACCCATAGCCGTGATGTTGTCACTGAGGCCATTTACCCTGAGGCTGTCACCATGTTTTCAGTGAACCTCTTCCGGACGCTGCCACCTTCATCGAATCCCACAGGGGCTGAGTTTGACCCAGAGGAAGATGAGCCCACCCTGGAAGCTGCTTGGCCACATCTCCAGCTCGTGTATGAGTTCTTCTTACGTTTCCTTGAGTCTCCTGATTTCCAGCCAAACATAGCCAAGAAGTACATCGACCAGAAGTTTGTACTTGCTCTCCTAGACCTATTTGACAGTGAGGATCCTCGAGAGCGGGACTTCCTCAAGACCATTTTGCATCGCATCTATGGCAAGTTTTTGGGGCTCCGGGCTTATATCCGTAGGCAGATCAACCACATCTTCTACAGGTTCATCTACGAGACGGAGCATCACAACGGGATTGCTGAGCTCCTGGAGATCCTGGGCAGCATCATCAATGGCTTTGCCCTGCCCCTTAAAGAAGAGCACAAGATGTTCCTCATCCGTGTCCTACTTCCCCTTCACAAGGTCAAGTCCCTGAGTGTCTACCACCCTCAGCTGGCATACTGTGTGGTACAATTCCTGGAGAAGGAGAGCAGTCTGACTGAGCCGGTAATTGTGGGACTTCTCAAGTTTTGGCCCAAGACCCACAGCCCCAAGGAGGTGATGTTCTTGAATGAGCTGGAGGAGATTCTGGACGTCATTGAACCTTCTGAGTTCAGCAAAGTGATGGAACCCCTCTTCCGCCAGCTGGCCAAGTGTGTCTCTAGCCCCCATTTCCAGGTGGCAGAGCGTGCTCTCTATTACTGGAACAATGAGTACATCATGAGCCTGATAAGTGACAATGCTGCCCGAGTCCTCCCCATCATGTTCCCTGCACTCTACAGGAACTCCAAGAGCCACTGGAACAAGACAATCCATGGACTGATCTATAATGCCCTGAAGTTGTTTATGGAAATGAATCAGAAGCTGTTTGATGACTGCACACAACAATACAAGGCAGAGAAGCAGAAGGGCCGGTTCCGAATGAAGGAAAGGGAAGAGATGTGGCAAAAAATCGAGGAGCTGGCCCGGCTTAATCCCCAGTATCCCATGTTCCGAGCCCCTCCACCACTGCCCCCTGTGTACTCGATGGAGACAGAGACCCCCACAGCTGAGGACATCCAGCTTCTGAAGAGGACTGTGGAGACTGAGGCTGTTCAGATGCTAAAAGACATCAAGAAGGAGAAAGTGCTGCTGCGGAGGAAGTCGGAGCTGCCCCAGGACGTGTACACCATCAAGGCACTGGAGGCGCACAAGCGGGCGGAAGAGTTCCTAACTGCCAGCCAGGAGGCTCTCTGA-CCCCTCACGTTCC--TACCACAGGGCCACAGCCCACACAGCCCTGGGACACTGCCCTGGCCCTCCATACTCTGCTCCCTACTGGCTGTCTTGGGGGAAGGCAGCGCCTCTCTAGCTACTCAAGGGAGGGGGATGTGGGCACTTGAAGCAGGGACACCCACAGAATGGTCCCTCTTCTCCCCAAAAGGTGTTCATGCCTCCCTGTGGCTAGT----ACAGGCTGAGCACTAAGATGCTTAGTGCTCAGACAACCTGGGGATGCCTGTCCCCTACCTGCTCCTCACCCACAGCTACCTGAGGCTGCTCTGAGAAGTACACACAGGAATACATACGCTCCTCTATTCTTCCCTTCATCCTCATTTGAACGCCAGGTATCTCCCCTCCTCTCTCTCCCCTGCAGAGGCATGTAGGGAACAGCAGGAGATTATTCTCACCAAAGTTATGTCAAGCCCCATTGGTCCC-----AGAGTAGCTGAAGGGAAGCCAACCCCCCTGCAGCACAAATAGGCCCCCCAGTCCCAGCCGTGTGCTGGCAGATAGGGTTGTATTATTTCTTCTTACCCCATGCCTGACCAAGGGAGGTCAAAAGGAGAAAAGTATAGGCTGTGGACAATAACTGATGAATATAGGGCCCAGATGGACCAAGTGGGGCCGGGGAGGGATGAATAAACACCCTACCCCGTGCCCTGTCTTTGGTGAGCAGCAGCCCTGGGGTCACAGACATGGAAGGGACCACCCTGGGGCTGACTGCTTTTC--TGTGCTGTTGGTTCCCAAAACTAGAAAGAAGGAAGCAGGGAGCGGTGCCCCAAGCATGGCTCCTGCCAACACCTATTTATTTCCTTGTTTGT------GCTATGCTGGGCAGGCCTTCTCTTGTCCCTTATAGGTACCTTGGAGGGGCCAGGGGCTGAGGAAGGCCGGACCCAGGTTCCAGGGGCGCAGGCAGTGCGGCTTTTGGCTGTGTACATAGGGTGCTTTATTCTCCACAGAGTGATACATGCTAAGGTGGGTTGGGCTTGGACCGATGTCCCCATATGTACAGAACTGAATAAAGTGGGTCTCTGAGAAAAAAAAAAAAAAAAAAAAAAAAAA</alignment>
     <quadruplexes accessionNumber="NM_006245.2">
       <quadruplex id="NM_006245.2.28">
         <geneAccessionNumber>NM_006245.2</geneAccessionNumber>
@@ -1495,7 +1495,7 @@ delta isoform (Ppp2r5d), mRNA.</geneName>
         </go>
       </ontologyData>
     </gene>
-    <alignment>GTTCGGGCCAATTGGAAGCGCAGCCACGGCTCGGCCCGGGCGCAGCGCGCAGGCGGTGGCGAAGAGACGCCGAGCGGGCCGAGTGTGGCCGAGCA------GAGCCGGAGCGGGGCCGCAGGAGCCGGGCCGGGTGTGGACCGGCCGAGATGTCCTATAAACTGAAGAAGGATAAGGAACCCTCCAAGCTTGCCAAAGGCACAGCCAAGCCCAGCAGCTCAAGCAAGGATGGTGGAGGGGAGAACACCGATGAGGCCCAGCCCCAGCCCCAG------------------------TCTCAGTCACCATCATCCAACAAGCGACCCAGCAACAGTACACCACCCCCAACACAACTCAGCAAAATCAAGTACTCAGGGGGACCCCAGATTGTCAAGAAAGAACGACGCCAAAGCTCCTTCCCCTTCAACCTCAACAAGAACCGGGAGCTACAAAAACTTCCTGCCTTGAAAGACTCACCAACCCAGGAACGTGAGGAGCTGTTTATCCAGAAGCTACGCCAGTGCTGTGTCCTCTTTGACTTCGTGTCAGACCCACTCAGTGACCTCAAATGCAAAGAGGTGAAGCGGGCAGGACTCAATGAGATGGTGGAGTATATCACCCACAGCCGTGATGTTGTCACTGAGGCCATCTACCCTGAGGCTGTCACCATGTTTTCAGTGAATCTCTTCCGGACGCTGCCTCCTTCATCGAATCCCACAGGAGCAGAGTTTGACCCTGAGGAAGATGAGCCAACCTTGGAAGCTGCCTGGCCGCATCTCCAGCTCGTGTACGAGTTTTTCTTACGTTTCTTGGAGTCTCCAGATTTCCAGCCAAATATAGCCAAGAAGTACATTGACCAGAAGTTTGTACTTGCTCTCCTGGACCTATTCGATAGTGAAGACCCTAGAGAGCGGGATTTTCTCAAGACCATTTTGCATCGCATCTATGGCAAGTTTTTGGGGCTCCGGGCTTATATTCGTAGGCAGATCAACCACATCTTCTACAGGTTTATCTATGAGACTGAGCATCACAATGGGATTGCGGAGCTGCTGGAGATCCTGGGCAGCATCATCAATGGCTTTGCCTTGCCCCTTAAGGAAGAACACAAGGTGTTTCTCGTCCGTGTCCTGCTTCCACTTCACAAAGTCAAGTCTCTGAGTGTATACCACCCTCAGTTGGCGTACTGTGTGGTGCAGTTCCTGGAGAAGGAGAGCAGTCTCACTGAGCCGGTGATTGTGGGACTTCTCAAGTTTTGGCCTAAGACCCACAGCCCCAAGGAGGTGATGTTTCTGAACGAGCTGGAGGAGATTCTAGATGTCATTGAACCCTCGGAGTTCAGTAAAGTCATGGAGCCGCTCTTCCGCCAGCTTGCCAAATGTGTTTCCAGCCCCCATTTCCAGGTGGCGGAGCGCGCCCTCTACTACTGGAACAATGAGTACATCATGAGCCTCATCAGCGACAATGCTGCCCGCATCCTCCCCATCATGTTTCCTGCACTCTATAGGAACTCCAAAAGCCACTGGAACAAGACAATCCATGGACTCATCTACAATGCCCTGAAGCTCTTCATGGAGATGAACCAGAAGCTGTTTGACGACTGCACACAGCAGTACAAGGCGGAGAAGCAGAAGGGCAGGTTCCGAATGAAGGAGAGAGAGGAGATGTGGCAGAAGATCGAGGAGCTGGCCCGGCTCAATCCCCAGTACCCTATGTTTCGGGCTCCTCCGCCACTGCCCCCTGTGTACTCCATGGAGACAGAGACGCCCACAGCAGAGGACATTCAGCTCCTGAAGAGGACGGTGGAGACAGAGGCCGTGCAGATGCTGAAGGACATCAAGAAGGACAAAGTGCTGCTCCGGAGGAAGTCAGAGCTGCCACAGGACGTGTACACCATCAAGGCACTAGAGGCGCACAAGCGGGCAGAAGAGTTCCTGACTGCCAGCCAGGAGGCCCTCTGACCCCCTCACCTTCCCTTCCCACAGGATTCCAGCCCACTCAGCCCTGGGATGCAGCCCAG-CCCTCCACCCTCTGCTCCTCATCGGCTGACCTGGGGCAGAACGGCACCTCTCTGGCTACTCTAGAG-----GATGCAGGCACTGGAAGCGGG---ATGCCCAGAGCGCTCCCTCTTCTCCCCTAAACGTGTTCATGCCTCCCTGTGGCTAGTACAGACAGGCTGAGCACTGAG-TGCTCAGTGCTTAGACAACCTGGGGGTGCCTGTCCCC---CTGCTCCTAACCCCACAGCTGCCTGAAACTGTTCTGAGAAATACACACAGGAAT-CACATGTCCCTCTCTACC-CCCTTAATCCTCATCTGAAGTTGAGGTGTCTCTCCTCT--------CCCTGCAGAGT----------ACAACAGGAGACTGT---CACCAAAGTCACGTTAAGCTCCGTTGGCCCCTTGAGCGAAGAGCTGGAGGGAACCAATCCCCA--GCAGCACAAATAGGCCCCT-AGACCCAGCTTTATGCAGGCGGGGGTGGTAGTGTG-TTTCTTTGTATCCTATACCTAACCAAGACAACACAGAGGACAAACAAGTTACG-----GACACTAGATGA----------------------CTAGTGGGCCCGGTGGGG----AGAAAGAACCATCTGCCTTGCCCTCTCT--GGCAAGCAGCAGTCCTGGGATCACACATTTGCAAGGGACCACCCTGTGGCTGACTGCTTTCCCTTGTGCTCTTGGTTCCCAGAGCTATAAAGAAGGAGGCAGG-AGCAGTGCTCCAAGCATGGCTCCCTGCTGTGCCTGTTTATTTCCTGGTTTCTGCTGACGCTGGGCTGGGCGGGTCCTCACCTGTACCCTCTAGGCGCTCAGAAA---CAAAAGCCTGGGGAGGGCTGGACC-AGGATTCAGGAGCACAGGCGGTGTGGCTTCTGGCTGTGTACACAGGGTGCTTTATTCTCCACAGAGTGATACATGCTAAGGTGGGCTGGGCTTGGGCCGATGTCCCCATATGTACAGAACTGAATAAAGTGGGTCTCTGAGA-------------------------</alignment>
+    <alignment>GTTCGGGCCAATTGGAAGCGCAGCCACGGCTCGGCCCGGGCGCAGCGCGCAGGCGGTGGCGAAGAGACGCCGAGCGGGCCGAGTGTGGCCGAGCA------GAGCCGGAGCGGGGCCGCAGGAGCCGGGCCGGGTGTGGACCGGCCGAGATGTCCTATAAACTGAAGAAGGATAAGGAACCCTCCAAGCTTGCCAAAGGCACAGCCAAGCCCAGCAGCTCAAGCAAGGATGGTGGAGGGGAGAACACCGATGAGGCCCAGCCCCAGC------------------------CCCAGTCTCAGTCACCATCATCCAACAAGCGACCCAGCAACAGTACACCACCCCCAACACAACTCAGCAAAATCAAGTACTCAGGGGGACCCCAGATTGTCAAGAAAGAACGACGCCAAAGCTCCTTCCCCTTCAACCTCAACAAGAACCGGGAGCTACAAAAACTTCCTGCCTTGAAAGACTCACCAACCCAGGAACGTGAGGAGCTGTTTATCCAGAAGCTACGCCAGTGCTGTGTCCTCTTTGACTTCGTGTCAGACCCACTCAGTGACCTCAAATGCAAAGAGGTGAAGCGGGCAGGACTCAATGAGATGGTGGAGTATATCACCCACAGCCGTGATGTTGTCACTGAGGCCATCTACCCTGAGGCTGTCACCATGTTTTCAGTGAATCTCTTCCGGACGCTGCCTCCTTCATCGAATCCCACAGGAGCAGAGTTTGACCCTGAGGAAGATGAGCCAACCTTGGAAGCTGCCTGGCCGCATCTCCAGCTCGTGTACGAGTTTTTCTTACGTTTCTTGGAGTCTCCAGATTTCCAGCCAAATATAGCCAAGAAGTACATTGACCAGAAGTTTGTACTTGCTCTCCTGGACCTATTCGATAGTGAAGACCCTAGAGAGCGGGATTTTCTCAAGACCATTTTGCATCGCATCTATGGCAAGTTTTTGGGGCTCCGGGCTTATATTCGTAGGCAGATCAACCACATCTTCTACAGGTTTATCTATGAGACTGAGCATCACAATGGGATTGCGGAGCTGCTGGAGATCCTGGGCAGCATCATCAATGGCTTTGCCTTGCCCCTTAAGGAAGAACACAAGGTGTTTCTCGTCCGTGTCCTGCTTCCACTTCACAAAGTCAAGTCTCTGAGTGTATACCACCCTCAGTTGGCGTACTGTGTGGTGCAGTTCCTGGAGAAGGAGAGCAGTCTCACTGAGCCGGTGATTGTGGGACTTCTCAAGTTTTGGCCTAAGACCCACAGCCCCAAGGAGGTGATGTTTCTGAACGAGCTGGAGGAGATTCTAGATGTCATTGAACCCTCGGAGTTCAGTAAAGTCATGGAGCCGCTCTTCCGCCAGCTTGCCAAATGTGTTTCCAGCCCCCATTTCCAGGTGGCGGAGCGCGCCCTCTACTACTGGAACAATGAGTACATCATGAGCCTCATCAGCGACAATGCTGCCCGCATCCTCCCCATCATGTTTCCTGCACTCTATAGGAACTCCAAAAGCCACTGGAACAAGACAATCCATGGACTCATCTACAATGCCCTGAAGCTCTTCATGGAGATGAACCAGAAGCTGTTTGACGACTGCACACAGCAGTACAAGGCGGAGAAGCAGAAGGGCAGGTTCCGAATGAAGGAGAGAGAGGAGATGTGGCAGAAGATCGAGGAGCTGGCCCGGCTCAATCCCCAGTACCCTATGTTTCGGGCTCCTCCGCCACTGCCCCCTGTGTACTCCATGGAGACAGAGACGCCCACAGCAGAGGACATTCAGCTCCTGAAGAGGACGGTGGAGACAGAGGCCGTGCAGATGCTGAAGGACATCAAGAAGGACAAAGTGCTGCTCCGGAGGAAGTCAGAGCTGCCACAGGACGTGTACACCATCAAGGCACTAGAGGCGCACAAGCGGGCAGAAGAGTTCCTGACTGCCAGCCAGGAGGCCCTCTGACCCCCTCACCTTCCCTTCCCACAGGATTCCAGCCCACTCAGCCCTGGGATGCAGCCC-AGCCCTCCACCCTCTGCTCCTCATCGGCTGACCTGGGGCAGAACGGCACCTCTCTGGCTACTCTA-----GAGGATGCAGGCACTGGAAGCGGG---ATGCCCAGAGCGCTCCCTCTTCTCCCCTAAACGTGTTCATGCCTCCCTGTGGCTAGTACAGACAGGCTGAGCACTGAG-TGCTCAGTGCTTAGACAACCTGGGGGTGCCTGTCCCCCTGCTCCT--AACCCCACAGCTGCCTGAAACTGTTCTGAGAAATACACACAGGAAT-CACATGTCCCTCTCTAC-CCCCTTAATCCTCATCTGAAGTTGAGGTGTCTCTCCTC------------------TCCCTGCAGAGTACAACAGGAG---ACTGTCACCAAAGTCACGTTAAGCTCCGTTGGCCCCTTGAGCGAAGAGCTGGAGGGAA--CCAATCCCCAGCAGCACAAATAGG-CCCCTAGACCCAGCTTTATGCAGGCGGGGGTGGTAGT-GTGTTTCTTTGTATCCTATACCTAACCAAGACAACACAGAGGACAAACAAGTTACG--------GACACTAGATGACTAGTGGGCCCGGTGGG-----------------------GAGAAAGAACCATCTGCCTTGCCC--TCTCTGGCAAGCAGCAGTCCTGGGATCACACATTTGCAAGGGACCACCCTGTGGCTGACTGCTTTCCCTTGTGCTCTTGGTTCCCAGAGCTATAAAGAAGGAGGCA-GGAGCAGTGCTCCAAGCATGGCTCCCTGCTGTGCCTGTTTATTTCCTGGTTTCTGCTGACGCTGGGCTGGGCGGGTCCTCACCTGTACCCTCTAGGCGCTCAGAA----ACAAAAGCCTGGGGAGGGCTGGACCAGGATTCAGGAGCACAGGCGGTGTGGCTTCTGGCTGTGTACACAGGGTGCTTTATTCTCCACAGAGTGATACATGCTAAGGTGGGCTGGGCTTGGGCCGATGTCCCCATATGTACAGAACTGAATAAAGTGGGTCTCTGAGA-------------------------</alignment>
     <quadruplexes accessionNumber="NM_009358.3">
       <quadruplex id="NM_009358.3.1">
         <geneAccessionNumber>NM_009358.3</geneAccessionNumber>
@@ -2276,7 +2276,7 @@ delta isoform (Ppp2r5d), mRNA.</geneName>
         <tetrad3_normalized>20</tetrad3_normalized>
         <tetrad4_normalized>26</tetrad4_normalized>
         <loop1Length>10</loop1Length>
-        <loop2Length>2059</loop2Length>
+        <loop2Length>5</loop2Length>
         <loop3Length>4</loop3Length>
         <totalLength>27</totalLength>
         <numTetrads>2</numTetrads>
@@ -2299,7 +2299,7 @@ delta isoform (Ppp2r5d), mRNA.</geneName>
         <tetrad2_normalized>8</tetrad2_normalized>
         <tetrad3_normalized>14</tetrad3_normalized>
         <tetrad4_normalized>20</tetrad4_normalized>
-        <loop1Length>2059</loop1Length>
+        <loop1Length>5</loop1Length>
         <loop2Length>4</loop2Length>
         <loop3Length>4</loop3Length>
         <totalLength>21</totalLength>
@@ -2421,7 +2421,7 @@ delta isoform (Ppp2r5d), mRNA.</geneName>
         <tetrad4_normalized>27</tetrad4_normalized>
         <loop1Length>1</loop1Length>
         <loop2Length>2</loop2Length>
-        <loop3Length>2673</loop3Length>
+        <loop3Length>17</loop3Length>
         <totalLength>28</totalLength>
         <numTetrads>2</numTetrads>
         <score>20</score>
@@ -2774,7 +2774,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -2802,7 +2802,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -2830,7 +2830,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -2858,7 +2858,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -2886,7 +2886,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -2914,7 +2914,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -2942,7 +2942,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -2970,7 +2970,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -2998,7 +2998,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3026,7 +3026,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3054,7 +3054,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3082,7 +3082,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3110,7 +3110,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3138,7 +3138,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3166,7 +3166,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3194,7 +3194,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3222,7 +3222,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3250,7 +3250,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3278,7 +3278,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3306,7 +3306,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3334,7 +3334,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3362,7 +3362,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3390,7 +3390,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3418,7 +3418,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3446,7 +3446,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3474,7 +3474,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3502,7 +3502,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3530,7 +3530,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3558,7 +3558,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3586,7 +3586,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3614,7 +3614,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3642,7 +3642,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3670,7 +3670,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3698,7 +3698,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3726,7 +3726,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3754,7 +3754,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3782,7 +3782,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3810,7 +3810,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3838,7 +3838,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3866,7 +3866,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3894,7 +3894,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3922,7 +3922,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3950,7 +3950,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -3978,7 +3978,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4006,7 +4006,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4034,7 +4034,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4062,7 +4062,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4090,7 +4090,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4118,7 +4118,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>true</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4146,7 +4146,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4174,7 +4174,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4202,7 +4202,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4230,7 +4230,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4258,7 +4258,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4286,7 +4286,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4314,7 +4314,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4342,7 +4342,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4370,7 +4370,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4398,7 +4398,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4426,7 +4426,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4454,7 +4454,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4482,7 +4482,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4510,7 +4510,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>true</c_inCDS>
       <c_in3UTR>false</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4538,14 +4538,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1086</gq1Id>
       <gq2Id>NM_009358.3.581</gq2Id>
-      <overallScore>0.7706759572029114</overallScore>
+      <overallScore>0.8391712307929993</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4566,14 +4566,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1086</gq1Id>
       <gq2Id>NM_009358.3.588</gq2Id>
-      <overallScore>0.8499999642372131</overallScore>
+      <overallScore>0.9409961104393005</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4594,14 +4594,42 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
+    </homology>
+    <homology>
+      <id>0</id>
+      <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
+      <gq1Id>NM_006245.2.1274</gq1Id>
+      <gq2Id>NM_009358.3.629</gq2Id>
+      <overallScore>0.8701719045639038</overallScore>
+      <p_accessionNumber>NM_006245.2</p_accessionNumber>
+      <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
+(PPP2R5D), transcript variant 1, mRNA.</p_geneName>
+      <p_geneSymbol>PPP2R5D</p_geneSymbol>
+      <p_species>Homo sapiens</p_species>
+      <p_tetrads>3</p_tetrads>
+      <p_gScore>58</p_gScore>
+      <p_in5UTR>false</p_in5UTR>
+      <p_inCDS>false</p_inCDS>
+      <p_in3UTR>true</p_in3UTR>
+      <c_accessionNumber>NM_009358.3</c_accessionNumber>
+      <c_geneName>Mus musculus protein phosphatase 2, regulatory subunit B (B56),
+delta isoform (Ppp2r5d), mRNA.</c_geneName>
+      <c_geneSymbol>PPP2R5D</c_geneSymbol>
+      <c_species>Mus musculus</c_species>
+      <c_tetrads>2</c_tetrads>
+      <c_gScore>33</c_gScore>
+      <c_in5UTR>false</c_in5UTR>
+      <c_inCDS>false</c_inCDS>
+      <c_in3UTR>true</c_in3UTR>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1347</gq1Id>
       <gq2Id>NM_009358.3.629</gq2Id>
-      <overallScore>0.7781927585601807</overallScore>
+      <overallScore>0.8138601183891296</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4622,42 +4650,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
-    </homology>
-    <homology>
-      <id>0</id>
-      <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
-      <gq1Id>NM_006245.2.1368</gq1Id>
-      <gq2Id>NM_009358.3.629</gq2Id>
-      <overallScore>0.8999999761581421</overallScore>
-      <p_accessionNumber>NM_006245.2</p_accessionNumber>
-      <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
-(PPP2R5D), transcript variant 1, mRNA.</p_geneName>
-      <p_geneSymbol>PPP2R5D</p_geneSymbol>
-      <p_species>Homo sapiens</p_species>
-      <p_tetrads>2</p_tetrads>
-      <p_gScore>34</p_gScore>
-      <p_in5UTR>false</p_in5UTR>
-      <p_inCDS>false</p_inCDS>
-      <p_in3UTR>true</p_in3UTR>
-      <c_accessionNumber>NM_009358.3</c_accessionNumber>
-      <c_geneName>Mus musculus protein phosphatase 2, regulatory subunit B (B56),
-delta isoform (Ppp2r5d), mRNA.</c_geneName>
-      <c_geneSymbol>PPP2R5D</c_geneSymbol>
-      <c_species>Mus musculus</c_species>
-      <c_tetrads>2</c_tetrads>
-      <c_gScore>33</c_gScore>
-      <c_in5UTR>false</c_in5UTR>
-      <c_inCDS>false</c_inCDS>
-      <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1433</gq1Id>
       <gq2Id>NM_009358.3.636</gq2Id>
-      <overallScore>0.8499999642372131</overallScore>
+      <overallScore>0.8997407555580139</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4678,14 +4678,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1511</gq1Id>
       <gq2Id>NM_009358.3.653</gq2Id>
-      <overallScore>0.8734795451164246</overallScore>
+      <overallScore>0.8613687753677368</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4706,7 +4706,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -4734,14 +4734,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1881</gq1Id>
       <gq2Id>NM_009358.3.653</gq2Id>
-      <overallScore>0.8970356583595276</overallScore>
+      <overallScore>0.89896559715271</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4762,70 +4762,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
-    </homology>
-    <homology>
-      <id>0</id>
-      <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
-      <gq1Id>NM_006245.2.1881</gq1Id>
-      <gq2Id>NM_009358.3.675</gq2Id>
-      <overallScore>0.7532821893692017</overallScore>
-      <p_accessionNumber>NM_006245.2</p_accessionNumber>
-      <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
-(PPP2R5D), transcript variant 1, mRNA.</p_geneName>
-      <p_geneSymbol>PPP2R5D</p_geneSymbol>
-      <p_species>Homo sapiens</p_species>
-      <p_tetrads>2</p_tetrads>
-      <p_gScore>35</p_gScore>
-      <p_in5UTR>false</p_in5UTR>
-      <p_inCDS>false</p_inCDS>
-      <p_in3UTR>true</p_in3UTR>
-      <c_accessionNumber>NM_009358.3</c_accessionNumber>
-      <c_geneName>Mus musculus protein phosphatase 2, regulatory subunit B (B56),
-delta isoform (Ppp2r5d), mRNA.</c_geneName>
-      <c_geneSymbol>PPP2R5D</c_geneSymbol>
-      <c_species>Mus musculus</c_species>
-      <c_tetrads>2</c_tetrads>
-      <c_gScore>34</c_gScore>
-      <c_in5UTR>false</c_in5UTR>
-      <c_inCDS>false</c_inCDS>
-      <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
-    </homology>
-    <homology>
-      <id>0</id>
-      <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
-      <gq1Id>NM_006245.2.1881</gq1Id>
-      <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.7542696595191956</overallScore>
-      <p_accessionNumber>NM_006245.2</p_accessionNumber>
-      <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
-(PPP2R5D), transcript variant 1, mRNA.</p_geneName>
-      <p_geneSymbol>PPP2R5D</p_geneSymbol>
-      <p_species>Homo sapiens</p_species>
-      <p_tetrads>2</p_tetrads>
-      <p_gScore>35</p_gScore>
-      <p_in5UTR>false</p_in5UTR>
-      <p_inCDS>false</p_inCDS>
-      <p_in3UTR>true</p_in3UTR>
-      <c_accessionNumber>NM_009358.3</c_accessionNumber>
-      <c_geneName>Mus musculus protein phosphatase 2, regulatory subunit B (B56),
-delta isoform (Ppp2r5d), mRNA.</c_geneName>
-      <c_geneSymbol>PPP2R5D</c_geneSymbol>
-      <c_species>Mus musculus</c_species>
-      <c_tetrads>2</c_tetrads>
-      <c_gScore>35</c_gScore>
-      <c_in5UTR>false</c_in5UTR>
-      <c_inCDS>false</c_inCDS>
-      <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1881</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.7703081369400024</overallScore>
+      <overallScore>0.758169949054718</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4846,14 +4790,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2104</gq1Id>
       <gq2Id>NM_009358.3.653</gq2Id>
-      <overallScore>0.7534359097480774</overallScore>
+      <overallScore>0.7642064094543457</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4874,14 +4818,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2104</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.8439051508903503</overallScore>
+      <overallScore>0.8196617960929871</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4902,14 +4846,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2104</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.8513565063476562</overallScore>
+      <overallScore>0.8388203382492065</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4930,42 +4874,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
-    </homology>
-    <homology>
-      <id>0</id>
-      <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
-      <gq1Id>NM_006245.2.2104</gq1Id>
-      <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.7621899843215942</overallScore>
-      <p_accessionNumber>NM_006245.2</p_accessionNumber>
-      <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
-(PPP2R5D), transcript variant 1, mRNA.</p_geneName>
-      <p_geneSymbol>PPP2R5D</p_geneSymbol>
-      <p_species>Homo sapiens</p_species>
-      <p_tetrads>2</p_tetrads>
-      <p_gScore>32</p_gScore>
-      <p_in5UTR>false</p_in5UTR>
-      <p_inCDS>false</p_inCDS>
-      <p_in3UTR>true</p_in3UTR>
-      <c_accessionNumber>NM_009358.3</c_accessionNumber>
-      <c_geneName>Mus musculus protein phosphatase 2, regulatory subunit B (B56),
-delta isoform (Ppp2r5d), mRNA.</c_geneName>
-      <c_geneSymbol>PPP2R5D</c_geneSymbol>
-      <c_species>Mus musculus</c_species>
-      <c_tetrads>2</c_tetrads>
-      <c_gScore>34</c_gScore>
-      <c_in5UTR>false</c_in5UTR>
-      <c_inCDS>false</c_inCDS>
-      <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2330</gq1Id>
       <gq2Id>NM_009358.3.675</gq2Id>
-      <overallScore>0.9095587730407715</overallScore>
+      <overallScore>0.8572711944580078</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4986,14 +4902,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2330</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.844768226146698</overallScore>
+      <overallScore>0.8241005539894104</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5014,7 +4930,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5042,14 +4958,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2222</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.9371848702430725</overallScore>
+      <overallScore>0.9235293865203857</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5070,42 +4986,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
-    </homology>
-    <homology>
-      <id>0</id>
-      <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
-      <gq1Id>NM_006245.2.2222</gq1Id>
-      <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.7506710886955261</overallScore>
-      <p_accessionNumber>NM_006245.2</p_accessionNumber>
-      <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
-(PPP2R5D), transcript variant 1, mRNA.</p_geneName>
-      <p_geneSymbol>PPP2R5D</p_geneSymbol>
-      <p_species>Homo sapiens</p_species>
-      <p_tetrads>2</p_tetrads>
-      <p_gScore>35</p_gScore>
-      <p_in5UTR>false</p_in5UTR>
-      <p_inCDS>false</p_inCDS>
-      <p_in3UTR>true</p_in3UTR>
-      <c_accessionNumber>NM_009358.3</c_accessionNumber>
-      <c_geneName>Mus musculus protein phosphatase 2, regulatory subunit B (B56),
-delta isoform (Ppp2r5d), mRNA.</c_geneName>
-      <c_geneSymbol>PPP2R5D</c_geneSymbol>
-      <c_species>Mus musculus</c_species>
-      <c_tetrads>2</c_tetrads>
-      <c_gScore>34</c_gScore>
-      <c_in5UTR>false</c_in5UTR>
-      <c_inCDS>false</c_inCDS>
-      <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2338</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.8561273813247681</overallScore>
+      <overallScore>0.8318840265274048</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5126,7 +5014,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5154,14 +5042,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2338</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.8844028115272522</overallScore>
+      <overallScore>0.8662989735603333</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5182,14 +5070,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2375</gq1Id>
       <gq2Id>NM_009358.3.675</gq2Id>
-      <overallScore>0.7528735399246216</overallScore>
+      <overallScore>0.7990195751190186</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5210,7 +5098,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5238,14 +5126,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2375</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.9227795600891113</overallScore>
+      <overallScore>0.9047248959541321</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5266,14 +5154,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2378</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.9086601138114929</overallScore>
+      <overallScore>0.898798942565918</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5294,7 +5182,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5322,14 +5210,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2378</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.9541082382202148</overallScore>
+      <overallScore>0.9404652714729309</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5350,14 +5238,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2466</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.9087739586830139</overallScore>
+      <overallScore>0.9154713153839111</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5378,7 +5266,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5406,7 +5294,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5434,7 +5322,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5462,14 +5350,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2491</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.8591431975364685</overallScore>
+      <overallScore>0.8753196597099304</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5490,7 +5378,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5518,7 +5406,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5546,14 +5434,14 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2493</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.9031907320022583</overallScore>
+      <overallScore>0.9141151309013367</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5574,7 +5462,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5602,7 +5490,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5630,7 +5518,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5658,7 +5546,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5686,7 +5574,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5714,7 +5602,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5742,7 +5630,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5770,7 +5658,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5798,7 +5686,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5826,7 +5714,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5854,7 +5742,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5882,7 +5770,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5910,7 +5798,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5938,7 +5826,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5966,7 +5854,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -5994,7 +5882,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -6022,7 +5910,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
     <homology>
       <id>0</id>
@@ -6050,7 +5938,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <c_in5UTR>false</c_in5UTR>
       <c_inCDS>false</c_inCDS>
       <c_in3UTR>true</c_in3UTR>
-      <alignmentScore>0.831932783126831</alignmentScore>
+      <alignmentScore>0.8262184858322144</alignmentScore>
     </homology>
   </homologyResults>
 </qgrsResultSet>
