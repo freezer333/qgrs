@@ -10,8 +10,9 @@ import qgrs.compute.stat.qgrs.QgrsRunner;
 public class SuiteRunner {
 
 	public final static List<QgrsRunner> runners = Arrays.asList(
-			new HumanQgrsRunner(), 
-			new SpeciesRunner()
+			new HumanMouseQgrsDistanceRunner(), 
+			new HumanMouseQgrsRunner(), 
+			new OntologyQgrsRunner()
 			);
 	
 	public static void main(String[] args) throws Exception {

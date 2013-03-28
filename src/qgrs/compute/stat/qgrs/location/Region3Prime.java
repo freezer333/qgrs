@@ -14,4 +14,18 @@ public class Region3Prime  extends QgrsLocationAccumulator{
 		return qgrs.isIn3Prime();
 	}
 
+	@Override
+	public boolean isApplicable(GeneSequence sequence) {
+		return sequence.getCds() != null && sequence.getCds().getEnd() < sequence.getSequenceLength();
+	}
+
+	@Override
+	public double numXNucleotidesInLocation(double x, GeneSequence sequence) {
+		if ( isApplicable(sequence)) {
+			return (sequence.getSequenceLength() - sequence.getCds().getEnd())/x;
+		}
+		return 1;
+	}
+
+	
 }

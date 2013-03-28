@@ -14,4 +14,18 @@ public class AnyLocation extends QgrsLocationAccumulator {
 		return true;
 	}
 
+	@Override
+	public boolean isApplicable(GeneSequence sequence) {
+		return true;
+	}
+
+	@Override
+	public double numXNucleotidesInLocation(double x, GeneSequence sequence) {
+		return sequence.getSequenceLength() / x;
+	}
+
+	
+	
+	
+
 }

@@ -38,6 +38,13 @@ public class QgrsPartitionResult extends PartitionResult {
 					ps.setDouble(7,  loc.results.getMean());
 					ps.setDouble(8,  loc.results.getMedian());
 					ps.setDouble(9,  loc.results.getStandardDeviation());
+					ps.setInt(10,  loc.getNumApplicableGenes());
+					ps.setInt(11,  loc.getNumGenesWithQgrs());
+					
+					ps.setDouble(12,  loc.normalizedResults.getMean());
+					ps.setDouble(13,  loc.normalizedResults.getMedian());
+					ps.setDouble(14,  loc.normalizedResults.getStandardDeviation());
+					
 					ps.addBatch();
 				}
 				catch (Exception e) {

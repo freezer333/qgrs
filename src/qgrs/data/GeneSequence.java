@@ -321,9 +321,7 @@ public class GeneSequence implements Serializable{
 	}
 
 
-	public Range getCdsRange() {
-		return cds;
-	}
+	
 
 
 	private int calculateLengthWithoutGaps() {

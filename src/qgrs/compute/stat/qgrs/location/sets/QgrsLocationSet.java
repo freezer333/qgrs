@@ -21,7 +21,7 @@ public class QgrsLocationSet extends LinkedList<QgrsLocationAccumulator> {
 	
 	public void startAccumulators() {
 		for ( QgrsLocationAccumulator loc : this ) {
-			loc.startAccumulator();
+			loc.startGene();
 		}
 	}
 	
@@ -31,9 +31,11 @@ public class QgrsLocationSet extends LinkedList<QgrsLocationAccumulator> {
 		}
 	}
 	
-	public void finishAccumulators() {
+	public void finishAccumulators(GeneSequence seq) {
 		for ( QgrsLocationAccumulator loc : this ) {
-			loc.finishAccumulation();
+			if ( loc.isApplicable(seq)) {
+				loc.finishGene(seq);
+			}
 		}
 	}
 	

@@ -7,6 +7,11 @@ import qgrs.data.records.GQuadruplexRecord;
 public abstract class QgrsLocationAccumulator implements Comparable {
 
 	public final QgrsLocationResults results = new QgrsLocationResults();
+	public final QgrsLocationResults normalizedResults = new QgrsLocationResults();
+	
+	private int numApplicableGenes = 0;
+	private int numGenesWithQgrs = 0;
+	
 	private int count;
 	private int order;
 	final private String label;
@@ -19,6 +24,27 @@ public abstract class QgrsLocationAccumulator implements Comparable {
 	
 	
 	
+
+	
+
+	public int getNumApplicableGenes() {
+		return numApplicableGenes;
+	}
+
+
+	public void setNumApplicableGenes(int numApplicableGenes) {
+		this.numApplicableGenes = numApplicableGenes;
+	}
+
+
+	public int getNumGenesWithQgrs() {
+		return numGenesWithQgrs;
+	}
+
+
+	public void setNumGenesWithQgrs(int numGenesWithQgrs) {
+		this.numGenesWithQgrs = numGenesWithQgrs;
+	}
 
 
 	@Override
@@ -46,12 +72,18 @@ public abstract class QgrsLocationAccumulator implements Comparable {
 	}
 
 
-	public void startAccumulator() {
+	public void startGene() {
 		this.count = 0;
 	}
 	
-	public void finishAccumulation() {
+	public void finishGene(GeneSequence seq) {
 		results.addValue(count);
+		double nt100Units = this.numXNucleotidesInLocation(100.0, seq);
+		normalizedResults.addValue(count / nt100Units);
+		this.numApplicableGenes++;
+		if ( count > 0 ) {
+			this.numGenesWithQgrs++;
+		}
 	}
 	
 	public void offer(GQuadruplexRecord qgrs, GeneSequence sequence) {
@@ -61,5 +93,7 @@ public abstract class QgrsLocationAccumulator implements Comparable {
 	}
 	
 	public abstract boolean isWithin(GQuadruplexRecord qgrs, GeneSequence sequence);
+	public abstract boolean isApplicable(GeneSequence sequence);
+	public abstract double numXNucleotidesInLocation(double x, GeneSequence sequence);
 	
 }

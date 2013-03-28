@@ -50,7 +50,7 @@ public class QgrsAnalyzer extends PartitionAnalyzer{
 						series.getLocations().record(qgrs.principle, seq);
 					}
 				}
-				series.getLocations().finishAccumulators();
+				series.getLocations().finishAccumulators(seq);
 			}
 		}
 		this.statusReporter.recordPartitionComplete();
