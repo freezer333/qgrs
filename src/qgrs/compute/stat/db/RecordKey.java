@@ -13,6 +13,11 @@ public class RecordKey {
 		this.seriesId = s.seriesId;
 		this.locationId = loc.id;
 	}
+	public RecordKey(String p, int s, int loc) {
+		this.partitionId = p;
+		this.seriesId = s;
+		this.locationId = loc;
+	}
 	
 	public void writeElement(Element e) {
 		e.setAttribute("partitionId", partitionId);

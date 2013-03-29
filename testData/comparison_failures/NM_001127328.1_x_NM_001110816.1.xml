@@ -5,7 +5,7 @@
     <comparison>NM_001110816.1</comparison>
     <similarityScore>0</similarityScore>
     <similarityPercentage>0.7228778</similarityPercentage>
-    <dateAligned>Mar 28, 2013 3:10:45 PM</dateAligned>
+    <dateAligned>Mar 29, 2013 3:33:32 PM</dateAligned>
   </alignment-record>
   <principle>
     <gene directInput="false" accessionNumber="NM_001127328.1" sequenceLength="2627" tag="principle">
@@ -1206,7 +1206,7 @@ variant 3, mRNA.</geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.197</gq1Id>
       <gq2Id>NM_001110816.1.2</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1235,7 +1235,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.197</gq1Id>
       <gq2Id>NM_001110816.1.12</gq2Id>
-      <overallScore>0.9577585458755493</overallScore>
+      <overallScore>0.9577586011254582</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1264,7 +1264,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.207</gq1Id>
       <gq2Id>NM_001110816.1.2</gq2Id>
-      <overallScore>0.9577585458755493</overallScore>
+      <overallScore>0.9577586011254582</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1293,7 +1293,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.207</gq1Id>
       <gq2Id>NM_001110816.1.12</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1322,7 +1322,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.207</gq1Id>
       <gq2Id>NM_001110816.1.101</gq2Id>
-      <overallScore>0.8947118520736694</overallScore>
+      <overallScore>0.8947118834263459</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1351,7 +1351,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.331</gq1Id>
       <gq2Id>NM_001110816.1.2</gq2Id>
-      <overallScore>0.7561807036399841</overallScore>
+      <overallScore>0.7561807273548071</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1380,7 +1380,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.331</gq1Id>
       <gq2Id>NM_001110816.1.12</gq2Id>
-      <overallScore>0.8899999856948853</overallScore>
+      <overallScore>0.8899999803304672</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1409,7 +1409,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.331</gq1Id>
       <gq2Id>NM_001110816.1.101</gq2Id>
-      <overallScore>0.9179012179374695</overallScore>
+      <overallScore>0.9179012159690445</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1438,7 +1438,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.337</gq1Id>
       <gq2Id>NM_001110816.1.12</gq2Id>
-      <overallScore>0.8843721747398376</overallScore>
+      <overallScore>0.8843722605298703</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1467,7 +1467,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.337</gq1Id>
       <gq2Id>NM_001110816.1.101</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1496,7 +1496,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.337</gq1Id>
       <gq2Id>NM_001110816.1.97</gq2Id>
-      <overallScore>0.7640653252601624</overallScore>
+      <overallScore>0.7640653126639645</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1525,7 +1525,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.352</gq1Id>
       <gq2Id>NM_001110816.1.101</gq2Id>
-      <overallScore>0.7755902409553528</overallScore>
+      <overallScore>0.7755902683543852</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1554,7 +1554,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.358</gq1Id>
       <gq2Id>NM_001110816.1.101</gq2Id>
-      <overallScore>0.7922526001930237</overallScore>
+      <overallScore>0.7922525656498269</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1583,7 +1583,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.358</gq1Id>
       <gq2Id>NM_001110816.1.121</gq2Id>
-      <overallScore>0.9756684303283691</overallScore>
+      <overallScore>0.9756683976932337</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1612,7 +1612,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.374</gq1Id>
       <gq2Id>NM_001110816.1.121</gq2Id>
-      <overallScore>0.7947096228599548</overallScore>
+      <overallScore>0.794709654774794</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1641,7 +1641,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.386</gq1Id>
       <gq2Id>NM_001110816.1.128</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1670,7 +1670,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.387</gq1Id>
       <gq2Id>NM_001110816.1.129</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1699,7 +1699,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.417</gq1Id>
       <gq2Id>NM_001110816.1.161</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript
@@ -1728,7 +1728,7 @@ variant 3, mRNA.</p_geneName>
       <alignmentId>NM_001127328.1xNM_001110816.1</alignmentId>
       <gq1Id>NM_001127328.1.421</gq1Id>
       <gq2Id>NM_001110816.1.165</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_001127328.1</p_accessionNumber>
       <p_geneName>Homo sapiens acyl-CoA dehydrogenase, C-4 to C-12 straight chain
 (ACADM), nuclear gene encoding mitochondrial protein, transcript

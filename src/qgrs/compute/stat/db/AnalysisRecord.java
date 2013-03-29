@@ -26,13 +26,32 @@ public class AnalysisRecord {
 	public final Collection<LocationRecord> locations;  // x-axis
 	public final HashMap<RecordKey, ResultRecord> results; // data points
 	
+	public Element buildResultRecordElement(RecordKey key) {
+		Element e = new Element("record");
+		Element a = new Element("analysis");
+		a.addContent(new Element("id").setText(id));
+		a.addContent(new Element("description").setText(description));
+		a.addContent(new Element("date").setText(new SimpleDateFormat("MM/dd/yyyy").format(date)));
+		e.addContent(a);
+		
+		PartitionRecord p = this.getParitionRecord(key.partitionId);
+		e.addContent(p.getXmlElement());
+		
+		SeriesRecord s = this.getSeriesRecord(key.seriesId);
+		e.addContent(s.getXmlElement());
+		
+		LocationRecord loc = this.getLocationRecord(key.locationId);
+		e.addContent(loc.getXmlElement());
+		
+		return e;
+	}
 	
 	public Element getXmlElement() {
 		
 		Element root = new Element("analysis");
 		root.addContent(new Element("id").setText(id));
 		root.addContent(new Element("description").setText(description));
-		root.addContent(new Element("description").setText(new SimpleDateFormat("MM/dd/yyyy").format(date)));
+		root.addContent(new Element("date").setText(new SimpleDateFormat("MM/dd/yyyy").format(date)));
 		
 		Element ps = new Element("partitions");
 		for ( PartitionRecord p : partitions ) {
@@ -153,6 +172,8 @@ public class AnalysisRecord {
 		}
 		stmt.close();
 	}
+	
+	
 	
 	
 	public static AnalysisRecord loadAnalysis(String analysisId, Connection c) throws SQLException {

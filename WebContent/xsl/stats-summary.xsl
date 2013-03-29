@@ -31,7 +31,9 @@
 							<xsl:for-each select="/qgrs/analysis/series/series">
 								<xsl:variable name="series"><xsl:value-of select="seriesId"/></xsl:variable>
 								<td>
+									<a href="locationdetails?analysis={/qgrs/analysis/id}&amp;partition={$partition}&amp;series={$series}&amp;location={$loc}">
 									<xsl:value-of select="/qgrs/analysis/results/result[@partitionId=$partition][@seriesId=$series][@locationId=$loc]/@*[local-name()=$attributeName]"/>
+									</a>
 								</td>
 							</xsl:for-each>
 						</tr>

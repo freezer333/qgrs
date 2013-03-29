@@ -5,7 +5,7 @@
     <comparison>NM_009358.3</comparison>
     <similarityScore>0</similarityScore>
     <similarityPercentage>0.8262185</similarityPercentage>
-    <dateAligned>Mar 28, 2013 3:10:30 PM</dateAligned>
+    <dateAligned>Mar 29, 2013 3:33:08 PM</dateAligned>
   </alignment-record>
   <principle>
     <gene directInput="false" accessionNumber="NM_006245.2" sequenceLength="2975" tag="principle">
@@ -2753,7 +2753,7 @@ delta isoform (Ppp2r5d), mRNA.</geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.28</gq1Id>
       <gq2Id>NM_009358.3.114</gq2Id>
-      <overallScore>0.9605363607406616</overallScore>
+      <overallScore>0.9605363802691758</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -2781,7 +2781,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.28</gq1Id>
       <gq2Id>NM_009358.3.117</gq2Id>
-      <overallScore>0.986111044883728</overallScore>
+      <overallScore>0.9861110916154252</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -2809,7 +2809,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.66</gq1Id>
       <gq2Id>NM_009358.3.114</gq2Id>
-      <overallScore>0.7923019528388977</overallScore>
+      <overallScore>0.7923019201617865</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -2837,7 +2837,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.69</gq1Id>
       <gq2Id>NM_009358.3.117</gq2Id>
-      <overallScore>0.869934618473053</overallScore>
+      <overallScore>0.8699345929122062</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -2865,7 +2865,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.69</gq1Id>
       <gq2Id>NM_009358.3.171</gq2Id>
-      <overallScore>0.9200831055641174</overallScore>
+      <overallScore>0.9200831311077018</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -2893,7 +2893,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.69</gq1Id>
       <gq2Id>NM_009358.3.179</gq2Id>
-      <overallScore>0.8990849256515503</overallScore>
+      <overallScore>0.8990849184064706</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -2921,7 +2921,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.84</gq1Id>
       <gq2Id>NM_009358.3.117</gq2Id>
-      <overallScore>0.8801918625831604</overallScore>
+      <overallScore>0.8801919015655821</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -2949,7 +2949,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.84</gq1Id>
       <gq2Id>NM_009358.3.171</gq2Id>
-      <overallScore>0.7796961069107056</overallScore>
+      <overallScore>0.7796961082360119</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -2977,7 +2977,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.84</gq1Id>
       <gq2Id>NM_009358.3.179</gq2Id>
-      <overallScore>0.9617646932601929</overallScore>
+      <overallScore>0.9617646909373647</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3005,7 +3005,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.84</gq1Id>
       <gq2Id>NM_009358.3.331</gq2Id>
-      <overallScore>0.830106258392334</overallScore>
+      <overallScore>0.8301062879952632</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3033,7 +3033,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.84</gq1Id>
       <gq2Id>NM_009358.3.278</gq2Id>
-      <overallScore>0.8262526988983154</overallScore>
+      <overallScore>0.8262527178991061</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3061,7 +3061,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.237</gq1Id>
       <gq2Id>NM_009358.3.171</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3089,7 +3089,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.237</gq1Id>
       <gq2Id>NM_009358.3.179</gq2Id>
-      <overallScore>0.9281638860702515</overallScore>
+      <overallScore>0.9281639355761071</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3117,7 +3117,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.237</gq1Id>
       <gq2Id>NM_009358.3.331</gq2Id>
-      <overallScore>0.7761437296867371</overallScore>
+      <overallScore>0.7761437436626639</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3145,7 +3145,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.245</gq1Id>
       <gq2Id>NM_009358.3.117</gq2Id>
-      <overallScore>0.7562444806098938</overallScore>
+      <overallScore>0.7562444873729304</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3173,7 +3173,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.245</gq1Id>
       <gq2Id>NM_009358.3.171</gq2Id>
-      <overallScore>0.9281638860702515</overallScore>
+      <overallScore>0.9281639355761071</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3201,7 +3201,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.245</gq1Id>
       <gq2Id>NM_009358.3.179</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3229,7 +3229,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.245</gq1Id>
       <gq2Id>NM_009358.3.331</gq2Id>
-      <overallScore>0.9573412537574768</overallScore>
+      <overallScore>0.9573412493965219</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3257,7 +3257,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.245</gq1Id>
       <gq2Id>NM_009358.3.278</gq2Id>
-      <overallScore>0.966633141040802</overallScore>
+      <overallScore>0.9666331524882974</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3285,7 +3285,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.245</gq1Id>
       <gq2Id>NM_009358.3.354</gq2Id>
-      <overallScore>0.7568759322166443</overallScore>
+      <overallScore>0.7568759068247108</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3313,7 +3313,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.245</gq1Id>
       <gq2Id>NM_009358.3.359</gq2Id>
-      <overallScore>0.7764059901237488</overallScore>
+      <overallScore>0.776405948224226</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3341,7 +3341,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.463</gq1Id>
       <gq2Id>NM_009358.3.171</gq2Id>
-      <overallScore>0.7761437296867371</overallScore>
+      <overallScore>0.7761437436626639</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3369,7 +3369,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.463</gq1Id>
       <gq2Id>NM_009358.3.179</gq2Id>
-      <overallScore>0.9573412537574768</overallScore>
+      <overallScore>0.9573412493965219</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3397,7 +3397,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.463</gq1Id>
       <gq2Id>NM_009358.3.331</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3425,7 +3425,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.463</gq1Id>
       <gq2Id>NM_009358.3.278</gq2Id>
-      <overallScore>0.9655112028121948</overallScore>
+      <overallScore>0.9655111866520525</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3453,7 +3453,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.463</gq1Id>
       <gq2Id>NM_009358.3.354</gq2Id>
-      <overallScore>0.8715465068817139</overallScore>
+      <overallScore>0.8715465358855261</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3481,7 +3481,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.463</gq1Id>
       <gq2Id>NM_009358.3.359</gq2Id>
-      <overallScore>0.8243871927261353</overallScore>
+      <overallScore>0.8243872502398693</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3509,7 +3509,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.376</gq1Id>
       <gq2Id>NM_009358.3.179</gq2Id>
-      <overallScore>0.966633141040802</overallScore>
+      <overallScore>0.9666331524882974</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3537,7 +3537,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.376</gq1Id>
       <gq2Id>NM_009358.3.331</gq2Id>
-      <overallScore>0.9655112028121948</overallScore>
+      <overallScore>0.9655111866520525</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3565,7 +3565,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.376</gq1Id>
       <gq2Id>NM_009358.3.278</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3593,7 +3593,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.376</gq1Id>
       <gq2Id>NM_009358.3.354</gq2Id>
-      <overallScore>0.9317232966423035</overallScore>
+      <overallScore>0.9317233071593578</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3621,7 +3621,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.376</gq1Id>
       <gq2Id>NM_009358.3.359</gq2Id>
-      <overallScore>0.9462482333183289</overallScore>
+      <overallScore>0.9462482437304487</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3649,7 +3649,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.376</gq1Id>
       <gq2Id>NM_009358.3.374</gq2Id>
-      <overallScore>0.7803851366043091</overallScore>
+      <overallScore>0.7803851354392188</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3677,7 +3677,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.460</gq1Id>
       <gq2Id>NM_009358.3.179</gq2Id>
-      <overallScore>0.9038281440734863</overallScore>
+      <overallScore>0.9038281877195578</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3705,7 +3705,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.460</gq1Id>
       <gq2Id>NM_009358.3.331</gq2Id>
-      <overallScore>0.9059048891067505</overallScore>
+      <overallScore>0.9059049239056831</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3733,7 +3733,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.460</gq1Id>
       <gq2Id>NM_009358.3.278</gq2Id>
-      <overallScore>0.9683760404586792</overallScore>
+      <overallScore>0.9683760511633168</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3761,7 +3761,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.460</gq1Id>
       <gq2Id>NM_009358.3.354</gq2Id>
-      <overallScore>0.8442897796630859</overallScore>
+      <overallScore>0.8442897797204372</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3789,7 +3789,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.460</gq1Id>
       <gq2Id>NM_009358.3.359</gq2Id>
-      <overallScore>0.9462482333183289</overallScore>
+      <overallScore>0.9462482437304487</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3817,7 +3817,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.460</gq1Id>
       <gq2Id>NM_009358.3.374</gq2Id>
-      <overallScore>0.7803851366043091</overallScore>
+      <overallScore>0.7803851354392188</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3845,7 +3845,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.499</gq1Id>
       <gq2Id>NM_009358.3.179</gq2Id>
-      <overallScore>0.7764059901237488</overallScore>
+      <overallScore>0.776405948224226</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3873,7 +3873,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.499</gq1Id>
       <gq2Id>NM_009358.3.331</gq2Id>
-      <overallScore>0.8715465068817139</overallScore>
+      <overallScore>0.8715465358855261</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3901,7 +3901,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.499</gq1Id>
       <gq2Id>NM_009358.3.278</gq2Id>
-      <overallScore>0.9317232966423035</overallScore>
+      <overallScore>0.9317233071593578</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3929,7 +3929,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.499</gq1Id>
       <gq2Id>NM_009358.3.354</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3957,7 +3957,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.499</gq1Id>
       <gq2Id>NM_009358.3.359</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -3985,7 +3985,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.499</gq1Id>
       <gq2Id>NM_009358.3.374</gq2Id>
-      <overallScore>0.9391666650772095</overallScore>
+      <overallScore>0.9391666515047352</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4013,7 +4013,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.534</gq1Id>
       <gq2Id>NM_009358.3.278</gq2Id>
-      <overallScore>0.7517543435096741</overallScore>
+      <overallScore>0.7517542826900305</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4041,7 +4041,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.534</gq1Id>
       <gq2Id>NM_009358.3.354</gq2Id>
-      <overallScore>0.8866924047470093</overallScore>
+      <overallScore>0.8866924370463916</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4069,7 +4069,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.534</gq1Id>
       <gq2Id>NM_009358.3.359</gq2Id>
-      <overallScore>0.9391666650772095</overallScore>
+      <overallScore>0.9391666515047352</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4097,7 +4097,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.534</gq1Id>
       <gq2Id>NM_009358.3.374</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4125,7 +4125,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.557</gq1Id>
       <gq2Id>NM_009358.3.399</gq2Id>
-      <overallScore>0.9009648561477661</overallScore>
+      <overallScore>0.9009648016706424</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4153,7 +4153,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.596</gq1Id>
       <gq2Id>NM_009358.3.399</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4181,7 +4181,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.598</gq1Id>
       <gq2Id>NM_009358.3.399</gq2Id>
-      <overallScore>0.7814249396324158</overallScore>
+      <overallScore>0.7814249362093122</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4209,7 +4209,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.598</gq1Id>
       <gq2Id>NM_009358.3.410</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4237,7 +4237,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.633</gq1Id>
       <gq2Id>NM_009358.3.418</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4265,7 +4265,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.633</gq1Id>
       <gq2Id>NM_009358.3.425</gq2Id>
-      <overallScore>0.8445646166801453</overallScore>
+      <overallScore>0.8445646038162942</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4293,7 +4293,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.640</gq1Id>
       <gq2Id>NM_009358.3.418</gq2Id>
-      <overallScore>0.8445646166801453</overallScore>
+      <overallScore>0.8445646038162942</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4321,7 +4321,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.640</gq1Id>
       <gq2Id>NM_009358.3.425</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4349,7 +4349,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.643</gq1Id>
       <gq2Id>NM_009358.3.427</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4377,7 +4377,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.653</gq1Id>
       <gq2Id>NM_009358.3.437</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4405,7 +4405,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.668</gq1Id>
       <gq2Id>NM_009358.3.460</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4433,7 +4433,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.685</gq1Id>
       <gq2Id>NM_009358.3.485</gq2Id>
-      <overallScore>0.9628078937530518</overallScore>
+      <overallScore>0.9628078626514656</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4461,7 +4461,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.730</gq1Id>
       <gq2Id>NM_009358.3.507</gq2Id>
-      <overallScore>0.8452916145324707</overallScore>
+      <overallScore>0.8452916412284837</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4489,7 +4489,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.730</gq1Id>
       <gq2Id>NM_009358.3.511</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4517,7 +4517,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.798</gq1Id>
       <gq2Id>NM_009358.3.534</gq2Id>
-      <overallScore>0.9547618627548218</overallScore>
+      <overallScore>0.9547618821972892</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4545,7 +4545,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1086</gq1Id>
       <gq2Id>NM_009358.3.581</gq2Id>
-      <overallScore>0.8391712307929993</overallScore>
+      <overallScore>0.8391712734662651</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4573,7 +4573,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1086</gq1Id>
       <gq2Id>NM_009358.3.588</gq2Id>
-      <overallScore>0.9409961104393005</overallScore>
+      <overallScore>0.9409961564987328</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4601,7 +4601,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1274</gq1Id>
       <gq2Id>NM_009358.3.629</gq2Id>
-      <overallScore>0.8701719045639038</overallScore>
+      <overallScore>0.870171937647044</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4629,7 +4629,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1347</gq1Id>
       <gq2Id>NM_009358.3.629</gq2Id>
-      <overallScore>0.8138601183891296</overallScore>
+      <overallScore>0.8138600963961597</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4657,7 +4657,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1433</gq1Id>
       <gq2Id>NM_009358.3.636</gq2Id>
-      <overallScore>0.8997407555580139</overallScore>
+      <overallScore>0.8997407950422289</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4685,7 +4685,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1511</gq1Id>
       <gq2Id>NM_009358.3.653</gq2Id>
-      <overallScore>0.8613687753677368</overallScore>
+      <overallScore>0.8613688040280327</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4713,7 +4713,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1528</gq1Id>
       <gq2Id>NM_009358.3.653</gq2Id>
-      <overallScore>0.9532667398452759</overallScore>
+      <overallScore>0.9532667682061611</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4741,7 +4741,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1881</gq1Id>
       <gq2Id>NM_009358.3.653</gq2Id>
-      <overallScore>0.89896559715271</overallScore>
+      <overallScore>0.8989656764499308</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4769,7 +4769,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.1881</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.758169949054718</overallScore>
+      <overallScore>0.7581699354586253</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4797,7 +4797,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2104</gq1Id>
       <gq2Id>NM_009358.3.653</gq2Id>
-      <overallScore>0.7642064094543457</overallScore>
+      <overallScore>0.7642064567602516</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4825,7 +4825,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2104</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.8196617960929871</overallScore>
+      <overallScore>0.8196618000140807</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4853,7 +4853,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2104</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.8388203382492065</overallScore>
+      <overallScore>0.83882036531352</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4881,7 +4881,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2330</gq1Id>
       <gq2Id>NM_009358.3.675</gq2Id>
-      <overallScore>0.8572711944580078</overallScore>
+      <overallScore>0.8572712272174314</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4909,7 +4909,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2330</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.8241005539894104</overallScore>
+      <overallScore>0.8241005634598029</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4937,7 +4937,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2222</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.9448469877243042</overallScore>
+      <overallScore>0.9448470010585639</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4965,7 +4965,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2222</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.9235293865203857</overallScore>
+      <overallScore>0.9235293617581632</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -4993,7 +4993,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2338</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.8318840265274048</overallScore>
+      <overallScore>0.8318840246701593</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5021,7 +5021,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2338</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.9652777314186096</overallScore>
+      <overallScore>0.9652777599584725</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5049,7 +5049,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2338</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.8662989735603333</overallScore>
+      <overallScore>0.8662989849407305</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5077,7 +5077,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2375</gq1Id>
       <gq2Id>NM_009358.3.675</gq2Id>
-      <overallScore>0.7990195751190186</overallScore>
+      <overallScore>0.7990195544619199</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5105,7 +5105,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2375</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.9817646741867065</overallScore>
+      <overallScore>0.9817646880710826</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5133,7 +5133,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2375</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.9047248959541321</overallScore>
+      <overallScore>0.9047249126568655</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5161,7 +5161,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2378</gq1Id>
       <gq2Id>NM_009358.3.679</gq2Id>
-      <overallScore>0.898798942565918</overallScore>
+      <overallScore>0.8987989830222061</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5189,7 +5189,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2378</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5217,7 +5217,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2378</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.9404652714729309</overallScore>
+      <overallScore>0.9404653234849176</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5245,7 +5245,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2466</gq1Id>
       <gq2Id>NM_009358.3.807</gq2Id>
-      <overallScore>0.9154713153839111</overallScore>
+      <overallScore>0.9154713216096486</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5273,7 +5273,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2466</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5301,7 +5301,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2466</gq1Id>
       <gq2Id>NM_009358.3.941</gq2Id>
-      <overallScore>0.8775489926338196</overallScore>
+      <overallScore>0.8775490018535477</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5329,7 +5329,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2466</gq1Id>
       <gq2Id>NM_009358.3.942</gq2Id>
-      <overallScore>0.8878430724143982</overallScore>
+      <overallScore>0.8878430899393337</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5357,7 +5357,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2491</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.8753196597099304</overallScore>
+      <overallScore>0.8753196721598608</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5385,7 +5385,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2491</gq1Id>
       <gq2Id>NM_009358.3.941</gq2Id>
-      <overallScore>0.887499988079071</overallScore>
+      <overallScore>0.8874999796971679</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5413,7 +5413,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2491</gq1Id>
       <gq2Id>NM_009358.3.942</gq2Id>
-      <overallScore>0.8554949164390564</overallScore>
+      <overallScore>0.8554949481030625</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5441,7 +5441,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2493</gq1Id>
       <gq2Id>NM_009358.3.921</gq2Id>
-      <overallScore>0.9141151309013367</overallScore>
+      <overallScore>0.9141151219080101</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5469,7 +5469,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2493</gq1Id>
       <gq2Id>NM_009358.3.941</gq2Id>
-      <overallScore>0.9277777671813965</overallScore>
+      <overallScore>0.9277777623799113</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5497,7 +5497,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2493</gq1Id>
       <gq2Id>NM_009358.3.942</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5525,7 +5525,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2493</gq1Id>
       <gq2Id>NM_009358.3.961</gq2Id>
-      <overallScore>0.8741462230682373</overallScore>
+      <overallScore>0.8741463047120639</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5553,7 +5553,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2493</gq1Id>
       <gq2Id>NM_009358.3.963</gq2Id>
-      <overallScore>0.9013071656227112</overallScore>
+      <overallScore>0.9013071405293518</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5581,7 +5581,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2517</gq1Id>
       <gq2Id>NM_009358.3.941</gq2Id>
-      <overallScore>0.7825561761856079</overallScore>
+      <overallScore>0.782556159947013</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5609,7 +5609,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2517</gq1Id>
       <gq2Id>NM_009358.3.942</gq2Id>
-      <overallScore>0.8719240427017212</overallScore>
+      <overallScore>0.8719240766287182</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5637,7 +5637,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2517</gq1Id>
       <gq2Id>NM_009358.3.961</gq2Id>
-      <overallScore>0.8999999761581421</overallScore>
+      <overallScore>0.8999999798834324</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5665,7 +5665,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2517</gq1Id>
       <gq2Id>NM_009358.3.963</gq2Id>
-      <overallScore>0.8663684725761414</overallScore>
+      <overallScore>0.8663685243017476</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5693,7 +5693,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2520</gq1Id>
       <gq2Id>NM_009358.3.942</gq2Id>
-      <overallScore>0.9013071656227112</overallScore>
+      <overallScore>0.9013071405293518</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5721,7 +5721,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2520</gq1Id>
       <gq2Id>NM_009358.3.961</gq2Id>
-      <overallScore>0.8785907030105591</overallScore>
+      <overallScore>0.8785907429973616</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5749,7 +5749,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2520</gq1Id>
       <gq2Id>NM_009358.3.963</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5777,7 +5777,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2520</gq1Id>
       <gq2Id>NM_009358.3.977</gq2Id>
-      <overallScore>0.8919863104820251</overallScore>
+      <overallScore>0.8919863410617017</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5805,7 +5805,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2520</gq1Id>
       <gq2Id>NM_009358.3.980</gq2Id>
-      <overallScore>0.7943289279937744</overallScore>
+      <overallScore>0.7943289405681875</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5833,7 +5833,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2547</gq1Id>
       <gq2Id>NM_009358.3.963</gq2Id>
-      <overallScore>0.7943289279937744</overallScore>
+      <overallScore>0.7943289405681875</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5861,7 +5861,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2547</gq1Id>
       <gq2Id>NM_009358.3.977</gq2Id>
-      <overallScore>0.7624821662902832</overallScore>
+      <overallScore>0.7624821970389086</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5889,7 +5889,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2547</gq1Id>
       <gq2Id>NM_009358.3.980</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
@@ -5917,7 +5917,7 @@ delta isoform (Ppp2r5d), mRNA.</c_geneName>
       <alignmentId>NM_006245.2xNM_009358.3</alignmentId>
       <gq1Id>NM_006245.2.2558</gq1Id>
       <gq2Id>NM_009358.3.995</gq2Id>
-      <overallScore>1.0</overallScore>
+      <overallScore>0.9999999813735485</overallScore>
       <p_accessionNumber>NM_006245.2</p_accessionNumber>
       <p_geneName>Homo sapiens protein phosphatase 2, regulatory subunit B', delta
 (PPP2R5D), transcript variant 1, mRNA.</p_geneName>
