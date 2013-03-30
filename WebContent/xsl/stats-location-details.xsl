@@ -55,9 +55,11 @@
 							<tr><td>Total QGRS</td><td><xsl:value-of select="/qgrs/result/@total"/></td></tr>
 							<tr><td>Average # of QGRS/mRNA</td><td><xsl:value-of select="/qgrs/result/@mean"/></td></tr>
 							<tr><td>Standard Deviation - # of QGRS/mRNA</td><td><xsl:value-of select="/qgrs/result/@std"/></td></tr>
+							<tr><td>Skewness - # of QGRS/mRNA</td><td><xsl:value-of select="/qgrs/result/@skew"/></td></tr>
 							<tr><td>Median # of QGRS/mRNA</td><td><xsl:value-of select="/qgrs/result/@median"/></td></tr>
 							<tr><td>Average # of QGRS/mRNA (normalized)</td><td><xsl:value-of select="/qgrs/result/@n_mean"/></td></tr>
 							<tr><td>Standard Deviation - # of QGRS/mRNA (normalized)</td><td><xsl:value-of select="/qgrs/result/@n_std"/></td></tr>
+							<tr><td>Skewness - # of QGRS/mRNA (normalized)</td><td><xsl:value-of select="/qgrs/result/@n_skew"/></td></tr>
 							<tr><td>Median # of QGRS/mRNA (normalized)</td><td><xsl:value-of select="/qgrs/result/@n_median"/></td></tr>
 							<tr><td># mRNA valid at this location</td><td><xsl:value-of select="/qgrs/result/@numSamples"/></td></tr>
 							<tr><td># mRNA with at least 1 QGRS</td><td><xsl:value-of select="/qgrs/result/@numSamplesWithQgrs"/></td></tr>

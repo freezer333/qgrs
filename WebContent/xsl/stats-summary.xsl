@@ -93,6 +93,11 @@
 								<xsl:with-param name="attributeName">std</xsl:with-param>
 								<xsl:with-param name="caption">Standard Deviation - number of QGRS in each location/region</xsl:with-param>
 							</xsl:call-template>
+							<xsl:call-template name="analysisTable">
+								<xsl:with-param name="partition"><xsl:value-of select="$partition"/></xsl:with-param>
+								<xsl:with-param name="attributeName">skew</xsl:with-param>
+								<xsl:with-param name="caption">Skewness - number of QGRS in each location/region</xsl:with-param>
+							</xsl:call-template>
 							<hr/>
 							<xsl:call-template name="analysisTable">
 								<xsl:with-param name="partition"><xsl:value-of select="$partition"/></xsl:with-param>
@@ -103,6 +108,11 @@
 								<xsl:with-param name="partition"><xsl:value-of select="$partition"/></xsl:with-param>
 								<xsl:with-param name="attributeName">n_std</xsl:with-param>
 								<xsl:with-param name="caption">Standard Deviation - number of QGRS per 100nt in each location/region</xsl:with-param>
+							</xsl:call-template>
+							<xsl:call-template name="analysisTable">
+								<xsl:with-param name="partition"><xsl:value-of select="$partition"/></xsl:with-param>
+								<xsl:with-param name="attributeName">n_skew</xsl:with-param>
+								<xsl:with-param name="caption">Skewness - number of QGRS per 100nt in each location/region</xsl:with-param>
 							</xsl:call-template>
 							<hr/>
 							<!--  Doesn't seem as though median is all that relevant....  for now. 

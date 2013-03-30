@@ -1,6 +1,7 @@
 package qgrs.compute.stat.qgrs;
 
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.PartitionResult;
@@ -29,22 +30,7 @@ public class QgrsPartitionResult extends PartitionResult {
 			int s = q.getOrder();
 			for ( QgrsLocationAccumulator loc : q.getLocations() ) {
 				try {
-					ps.setString(1, a);
-					ps.setString(2, p);
-					ps.setInt(3, s);
-					ps.setInt(4, loc.getOrder());
-					ps.setString(5, loc.getLabel());
-					ps.setInt(6, (int)loc.results.getSum());
-					ps.setDouble(7,  loc.results.getMean());
-					ps.setDouble(8,  loc.results.getMedian());
-					ps.setDouble(9,  loc.results.getStandardDeviation());
-					ps.setInt(10,  loc.getNumApplicableGenes());
-					ps.setInt(11,  loc.getNumGenesWithQgrs());
-					
-					ps.setDouble(12,  loc.normalizedResults.getMean());
-					ps.setDouble(13,  loc.normalizedResults.getMedian());
-					ps.setDouble(14,  loc.normalizedResults.getStandardDeviation());
-					
+					loc.fillStatement(ps, a, p, s);
 					ps.addBatch();
 				}
 				catch (Exception e) {
@@ -55,6 +41,10 @@ public class QgrsPartitionResult extends PartitionResult {
 		
 		
 	}
+
+
+
+	
 
 	
 	

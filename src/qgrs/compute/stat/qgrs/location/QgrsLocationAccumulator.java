@@ -1,5 +1,8 @@
 package qgrs.compute.stat.qgrs.location;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import qgrs.compute.stat.qgrs.QgrsLocationResults;
 import qgrs.data.GeneSequence;
 import qgrs.data.records.GQuadruplexRecord;
@@ -23,7 +26,30 @@ public abstract class QgrsLocationAccumulator implements Comparable {
 	}
 	
 	
-	
+	public void fillStatement(PreparedStatement ps, String analysisId,
+			String partitionId, int seriesId)
+			throws SQLException {
+		
+		ps.setString(1, analysisId);
+		ps.setString(2, partitionId);
+		ps.setInt(3, seriesId);
+		ps.setInt(4, getOrder());
+		ps.setString(5, getLabel());
+		ps.setInt(6, (int)results.getSum());
+		
+		ps.setDouble(7,  results.getMean());
+		ps.setDouble(8,  results.getMedian());
+		ps.setDouble(9,  results.getStandardDeviation());
+		ps.setDouble(10,  results.getSkewness());
+		
+		ps.setInt(11,  getNumApplicableGenes());
+		ps.setInt(12,  getNumGenesWithQgrs());
+		
+		ps.setDouble(13,  normalizedResults.getMean());
+		ps.setDouble(14,  normalizedResults.getMedian());
+		ps.setDouble(15,  normalizedResults.getStandardDeviation());
+		ps.setDouble(16,  normalizedResults.getSkewness());
+	}
 
 	
 
