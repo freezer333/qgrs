@@ -5,7 +5,7 @@
     <comparison>NM_009358.3</comparison>
     <similarityScore>0</similarityScore>
     <similarityPercentage>0.8262185</similarityPercentage>
-    <dateAligned>Mar 29, 2013 3:33:08 PM</dateAligned>
+    <dateAligned>Apr 3, 2013 12:15:35 PM</dateAligned>
   </alignment-record>
   <principle>
     <gene directInput="false" accessionNumber="NM_006245.2" sequenceLength="2975" tag="principle">
@@ -1490,7 +1490,7 @@ delta isoform (Ppp2r5d), mRNA.</geneName>
           <type>Process</type>
         </go>
         <go>
-          <term>positive regulation of nerve growth factor receptor signaling pathway</term>
+          <term>positive regulation of neurotrophin TRK receptor signaling pathway</term>
           <type>Process</type>
         </go>
       </ontologyData>

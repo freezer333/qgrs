@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -35,7 +36,7 @@ public class FullComputationTest {
 	 }
 	   
 	
-	
+	@Ignore
 	@Test
 	public void testComputation() throws Exception {
 	
