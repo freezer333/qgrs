@@ -1,5 +1,8 @@
 package qgrs.controllers;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -12,12 +15,22 @@ import qgrs.view.XslViews;
 import framework.web.AbstractController;
 import framework.web.AbstractWebContext;
 import framework.web.ModelView;
+import framework.web.authentication.Role;
 import framework.web.response.ErrorResponse;
 import framework.web.response.PageResponse;
 import framework.web.response.Response;
 
 public class QgrsList extends AbstractController {
 
+	@Override
+	public boolean requiresAuthentication() {
+		return true;
+	}
+	@Override
+	public Collection<Role> getAuthorizedRoles() {
+		return Arrays.asList(new Role[] { new Role("user")});
+	}
+	
 	public QgrsList() {
 		super();
 		this.supportedUrls.add("/app/quadruplex-list");

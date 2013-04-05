@@ -1,5 +1,8 @@
 package qgrs.controllers;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import qgrs.compute.stat.db.AnalysisRecord;
 import qgrs.compute.stat.qgrs.QgrsRunner;
 import qgrs.compute.stat.qgrs.WorkbookBuilder;
@@ -8,12 +11,22 @@ import qgrs.model.QgrsWebContext;
 import qgrs.view.XslViews;
 import framework.web.AbstractController;
 import framework.web.AbstractWebContext;
+import framework.web.authentication.Role;
 import framework.web.response.ErrorResponse;
 import framework.web.response.ExcelResponse;
 import framework.web.response.Response;
 
 public class StatsExport extends AbstractController {
 
+	@Override
+	public boolean requiresAuthentication() {
+		return true;
+	}
+	@Override
+	public Collection<Role> getAuthorizedRoles() {
+		return Arrays.asList(new Role[] { new Role("user")});
+	}
+	
 	public StatsExport() {
 		super();
 		this.supportedUrls.add("/app/statsexport");

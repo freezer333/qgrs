@@ -201,7 +201,7 @@ public class QgrsCandidate {
 	}
 	
 	int gmax() {
-		return getMaxLength()-9;
+		return getMaxLength()-(numTetrads*4+1);
 	}
 	
 	int computeDefaultMaxLength(){

@@ -63,98 +63,50 @@ public class DbIndex {
 		}	
 	}
 	
+	
+	static void executeSql(Connection conn, String sql) {
+		execute(conn, sql);
+	}
+	static void rebuild(Connection conn, IndexCommand index) {
+		try {
+			executeSql(conn, index.dropSql());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		executeSql(conn, index.createSql());
+	}
 	public static void makeIndexes(Connection conn) {
-		
-		String q = "CREATE INDEX IF NOT EXISTS GENE_ID_QGRS ON QGRS (geneId)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_SPECIES ON GENE (species)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_SPECIES ON GENE (accessionNumber)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_GENEID ON QGRS (geneId)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_ID ON QGRS (id)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_GSCORE ON QGRS (gScore)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_A_PRINCIPAL ON GENE_A (principle)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_A_COMPARISON ON GENE_A (comparison)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_A_SIMPERCENT ON GENE_A (similarityPercentage)";
-		execute(conn, q);
-		
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_OSCORE ON QGRS_H (overallScore)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_ALIGNMENTID ON QGRS_H (alignmentId)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_GQ1 ON QGRS_H (gq1Id)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_GQ2 ON QGRS_H (gq1Id)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_ALIGNMENTSCORE ON QGRS_H (ALIGNMENTSCORE)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_PACCESSIONNUMBER ON QGRS_H (P_ACCESSIONNUMBER)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_CACCESSIONNUMBER ON QGRS_H (C_ACCESSIONNUMBER)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_PSPECIES ON QGRS_H (P_SPECIES)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_CSPECIES ON QGRS_H (C_SPECIES)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_P_GSCORE ON QGRS_H (P_GSCORE)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS QGRS_H_PTETRADS ON QGRS_H (P_TETRADS)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GO_ACCESSIONNUMBER ON GO (ACCESSIONNUMBER)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GO_GOTERM ON GO (GOTERM)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GO_GOTYPE ON GO  (GOTYPE)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_principle ON GENE_AQ (principle)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_comparison ON GENE_AQ (comparison)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_pSpecies ON GENE_AQ (pSpecies)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_cSpeciesE ON GENE_AQ (cSpecies)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_pSymbol ON GENE_AQ (pSymbol)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_cSymbol ON GENE_AQ (cSymbol)";
-		execute(conn, q);
-		
-		q = "CREATE INDEX IF NOT EXISTS GENE_AQ_similarityPercentage ON GENE_AQ (similarityPercentage)";
-		execute(conn, q);
+		rebuild(conn, new IndexCommand("GENE_ID_QGRS", "QGRS", "geneId"));
+		rebuild(conn, new IndexCommand("GENE_SPECIES", "GENE", "species"));
+		rebuild(conn, new IndexCommand("GENE_SPECIES", "GENE", "accessionNumber"));
+		rebuild(conn, new IndexCommand("QGRS_GENEID", "QGRS", "geneId"));
+		rebuild(conn, new IndexCommand("QGRS_ID", "QGRS", "id"));
+		rebuild(conn, new IndexCommand("QGRS_GSCORE", "QGRS", "gScore"));
+		rebuild(conn, new IndexCommand("GENE_A_PRINCIPAL", "GENE_A", "principle"));
+		rebuild(conn, new IndexCommand("GENE_A_COMPARISON", "GENE_A", "comparison"));
+		rebuild(conn, new IndexCommand("GENE_A_SIMPERCENT", "GENE_A", "similarityPercentage"));
+		rebuild(conn, new IndexCommand("QGRS_H_OSCORE", "QGRS_H", "overallScore"));
+		rebuild(conn, new IndexCommand("QGRS_H_ALIGNMENTID", "QGRS_H", "alignmentId"));
+		rebuild(conn, new IndexCommand("QGRS_H_GQ1", "QGRS_H", "gq1Id"));
+		rebuild(conn, new IndexCommand("QGRS_H_GQ2", "QGRS_H", "gq1Id"));
+		rebuild(conn, new IndexCommand("QGRS_H_ALIGNMENTSCORE", "QGRS_H", "ALIGNMENTSCORE"));
+		rebuild(conn, new IndexCommand("QGRS_H_PACCESSIONNUMBER", "QGRS_H", "P_ACCESSIONNUMBER"));
+		rebuild(conn, new IndexCommand("QGRS_H_CACCESSIONNUMBER", "QGRS_H", "C_ACCESSIONNUMBER"));
+		rebuild(conn, new IndexCommand("QGRS_H_PSPECIES", "QGRS_H", "P_SPECIES"));
+		rebuild(conn, new IndexCommand("QGRS_H_CSPECIES", "QGRS_H", "C_SPECIES"));
+		rebuild(conn, new IndexCommand("QGRS_H_P_GSCORE", "QGRS_H", "P_GSCORE"));
+		rebuild(conn, new IndexCommand("QGRS_H_PTETRADS", "QGRS_H", "P_TETRADS"));
+		rebuild(conn, new IndexCommand("GO_ACCESSIONNUMBER", "GO", "ACCESSIONNUMBER"));
+		rebuild(conn, new IndexCommand("GO_GOTERM", "GO", "GOTERM"));
+		rebuild(conn, new IndexCommand("GO_GOTYPE", "GO", "GOTYPE"));
+		rebuild(conn, new IndexCommand("GENE_AQ_principle", "GENE_AQ", "principle"));
+		rebuild(conn, new IndexCommand("GENE_AQ_comparison", "GENE_AQ", "comparison"));
+		rebuild(conn, new IndexCommand("GENE_AQ_pSpecies", "GENE_AQ", "pSpecies"));
+		rebuild(conn, new IndexCommand("GENE_AQ_cSpeciesE", "GENE_AQ", "cSpecies"));
+		rebuild(conn, new IndexCommand("GENE_AQ_pSymbol", "GENE_AQ", "pSymbol"));
+		rebuild(conn, new IndexCommand("GENE_AQ_cSymbol", "GENE_AQ", "cSymbol"));
+		rebuild(conn, new IndexCommand("GENE_AQ_similarityPercentage", "GENE_AQ", "similarityPercentage"));
 	}
 	
 	/**

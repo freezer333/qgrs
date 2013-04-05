@@ -1,6 +1,7 @@
 package framework.web;
 
 import java.sql.Connection;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -12,6 +13,9 @@ import javax.servlet.http.HttpSession;
 
 import org.jdom.Document;
 
+import framework.web.authentication.Role;
+import framework.web.authentication.User;
+import framework.web.authentication.UserDb;
 import framework.web.util.StringUtils;
 
 
@@ -28,6 +32,39 @@ public abstract class AbstractWebContext {
 		this.servlet = servlet;
 		this.resourceResolver = new ResourceResolver(this.servlet.getServletContext());
 		this.dispatcher = dispatcher;
+	}
+	
+	
+	public void loginUserFromRequestParams(Connection usercon) {
+		String username = this.getFromRequest("username");
+		String password = this.getFromRequest("password");
+		if ( StringUtils.isDefined(username) && StringUtils.isDefined(password)) {
+			UserDb db = new UserDb(usercon);
+			User u = db.authenticate(username, password);
+			if ( u != null ) {
+				this.put("user", u);
+			}
+		}
+	}
+	public void logout() {
+		this.put("user", null);
+	}
+	public boolean isAuthenticated() {
+		return this.inSession("user");
+	}
+	public boolean authorize(Collection<Role> authorizedRoles) {
+		if ( !this.inSession("user")) {
+			return false;
+		}
+		User u = (User)this.getFromSession("user");
+		for ( Role userRole : u.getRoles() ) {
+			for ( Role authRole : authorizedRoles) {
+				if ( authRole.equals(userRole)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 	
 	public abstract String getContextName();

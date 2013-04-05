@@ -25,4 +25,5 @@ public class XslViews {
 	public static final String StatsSummary = "stats-summary.xsl";
 	public static final String StatsLocationDetails = "stats-location-details.xsl";
 	public static final String GScore = "gscore.xsl";
+	public static final String Login = "login.xsl";
 }

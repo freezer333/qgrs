@@ -17,6 +17,7 @@ import framework.web.response.Response;
 
 public class DatabaseStats extends AbstractController {
 
+	
 	public DatabaseStats() {
 		super();
 		this.supportedUrls.add("/app/dbStats");

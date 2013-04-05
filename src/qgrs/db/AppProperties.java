@@ -12,12 +12,13 @@ import framework.web.util.StringUtils;
 
 public class AppProperties {
 
-	public static String getConnectionString(File propsXml) {
+	
+	private static String getString(File propsXml, String elementName) {
 		try {
 			SAXBuilder sb = new SAXBuilder();
 			Document propsDoc = sb.build(propsXml);
 			Element propsRoot = propsDoc.getRootElement();
-			Element dbElement = propsRoot.getChild("db");
+			Element dbElement = propsRoot.getChild(elementName);
 			if ( dbElement != null ) {
 				if ( StringUtils.isDefined(dbElement.getText())) {
 					return dbElement.getText();
@@ -30,26 +31,22 @@ public class AppProperties {
 		return null;
 	}
 	public static String getSeedCacheConnectionString(File propsXml) {
-		try {
-			SAXBuilder sb = new SAXBuilder();
-			Document propsDoc = sb.build(propsXml);
-			Element propsRoot = propsDoc.getRootElement();
-			Element dbElement = propsRoot.getChild("db_seedcache");
-			if ( dbElement != null ) {
-				if ( StringUtils.isDefined(dbElement.getText())) {
-					return dbElement.getText();
-				}
-			}
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+		return getString(propsXml, "db_seedcache");
+	}
+	public static String getConnectionString(File propsXml) {
+		return getString(propsXml, "db");
+	}
+	public static String getUserDbConnectionString(File propsXml) {
+		return getString(propsXml, "db_users");
 	}
 	
 	public static String getConnectionStringFromPropsxml() {
 		File f = new File ( System.getProperty("user.dir") + "/WebContent/xml/props.xml");
 		return getConnectionString(f);
+	}
+	public static String getUserDbConnectionStringFromPropsxml() {
+		File f = new File ( System.getProperty("user.dir") + "/WebContent/xml/props.xml");
+		return getUserDbConnectionString(f);
 	}
 	public static String getSeedCacheConnectionStringFromPropsxml() {
 		File f = new File ( System.getProperty("user.dir") + "/WebContent/xml/props.xml");
@@ -57,6 +54,9 @@ public class AppProperties {
 	}
 	public static String getConnectionString(ResourceResolver r) {
 		return getConnectionString(r.getResourceFile(ResourceType.xml, "props.xml"));
+	}
+	public static String getUserDbConnectionString(ResourceResolver r) {
+		return getUserDbConnectionString(r.getResourceFile(ResourceType.xml, "props.xml"));
 	}
 	
 	public static boolean dropTables(ResourceResolver r) {

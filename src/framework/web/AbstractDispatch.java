@@ -15,6 +15,7 @@ import org.h2.jdbcx.JdbcConnectionPool;
 
 import framework.db.DatabaseConnectionParameters;
 import framework.web.response.ErrorResponse;
+import framework.web.response.RedirectResponse;
 import framework.web.response.Response;
 import framework.web.util.ClassFinder;
 
@@ -78,19 +79,7 @@ public abstract class AbstractDispatch {
 		return new LinkedList<AbstractParam>();
 	}
 
-	/**
-	 * @param context  
-	 * @param controller 
-	 */
-	protected boolean redirectForAuthentication(AbstractWebContext context, AbstractController controller) {
-		return false;
-	}
-	/**
-	 * @param context  
-	 */
-	protected void applyRedirectForAuthentication(AbstractWebContext context) {
-		throw new RuntimeException ("Cannot redirect for authentication using AbstractDispatchServlet");
-	}
+	
 
 	protected AbstractController mapUrl(HttpServletRequest request) {
 		String url = request.getRequestURL().toString();
@@ -104,17 +93,25 @@ public abstract class AbstractDispatch {
 	}
 
 
-
+	public abstract RedirectResponse getAuthRedirect();
+	
+	
 	public void doGet(HttpServlet dispatchServlet, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AbstractWebContext context = this.buildContext(dispatchServlet, request, response);
 
 		try {
-
 			AbstractController controller = this.mapUrl(request);
-			if ( this.redirectForAuthentication(context, controller)) {
-				this.applyRedirectForAuthentication(context);
+			
+			RedirectResponse authRedirect = checkForAuthRedirect(context, controller);
+			if ( authRedirect != null ) {
+				try {
+					authRedirect.respond(context);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				return;
 			}
+			
 			context.persistRequesParamsInSession(this.getPersistableParamList());
 
 			Response controllerResponse = null;
@@ -141,6 +138,34 @@ public abstract class AbstractDispatch {
 		finally {
 			context.cleanup();
 		}
+	}
+	public static String getFullUrl(HttpServletRequest request) {
+	    StringBuffer requestURL = request.getRequestURL();
+	    String queryString = request.getQueryString();
+
+	    if (queryString == null) {
+	        return requestURL.toString();
+	    } else {
+	        return requestURL.append('?').append(queryString).toString();
+	    }
+	}
+	private RedirectResponse checkForAuthRedirect(AbstractWebContext context, AbstractController controller) {
+		RedirectResponse authRedirect = null;
+		if ( controller != null ) {
+			if ( controller.requiresAuthentication() ) {
+				if ( context.isAuthenticated() ) {
+					if ( !context.authorize(controller.getAuthorizedRoles() )) {
+						authRedirect = this.getAuthRedirect();
+						context.put("authredirect", getFullUrl(context.getRequest()));
+					}
+				}
+				else {
+					authRedirect = this.getAuthRedirect();
+					context.put("authredirect", getFullUrl(context.getRequest()));
+				}
+			}
+		}
+		return authRedirect;
 	}
 
 

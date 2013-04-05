@@ -1,8 +1,12 @@
 package framework.web;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import framework.web.authentication.Role;
 import framework.web.response.Response;
 
 public abstract class AbstractController {
@@ -29,4 +33,12 @@ public abstract class AbstractController {
 	}
 	
 	abstract public Response processRequest(AbstractWebContext context);
+	
+	public boolean requiresAuthentication() {
+		return false;
+	}
+	
+	public Collection<Role> getAuthorizedRoles() {
+		return Arrays.asList(new Role [] { Role.Any } );
+	}
 }

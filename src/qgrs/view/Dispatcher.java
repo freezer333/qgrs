@@ -15,6 +15,7 @@ import framework.web.AbstractDispatch;
 import framework.web.AbstractParam;
 import framework.web.AbstractWebContext;
 import framework.web.ResourceResolver;
+import framework.web.response.RedirectResponse;
 
 public class Dispatcher extends AbstractDispatch {
 
@@ -25,18 +26,18 @@ public class Dispatcher extends AbstractDispatch {
 		
 	}
 	
-	@Override
-	protected void applyRedirectForAuthentication(AbstractWebContext context) {
-		throw new RuntimeException("Authentication not implemented for QGRS");
-	}
+	
 
 	@Override
-	protected boolean redirectForAuthentication(AbstractWebContext context, AbstractController controller) {
-		return false;// no authentication yet for qgrs
+	public RedirectResponse getAuthRedirect() {
+		return new RedirectResponse("login");
 	}
+
+
 
 	@Override
 	protected AbstractWebContext buildContext(HttpServlet dispatchServlet, HttpServletRequest request, HttpServletResponse response) {
+	
 		return new QgrsWebContext(dispatchServlet, request, response, this.getDbConnection(), this);
 	}
 	
