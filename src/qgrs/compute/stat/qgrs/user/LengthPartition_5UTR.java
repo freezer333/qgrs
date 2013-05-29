@@ -24,9 +24,9 @@ public class LengthPartition_5UTR extends GenePartitioner {
 	public HashSet<GenePartition> partition(Connection c) {
 		HashSet<GenePartition> partitions = new HashSet<GenePartition>();
 
-		partitions.add(getPartition(c, 0, 180, "Small 5'UTR"));
-		partitions.add(getPartition(c, 181, 360, "Medium 5'UTR"));
-		partitions.add(getPartition(c, 361, 5000, "Large 5'UTR"));
+		partitions.add(getPartition(c, 0, 180, "Small 5UTR"));
+		partitions.add(getPartition(c, 181, 360, "Medium 5UTR"));
+		partitions.add(getPartition(c, 361, 5000, "Large 5UTR"));
 
 		return partitions;
 	}
