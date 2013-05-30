@@ -21,6 +21,7 @@ public class OntologyGenePartitioner extends GenePartitioner {
 	String[] Brain_Development_Genes = {"brain segmentation", "brain morphogenesis", "central complex development", "forebrain development","hindbrain development","midbrain development"};
 	String[] Positive_Regulation_Cell_Proliferation_Genes = {"positive regulation of cell proliferation"};
 	String[] Negative_Regulation_Cell_Proliferation_Genes = {"negative regulation of cell proliferation"};
+	String[] Regulation_of_Cell_Cycle_Genes = {"regulation of cell cycle"};
 	
 	public OntologyGenePartitioner(Analysis runner) {
 		super(runner);
@@ -38,6 +39,7 @@ public class OntologyGenePartitioner extends GenePartitioner {
 		partitions.add(getPartition(c, Brain_Development_Genes, "Brain Development Genes"));
 		partitions.add(getPartition(c, Positive_Regulation_Cell_Proliferation_Genes, "Positive regulation of cell proliferation Genes"));
 		partitions.add(getPartition(c, Negative_Regulation_Cell_Proliferation_Genes, "Negative regulation of cell proliferation Genes"));
+		partitions.add(getPartition(c, Regulation_of_Cell_Cycle_Genes, "Regulation of Cell Cycle Genes"));
 		
 		return partitions;
 	}
