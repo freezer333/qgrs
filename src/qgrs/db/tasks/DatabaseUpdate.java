@@ -26,7 +26,7 @@ public class DatabaseUpdate {
 		try {
 			this.createGenesTable(conn);
 			ak.execute();
-			DbIndex.makeIndexes(conn);
+	//		DbIndex.makeIndexes(conn);
 		}
 		catch (Exception e){
 			e.printStackTrace();
