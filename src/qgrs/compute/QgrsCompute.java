@@ -137,7 +137,7 @@ public class QgrsCompute{
 	
 	
 	void cachePair(GeneSequencePair pair) {
-		
+		if (pair.isDirectInput()) return;
 		cache.put(pair.getAlignmentRecord());
 		cache.put(pair.getAlignmentRecord(), pair.getPrinciple());
 		cache.put(pair.getAlignmentRecord(), pair.getComparison());
