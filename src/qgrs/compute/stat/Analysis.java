@@ -21,13 +21,13 @@ public abstract class Analysis implements Callable<Object>{
 
 	final int THREAD_POOL_SIZE = 20;
 	
-	final GenePartitioner partitioner;
+	GenePartitioner partitioner;
 	protected final boolean active;
 	
 	public Analysis(boolean active) {
 		super();
-		this.partitioner = buildPartitioner();
 		this.active = active;
+		
 	}
 	
 	@Override
@@ -39,6 +39,9 @@ public abstract class Analysis implements Callable<Object>{
 	
 
 	public void execute() throws Exception {
+		this.partitioner = buildPartitioner();
+		
+		
 		System.out.println("Connecting to database...");
 		Connection c = getConnection();
 		

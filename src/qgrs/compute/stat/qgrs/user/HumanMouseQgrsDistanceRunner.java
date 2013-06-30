@@ -28,12 +28,12 @@ public class HumanMouseQgrsDistanceRunner extends QgrsRunner {
 	
 	@Override
 	protected QgrsSeriesSet buildSeriesSet() {
-		return new MouseTetradQgrsSeriesSet();
+		return new SpeciesTetradQgrsSeriesSet("Mus musculus");
 	}
 
 	@Override
 	protected GenePartitioner buildPartitioner() {
-		return new HumanMousePartitioner(this);
+		return new HumanComparisonPartitioner(this, "Mus musculus");
 	}
 	
 	@Override

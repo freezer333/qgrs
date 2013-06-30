@@ -9,16 +9,23 @@ import qgrs.compute.stat.qgrs.QgrsRunner;
 
 public class SuiteRunner {
 
-	public final static List<QgrsRunner> runners = Arrays.asList(
-			new HumanMouseQgrsDistanceRunner(), 
-			new HumanMouseQgrsRunner(), 
-			new OntologyQgrsRunner()
+	public final static List<HumanComparisonQgrsRunner> runners = Arrays.asList(
+			new HumanComparisonQgrsRunner("Mus musculus") , 
+			new HumanComparisonQgrsRunner("Caenorhabditis elegans") , 
+			new HumanComparisonQgrsRunner("Canis lupus familiaris") , 
+			new HumanComparisonQgrsRunner("Danio rerio") , 
+			new HumanComparisonQgrsRunner("Drosophila melanogaster") , 
+			new HumanComparisonQgrsRunner("Kluyveromyces lactis NRRL Y-1140") , 
+			new HumanComparisonQgrsRunner("Pan troglodytes") 
 			);
-	
 	public static void main(String[] args) throws Exception {
 		
-		ExecutorService executorService = Executors.newFixedThreadPool(runners.size());
-		executorService.invokeAll(runners);
+		
+		for ( HumanComparisonQgrsRunner runner : runners ) {
+			runner.execute();
+		}
+		
+		
 		System.exit(0);
 	}
 

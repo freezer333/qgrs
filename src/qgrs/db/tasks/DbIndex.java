@@ -68,12 +68,6 @@ public class DbIndex {
 		execute(conn, sql);
 	}
 	static void rebuild(Connection conn, IndexCommand index) {
-		try {
-			executeSql(conn, index.dropSql());
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
 		executeSql(conn, index.createSql());
 	}
 	public static void makeIndexes(Connection conn) {

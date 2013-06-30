@@ -26,7 +26,7 @@ public class OntologyQgrsRunner extends QgrsRunner {
 	
 	@Override
 	protected QgrsSeriesSet buildSeriesSet() {
-		return new MouseTetradQgrsSeriesSet();
+		return new SpeciesTetradQgrsSeriesSet("Mus musculus");
 	}
 
 	@Override
