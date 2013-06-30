@@ -28,7 +28,9 @@ public class GeneSequencePair {
 	
 	
 	
-	
+	public boolean isDirectInput() {
+		return principle.isDirectInput() || comparison.isDirectInput();
+	}
 	
 	
 		
