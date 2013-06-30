@@ -10,10 +10,12 @@ import qgrs.compute.stat.GenePartition;
 import qgrs.compute.stat.GenePartitioner;
 import qgrs.compute.stat.Analysis;
 
-public class HumanMousePartitioner extends GenePartitioner {
-
-	public HumanMousePartitioner(Analysis runner) {
+public class HumanComparisonPartitioner extends GenePartitioner {
+	private final String comparison;
+	
+	public HumanComparisonPartitioner(Analysis runner, String comparison) {
 		super(runner);
+		this.comparison = comparison;
 	}
 
 
@@ -22,8 +24,8 @@ public class HumanMousePartitioner extends GenePartitioner {
 	public HashSet<GenePartition> partition(Connection c) {
 		HashSet<GenePartition> partitions = new HashSet<GenePartition>();
 		
-		String q = "Select distinct principle from GENE_A join GENE AS GC on GC.accessionNumber = comparison JOIN GENE AS GP on GP.accessionNumber = principle WHERE GP.SPECIES = 'Homo sapiens' AND GC.species = 'Mus musculus'";
-		GenePartition p = new GenePartition(runner, "Human Genes with Mouse Homologs");
+		String q = "Select distinct principle from GENE_A join GENE AS GC on GC.accessionNumber = comparison JOIN GENE AS GP on GP.accessionNumber = principle WHERE GP.SPECIES = 'Homo sapiens' AND GC.species = '" + comparison + "'";
+		GenePartition p = new GenePartition(runner, "Human Genes with " + comparison + " Homologs");
 		try {
 			Statement stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery(q);
