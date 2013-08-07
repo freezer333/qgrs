@@ -102,7 +102,9 @@ public class QgrsCompute{
 	private void writeHomologyCache(GeneSequencePair pair, List<QgrsHomology> results) {
 		// note we don't care if it was originally cached or not, always rewrite in case we are dealing with a hybrid cache with
 		// different read/write sub-caches.
-		this.cache.putHomologyResults(pair.getAlignmentRecord(), results, pair.getPrinciple(), pair.getComparison());
+		if ( cache != null ) {
+			this.cache.putHomologyResults(pair.getAlignmentRecord(), results, pair.getPrinciple(), pair.getComparison());
+		}
 	}
 	
 	
@@ -111,6 +113,7 @@ public class QgrsCompute{
 		writeQgrsCache(pair.getComparison());
 	}
 	private void writeQgrsCache(GeneSequence seq) {
+		if ( cache == null ) return;
 		List<GQuadruplex> cachedQgrs = this.cache.getQuadruplexes(seq);
 		if ( cachedQgrs == null || cachedQgrs.size() < 1) {
 			cache.putQuadruplexes(seq);
@@ -120,7 +123,7 @@ public class QgrsCompute{
 	public void identifyQgrs(GeneSequence seq, SeqTag tag) throws Exception{
 		this.statusHolder.setStatus(JobStage.QGRS_ID, -1, null);
 		List<GQuadruplex> cachedQgrs = null;
-		if ( !seq.isDirectInput() ) {
+		if ( !seq.isDirectInput() && cache != null) {
 			cachedQgrs = this.cache.getQuadruplexes(seq);
 		}
 		if ( cachedQgrs == null || cachedQgrs.size() < 1) {
@@ -137,7 +140,7 @@ public class QgrsCompute{
 	
 	
 	void cachePair(GeneSequencePair pair) {
-		if (pair.isDirectInput()) return;
+		if (pair.isDirectInput() || cache == null) return;
 		cache.put(pair.getAlignmentRecord());
 		cache.put(pair.getAlignmentRecord(), pair.getPrinciple());
 		cache.put(pair.getAlignmentRecord(), pair.getComparison());
@@ -176,7 +179,8 @@ public class QgrsCompute{
 		}
 	}
 	private boolean cachedAlignment(GeneSequencePair pair) {
-		AlignmentRecord ar = cache.getAlignmentRecord(pair.getPrinciple(), pair.getComparison(), BuildKey.Alignment);
+		
+		AlignmentRecord ar = cache == null ? null : cache.getAlignmentRecord(pair.getPrinciple(), pair.getComparison(), BuildKey.Alignment);
 		if ( ar == null ) return false;
 		pair.setAlignmentRecord(ar);
 		return true;

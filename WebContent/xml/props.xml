@@ -4,7 +4,7 @@
 	</AlertMessage>
 	
 	 
-	<db_seedcache>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb_seed</db_seedcache> 
+	<db_seedcache>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb</db_seedcache> 
 	<db>jdbc:h2:file:C:\projects\qgrs_db\qgrsdb;CACHE_SIZE=131072;MULTI_THREADED=1</db>
 	<db_users>jdbc:h2:file:C:\projects\qgrs_db\userdb;CACHE_SIZE=131072;MULTI_THREADED=1</db_users>
 	

@@ -83,7 +83,9 @@ public class AlignmentJob extends Job{
 			qAligner = null;
 			System.gc();
 			//System.out.println("Job " + this.getId() + " completed or cancelled, resources reclaimed");
-			cache.flushAndClose();
+			if ( cache != null ) {
+				cache.flushAndClose();
+			}
 		}
 	}
 	
@@ -107,11 +109,11 @@ public class AlignmentJob extends Job{
 	}
 
 	private void cacheInput() {
-		if ( !this.input.getPrinciple().isDirectInput() ) {
+		if ( !this.input.getPrinciple().isDirectInput() && cache != null ) {
 			this.cache.put(this.input.getPrinciple());
 		}
 		for ( GeneSequence seq : this.input.getComparisons()) {
-			if ( !seq.isDirectInput()) {
+			if ( !seq.isDirectInput() && cache != null) {
 				this.cache.put(seq);
 			}
 		}

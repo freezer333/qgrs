@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import qgrs.data.GeneSequence;
+import qgrs.data.OntologyData;
 import qgrs.data.Range;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
@@ -121,12 +122,15 @@ public class GeneSequenceDb extends DbTable {
 			this.selectStatement.setString(1, acsessionNumber);
 			ResultSet rs = this.selectStatement.executeQuery();
 			if ( rs.next()) {
+				OntologyData od = goDb.get(acsessionNumber);
+				
 				return GeneSequence.buildFromResultSet(rs, 
 						this.getPolyASites(acsessionNumber), 
 						this.getPolyASignals(acsessionNumber), 
-						goDb.get(acsessionNumber));
+						od);
 			}
 			else {
+				System.out.println("Gene with accession number [" + acsessionNumber + "] could not be found in RDB");
 				return null;
 			}
 		} catch ( Exception e) {

@@ -7,12 +7,14 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.biojavax.bio.seq.RichSequence;
 import org.jdom.Element;
 
+import qgrs.data.providers.SequenceProvider.Key;
 import qgrs.data.records.OntologyRecord;
 import qgrs.input.OntologyLoader;
 
@@ -78,6 +80,9 @@ public class GeneSequence implements Serializable{
 	public static GeneSequence buildFromResultSet(ResultSet rs, List<Range> polyASites, List<Range> polyASignals, OntologyData ontologyData) {
 		try {
 			GeneSequence gs = new GeneSequence(rs, polyASites, polyASignals);
+			if ( ontologyData == null ) {
+				System.out.println("Ontology data not loaded for " + gs.getAccessionNumber());
+			}
 			gs.setOntologyData(ontologyData);
 			return gs;
 		} catch (Exception e) {
@@ -120,6 +125,14 @@ public class GeneSequence implements Serializable{
 	public static GeneSequence buildFromSourceSequence(String sequence, GeneSequence source) {
 		try {
 			return new GeneSequence(sequence, source.richSequence);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}	
+	}
+	
+	public static GeneSequence buildFromProviderMap(HashMap<Key, Object> values) {
+		try {
+			return new GeneSequence(values);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}	
@@ -190,6 +203,24 @@ public class GeneSequence implements Serializable{
 	}
 	
 	
+	protected GeneSequence(HashMap<Key, Object> sequenceValues) throws Exception {
+		this.buildBases((String)sequenceValues.get(Key.Sequence));
+		this.gQuads = new LinkedList<GQuadruplex>();
+		this.directInput = false;
+		this.accessionNumber = sequenceValues.get(Key.Accession) + "." + sequenceValues.get(Key.Version);
+		this.giNumber = (String) sequenceValues.get(Key.GiNumber);
+		this.geneSymbol = (String) sequenceValues.get(Key.Symbol);
+		this.ncbiLink = "http://www.ncbi.nlm.nih.gov/nuccore/" + accessionNumber;
+		this.geneName = (String) sequenceValues.get(Key.Name);
+		this.species = (String) sequenceValues.get(Key.Species);
+		this.polyASignals = (List<Range>) sequenceValues.get(Key.PolyASignals);
+		this.polyASites = (List<Range>) sequenceValues.get(Key.PolyASites);
+		this.cds = (Range) sequenceValues.get(Key.Cds);
+		this.utr5 = (Range) sequenceValues.get(Key.UTR5);
+		this.utr3 = (Range) sequenceValues.get(Key.UTR3);
+		this.ontologyData = (OntologyData) sequenceValues.get(Key.OntologyData);
+		this.richSequence = null;
+	}
 	
 	protected GeneSequence(String sequence, RichSequence rs) throws Exception {
 		this.buildBases(sequence);

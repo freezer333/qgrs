@@ -75,7 +75,9 @@ public class GoDb {
 			}
 			return data;
 		} catch ( Exception e) {
+			e.printStackTrace();
 			throw new RuntimeException (e);
+			
 		}
 	}
 	
