@@ -50,15 +50,15 @@ public class GoDb {
 	
 	public void put(String accessionNumber, OntologyData data) {
 		PreparedStatement ps = insertStatement;
-		for ( String term : data.functionList ) {
+		for ( String term : data.functions ) {
 			fillPreparedStatement(ps, accessionNumber, new OntologyRecord(term, GoType.Function));
 			this.dc.executeUpdate(ps);
 		}
-		for ( String term : data.componentList ) {
+		for ( String term : data.components ) {
 			fillPreparedStatement(ps, accessionNumber, new OntologyRecord(term, GoType.Component));
 			this.dc.executeUpdate(ps);
 		}
-		for ( String term : data.processList ) {
+		for ( String term : data.processes ) {
 			fillPreparedStatement(ps, accessionNumber, new OntologyRecord(term, GoType.Process));
 			this.dc.executeUpdate(ps);
 		}

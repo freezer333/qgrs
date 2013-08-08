@@ -12,15 +12,15 @@ import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.List;
 
-import qgrs.data.cache.XmlWritePostCache;
 import qgrs.data.providers.PredictorInputProvider;
+import qgrs.data.providers.RDBAlignmentProvider;
 import qgrs.data.providers.RDBSequenceProvider;
 import qgrs.data.providers.SequenceProvider;
 import qgrs.db.AppProperties;
 import qgrs.db.DatabaseConnection;
 import qgrs.db.tasks.InputPair;
-import qgrs.input.AccessionNumberInputProvider;
 import qgrs.job.AlignmentJob;
+import qgrs.output.MongoResultProcessor;
 import framework.db.DatabaseConnectionParameters;
 
 public class SeedV2 {
@@ -29,11 +29,13 @@ public class SeedV2 {
 	static int errors = 0;
 	static DatabaseConnection connection;
 	static SequenceProvider provider;
+	static RDBAlignmentProvider ap;
 	
 	static {
 		DatabaseConnectionParameters params  = new DatabaseConnectionParameters(AppProperties.getSeedCacheConnectionStringFromPropsxml(), "sa", "sa");
 		connection = new DatabaseConnection(params);
 		provider = new RDBSequenceProvider(connection);
+		ap = new RDBAlignmentProvider(connection);
 		
 	}
 	
@@ -128,7 +130,11 @@ public class SeedV2 {
 		try {
 			int throttle = runNextAlignment(new PredictorInputProvider(pair.principle, pair.comparison, provider));
 			complete++;
-			Thread.sleep(throttle);
+			if ( throttle != 0 ) {
+				System.out.println("\tThrottling [" + throttle + "ms]");
+				Thread.sleep(throttle);
+			}
+			
 		}
 		catch (Throwable t) {
 			System.out.println("Error:  " + pair.principle + " x " + pair.comparison) ;
@@ -138,7 +144,7 @@ public class SeedV2 {
 	}
 	
 	private static int runNextAlignment(PredictorInputProvider inputProvider) throws Exception {
-		AlignmentJob job = new AlignmentJob(inputProvider,null,	null);
+		AlignmentJob job = new AlignmentJob(inputProvider,new MongoResultProcessor(),	null, ap);
 		job.runJob();
 		return job.getRequiredThrottle();
 		

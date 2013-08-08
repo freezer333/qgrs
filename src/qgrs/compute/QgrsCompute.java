@@ -73,7 +73,7 @@ public class QgrsCompute{
 		
 		
 		List<QgrsHomologyRecord> records = null;
-		if ( this.alignmentCached ) {
+		if ( this.alignmentCached && cache != null ) {
 			records = this.cache.getHomologyRecords(pair.getAlignmentRecord());
 		}
 		
@@ -148,17 +148,18 @@ public class QgrsCompute{
 	void doAlignment(GeneSequencePair pair) throws Exception {
 		this.statusHolder.setStatus(JobStage.Alignment_Sync, -1, null);
 		
-		if ( this.cachedAlignment(pair)) {
+		/*if ( this.cachedAlignment(pair)) {
 			if ( this.processCachedAlignment(pair)) {
 				this.alignmentCached = true;
 				// write to cache in any case, as some caches are hybrids (reading from a different sub-cache than writing to)
 				cachePair(pair);
 				return;
 			}
-		}
+		}*/
 		
 		MemoryReporter.memoryReport();
 		this.aligner.align(pair, this.statusHolder);
+		this.alignmentCached = pair.isWasCached();
 		//System.out.println("Alignment Complete");
 		MemoryReporter.memoryReport();
 		pair.setAlignmentBuildKey(BuildKey.Alignment);

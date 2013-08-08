@@ -43,14 +43,18 @@ public abstract class SequenceProvider {
 	public HashMap<Key, Object> getSequence(String accessionOrGi) {
 		System.out.println("Sequence data requested -> " + accessionOrGi);
 		HashMap<Key, Object> values = this.getCachedSequence(accessionOrGi);
-		if( values != null ) {
-			System.out.println("\t [Cached Version]");
-		}
+		
 		if ( values == null ) {
-			values = this.getLiveSequence(accessionOrGi);
-			values.put(Key.Live, true);
+			if( this.allowLiveDownload() ) {
+				values = this.getLiveSequence(accessionOrGi);
+				values.put(Key.Live, true);
+			}
+			else {
+				System.out.println("\t Live download not available with this provider");
+			}
 		}
 		else {
+			System.out.println("\t [Cached Version]");
 			values.put(Key.Live, false);
 		}
 		return values;
@@ -103,6 +107,10 @@ public abstract class SequenceProvider {
 	private void fillOntologyDataFromNetwork(HashMap<Key, Object> values) {
 		String accessionNumber = values.get(Key.Accession) + "." + values.get(Key.Version);
 		values.put(Key.OntologyData, olo.getOntologyData(accessionNumber));
+	}
+	
+	protected boolean allowLiveDownload() {
+		return true;
 	}
 	
 	

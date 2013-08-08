@@ -49,15 +49,15 @@ public class OntologyLoader {
 				
 				OntologyData oData = loader.getOntologyData(accession);
 				System.out.println("=============================\nFunctions\n=============================");
-				for ( String s : oData.functionList ) {
+				for ( String s : oData.functions ) {
 					System.out.println(s);
 				}
 				System.out.println("=============================\nComponents\n=============================");
-				for ( String s : oData.componentList ) {
+				for ( String s : oData.components ) {
 					System.out.println(s);
 				}
 				System.out.println("=============================\nProcesses\n=============================");
-				for ( String s : oData.processList ) {
+				for ( String s : oData.processes ) {
 					System.out.println(s);
 				}
 			}
@@ -103,13 +103,13 @@ public class OntologyLoader {
 		Document doc = builder.build(in);
 		
 		Element element = (Element) XPath.selectSingleNode(doc, functionXpath);
-		fillList(oData.functionList, element);
+		fillList(oData.functions, element);
 		
 		element = (Element) XPath.selectSingleNode(doc, processXpath);
-		fillList(oData.processList, element);
+		fillList(oData.processes, element);
 		
 		element = (Element) XPath.selectSingleNode(doc, componentXpath);
-		fillList(oData.componentList, element);
+		fillList(oData.components, element);
 	}
 	
 	private void fillList(Collection<String> list, Element element) throws JDOMException {

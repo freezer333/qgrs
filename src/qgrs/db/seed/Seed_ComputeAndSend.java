@@ -15,6 +15,7 @@ import java.util.List;
 import qgrs.data.cache.Cache;
 import qgrs.data.cache.LocalGeneCache;
 import qgrs.data.cache.XmlWritePostCache;
+import qgrs.data.providers.RDBAlignmentProvider;
 import qgrs.db.AppProperties;
 import qgrs.db.DatabaseConnection;
 import qgrs.db.tasks.InputPair;
@@ -28,11 +29,13 @@ public class Seed_ComputeAndSend {
 	static int errors = 0;
 	static Cache geneCache;
 	static DatabaseConnection connection;
+	static RDBAlignmentProvider ap;
 	
 	static {
 		DatabaseConnectionParameters params  = new DatabaseConnectionParameters(AppProperties.getSeedCacheConnectionStringFromPropsxml(), "sa", "sa");
 		connection = new DatabaseConnection(params);
 		geneCache = new LocalGeneCache(connection);
+		ap = new RDBAlignmentProvider(connection);
 	}
 	
 	static Connection getConnection(DatabaseConnectionParameters params) {
@@ -141,7 +144,8 @@ public class Seed_ComputeAndSend {
 						SeedUtils.servername, 
 						SeedUtils.contextpath, 
 						SeedUtils.serverport, 
-						geneCache));
+						geneCache), 
+						ap);
 		job.runJob();
 		return job.getRequiredThrottle();
 		

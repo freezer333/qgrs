@@ -5,6 +5,7 @@ import org.jdom.Element;
 
 import qgrs.data.cache.Cache;
 import qgrs.data.cache.LocalGeneCache;
+import qgrs.data.providers.RDBAlignmentProvider;
 import qgrs.db.DatabaseConnection;
 import qgrs.input.FlexibleInputProvider;
 import qgrs.input.QParam;
@@ -54,9 +55,9 @@ public class AlignStart extends AbstractController {
 			return rr;
 		}
 		
-		//Cache cache = new NullCache();//new ReadWriteCache(new DatabaseConnection(context.getFreeConnection()));
-		Cache cache = new LocalGeneCache(new DatabaseConnection(((QgrsWebContext)context).getFreeConnection()));
-		AlignmentJob job = new AlignmentJob(new FlexibleInputProvider(context, cache), xrp, cache);
+		DatabaseConnection c = new DatabaseConnection(((QgrsWebContext)context).getFreeConnection());
+		Cache cache = new LocalGeneCache(c);
+		AlignmentJob job = new AlignmentJob(new FlexibleInputProvider(context, cache), xrp, cache, new RDBAlignmentProvider(c));
 		
 		JobContext.cancelActiveJob(context);
 		Thread t = new Thread(job);

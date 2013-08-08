@@ -3,14 +3,15 @@ package qgrs.job;
 import java.util.LinkedList;
 import java.util.List;
 
-import qgrs.compute.EmbossAligner;
 import qgrs.compute.FamilyHomologyScorer;
 import qgrs.compute.GeneSequencePair;
 import qgrs.compute.GeneralAligner;
 import qgrs.compute.QgrsCompute;
 import qgrs.compute.QgrsIdentifier;
+import qgrs.compute.SemiGlobalSequenceAligner;
 import qgrs.data.GeneSequence;
 import qgrs.data.cache.Cache;
+import qgrs.data.providers.AlignmentProvider;
 import qgrs.input.InputProvider;
 import qgrs.input.QGRSProgramInput;
 import qgrs.output.ResultProcessor;
@@ -21,16 +22,18 @@ public class AlignmentJob extends Job{
 	private InputProvider inputProvider;
 	private final ResultProcessor resultProcessor;
 	private final Cache cache;
+	private final AlignmentProvider alignmentProvider;
 	QGRSProgramInput input;
 	volatile CancelFlag cancelFlag = new CancelFlag();
 	
 	private int ncbiCallCount = 0;
 	private int embossCallCount = 0;
 
-	public AlignmentJob(InputProvider inputProvider, ResultProcessor resultProcessor, Cache cache) {
+	public AlignmentJob(InputProvider inputProvider, ResultProcessor resultProcessor, Cache cache, AlignmentProvider alignmentProvider) {
 		this.inputProvider = inputProvider;
 		this.resultProcessor = resultProcessor;
 		this.cache = cache;
+		this.alignmentProvider = alignmentProvider;
 	}
 	
 	public void cancel() {
@@ -134,7 +137,7 @@ public class AlignmentJob extends Job{
 	}
 	
 	void configureSemiGlobalAlignment(QgrsCompute qAligner) {
-		GeneralAligner gAligner = new EmbossAligner();
+		GeneralAligner gAligner = new SemiGlobalSequenceAligner(this.alignmentProvider);
 		gAligner.setCancelFlag(this.cancelFlag);
 		// Configure the alignment process, choosing the appropriate algorithm for each step
 		qAligner.setAligner(gAligner);

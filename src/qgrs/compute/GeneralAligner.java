@@ -20,6 +20,6 @@ public interface GeneralAligner extends Cancellable{
 	 */
 	void align(GeneSequencePair pair, StatusHolder statusHolder) throws Exception ; 
 	void cleanup();
-
+	
 	
 }

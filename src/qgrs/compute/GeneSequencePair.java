@@ -25,7 +25,7 @@ public class GeneSequencePair {
 	private GeneSequence principle;
 	private GeneSequence comparison;
 	private AlignmentRecord alignmentRecord;
-	
+	private boolean wasCached;
 	
 	
 	public boolean isDirectInput() {
@@ -34,6 +34,18 @@ public class GeneSequencePair {
 	
 	
 		
+	public boolean isWasCached() {
+		return wasCached;
+	}
+
+
+
+	public void setWasCached(boolean wasCached) {
+		this.wasCached = wasCached;
+	}
+
+
+
 	public AlignmentRecord getAlignmentRecord() {
 		this.alignmentRecord.setSimilarityPercentage(this.getSimilarityPercentage());
 		this.alignmentRecord.setSimilarityScore(this.getSimilarityScore());

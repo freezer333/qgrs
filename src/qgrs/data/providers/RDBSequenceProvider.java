@@ -30,6 +30,11 @@ public class RDBSequenceProvider extends SequenceProvider{
 	}
 	
 	@Override
+	protected boolean allowLiveDownload() {
+		return false;
+	}
+	
+	@Override
 	protected HashMap<Key, Object> getCachedSequence(String accessionOrGi) {
 		GeneSequenceDb db = new GeneSequenceDb(connection);
 		

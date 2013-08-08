@@ -83,6 +83,13 @@ public class GQuadruplex implements Serializable{
 		gq.setInCds(this.getRegion().contains("CDS"));
 		gq.setIn3Prime(this.getRegion().contains("3'"));
 		gq.applyAssertion();
+		
+		gq.setDistanceFromPolyASignal(this.getDistanceFromPolyASignal());
+		return gq;
+	}
+	
+	
+	public int getDistanceFromPolyASignal() {
 		int minDistance = Integer.MAX_VALUE;
 		for ( Range r : this.sequence.getPolyASignals() ) {
 			int distance = Math.abs(this.start.getIndexWithoutGaps() - r.getStart());
@@ -90,11 +97,8 @@ public class GQuadruplex implements Serializable{
 				minDistance = distance;
 			}
 		}
-		gq.setDistanceFromPolyASignal(minDistance);
-		return gq;
+		return minDistance;
 	}
-	
-	
 	
 	
 	public boolean in5UTR() {
