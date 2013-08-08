@@ -2,6 +2,7 @@ package qgrs.data.mongo.operations;
 
 import java.net.UnknownHostException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import qgrs.compute.GeneSequencePair;
@@ -14,8 +15,10 @@ import qgrs.data.mongo.primitives.G4H;
 import qgrs.data.mongo.primitives.MRNA;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
 public class Pusher {
@@ -137,14 +140,35 @@ public class Pusher {
 	}
 	
 	private boolean isHomologPresent(GeneSequencePair pair) {
-		// QUERY MONGO
-		return false;
+		// Search for mrna (p) with g4 with g4H with mrna (c)
+		BasicDBObject pMatch = new BasicDBObject("accessionNumber", pair.getPrinciple().getAccessionNumber());
+		BasicDBObject cMatch = new BasicDBObject("mrna.accessionNumber", pair.getComparison().getAccessionNumber());
+		BasicDBObject c_elemMatch = new BasicDBObject();
+		c_elemMatch.put("$elemMatch", cMatch);
+		BasicDBObject conserved = new BasicDBObject();
+		conserved.put("conservedG4s", c_elemMatch);
+		BasicDBObject g_elemMatch = new BasicDBObject();
+		g_elemMatch.put("$elemMatch", conserved);
+		BasicDBObject g4s = new BasicDBObject();
+		g4s.put("g4s", g_elemMatch);
+		BasicDBObject and = new BasicDBObject();
+		List<BasicDBObject> ops = new LinkedList<BasicDBObject>();
+		ops.add(g4s);
+		ops.add(pMatch);
+		
+		and.put("$and", ops);
+		
+		return principals.count(and) > 0;
+		
 	}
 	
 	private void buildAndInsertG4H(GeneSequencePair pair,QgrsHomology similarityResult) {
 		G4H g4h = buildG4H(pair, similarityResult);
-		
-		// SAVE TO MONGO
+		DBObject match = BasicDBObjectBuilder.start("accessionNumber", pair.getPrinciple().getAccessionNumber()).add("g4s.g4Id", similarityResult.getGq1().getId()).get();
+		BasicDBObject update = new BasicDBObject();
+		BasicDBObject g4 = new BasicDBObject("g4s.$.conservedG4s", g4h);
+		update.put("$push", g4);
+		principals.update(match, update);
 	}
 	
 	
