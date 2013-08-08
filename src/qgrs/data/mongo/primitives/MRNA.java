@@ -4,71 +4,55 @@ import java.util.ArrayList;
 
 import qgrs.data.OntologyData;
 
-import com.google.code.morphia.annotations.Embedded;
+import com.mongodb.BasicDBObject;
 
-public class MRNA {
+public class MRNA extends BasicDBObject{
 
-	private long _id;
-	private String accessionNumber;
-	private String name;
-	private String species;
-	
-	private ArrayList<G4> g4s;
-	
-	private OntologyData ontology;
 
-	
 	public MRNA() {
 		super();
-		g4s = new ArrayList<G4>();
-	}
-
-	public long get_id() {
-		return _id;
-	}
-
-	public void set_id(long _id) {
-		this._id = _id;
+		this.setG4s(new ArrayList<G4>());
 	}
 
 	public String getAccessionNumber() {
-		return accessionNumber;
+		return this.getString("accessionNumber");
 	}
 
 	public void setAccessionNumber(String accessionNumber) {
-		this.accessionNumber = accessionNumber;
+		this.put("accessionNumber", accessionNumber);
 	}
 
 	public String getName() {
-		return name;
+		return this.getString("name");
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.put("name", name);
 	}
 
 	public String getSpecies() {
-		return species;
+		return this.getString("species");
 	}
 
 	public void setSpecies(String species) {
-		this.species = species;
+		this.put("species", species);
 	}
 
 	public ArrayList<G4> getG4s() {
-		return g4s;
+		return (ArrayList<G4>) get("g4s");
 	}
 
 	public void setG4s(ArrayList<G4> g4s) {
-		this.g4s = g4s;
+		this.put("g4s", g4s);
 	}
 
+	
 	public OntologyData getOntology() {
-		return ontology;
+		return (OntologyData) get("ontologyData");
 	}
 
 	public void setOntology(OntologyData ontology) {
-		this.ontology = ontology;
+		this.put("ontologyData", ontology);
 	}
 	
 	

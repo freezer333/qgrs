@@ -41,7 +41,7 @@ public abstract class SequenceProvider {
 	protected abstract HashMap<Key, Object> getCachedSequence(String accessionOrGi) ;
 	
 	public HashMap<Key, Object> getSequence(String accessionOrGi) {
-		System.out.println("Sequence data requested -> " + accessionOrGi);
+		/*System.out.println("Sequence data requested -> " + accessionOrGi);*/
 		HashMap<Key, Object> values = this.getCachedSequence(accessionOrGi);
 		
 		if ( values == null ) {
@@ -54,7 +54,7 @@ public abstract class SequenceProvider {
 			}
 		}
 		else {
-			System.out.println("\t [Cached Version]");
+			/*System.out.println("\t [Cached Version]");*/
 			values.put(Key.Live, false);
 		}
 		return values;
@@ -65,7 +65,7 @@ public abstract class SequenceProvider {
 	}
 	
 	private HashMap<Key, Object> getLiveSequence(String accessionOrGi) {
-		System.out.println("\t [Live Version required (no cache)]");
+		/*System.out.println("\t [Live Version required (no cache)]");*/
 		RichSequence rs;
 		try {
 			rs = ncbi.getRichSequence(accessionOrGi);
@@ -100,7 +100,7 @@ public abstract class SequenceProvider {
 		values.put(Key.UTR3, new Range(cds.getEnd()+1, rs.seqString().length()));
 		values.put(Key.PolyASites, featuresAdapter.getPolyASites());
 		fillOntologyDataFromNetwork(values);
-		System.out.println("\t\tLive version downloaded successfully");
+		/*System.out.println("\t\tLive version downloaded successfully");*/
 		return values;
 	}
 	

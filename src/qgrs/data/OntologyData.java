@@ -1,87 +1,77 @@
 package qgrs.data;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.LinkedList;
 
 import org.jdom.Element;
 
 import qgrs.data.records.OntologyRecord;
 
 import com.google.code.morphia.annotations.Entity;
+import com.mongodb.BasicDBObject;
 
 @Entity
-public class OntologyData {
-	public Collection<String> functions = new HashSet<String>();
-	public Collection<String> processes = new HashSet<String>();
-	public Collection<String> components = new HashSet<String>();
+public class OntologyData extends BasicDBObject{
 	
-	
-	private long _id;
+
 	
 	
 	public OntologyData() {
-		
+		this.setFunctions(new ArrayList<String>());
+		this.setProcesses(new ArrayList<String>());
+		this.setComponents(new ArrayList<String>());
 	}
 	
 	
 	
-	public long get_id() {
-		return _id;
+	
+
+
+	public ArrayList<String> getFunctions() {
+		return (ArrayList<String>)this.get("functions");
 	}
 
 
 
-	public void set_id(long _id) {
-		this._id = _id;
+	public void setFunctions(ArrayList<String> functions) {
+		this.put("functions", functions);
+	}
+	
+	public ArrayList<String> getProcesses() {
+		return (ArrayList<String>)this.get("processes");
 	}
 
 
 
-	public Collection<String> getFunctions() {
-		return functions;
+	public void setProcesses(ArrayList<String> processes) {
+		this.put("processes", processes);
 	}
-
-
-
-	public void setFunctions(Collection<String> functions) {
-		this.functions = functions;
-	}
-
-
-
-	public Collection<String> getProcesses() {
-		return processes;
-	}
-
-
-
-	public void setProcesses(Collection<String> processes) {
-		this.processes = processes;
-	}
-
-
-
-	public Collection<String> getComponents() {
-		return components;
+	
+	public ArrayList<String> getComponents() {
+		return (ArrayList<String>)this.get("components");
 	}
 
 
 
 	public void setComponents(Collection<String> components) {
-		this.components = components;
+		this.put("components", components);
 	}
 
 
 
+	
+
+
 	public void put(OntologyRecord or ){
 		if ( or.type == GoType.Function ) {
-			functions.add(or.term);
+			this.getFunctions().add(or.term);
 		}
 		else if ( or.type == GoType.Component ) {
-			components.add(or.term);
+			this.getComponents().add(or.term);
 		}
 		else if ( or.type == GoType.Process ) {
-			processes.add(or.term);
+			this.getProcesses().add(or.term);
 		}
 	}
 	
@@ -99,9 +89,9 @@ public class OntologyData {
 	}
 	public Element getXmlElement() {
 		Element root = new Element("ontologyData");
-		addList(root, functions, GoType.Function);
-		addList(root, components, GoType.Component);
-		addList(root, processes, GoType.Process);
+		addList(root, this.getFunctions(), GoType.Function);
+		addList(root, this.getComponents(), GoType.Component);
+		addList(root, this.getProcesses(), GoType.Process);
 		return root;
 	}
 	

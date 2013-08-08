@@ -1,19 +1,10 @@
 package qgrs.data.mongo.primitives;
 
-public class G4H {
+import com.mongodb.BasicDBObject;
 
-	MRNA mrna;
-	Alignment alignment;
-	G4 g4;
+public class G4H extends BasicDBObject{
+
 	
-	
-	private String recordId;
-	private double overlapScore;
-	private double tetradScore;
-	private double avgLoopScore;
-	private double totalLengthScore;
-	private double overallAbsoluteScore;
-	private long _id;
 	
 	
 	public G4H() {
@@ -21,69 +12,62 @@ public class G4H {
 	}
 	
 	
-	public long get_id() {
-		return _id;
-	}
-
-
-	public void set_id(long _id) {
-		this._id = _id;
-	}
+	
 
 
 	public MRNA getMrna() {
-		return mrna;
+		return (MRNA) get("mrna");
 	}
 	public void setMrna(MRNA mrna) {
-		this.mrna = mrna;
+		this.put("mrna", mrna);
 	}
 	public Alignment getAlignment() {
-		return alignment;
+		return (Alignment)get("alignment");
 	}
 	public void setAlignment(Alignment alignment) {
-		this.alignment = alignment;
+		this.put("alignment", alignment);
 	}
 	public G4 getG4() {
-		return g4;
+		return (G4)get("G4");
 	}
 	public void setG4(G4 g4) {
-		this.g4 = g4;
+		this.put("g4", g4);
 	}
 	public String getRecordId() {
-		return recordId;
+		return getString("recordId");
 	}
-	public void setRecordId(String id) {
-		this.recordId = id;
+	public void setRecordId(String recordId) {
+		this.put("recordId", recordId);
 	}
 	public double getOverlapScore() {
-		return overlapScore;
+		return getDouble("overlapScore");
 	}
 	public void setOverlapScore(double overlapScore) {
-		this.overlapScore = overlapScore;
+		this.put("overlapScore", overlapScore);
 	}
 	public double getTetradScore() {
-		return tetradScore;
+		return getDouble("tetradScore");
 	}
 	public void setTetradScore(double tetradScore) {
-		this.tetradScore = tetradScore;
+		this.put("tetradScore", tetradScore);
 	}
 	public double getAvgLoopScore() {
-		return avgLoopScore;
+		return getDouble("avgLoopScore");
 	}
 	public void setAvgLoopScore(double avgLoopScore) {
-		this.avgLoopScore = avgLoopScore;
+		this.put("avgLoopScore", avgLoopScore);
 	}
 	public double getTotalLengthScore() {
-		return totalLengthScore;
+		return getDouble("totalLengthScore");
 	}
 	public void setTotalLengthScore(double totalLengthScore) {
-		this.totalLengthScore = totalLengthScore;
+		this.put("totalLengthScore", totalLengthScore);
 	}
 	public double getOverallAbsoluteScore() {
-		return overallAbsoluteScore;
+		return getDouble("overallAbsoluteScore");
 	}
 	public void setOverallAbsoluteScore(double overallAbsoluteScore) {
-		this.overallAbsoluteScore = overallAbsoluteScore;
+		this.put("overallAbsoluteScore", overallAbsoluteScore);
 	}
 	
 	

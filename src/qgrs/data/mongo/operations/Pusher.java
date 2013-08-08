@@ -4,9 +4,6 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.jongo.Jongo;
-import org.jongo.MongoCollection;
-
 import qgrs.compute.GeneSequencePair;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
@@ -16,19 +13,20 @@ import qgrs.data.mongo.primitives.G4;
 import qgrs.data.mongo.primitives.G4H;
 import qgrs.data.mongo.primitives.MRNA;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
+import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 
 public class Pusher {
 	DB db;
-	Jongo jongo;
-	MongoCollection principals;
+	DBCollection principals;
+	
 		
 	public Pusher() throws UnknownHostException {
 		MongoClient mongoClient = new MongoClient();
 		db = mongoClient.getDB( "qgrs" );
-		jongo = new Jongo(db);
-		principals =  jongo.getCollection("principals");
+		principals =  db.getCollection("principals");
 	}
 	
 	
@@ -128,14 +126,13 @@ public class Pusher {
 		}
 		
 		
-		//SAVE TO MONGO
-		principals.save(principal);
-		
+		principals.insert(principal);
 	}
 	
 	
 	private boolean principalInDb(GeneSequence p) {
-		return principals.count(("{accessionNumber: '"+p.getAccessionNumber()+"'}")) > 0;
+		BasicDBObject query = new BasicDBObject("accessionNumber", p.getAccessionNumber());
+		return principals.count(query) > 0;
 		
 	}
 	

@@ -159,10 +159,10 @@ public abstract class AlignmentProvider {
 	
 	
 	public AlignmentProviderResult getAlignment(GeneSequencePair pair) {
-		System.out.println("Sequence alignment data requested");
+		/*System.out.println("Sequence alignment data requested");*/
 		AlignmentProviderResult r = this.getAlignmentFromCache(pair);
 		if( r != null ) {
-			System.out.println("\t [Cached Version]");
+			/*System.out.println("\t [Cached Version]");*/
 		}
 		else {
 			if( this.allowLiveDownload() ) {

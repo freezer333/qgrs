@@ -70,7 +70,7 @@ public class SeedV2 {
 			System.out.println("Seeding (" + inputFile.getName() + ") - Computing homology " + i + " of " + pairs.size() + " (" + new DecimalFormat("0.00%").format(((double)i)/pairs.size()) + ")");
 			computeAndSend(pair);
 			i++;
-			return;
+			
 		}
 		System.out.println("Seeding (" + inputFile.getName() + ") - " + complete + " computed, " + errors + " errors.");
 		
