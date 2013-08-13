@@ -10,6 +10,13 @@ public class G4 extends BasicDBObject{
 	public G4() {
 		super();
 		this.setConservedG4s(new ArrayList<G4H>());
+		this.setOverlappingMotifs(new ArrayList<G4>());
+	}
+	
+	public G4 asComparison() {
+		this.remove("conservedG4s");
+		this.remove("overlappedMotifs");
+		return this;
 	}
 
 	public String getG4Id() {
@@ -158,6 +165,13 @@ public class G4 extends BasicDBObject{
 		this.put("conservedG4s", conservedG4s);
 	}
 	
+	public ArrayList<G4> getOverlappingMotifs() {
+		return (ArrayList<G4>) get("overlappedMotifs");
+	}
+
+	public void setOverlappingMotifs(ArrayList<G4> overlapped) {
+		this.put("overlappedMotifs", overlapped);
+	}
 	
 	
 	

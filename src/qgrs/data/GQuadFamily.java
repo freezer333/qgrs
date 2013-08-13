@@ -1,5 +1,6 @@
 package qgrs.data;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,11 +43,20 @@ public class GQuadFamily {
 	}
 	
 	private boolean isRelatives(GQuadruplex a, GQuadruplex b) {
-		int diff = Math.abs(a.getStart().getIndexWithoutGaps() - b.getStart().getIndexWithoutGaps());
-		diff += Math.abs(a.getEnd().getIndexWithoutGaps() - b.getEnd().getIndexWithoutGaps());
-		return diff < MAX_ENDPOINT_DIFFERENCE;
+		int diff = a.getStart().getIndexWithoutGaps() - b.getStart().getIndexWithoutGaps();
+		diff += a.getEnd().getIndexWithoutGaps() - b.getEnd().getIndexWithoutGaps();
+		return Math.abs(diff/2.0) < MAX_ENDPOINT_DIFFERENCE;
 	}
 
+	public Collection<GQuadruplex> getOverlappingMotifs() {
+		LinkedList<GQuadruplex> retval = new LinkedList<GQuadruplex>();
+		for ( GQuadruplex g : this.members ) {
+			if ( !g.getId().equals(this.best.getId())) {
+				retval.add(g);
+			}
+		}
+		return retval;
+	}
 	public GQuadruplex getBest() {
 		return best;
 	}

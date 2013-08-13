@@ -21,11 +21,11 @@ public class G4H extends BasicDBObject{
 	public void setMrna(MRNA mrna) {
 		this.put("mrna", mrna);
 	}
-	public Alignment getAlignment() {
-		return (Alignment)get("alignment");
+	public double getAlignmentPercentage() {
+		return getDouble("alignmentPercentage");
 	}
-	public void setAlignment(Alignment alignment) {
-		this.put("alignment", alignment);
+	public void setAlignmentPercentage(double alignment) {
+		this.put("alignmentPercentage", alignment);
 	}
 	public G4 getG4() {
 		return (G4)get("G4");

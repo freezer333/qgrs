@@ -1,6 +1,7 @@
 package qgrs.data.mongo.operations;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,10 +10,10 @@ import qgrs.compute.GeneSequencePair;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.QgrsHomology;
-import qgrs.data.mongo.primitives.Alignment;
 import qgrs.data.mongo.primitives.G4;
 import qgrs.data.mongo.primitives.G4H;
 import qgrs.data.mongo.primitives.MRNA;
+import qgrs.data.mongo.primitives.Range;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
@@ -68,14 +69,23 @@ public class Pusher {
 		seq.setName(gene.getGeneName());
 		seq.setOntology(gene.getOntologyData());
 		seq.setSpecies(gene.getSpecies());
+		seq.setSequenceLength(gene.getSequenceLength());
+		seq.setGiNumber(gene.getGiNumber());
+		seq.setSymbol(gene.getGeneSymbol());
+		seq.set5UTR(new Range(gene.getUtr5()));
+		seq.set3UTR(new Range(gene.getUtr3()));
+		seq.setCds(new Range(gene.getCds()));
+		
+		for ( qgrs.data.Range r : gene.getPolyASignals()) {
+			seq.getPolyASignals().add(new Range(r));
+		}
+		for ( qgrs.data.Range r : gene.getPolyASites()) {
+			seq.getPolyASites().add(new Range(r));
+		}
+		
 		return seq;
 	}
-	private Alignment buildAlignment(GeneSequencePair pair) {
-		Alignment a = new Alignment();
-		a.setSimilarityPercentage(pair.getSimilarityPercentage());
-		a.setSimilarityScore(pair.getSimilarityScore());
-		return a;	
-	}
+	
 	private G4 buildG4(GeneSequence gene, GQuadruplex q) {
 		G4 g4 = new G4();
 		g4.setDistanceFromPolyASignal(q.getDistanceFromPolyASignal());
@@ -95,27 +105,38 @@ public class Pusher {
 		g4.setTetrad3(q.getTetrad3Start().getIndexWithoutGaps());
 		g4.setTetrad4(q.getTetrad4Start().getIndexWithoutGaps());
 		g4.setTotalLength(q.getLength());
+		
+		if ( q.getOverlaps() != null ) {
+			ArrayList<G4> overlaps = new ArrayList<G4>();
+			for (GQuadruplex o : q.getOverlaps() ) {
+				overlaps.add(buildG4(gene, o).asComparison());
+			}
+			g4.setOverlappingMotifs(overlaps);
+		}
+		
 		return g4;
 	}
+	
 	private G4H buildG4H(GeneSequencePair pair, QgrsHomology qh) {
 		G4H g4h = new G4H();
-		g4h.setAlignment(buildAlignment(pair));
+		g4h.setAlignmentPercentage(pair.getSimilarityPercentage());
 		g4h.setAvgLoopScore(qh.getAvgLoopScore());
-		g4h.setG4(buildG4(pair.getComparison(), qh.getGq2()));
+		g4h.setG4(buildG4(pair.getComparison(), qh.getGq2()).asComparison());
 		g4h.setRecordId(qh.getGq1().getId() + "x" + qh.getGq2().getId());
-		g4h.setMrna(buildFromGene(pair.getComparison()));
+		g4h.setMrna(buildFromGene(pair.getComparison()).asComparison());
 		g4h.setOverallAbsoluteScore(qh.getOverallScore());
 		g4h.setOverlapScore(qh.getOverlapScore());
 		g4h.setTetradScore(qh.getTetradScore());
 		g4h.setTotalLengthScore(qh.getTotalLengthScore());
 		return g4h;
 	}
+	
 	private void buildAndInsertFullRecord(GeneSequencePair pair,List<QgrsHomology> similarityResults) {
 		MRNA principal = buildFromGene(pair.getPrinciple());
 		HashMap<String, G4> principalG4s = new HashMap<String, G4>();
 		// first save all the primary G4s
-		for ( QgrsHomology h : similarityResults) {
-			G4 pG4 = buildG4(pair.getPrinciple(), h.getGq1());
+		for ( GQuadruplex g : pair.getPrinciple().getgQuads()) {
+			G4 pG4 = buildG4(pair.getPrinciple(), g);
 			if ( !principalG4s.containsKey(pG4.getG4Id())) {
 				principalG4s.put(pG4.getG4Id(), pG4);
 				principal.getG4s().add(pG4);
@@ -127,7 +148,6 @@ public class Pusher {
 			G4H g4h = buildG4H(pair, h);
 			pG4.getConservedG4s().add(g4h);
 		}
-		
 		
 		principals.insert(principal);
 	}

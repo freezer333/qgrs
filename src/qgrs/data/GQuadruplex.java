@@ -4,6 +4,7 @@ package qgrs.data;
  */
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import qgrs.data.records.GQuadruplexRecord;
 import framework.web.util.StringUtils;
@@ -32,6 +33,8 @@ public class GQuadruplex implements Serializable{
 	
 	private GeneSequence sequence;
 	
+	private Collection<GQuadruplex> overlaps;
+	
 	
 	public GQuadruplex(GeneSequence sequence, int number){
 		this.sequence = sequence;
@@ -41,6 +44,18 @@ public class GQuadruplex implements Serializable{
 	
 	
 	
+	public Collection<GQuadruplex> getOverlaps() {
+		return overlaps;
+	}
+
+
+
+	public void setOverlaps(Collection<GQuadruplex> overlaps) {
+		this.overlaps = overlaps;
+	}
+
+
+
 	public GQuadruplex(GQuadruplexRecord r, GeneSequence ungappedSequence){
 		try {
 			this.id = r.getId();
@@ -55,6 +70,7 @@ public class GQuadruplex implements Serializable{
 			this.length = r.getTotalLength();
 			this.score = r.getScore();
 			this.numTetrads = r.getNumTetrads();
+			
 		}
 		catch ( Exception e) {
 			throw new RuntimeException(e);

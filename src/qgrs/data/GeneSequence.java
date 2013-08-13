@@ -336,7 +336,9 @@ public class GeneSequence implements Serializable{
 	public void filterQuadruplexesForBestFamilyRepresentatives() {
 		this.gQuads = new LinkedList<GQuadruplex>();
 		for ( GQuadFamily family : this.getQuadruplexFamilies() ) {
-			gQuads.add(family.getBest());
+			GQuadruplex plex = family.getBest();
+			plex.setOverlaps(family.getOverlappingMotifs());
+			gQuads.add(plex);
 		}
 	}
 	
