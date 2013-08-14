@@ -22,6 +22,12 @@ public class MRNA extends BasicDBObject{
 	}
 	
 	
+	public MRNA asComparison() {
+		this.remove("g4s");
+		return this;
+	}
+
+	
 	public Range getCds() {
 		return (Range)this.get("cds");
 	}
@@ -64,11 +70,7 @@ public class MRNA extends BasicDBObject{
 	
 	
 	
-	public MRNA asComparison() {
-		this.remove("g4s");
-		return this;
-	}
-
+	
 	public String getAccessionNumber() {
 		return this.getString("accessionNumber");
 	}

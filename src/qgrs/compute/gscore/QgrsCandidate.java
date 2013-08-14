@@ -240,18 +240,6 @@ public class QgrsCandidate {
 		float gavg = (Math.abs(y1-y2) + Math.abs(y2-y3) + Math.abs(y3-y1))/3.0f;
 		float gscore = gmax() - gavg + gmax()*T();
 		
-		System.out.println("G-Score breakdown:");
-		
-		System.out.println("\tT  = " + this.numTetrads);
-		System.out.println("\tML = " + this.getMaxLength());
-		System.out.println("\tY1 = " + y1);
-		System.out.println("\tY2 = " + y2);
-		System.out.println("\tY3 = " + y3);
-		
-		System.out.println("\tX  = " + T());
-		System.out.println("\tGA = " + gavg);
-		System.out.println("\tMG = " + gmax());
-		System.out.println("Score =  " + gscore);
 		return Math.round(gscore);
 	}
 	

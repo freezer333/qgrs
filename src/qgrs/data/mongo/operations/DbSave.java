@@ -22,12 +22,16 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
-public class Pusher {
+public class DbSave {
 	DB db;
 	DBCollection principals;
 	
+	private static final int MIN_GSCORE = 13;
+	private static final double MIN_QGRSH_SCORE = 0.75;
+	private static final double MIN_MRNA_ALIGNMENT = 0.5;
+	
 		
-	public Pusher() throws UnknownHostException {
+	public DbSave() throws UnknownHostException {
 		MongoClient mongoClient = new MongoClient();
 		db = mongoClient.getDB( "qgrs" );
 		principals =  db.getCollection("principals");
@@ -109,7 +113,9 @@ public class Pusher {
 		if ( q.getOverlaps() != null ) {
 			ArrayList<G4> overlaps = new ArrayList<G4>();
 			for (GQuadruplex o : q.getOverlaps() ) {
-				overlaps.add(buildG4(gene, o).asComparison());
+				if ( o.getScore() >= MIN_GSCORE ) {
+					overlaps.add(buildG4(gene, o).asComparison());
+				}
 			}
 			g4.setOverlappingMotifs(overlaps);
 		}
@@ -132,21 +138,29 @@ public class Pusher {
 	}
 	
 	private void buildAndInsertFullRecord(GeneSequencePair pair,List<QgrsHomology> similarityResults) {
+		if ( pair.getSimilarityPercentage() < MIN_MRNA_ALIGNMENT) return;
+		
 		MRNA principal = buildFromGene(pair.getPrinciple());
 		HashMap<String, G4> principalG4s = new HashMap<String, G4>();
 		// first save all the primary G4s
 		for ( GQuadruplex g : pair.getPrinciple().getgQuads()) {
-			G4 pG4 = buildG4(pair.getPrinciple(), g);
-			if ( !principalG4s.containsKey(pG4.getG4Id())) {
-				principalG4s.put(pG4.getG4Id(), pG4);
-				principal.getG4s().add(pG4);
+			if ( g.getScore() >= MIN_GSCORE ) {
+				G4 pG4 = buildG4(pair.getPrinciple(), g);
+				if ( !principalG4s.containsKey(pG4.getG4Id())) {
+					principalG4s.put(pG4.getG4Id(), pG4);
+					principal.getG4s().add(pG4);
+				}
 			}
 		}
 		// now link all the homologies
 		for ( QgrsHomology h : similarityResults) {
-			G4 pG4 = principalG4s.get(h.getGq1().getId());
-			G4H g4h = buildG4H(pair, h);
-			pG4.getConservedG4s().add(g4h);
+			if ( h.getOverallScore() >= MIN_QGRSH_SCORE ) {
+				G4 pG4 = principalG4s.get(h.getGq1().getId());
+				if ( pG4 != null ) {
+					G4H g4h = buildG4H(pair, h);
+					pG4.getConservedG4s().add(g4h);
+				}
+			}
 		}
 		
 		principals.insert(principal);

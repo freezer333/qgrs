@@ -41,7 +41,6 @@ public class QgrsBuilder {
 			}
 			g++;
 		} while (starts.size() > 0 ) ;
-		System.out.println("Detected  " + processingQueue.size() + " starts");
 	}
 	
 	Collection<Integer> getStartingPoints(int numTetrads) {
