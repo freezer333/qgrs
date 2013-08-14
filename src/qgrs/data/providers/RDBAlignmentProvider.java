@@ -1,6 +1,5 @@
 package qgrs.data.providers;
 
-import qgrs.compute.BuildKey;
 import qgrs.compute.GeneSequencePair;
 import qgrs.data.records.AlignmentRecord;
 import qgrs.db.AlignedSequenceDb;
@@ -20,7 +19,7 @@ public class RDBAlignmentProvider extends AlignmentProvider {
 			GeneSequencePair pair) {
 		
 		AlignmentRecordDb db = new AlignmentRecordDb(connection);
-		AlignmentRecord retval = db.get(pair.getPrinciple(), pair.getComparison(), BuildKey.Alignment);
+		AlignmentRecord retval = db.get(pair.getPrinciple(), pair.getComparison());
 		db.close();
 		if ( retval == null ) return null;
 		

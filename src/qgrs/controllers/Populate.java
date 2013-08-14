@@ -18,7 +18,6 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 
-import qgrs.compute.BuildKey;
 import qgrs.data.GeneSequence;
 import qgrs.data.records.AlignmentRecord;
 import qgrs.data.records.GQuadruplexRecord;

@@ -1,13 +1,17 @@
 package qgrs.input;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.biojavax.bio.db.ncbi.GenbankRichSequenceDB;
 import org.biojavax.bio.seq.RichSequence;
 
 import qgrs.data.GeneSequence;
-import qgrs.data.cache.Cache;
+import qgrs.data.providers.RDBSequenceProvider;
+import qgrs.data.providers.SequenceProvider;
+import qgrs.data.providers.SequenceProvider.Key;
+import qgrs.db.DatabaseConnection;
 import framework.web.AbstractWebContext;
 import framework.web.util.StringUtils;
 
@@ -24,11 +28,11 @@ public class FlexibleInputProvider implements InputProvider {
 	String errorMessage;
 	
 	int ncbiCount = 0;
+	DatabaseConnection c;
 	
 	final int MAX_SEQ_LENGTH = 10025;
-	private final Cache geneCache;
 	
-	public FlexibleInputProvider (AbstractWebContext context, Cache geneCache) {
+	public FlexibleInputProvider (AbstractWebContext context, DatabaseConnection c) {
 		seq1Type = this.getSeq1InputType(context);
 		seq2Type = this.getSeq2InputType(context);
 		seq1Id = context.getString(QParam.Sequence1);
@@ -36,7 +40,7 @@ public class FlexibleInputProvider implements InputProvider {
 		seq2Id = context.getString(QParam.Sequence2);
 		seq2Chars = context.getString(QParam.Sequence2Chars);
 		errorMessage = null;
-		this.geneCache = geneCache;
+		this.c = c;
 	}
 
 	InputType getSeq1InputType(AbstractWebContext context) {
@@ -53,15 +57,17 @@ public class FlexibleInputProvider implements InputProvider {
 	}
 
 
-	private GeneSequence buildGeneSequenceFromId(String id, GenbankRichSequenceDB ncbi) throws Exception{
-		GeneSequence s = this.geneCache.get(id);
-		if ( s != null ) return s;
+	private GeneSequence buildGeneSequenceFromId(String id, SequenceProvider provider) throws Exception{
+		GeneSequence s ;
 		
 		try {
-			RichSequence rs = ncbi.getRichSequence(id);
-			String sequence =rs.seqString();
-			this.ncbiCount++;
-			s = GeneSequence.buildFromRichSequence(sequence, rs);
+			HashMap<Key, Object> seqValues;
+			seqValues = provider.getSequence(id);
+			if ( seqValues == null ) return null;
+			s = GeneSequence.buildFromProviderMap(seqValues);
+			if ( seqValues.containsKey(Key.Live) && ((boolean)seqValues.get(Key.Live)) ) { 
+				ncbiCount++;
+			}
 		} catch (Exception e) {
 			if ( !StringUtils.isDefined(id)) {
 				throw new Exception ("Please make sure you enter 2  nucleotide sequences for analysis");
@@ -96,82 +102,64 @@ public class FlexibleInputProvider implements InputProvider {
 		if ( end < 0 ) return null;
 		return fasta.substring(startIndex+1, end);
 	}
-	private GeneSequence buildGeneSequenceFromFASTA(String fasta, GenbankRichSequenceDB ncbi) throws Exception {
+	private GeneSequence buildGeneSequenceFromFASTA(String fasta, SequenceProvider provider) throws Exception {
 		String id = getFastaPart(fasta, 4);
-		RichSequence rs = null;
+		GeneSequence retval = null;
 		if ( StringUtils.isDefined(id)) {
 			try {
-				rs = ncbi.getRichSequence(id);
+				retval = this.buildGeneSequenceFromId(id, provider);
 			}
 			catch  (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		String sequence = fasta.substring(fasta.indexOf('\n'));
-		GeneSequence s = null;
-		if ( rs == null ) {
-			s = GeneSequence.buildFromDirectInput(sequence, id==null?"N/A":id);
+		if ( retval == null ) {
+			// unable to retrieve it.
+			String sequence = fasta.substring(fasta.indexOf('\n'));
+			retval = GeneSequence.buildFromDirectInput(sequence, id==null?"N/A":id);
 		}
-		else {
-			s = GeneSequence.buildFromRichSequence(sequence, rs);
-		}
-		return s;
+		
+		return retval;
 	}
 	
 	
-	public String preCheck(){
-		
-		/*String sequenceToBig = "This application currently cannot perform alignments on mRNA sequences with more than 10000 bases.  We are sorry for the inconvenience and intend to add support for longer sequences in the future";
-		QGRSProgramInput input = getInput();
-		if ( this.errorMessage != null ) {
-			return this.errorMessage;
-		}
-		if ( input.getPrinciple().getBases().size() > MAX_SEQ_LENGTH) {
-			return (sequenceToBig + " (Sequence 1 has " + input.getPrinciple().getBases().size() + " bases)"); 
-		}
-		if ( input.getComparisons().get(0).getBases().size() > MAX_SEQ_LENGTH) {
-			return (sequenceToBig + " (Sequence 2 has " + input.getComparisons().get(0).getBases().size() + " bases)"); 
-		}*/
-		
-		return null;
-	}
+	
 
 	@Override
 	public QGRSProgramInput getInput(){
 		QGRSProgramInput input = new QGRSProgramInput();
 		List<GeneSequence>comparisons=new ArrayList<GeneSequence>();
-		GenbankRichSequenceDB  ncbi = null;
-
+		SequenceProvider provider = null;
 		try {
 			
 
 			if ( seq1Type == InputType.Id || seq2Type == InputType.Id || seq1Type == InputType.FASTA || seq2Type == InputType.FASTA ) {
-				ncbi = new GenbankRichSequenceTextDB();
+				provider = new RDBSequenceProvider(c);
 			}
 
 			switch ( seq1Type ) {
 			case Id:
 				System.out.println("Building from rich sequence 1");
-				input.setPrinciple(this.buildGeneSequenceFromId(this.seq1Id, ncbi));
+				input.setPrinciple(this.buildGeneSequenceFromId(this.seq1Id, provider));
 				break;
 			case Raw:
 				input.setPrinciple(this.buildGeneSequenceFromRaw(this.seq1Chars));
 				break;
 			case FASTA:
-				input.setPrinciple(this.buildGeneSequenceFromFASTA(this.seq1Chars, ncbi));
+				input.setPrinciple(this.buildGeneSequenceFromFASTA(this.seq1Chars, provider));
 				break;
 			}
 
 			switch ( seq2Type ) {
 			case Id:
 				System.out.println("Building from rich sequence 2");
-				comparisons.add(this.buildGeneSequenceFromId(this.seq2Id, ncbi));
+				comparisons.add(this.buildGeneSequenceFromId(this.seq2Id, provider));
 				break;
 			case Raw:
 				comparisons.add(this.buildGeneSequenceFromRaw(this.seq2Chars));
 				break;
 			case FASTA:
-				comparisons.add(this.buildGeneSequenceFromFASTA(this.seq2Chars, ncbi));
+				comparisons.add(this.buildGeneSequenceFromFASTA(this.seq2Chars, provider));
 				break;
 			}
 

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+import qgrs.compute.interfaces.QgrsHomologyScorer;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.QgrsHomology;
@@ -60,13 +61,13 @@ public class CachedHomologyScorer implements QgrsHomologyScorer {
 	}
 
 	@Override
-	public void alignGQuadruplexes(GeneSequencePair pair) throws Exception {
+	public void computeQgrsHomology(GeneSequencePair pair) throws Exception {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public List<QgrsHomology> getSimilarityResults() {
+	public List<QgrsHomology> getQgrsHomologyResults() {
 		
 		return similarityResults;
 	}

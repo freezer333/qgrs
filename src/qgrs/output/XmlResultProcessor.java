@@ -127,24 +127,14 @@ public class XmlResultProcessor extends ResultProcessor {
 
 		pairResult.addContent(this.getHomologyMapElement(pairs.get(0), matches));
 
-		List<QgrsHomology> finalMatches = this.mergeOverlaps(matches);
 		
 		pairResult.addContent(this.getSequenceViewerElement());
-		pairResult.addContent(this.getResultsElement(finalMatches));
+		pairResult.addContent(this.getResultsElement(matches));
 
 		this.resultElement.addContent(pairResult);
-		this.resultElement.addContent(this.getCacheElement());
 		this.principleLastIndex = pairs.get(0).getPrinciple().getSequenceLength();
 	}
 	
-	Element getCacheElement() {
-		Element cacheElement = new Element("cacheStatus");
-		cacheElement.addContent(new Element("principleQuadruplexCached").setText(String.valueOf(this.isPrincipleQuadruplexIdCached())));
-		cacheElement.addContent(new Element("comparisonQuadruplexCached").setText(String.valueOf(this.isComparisonQuadruplexIdCached())));
-		cacheElement.addContent(new Element("alignmentCached").setText(String.valueOf(this.isAlignmentCached())));
-		cacheElement.addContent(new Element("homologyCached").setText(String.valueOf(this.isHomologyResultsCached())));
-		return cacheElement;
-	}
 	
 	private Element getPairResultElement(List<GeneSequencePair> pairs){
 		Element pairResult = new Element("pairResult");
@@ -169,39 +159,7 @@ public class XmlResultProcessor extends ResultProcessor {
 		}
 		return results;
 	}
-	private List<QgrsHomology> mergeOverlaps(List<QgrsHomology> matches) {
-		// The matches must now be collated into bins based on the QGRS 1 number.  
-		// The bins are sorted, and the overlap cutoff criteria is applied.
-		HashMap<Long, List<Double>> bins = new HashMap<Long, List<Double>>();
-		for ( QgrsHomology qs : matches ) {
-			List<Double> bin = bins.get(qs.getNumgq1());
-			if ( bin == null ) {
-				bin = new LinkedList<Double>();
-				bins.put(qs.getNumgq1(), bin);
-			}
-			if (! bin.contains(qs.getOverallScore())) {
-				bin.add(qs.getOverallScore());
-			}
-		}
-		// each bin now has a list of scores
-		HashMap<Long, Double> filterBins = new HashMap<Long, Double>();
-		for ( Long key : bins.keySet() ) {
-			Collections.sort(bins.get(key));
-			Collections.reverse(bins.get(key));
-			// the bin is now sorted.
-			int t = Math.min(bins.get(key).size(), this.viewParams.getOverlapFilter()) - 1;
-			filterBins.put(key, bins.get(key).get(t));
-		}
-
-		List<QgrsHomology> finalMatches = new LinkedList<QgrsHomology>();
-		for ( QgrsHomology qs : matches ) {
-			if ( filterBins.get(qs.getNumgq1()) <= qs.getOverallScore() ) {
-				finalMatches.add(qs);
-			}
-		}
-		System.out.println("Start-based overlap of homology condensed result set from " + matches.size() + " to " + finalMatches.size());
-		return finalMatches;
-	}
+	
 	
 	Element getSequenceViewerElement(){
 		// Build the Sequence Section Elements

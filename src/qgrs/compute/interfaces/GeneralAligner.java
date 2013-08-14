@@ -1,5 +1,6 @@
-package qgrs.compute;
+package qgrs.compute.interfaces;
 
+import qgrs.compute.GeneSequencePair;
 import qgrs.job.Cancellable;
 import qgrs.job.StatusHolder;
 

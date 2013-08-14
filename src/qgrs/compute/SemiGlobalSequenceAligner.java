@@ -1,15 +1,6 @@
 package qgrs.compute;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.message.BasicNameValuePair;
-
+import qgrs.compute.interfaces.GeneralAligner;
 import qgrs.data.providers.AlignmentProvider;
 import qgrs.data.providers.AlignmentProviderResult;
 import qgrs.job.CancelFlag;
@@ -46,9 +37,9 @@ public class SemiGlobalSequenceAligner implements GeneralAligner {
 			pair.setWasCached(!result.live);
 			pair.getPrinciple().setGaps(result.principal);
 			pair.getComparison().setGaps(result.comparison);
-			if (statusHolder != null)
-				statusHolder.setStatus(JobStage.Alignment_Calc, 1,
-						"Alignment completed");
+			if (statusHolder != null) {
+				statusHolder.setStatus(JobStage.Alignment_Calc, 1,	"Alignment completed");
+			}
 		}
 		
 	}

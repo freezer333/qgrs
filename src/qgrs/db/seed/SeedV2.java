@@ -144,7 +144,7 @@ public class SeedV2 {
 	}
 	
 	private static int runNextAlignment(PredictorInputProvider inputProvider) throws Exception {
-		AlignmentJob job = new AlignmentJob(inputProvider,new MongoResultProcessor(),	null, ap);
+		AlignmentJob job = new AlignmentJob(inputProvider,new MongoResultProcessor(), ap);
 		job.runJob();
 		return job.getRequiredThrottle();
 		

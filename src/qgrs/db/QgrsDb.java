@@ -9,7 +9,6 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
-import qgrs.compute.BuildKey;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
 import qgrs.data.records.GQuadruplexRecord;
@@ -239,7 +238,7 @@ public class QgrsDb  extends DbTable {
 			ps.setInt(11,gq.getTotalLength());
 			ps.setInt(12, gq.getScore());
 			ps.setInt(13, gq.getNumTetrads());
-			ps.setString(14, BuildKey.QgrsIdentify);
+			ps.setString(14, "1");
 			ps.setBoolean(15, gq.isIn5Prime());
 			ps.setBoolean(16, gq.isInCds());
 			ps.setBoolean(17, gq.isIn3Prime());

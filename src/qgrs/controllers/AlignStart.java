@@ -3,8 +3,6 @@ package qgrs.controllers;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.cache.Cache;
-import qgrs.data.cache.LocalGeneCache;
 import qgrs.data.providers.RDBAlignmentProvider;
 import qgrs.db.DatabaseConnection;
 import qgrs.input.FlexibleInputProvider;
@@ -30,34 +28,20 @@ public class AlignStart extends AbstractController {
 		
 	}
 	
-	private Response preCheckInput(AbstractWebContext context) {
-		Cache localGeneCache = new LocalGeneCache(((QgrsWebContext)context).getDbConnection());
-		FlexibleInputProvider provider = new FlexibleInputProvider(context, localGeneCache);
-		String result = provider.preCheck();
-		if ( result != null ) {
-			context.put(QParam.AlertMessage, result);
-			return new RedirectResponse("message");
-		}
-		return null;
-	}
+	
 	
 	@Override
 	public Response processRequest(AbstractWebContext context) {
-		System.out.println(context.getRequest().getRemoteHost());
 		ResultViewParams rvp = new ResultViewParams(context);
 		XmlResultProcessor xrp = new XmlResultProcessor();
 		xrp.setViewParams(rvp);
 		if ( JobContext.hasActiveJob(context)) {
 			return new RedirectResponse("activeJob");
 		}
-		Response rr = this.preCheckInput(context);
-		if ( rr != null ) {
-			return rr;
-		}
+		
 		
 		DatabaseConnection c = new DatabaseConnection(((QgrsWebContext)context).getFreeConnection());
-		Cache cache = new LocalGeneCache(c);
-		AlignmentJob job = new AlignmentJob(new FlexibleInputProvider(context, cache), xrp, cache, new RDBAlignmentProvider(c));
+		AlignmentJob job = new AlignmentJob(new FlexibleInputProvider(context, c), xrp, new RDBAlignmentProvider(c));
 		
 		JobContext.cancelActiveJob(context);
 		Thread t = new Thread(job);

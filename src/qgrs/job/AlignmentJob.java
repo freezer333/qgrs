@@ -5,12 +5,11 @@ import java.util.List;
 
 import qgrs.compute.FamilyHomologyScorer;
 import qgrs.compute.GeneSequencePair;
-import qgrs.compute.GeneralAligner;
 import qgrs.compute.QgrsCompute;
 import qgrs.compute.SemiGlobalSequenceAligner;
 import qgrs.compute.gscore.QgrsFinder;
+import qgrs.compute.interfaces.GeneralAligner;
 import qgrs.data.GeneSequence;
-import qgrs.data.cache.Cache;
 import qgrs.data.providers.AlignmentProvider;
 import qgrs.input.InputProvider;
 import qgrs.input.QGRSProgramInput;
@@ -21,7 +20,6 @@ public class AlignmentJob extends Job{
 
 	private InputProvider inputProvider;
 	private final ResultProcessor resultProcessor;
-	private final Cache cache;
 	private final AlignmentProvider alignmentProvider;
 	QGRSProgramInput input;
 	volatile CancelFlag cancelFlag = new CancelFlag();
@@ -29,10 +27,9 @@ public class AlignmentJob extends Job{
 	private int ncbiCallCount = 0;
 	private int embossCallCount = 0;
 
-	public AlignmentJob(InputProvider inputProvider, ResultProcessor resultProcessor, Cache cache, AlignmentProvider alignmentProvider) {
+	public AlignmentJob(InputProvider inputProvider, ResultProcessor resultProcessor, AlignmentProvider alignmentProvider) {
 		this.inputProvider = inputProvider;
 		this.resultProcessor = resultProcessor;
-		this.cache = cache;
 		this.alignmentProvider = alignmentProvider;
 	}
 	
@@ -46,14 +43,13 @@ public class AlignmentJob extends Job{
 
 	@Override
 	public void runJob() throws Exception {	
-		QgrsCompute qAligner = new QgrsCompute(this, this.cache);
+		QgrsCompute qAligner = new QgrsCompute(this);
 		try {
 			this.setStatus(JobStage.Downloading, -1, null);
 			input = inputProvider.getInput();
 			this.ncbiCallCount = inputProvider.getNumNcbiCalls();
 			
 			this.checkInput();
-			this.cacheInput();
 			
 			this.configureSemiGlobalAlignment(qAligner);
 			this.configureQgrsIdentification(qAligner);
@@ -73,11 +69,7 @@ public class AlignmentJob extends Job{
 			}
 			
 			if ( this.resultProcessor != null ) {
-				this.resultProcessor.setPrincipleQuadruplexIdCached(qAligner.isPrincipleQuadruplexIdCached());
-				this.resultProcessor.setComparisonQuadruplexIdCached(qAligner.isComparisonQuadruplexIdCached());
-				this.resultProcessor.setAlignmentCached(qAligner.isAlignmentCached());
-				this.resultProcessor.setHomologyResultsCached(qAligner.isHomologyResultsCached());
-				this.resultProcessor.handleResults(pairs, qAligner.getgAligner().getSimilarityResults());
+				this.resultProcessor.handleResults(pairs, qAligner.getgAligner().getQgrsHomologyResults());
 			}
 			this.setStatus(JobStage.Complete, -1, null);
 			
@@ -85,10 +77,6 @@ public class AlignmentJob extends Job{
 		finally {
 			qAligner = null;
 			System.gc();
-			//System.out.println("Job " + this.getId() + " completed or cancelled, resources reclaimed");
-			if ( cache != null ) {
-				cache.flushAndClose();
-			}
 		}
 	}
 	
@@ -111,16 +99,7 @@ public class AlignmentJob extends Job{
 		return true;
 	}
 
-	private void cacheInput() {
-		if ( !this.input.getPrinciple().isDirectInput() && cache != null ) {
-			this.cache.put(this.input.getPrinciple());
-		}
-		for ( GeneSequence seq : this.input.getComparisons()) {
-			if ( !seq.isDirectInput() && cache != null) {
-				this.cache.put(seq);
-			}
-		}
-	}
+	
 	private void checkInput() throws Exception{
 		if ( input == null) {                                      
 			this.setStatus(JobStage.Error, -1, "Input was not specified.");

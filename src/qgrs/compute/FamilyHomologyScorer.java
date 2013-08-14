@@ -1,8 +1,11 @@
 package qgrs.compute;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+import qgrs.compute.interfaces.QgrsHomologyScorer;
 import qgrs.data.Base;
 import qgrs.data.GQuadFamily;
 import qgrs.data.GQuadruplex;
@@ -14,7 +17,7 @@ import qgrs.job.DefaultCancelFlag;
 import qgrs.job.JobStage;
 import qgrs.job.StatusHolder;
 
-//testing google code on 8/11/11 
+
 
 public class FamilyHomologyScorer implements QgrsHomologyScorer{
 	
@@ -39,7 +42,7 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 	// Allocating instance variables instead of stack variables for heavily called function
 	
 	@Override
-	public List<QgrsHomology> getSimilarityResults() {
+	public List<QgrsHomology> getQgrsHomologyResults() {
 		return similarityResults;
 	}
 
@@ -206,7 +209,7 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 	}
 
 	@Override
-	public void alignGQuadruplexes(GeneSequencePair pair) throws Exception {
+	public void computeQgrsHomology(GeneSequencePair pair) throws Exception {
 		long s1 = 0;
 		long s2 = 0;
 		//output method
@@ -228,7 +231,42 @@ public class FamilyHomologyScorer implements QgrsHomologyScorer{
 					throw new CancelException();
 			}
 		}
+		
+		this.mergeOverlapResults();
 	} 
+	
+	
+	private void mergeOverlapResults() {
+		// The matches must now be collated into bins based on the QGRS 1 number.  
+		// The bins are sorted, and the overlap cutoff criteria is applied.
+		HashMap<Long, List<Double>> bins = new HashMap<Long, List<Double>>();
+		List<QgrsHomology> matches = this.similarityResults;
+		for ( QgrsHomology qs : matches ) {
+			List<Double> bin = bins.get(qs.getNumgq1());
+			if ( bin == null ) {
+				bin = new LinkedList<Double>();
+				bins.put(qs.getNumgq1(), bin);
+			}
+			if (! bin.contains(qs.getOverallScore())) {
+				bin.add(qs.getOverallScore());
+			}
+		}
+		// each bin now has a list of scores
+		HashMap<Long, Double> filterBins = new HashMap<Long, Double>();
+		for ( Long key : bins.keySet() ) {
+			Collections.sort(bins.get(key));
+			Collections.reverse(bins.get(key));
+			filterBins.put(key, bins.get(key).get(0));
+		}
+
+		this.similarityResults = new LinkedList<QgrsHomology>();
+		for ( QgrsHomology qs : matches ) {
+			if ( filterBins.get(qs.getNumgq1()) <= qs.getOverallScore() ) {
+				similarityResults.add(qs);
+			}
+		}
+		
+	}
 
 	
 }
