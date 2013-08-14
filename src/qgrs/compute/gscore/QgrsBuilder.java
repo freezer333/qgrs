@@ -17,8 +17,10 @@ public class QgrsBuilder {
 		seedQueue();
 		while ( !processingQueue.isEmpty()) {
 			QgrsCandidate c = processingQueue.remove();
-			if ( c.isValid() ) {
-				qgrs.add(c);
+			if ( c.isCompleted()  ) {
+				if ( c.isViable() ) {
+					qgrs.add(c);
+				}
 			}
 			else {
 				for ( QgrsCandidate e : c.expand() ) {
@@ -39,7 +41,7 @@ public class QgrsBuilder {
 			}
 			g++;
 		} while (starts.size() > 0 ) ;
-		
+		System.out.println("Detected  " + processingQueue.size() + " starts");
 	}
 	
 	Collection<Integer> getStartingPoints(int numTetrads) {

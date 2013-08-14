@@ -3,6 +3,7 @@ package qgrs.compute;
 import java.util.Date;
 import java.util.List;
 
+import qgrs.compute.gscore.QgrsFinder;
 import qgrs.data.Base;
 import qgrs.data.GQuadruplex;
 import qgrs.data.GeneSequence;
@@ -18,7 +19,7 @@ import framework.diagnostic.MemoryReporter;
 public class QgrsCompute{
 
 	private GeneralAligner aligner;
-	private IQgrsIdentifier gIdentifier;
+	private QgrsFinder gIdentifier;
 	private QgrsHomologyScorer gAligner;
 	private InputType inputType;
 	private final StatusHolder statusHolder;
@@ -127,7 +128,7 @@ public class QgrsCompute{
 			cachedQgrs = this.cache.getQuadruplexes(seq);
 		}
 		if ( cachedQgrs == null || cachedQgrs.size() < 1) {
-			this.gIdentifier.findGQuadruplexes(seq);
+			this.gIdentifier.populateQgrs(seq);
 		}
 		else {
 			if ( tag == SeqTag.Principle ) this.principleQuadruplexIdCached = true;
@@ -194,10 +195,10 @@ public class QgrsCompute{
 	public void setAligner(GeneralAligner aligner) {
 		this.aligner = aligner;
 	}
-	public IQgrsIdentifier getgIdentifier() {
+	public QgrsFinder getgIdentifier() {
 		return gIdentifier;
 	}
-	public void setgIdentifier(IQgrsIdentifier gIdentifier) {
+	public void setgIdentifier(QgrsFinder gIdentifier) {
 		this.gIdentifier = gIdentifier;
 	}
 	public QgrsHomologyScorer getgAligner() {

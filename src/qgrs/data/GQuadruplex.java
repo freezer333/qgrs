@@ -6,6 +6,7 @@ package qgrs.data;
 import java.io.Serializable;
 import java.util.Collection;
 
+import qgrs.compute.gscore.QgrsCandidate;
 import qgrs.data.records.GQuadruplexRecord;
 import framework.web.util.StringUtils;
 
@@ -39,7 +40,6 @@ public class GQuadruplex implements Serializable{
 	public GQuadruplex(GeneSequence sequence, int number){
 		this.sequence = sequence;
 		this.id = this.sequence.getAccessionNumber() + "." + number;
-		
 	}
 	
 	
@@ -54,7 +54,23 @@ public class GQuadruplex implements Serializable{
 		this.overlaps = overlaps;
 	}
 
-
+	public GQuadruplex (GeneSequence sequence, int number, QgrsCandidate candidate) {
+		if ( !candidate.isCompleted() || !candidate.isViable() ) {
+			throw new RuntimeException("Cannot create GQuadruplex from invalid candidate");
+		}
+		this.sequence = sequence;
+		this.id = this.sequence.getAccessionNumber() + "." + number;
+		this.start = this.sequence.getBases().get(candidate.t1());
+		this.tetrad2Start = this.sequence.getBases().get(candidate.t2());
+		this.tetrad3Start = this.sequence.getBases().get(candidate.t3());
+		this.tetrad4Start = this.sequence.getBases().get(candidate.t4());
+		this.loop1Length = candidate.getY1();
+		this.loop2Length = candidate.getY2();
+		this.loop3Length = candidate.getY3();
+		this.length = candidate.getLength();
+		this.score = candidate.getScore();
+		this.numTetrads = candidate.getNumTetrads();
+	}
 
 	public GQuadruplex(GQuadruplexRecord r, GeneSequence ungappedSequence){
 		try {

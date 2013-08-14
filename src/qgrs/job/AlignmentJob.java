@@ -7,8 +7,8 @@ import qgrs.compute.FamilyHomologyScorer;
 import qgrs.compute.GeneSequencePair;
 import qgrs.compute.GeneralAligner;
 import qgrs.compute.QgrsCompute;
-import qgrs.compute.QgrsIdentifier;
 import qgrs.compute.SemiGlobalSequenceAligner;
+import qgrs.compute.gscore.QgrsFinder;
 import qgrs.data.GeneSequence;
 import qgrs.data.cache.Cache;
 import qgrs.data.providers.AlignmentProvider;
@@ -139,12 +139,9 @@ public class AlignmentJob extends Job{
 	void configureSemiGlobalAlignment(QgrsCompute qAligner) {
 		GeneralAligner gAligner = new SemiGlobalSequenceAligner(this.alignmentProvider);
 		gAligner.setCancelFlag(this.cancelFlag);
-		// Configure the alignment process, choosing the appropriate algorithm for each step
 		qAligner.setAligner(gAligner);
 		try {
-			QgrsIdentifier cgi = new QgrsIdentifier(3,false);
-			cgi.setCancelFlag(this.cancelFlag);
-			qAligner.setgIdentifier(cgi);
+			qAligner.setgIdentifier(new QgrsFinder());
 		} catch (Exception e1) {
 			this.setStatus(JobStage.Error, -1, e1.getMessage());
 			e1.printStackTrace();

@@ -5,15 +5,33 @@ import java.util.LinkedList;
 
 import org.jdom.Element;
 
+import qgrs.data.Base;
+import qgrs.data.GQuadruplex;
+import qgrs.data.GeneSequence;
+
 public class QgrsCandidate {
 	enum NextStep { Loop1, Loop2, Loop3, Complete }
-	
+	public static final int MINIMUM_SCORE = 13;
 	final int numTetrads;
+	public int getNumTetrads() {
+		return numTetrads;
+	}
 	final String sequence;
 	final String tString;
 	final int start;
 	
 	int y1 = -1;
+	public int getY1() {
+		return y1;
+	}
+
+	public int getY2() {
+		return y2;
+	}
+
+	public int getY3() {
+		return y3;
+	}
 	int y2 = -1;
 	int y3 = -1;
 	private int maxLength;
@@ -43,6 +61,24 @@ public class QgrsCandidate {
 		}
 	}
 	
+	/**
+	 * Returns the minimum length the qgrs will be, given the currently known information
+	 * @return
+	 */
+	public int getPartialLength() {
+		int length = numTetrads * 4;
+		if ( y1 > 0 ) {
+			length+= y1;
+		}
+		if ( y2 > 0 ) {
+			length+= y2;
+		}
+		if ( y3 > 0 ) {
+			length += 3;
+		}
+		return length;
+	}
+	
 	public QgrsCandidate (int numTetrads, int y1, int y2, int y3) {
 		this.sequence = null;
 		this.start = 0;
@@ -52,6 +88,21 @@ public class QgrsCandidate {
 		this.y3 = y3;
 		this.tString = buildTetradString(numTetrads);
 		this.maxLength = this.computeDefaultMaxLength();
+	}
+	
+	
+	public int getLength() {
+		return 4 * this.numTetrads + y1 + y2 + y3;
+	}
+	public boolean isViable() {
+		if ( this.getScore() < MINIMUM_SCORE ) return false;
+		if ( this.getLength() > maxLength ) return false;
+
+		int count = 0;
+		if ( y1 < 1 ) count++;
+		if ( y2 < 1 ) count++;
+		if ( y3 < 1 ) count++;
+		return count < 2;
 	}
 	
 	public String toString() {
@@ -67,7 +118,7 @@ public class QgrsCandidate {
 			}
 		}
 		
-		if ( isValid() ) {
+		if ( isCompleted() ) {
 			sb.append("   ->  " + this.getScore());
 		}
 		return sb.toString();
@@ -112,13 +163,16 @@ public class QgrsCandidate {
 		LinkedList<QgrsCandidate> expansion = new LinkedList<QgrsCandidate>();
 		Collection<Integer> loopLengths = findPossibleLoopLengthsFrom(cursor());
 		for ( Integer y : loopLengths ) {
-			expansion.add(new QgrsCandidate(this, y));
+			QgrsCandidate c = new QgrsCandidate(this, y);
+			if ( c.getPartialLength() <= c.getMaxLength() ) {
+				expansion.add(c);
+			}
 		}
 		return expansion;
 	}
 	
 	public Element getXmlElement() {
-		if ( !isValid() ) {
+		if ( !isCompleted() ) {
 			throw new RuntimeException("Qgrs is not valid");
 		}
 		Element e = new Element("qgrs");
@@ -170,7 +224,7 @@ public class QgrsCandidate {
 	}
 	
 	
-	public boolean isValid() {
+	public boolean isCompleted() {
 		if ( y1 < 0 ) return false;
 		if ( y2 < 0 ) return false;
 		if ( y3 < 0 ) return false;
@@ -178,12 +232,26 @@ public class QgrsCandidate {
 	}
 	
 	
-	int getScore() {
-		if (!isValid() ) {
+	public int getScore() {
+		if (!isCompleted() ) {
 			throw new RuntimeException("Qgrs is invalid, score cannot be computed");
 		}
+		
 		float gavg = (Math.abs(y1-y2) + Math.abs(y2-y3) + Math.abs(y3-y1))/3.0f;
 		float gscore = gmax() - gavg + gmax()*T();
+		
+		System.out.println("G-Score breakdown:");
+		
+		System.out.println("\tT  = " + this.numTetrads);
+		System.out.println("\tML = " + this.getMaxLength());
+		System.out.println("\tY1 = " + y1);
+		System.out.println("\tY2 = " + y2);
+		System.out.println("\tY3 = " + y3);
+		
+		System.out.println("\tX  = " + T());
+		System.out.println("\tGA = " + gavg);
+		System.out.println("\tMG = " + gmax());
+		System.out.println("Score =  " + gscore);
 		return Math.round(gscore);
 	}
 	
@@ -223,22 +291,22 @@ public class QgrsCandidate {
 		return NextStep.Complete;
 	}
 	
-	int t1() {
+	public int t1() {
 		return start;
 	}
-	int t2() {
+	public int t2() {
 		if ( y1 < 0  ){
 			throw new RuntimeException("Loop 1 not defined");
 		}
 		return t1() + numTetrads + y1;
 	}
-	int t3() {
+	public int t3() {
 		if ( y2 < 0  ){
 			throw new RuntimeException("Loop 2 not defined");
 		}
 		return t2() + numTetrads + y2;
 	}
-	int t4() {
+	public int t4() {
 		if ( y3 < 0  ) {
 			throw new RuntimeException("Loop 3 not defined");
 		}
