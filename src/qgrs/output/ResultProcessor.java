@@ -10,7 +10,7 @@ public abstract class ResultProcessor {
 	
 	
 	public abstract void handleResults(List<GeneSequencePair> pairs, List<QgrsHomology> similarityResults) ;
-
+	public  void cleanup() {}
 	
 	
 }

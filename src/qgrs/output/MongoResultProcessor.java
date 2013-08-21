@@ -24,5 +24,11 @@ public class MongoResultProcessor extends ResultProcessor {
 		mongo.push(pairs.get(0), similarityResults);
 		
 	}
+	@Override
+	public void cleanup() {
+		mongo.close();
+	}
+	
+	
 
 }

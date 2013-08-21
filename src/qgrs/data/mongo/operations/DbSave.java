@@ -25,6 +25,7 @@ import com.mongodb.MongoClient;
 public class DbSave {
 	DB db;
 	DBCollection principals;
+	MongoClient mongoClient;
 	
 	private static final int MIN_GSCORE = 13;
 	private static final double MIN_QGRSH_SCORE = 0.75;
@@ -32,9 +33,13 @@ public class DbSave {
 	
 		
 	public DbSave() throws UnknownHostException {
-		MongoClient mongoClient = new MongoClient();
+		mongoClient = new MongoClient();
 		db = mongoClient.getDB( "qgrs" );
 		principals =  db.getCollection("principals");
+	}
+	
+	public void close() {
+		mongoClient.close();
 	}
 	
 	

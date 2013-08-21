@@ -72,7 +72,7 @@ public class AlignmentJob extends Job{
 				this.resultProcessor.handleResults(pairs, qAligner.getgAligner().getQgrsHomologyResults());
 			}
 			this.setStatus(JobStage.Complete, -1, null);
-			
+			this.resultProcessor.cleanup();
 		}
 		finally {
 			qAligner = null;
