@@ -19,6 +19,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
@@ -42,6 +43,47 @@ public class DbSave {
 		mongoClient.close();
 	}
 	
+	
+	public static void main(String [] strings) throws UnknownHostException {
+		new DbSave().resetHomology();
+	}
+	public void resetHomology() {
+		principals.setObjectClass(MRNA.class);
+		long count = principals.count();
+		long completed = 0;
+		
+		
+		DBCursor cursor = principals.find();
+		try {
+		   while(cursor.hasNext()) {
+			   boolean updated = false;
+		       MRNA mrna = (MRNA) cursor.next();
+		       ArrayList<BasicDBObject> g4s = (ArrayList<BasicDBObject>) mrna.get("g4s");
+		       for ( BasicDBObject bg4 : g4s )  {
+		    	   ArrayList<BasicDBObject> g4hs = (ArrayList<BasicDBObject>) bg4.get("conservedG4s");
+		    	   for ( BasicDBObject bg4h : g4hs) {
+		    		   double o = bg4h.getDouble("overallAbsoluteScore");
+		    		   if ( o <= 1) {
+		    			   int newo = (short)Math.round(o*100);
+		    			   bg4h.put("overallAbsoluteScore", newo);
+		    			   updated = true;
+		    		   }
+		    	   }
+		       }
+		       completed++;
+		       if ( updated) {
+		    	   principals.save(mrna);
+		    	  
+		       }
+		       System.out.println("Processed - " + completed + " / " + count + " -> " + updated);
+		       
+		       
+		   }
+		} finally {
+		   cursor.close();
+		   
+		}
+	}
 	
 	public void push(GeneSequencePair pair,List<QgrsHomology> similarityResults) {
 		/*
@@ -135,7 +177,8 @@ public class DbSave {
 		g4h.setG4(buildG4(pair.getComparison(), qh.getGq2()).asComparison());
 		g4h.setRecordId(qh.getGq1().getId() + "x" + qh.getGq2().getId());
 		g4h.setMrna(buildFromGene(pair.getComparison()).asComparison());
-		g4h.setOverallAbsoluteScore(qh.getOverallScore());
+		// The overall score will be an integer, to allow easier searching (and indexing)
+		g4h.setOverallAbsoluteScore(Math.round(qh.getOverallScore()*100));
 		g4h.setOverlapScore(qh.getOverlapScore());
 		g4h.setTetradScore(qh.getTetradScore());
 		g4h.setTotalLengthScore(qh.getTotalLengthScore());
