@@ -65,7 +65,7 @@ public class FlexibleInputProvider implements InputProvider {
 			seqValues = provider.getSequence(id);
 			if ( seqValues == null ) return null;
 			s = GeneSequence.buildFromProviderMap(seqValues);
-			if ( seqValues.containsKey(Key.Live) && ((boolean)seqValues.get(Key.Live)) ) { 
+			if ( seqValues.containsKey(Key.Live) && ((Boolean)seqValues.get(Key.Live)) ) { 
 				ncbiCount++;
 			}
 		} catch (Exception e) {

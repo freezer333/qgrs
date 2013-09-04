@@ -31,12 +31,12 @@ public class PredictorInputProvider implements InputProvider {
 		seqValues = provider.getSequence(principal);
 		if ( seqValues == null ) return null;
 		GeneSequence p = GeneSequence.buildFromProviderMap(seqValues);
-		if ( seqValues.containsKey(Key.Live) && ((boolean)seqValues.get(Key.Live)) ) numNcbi++;
+		if ( seqValues.containsKey(Key.Live) && ((Boolean)seqValues.get(Key.Live)) ) numNcbi++;
 		
 		seqValues = provider.getSequence(comparison);
 		if ( seqValues == null ) return null;
 		GeneSequence c = GeneSequence.buildFromProviderMap(seqValues);
-		if ( seqValues.containsKey(Key.Live) && ((boolean)seqValues.get(Key.Live)) ) numNcbi++;
+		if ( seqValues.containsKey(Key.Live) && ((Boolean)seqValues.get(Key.Live)) ) numNcbi++;
 		
 		QGRSProgramInput input = new QGRSProgramInput();
 		input.setPrinciple(p);
