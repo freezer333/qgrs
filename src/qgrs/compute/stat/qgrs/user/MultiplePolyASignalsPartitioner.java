@@ -28,9 +28,8 @@ public class MultiplePolyASignalsPartitioner extends GenePartitioner {
 
 
 	private GenePartition getPartition(Connection c, String name) {
-		String q = "SELECT DISTINCT PA.ACCESSIONNUMBER FROM POLY_A_SIGNAL as PA" + 
-		" JOIN POLY_A_SIGNAL as PB where PA.ACCESSIONNUMBER = PB.ACCESSIONNUMBER" +
-		" and (PA.START-PB.START) > 50";
+		String q = "SELECT DISTINCT ACCESSIONNUMBER FROM POLY_A_SIGNAL " + 
+				"GROUP BY ACCESSIONNUMBER HAVING COUNT(*) > 1";
 		GenePartition p = new GenePartition(this.runner, name);
 		try {
 			Statement stmt = c.createStatement();

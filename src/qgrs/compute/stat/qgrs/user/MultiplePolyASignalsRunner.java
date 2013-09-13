@@ -3,6 +3,7 @@ package qgrs.compute.stat.qgrs.user;
 import qgrs.compute.stat.GenePartitioner;
 import qgrs.compute.stat.qgrs.QgrsRunner;
 import qgrs.compute.stat.qgrs.location.sets.QgrsAnyLocationSet;
+import qgrs.compute.stat.qgrs.location.sets.QgrsDistanceFromPolyASignalLocationSet;
 import qgrs.compute.stat.qgrs.location.sets.QgrsLocationSet;
 import qgrs.compute.stat.qgrs.location.sets.QgrsRegionLocationSet;
 import qgrs.compute.stat.qgrs.series.DefaultQgrsSeriesSet;
@@ -36,7 +37,7 @@ public class MultiplePolyASignalsRunner extends QgrsRunner{
 
 	@Override
 	protected QgrsLocationSet buildQgrsLocationSet() {
-		return new QgrsAnyLocationSet().join(new QgrsRegionLocationSet());
+		return new QgrsDistanceFromPolyASignalLocationSet();
 	}
 
 
