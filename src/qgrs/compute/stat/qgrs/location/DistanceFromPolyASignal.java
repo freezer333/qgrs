@@ -22,6 +22,7 @@ public class DistanceFromPolyASignal extends QgrsLocationAccumulator {
 	}
 	
 	@Override
+	//NON DOUBLE COUNT METHOD
 	public boolean isWithin(GQuadruplexRecord qgrs, GeneSequence sequence) {
 		
 		List<Range> polyASignals = sequence.getPolyASignals();
@@ -38,12 +39,34 @@ public class DistanceFromPolyASignal extends QgrsLocationAccumulator {
 				distance = polyASignals.get(i).getEnd() - gqEndpos;
 			}
 			
-			return (distance >= minDistance && distance <= maxDistance);
+			if (distance >= minDistance && distance <= maxDistance) return true;
 		}
 		
 		return false;
 	}
+	
+	//DOUBLE COUNT METHOD
+	/* public int isWithin(GQuadruplexRecord qgrs, GeneSequence sequence){
+		List<Range> polyASignals = sequence.getPolyASignals();
+		int gqStartpos = qgrs.getTetrad1();
+		int gqEndpos = qgrs.getGQEnd();
+		
+		int distance = 105;
+		int count = 0;
+		for(int i=0;i < polyASignals.size();i++)
+		{
+			if (gqStartpos < polyASignals.get(i).getStart()){
+				distance = gqStartpos - polyASignals.get(i).getStart();
+			}
+			if (gqEndpos >= polyASignals.get(i).getStart()){
+				distance = polyASignals.get(i).getEnd() - gqEndpos;
+			}
 
+			if (distance >= minDistance && distance <= maxDistance) { count++; }
+		}
+		
+		return count;
+	} */
 
 	@Override
 	public boolean isApplicable(GeneSequence sequence) {
