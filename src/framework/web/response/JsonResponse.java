@@ -2,7 +2,6 @@ package framework.web.response;
 
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import framework.web.AbstractWebContext;
 
@@ -15,9 +14,9 @@ public class JsonResponse implements Response {
 	}
 	@Override
 	public void respond(AbstractWebContext context) throws Exception {
-		ObjectMapper mapper = new ObjectMapper();
+		/*ObjectMapper mapper = new ObjectMapper();
 		context.getResponse().setContentType("application/json");
-		mapper.writeValue(context.getResponse().getOutputStream(), this.obj);
+		mapper.writeValue(context.getResponse().getOutputStream(), this.obj);*/
 	}
 
 }

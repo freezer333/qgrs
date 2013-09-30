@@ -1,15 +1,38 @@
 package qgrs.data.mongo.primitives;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
+import qgrs.data.GeneSequence;
 import qgrs.data.OntologyData;
 
 import com.mongodb.BasicDBObject;
-
+import com.mongodb.DBObject;
 public class MRNA extends BasicDBObject{
 
 	
-	
+	public static MRNA buildFromGene(GeneSequence gene) {
+		MRNA seq = new MRNA();
+		seq.setAccessionNumber(gene.getAccessionNumber());;
+		seq.setName(gene.getGeneName());
+		seq.setOntology(gene.getOntologyData());
+		seq.setSpecies(gene.getSpecies());
+		seq.setSequenceLength(gene.getSequenceLength());
+		seq.setGiNumber(gene.getGiNumber());
+		seq.setSymbol(gene.getGeneSymbol());
+		seq.set5UTR(new Range(gene.getUtr5()));
+		seq.set3UTR(new Range(gene.getUtr3()));
+		seq.setCds(new Range(gene.getCds()));
+		
+		for ( qgrs.data.Range r : gene.getPolyASignals()) {
+			seq.getPolyASignals().add(new Range(r));
+		}
+		for ( qgrs.data.Range r : gene.getPolyASites()) {
+			seq.getPolyASites().add(new Range(r));
+		}
+		
+		return seq;
+	}
 	
 	
 	
@@ -29,7 +52,10 @@ public class MRNA extends BasicDBObject{
 
 	
 	public Range getCds() {
-		return (Range)this.get("cds");
+		if ( this.get("cds") == null ) return null;
+		LinkedHashMap map = (LinkedHashMap) this.get("cds");
+		
+		return new Range((Integer)map.get("start"), (Integer) map.get("end"));
 	}
 
 	public void setCds(Range cds) {

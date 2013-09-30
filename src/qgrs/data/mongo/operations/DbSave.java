@@ -85,6 +85,54 @@ public class DbSave {
 		}
 	}
 	
+	
+	
+	public void insertHomolog(String principle, GeneSequence homolog, double alignmentPercentage) {
+		if ( !principalInDb(principle)) return ;
+		if ( isHomologPresentOnMrna(principle, homolog.getAccessionNumber())) return;
+		pushHomolog(principle, homolog, alignmentPercentage);
+	}
+
+
+
+	private void pushHomolog(String principle, GeneSequence homolog, double alignmentPercentage) {
+		DBObject match = BasicDBObjectBuilder.start("accessionNumber", principle).get();
+		BasicDBObject update = new BasicDBObject();
+		DBObject homologData = BasicDBObjectBuilder.start("mrna", MRNA.buildFromGene(homolog).asComparison())
+				.add("alignmentPercentage", Math.round(alignmentPercentage*100))
+				.get();
+		BasicDBObject homologs = new BasicDBObject("homologs", homologData);
+		update.put("$push", homologs);
+		principals.update(match, update);
+	}
+
+
+
+	private boolean isHomologPresentOnMrna(String principle, String accessionNumber) {
+		BasicDBObject pMatch = new BasicDBObject("accessionNumber", principle);
+		BasicDBObject cMatch = new BasicDBObject("mrna.accessionNumber", accessionNumber);
+		BasicDBObject c_elemMatch = new BasicDBObject();
+		c_elemMatch.put("$elemMatch", cMatch);
+		BasicDBObject homologMatch = new BasicDBObject();
+		homologMatch.put("homologs", c_elemMatch);
+		BasicDBObject and = new BasicDBObject();
+		List<BasicDBObject> ops = new LinkedList<BasicDBObject>();
+		ops.add(homologMatch);
+		ops.add(pMatch);
+		and.put("$and", ops);
+		
+		System.out.println(and.toString());
+		return principals.count(and) > 0;
+	}
+
+
+
+	
+	
+	
+	
+	
+	
 	public void push(GeneSequencePair pair,List<QgrsHomology> similarityResults) {
 		/*
 		 * 2 states
@@ -114,28 +162,7 @@ public class DbSave {
 		}
 	}
 	
-	private MRNA buildFromGene(GeneSequence gene) {
-		MRNA seq = new MRNA();
-		seq.setAccessionNumber(gene.getAccessionNumber());;
-		seq.setName(gene.getGeneName());
-		seq.setOntology(gene.getOntologyData());
-		seq.setSpecies(gene.getSpecies());
-		seq.setSequenceLength(gene.getSequenceLength());
-		seq.setGiNumber(gene.getGiNumber());
-		seq.setSymbol(gene.getGeneSymbol());
-		seq.set5UTR(new Range(gene.getUtr5()));
-		seq.set3UTR(new Range(gene.getUtr3()));
-		seq.setCds(new Range(gene.getCds()));
-		
-		for ( qgrs.data.Range r : gene.getPolyASignals()) {
-			seq.getPolyASignals().add(new Range(r));
-		}
-		for ( qgrs.data.Range r : gene.getPolyASites()) {
-			seq.getPolyASites().add(new Range(r));
-		}
-		
-		return seq;
-	}
+	
 	
 	private G4 buildG4(GeneSequence gene, GQuadruplex q) {
 		G4 g4 = new G4();
@@ -176,7 +203,7 @@ public class DbSave {
 		g4h.setAvgLoopScore(qh.getAvgLoopScore());
 		g4h.setG4(buildG4(pair.getComparison(), qh.getGq2()).asComparison());
 		g4h.setRecordId(qh.getGq1().getId() + "x" + qh.getGq2().getId());
-		g4h.setMrna(buildFromGene(pair.getComparison()).asComparison());
+		g4h.setMrna(MRNA.buildFromGene(pair.getComparison()).asComparison());
 		// The overall score will be an integer, to allow easier searching (and indexing)
 		g4h.setOverallAbsoluteScore(Math.round(qh.getOverallScore()*100));
 		g4h.setOverlapScore(qh.getOverlapScore());
@@ -188,7 +215,7 @@ public class DbSave {
 	private void buildAndInsertFullRecord(GeneSequencePair pair,List<QgrsHomology> similarityResults) {
 		if ( pair.getSimilarityPercentage() < MIN_MRNA_ALIGNMENT) return;
 		
-		MRNA principal = buildFromGene(pair.getPrinciple());
+		MRNA principal = MRNA.buildFromGene(pair.getPrinciple());
 		HashMap<String, G4> principalG4s = new HashMap<String, G4>();
 		// first save all the primary G4s
 		for ( GQuadruplex g : pair.getPrinciple().getgQuads()) {
@@ -216,9 +243,12 @@ public class DbSave {
 	
 	
 	private boolean principalInDb(GeneSequence p) {
-		BasicDBObject query = new BasicDBObject("accessionNumber", p.getAccessionNumber());
+		return principalInDb(p.getAccessionNumber());
+	}
+
+	private boolean principalInDb(String p) {
+		BasicDBObject query = new BasicDBObject("accessionNumber", p);
 		return principals.count(query) > 0;
-		
 	}
 	
 	private boolean isHomologPresent(GeneSequencePair pair) {
