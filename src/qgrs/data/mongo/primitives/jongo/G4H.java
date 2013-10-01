@@ -11,7 +11,7 @@ public class G4H{
 	double tetradScore;
 	double avgLoopScore;
 	double totalLengthScore;
-	double overallScore;
+	double overallAbsoluteScore;
 	
 	
 	public G4H() {
@@ -99,17 +99,17 @@ public class G4H{
 	}
 
 
-	public double getOverallScore() {
-		return overallScore;
+	public double getOverallAbsoluteScore() {
+		return overallAbsoluteScore;
 	}
 
 
-	public void setOverallScore(double overallScore) {
-		this.overallScore = overallScore;
+	public void setOverallAbsoluteScore(double overallAbsoluteScore) {
+		this.overallAbsoluteScore = overallAbsoluteScore;
 	}
+
+
 	
-	
-		
 	
 	
 	

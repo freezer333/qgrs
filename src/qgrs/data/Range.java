@@ -27,6 +27,12 @@ public class Range {
 		return end;
 	}
 	
+	public boolean overlapsWith(Range other) {
+		return ( 
+				other.getStart() >= start && other.getStart()  <= end 
+				|| 
+				other.getEnd() >= start && other.getEnd() <= end ) ;
+	}
 	
 	@Override
 	public String toString() {
