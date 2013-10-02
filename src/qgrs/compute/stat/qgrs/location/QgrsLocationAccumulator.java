@@ -113,12 +113,18 @@ public abstract class QgrsLocationAccumulator implements Comparable {
 	}
 	
 	public void offer(GQuadruplexRecord qgrs, GeneSequence sequence) {
-		if ( isWithin(qgrs, sequence)) {
+	if ( isWithin(qgrs, sequence)) {
 			count++;
 		}
-	}
+	/*	//below used only for Camille's Multiple PolyA Program
+		count += isWithin(qgrs, sequence); */
+	} 
 	
+	//REGULAR
 	public abstract boolean isWithin(GQuadruplexRecord qgrs, GeneSequence sequence);
+/*	//Below for Camille's code only
+	public abstract int isWithin(GQuadruplexRecord qgrs, GeneSequence sequence); */
+	
 	public abstract boolean isApplicable(GeneSequence sequence);
 	public abstract double numXNucleotidesInLocation(double x, GeneSequence sequence);
 	
