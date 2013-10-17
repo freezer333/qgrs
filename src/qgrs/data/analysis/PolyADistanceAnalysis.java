@@ -1,51 +1,70 @@
 package qgrs.data.analysis;
 
-import java.net.UnknownHostException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.nio.file.Path;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-
-import org.jongo.Jongo;
-import org.jongo.MongoCollection;
 
 import qgrs.data.Range;
 import qgrs.data.mongo.primitives.jongo.MRNA;
 
-import com.mongodb.DB;
-import com.mongodb.MongoClient;
+public class PolyADistanceAnalysis extends Analysis {
 
-public class PolyADistanceAnalysis {
-
-	
+	DistanceDirection direction;
 	int min;
 	int max;
 	int increment;
-	DistanceDirection direction;
 	ArrayList<DistanceBin> bins;
-	MrnaFilter mrnaFilter;
+	boolean distalOnly = false;
+	boolean proximateOnly = false;
+	G4Filter g4Filter;
 	
 	public PolyADistanceAnalysis(MrnaFilter mrnaFilter, G4Filter g4Filter, int min, int max, int increment, DistanceDirection direction) {
-		super();
+		super("polyA", mrnaFilter);
 		this.min = min;
 		this.max = max;
 		this.increment = increment;
 		this.direction = direction;
-		this.mrnaFilter = mrnaFilter;
 		this.bins = new ArrayList<DistanceBin>();
-		
+		this.g4Filter = g4Filter;
 		for ( int i = min; i < max; i+= increment) {
-			bins.add(new DistanceBin(direction, i, i+increment, g4Filter));
+			bins.add(new PolyADistanceBin(direction, i, i+increment, g4Filter));
 		}
-		
 	}
 	
-	
-	public void compute(MongoCollection principals) {
-		Iterable<MRNA> all = principals.find().as(MRNA.class);
-		for ( MRNA mrna : all ) {
-			if ( this.mrnaFilter.acceptable(mrna)) {
-				for ( DistanceBin bin : bins) {
+	public boolean isDistalOnly() {
+		return distalOnly;
+	}
+
+	public PolyADistanceAnalysis setDistalOnly(boolean distalOnly) {
+		this.distalOnly = distalOnly;
+		return this;
+	}
+
+	public boolean isProximateOnly() {
+		return proximateOnly;
+	}
+
+	public PolyADistanceAnalysis setProximateOnly(boolean proximateOnly) {
+		this.proximateOnly = proximateOnly;
+		return this;
+	}
+
+	@Override
+	public void evaluate(MRNA mrna) {
+		if ( this.mrnaFilter.acceptable(mrna)) {
+			for ( DistanceBin bin : bins) {
+				if ( distalOnly && mrna.getPolyASignals().size() > 1) {
+					bin.tally(mrna, (Range)mrna.getPolyASignals().toArray()[mrna.getPolyASignals().size()-1]);
+				}
+				else if ( proximateOnly  && mrna.getPolyASignals().size() > 1) {
+					bin.tally(mrna, (Range)mrna.getPolyASignals().toArray()[0]);
+				}
+				else {
 					for ( Range poly : mrna.getPolyASignals())  {
-						// won't count if the poly range is not supported by the mrna.
 						bin.tally(mrna, poly);
 					}
 				}
@@ -53,34 +72,62 @@ public class PolyADistanceAnalysis {
 		}
 	}
 	
+	private String polyEndString() {
+		if ( this.distalOnly ) return " Distal ";
+		if ( this.proximateOnly ) return " Proximate ";
+		return "";
+	}
+	protected void writeTableHeading1(PrintWriter writer) {
+		writer.println("nt. interval    % polyA signals with at least 1 qgrs\t# poly with 1 qgrs / #poly with valid interval");
+		
+	}
+	protected void writeTableHeading2(PrintWriter writer) {
+		writer.println("nt. interval    Avg. # Qgrs\tMedian Qgrs\tQgrsCount\tTotal PolyA");
+		
+	}
+	
+	@Override
 	public void report() {
-		System.out.println("-----------------------------------");
-		System.out.println("PolyA Signal analyis - " + this.direction.toString());
-		System.out.println();
-		System.out.println("nt. interval    % polyA signals with at least 1 qgrs\t# poly with 1 qgrs / #poly with valid interval");
-		System.out.println("-----------------------------------");
-		DecimalFormat f = new DecimalFormat("0.00%");
-		for ( DistanceBin bin : bins) {
-			System.out.println(String.format("%3d", bin.getMinBases()) + "-" + String.format("%3d", bin.getMaxBases()) + 
-					":\t" + f.format(bin.getCount().measure()) + "\t\t\t(" + bin.getCount().getTotalWithG4() + "/" + bin.getCount().getTotal() + ")");
+		
+		PrintWriter writer;
+		try {
+			mkdirs();
+			String filename = dirPrefix() + "PolyADistanceAnalysis - " + this.polyEndString() + this.direction + "-" + this.mrnaFilter.toString() + this.g4Filter.toString() + ".txt";
+			writer = new PrintWriter(filename, "UTF-8");
+			writer.println("-----------------------------------");
+			writer.println("PolyA Signal analyis - " + this.polyEndString() + this.direction.toString());
+			writer.println("Criteria summary");
+			writer.println(this.mrnaFilter.toString());
+			this.writeTableHeading1(writer);
+			writer.println("-----------------------------------");
+			DecimalFormat f = new DecimalFormat("0.00%");
+			for ( DistanceBin bin : bins) {
+				writer.println(String.format("%3d", bin.getMinBases()) + "-" + String.format("%3d", bin.getMaxBases()) + 
+						":\t" + f.format(bin.getCount().measure()) + "\t\t\t" + bin.getCount().getTotalWithG4() + "\t" + bin.getCount().getTotal() + "");
+			}
+			writer.println("-----------------------------------");
+			
+			
+			this.writeTableHeading2(writer);
+			writer.println("-----------------------------------");
+			f = new DecimalFormat("0.000");
+			for ( DistanceBin bin : bins) {
+				writer.println(String.format("%3d", bin.getMinBases()) + "-" + String.format("%3d", bin.getMaxBases()) + 
+						":\t" + f.format(bin.getCount().mean()) + "\t\t\t" + bin.getCount().median() + "\t" + bin.getCount().sum() + "\t" + bin.getCount().getTotal() + "");
+			}
+			writer.println("-----------------------------------");
+			
+			
+			System.out.println("Output written to " + filename);
+			writer.close();
+			
+		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		System.out.println("-----------------------------------");
 	}
 	
 	
-	public static void main(String [] args) throws UnknownHostException {
-		DB db = new MongoClient().getDB("qgrs");
-
-		Jongo jongo = new Jongo(db);
-		MongoCollection principals = jongo.getCollection("principals");
-		
-		PolyADistanceAnalysis analysis = new PolyADistanceAnalysis(new MrnaFilter(), new G4Filter(), 0, 500, 20, DistanceDirection.Downstream);
-		analysis.compute(principals);
-		analysis.report();
-		
-		analysis = new PolyADistanceAnalysis(new MrnaFilter(), new G4Filter(), 0, 500, 20, DistanceDirection.Upstream);
-		analysis.compute(principals);
-		analysis.report();
-	}
+	
 	
 }

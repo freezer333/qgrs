@@ -1,78 +1,72 @@
 package qgrs.data;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.HashSet;
 
 import org.jdom.Element;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import qgrs.data.records.OntologyRecord;
 
-import com.google.code.morphia.annotations.Entity;
-import com.mongodb.BasicDBObject;
-
-@Entity
-public class OntologyData extends BasicDBObject{
-	
-
-	
-	
-	public OntologyData() {
-		this.setFunctions(new ArrayList<String>());
-		this.setProcesses(new ArrayList<String>());
-		this.setComponents(new ArrayList<String>());
-	}
+public class OntologyData {
+	@JsonProperty("functions")
+	public Collection<String> functionList = new HashSet<String>();
+	@JsonProperty("processes")
+	public Collection<String> processList = new HashSet<String>();
+	@JsonProperty("components")
+	public Collection<String> componentList = new HashSet<String>();
 	
 	
-	
-	
-
-
-	public ArrayList<String> getFunctions() {
-		return (ArrayList<String>)this.get("functions");
+	public Collection<String> getFunctions() {
+		return functionList;
 	}
 
-
-
-	public void setFunctions(ArrayList<String> functions) {
-		this.put("functions", functions);
-	}
-	
-	public ArrayList<String> getProcesses() {
-		return (ArrayList<String>)this.get("processes");
+	public Collection<String> getProcesses() {
+		return processList;
 	}
 
-
-
-	public void setProcesses(ArrayList<String> processes) {
-		this.put("processes", processes);
+	public Collection<String> getComponents() {
+		return componentList;
 	}
-	
-	public ArrayList<String> getComponents() {
-		return (ArrayList<String>)this.get("components");
-	}
-
-
-
-	public void setComponents(Collection<String> components) {
-		this.put("components", components);
-	}
-
-
-
-	
-
 
 	public void put(OntologyRecord or ){
 		if ( or.type == GoType.Function ) {
-			this.getFunctions().add(or.term);
+			functionList.add(or.term);
 		}
 		else if ( or.type == GoType.Component ) {
-			this.getComponents().add(or.term);
+			componentList.add(or.term);
 		}
 		else if ( or.type == GoType.Process ) {
-			this.getProcesses().add(or.term);
+			processList.add(or.term);
 		}
+	}
+	
+	public boolean has(String term) {
+		for ( String function : this.functionList) {
+			if ( function.equalsIgnoreCase(term.trim())) return true;
+		}
+		for ( String function : this.processList) {
+			if ( function.equalsIgnoreCase(term.trim())) return true;
+		}
+		for ( String function : this.componentList) {
+			if ( function.equalsIgnoreCase(term.trim())) return true;
+		}
+		
+		return false;
+	}
+	public boolean hasFuzzy(String term) {
+		for ( String s : this.functionList) {
+			if ( s.toUpperCase().contains(term.trim().toUpperCase())) return true;
+		}
+		for ( String s : this.processList) {
+			if ( s.toUpperCase().contains(term.trim().toUpperCase())) return true;
+		}
+		for ( String s : this.componentList) {
+			if ( s.toUpperCase().contains(term.trim().toUpperCase())) return true;
+		}
+		
+		return false;
 	}
 	
 	private void addList(Element root, Collection<String> terms, GoType listType) {
@@ -89,10 +83,37 @@ public class OntologyData extends BasicDBObject{
 	}
 	public Element getXmlElement() {
 		Element root = new Element("ontologyData");
-		addList(root, this.getFunctions(), GoType.Function);
-		addList(root, this.getComponents(), GoType.Component);
-		addList(root, this.getProcesses(), GoType.Process);
+		addList(root, functionList, GoType.Function);
+		addList(root, componentList, GoType.Component);
+		addList(root, processList, GoType.Process);
 		return root;
 	}
+
+	public Collection<String> getFunctionList() {
+		return functionList;
+	}
+
+	public Collection<String> getProcessList() {
+		return processList;
+	}
+
+	public Collection<String> getComponentList() {
+		return componentList;
+	}
+
+	public void setFunctionList(Collection<String> functionList) {
+		this.functionList = functionList;
+	}
+
+	public void setProcessList(Collection<String> processList) {
+		this.processList = processList;
+	}
+
+	public void setComponentList(Collection<String> componentList) {
+		this.componentList = componentList;
+	}
+	
+	
+	
 	
 }

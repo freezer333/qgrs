@@ -1,0 +1,7 @@
+-----------------------------------
+MRNA Criteria:
+All Human mRNA - Aggregate
+nt. interval    % mrna with at least 1 qgrs	# mrna with 1 qgrs / #mrna with valid interval
+-----------------------------------
+  0-10000:	63.42%			10587	16694
+-----------------------------------

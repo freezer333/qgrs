@@ -30,6 +30,7 @@ public class MRNA{
 	Collection<Range> polyASignals;
 	Collection<Range> polyASites;
 	Collection<G4> g4s;
+	Collection<Homolog> homologs;
 	
 	public static MRNA buildFromGene(GeneSequence gene) {
 		MRNA seq = new MRNA();
@@ -62,9 +63,15 @@ public class MRNA{
 		this.g4s = new LinkedList<G4>();
 		this.polyASignals = new LinkedList<Range>();
 		this.polyASites = new LinkedList<Range>();
+		this.homologs =new LinkedList<Homolog>();
 	}
 
-
+	public boolean hasHomolog(String species) {
+		for ( Homolog h : this.homologs ) {
+			if ( h.getMrna().getSpecies().equalsIgnoreCase(species)) return true;
+		}
+		return false;
+	}
 
 
 	public int getSequenceLength() {
@@ -258,6 +265,20 @@ public class MRNA{
 
 	public void setG4s(Collection<G4> g4s) {
 		this.g4s = g4s;
+	}
+
+
+
+
+	public Collection<Homolog> getHomologs() {
+		return homologs;
+	}
+
+
+
+
+	public void setHomologs(Collection<Homolog> homologs) {
+		this.homologs = homologs;
 	}
 	
 	

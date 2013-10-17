@@ -19,6 +19,11 @@ public class Range {
 		this.start=start;
 		this.end=end;
 	}
+	public Range(int position)
+	{
+		this.start=position;
+		this.end=position;
+	}
 	
 	public int getStart() {
 		return start;
@@ -27,6 +32,9 @@ public class Range {
 		return end;
 	}
 	
+	public boolean contains(int value) {
+		return start <= value && end >= value;
+	}
 	public boolean overlapsWith(Range other) {
 		return ( 
 				other.getStart() >= start && other.getStart()  <= end 
@@ -36,7 +44,19 @@ public class Range {
 	
 	@Override
 	public String toString() {
-		return start + " - " + end;
+		if ( start == Integer.MIN_VALUE && end < Integer.MAX_VALUE) {
+			return "<" + end;
+		}
+		if ( start > Integer.MIN_VALUE && end == Integer.MAX_VALUE ) {
+			return start + "+";
+		}
+		if ( start == Integer.MIN_VALUE && end == Integer.MAX_VALUE ) {
+			return "";
+		}
+		if ( start == end ) {
+			return "=" + start;
+		}
+		return "[" + start + " - " + end + "]";
 	}
 	
 	public Element writeElement(Element element) {
