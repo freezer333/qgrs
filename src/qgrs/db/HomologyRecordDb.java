@@ -10,7 +10,6 @@ import java.util.List;
 
 import qgrs.data.GeneSequence;
 import qgrs.data.records.GQuadruplexRecord;
-import qgrs.data.records.QgrsHomologyProfile;
 import qgrs.data.records.QgrsHomologyRecord;
 import framework.db.QueryConstraint;
 import framework.db.QueryConstraints;
@@ -82,28 +81,6 @@ public class HomologyRecordDb  extends DbTable {
 	}
 	
 	
-	public Collection<QgrsHomologyProfile> getQgrsHomologyProfiles(GeneSequence seq) {
-		HashMap<String, QgrsHomologyProfile> profiles = new HashMap<String, QgrsHomologyProfile>();
-		try {
-			this.qgrsHomologyProfileStatement.setString(1, seq.getAccessionNumber());
-			ResultSet rs = this.qgrsHomologyProfileStatement.executeQuery();
-			while ( rs.next() ) {
-				GQuadruplexRecord principle = new GQuadruplexRecord(rs, "QGRS.");
-				QgrsHomologyProfile profile = profiles.get(principle.getId());
-				if ( profile == null ) {
-					profile = new QgrsHomologyProfile(principle);
-					profiles.put(principle.getId(), profile);
-				}
-				if ( StringUtils.isDefined(rs.getString("QGRS_H.ID"))) {
-					QgrsHomologyRecord h = new QgrsHomologyRecord(rs, "QGRS_H.");
-					profile.getHomologs().add(h);
-				}
-			}
-		} catch (Exception e ){
-			e.printStackTrace();
-		}
-		return profiles.values();
-	}
 	
 	
 	

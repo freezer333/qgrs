@@ -4,11 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.biojavax.bio.db.ncbi.GenbankRichSequenceDB;
-import org.biojavax.bio.seq.RichSequence;
-
 import qgrs.data.GeneSequence;
-import qgrs.data.providers.RDBSequenceProvider;
+import qgrs.data.providers.MongoSequenceProvider;
 import qgrs.data.providers.SequenceProvider;
 import qgrs.data.providers.SequenceProvider.Key;
 import qgrs.db.DatabaseConnection;
@@ -17,7 +14,12 @@ import framework.web.util.StringUtils;
 
 public class FlexibleInputProvider implements InputProvider {
 
-	enum InputType { Id, Raw, FASTA };
+	enum InputType { 
+		Id(true), Raw(false), FASTA(true); 
+		
+		public final boolean hasId;
+		private InputType(boolean hasID) { hasId = hasID;}
+	};
 
 	InputType seq1Type;
 	InputType seq2Type;
@@ -133,13 +135,17 @@ public class FlexibleInputProvider implements InputProvider {
 		try {
 			
 
-			if ( seq1Type == InputType.Id || seq2Type == InputType.Id || seq1Type == InputType.FASTA || seq2Type == InputType.FASTA ) {
-				provider = new RDBSequenceProvider(c);
+			if ( seq1Type.hasId || seq2Type.hasId ){
+				try {
+					provider = new MongoSequenceProvider();
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 
 			switch ( seq1Type ) {
 			case Id:
-				System.out.println("Building from rich sequence 1");
 				input.setPrinciple(this.buildGeneSequenceFromId(this.seq1Id, provider));
 				break;
 			case Raw:
@@ -152,7 +158,6 @@ public class FlexibleInputProvider implements InputProvider {
 
 			switch ( seq2Type ) {
 			case Id:
-				System.out.println("Building from rich sequence 2");
 				comparisons.add(this.buildGeneSequenceFromId(this.seq2Id, provider));
 				break;
 			case Raw:

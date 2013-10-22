@@ -1,114 +1,71 @@
------------------------------------
-null	Pan troglodytes	H>= 95.0 	Any	T=2+	17+	14317.0	366088.0	272796.0	74.5%
-null	Canis lupus familiaris	H>= 95.0 	Any	T=2+	17+	14513.0	391619.0	137705.0	35.2%
-null	Mus musculus	H>= 95.0 	Any	T=2+	17+	15231.0	408959.0	162813.0	39.8%
-null	Danio rerio	H>= 95.0 	Any	T=2+	17+	10963.0	308152.0	29199.0	9.5%
-null	Drosophila melanogaster	H>= 95.0 	Any	T=2+	17+	4407.0	110949.0	5999.0	5.4%
-null	Caenorhabditis elegans	H>= 95.0 	Any	T=2+	17+	3035.0	75111.0	1543.0	2.1%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	Any	T=2+	17+	1298.0	27701.0	444.0	1.6%
-null	Pan troglodytes	H>= 95.0 	5-UTR 	T=2+	17+	14317.0	49986.0	32075.0	64.2%
-null	Canis lupus familiaris	H>= 95.0 	5-UTR 	T=2+	17+	14513.0	52542.0	6909.0	13.1%
-null	Mus musculus	H>= 95.0 	5-UTR 	T=2+	17+	15231.0	54818.0	15030.0	27.4%
-null	Danio rerio	H>= 95.0 	5-UTR 	T=2+	17+	10963.0	42793.0	397.0	0.9%
-null	Drosophila melanogaster	H>= 95.0 	5-UTR 	T=2+	17+	4407.0	16860.0	154.0	0.9%
-null	Caenorhabditis elegans	H>= 95.0 	5-UTR 	T=2+	17+	3035.0	11640.0	13.0	0.1%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	5-UTR 	T=2+	17+	1298.0	4434.0	1.0	0.0%
-null	Pan troglodytes	H>= 95.0 	CDS 	T=2+	17+	14317.0	228169.0	177618.0	77.8%
-null	Canis lupus familiaris	H>= 95.0 	CDS 	T=2+	17+	14513.0	245942.0	125750.0	51.1%
-null	Mus musculus	H>= 95.0 	CDS 	T=2+	17+	15231.0	256454.0	132088.0	51.5%
-null	Danio rerio	H>= 95.0 	CDS 	T=2+	17+	10963.0	188265.0	28771.0	15.3%
-null	Drosophila melanogaster	H>= 95.0 	CDS 	T=2+	17+	4407.0	67498.0	5824.0	8.6%
-null	Caenorhabditis elegans	H>= 95.0 	CDS 	T=2+	17+	3035.0	45546.0	1534.0	3.4%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	CDS 	T=2+	17+	1298.0	17296.0	443.0	2.6%
-null	Pan troglodytes	H>= 95.0 	3-UTR 	T=2+	17+	14317.0	94949.0	68251.0	71.9%
-null	Canis lupus familiaris	H>= 95.0 	3-UTR 	T=2+	17+	14513.0	100452.0	6887.0	6.9%
-null	Mus musculus	H>= 95.0 	3-UTR 	T=2+	17+	15231.0	105376.0	18620.0	17.7%
-null	Danio rerio	H>= 95.0 	3-UTR 	T=2+	17+	10963.0	82874.0	192.0	0.2%
-null	Drosophila melanogaster	H>= 95.0 	3-UTR 	T=2+	17+	4407.0	28924.0	44.0	0.2%
-null	Caenorhabditis elegans	H>= 95.0 	3-UTR 	T=2+	17+	3035.0	19471.0	5.0	0.0%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	3-UTR 	T=2+	17+	1298.0	6659.0	0.0	0.0%
-null	Pan troglodytes	H>= 95.0 	Any	T==2	17+	14317.0	340583.0	254707.0	74.8%
-null	Canis lupus familiaris	H>= 95.0 	Any	T==2	17+	14513.0	364107.0	130001.0	35.7%
-null	Mus musculus	H>= 95.0 	Any	T==2	17+	15231.0	379803.0	149615.0	39.4%
-null	Danio rerio	H>= 95.0 	Any	T==2	17+	10963.0	286314.0	27754.0	9.7%
-null	Drosophila melanogaster	H>= 95.0 	Any	T==2	17+	4407.0	103816.0	5748.0	5.5%
-null	Caenorhabditis elegans	H>= 95.0 	Any	T==2	17+	3035.0	70365.0	1476.0	2.1%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	Any	T==2	17+	1298.0	26104.0	424.0	1.6%
-null	Pan troglodytes	H>= 95.0 	5-UTR 	T==2	17+	14317.0	43652.0	28120.0	64.4%
-null	Canis lupus familiaris	H>= 95.0 	5-UTR 	T==2	17+	14513.0	45760.0	5899.0	12.9%
-null	Mus musculus	H>= 95.0 	5-UTR 	T==2	17+	15231.0	47656.0	12308.0	25.8%
-null	Danio rerio	H>= 95.0 	5-UTR 	T==2	17+	10963.0	37210.0	306.0	0.8%
-null	Drosophila melanogaster	H>= 95.0 	5-UTR 	T==2	17+	4407.0	14852.0	118.0	0.8%
-null	Caenorhabditis elegans	H>= 95.0 	5-UTR 	T==2	17+	3035.0	10244.0	11.0	0.1%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	5-UTR 	T==2	17+	1298.0	3931.0	0.0	0.0%
-null	Pan troglodytes	H>= 95.0 	CDS 	T==2	17+	14317.0	218729.0	170331.0	77.9%
-null	Canis lupus familiaris	H>= 95.0 	CDS 	T==2	17+	14513.0	235821.0	120121.0	50.9%
-null	Mus musculus	H>= 95.0 	CDS 	T==2	17+	15231.0	245740.0	125498.0	51.1%
-null	Danio rerio	H>= 95.0 	CDS 	T==2	17+	10963.0	180821.0	27462.0	15.2%
-null	Drosophila melanogaster	H>= 95.0 	CDS 	T==2	17+	4407.0	65179.0	5625.0	8.6%
-null	Caenorhabditis elegans	H>= 95.0 	CDS 	T==2	17+	3035.0	44039.0	1470.0	3.3%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	CDS 	T==2	17+	1298.0	16817.0	424.0	2.5%
-null	Pan troglodytes	H>= 95.0 	3-UTR 	T==2	17+	14317.0	84590.0	60959.0	72.1%
-null	Canis lupus familiaris	H>= 95.0 	3-UTR 	T==2	17+	14513.0	89187.0	5615.0	6.3%
-null	Mus musculus	H>= 95.0 	3-UTR 	T==2	17+	15231.0	93400.0	14406.0	15.4%
-null	Danio rerio	H>= 95.0 	3-UTR 	T==2	17+	10963.0	73537.0	128.0	0.2%
-null	Drosophila melanogaster	H>= 95.0 	3-UTR 	T==2	17+	4407.0	25922.0	24.0	0.1%
-null	Caenorhabditis elegans	H>= 95.0 	3-UTR 	T==2	17+	3035.0	17501.0	4.0	0.0%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	3-UTR 	T==2	17+	1298.0	5997.0	0.0	0.0%
-null	Pan troglodytes	H>= 95.0 	Any	T==3	17+	14317.0	24500.0	17395.0	71.0%
-null	Canis lupus familiaris	H>= 95.0 	Any	T==3	17+	14513.0	26404.0	7370.0	27.9%
-null	Mus musculus	H>= 95.0 	Any	T==3	17+	15231.0	27963.0	12418.0	44.4%
-null	Danio rerio	H>= 95.0 	Any	T==3	17+	10963.0	20937.0	1370.0	6.5%
-null	Drosophila melanogaster	H>= 95.0 	Any	T==3	17+	4407.0	6842.0	237.0	3.5%
-null	Caenorhabditis elegans	H>= 95.0 	Any	T==3	17+	3035.0	4557.0	63.0	1.4%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	Any	T==3	17+	1298.0	1532.0	19.0	1.2%
-null	Pan troglodytes	H>= 95.0 	5-UTR 	T==3	17+	14317.0	6024.0	3762.0	62.5%
-null	Canis lupus familiaris	H>= 95.0 	5-UTR 	T==3	17+	14513.0	6441.0	949.0	14.7%
-null	Mus musculus	H>= 95.0 	5-UTR 	T==3	17+	15231.0	6796.0	2523.0	37.1%
-null	Danio rerio	H>= 95.0 	5-UTR 	T==3	17+	10963.0	5285.0	81.0	1.5%
-null	Drosophila melanogaster	H>= 95.0 	5-UTR 	T==3	17+	4407.0	1895.0	33.0	1.7%
-null	Caenorhabditis elegans	H>= 95.0 	5-UTR 	T==3	17+	3035.0	1333.0	2.0	0.2%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	5-UTR 	T==3	17+	1298.0	483.0	1.0	0.2%
-null	Pan troglodytes	H>= 95.0 	CDS 	T==3	17+	14317.0	9180.0	7077.0	77.1%
-null	Canis lupus familiaris	H>= 95.0 	CDS 	T==3	17+	14513.0	9845.0	5440.0	55.3%
-null	Mus musculus	H>= 95.0 	CDS 	T==3	17+	15231.0	10412.0	6332.0	60.8%
-null	Danio rerio	H>= 95.0 	CDS 	T==3	17+	10963.0	7235.0	1252.0	17.3%
-null	Drosophila melanogaster	H>= 95.0 	CDS 	T==3	17+	4407.0	2263.0	190.0	8.4%
-null	Caenorhabditis elegans	H>= 95.0 	CDS 	T==3	17+	3035.0	1468.0	60.0	4.1%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	CDS 	T==3	17+	1298.0	463.0	18.0	3.9%
-null	Pan troglodytes	H>= 95.0 	3-UTR 	T==3	17+	14317.0	9915.0	6992.0	70.5%
-null	Canis lupus familiaris	H>= 95.0 	3-UTR 	T==3	17+	14513.0	10760.0	1179.0	11.0%
-null	Mus musculus	H>= 95.0 	3-UTR 	T==3	17+	15231.0	11434.0	3880.0	33.9%
-null	Danio rerio	H>= 95.0 	3-UTR 	T==3	17+	10963.0	8932.0	55.0	0.6%
-null	Drosophila melanogaster	H>= 95.0 	3-UTR 	T==3	17+	4407.0	2876.0	18.0	0.6%
-null	Caenorhabditis elegans	H>= 95.0 	3-UTR 	T==3	17+	3035.0	1882.0	1.0	0.1%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	3-UTR 	T==3	17+	1298.0	632.0	0.0	0.0%
-null	Pan troglodytes	H>= 95.0 	Any	T=4+	17+	14317.0	1005.0	694.0	69.1%
-null	Canis lupus familiaris	H>= 95.0 	Any	T=4+	17+	14513.0	1108.0	334.0	30.1%
-null	Mus musculus	H>= 95.0 	Any	T=4+	17+	15231.0	1193.0	780.0	65.4%
-null	Danio rerio	H>= 95.0 	Any	T=4+	17+	10963.0	901.0	75.0	8.3%
-null	Drosophila melanogaster	H>= 95.0 	Any	T=4+	17+	4407.0	291.0	14.0	4.8%
-null	Caenorhabditis elegans	H>= 95.0 	Any	T=4+	17+	3035.0	189.0	4.0	2.1%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	Any	T=4+	17+	1298.0	65.0	1.0	1.5%
-null	Pan troglodytes	H>= 95.0 	5-UTR 	T=4+	17+	14317.0	310.0	193.0	62.3%
-null	Canis lupus familiaris	H>= 95.0 	5-UTR 	T=4+	17+	14513.0	341.0	61.0	17.9%
-null	Mus musculus	H>= 95.0 	5-UTR 	T=4+	17+	15231.0	366.0	199.0	54.4%
-null	Danio rerio	H>= 95.0 	5-UTR 	T=4+	17+	10963.0	298.0	10.0	3.4%
-null	Drosophila melanogaster	H>= 95.0 	5-UTR 	T=4+	17+	4407.0	113.0	3.0	2.7%
-null	Caenorhabditis elegans	H>= 95.0 	5-UTR 	T=4+	17+	3035.0	63.0	0.0	0.0%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	5-UTR 	T=4+	17+	1298.0	20.0	0.0	0.0%
-null	Pan troglodytes	H>= 95.0 	CDS 	T=4+	17+	14317.0	260.0	210.0	80.8%
-null	Canis lupus familiaris	H>= 95.0 	CDS 	T=4+	17+	14513.0	276.0	189.0	68.5%
-null	Mus musculus	H>= 95.0 	CDS 	T=4+	17+	15231.0	302.0	258.0	85.4%
-null	Danio rerio	H>= 95.0 	CDS 	T=4+	17+	10963.0	209.0	57.0	27.3%
-null	Drosophila melanogaster	H>= 95.0 	CDS 	T=4+	17+	4407.0	56.0	9.0	16.1%
-null	Caenorhabditis elegans	H>= 95.0 	CDS 	T=4+	17+	3035.0	39.0	4.0	10.3%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	CDS 	T=4+	17+	1298.0	16.0	1.0	6.2%
-null	Pan troglodytes	H>= 95.0 	3-UTR 	T=4+	17+	14317.0	444.0	300.0	67.6%
-null	Canis lupus familiaris	H>= 95.0 	3-UTR 	T=4+	17+	14513.0	505.0	93.0	18.4%
-null	Mus musculus	H>= 95.0 	3-UTR 	T=4+	17+	15231.0	542.0	334.0	61.6%
-null	Danio rerio	H>= 95.0 	3-UTR 	T=4+	17+	10963.0	405.0	9.0	2.2%
-null	Drosophila melanogaster	H>= 95.0 	3-UTR 	T=4+	17+	4407.0	126.0	2.0	1.6%
-null	Caenorhabditis elegans	H>= 95.0 	3-UTR 	T=4+	17+	3035.0	88.0	0.0	0.0%
-null	Kluyveromyces lactis NRRL Y-1140	H>= 95.0 	3-UTR 	T=4+	17+	1298.0	30.0	0.0	0.0%
------------------------------------
+Pan troglodytes(14317.0)	2+	=2	=3	4+	
+Any	272796.0	255453.0	16731.0	612.0	
+FivePrime	32075.0	28398.0	3512.0	165.0	
+Cds	177618.0	170536.0	6887.0	195.0	
+ThreePrime	68251.0	61244.0	6747.0	260.0	
+Canis lupus familiaris(14513.0)	2+	=2	=3	4+	
+Any	137705.0	132440.0	5121.0	144.0	
+FivePrime	6909.0	6249.0	635.0	25.0	
+Cds	125750.0	121915.0	3744.0	91.0	
+ThreePrime	6887.0	5996.0	858.0	33.0	
+Mus musculus(15231.0)	2+	=2	=3	4+	
+Any	162813.0	156152.0	6461.0	200.0	
+FivePrime	15030.0	13600.0	1367.0	63.0	
+Cds	132088.0	128775.0	3238.0	75.0	
+ThreePrime	18620.0	16543.0	2010.0	67.0	
+Danio rerio(10963.0)	2+	=2	=3	4+	
+Any	29199.0	29001.0	198.0	0.0	
+FivePrime	397.0	391.0	6.0	0.0	
+Cds	28771.0	28580.0	191.0	0.0	
+ThreePrime	192.0	188.0	4.0	0.0	
+Drosophila melanogaster(4407.0)	2+	=2	=3	4+	
+Any	5999.0	5970.0	29.0	0.0	
+FivePrime	154.0	153.0	1.0	0.0	
+Cds	5824.0	5798.0	26.0	0.0	
+ThreePrime	44.0	42.0	2.0	0.0	
+Caenorhabditis elegans(3035.0)	2+	=2	=3	4+	
+Any	1543.0	1543.0	0.0	0.0	
+FivePrime	13.0	13.0	0.0	0.0	
+Cds	1534.0	1534.0	0.0	0.0	
+ThreePrime	5.0	5.0	0.0	0.0	
+Kluyveromyces lactis NRRL Y-1140(1298.0)	2+	=2	=3	4+	
+Any	444.0	444.0	0.0	0.0	
+FivePrime	1.0	1.0	0.0	0.0	
+Cds	443.0	443.0	0.0	0.0	
+ThreePrime	0.0	0.0	0.0	0.0	
+-------------------------------------------------------------
+Pan troglodytes(14317.0)	2+	=2	=3	4+	
+Any	74.5%	75.0%	68.3%	60.9%	
+FivePrime	64.2%	65.1%	58.3%	53.2%	
+Cds	77.8%	78.0%	75.0%	75.0%	
+ThreePrime	71.9%	72.4%	68.0%	58.6%	
+Canis lupus familiaris(14513.0)	2+	=2	=3	4+	
+Any	35.2%	36.4%	19.4%	13.0%	
+FivePrime	13.1%	13.7%	9.9%	7.3%	
+Cds	51.1%	51.7%	38.0%	33.0%	
+ThreePrime	6.9%	6.7%	8.0%	6.5%	
+Mus musculus(15231.0)	2+	=2	=3	4+	
+Any	39.8%	41.1%	23.1%	16.8%	
+FivePrime	27.4%	28.5%	20.1%	17.2%	
+Cds	51.5%	52.4%	31.1%	24.8%	
+ThreePrime	17.7%	17.7%	17.6%	12.4%	
+Danio rerio(10963.0)	2+	=2	=3	4+	
+Any	9.5%	10.1%	0.9%	0.0%	
+FivePrime	0.9%	1.1%	0.1%	0.0%	
+Cds	15.3%	15.8%	2.6%	0.0%	
+ThreePrime	0.2%	0.3%	0.0%	0.0%	
+Drosophila melanogaster(4407.0)	2+	=2	=3	4+	
+Any	5.4%	5.8%	0.4%	0.0%	
+FivePrime	0.9%	1.0%	0.1%	0.0%	
+Cds	8.6%	8.9%	1.1%	0.0%	
+ThreePrime	0.2%	0.2%	0.1%	0.0%	
+Caenorhabditis elegans(3035.0)	2+	=2	=3	4+	
+Any	2.1%	2.2%	0.0%	0.0%	
+FivePrime	0.1%	0.1%	0.0%	0.0%	
+Cds	3.4%	3.5%	0.0%	0.0%	
+ThreePrime	0.0%	0.0%	0.0%	0.0%	
+Kluyveromyces lactis NRRL Y-1140(1298.0)	2+	=2	=3	4+	
+Any	1.6%	1.7%	0.0%	0.0%	
+FivePrime	0.0%	0.0%	0.0%	0.0%	
+Cds	2.6%	2.6%	0.0%	0.0%	
+ThreePrime	0.0%	0.0%	0.0%	0.0%	

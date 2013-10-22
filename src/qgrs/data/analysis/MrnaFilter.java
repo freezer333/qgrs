@@ -23,6 +23,10 @@ public class MrnaFilter {
 	private Range numPolyA = new Range(0, Integer.MAX_VALUE);
 	
 	
+	public LinkedList<String> getHomologList() {
+		return homologList;
+	}
+
 	public String getHomologString() {
 		StringBuffer sb = new StringBuffer();
 		for ( String s : this.homologList ) {

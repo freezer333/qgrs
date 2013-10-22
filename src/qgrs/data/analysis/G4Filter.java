@@ -18,6 +18,7 @@ public class G4Filter {
 	boolean mustBeInCds = false;
 	boolean mustBeIn5Prime = false;
 	boolean mustNotBeInCds = false;
+	Region region;
 	
 	private LinkedList<String> homologList = new LinkedList<String>();
 	
@@ -64,6 +65,7 @@ public class G4Filter {
 		if ( reg == Region.ThreePrime) mustBeIn3Prime = true;
 		if ( reg == Region.FivePrime) mustBeIn5Prime = true;
 		if ( reg == Region.NotCds) mustNotBeInCds = true;
+		this.region = reg;
 	}
 	
 	public String getRegionLabel() {
@@ -116,30 +118,67 @@ public class G4Filter {
 	}
 	
 	
+	private boolean filterTetradAndScore(int tetrads, int score) {
+		if ( ! new Range(this.tetradMin, this.tetradMax).contains(tetrads)) return false;
+		if ( tetrads == 2) {
+			if ( ! this.score2Range.contains(score)) return false;
+		}
+		else if ( ! this.score3Range.contains(score)) return false;
+		
+		return true;
+	}
+	
+	int findLargestTetrad(G4 g4) {
+		int largest = 0;
+		for ( G4H h : g4.getConservedG4s() ) {
+			if ( filterByHomolog(h)) {
+				if ( h.getOverallAbsoluteScore() >= min_h) {
+					if ( h.getG4().getNumTetrads() > largest ) largest = h.getG4().getNumTetrads();
+				}
+			}
+		}
+		return largest;
+	}
+	int findLargestScore(G4 g4) {
+		int largest = 0;
+		for ( G4H h : g4.getConservedG4s() ) {
+			if ( filterByHomolog(h)) {
+				if ( h.getOverallAbsoluteScore() >= min_h) {
+					if ( h.getG4().getScore() > largest ) largest = h.getG4().getScore();
+				}
+			}
+		}
+		return largest;
+	}
+	
+	
+	public Region getRegion() {
+		return region;
+	}
 	public boolean acceptable(MRNA mrna, G4 g4) {
 		if ( mustBeInCds && !g4.isInCds() ) return false;
 		if ( mustBeIn3Prime && !g4.isIn3Prime()) return false;
 		if ( mustBeIn5Prime && !g4.isIn5Prime()) return false;
 		if ( mustNotBeInCds && g4.isInCds()) return false;
 		
-		if ( g4.getNumTetrads() == 2) {
-			if ( ! this.score2Range.contains(g4.getScore())) return false;
-		}
-		else if ( ! this.score3Range.contains(g4.getScore())) return false;
-	
-		if ( ! new Range(this.tetradMin, this.tetradMax).contains(g4.getNumTetrads())) return false;
 		
-		if ( this.min_h == 0) return true;
-		else {
-			for ( G4H h : g4.getConservedG4s() ) {
-				if ( filterByHomolog(h)) {
-					if ( h.getOverallAbsoluteScore() >= min_h) {
-						return true;
-					}
-				}
+		int applicableTetrad = g4.getNumTetrads();
+		int applicableScore = g4.getScore();
+		if ( this.min_h > 0) {
+			int ht = findLargestTetrad(g4);
+			if ( ht < applicableTetrad) {
+				applicableTetrad = ht;
 			}
 		}
-		return false;
+		if ( this.min_h > 0) {
+			int ht = findLargestScore(g4);
+			if ( ht < applicableScore) {
+				applicableScore = ht;
+			}
+		}
+		if ( !filterTetradAndScore(applicableTetrad, applicableScore)) return false;
+		
+		return true;
 	}
 	
 	private boolean filterByHomolog(G4H h) {

@@ -2,14 +2,12 @@ package qgrs.data.providers;
 
 import java.util.HashMap;
 
-import framework.web.util.StringUtils;
 import qgrs.data.GeneSequence;
 import qgrs.data.Range;
-import qgrs.data.SequenceFeatureAdapter;
-import qgrs.data.providers.SequenceProvider.Key;
 import qgrs.db.AlignedSequenceDb;
 import qgrs.db.DatabaseConnection;
 import qgrs.db.GeneSequenceDb;
+import framework.web.util.StringUtils;
 
 
 /** 
@@ -39,7 +37,9 @@ public class RDBSequenceProvider extends SequenceProvider{
 		GeneSequenceDb db = new GeneSequenceDb(connection);
 		
 		GeneSequence gene = db.get(accessionOrGi);
-		if ( gene == null ) return null;
+		if ( gene == null ) {
+			return null;
+		}
 		
 		// Note that its somewhat redundant to create a GeneSequence, only to split it into a map, which
 		// most likely will be recombined in to a GeneSequence.  This is an ADAPTER - it is transitional.

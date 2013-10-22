@@ -2,8 +2,6 @@ package qgrs.data.providers;
 
 import java.util.HashMap;
 
-import org.biojava.bio.BioException;
-import org.biojava.bio.seq.db.IllegalIDException;
 import org.biojavax.bio.db.ncbi.GenbankRichSequenceDB;
 import org.biojavax.bio.seq.RichSequence;
 

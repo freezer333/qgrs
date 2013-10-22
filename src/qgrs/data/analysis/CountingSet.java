@@ -18,6 +18,21 @@ public class CountingSet {
 		this.g4Filter = g4Filter;
 		this.conserved = conserved;
 	}
+
+
+	public MrnaFilter getMrnaFilter() {
+		return mrnaFilter;
+	}
+
+
+	public G4Filter getG4Filter() {
+		return g4Filter;
+	}
+
+
+	public G4Filter getConserved() {
+		return conserved;
+	}
 	
 	
 	

@@ -35,8 +35,8 @@ public class SemiGlobalSequenceAligner implements GeneralAligner {
 		}
 		else {
 			pair.setWasCached(!result.live);
-			pair.getPrinciple().setGaps(result.principal);
-			pair.getComparison().setGaps(result.comparison);
+			pair.getPrinciple().setGaps(result.gappedPrincipal);
+			pair.getComparison().setGaps(result.gappedComparison);
 			if (statusHolder != null) {
 				statusHolder.setStatus(JobStage.Alignment_Calc, 1,	"Alignment completed");
 			}

@@ -1,12 +1,13 @@
 package qgrs.controllers;
 
+import java.net.UnknownHostException;
+
 import org.jdom.Document;
 import org.jdom.Element;
 
-import qgrs.data.providers.RDBAlignmentProvider;
+import qgrs.data.providers.MongoAlignmentProvider;
 import qgrs.db.DatabaseConnection;
 import qgrs.input.FlexibleInputProvider;
-import qgrs.input.QParam;
 import qgrs.input.ResultViewParams;
 import qgrs.job.AlignmentJob;
 import qgrs.model.JobContext;
@@ -16,6 +17,7 @@ import qgrs.view.XslViews;
 import framework.web.AbstractController;
 import framework.web.AbstractWebContext;
 import framework.web.ModelView;
+import framework.web.response.ErrorResponse;
 import framework.web.response.PageResponse;
 import framework.web.response.RedirectResponse;
 import framework.web.response.Response;
@@ -41,7 +43,14 @@ public class AlignStart extends AbstractController {
 		
 		
 		DatabaseConnection c = new DatabaseConnection(((QgrsWebContext)context).getFreeConnection());
-		AlignmentJob job = new AlignmentJob(new FlexibleInputProvider(context, c), xrp, new RDBAlignmentProvider(c));
+		AlignmentJob job;
+		try {
+			job = new AlignmentJob(new FlexibleInputProvider(context, c), xrp, new MongoAlignmentProvider());
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return new ErrorResponse(XslViews.Error, context.getResourceResolver(), "Error acquiring alignment -> " + e.getMessage());
+		}
 		
 		JobContext.cancelActiveJob(context);
 		Thread t = new Thread(job);

@@ -13,6 +13,7 @@ import qgrs.data.mongo.primitives.jongo.MRNA;
 public class CountingAnalysis extends Analysis{
 	
 	LinkedList<CountingSet> countingSet = new LinkedList<CountingSet>();
+	Reporter reporter = null;
 	String name = "Counting Analysis";
 	public CountingAnalysis() {
 		super("counting", null);
@@ -38,14 +39,29 @@ public class CountingAnalysis extends Analysis{
 			}
 		}
 	}
+	
 
+	public LinkedList<CountingSet> getCountingSet() {
+		return countingSet;
+	}
+	public Reporter getReporter() {
+		return reporter;
+	}
+	public void setReporter(Reporter reporter) {
+		this.reporter = reporter;
+	}
 	@Override
 	public void report() {
+		
 		PrintWriter writer;
 		try {
 			mkdirs();
 			String filename = dirPrefix() + name + ".txt";
 			writer = new PrintWriter(filename, "UTF-8");
+			if ( this.reporter != null ) {
+				this.reporter.report(writer);
+				return;
+			}
 			writer.println("-----------------------------------");
 			for ( CountingSet set : this.countingSet ) {
 				writer.print(set.mrnaFilter.getName()+"\t");
