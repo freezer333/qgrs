@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import qgrs.db.tasks.DatabaseUpdate;
-import framework.web.ResourceResolver;
-
 public class DispatchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
@@ -19,11 +16,8 @@ public class DispatchServlet extends HttpServlet {
 	
 	@Override
 	public void init() throws ServletException {
-		// TODO Auto-generated method stub
 		super.init();
 		dispatch = new Dispatcher(this);
-		DatabaseUpdate du = new DatabaseUpdate(new ResourceResolver(this.getServletContext()));
-		du.update();
 	}
 
 

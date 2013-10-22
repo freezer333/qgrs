@@ -16,49 +16,63 @@ import com.mongodb.MongoClient;
 
 
 public class MongoSequenceProvider extends SequenceProvider{
-
-	
-	private final MongoCollection principals;
-	private final MongoCollection alignments;
+	private MongoCollection principals;
+	private MongoCollection alignments;
 	
 	public MongoSequenceProvider () throws UnknownHostException {
-		DB db = new MongoClient().getDB("qgrs");
-		Jongo jongo = new Jongo(db);
-		principals = jongo.getCollection("principals");
-		alignments = jongo.getCollection("alignments");
+		try {
+			DB db = new MongoClient().getDB("qgrs");
+			Jongo jongo = new Jongo(db);
+			principals = jongo.getCollection("principals");
+			alignments = jongo.getCollection("alignments");
+		}
+		catch (Exception e ) {
+			System.err.println("Error connecting to MongoDB qgrs database");
+			principals = null;
+			alignments = null;
+		}
 	}
 	
-	@Override
-	protected boolean allowLiveDownload() {
-		return false;
-	}
 	
 	
 	
 	private MRNA getAsPrincipalMRNA(String accessionOrGi) {
-		MRNA mrna = this.principals.findOne("{accessionNumber:#}", accessionOrGi).as(MRNA.class);
-		if ( mrna == null  ){
-			mrna = this.principals.findOne("{giNumber:#}", accessionOrGi).as(MRNA.class);
+		try {
+			MRNA mrna = this.principals.findOne("{accessionNumber:#}", accessionOrGi).as(MRNA.class);
+			if ( mrna == null  ){
+				mrna = this.principals.findOne("{giNumber:#}", accessionOrGi).as(MRNA.class);
+			}
+			return mrna;
 		}
-		return mrna;
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	private MRNA getAsComparisonMRNA(String accessionOrGi) {
-		MRNA mrna = this.principals.findOne("{homologs:  {$elemMatch: {mrna.accessionNumber:#}}}", accessionOrGi).as(MRNA.class);
-											 
-		if ( mrna == null  ){
-			mrna = this.principals.findOne("{homologs: {$elemMatch: {mrna.giNumber:#}}}", accessionOrGi).as(MRNA.class);
-		}
-		if ( mrna == null ) return null;
-		
-		for ( Homolog comparison : mrna.getHomologs() ) {
-			if ( comparison.getMrna().getAccessionNumber().equals(accessionOrGi) || comparison.getMrna().getGiNumber().equals(accessionOrGi)) {
-				return comparison.getMrna();
+		try {
+			MRNA mrna = this.principals.findOne("{homologs:  {$elemMatch: {mrna.accessionNumber:#}}}", accessionOrGi).as(MRNA.class);
+												 
+			if ( mrna == null  ){
+				mrna = this.principals.findOne("{homologs: {$elemMatch: {mrna.giNumber:#}}}", accessionOrGi).as(MRNA.class);
 			}
+			if ( mrna == null ) return null;
+			
+			for ( Homolog comparison : mrna.getHomologs() ) {
+				if ( comparison.getMrna().getAccessionNumber().equals(accessionOrGi) || comparison.getMrna().getGiNumber().equals(accessionOrGi)) {
+					return comparison.getMrna();
+				}
+			}
+			return null;
 		}
-		return null;
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	@Override
 	protected HashMap<Key, Object> getCachedSequence(String accessionOrGi) {
+		if ( this.principals == null || this.alignments == null ) return null;
 		MRNA mrna = getAsPrincipalMRNA(accessionOrGi) ;
 		String sequence;
 		if ( mrna != null ) {
@@ -76,7 +90,7 @@ public class MongoSequenceProvider extends SequenceProvider{
 		}
 		
 		sequence = sequence.replaceAll("-", "");
-		
+		System.out.println("[Using cached sequence for " + mrna.getAccessionNumber() + "]");
 		HashMap<Key, Object> values = new HashMap<Key, Object>();
 		values.put(Key.Sequence, sequence);
 		values.put(Key.Accession, mrna.getAccessionNumber().split("\\.")[0]);
