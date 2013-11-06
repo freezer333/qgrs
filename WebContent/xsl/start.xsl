@@ -37,7 +37,7 @@
 				</script>
 				
 			</head>
-			<body> haley was here
+			<body> ming was here
 				<xsl:call-template name="header">
 					<xsl:with-param name="title">: Sequence Input</xsl:with-param>
 					<xsl:with-param name="gotodb">true</xsl:with-param>
