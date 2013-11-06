@@ -1,5 +1,7 @@
 package qgrs.data.analysis;
 
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+
 public class CountingSet {
 
 	public MrnaFilter mrnaFilter;
@@ -10,6 +12,8 @@ public class CountingSet {
 	public double totalG4 = 0;
 	public double totalConservedG4 = 0;
 	
+	public DescriptiveStatistics pop_statistics = new DescriptiveStatistics();
+	
 	
 	public CountingSet(MrnaFilter mrnaFilter, G4Filter g4Filter,
 			G4Filter conserved) {
@@ -18,7 +22,21 @@ public class CountingSet {
 		this.g4Filter = g4Filter;
 		this.conserved = conserved;
 	}
+	
+	public double meanConserved() {
+		return this.totalConservedG4 / this.totalMrna;
+	}
 
+	public double zScore() {
+		double num = this.totalConservedG4 / this.totalMrna - pop_statistics.getMean();
+		double den = this.pop_statistics.getStandardDeviation();
+		return num / den;
+	}
+	
+	public boolean isSignificant() {
+		if ( zScore() > 0 ) return zScore() > 1.96;
+		else return zScore() < -1.96;
+	}
 
 	public MrnaFilter getMrnaFilter() {
 		return mrnaFilter;

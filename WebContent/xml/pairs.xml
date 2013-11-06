@@ -59,7 +59,7 @@
 	<pair>
 		<symbol>ABR / RHOGAP1A</symbol>
 		<principle accession="NM_021962.2" species="Homo sapiens"/>
-		<comparison accession="NM_001103385.2" species="Drosophila melanogaster"/>
+		<comparison accession="NM_001103386.2" species="Drosophila melanogaster"/>
 		<description>Conserved G-quadruplex in 3'UTR. Gene involved in morphogenesis.</description>
 	</pair>
 	

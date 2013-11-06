@@ -66,10 +66,14 @@ public class Driver {
 					}
 				}
 			}
+			
+			
 			for ( Analysis a : this.analyses ) {
 				a.evaluate(mrna);
 			}
 		}
+		
+		
 		System.out.println("Number Homologs\t"+ homologs.size());
 		System.out.println("Number G4s (any species) \t" + allG4.size());
 		System.out.println("Number humanG4 \t" + humanG4.size());
@@ -100,8 +104,8 @@ public class Driver {
 		/*makePolyADistributionAnalysis(as);
 		make5PrimeDistributionAnalysis(as);*/
 		makeAggregateStatAnalysis(as);
-		/*make5PrimeCountingAnalysis(as);
-		makeGScoreConservationAnalaysis(as);*/
+		make5PrimeCountingAnalysis(as);
+		/*makeGScoreConservationAnalaysis(as);*/
 		
 		Driver driver = new Driver(as);
 		driver.run(principals);
@@ -240,9 +244,6 @@ public class Driver {
 		as.add(scoreDistribution);
 	}
 	private static void make5PrimeCountingAnalysis(LinkedList<Analysis> as) {
-		G4Filter g4;
-		G4Filter conserved;
-		MrnaFilter mrna;
 		CountingAnalysis fivePrimeCounts = new CountingAnalysis("5 Prime Counts");
 		make5PrimeCountingSet(fivePrimeCounts, "All Mrna - 5Prime", null, null);
 		make5PrimeCountingSet(fivePrimeCounts, "Apoptosis",new String [] {"ubiquitin-protein ligase activity", "apoptotic process", "apoptotic signaling pathway", "induction of apoptosis", "execution phase of apoptosis", "negative regulation of apoptotic process", "positive regulation of apoptotic process"}, null);
