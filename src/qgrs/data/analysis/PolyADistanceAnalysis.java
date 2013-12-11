@@ -1,10 +1,8 @@
 package qgrs.data.analysis;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.nio.file.Path;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 

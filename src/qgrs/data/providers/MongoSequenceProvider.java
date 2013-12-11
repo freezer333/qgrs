@@ -34,6 +34,13 @@ public class MongoSequenceProvider extends SequenceProvider{
 	}
 	
 	
+	public String getPrincipalByAccession(String accession) {
+		Alignment alignment = this.alignments.findOne("{principal.accessionNumber:#}", accession).as(Alignment.class);
+		if ( alignment == null ) return null;
+		String sequence = alignment.getPrincipal().getAlignedSequence();
+		sequence = sequence.replaceAll("-", "");
+		return sequence;
+	}
 	
 	
 	private MRNA getAsPrincipalMRNA(String accessionOrGi) {
