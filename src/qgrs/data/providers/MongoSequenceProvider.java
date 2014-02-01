@@ -33,6 +33,18 @@ public class MongoSequenceProvider extends SequenceProvider{
 		}
 	}
 	
+	public MongoSequenceProvider (Jongo jongo) throws UnknownHostException {
+		try {
+			principals = jongo.getCollection("principals");
+			alignments = jongo.getCollection("alignments");
+		}
+		catch (Exception e ) {
+			System.err.println("Error connecting to MongoDB qgrs database");
+			principals = null;
+			alignments = null;
+		}
+	}
+	
 	
 	public String getPrincipalByAccession(String accession) {
 		Alignment alignment = this.alignments.findOne("{principal.accessionNumber:#}", accession).as(Alignment.class);
