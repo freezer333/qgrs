@@ -37,13 +37,12 @@
 				</script>
 				
 			</head>
-			<body> ming was here
+			<body> 
 				<xsl:call-template name="header">
 					<xsl:with-param name="title">: Sequence Input</xsl:with-param>
 					<xsl:with-param name="gotodb">true</xsl:with-param>
 					<xsl:with-param name="appname">Predictor</xsl:with-param>
-				</xsl:call-template>xyz
-		 something else
+				</xsl:call-template>
 				
 				<xsl:if test="/qgrs/AlertMessage/@show='true'">
 				<p class="alert"><xsl:value-of select="/qgrs/AlertMessage"/></p>
