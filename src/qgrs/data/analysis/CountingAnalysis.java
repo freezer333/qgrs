@@ -92,7 +92,7 @@ public class CountingAnalysis extends Analysis{
 			System.out.println("Output written to " + filename);
 			writer.close();
 			
-		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
