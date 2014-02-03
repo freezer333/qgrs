@@ -9,10 +9,12 @@ import org.jongo.Jongo;
 import org.jongo.MongoCollection;
 
 import qgrs.data.Range;
-import qgrs.data.mongo.primitives.jongo.G4H;
 import qgrs.data.mongo.primitives.jongo.G4;
+import qgrs.data.mongo.primitives.jongo.G4H;
 import qgrs.data.mongo.primitives.jongo.Homolog;
 import qgrs.data.mongo.primitives.jongo.MRNA;
+import qgrs.data.providers.MongoSequenceProvider;
+import qgrs.data.providers.SequenceProvider;
 
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
@@ -20,7 +22,7 @@ import com.mongodb.MongoClient;
 public class Driver {
 	
 	LinkedList<Analysis> analyses = new LinkedList<Analysis>();
-	
+	final static boolean DEBUGGING = false;
 	
 	public Driver (Analysis ...analyses ) {
 		for ( Analysis a : analyses) {
@@ -43,7 +45,13 @@ public class Driver {
 		double minHScore = Integer.MAX_VALUE;
 		
 		
+		
+		int count = 0;
+		
 		for ( MRNA mrna : all ) {
+			
+			
+			if (DEBUGGING &&  count++ > 100 ) break;
 			
 			for ( Homolog h : mrna.getHomologs() ) {
 				homologs.add(mrna.getAccessionNumber() + "x" + h.getMrna().getAccessionNumber());
@@ -99,12 +107,13 @@ public class Driver {
 		MongoCollection principals = jongo.getCollection("principals");
 		
 		LinkedList<Analysis> as = new LinkedList<Analysis>();
+		MongoSequenceProvider sp = new MongoSequenceProvider(jongo);
 		
 		
 		/*makePolyADistributionAnalysis(as);
 		make5PrimeDistributionAnalysis(as);*/
 		makeAggregateStatAnalysis(as);
-		make5PrimeCountingAnalysis(as);
+		make5PrimeCountingAnalysis(as, sp);
 		/*makeGScoreConservationAnalaysis(as);*/
 		
 		Driver driver = new Driver(as);
@@ -243,23 +252,23 @@ public class Driver {
 		}
 		as.add(scoreDistribution);
 	}
-	private static void make5PrimeCountingAnalysis(LinkedList<Analysis> as) {
+	private static void make5PrimeCountingAnalysis(LinkedList<Analysis> as, SequenceProvider sp) {
 		CountingAnalysis fivePrimeCounts = new CountingAnalysis("5 Prime Counts");
-		make5PrimeCountingSet(fivePrimeCounts, "All Mrna - 5Prime", null, null);
-		make5PrimeCountingSet(fivePrimeCounts, "Apoptosis",new String [] {"ubiquitin-protein ligase activity", "apoptotic process", "apoptotic signaling pathway", "induction of apoptosis", "execution phase of apoptosis", "negative regulation of apoptotic process", "positive regulation of apoptotic process"}, null);
-		make5PrimeCountingSet(fivePrimeCounts, "Brain Development", new String [] {"brain segmentation", "brain morphogenesis", "central complex development", "forebrain development","hindbrain development","midbrain development"}, null);
-		make5PrimeCountingSet(fivePrimeCounts, "Epigentics", new String [] {"DNA-methyltransferase", "methyl-CpG binding", "methyl-CpNpN binding", "DNA hypermethylation", "DNA hypomethylation"}, null);
-		make5PrimeCountingSet(fivePrimeCounts, "Negative Regulation of Cell Proliferation", new String [] {"negative Regulation of Cell Proliferation"}, null);
-		make5PrimeCountingSet(fivePrimeCounts, "Oncogenes", null, new String [] {"oncogene"});
-		make5PrimeCountingSet(fivePrimeCounts, "Positive Regulation of Cell Proliferation", new String [] {"positive regulation of cell proliferation"}, null);
-		make5PrimeCountingSet(fivePrimeCounts, "Regulation of Cell Cycle", new String [] {"regulation of cell cycle"}, null);
-		make5PrimeCountingSet(fivePrimeCounts, "Regulation of Cell Cycle", new String [] {"transcription factor complex", "transcription factor binding"}, null);
+		make5PrimeCountingSet(sp, fivePrimeCounts, "All Mrna - 5Prime", null, null);
+		make5PrimeCountingSet(sp, fivePrimeCounts, "Apoptosis",new String [] {"ubiquitin-protein ligase activity", "apoptotic process", "apoptotic signaling pathway", "induction of apoptosis", "execution phase of apoptosis", "negative regulation of apoptotic process", "positive regulation of apoptotic process"}, null);
+		make5PrimeCountingSet(sp, fivePrimeCounts, "Brain Development", new String [] {"brain segmentation", "brain morphogenesis", "central complex development", "forebrain development","hindbrain development","midbrain development"}, null);
+		make5PrimeCountingSet(sp, fivePrimeCounts, "Epigentics", new String [] {"DNA-methyltransferase", "methyl-CpG binding", "methyl-CpNpN binding", "DNA hypermethylation", "DNA hypomethylation"}, null);
+		make5PrimeCountingSet(sp, fivePrimeCounts, "Negative Regulation of Cell Proliferation", new String [] {"negative Regulation of Cell Proliferation"}, null);
+		make5PrimeCountingSet(sp, fivePrimeCounts, "Oncogenes", null, new String [] {"oncogene"});
+		make5PrimeCountingSet(sp, fivePrimeCounts, "Positive Regulation of Cell Proliferation", new String [] {"positive regulation of cell proliferation"}, null);
+		make5PrimeCountingSet(sp, fivePrimeCounts, "Regulation of Cell Cycle", new String [] {"regulation of cell cycle"}, null);
+		make5PrimeCountingSet(sp, fivePrimeCounts, "Regulation of Cell Cycle", new String [] {"transcription factor complex", "transcription factor binding"}, null);
 		as.add(fivePrimeCounts);
 	}
-	private static void make5PrimeCountingSet(CountingAnalysis fivePrimeCounts, String name, String [] functions, String [] searchTerms) {
+	private static void make5PrimeCountingSet(SequenceProvider sp, CountingAnalysis fivePrimeCounts, String name, String [] functions, String [] searchTerms) {
 		G4Filter g4 = new G4Filter(Region.FivePrime);
 		G4Filter conserved = new G4Filter(90, Region.FivePrime);
-		MrnaFilter mrna = new MrnaFilter(name);
+		MrnaFilter mrna = sp == null ? new MrnaFilter(name) : new MrnaSequenceFilter(name, sp);
 		if ( functions != null ) {
 			mrna.addOntologyTerms(functions);
 		}
