@@ -8,7 +8,7 @@ import qgrs.data.providers.SequenceProvider.Key;
 
 public class MrnaSequenceFilter extends MrnaFilter {
 
-	
+	public double percent;
 	final SequenceProvider seqProvider;
 	
 	public MrnaSequenceFilter(SequenceProvider provider) {
@@ -18,6 +18,11 @@ public class MrnaSequenceFilter extends MrnaFilter {
 	public MrnaSequenceFilter(String name, SequenceProvider provider) {
 		super(name);
 		this.seqProvider = provider;
+	}
+	public MrnaSequenceFilter(double perc, String name, SequenceProvider provider) {
+		super(name);
+		this.seqProvider = provider;
+		this.percent = perc;
 	}
 	
 	@Override
@@ -48,7 +53,13 @@ public class MrnaSequenceFilter extends MrnaFilter {
 			if ( sequence.charAt(i) == 'G' ) count++;
 		}
 		
-		if ( count < 1000 ) return false;
+		// To make count value in count a double
+		double numG = count * 1.00;
+		
+		double perc = numG/sequence.length();
+		
+		
+		if ( perc < this.percent ) return false;
 		else return super.acceptable(mrna);
 	}
 	
