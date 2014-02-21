@@ -109,7 +109,6 @@ public class MongoSequenceProvider extends SequenceProvider{
 		}
 		
 		sequence = sequence.replaceAll("-", "");
-		System.out.println("[Using cached sequence for " + mrna.getAccessionNumber() + "]");
 		HashMap<Key, Object> values = new HashMap<Key, Object>();
 		values.put(Key.Sequence, sequence);
 		values.put(Key.Accession, mrna.getAccessionNumber().split("\\.")[0]);

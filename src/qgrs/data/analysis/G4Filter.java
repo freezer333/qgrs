@@ -22,6 +22,16 @@ public class G4Filter {
 	
 	private LinkedList<String> homologList = new LinkedList<String>();
 	
+	
+	public int getValidNtLength(MRNA mrna) {
+		int retval = 0; 
+		if ( this.region == Region.Any ) retval =  mrna.getSequenceLength();
+		if ( this.region == Region.Cds ) retval =  mrna.getCds().getLength();
+		if ( this.region == Region.FivePrime ) retval = mrna.getUtr5().getLength();
+		if ( this.region == Region.ThreePrime ) retval = mrna.getUtr5().getLength();
+		return retval == 0 ? 1 : retval;
+	}
+	
 	public Range getScore2Range() {
 		return score2Range;
 	}
