@@ -1,0 +1,26 @@
+--- MrnaSequenceFilter.java
++++ MrnaSequenceFilter.java
+@@ -8,7 +8,7 @@
+ 
+ public class MrnaSequenceFilter extends MrnaFilter {
+ 
+-	
++	public double percent;
+ 	final SequenceProvider seqProvider;
+ 	
+ 	public MrnaSequenceFilter(SequenceProvider provider) {
+@@ -48,7 +53,13 @@
+ 			if ( sequence.charAt(i) == 'G' ) count++;
+ 		}
+ 		
+-		if ( count < 1000 ) return false;
++		// To make count value in count a double
++		double numG = count * 1.00;
++		
++		double perc = numG/sequence.length();
++		
++		
++		if ( perc < this.percent ) return false;
+ 		else return super.acceptable(mrna);
+ 	}
+ 	
