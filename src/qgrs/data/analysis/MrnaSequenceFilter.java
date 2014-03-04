@@ -19,11 +19,7 @@ public class MrnaSequenceFilter extends MrnaFilter {
 		super(name);
 		this.seqProvider = provider;
 	}
-	public MrnaSequenceFilter(double perc, String name, SequenceProvider provider) {
-		super(name);
-		this.seqProvider = provider;
-		this.percent = perc;
-	}
+	
 	public MrnaSequenceFilter(double perc, String name, SequenceProvider provider) {
 		super(name);
 		this.seqProvider = provider;

@@ -22,9 +22,7 @@ public class Range extends BasicDBObject {
 		this.setEnd(end);
 	}
 	
-	public int getLength() {
-		return this.getEnd() - this.getStart() + 1;
-	}
+	
 	
 	public int getLength() {
 		return this.getEnd() - this.getStart() + 1;
