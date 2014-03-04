@@ -1,0 +1,23 @@
+--- PolyADistanceAnalysis - Downstream-1+ polyA, 95+ qgrs homology3-UTR T2+ H95.0 .txt
++++ PolyADistanceAnalysis - Downstream-1+ polyA, 95+ qgrs homology3-UTR T2+ H95.0 .txt
+@@ -1,20 +0,0 @@
+------------------------------------
+-PolyA Signal analyis - Downstream
+-Criteria summary
+-1+ polyA, 95+ qgrs homology
+-nt. interval    % mRNA signals with at least 1 qgrs	# mRNA with 1 qgrs / #mRNA with valid interval
+------------------------------------
+-  0-100:	4.82%			368	7638
+-100-200:	18.25%			351	1923
+-200-300:	21.74%			358	1647
+-300-400:	20.37%			300	1473
+-400-500:	22.13%			295	1333
+------------------------------------
+-nt. interval    Avg. # Qgrs	Median Qgrs	QgrsCount	Total mRNA
+------------------------------------
+-  0-100:	0.084			0.0	640.0	7638
+-100-200:	0.326			0.0	627.0	1923
+-200-300:	0.422			0.0	695.0	1647
+-300-400:	0.399			0.0	587.0	1473
+-400-500:	0.393			0.0	524.0	1333
+------------------------------------

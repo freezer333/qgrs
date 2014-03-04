@@ -13,7 +13,13 @@ public class CountingSet {
 	public double totalG4 = 0;
 	public double totalConservedG4 = 0;
 	
-	public DescriptiveStatistics pop_statistics = new DescriptiveStatistics();
+	public double totalG4Per100nt = 0;
+	public double totalConservedG4Per100nt = 0;
+	
+	
+	
+	public DescriptiveStatistics raw_pop_statistics = new DescriptiveStatistics();
+	public DescriptiveStatistics normed_pop_statistics = new DescriptiveStatistics();
 	
 	
 	public CountingSet(MrnaFilter mrnaFilter, G4Filter g4Filter,
@@ -36,16 +42,31 @@ public class CountingSet {
 	public double meanConserved() {
 		return this.totalConservedG4 / this.totalMrna;
 	}
+	
+	public double meanConservedPer100nt() {
+		return this.totalConservedG4Per100nt / this.totalMrna;
+	}
 
 	public double zScore() {
-		double num = this.totalConservedG4 / this.totalMrna - pop_statistics.getMean();
-		double den = this.pop_statistics.getStandardDeviation();
+		double num = this.totalConservedG4 / this.totalMrna - raw_pop_statistics.getMean();
+		double den = this.raw_pop_statistics.getStandardDeviation();
+		return num / den;
+	}
+	
+	public double zScoreNormalized() {
+		double num = this.totalConservedG4Per100nt / this.totalMrna - normed_pop_statistics.getMean();
+		double den = this.normed_pop_statistics.getStandardDeviation();
 		return num / den;
 	}
 	
 	public boolean isSignificant() {
 		if ( zScore() > 0 ) return zScore() > 1.96;
 		else return zScore() < -1.96;
+	}
+	
+	public boolean isSignificantNormalized() {
+		if ( zScoreNormalized() > 0 ) return zScoreNormalized() > 1.96;
+		else return zScoreNormalized() < -1.96;
 	}
 
 	public MrnaFilter getMrnaFilter() {

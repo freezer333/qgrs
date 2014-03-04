@@ -1,0 +1,141 @@
+--- Counting Analysis.txt
++++ Counting Analysis.txt
+@@ -1,71 +1,71 @@
+-Pan troglodytes(85.0)	2+	=2	=3	4+	
+-Any	1408.0	1348.0	58.0	2.0	
+-FivePrime	198.0	174.0	24.0	0.0	
+-Cds	854.0	839.0	14.0	1.0	
+-ThreePrime	385.0	362.0	22.0	1.0	
+-Canis lupus familiaris(97.0)	2+	=2	=3	4+	
+-Any	669.0	650.0	18.0	1.0	
+-FivePrime	60.0	52.0	8.0	0.0	
+-Cds	586.0	577.0	8.0	1.0	
+-ThreePrime	39.0	36.0	3.0	0.0	
+-Mus musculus(98.0)	2+	=2	=3	4+	
+-Any	630.0	616.0	14.0	0.0	
+-FivePrime	76.0	70.0	6.0	0.0	
+-Cds	508.0	504.0	4.0	0.0	
+-ThreePrime	64.0	60.0	4.0	0.0	
+-Danio rerio(83.0)	2+	=2	=3	4+	
+-Any	119.0	119.0	0.0	0.0	
+-FivePrime	3.0	3.0	0.0	0.0	
+-Cds	118.0	118.0	0.0	0.0	
+-ThreePrime	0.0	0.0	0.0	0.0	
+-Drosophila melanogaster(33.0)	2+	=2	=3	4+	
+-Any	20.0	19.0	1.0	0.0	
+-FivePrime	0.0	0.0	0.0	0.0	
+-Cds	20.0	19.0	1.0	0.0	
+-ThreePrime	0.0	0.0	0.0	0.0	
+-Caenorhabditis elegans(19.0)	2+	=2	=3	4+	
+-Any	6.0	6.0	0.0	0.0	
+-FivePrime	0.0	0.0	0.0	0.0	
+-Cds	6.0	6.0	0.0	0.0	
+-ThreePrime	0.0	0.0	0.0	0.0	
+-Kluyveromyces lactis NRRL Y-1140(6.0)	2+	=2	=3	4+	
+-Any	6.0	6.0	0.0	0.0	
+-FivePrime	0.0	0.0	0.0	0.0	
+-Cds	6.0	6.0	0.0	0.0	
++Pan troglodytes(14317.0)	2+	=2	=3	4+	
++Any	272796.0	255453.0	16731.0	612.0	
++FivePrime	32075.0	28398.0	3512.0	165.0	
++Cds	177618.0	170536.0	6887.0	195.0	
++ThreePrime	68251.0	61244.0	6747.0	260.0	
++Canis lupus familiaris(14513.0)	2+	=2	=3	4+	
++Any	137705.0	132440.0	5121.0	144.0	
++FivePrime	6909.0	6249.0	635.0	25.0	
++Cds	125750.0	121915.0	3744.0	91.0	
++ThreePrime	6887.0	5996.0	858.0	33.0	
++Mus musculus(15231.0)	2+	=2	=3	4+	
++Any	162813.0	156152.0	6461.0	200.0	
++FivePrime	15030.0	13600.0	1367.0	63.0	
++Cds	132088.0	128775.0	3238.0	75.0	
++ThreePrime	18620.0	16543.0	2010.0	67.0	
++Danio rerio(10963.0)	2+	=2	=3	4+	
++Any	29199.0	29001.0	198.0	0.0	
++FivePrime	397.0	391.0	6.0	0.0	
++Cds	28771.0	28580.0	191.0	0.0	
++ThreePrime	192.0	188.0	4.0	0.0	
++Drosophila melanogaster(4407.0)	2+	=2	=3	4+	
++Any	5999.0	5970.0	29.0	0.0	
++FivePrime	154.0	153.0	1.0	0.0	
++Cds	5824.0	5798.0	26.0	0.0	
++ThreePrime	44.0	42.0	2.0	0.0	
++Caenorhabditis elegans(3035.0)	2+	=2	=3	4+	
++Any	1543.0	1543.0	0.0	0.0	
++FivePrime	13.0	13.0	0.0	0.0	
++Cds	1534.0	1534.0	0.0	0.0	
++ThreePrime	5.0	5.0	0.0	0.0	
++Kluyveromyces lactis NRRL Y-1140(1298.0)	2+	=2	=3	4+	
++Any	444.0	444.0	0.0	0.0	
++FivePrime	1.0	1.0	0.0	0.0	
++Cds	443.0	443.0	0.0	0.0	
+ ThreePrime	0.0	0.0	0.0	0.0	
+ -------------------------------------------------------------
+-Pan troglodytes(85.0)	2+	=2	=3	4+	
+-Any	89.2%	89.7%	80.6%	50.0%	
+-FivePrime	73.1%	75.0%	61.5%	�	
+-Cds	94.4%	94.6%	87.5%	50.0%	
+-ThreePrime	88.7%	88.1%	104.8%	50.0%	
+-Canis lupus familiaris(97.0)	2+	=2	=3	4+	
+-Any	36.7%	37.6%	20.9%	14.3%	
+-FivePrime	18.3%	18.4%	17.8%	�	
+-Cds	56.2%	56.6%	42.1%	25.0%	
+-ThreePrime	7.9%	7.8%	10.7%	0.0%	
+-Mus musculus(98.0)	2+	=2	=3	4+	
+-Any	34.9%	36.0%	16.5%	0.0%	
+-FivePrime	24.8%	26.7%	13.6%	�	
+-Cds	48.9%	49.6%	21.1%	0.0%	
+-ThreePrime	12.9%	12.9%	14.3%	0.0%	
+-Danio rerio(83.0)	2+	=2	=3	4+	
+-Any	7.7%	8.1%	0.0%	0.0%	
+-FivePrime	1.1%	1.3%	0.0%	�	
+-Cds	13.4%	13.8%	0.0%	0.0%	
++Pan troglodytes(14317.0)	2+	=2	=3	4+	
++Any	74.5%	75.0%	68.3%	60.9%	
++FivePrime	64.2%	65.1%	58.3%	53.2%	
++Cds	77.8%	78.0%	75.0%	75.0%	
++ThreePrime	71.9%	72.4%	68.0%	58.6%	
++Canis lupus familiaris(14513.0)	2+	=2	=3	4+	
++Any	35.2%	36.4%	19.4%	13.0%	
++FivePrime	13.1%	13.7%	9.9%	7.3%	
++Cds	51.1%	51.7%	38.0%	33.0%	
++ThreePrime	6.9%	6.7%	8.0%	6.5%	
++Mus musculus(15231.0)	2+	=2	=3	4+	
++Any	39.8%	41.1%	23.1%	16.8%	
++FivePrime	27.4%	28.5%	20.1%	17.2%	
++Cds	51.5%	52.4%	31.1%	24.8%	
++ThreePrime	17.7%	17.7%	17.6%	12.4%	
++Danio rerio(10963.0)	2+	=2	=3	4+	
++Any	9.5%	10.1%	0.9%	0.0%	
++FivePrime	0.9%	1.1%	0.1%	0.0%	
++Cds	15.3%	15.8%	2.6%	0.0%	
++ThreePrime	0.2%	0.3%	0.0%	0.0%	
++Drosophila melanogaster(4407.0)	2+	=2	=3	4+	
++Any	5.4%	5.8%	0.4%	0.0%	
++FivePrime	0.9%	1.0%	0.1%	0.0%	
++Cds	8.6%	8.9%	1.1%	0.0%	
++ThreePrime	0.2%	0.2%	0.1%	0.0%	
++Caenorhabditis elegans(3035.0)	2+	=2	=3	4+	
++Any	2.1%	2.2%	0.0%	0.0%	
++FivePrime	0.1%	0.1%	0.0%	0.0%	
++Cds	3.4%	3.5%	0.0%	0.0%	
+ ThreePrime	0.0%	0.0%	0.0%	0.0%	
+-Drosophila melanogaster(33.0)	2+	=2	=3	4+	
+-Any	3.7%	3.7%	3.6%	0.0%	
+-FivePrime	0.0%	0.0%	0.0%	�	
+-Cds	6.1%	5.8%	25.0%	0.0%	
++Kluyveromyces lactis NRRL Y-1140(1298.0)	2+	=2	=3	4+	
++Any	1.6%	1.7%	0.0%	0.0%	
++FivePrime	0.0%	0.0%	0.0%	0.0%	
++Cds	2.6%	2.6%	0.0%	0.0%	
+ ThreePrime	0.0%	0.0%	0.0%	0.0%	
+-Caenorhabditis elegans(19.0)	2+	=2	=3	4+	
+-Any	1.8%	1.9%	0.0%	0.0%	
+-FivePrime	0.0%	0.0%	0.0%	�	
+-Cds	3.1%	3.1%	0.0%	�	
+-ThreePrime	0.0%	0.0%	0.0%	0.0%	
+-Kluyveromyces lactis NRRL Y-1140(6.0)	2+	=2	=3	4+	
+-Any	5.4%	5.6%	0.0%	�	
+-FivePrime	0.0%	0.0%	0.0%	�	
+-Cds	7.9%	8.0%	0.0%	�	
+-ThreePrime	0.0%	0.0%	0.0%	�	

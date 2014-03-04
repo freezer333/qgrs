@@ -1,0 +1,16 @@
+--- 5 Prime Counts.txt
++++ 5 Prime Counts.txt
+@@ -1,11 +1,2 @@
+-Label	qgrs conservation	region	tetrads	gscores	total mrna	total qgrs	total conserved qgrs	%conserved	average conserved qgrs	population mean	population std	z-score	signficant (alpha = 0.05)	-----------------------------------
+-All Mrna - 5Prime	H>= 90.0 	5-UTR 	T=2+	17+	15.0	69.0	55.0	79.7%	3.6666666666666665	2.3762376237623766	3.5152567051312635	0.3670938287438965	NO
+-Apoptosis	H>= 90.0 	5-UTR 	T=2+	17+	2.0	10.0	7.0	70.0%	3.5	2.3762376237623766	3.5152567051312635	0.3196814544432142	NO
+-Brain Development	H>= 90.0 	5-UTR 	T=2+	17+	0.0	0.0	0.0	�	NaN	2.3762376237623766	3.5152567051312635	NaN	NO
+-Epigentics	H>= 90.0 	5-UTR 	T=2+	17+	0.0	0.0	0.0	�	NaN	2.3762376237623766	3.5152567051312635	NaN	NO
+-Negative Regulation of Cell Proliferation	H>= 90.0 	5-UTR 	T=2+	17+	0.0	0.0	0.0	�	NaN	2.3762376237623766	3.5152567051312635	NaN	NO
+-Oncogenes	H>= 90.0 	5-UTR 	T=2+	17+	0.0	0.0	0.0	�	NaN	2.3762376237623766	3.5152567051312635	NaN	NO
+-Positive Regulation of Cell Proliferation	H>= 90.0 	5-UTR 	T=2+	17+	0.0	0.0	0.0	�	NaN	2.3762376237623766	3.5152567051312635	NaN	NO
+-Regulation of Cell Cycle	H>= 90.0 	5-UTR 	T=2+	17+	0.0	0.0	0.0	�	NaN	2.3762376237623766	3.5152567051312635	NaN	NO
+-Regulation of Cell Cycle	H>= 90.0 	5-UTR 	T=2+	17+	2.0	3.0	3.0	100.0%	1.5	2.3762376237623766	3.5152567051312635	-0.2492670371649734	NO
+------------------------------------
++Label	qgrs conservation	region	tetrads	gscores	total mrna	total qgrs	total conserved qgrs	%conserved	average conserved qgrs	population mean	population std	z-score	signficant (alpha = 0.05)	Avg. qgrs/100nt (sample)	Avg. qgrs/100nt (pop)	pop std	z-score	significant (alpha = 0.05		-----------------------------------
++All Mrna - 5Prime	H>= 90.0 	5-UTR 	T=2+	17+	4371.0	20255.0	14612.0	72.1%	3.3429421185083505	2.485923086138741	3.3645691256651755	0.25471880658721097	NO	0.0	0.0	0.0	NaN	NO	Apoptosis	H>= 90.0 	5-UTR 	T=2+	17+	394.0	1928.0	1403.0	72.8%	3.5609137055837565	2.485923086138741	3.3645691256651755	0.3195032051043058	NO	0.0	0.0	0.0	NaN	NO	Brain Development	H>= 90.0 	5-UTR 	T=2+	17+	38.0	205.0	147.0	71.7%	3.8684210526315788	2.485923086138741	3.3645691256651755	0.41089896353950456	NO	0.0	0.0	0.0	NaN	NO	Epigentics	H>= 90.0 	5-UTR 	T=2+	17+	3.0	10.0	5.0	50.0%	1.6666666666666667	2.485923086138741	3.3645691256651755	-0.24349519622668098	NO	0.0	0.0	0.0	NaN	NO	Negative Regulation of Cell Proliferation	H>= 90.0 	5-UTR 	T=2+	17+	103.0	561.0	430.0	76.6%	4.174757281553398	2.485923086138741	3.3645691256651755	0.501946648244528	NO	0.0	0.0	0.0	NaN	NO	Oncogenes	H>= 90.0 	5-UTR 	T=2+	17+	29.0	128.0	92.0	71.9%	3.1724137931034484	2.485923086138741	3.3645691256651755	0.20403525126831448	NO	0.0	0.0	0.0	NaN	NO	Positive Regulation of Cell Proliferation	H>= 90.0 	5-UTR 	T=2+	17+	93.0	497.0	356.0	71.6%	3.827956989247312	2.485923086138741	3.3645691256651755	0.39887244190390964	NO	0.0	0.0	0.0	NaN	NO	Regulation of Cell Cycle	H>= 90.0 	5-UTR 	T=2+	17+	20.0	94.0	72.0	76.6%	3.6	2.485923086138741	3.3645691256651755	0.3311202333050613	NO	0.0	0.0	0.0	NaN	NO	Regulation of Cell Cycle	H>= 90.0 	5-UTR 	T=2+	17+	117.0	584.0	412.0	70.5%	3.5213675213675213	2.485923086138741	3.3645691256651755	0.307749490813054	NO	0.0	0.0	0.0	NaN	NO	-----------------------------------

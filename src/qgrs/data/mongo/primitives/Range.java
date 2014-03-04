@@ -26,6 +26,10 @@ public class Range extends BasicDBObject {
 		return this.getEnd() - this.getStart() + 1;
 	}
 	
+	public int getLength() {
+		return this.getEnd() - this.getStart() + 1;
+	}
+	
 	public qgrs.data.Range asCoreRange() {
 		return new qgrs.data.Range(this.getStart(), this.getEnd());
 	}

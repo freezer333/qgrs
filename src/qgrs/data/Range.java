@@ -29,6 +29,10 @@ public class Range {
 		return this.getEnd() - this.getStart() + 1;
 	}
 	
+	public int getLength() {
+		return this.getEnd() - this.getStart() + 1;
+	}
+	
 	public int getStart() {
 		return start;
 	}
