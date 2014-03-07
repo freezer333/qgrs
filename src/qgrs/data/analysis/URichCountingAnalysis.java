@@ -80,7 +80,7 @@ public class URichCountingAnalysis {
 	
 	private void runMrna(MRNA mrna, int i) throws Exception {
 		
-		// Only consider mrna with multiple poly A signlls.
+		// Only consider mrna with multiple poly A signals.
 		if (mrna.getPolyASites().size() < 2 ) { return; };
 		
 		MongoSequenceProvider p = new MongoSequenceProvider(jongo);
@@ -109,7 +109,7 @@ public class URichCountingAnalysis {
 			if ( end - start < 5) continue;
 			String slice = sequence.substring(start, end);
 			
-			Collection<URich> us = new URichFinder(slice).getAll(3);
+			Collection<NRich> us = new NRichFinder('U', slice).getAll(3);
 			if ( us.size() == 0 ) counts.numPolyWith0++;
 			else if ( us.size() == 1 ) counts.numPolyWith1++;
 			else { counts.numPolyWithMany++; }

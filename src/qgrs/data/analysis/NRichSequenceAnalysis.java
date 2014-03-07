@@ -13,29 +13,32 @@ import qgrs.data.providers.MongoSequenceProvider;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 
-public class URichSequenceAnalysis {
+public class NRichSequenceAnalysis {
 	private final Iterable<MRNA> mrnaList ;
-	private final MongoCollection uRichCollection;
+	private final MongoCollection nRichCollection;
 	private int mrnaCount = 0;
 	Jongo jongo;
 	
 	public static void main(String[] args) throws UnknownHostException {
-		URichSequenceAnalysis analysis = new URichSequenceAnalysis();
+		NRichSequenceAnalysis analysis = new NRichSequenceAnalysis();
 		analysis.run();
 	}
 	
-	public URichSequenceAnalysis() throws UnknownHostException {
+	public NRichSequenceAnalysis() throws UnknownHostException {
 		DB db = new MongoClient().getDB("qgrs");
 		jongo = new Jongo(db);
 		MongoCollection principals = jongo.getCollection("principals");
-		this.uRichCollection = jongo.getCollection("uRich");
+		this.nRichCollection = jongo.getCollection("nRich");
 		this.mrnaList = principals.find().as(MRNA.class);
 	}
 	
 	public void run() {
+		int i = 0;
 		for ( MRNA mrna : mrnaList ) {
 			try {
 				runMrna(mrna);
+				i++;
+				//if ( i > 100 ) return;
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -47,7 +50,6 @@ public class URichSequenceAnalysis {
 	private void runMrna(MRNA mrna) throws Exception {
 		MongoSequenceProvider p = new MongoSequenceProvider(jongo);
 		mrnaCount++;
-		int ucount = 0;
 		String sequence = p.getPrincipalByAccession(mrna.getAccessionNumber()); 
 		sequence = sequence.replaceAll("T", "U");
 		
@@ -57,22 +59,26 @@ public class URichSequenceAnalysis {
 			sites[c++] = site;
 		}
 		
-		for ( int i = 0; i < sites.length; i++ ) {
+		char [] ns = {'U', 'G', 'A', 'C'};
+		
+		// don't examine the last site
+		for ( int i = 0; i < sites.length-1; i++ ) {
 			int start = sites[i].getEnd()+5;
 			int end = (i == sites.length-1) ? mrna.getSequenceLength()-1 : sites[i+1].getStart();
 			if ( end - start < 5) continue;
 			String slice = sequence.substring(start, end);
-			Collection<URich> us = new URichFinder(slice).getAll(3);  // modified to return BEST u rich sequence.
-			for ( URich u : us ) {
-				ucount++;
-				u.startNt = u.distanceFromPolyASite + sites[i].getEnd()+5;
-				u.accessionNumber = mrna.getAccessionNumber();
-				u.polyASiteNumber = i+1;
-				uRichCollection.insert(u);
+			for ( char n :ns ) {
+				Collection<NRich> us = new NRichFinder(n, slice).getAll(3);  
+				for ( NRich u : us ) {
+					u.startNt = u.distanceFromPolyASite + sites[i].getEnd()+5;
+					u.accessionNumber = mrna.getAccessionNumber();
+					u.polyASiteNumber = i+1;
+					nRichCollection.insert(u);
+				}
 			}
 		}
 		
-		System.out.println("mrna [" + mrnaCount + "] -> sites [" + sites.length + "] -> u-rich recorded [" + ucount + "]");
+		System.out.println("mrna [" + mrnaCount + "] -> sites [" + sites.length + "] ");
 	}
 
 }

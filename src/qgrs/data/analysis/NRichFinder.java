@@ -4,30 +4,32 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public class URichFinder {
+public class NRichFinder {
 	String basePairs;
+	char n;
 
-	public URichFinder(String bp) {
+	public NRichFinder(char n, String bp) {
+		this.n = Character.toUpperCase(n);
 		basePairs = bp;
 	}
 
 	
-	public URich getUs(int score) {
-		URich bestU = null;
+	public NRich getUs(int score) {
+		NRich bestU = null;
 		int maxFound = -1;
 
 		int length = basePairs.length();
 
 		// checks if each char in the string is the
-		// beginning of a Urich sequence
+		// beginning of a Nrich sequence
 		for (int i = 0; i < (length - 5); i++) {
 			// creates a hexamer
 			String tmp = basePairs.substring(i, (i + 5));
-			int s = findUHex(tmp);
+			int s = findHex(tmp);
 			if (s >= score) // amount of Us is sufficient
 			{
 				if (s > maxFound) {
-					bestU = new URich(i, s, tmp);
+					bestU = new NRich(n, i, s, tmp);
 				}
 			}
 		}
@@ -37,16 +39,16 @@ public class URichFinder {
 	
 	
 
-	public Collection<URich> getAll(int score) {
-		ArrayList<URich> retval = new ArrayList<URich>();
+	public Collection<NRich> getAll(int score) {
+		ArrayList<NRich> retval = new ArrayList<NRich>();
 		int length = basePairs.length();
 		for (int i = 0; i < (length - 5); i++) {
 			// creates a hexamer
 			String tmp = basePairs.substring(i, (i + 5));
-			int s = findUHex(tmp);
+			int s = findHex(tmp);
 			if (s >= score) // amount of Us is sufficient
 			{
-				retval.add(new URich(i, s, tmp));
+				retval.add(new NRich(n, i, s, tmp));
 			}
 		}
 		
@@ -54,11 +56,11 @@ public class URichFinder {
 		
 	}
 	
-	Collection<URich> cluster(ArrayList<URich> originals) {
-		Collection<URich> retval = new ArrayList<URich>();
+	Collection<NRich> cluster(ArrayList<NRich> originals) {
+		Collection<NRich> retval = new ArrayList<NRich>();
 		int lastEnd = -1;
 		for ( int i = 0; i < originals.size(); i++ ) {
-			URich u = originals.get(i);
+			NRich u = originals.get(i);
 			if ( u.distanceFromPolyASite > lastEnd ) {
 				retval.add(u);
 				// this is not an overlapped...
@@ -70,15 +72,15 @@ public class URichFinder {
 
 	// returns the amount of U's in a hexamer
 	// for s to be a hexamer it must have 5 chars
-	private int findUHex(String s) {
-		int u = 0;
+	private int findHex(String s) {
+		int n_found = 0;
 
 		for (int i = 0; i < 5; i++) {
-			if (s.charAt(i) == 'U')
-				u++;
+			if (s.charAt(i) == n)
+				n_found++;
 		}
 
-		return u;
+		return n_found;
 	}
 
 }
