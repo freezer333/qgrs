@@ -18,9 +18,10 @@ public class G4PAnalysis extends Analysis {
 	Jongo jongo ;
 	MongoCollection principals;
 	MongoSequenceProvider sp;
+	G4Filter g4Filter;
 	
-	public G4PAnalysis () throws Exception{
-		super(null,null);
+	public G4PAnalysis (MrnaFilter mrnaFilter, G4Filter g4Filter) throws Exception{
+		super(null,mrnaFilter);
 		db = new MongoClient().getDB("qgrs");
 
 		jongo = new Jongo(db);
@@ -28,17 +29,34 @@ public class G4PAnalysis extends Analysis {
 		
 		sp = new MongoSequenceProvider(jongo);
 		
+		this.g4Filter = g4Filter;
+		
 	}
 	
 	public void run(){
 		Iterable<MRNA> all = principals.find().as(MRNA.class);
+		
+		//THIS IS JUST A COUNTER TO IMIT NUMBER OF GENES
+		int counter = 0;
+		//
+		
 		for(MRNA mrna : all){
-			evaluate(mrna);
+			
+			// THIS IS JUST SO WE CAN RUN ON FEWER GENES
+			if(counter < 10) {
+				counter ++;
+			}else{
+				break;
+			}
+			
+				evaluate(mrna);
+			
 		}
 	}
 	@Override
 	public void evaluate(MRNA mrna) {
 		// TODO Auto-generated method stub
+	
 		double count = 0;
 		System.out.print(mrna.getAccessionNumber() + "\t");
 		for(int i = 0 ; i < mrna.getUtr5().getEnd(); i++ ){
@@ -51,13 +69,21 @@ public class G4PAnalysis extends Analysis {
 
 	boolean hasG4(int nt, MRNA mrna){
 		for(G4 g4 : mrna.getG4s()){
-			if(inG4(g4,nt)){
-				return true;
-			}else{
-				for(G4 overlaps : g4.getOverlappingMotifs()){
-					if(inG4(overlaps, nt)){
-						return true;
+			//added this if-statement to make sure G4 being used is acceptable
+			if(this.g4Filter.acceptable(mrna, g4)){	
+				if(inG4(g4,nt)){
+
+					return true;
+					
+				}else{
+					for(G4 overlaps : g4.getOverlappingMotifs()){
+						if(inG4(overlaps, nt)){
+							
+								return true;
+								
+						}
 					}
+			
 				}
 			}
 		}
@@ -76,7 +102,11 @@ public class G4PAnalysis extends Analysis {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		G4PAnalysis a = new G4PAnalysis();
+		
+		MrnaFilter mrnaFilter = new MrnaFilter();
+		G4Filter g4filter = new G4Filter(0.0, Region.FivePrime);
+		
+		G4PAnalysis a = new G4PAnalysis(mrnaFilter, g4filter);
 		a.run();
 	}
 
