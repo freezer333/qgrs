@@ -1,5 +1,6 @@
 package qgrs.data.analysis;
 
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.jongo.Jongo;
 import org.jongo.MongoCollection;
 
@@ -19,6 +20,9 @@ public class G4PAnalysis extends Analysis {
 	MongoCollection principals;
 	MongoSequenceProvider sp;
 	G4Filter g4Filter;
+	
+	DescriptiveStatistics filtered = new DescriptiveStatistics();
+	DescriptiveStatistics all = new DescriptiveStatistics();
 	
 	public G4PAnalysis (MrnaFilter mrnaFilter, G4Filter g4Filter) throws Exception{
 		super(null,mrnaFilter);
@@ -41,30 +45,68 @@ public class G4PAnalysis extends Analysis {
 		//
 		
 		for(MRNA mrna : all){
+			System.out.println("Evaluating " + counter + " - > " + mrna.getAccessionNumber());
 			
 			// THIS IS JUST SO WE CAN RUN ON FEWER GENES
-			if(counter < 10) {
+			if(counter < 100) {
 				counter ++;
-			}else{
+			}
+			else{
 				break;
 			}
 			
-				evaluate(mrna);
+			evaluate(mrna);
 			
 		}
+		
+		System.out.println("===============================");
+		System.out.println("G4P Analsysis complete");
+		System.out.println("MRNA Filter");
+		System.out.println(mrnaFilter.toString());
+		System.out.println("G4 Filter");
+		System.out.println(g4Filter.toString());
+		System.out.println("-------------------------------");
+		System.out.println("Mean G4P:  " + this.filtered.getMean());
+		System.out.println("Mean Pop:  " + this.all.getMean());
+		System.out.println("Std Pop:   " + this.all.getStandardDeviation());
+		System.out.println("Z-Score:   " + zScore());
+		System.out.println("Significant?  " + significant() );
+		System.out.println("===============================");
+		
+		
+	}
+	
+	double zScore() {
+		double num = this.filtered.getMean() - all.getMean();
+		double den = this.all.getStandardDeviation();
+		return num / den;
+	}
+	boolean significant() {
+		return Math.abs(zScore()) >= 1.96;
 	}
 	@Override
 	public void evaluate(MRNA mrna) {
-		// TODO Auto-generated method stub
+		
+		double g4p = calcG4P(mrna);
+		// NaN is returned if no 5' in mRNA
+		if ( !Double.isNaN(g4p)) {
+			all.addValue(g4p);
+			if ( this.mrnaFilter.acceptable(mrna)){
+				filtered.addValue(g4p);
+			}
+		}
+	}
 	
+	private double calcG4P(MRNA mrna) {
 		double count = 0;
-		System.out.print(mrna.getAccessionNumber() + "\t");
 		for(int i = 0 ; i < mrna.getUtr5().getEnd(); i++ ){
 			if(hasG4(i,mrna)){
 				count++;
 			}
 		}
-		System.out.println(count/mrna.getUtr5().getEnd());
+		
+		return count / mrna.getUtr5().getEnd();
+		
 	}
 
 	boolean hasG4(int nt, MRNA mrna){
@@ -101,7 +143,19 @@ public class G4PAnalysis extends Analysis {
 	}
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+
+
+		
+		/**
+		 * 	Matt - set up new mRNA Filters (like your previous analyses and run them here
+		 *  by replacing the mrna filter 
+		 *  
+		 *  Don't forget to remove 100 cap.
+		 * 
+		 * 
+		 * 
+		 */
+		
 		
 		MrnaFilter mrnaFilter = new MrnaFilter();
 		G4Filter g4filter = new G4Filter(0.0, Region.FivePrime);
@@ -111,3 +165,4 @@ public class G4PAnalysis extends Analysis {
 	}
 
 }
+
