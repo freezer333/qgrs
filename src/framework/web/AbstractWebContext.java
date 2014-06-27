@@ -35,46 +35,13 @@ public abstract class AbstractWebContext {
 	}
 	
 	
-	public void loginUserFromRequestParams(Connection usercon) {
-		String username = this.getFromRequest("username");
-		String password = this.getFromRequest("password");
-		if ( StringUtils.isDefined(username) && StringUtils.isDefined(password)) {
-			UserDb db = new UserDb(usercon);
-			User u = db.authenticate(username, password);
-			if ( u != null ) {
-				this.put("user", u);
-			}
-		}
-	}
-	public void logout() {
-		this.put("user", null);
-	}
-	public boolean isAuthenticated() {
-		return this.inSession("user");
-	}
-	public boolean authorize(Collection<Role> authorizedRoles) {
-		if ( !this.inSession("user")) {
-			return false;
-		}
-		User u = (User)this.getFromSession("user");
-		for ( Role userRole : u.getRoles() ) {
-			for ( Role authRole : authorizedRoles) {
-				if ( authRole.equals(userRole)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+
 	
 	public abstract String getContextName();
 	public abstract void cleanup();
 	public abstract Document buildPageXml() ;
 	public abstract Document buildErrorPageXml(String errorMessage, Throwable e) ;
 	
-	public Connection getFreeConnection() {
-		return this.dispatcher.getDbConnection();
-	}
 	
 	public ResourceResolver getResourceResolver() {
 		return resourceResolver;

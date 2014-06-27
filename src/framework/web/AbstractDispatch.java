@@ -11,52 +11,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.h2.jdbcx.JdbcConnectionPool;
-
 import framework.db.DatabaseConnectionParameters;
 import framework.web.response.ErrorResponse;
 import framework.web.response.RedirectResponse;
 import framework.web.response.Response;
 import framework.web.util.ClassFinder;
 
-/* Something else */
 
 public abstract class AbstractDispatch {
 	protected List<AbstractController> controllers;
-	protected JdbcConnectionPool connectionPool;
 
 	protected HttpServlet servlet;
 	
 	protected AbstractDispatch(HttpServlet servlet) {
 		this.servlet = servlet;
 		this.loadControllersFromPackage(this.getControllerPackage());
-		this.initializeDatabaseConnectionPool();
-		
 	}
 
-	/* MERGE COMMENT */
 	protected abstract DatabaseConnectionParameters getDbParams();
 	protected abstract String getControllerPackage();
 	protected abstract String getErrorView() ;
 	protected abstract AbstractWebContext buildContext(HttpServlet dispatchServlet, HttpServletRequest request, HttpServletResponse response);
 
-	protected void initializeDatabaseConnectionPool() {
-		DatabaseConnectionParameters dcParams = this.getDbParams();
-		if ( dcParams != null ) {
-			this.connectionPool = JdbcConnectionPool.create(dcParams.getConnectionString(), 
-					dcParams.getUsername(), dcParams.getPassword());
-		}
-	}
-	public Connection getDbConnection() {
-		try {
-			return this.connectionPool.getConnection();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
-	}
-
-
+	
 	protected void loadControllersFromPackage(String packageName) {
 		controllers = new LinkedList<AbstractController>();
 		ClassFinder finder = new ClassFinder(Thread.currentThread().getContextClassLoader());
@@ -71,9 +48,7 @@ public abstract class AbstractDispatch {
 		} 
 	}
 
-	protected JdbcConnectionPool loadConnectionPool() {
-		return JdbcConnectionPool.create(		            "jdbc:h2:~/test", "sa", "sa");
-	}
+	
 
 	protected List<AbstractParam> getPersistableParamList() {
 		return new LinkedList<AbstractParam>();
@@ -101,16 +76,6 @@ public abstract class AbstractDispatch {
 
 		try {
 			AbstractController controller = this.mapUrl(request);
-			
-			RedirectResponse authRedirect = checkForAuthRedirect(context, controller);
-			if ( authRedirect != null ) {
-				try {
-					authRedirect.respond(context);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				return;
-			}
 			
 			context.persistRequesParamsInSession(this.getPersistableParamList());
 
@@ -149,25 +114,7 @@ public abstract class AbstractDispatch {
 	        return requestURL.append('?').append(queryString).toString();
 	    }
 	}
-	private RedirectResponse checkForAuthRedirect(AbstractWebContext context, AbstractController controller) {
-		RedirectResponse authRedirect = null;
-		if ( controller != null ) {
-			if ( controller.requiresAuthentication() ) {
-				if ( context.isAuthenticated() ) {
-					if ( !context.authorize(controller.getAuthorizedRoles() )) {
-						authRedirect = this.getAuthRedirect();
-						context.put("authredirect", getFullUrl(context.getRequest()));
-					}
-				}
-				else {
-					authRedirect = this.getAuthRedirect();
-					context.put("authredirect", getFullUrl(context.getRequest()));
-				}
-			}
-		}
-		return authRedirect;
-	}
-
+	
 
 	public void doPost(HttpServlet dispatchServlet, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(dispatchServlet, request, response);

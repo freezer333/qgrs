@@ -8,14 +8,24 @@
 		<xsl:param name="gotopredictor">false</xsl:param>
 		<xsl:param name="appname"></xsl:param>
 		<div id="heading" class="ui-widget-header">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-29602873-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
 			<p style="font-size:10pt;padding-right:1em;margin-top:5px; float:right;vertical-align:middle">
 				<xsl:if test="$gotostart='true'">
 					<a href="start" style="text-decoration:none;color:white;padding-right:2em">new input</a>
 				</xsl:if>
-				<xsl:if test="$gotodb='true'">
+				<!-- <xsl:if test="$gotodb='true'">
 					<a href="dbhome" style="vertical-align:middle;text-decoration:none;color:white;padding-right:2em">
 						<img style="vertical-align:middle" src="{$imagePath}logoDB.png"/>QGRS-H DB</a>
-				</xsl:if>
+				</xsl:if> -->
 				<xsl:if test="$gotopredictor='true'">
 					<a href="start" style="vertical-align:middle;text-decoration:none;color:white;padding-right:2em">
 						<img style="border-width:0;vertical-align:middle" src="{$imagePath}logo.png"/>QGRS-H Predictor</a>

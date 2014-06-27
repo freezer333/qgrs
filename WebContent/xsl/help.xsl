@@ -33,7 +33,7 @@
 		<h1>Help Contents</h1>
 		<ul>
 			<li><a href="#help_quickstart">QGRS-H Predictor Quickstart Guide</a></li>
-			<li><a href="#help_quickstartDb">QGRS-H Database Quickstart Guide</a></li>
+			<!-- <li><a href="#help_quickstartDb">QGRS-H Database Quickstart Guide</a></li> -->
 			<li><a href="#help_qgrs">QGRS Definition</a></li>
 			<li><a href="#help_overlaps">Dealing with Overlapping QGRS</a></li>
 			
@@ -122,6 +122,7 @@
 		
 		</div>
 		
+		<!-- 
 		<a name="help_quickstartDb"/>
 		<div class="messageInsert rounded-corners">
 		
@@ -239,7 +240,7 @@
 		</p>
 				
 		</div>
-		
+		 -->
 	</xsl:template>
 	
 	<xsl:template name="help_qgrs">

@@ -36,10 +36,19 @@
 					</p>
 					<p>
 					<b>Please cite</b>:
-					Menendez, C., Frees, S., and Bagga, P. (2012) QGRS-H Predictor: A Web Server
+					<ul>
+						<li>
+						Frees, S., Crum, M., Menendez, C., Bagga, P.S. (2014) <a href="http://www.humgenomics.com/content/8/1/8">
+						"QGRS-Conserve: A Computational Method for 
+						Discovering Evolutionarily Conserved G-quadruplex Motifs"</a>. Human Genetics, BioMed Central,  Vol 8 (8)
+						</li>
+						<li> 
+						Menendez, C., Frees, S., and Bagga, P. (2012) QGRS-H Predictor: A Web Server
 					for Predicting Homologous Quadruplex forming G-Rich Sequence Motifs in
-					Nucleotide Sequences. <a href="http://nar.oxfordjournals.org/content/early/2012/05/10/nar.gks422.full?keytype=ref&amp;ijkey=90aQTvF26OeC8yJ" target="_blank">Nucleic Acids Res. doi: 10.1093/nar/gks422</a> 
+					Nucleotide Sequences. <a href="http://nar.oxfordjournals.org/content/40/W1/W96" target="_blank">Nucleic Acids Res. doi: 10.1093/nar/gks422</a> 
 					<a  style="margin-left:1em" href="http://nar.oxfordjournals.org/content/40/W1/W96.full">40: W96-W103</a>.
+						</li>
+					</ul>
 					</p>
 				</div>
 				<div class="messageInsert rounded-corners">
