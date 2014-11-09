@@ -71,6 +71,12 @@ public class G4Filter {
 	public G4Filter (Region reg) {
 		setRegion(reg);
 	}
+	public G4Filter (double minHomology, Region reg, int minTetrad) {
+		setRegion(reg);
+		setTetradMin(minTetrad);
+		this.min_h = minHomology;
+	}
+	
 	
 	public void setRegion (Region reg) {
 		mustBeInCds = mustBeIn3Prime = mustBeIn5Prime = mustNotBeInCds = false;

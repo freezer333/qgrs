@@ -5,10 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import qgrs.data.GeneSequence;
-import qgrs.data.providers.MongoSequenceProvider;
+import qgrs.data.providers.NoCacheSequenceProvider;
 import qgrs.data.providers.SequenceProvider;
 import qgrs.data.providers.SequenceProvider.Key;
-import qgrs.db.DatabaseConnection;
 import framework.web.AbstractWebContext;
 import framework.web.util.StringUtils;
 
@@ -30,11 +29,10 @@ public class FlexibleInputProvider implements InputProvider {
 	String errorMessage;
 	
 	int ncbiCount = 0;
-	DatabaseConnection c;
 	
 	final int MAX_SEQ_LENGTH = 10025;
 	
-	public FlexibleInputProvider (AbstractWebContext context, DatabaseConnection c) {
+	public FlexibleInputProvider (AbstractWebContext context) {
 		seq1Type = this.getSeq1InputType(context);
 		seq2Type = this.getSeq2InputType(context);
 		seq1Id = context.getString(QParam.Sequence1);
@@ -42,7 +40,6 @@ public class FlexibleInputProvider implements InputProvider {
 		seq2Id = context.getString(QParam.Sequence2);
 		seq2Chars = context.getString(QParam.Sequence2Chars);
 		errorMessage = null;
-		this.c = c;
 	}
 
 	InputType getSeq1InputType(AbstractWebContext context) {
@@ -137,7 +134,7 @@ public class FlexibleInputProvider implements InputProvider {
 
 			if ( seq1Type.hasId || seq2Type.hasId ){
 				try {
-					provider = new MongoSequenceProvider();
+					provider = new NoCacheSequenceProvider();
 				}
 				catch (Exception e) {
 					e.printStackTrace();

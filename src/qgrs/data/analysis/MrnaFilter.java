@@ -4,7 +4,6 @@ import static qgrs.data.analysis.FilterLogicOperator.Or;
 
 import java.util.LinkedList;
 
-import org.h2.util.StringUtils;
 
 import qgrs.data.Range;
 import qgrs.data.mongo.primitives.jongo.MRNA;
@@ -103,7 +102,7 @@ public class MrnaFilter {
 	
 	@Override
 	public String toString() {
-		if (!StringUtils.isNullOrEmpty(name)) return name;
+		if ( name != null && !"".equals(name.trim())) return name;
 		
 		StringBuffer sb = new StringBuffer();
 		

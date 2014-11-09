@@ -37,6 +37,10 @@ public class G4PAnalysis extends Analysis {
 		
 	}
 	
+	Jongo getJongo() {
+		return jongo;
+	}
+	
 	public void run(){
 		Iterable<MRNA> all = principals.find().as(MRNA.class);
 		
@@ -45,15 +49,18 @@ public class G4PAnalysis extends Analysis {
 		//
 		
 		for(MRNA mrna : all){
+			if ( counter % 1000 == 0 ) {
 			System.out.println("Evaluating " + counter + " - > " + mrna.getAccessionNumber());
-			
+			}
 			// THIS IS JUST SO WE CAN RUN ON FEWER GENES
+			/*
 			if(counter < 100) {
 				counter ++;
 			}
 			else{
 				break;
-			}
+			}*/
+			counter++;
 			
 			evaluate(mrna);
 			
@@ -155,13 +162,80 @@ public class G4PAnalysis extends Analysis {
 		 * 
 		 * 
 		 */
+		DB db = new MongoClient().getDB("qgrs");
+
+		Jongo jongo = new Jongo(db);
 		
 		
-		MrnaFilter mrnaFilter = new MrnaFilter();
-		G4Filter g4filter = new G4Filter(0.0, Region.FivePrime);
+		// all mrna
+		MrnaFilter mrnaFilter = new MrnaFilter("All Human mRNA");
+		//G4Filter g4filter = new G4Filter(0, Region.FivePrime, 2);
+		G4Filter [] g4Filter = new G4Filter[2];
+		g4Filter[0] = new G4Filter(0, Region.FivePrime, 3);
+		g4Filter[1] = new G4Filter(0, Region.FivePrime, 4);
+		//g4Filter[2] = new G4Filter(0, Region.FivePrime, 6);
 		
-		G4PAnalysis a = new G4PAnalysis(mrnaFilter, g4filter);
-		a.run();
+		for ( G4Filter g4filter : g4Filter ) {
+			System.out.println("Running G4 Filter Set");
+			G4PAnalysis as = new G4PAnalysis(mrnaFilter, g4filter);
+			//as.run();
+			
+			MongoSequenceProvider sp = new MongoSequenceProvider(jongo);
+			mrnaFilter= new MrnaSequenceFilter(0.37, "Hi G-Rich (37%)", sp);
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			as.run();
+			
+			
+			// Apoptosis mrna
+			mrnaFilter= new MrnaFilter("Apoptosis");
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			mrnaFilter.addOntologyTerms(new String [] {"ubiquitin-protein ligase activity", "apoptotic process", "apoptotic signaling pathway", "induction of apoptosis", "execution phase of apoptosis", "negative regulation of apoptotic process", "positive regulation of apoptotic process"});
+			//as.run();
+			
+			// Brain development mrna
+			mrnaFilter= new MrnaFilter("Brain Development");
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			//mrnaFilter.addOntologyTerms(new String [] {"brain segmentation", "brain morphogenesis", "central complex development", "forebrain development","hindbrain development","midbrain development"});
+			//as.run();
+			
+			// Epigenetics mrna
+			mrnaFilter= new MrnaFilter("Epigentics");
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			mrnaFilter.addOntologyTerms(new String [] {"DNA-methyltransferase", "methyl-CpG binding", "methyl-CpNpN binding", "DNA hypermethylation", "DNA hypomethylation"});
+			//as.run();
+			
+			// Negative Regulation of Cell Proliferation mrna
+			mrnaFilter= new MrnaFilter("Negative Regulation of Cell Proliferation");
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			mrnaFilter.addOntologyTerms(new String [] {"negative Regulation of Cell Proliferation"});
+			//as.run();
+			
+			// Oncogenes mrna
+			mrnaFilter= new MrnaFilter("Oncogenes");
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			mrnaFilter.addGeneNameSearchTerms(new String [] {"oncogene"});
+			//as.run();
+			
+			// Positive Regulation of Cell Proliferation mrna
+			mrnaFilter= new MrnaFilter("Positive Regulation of Cell Proliferation");
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			mrnaFilter.addOntologyTerms(new String [] {"positive regulation of cell proliferation"});
+			//as.run();
+			
+			// Regulation of Cell Cycle mrna
+			mrnaFilter= new MrnaFilter("Regulation of Cell Cycle");
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			mrnaFilter.addOntologyTerms(new String [] {"regulation of cell cycle"});
+			//as.run();
+			
+			// Transcription Factor Binding mrna
+			mrnaFilter= new MrnaFilter("Transcription Factor Binding");
+			as = new G4PAnalysis(mrnaFilter, g4filter);
+			mrnaFilter.addOntologyTerms(new String [] {"transcription factor complex", "transcription factor binding"});
+			//as.run();
+		
+		}
+				
 	}
 
 }

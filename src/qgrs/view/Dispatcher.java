@@ -38,7 +38,7 @@ public class Dispatcher extends AbstractDispatch {
 	@Override
 	protected AbstractWebContext buildContext(HttpServlet dispatchServlet, HttpServletRequest request, HttpServletResponse response) {
 	
-		return new QgrsWebContext(dispatchServlet, request, response, this.getDbConnection(), this);
+		return new QgrsWebContext(dispatchServlet, request, response, this);
 	}
 	
 	@Override

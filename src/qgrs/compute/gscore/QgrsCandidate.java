@@ -74,7 +74,7 @@ public class QgrsCandidate {
 			length+= y2;
 		}
 		if ( y3 > 0 ) {
-			length += 3;
+			length += y3;
 		}
 		return length;
 	}
