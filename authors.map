@@ -1,0 +1,4 @@
+* =freezer333 <scott.frees@gmail.com>
+
+
+git filter-branch -f --env-filter "GIT_AUTHOR_NAME='freezer333'; GIT_AUTHOR_EMAIL='scott.frees@gmail.com'; GIT_COMMITTER_NAME='freezer333'; GIT_COMMITTER_EMAIL='scott.frees@gmail.com';" HEAD
